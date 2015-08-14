@@ -1,0 +1,2507 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html lang="en" class="ie8"><![endif]-->
+<!--[if IE 9]><html lang="en" class="ie9"><![endif]-->
+<!--[if gt IE 9]><!-->
+<html class=" js no-touch localstorage sessionstorage contenteditable" lang="en"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Disqus Comments</title>
+        <script src="a_data/beacon.js" async=""></script><script src="Class-based%20views%20in%20Django%201.3_files/ga.js" async="" type="text/javascript"></script><script src="client_data/lib.js" charset="utf-8" type="text/javascript"></script><script src="a_data/client.js" charset="utf-8" type="text/javascript"></script><script src="a_data/lounge.js" async="" charset="utf-8" type="text/javascript"></script><!-- base href="http://www.caktusgroup.com/blog/2011/12/29/class-based-views-django-13/" -->
+
+        <!--
+        
+        -->
+        <script type="text/json" id="disqus-jsonData">{"cursor":{"hasPrev":false,"prev":null,"total":14,"hasNext":false,"next":"1:0:0"},"code":0,"response":{"forum":{"name":"Caktus Blog","language":"en","settings":{"allowAnonPost":true,"allowMedia":false,"moderatorText":"","typeface":"auto","hasReactions":false,"audienceSyncEnabled":false,"ssoRequired":false,"backplaneEnabled":false,"colorScheme":"auto","linkAffiliationEnabled":false},"url":"http://caktusgroup.com","favicon":{"permalink":"http://disqus.com/api/forums/favicons/wwwcaktusblog.jpg","cache":"http://mediacdn.disqus.com/1373499237/images/favicon-default.png"},"pk":506677,"founder":"4969549","id":"wwwcaktusblog"},"thread":{"feed":"http://wwwcaktusblog.disqus.com/class_based_views_in_django_13_django_web_development_raleigh_durham_chapel_hill_caktus_consulting_g/latest.rss","reactions":0,"uploadAdd":"http://wwwcaktusblog.disqus.com/thread/class_based_views_in_django_13_django_web_development_raleigh_durham_chapel_hill_caktus_consulting_g/async_media_upload/","dislikes":1,"likes":15,"message":"","id":"519838077","createdAt":"2011-12-29T11:19:06","category":"514723","author":"4969549","userScore":0,"moderators":[33884778,4510106,4969549],"isDeleted":false,"hasStreaming":false,"uploadRemove":"http://wwwcaktusblog.disqus.com/thread/class_based_views_in_django_13_django_web_development_raleigh_durham_chapel_hill_caktus_consulting_g/async_media_remove/","isClosed":false,"link":"http://www.caktusgroup.com/blog/2011/12/29/class-based-views-django-13/","slug":"class_based_views_in_django_13_django_web_development_raleigh_durham_chapel_hill_caktus_consulting_g","forum":"wwwcaktusblog","identifiers":[],"posts":14,"userSubscription":false,"title":"Class-based views in Django 1.3 | Django Web Development | Raleigh Durham Chapel Hill | Caktus Consulting Group"},"lastModified":1357986799,"posts":[{"isFlagged":false,"forum":"wwwcaktusblog","parent":null,"author":{"name":"Jens","url":"","profileUrl":"http://disqus.com/guest/3e3b3c681c088705427b3c0137f7b997/","emailHash":"3e3b3c681c088705427b3c0137f7b997","avatar":{"small":{"permalink":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar32.jpg?1365087917","cache":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar32.jpg?1365087917"},"large":{"permalink":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar92.jpg?1365087917","cache":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar92.jpg?1365087917"},"permalink":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar92.jpg?1365087917","cache":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar92.jpg?1365087917"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Thank you! I always wondered what class based views are for, so I kept on using the old view functions. Maybe no I'll find a good way to bring them into use.","createdAt":"2011-12-29T12:01:15","id":"396414789","thread":"519838077","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>Thank you! I always wondered what class based views are for, so I kept on using the old view functions. Maybe no I'll find a good way to bring them into use.\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"wwwcaktusblog","parent":null,"author":{"username":"brutasse","about":"","name":"brutasse","url":"","isAnonymous":false,"rep":1.237356,"profileUrl":"http://disqus.com/brutasse/","emailHash":"bd9b4485bcf325b989b5721bd0ef4d91","reputation":1.237356,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2011-12-29T13:49:58","id":"20639997","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/brutasse.jpg","cache":"http://mediacdn.disqus.com/uploads/users/2063/9997/avatar32.jpg?1331153454"},"isCustom":false,"permalink":"http://disqus.com/api/users/avatars/brutasse.jpg","cache":"http://mediacdn.disqus.com/uploads/users/2063/9997/avatar92.jpg?1331153454","large":{"permalink":"http://disqus.com/api/users/avatars/brutasse.jpg","cache":"http://mediacdn.disqus.com/uploads/users/2063/9997/avatar92.jpg?1331153454"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Your `compute_context()` method already exisits, it's called `get_context_data()`. It's also worth noting that you don't need to pass `request` and `**kwargs` everywhere since they're available as class attributes: you can safely use `self.request`, `self.args` and `self.kwargs` (args and kwargs are captured from the URL pattern) from any method of the class that's called after `dispatch()`.","createdAt":"2011-12-29T13:47:46","id":"396453256","thread":"519838077","depth":0,"numReports":0,"likes":7,"isEdited":false,"message":"\u003cp>Your `compute_context()` method already exisits, it's called `get_context_data()`. It's also worth noting that you don't need to pass `request` and `**kwargs` everywhere since they're available as class attributes: you can safely use `self.request`, `self.args` and `self.kwargs` (args and kwargs are captured from the URL pattern) from any method of the class that's called after `dispatch()`.\u003c/p>","isSpam":false,"isHighlighted":false,"points":7},{"isFlagged":false,"forum":"wwwcaktusblog","parent":null,"author":{"name":"Dan","url":"","profileUrl":"http://disqus.com/guest/0623c6a8f6c4b9409ad460241c19f30e/","emailHash":"0623c6a8f6c4b9409ad460241c19f30e","avatar":{"small":{"permalink":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar32.jpg?1365087917","cache":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar32.jpg?1365087917"},"large":{"permalink":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar92.jpg?1365087917","cache":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar92.jpg?1365087917"},"permalink":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar92.jpg?1365087917","cache":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar92.jpg?1365087917"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Agreed that the best way to learn is to \u00a0step through the code. \u00a0However, there are many users (I used to be one), that didn't worry about how the function-based generic views worked under the hood. \u00a0Instead, they just used them to perform a task. \u00a0I'm still working on internalizing what the different classes and methods do, and it what order.\n\nIn the above comment from burtasse, he mentions that the class variables are available anytime after dispatch() is called. \u00a0I have been burned by assuming they would be available only to find those arguments haven't yet been pulled in. \u00a0Maybe a diagram of the flow would help.I'm sure there are Django programmers who wish the function-based views weren't being deprecated. \u00a0\n\nHaving said this, I am fast becoming a fan of the class-based views, and am starting to see the benefits.","createdAt":"2011-12-29T15:13:09","id":"396531072","thread":"519838077","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>Agreed that the best way to learn is to \u00a0step through the code. \u00a0However, there are many users (I used to be one), that didn't worry about how the function-based generic views worked under the hood. \u00a0Instead, they just used them to perform a task. \u00a0I'm still working on internalizing what the different classes and methods do, and it what order.\u003c/p>\n\n\u003cp>In the above comment from burtasse, he mentions that the class variables are available anytime after dispatch() is called. \u00a0I have been burned by assuming they would be available only to find those arguments haven't yet been pulled in. \u00a0Maybe a diagram of the flow would help.I'm sure there are Django programmers who wish the function-based views weren't being deprecated. \u00a0\u003c/p>\n\n\u003cp>Having said this, I am fast becoming a fan of the class-based views, and am starting to see the benefits.\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"wwwcaktusblog","parent":null,"author":{"username":"twitter-30490517","about":"","name":"Mark Lavin","url":"http://twitter.com/DrOhYes","isAnonymous":false,"rep":1.232862,"profileUrl":"http://disqus.com/twitter-30490517/","emailHash":"d41d8cd98f00b204e9800998ecf8427e","reputation":1.232862,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2010-05-19T13:22:58","id":"3086210","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/twitter-30490517.jpg","cache":"http://mediacdn.disqus.com/uploads/users/308/6210/avatar32.jpg?1325171923"},"isCustom":false,"permalink":"http://disqus.com/api/users/avatars/twitter-30490517.jpg","cache":"http://mediacdn.disqus.com/uploads/users/308/6210/avatar92.jpg?1325171923","large":{"permalink":"http://disqus.com/api/users/avatars/twitter-30490517.jpg","cache":"http://mediacdn.disqus.com/uploads/users/308/6210/avatar92.jpg?1325171923"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"As for decorating the views I'm a fan of calling `as_view` in views.py like\n\nviews.py:\nmy_view = login_required(MyViewClass.as_view())\n\nThen your urls.py will look the same as with function based views\n\nurls.py:\n...\nurl(r'^/$', 'my_view', name='myview'),\n...","createdAt":"2011-12-29T15:26:36","id":"396545211","thread":"519838077","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>As for decorating the views I'm a fan of calling `as_view` in \u003ca href=\"http://views.py\" rel=\"nofollow\">views.py\u003c/a> like\u003c/p>\n\n\u003cp>\u003ca href=\"http://views.py\" rel=\"nofollow\">views.py\u003c/a>:\u003cbr>my_view = login_required(MyViewClass.as_view())\u003c/p>\n\n\u003cp>Then your \u003ca href=\"http://urls.py\" rel=\"nofollow\">urls.py\u003c/a> will look the same as with function based views\u003c/p>\n\n\u003cp>\u003ca href=\"http://urls.py\" rel=\"nofollow\">urls.py\u003c/a>:\u003cbr>...\u003cbr>url(r'^/$', 'my_view', name='myview'),\u003cbr>...\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"wwwcaktusblog","parent":null,"author":{"username":"vdboor","about":"Web developer and entrepreneur","name":"Diederik van der Boor","url":"http://www.edoburu.nl/","isAnonymous":false,"rep":1.20879,"profileUrl":"http://disqus.com/vdboor/","emailHash":"fa7f6c8be0d09fd8438332eef28a40d3","reputation":1.20879,"location":"The Netherlands","isPrivate":false,"isPrimary":true,"joinedAt":"2011-10-14T08:22:37","id":"17908753","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/vdboor.jpg","cache":"http://mediacdn.disqus.com/uploads/users/1790/8753/avatar32.jpg?1372321225"},"isCustom":false,"permalink":"http://disqus.com/api/users/avatars/vdboor.jpg","cache":"http://mediacdn.disqus.com/uploads/users/1790/8753/avatar92.jpg?1372321225","large":{"permalink":"http://disqus.com/api/users/avatars/vdboor.jpg","cache":"http://mediacdn.disqus.com/uploads/users/1790/8753/avatar92.jpg?1372321225"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Instead of having to write your own `def get()` everywhere, consider using the `DetailView`.This class already provides the retreival of objects, context, and rendering. For example:\n\u003cpre>class ArticleDetailView(DetailView):\n\u00a0\u00a0\u00a0 model = Article\n\u00a0\u00a0\u00a0 template_name = \"article/details.html\"\u003c/pre>\n\u003cp>Et, voila!\u003c/p>\nTo override the behavior, see the methods:\n- get_context_data()\n- get_object()\n- get_template()\n\nThis way, writing view code almost becomes declarative.","createdAt":"2011-12-29T17:27:14","id":"396667407","thread":"519838077","depth":0,"numReports":0,"likes":4,"isEdited":true,"message":"\u003cp>Instead of having to write your own `def get()` everywhere, consider using the `DetailView`.This class already provides the retreival of objects, context, and rendering. For example:\u003cbr>\u003c/p>\u003cpre>class ArticleDetailView(DetailView):\u003cbr>\u00a0\u00a0\u00a0 model = Article\u003cbr>\u00a0\u00a0\u00a0 template_name = \"article/details.html\"\u003c/pre>\u003cbr>\u003cp>Et, voila!\u003c/p>\u003cbr>To override the behavior, see the methods:\u003cbr>- get_context_data()\u003cbr>- get_object()\u003cbr>- get_template()\u003cp>\u003c/p>\n\n\u003cp>This way, writing view code almost becomes declarative.\u003c/p>","isSpam":false,"isHighlighted":false,"points":4},{"isFlagged":false,"forum":"wwwcaktusblog","parent":null,"author":{"username":"twitter-250397632","about":"","name":"Donald Stufft","url":"http://twitter.com/dstufft","isAnonymous":false,"rep":1.236569,"profileUrl":"http://disqus.com/twitter-250397632/","emailHash":"d41d8cd98f00b204e9800998ecf8427e","reputation":1.236569,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2011-11-25T19:01:44","id":"19480741","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/twitter-250397632.jpg","cache":"http://mediacdn.disqus.com/uploads/users/1948/741/avatar32.jpg?1366440789"},"isCustom":false,"permalink":"http://disqus.com/api/users/avatars/twitter-250397632.jpg","cache":"http://mediacdn.disqus.com/uploads/users/1948/741/avatar92.jpg?1366440789","large":{"permalink":"http://disqus.com/api/users/avatars/twitter-250397632.jpg","cache":"http://mediacdn.disqus.com/uploads/users/1948/741/avatar92.jpg?1366440789"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Found an error:\n\nYou can't just pass any old kwarg in via as_view. It will throw an exception if the kwarg passed to as_view doesn't already exist as an attribute of the class. Further more anything passed to as_view as a kwarg techincally get's passed as kwargs to the CBV's __init__ method, which the default __init__ method just loops over all the kwargs it is passed and setattr's them onto self.\n\nSo the final result is that passing a kwarg to as_view that isn't already an attribute of the CBV is an exception, and passing a kwarg to as_view that is an attribute will make that kwarg end up available at getattr(self, \"kwarg_name\")","createdAt":"2011-12-29T20:45:05","id":"396798194","thread":"519838077","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>Found an error:\u003c/p>\n\n\u003cp>You can't just pass any old kwarg in via as_view. It will throw an exception if the kwarg passed to as_view doesn't already exist as an attribute of the class. Further more anything passed to as_view as a kwarg techincally get's passed as kwargs to the CBV's __init__ method, which the default __init__ method just loops over all the kwargs it is passed and setattr's them onto self.\u003c/p>\n\n\u003cp>So the final result is that passing a kwarg to as_view that isn't already an attribute of the CBV is an exception, and passing a kwarg to as_view that is an attribute will make that kwarg end up available at getattr(self, \"kwarg_name\")\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"wwwcaktusblog","parent":null,"author":{"username":"google-dfa0996cfc33a2b69fc1548a1481da3a","about":"","name":"Dan O'Donovan","url":"","isAnonymous":false,"rep":1.232591,"profileUrl":"http://disqus.com/google-dfa0996cfc33a2b69fc1548a1481da3a/","emailHash":"dfa0996cfc33a2b69fc1548a1481da3a","reputation":1.232591,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2012-01-13T19:02:46","id":"21156715","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/google-dfa0996cfc33a2b69fc1548a1481da3a.jpg","cache":"http://mediacdn.disqus.com/uploads/users/2115/6715/avatar32.jpg?1327024701"},"isCustom":false,"permalink":"http://disqus.com/api/users/avatars/google-dfa0996cfc33a2b69fc1548a1481da3a.jpg","cache":"http://mediacdn.disqus.com/uploads/users/2115/6715/avatar92.jpg?1327024701","large":{"permalink":"http://disqus.com/api/users/avatars/google-dfa0996cfc33a2b69fc1548a1481da3a.jpg","cache":"http://mediacdn.disqus.com/uploads/users/2115/6715/avatar92.jpg?1327024701"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Great!\u00a0\n\nsmall edit;\u00a0method_decorator\u00a0lives in\u00a0django.utils.decorators\u00a0not:\n\nfrom django.views.utils.decorators import method_decorator","createdAt":"2012-01-13T19:02:47","id":"410010830","thread":"519838077","depth":0,"numReports":0,"likes":1,"isEdited":false,"message":"\u003cp>Great!\u00a0\u003c/p>\n\n\u003cp>small edit;\u00a0method_decorator\u00a0lives in\u00a0django.utils.decorators\u00a0not:\u003c/p>\n\n\u003cp>from django.views.utils.decorators import method_decorator\u003c/p>","isSpam":false,"isHighlighted":false,"points":1},{"isFlagged":false,"forum":"wwwcaktusblog","parent":null,"author":{"username":"elpargo","about":"","name":"elpargo","url":"","isAnonymous":false,"rep":1.267585,"profileUrl":"http://disqus.com/elpargo/","emailHash":"a57c52861cb36307efbb477b4ec3a292","reputation":1.267585,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2009-02-21T17:34:05","id":"227162","avatar":{"small":{"permalink":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar32.jpg?1365087917","cache":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar32.jpg?1365087917"},"large":{"permalink":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar92.jpg?1365087917","cache":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar92.jpg?1365087917"},"permalink":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar92.jpg?1365087917","cache":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar92.jpg?1365087917"}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":2,"raw_message":"One Word: TurboGears\u00a0","createdAt":"2012-03-22T16:26:55","id":"473725107","thread":"519838077","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>One Word: TurboGears\u00a0\u003c/p>","isSpam":false,"isHighlighted":false,"points":-2},{"isFlagged":false,"forum":"wwwcaktusblog","parent":null,"author":{"username":"twitter-1235931","about":"","name":"Antonio Ognio","url":"http://twitter.com/gnrfan","isAnonymous":false,"rep":1.233329,"profileUrl":"http://disqus.com/twitter-1235931/","emailHash":"d41d8cd98f00b204e9800998ecf8427e","reputation":1.233329,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2009-08-02T23:22:21","id":"587400","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/twitter-1235931.jpg","cache":"http://mediacdn.disqus.com/uploads/users/58/7400/avatar32.jpg?1349883168"},"isCustom":false,"permalink":"http://disqus.com/api/users/avatars/twitter-1235931.jpg","cache":"http://mediacdn.disqus.com/uploads/users/58/7400/avatar92.jpg?1349883168","large":{"permalink":"http://disqus.com/api/users/avatars/twitter-1235931.jpg","cache":"http://mediacdn.disqus.com/uploads/users/58/7400/avatar92.jpg?1349883168"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Yes, please update the post as suggested by\u00a0Dan O'Donovan. The correct import line is:\n\nfrom django.utils.decorators import method_decorator","createdAt":"2012-04-04T00:19:22","id":"485098626","thread":"519838077","depth":0,"numReports":0,"likes":0,"isEdited":true,"message":"\u003cp>Yes, please update the post as suggested by\u00a0Dan O'Donovan. The correct import line is:\u003c/p>\n\n\u003cp>from django.utils.decorators import method_decorator\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"wwwcaktusblog","parent":null,"author":{"name":"Ben_Mark","url":"http://deals.telcoservicesgroup.net/fios-digital-voice","profileUrl":"http://disqus.com/guest/efde3151023d3b7abb0340c847fd16f4/","emailHash":"efde3151023d3b7abb0340c847fd16f4","avatar":{"small":{"permalink":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar32.jpg?1365087917","cache":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar32.jpg?1365087917"},"large":{"permalink":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar92.jpg?1365087917","cache":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar92.jpg?1365087917"},"permalink":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar92.jpg?1365087917","cache":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar92.jpg?1365087917"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"\u00a0The algorithm looks wonderful. What are the major changes in it when compared to the previous one. Hope the new algorithm give better usage and features","createdAt":"2012-07-06T05:26:29","id":"577817215","thread":"519838077","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>\u00a0The algorithm looks wonderful. What are the major changes in it when compared to the previous one. Hope the new algorithm give better usage and features\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"wwwcaktusblog","parent":null,"author":{"username":"twitter-60883663","about":"","name":"Bithin A","url":"http://twitter.com/bithin2007","isAnonymous":false,"rep":1.232862,"profileUrl":"http://disqus.com/twitter-60883663/","emailHash":"d41d8cd98f00b204e9800998ecf8427e","reputation":1.232862,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2009-08-25T15:05:25","id":"703757","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/twitter-60883663.jpg","cache":"http://mediacdn.disqus.com/uploads/users/70/3757/avatar32.jpg?1341570481"},"isCustom":false,"permalink":"http://disqus.com/api/users/avatars/twitter-60883663.jpg","cache":"http://mediacdn.disqus.com/uploads/users/70/3757/avatar92.jpg?1341570481","large":{"permalink":"http://disqus.com/api/users/avatars/twitter-60883663.jpg","cache":"http://mediacdn.disqus.com/uploads/users/70/3757/avatar92.jpg?1341570481"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Thanks for the nice write up :)","createdAt":"2012-07-06T10:28:05","id":"578290243","thread":"519838077","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>Thanks for the nice write up :)\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"wwwcaktusblog","parent":null,"author":{"name":"Sam","url":"","profileUrl":"http://disqus.com/guest/e069f13374a623efc01f15b22600aa6c/","emailHash":"e069f13374a623efc01f15b22600aa6c","avatar":{"small":{"permalink":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar32.jpg?1365087917","cache":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar32.jpg?1365087917"},"large":{"permalink":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar92.jpg?1365087917","cache":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar92.jpg?1365087917"},"permalink":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar92.jpg?1365087917","cache":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar92.jpg?1365087917"},"isAnonymous":true},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"awesome article, thank you for it i've learned alot.","createdAt":"2012-08-10T19:10:22","id":"615848778","thread":"519838077","depth":0,"numReports":0,"likes":1,"isEdited":false,"message":"\u003cp>awesome article, thank you for it i've learned alot.\u003c/p>","isSpam":false,"isHighlighted":false,"points":1},{"isFlagged":false,"forum":"wwwcaktusblog","parent":null,"author":{"username":"acjohnson55","about":"","name":"acjohnson55","url":"","isAnonymous":false,"rep":1.717142,"profileUrl":"http://disqus.com/acjohnson55/","emailHash":"31c7b5855877e79d99ce5ede7a3e2816","reputation":1.717142,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2010-07-30T21:28:47","id":"3788799","avatar":{"small":{"permalink":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar32.jpg?1365087917","cache":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar32.jpg?1365087917"},"large":{"permalink":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar92.jpg?1365087917","cache":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar92.jpg?1365087917"},"permalink":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar92.jpg?1365087917","cache":"http://mediacdn.disqus.com/uploads/forums/50/6677/avatar92.jpg?1365087917"}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"My biggest beef with class based views is that the sequence of what gets called when and how the different built-in classes differ feels very opaque to me, even after poring over the documentation.  This is a helpful start, but are there any good resources that comprehensively cover the workings of class-based views?  I know I can always look through the code, but I'd much rather have something to read for reference when I need a refresher.","createdAt":"2012-09-25T19:42:07","id":"662388964","thread":"519838077","depth":0,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>My biggest beef with class based views is that the sequence of what gets called when and how the different built-in classes differ feels very opaque to me, even after poring over the documentation.  This is a helpful start, but are there any good resources that comprehensively cover the workings of class-based views?  I know I can always look through the code, but I'd much rather have something to read for reference when I need a refresher.\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"wwwcaktusblog","parent":null,"author":{"username":"twitter-28360450","about":"","name":"Bibhas","url":"http://twitter.com/iAmBibhas","isAnonymous":false,"rep":1.2350759999999998,"profileUrl":"http://disqus.com/twitter-28360450/","emailHash":"d41d8cd98f00b204e9800998ecf8427e","reputation":1.2350759999999998,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2012-08-25T05:56:28","id":"31113787","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/twitter-28360450.jpg","cache":"http://mediacdn.disqus.com/uploads/users/3111/3787/avatar32.jpg?1363896708"},"isCustom":false,"permalink":"http://disqus.com/api/users/avatars/twitter-28360450.jpg","cache":"http://mediacdn.disqus.com/uploads/users/3111/3787/avatar92.jpg?1363896708","large":{"permalink":"http://disqus.com/api/users/avatars/twitter-28360450.jpg","cache":"http://mediacdn.disqus.com/uploads/users/3111/3787/avatar92.jpg?1363896708"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"This makes more sense than the conventional way of writing views. I wonder why they didn't document it well.","createdAt":"2013-01-12T10:33:19","id":"764740961","thread":"519838077","depth":0,"numReports":0,"likes":0,"isEdited":true,"message":"\u003cp>This makes more sense than the conventional way of writing views. I wonder why they didn't document it well.\u003c/p>","isSpam":false,"isHighlighted":false,"points":0}],"switches":["website_addons","evm_publisher_reports","private_user_profiles","shardpost","limit_get_posts_days_30d","website_follow_redirect","filter_ads_by_country","new_sort_paginator","pause_rt_when_posting","partitions","discovery_next:truncate","discovery_next:tempest","discussions_tab","community_icon","next_profile_modal","stats","next_dragdrop_nag","firehose_gnip","support_contact_with_frames","use_rs_paginator_5m","next_new_login","limit_textdigger","next_show_new_media","next_discard_low_rep","mentions","content_security_policy","firehose_gnip_http","is_last_modified","juggler_thread_onReady","juggler_enabled","next_comments_truncation_enabled","discovery_next:top_placement","shardpost:index","firehose_push","enable_link_affiliation","discovery_analytics","next_realtime_indicators","use_queue_b","next_upvoters_tooltip","static_styles","discovery_next","firehose_pubsub","next_use_handlebars","dark_jester","new_embed_js","textdigger_crawler","digest_thread_votes","tipalti_payments"],"theme":{"base":{"name":"Disqus 2012","css":"http://mediacdn.disqus.com/1373499237/build/next/styles/lounge.css","js":"http://mediacdn.disqus.com/1373499237/build/next/templates/lounge.js"}},"session":{"canModerate":false,"isReadOnly":null,"audienceSyncVerified":false,"canReply":true,"notificationCount":null,"mustVerifyEmail":false},"features":{}},"order":"asc"}</script>
+
+        <style>
+            html {
+                overflow: hidden;
+            }
+
+            #postCompatContainer {
+                position: absolute;
+                left: -10000px;
+                width: 1000px;
+            }
+
+            html.not-supported {
+                overflow-y: auto;
+            }
+
+            .not-supported body {
+                font-family: Arial, sans-serif;
+                font-size: 10pt;
+            }
+
+            .not-supported ul, .not-supported li {
+                margin: 0;
+                padding: 0;
+            }
+
+            .not-supported li {
+                list-style-type: none;
+            }
+
+            .not-supported h4 a {
+                color: #000;
+                text-decoration: none;
+            }
+
+            .not-supported h4 {
+                margin: 0 0 5px;
+                padding: 5px 0;
+                border-bottom: dashed 1px #999;
+            }
+
+            .not-supported #notSupported {
+                display: block;
+                border: solid 1px red;
+                padding: 10px;
+                margin-bottom: 10px;
+                overflow: hidden;
+            }
+
+            .not-supported #notSupported p {
+                margin-bottom: 10px;
+            }
+
+            .not-supported #notSupported ul {
+                margin-left: 20px;
+            }
+
+            .not-supported #notSupported ul li {
+                margin-bottom: 5px;
+            }
+
+            #notSupported, .legacy-mode, .old-browser {
+                display: none;
+            }
+
+            .not-supported.type-1 .old-browser {
+                display: block;
+            }
+
+            .not-supported.type-2 .legacy-mode {
+                display: block;
+            }
+
+            .not-supported #postCompatContainer {
+                position: static;
+                left: 0;
+                width: 500px;
+                margin-top: 20px;
+            }
+        </style>
+    <style id="css_1373601027577"></style><link href="a_data/lounge.css" type="text/css" rel="stylesheet"><script charset="UTF-8" async="" src="a_data/event.js"></script><script charset="UTF-8" async="" src="a_data/event_002.js"></script></head>
+
+    <body>
+        <div id="notSupported">
+            <p class="old-browser">Sorry, the browser you are using is not currently supported. Disqus actively supports the following browsers:</p>
+            <ul class="old-browser">
+                <li><a href="http://www.mozilla.org/firefox/">Firefox</a></li>
+                <li><a href="https://www.google.com/chrome/">Chrome</a></li>
+                <li><a href="http://windows.microsoft.com/en-us/internet-explorer/products/ie/home">Internet Explorer 8+</a></li>
+                <li><a href="http://www.apple.com/safari/">Safari</a></li>
+            </ul>
+            
+            <p class="legacy-mode">This page is forcing your browser to use legacy mode, which is not compatible with Disqus. Please see our <a href="http://help.disqus.com/customer/portal/articles/666084-troubleshooting-disqus-2012-in-internet-explorer-8-9">troubleshooting guide</a> to get more information about this error.</p>
+        </div>
+
+        <div id="postCompatContainer">
+            <ul>
+            
+                <li>
+                    <h4>
+                        <a href="http://disqus.com/guest/3e3b3c681c088705427b3c0137f7b997/">Jens</a>
+                    </h4>
+
+                    <div>
+                        <p>Thank you! I always wondered what class based
+ views are for, so I kept on using the old view functions. Maybe no I'll
+ find a good way to bring them into use.</p>
+                    </div>
+                </li>
+            
+                <li>
+                    <h4>
+                        <a href="http://disqus.com/brutasse/">brutasse</a>
+                    </h4>
+
+                    <div>
+                        <p>Your `compute_context()` method already 
+exisits, it's called `get_context_data()`. It's also worth noting that 
+you don't need to pass `request` and `**kwargs` everywhere since they're
+ available as class attributes: you can safely use `self.request`, 
+`self.args` and `self.kwargs` (args and kwargs are captured from the URL
+ pattern) from any method of the class that's called after `dispatch()`.</p>
+                    </div>
+                </li>
+            
+                <li>
+                    <h4>
+                        <a href="http://disqus.com/guest/0623c6a8f6c4b9409ad460241c19f30e/">Dan</a>
+                    </h4>
+
+                    <div>
+                        <p>Agreed that the best way to learn is to 
+&nbsp;step through the code. &nbsp;However, there are many users (I used
+ to be one), that didn't worry about how the function-based generic 
+views worked under the hood. &nbsp;Instead, they just used them to 
+perform a task. &nbsp;I'm still working on internalizing what the 
+different classes and methods do, and it what order.</p>
+
+<p>In the above comment from burtasse, he mentions that the class 
+variables are available anytime after dispatch() is called. &nbsp;I have
+ been burned by assuming they would be available only to find those 
+arguments haven't yet been pulled in. &nbsp;Maybe a diagram of the flow 
+would help.I'm sure there are Django programmers who wish the 
+function-based views weren't being deprecated. &nbsp;</p>
+
+<p>Having said this, I am fast becoming a fan of the class-based views, and am starting to see the benefits.</p>
+                    </div>
+                </li>
+            
+                <li>
+                    <h4>
+                        <a href="http://disqus.com/twitter-30490517/">Mark Lavin</a>
+                    </h4>
+
+                    <div>
+                        <p>As for decorating the views I'm a fan of calling `as_view` in <a href="http://views.py/" rel="nofollow">views.py</a> like</p>
+
+<p><a href="http://views.py/" rel="nofollow">views.py</a>:<br>my_view = login_required(MyViewClass.as_view())</p>
+
+<p>Then your <a href="http://urls.py/" rel="nofollow">urls.py</a> will look the same as with function based views</p>
+
+<p><a href="http://urls.py/" rel="nofollow">urls.py</a>:<br>...<br>url(r'^/$', 'my_view', name='myview'),<br>...</p>
+                    </div>
+                </li>
+            
+                <li>
+                    <h4>
+                        <a href="http://disqus.com/vdboor/">Diederik van der Boor</a>
+                    </h4>
+
+                    <div>
+                        <p>Instead of having to write your own `def 
+get()` everywhere, consider using the `DetailView`.This class already 
+provides the retreival of objects, context, and rendering. For example:<br></p><pre>class ArticleDetailView(DetailView):<br>&nbsp;&nbsp;&nbsp; model = Article<br>&nbsp;&nbsp;&nbsp; template_name = "article/details.html"</pre><br><p>Et, voila!</p><br>To override the behavior, see the methods:<br>- get_context_data()<br>- get_object()<br>- get_template()<p></p>
+
+<p>This way, writing view code almost becomes declarative.</p>
+                    </div>
+                </li>
+            
+                <li>
+                    <h4>
+                        <a href="http://disqus.com/twitter-250397632/">Donald Stufft</a>
+                    </h4>
+
+                    <div>
+                        <p>Found an error:</p>
+
+<p>You can't just pass any old kwarg in via as_view. It will throw an 
+exception if the kwarg passed to as_view doesn't already exist as an 
+attribute of the class. Further more anything passed to as_view as a 
+kwarg techincally get's passed as kwargs to the CBV's __init__ method, 
+which the default __init__ method just loops over all the kwargs it is 
+passed and setattr's them onto self.</p>
+
+<p>So the final result is that passing a kwarg to as_view that isn't 
+already an attribute of the CBV is an exception, and passing a kwarg to 
+as_view that is an attribute will make that kwarg end up available at 
+getattr(self, "kwarg_name")</p>
+                    </div>
+                </li>
+            
+                <li>
+                    <h4>
+                        <a href="http://disqus.com/google-dfa0996cfc33a2b69fc1548a1481da3a/">Dan O'Donovan</a>
+                    </h4>
+
+                    <div>
+                        <p>Great!&nbsp;</p>
+
+<p>small edit;&nbsp;method_decorator&nbsp;lives in&nbsp;django.utils.decorators&nbsp;not:</p>
+
+<p>from django.views.utils.decorators import method_decorator</p>
+                    </div>
+                </li>
+            
+                <li>
+                    <h4>
+                        <a href="http://disqus.com/elpargo/">elpargo</a>
+                    </h4>
+
+                    <div>
+                        <p>One Word: TurboGears&nbsp;</p>
+                    </div>
+                </li>
+            
+                <li>
+                    <h4>
+                        <a href="http://disqus.com/twitter-1235931/">Antonio Ognio</a>
+                    </h4>
+
+                    <div>
+                        <p>Yes, please update the post as suggested by&nbsp;Dan O'Donovan. The correct import line is:</p>
+
+<p>from django.utils.decorators import method_decorator</p>
+                    </div>
+                </li>
+            
+                <li>
+                    <h4>
+                        <a href="http://disqus.com/guest/efde3151023d3b7abb0340c847fd16f4/">Ben_Mark</a>
+                    </h4>
+
+                    <div>
+                        <p>&nbsp;The algorithm looks wonderful. What are
+ the major changes in it when compared to the previous one. Hope the new
+ algorithm give better usage and features</p>
+                    </div>
+                </li>
+            
+                <li>
+                    <h4>
+                        <a href="http://disqus.com/twitter-60883663/">Bithin A</a>
+                    </h4>
+
+                    <div>
+                        <p>Thanks for the nice write up :)</p>
+                    </div>
+                </li>
+            
+                <li>
+                    <h4>
+                        <a href="http://disqus.com/guest/e069f13374a623efc01f15b22600aa6c/">Sam</a>
+                    </h4>
+
+                    <div>
+                        <p>awesome article, thank you for it i've learned alot.</p>
+                    </div>
+                </li>
+            
+                <li>
+                    <h4>
+                        <a href="http://disqus.com/acjohnson55/">acjohnson55</a>
+                    </h4>
+
+                    <div>
+                        <p>My biggest beef with class based views is 
+that the sequence of what gets called when and how the different 
+built-in classes differ feels very opaque to me, even after poring over 
+the documentation.  This is a helpful start, but are there any good 
+resources that comprehensively cover the workings of class-based views? 
+ I know I can always look through the code, but I'd much rather have 
+something to read for reference when I need a refresher.</p>
+                    </div>
+                </li>
+            
+                <li>
+                    <h4>
+                        <a href="http://disqus.com/twitter-28360450/">Bibhas</a>
+                    </h4>
+
+                    <div>
+                        <p>This makes more sense than the conventional way of writing views. I wonder why they didn't document it well.</p>
+                    </div>
+                </li>
+            
+            </ul>
+        </div>
+
+        <div id="error" style="display:none;">
+            <p>We were unable to load Disqus. If you are a moderator please see our <a href="http://docs.disqus.com/help/83/"> troubleshooting guide</a>. </p>
+        </div>
+
+        
+        
+
+
+<!--[if lte IE 8]>
+<script src="http://mediacdn.disqus.com/1373499237/build/next/ie8.js"></script>
+<![endif]-->
+<!--[if IE 9]>
+<script src="http://mediacdn.disqus.com/1373499237/build/next/ie9.js"></script>
+<![endif]-->
+
+
+        
+        <script src="a_data/load.js"></script>
+        
+    
+
+<div id="layout">
+    <header>
+        
+
+        
+            
+    <div id="discovery-top"></div>
+
+    <nav id="global-nav">
+        <div id="thread-votes" class="pull-right"><div class="thread-likes " data-role="vote-button">
+        <a href="#" data-action="upvote" title="Star this discussion">
+            <span class="notch"></span>
+            <span class="icon-star"></span>
+            <span class="counter"><span data-role="like-count">15</span></span>
+            <img src="a_data/checkx2.png" class="check-mark" alt="Voted" height="8" width="10">
+        </a>
+    </div></div>
+
+        <div id="realtime-toggle"></div>
+
+        <ul class="publisher-anchor-hover">
+            <li class="active" data-role="global-nav">
+                <a href="#" id="post-count" data-nav="conversation">
+    <h4>
+            14 comments
+        </h4>
+</a>
+            </li>
+
+            
+        </ul>
+    </nav>
+
+        
+
+        <div id="form"><form action="" class="reply  ">
+    
+<header class="fullscreen-header fullscreen compose-header">
+        <nav class="global-nav">
+            <ul>
+                <li class="exit">
+                    <button class="btn exit" title="Back" type="button"><span class="icon icon-arrow-back"></span></button>
+                </li>
+                <li class="tab-title">
+                    <hgroup>
+                        
+                            <h1>New Comment</h1>
+                        
+                        
+                            <button class="btn btn-dropdown"><h2>Sign in to post</h2></button>
+                        
+                    </hgroup>
+                </li>
+                <li class="compose">
+                    <button class="btn highlight" title="Post"><span class="icon icon-pencil"></span></button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="alert error" style="display:none" role="alert">
+        <a class="close" data-action="dismiss-alert" title="Dismiss">×</a>
+        <span><!-- error goes here --></span>
+    </div>
+
+    <div class="postbox">
+        <div class="avatar">
+            
+                <span class="user">
+                    <img data-role="user-avatar" src="a_data/noavatar92.png">
+                </span>
+            
+        </div>
+
+            <div class="textarea-wrapper" data-role="textarea">
+                <div style="overflow: auto; max-height: 350px;" aria-multiline="true" role="textbox" tabindex="0" class="textarea" contenteditable="true"><span class="placeholder">Leave a message...</span></div>
+                <div data-role="drag-drop-placeholder" class="media-drag-hover" style="display: none">
+                    <div class="drag-text">
+                        ⬇ Drag and drop your images here to upload them.
+                    </div>
+                </div>
+                
+                <div class="post-actions">
+                    <ul class="wysiwyg">
+                        
+                        
+                    </ul>
+                    
+                    
+                </div>
+            <div></div></div>
+            
+                
+<div class="logged-out auth-section">
+    <section data-tab="auth-external">
+        <div class="connect">
+            <h6>Sign in with</h6>
+            <ul class="services">
+                
+                    
+                
+                 <li class="auth-disqus">
+                    <a data-action="auth:disqus" href="#" title="Disqus">Disqus</a>
+                </li>
+                <li class="auth-facebook">
+                    <a data-action="auth:facebook" href="#" title="Facebook">Facebook</a>
+                </li>
+                <li class="auth-twitter">
+                    <a data-action="auth:twitter" href="#" title="Twitter">Twitter</a>
+                </li>
+                <li class="auth-google">
+                    <a data-action="auth:google" href="#" title="Google">Google</a>
+                </li>
+            </ul>
+        </div>
+
+        
+    <div class="guest">
+        <h6 class="guest-form-title">
+            
+                or pick a name
+            
+        </h6>
+
+        <div class="what-is-disqus help-icon">
+            <div id="rules" class="tooltip show">
+                <h3>DISQUS is a conversation network</h3>
+                <ul>
+                    <li><span>Disqus never moderates or censors. The rules on this community are its own.</span></li>
+                    <li><span>Your email is safe with us. It's only used for moderation and optional notifications.</span></li>
+                    <li><span>Don't be a jerk or do anything illegal. Everything is easier that way.</span></li>
+                    </ul>
+                <p class="clearfix"><a href="http://docs.disqus.com/kb/terms-and-policies/" class="btn btn-small" target="_blank">Read full terms and conditions</a></p>
+            </div>
+        </div>
+
+        <p class="input-wrapper">
+            <input placeholder="Name" name="author-name" maxlength="30" type="text">
+        </p>
+
+        <div class="guest-details " data-role="guest-details">
+            <p class="input-wrapper">
+                <input placeholder="Email" name="author-email" type="email">
+            </p>
+
+            
+                <p class="input-wrapper">
+                    <input placeholder="Password" name="author-password" type="password">
+                </p>
+                
+                    <div class="guest-checkbox">
+                        <label>
+                            <input name="author-guest" type="checkbox">
+                            I'd rather post as guest
+                        </label>
+                    </div>
+                
+            
+
+        </div>
+    </div>
+    <div class="proceed">
+        
+             <button type="submit" class="btn submit" aria-label="Post"><span class="icon-proceed"></span></button>
+            <button type="submit" class="btn next" aria-label="Next"><span class="icon-proceed"></span></button>
+        
+    </div>
+
+
+    </section>
+</div>
+
+            
+            
+    </div>
+</form></div>
+
+        
+            
+    <div id="main-nav" class="nav">
+        <ul>
+            
+<li data-role="post-sort" class="active dropdown">
+    <a href="#" data-nav="conversation" class="dropdown-toggle publisher-nav-color" data-toggle="dropdown">
+        
+        
+        Oldest
+        <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+        <li>
+            <a href="#" data-action="sort" data-sort="popular">Best</a>
+        </li>
+
+        <li>
+            <a href="#" data-action="sort" data-sort="desc">Newest</a>
+        </li>
+
+        <li class="selected">
+            <a href="#" data-action="sort" data-sort="asc">Oldest</a>
+        </li>
+    </ul>
+</li>
+
+
+            <li><a href="#" data-nav="community" class="publisher-nav-color" id="community-tab">Community</a></li>
+            <li><a href="#" data-nav="dashboard" style="display:none" class="publisher-nav-color">My Disqus <span class="notification-count" data-role="notification-count" style="display:none"></span></a></li>
+
+            <li class="user-menu dropdown" data-role="logout">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <span class="cog"><i aria-hidden="true" class="icon-cog"></i></span> <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+        
+        
+			
+            	<li>
+                	<a href="#" data-action="auth:disqus">Login</a>
+            	</li>
+        	
+        
+
+        
+
+        
+        <li>
+            <a href="https://www.surveymonkey.com/s/5RBPTTZ?c=http%3A%2F%2Fwww.caktusgroup.com%2Fblog%2F2011%2F12%2F29%2Fclass-based-views-django-13%2F" target="_blank">Send Feedback</a>
+        </li>
+        
+
+        
+
+        
+    </ul>
+</li>
+
+            <li id="thread-share-menu" class="share-menu dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Share">
+                    <span class="label">Share</span> <span class="icon-export"></span>
+                </a>
+                <ul class="share-menu dropdown-menu pull-right">
+                    <li class="share">Share this discussion on
+                        <ul>
+                            <li class="twitter">
+                                <a data-action="share:twitter" href="#">Twitter</a>
+                            </li>
+                            <li class="facebook">
+                                <a data-action="share:facebook" href="#">Facebook</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+
+        
+    </header>
+
+    <section id="conversation" data-role="main">
+        <div id="posts">
+            <button class="alert realtime" style="display: none" data-action="load-queued-posts" data-role="realtime-notification">
+                <!-- Show 2 new posts. -->
+            </button>
+
+            <!-- This message appears when there are no comments -->
+            <div id="no-posts" style="display:none">No one has commented yet.</div>
+
+            <ul id="post-list" class="post-list"><li class="post
+    " id="post-396414789">
+
+    <div data-role="post-content" class="post-content ">
+        <div class="indicator"></div>
+
+        
+            
+
+                
+                    <div class="avatar">
+                        <div class="user"><img src="a_data/avatar92_009.jpg" class="user" alt="Avatar"></div>
+                    </div>
+                
+
+                <div class="post-body">
+                    <header>
+                        
+                            <span class="name">Jens</span>
+                        
+
+                        
+
+                        <span class="bullet" aria-hidden="true">•</span>
+
+                        
+                            <a href="#comment-396414789" data-role="relative-time" class="time-ago" title="Thursday, December 29 2011 8:01 PM">2 years ago</a>
+                        
+
+                        <ul class="post-menu">
+
+                            <li class="collapse"><a href="#" data-action="collapse" title="Collapse">−</a></li>
+                            <li class="expand" style="display:none"><a href="#" data-action="collapse" title="Expand">+</a></li>
+
+                            <li class="dropdown" data-role="menu" role="menu">
+                                
+    
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><b class="caret"></b></a>
+        <ul class="dropdown-menu invisible">
+            
+                
+                <li><a href="#" data-action="flag">Flag as inappropriate</a></li>
+            
+        </ul>
+    
+
+                            </li>
+                        </ul>
+                    </header>
+
+                    <!-- Use message-container to manage visible height of the post message (including media) -->
+                    <div class="post-message-container" data-role="message-container">
+                        <!-- Use message-content to measure post content (including media) -->
+                        <div style="" data-role="message-content">
+                            <div class="post-message publisher-anchor-color " data-role="message">
+                                
+                                    <p>Thank you! I always wondered what
+ class based views are for, so I kept on using the old view functions. 
+Maybe no I'll find a good way to bring them into use.</p>
+                                
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
+                    <div class="message-shadow hidden" data-role="message-shadow"></div>
+                    <a href="#" class="more-button hidden" title="see more" data-action="post-expand">see more</a>
+
+                    <footer>
+                        
+    
+        <menu>
+            <li class="realtime" data-role="realtime-notification:396414789">
+                <span style="display:none;" class="realtime-replies"></span>
+                <a style="display:none;" href="#" class="btn small" data-action="load-queued-posts"></a>
+                 <!-- Realtime notification about new replies -->
+            </li>
+
+            <li class="voting" data-role="voting">
+                
+    <a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+        <span class="updatable count" data-role="likes">0</span>
+        <span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+    </a>
+    <a class="vote-down  count-0" title="Vote down">
+        <span class="updatable count" data-role="dislikes">0</span>
+        <span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+        <span class="tooltip">You must sign in to down-vote this post.</span>
+    </a>
+
+            </li>
+            <li class="bullet" aria-hidden="true">•</li>
+
+            
+                
+
+                
+                    <li class="reply"><a href="#" data-action="reply"><span class="icon icon-mobile icon-reply"></span><span class="text">Reply</span></a></li>
+                    <li class="bullet" aria-hidden="true">•</li>
+                
+            
+
+            <li class="share">
+                <a class="toggle"><span class="icon icon-mobile icon-share"></span><span class="text">Share ›</span></a>
+                <ul>
+                    <li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+                    <li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+                    <li class="link"><a href="#comment-396414789">Link</a></li>
+                </ul>
+            </li>
+        </menu>
+    
+
+                    </footer>
+                </div>
+
+             
+         
+
+        <div data-role="blacklist-form"></div>
+    </div>
+
+    <!-- Child comments are appended here -->
+    <ul data-role="children" class="children">
+
+</ul></li><li class="post
+    " id="post-396453256">
+
+    <div data-role="post-content" class="post-content ">
+        <div class="indicator"></div>
+
+        
+            
+
+                
+                    <div class="avatar hovercard">
+                        <a href="#" class="user" data-action="profile" data-user="20639997">
+                            <img src="a_data/avatar92_005.jpg" alt="Avatar">
+                        </a>
+                    </div>
+                
+
+                <div class="post-body">
+                    <header>
+                        
+                            <span class="publisher-anchor-color"><a href="#" data-action="profile" data-user="20639997">brutasse</a></span>
+                            
+                        
+
+                        
+
+                        <span class="bullet" aria-hidden="true">•</span>
+
+                        
+                            <a href="#comment-396453256" data-role="relative-time" class="time-ago" title="Thursday, December 29 2011 9:47 PM">2 years ago</a>
+                        
+
+                        <ul class="post-menu">
+
+                            <li class="collapse"><a href="#" data-action="collapse" title="Collapse">−</a></li>
+                            <li class="expand" style="display:none"><a href="#" data-action="collapse" title="Expand">+</a></li>
+
+                            <li class="dropdown" data-role="menu" role="menu">
+                                
+    
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><b class="caret"></b></a>
+        <ul class="dropdown-menu invisible">
+            
+                
+                <li><a href="#" data-action="flag">Flag as inappropriate</a></li>
+            
+        </ul>
+    
+
+                            </li>
+                        </ul>
+                    </header>
+
+                    <!-- Use message-container to manage visible height of the post message (including media) -->
+                    <div class="post-message-container" data-role="message-container">
+                        <!-- Use message-content to measure post content (including media) -->
+                        <div style="" data-role="message-content">
+                            <div class="post-message publisher-anchor-color " data-role="message">
+                                
+                                    <p>Your `compute_context()` method 
+already exisits, it's called `get_context_data()`. It's also worth 
+noting that you don't need to pass `request` and `**kwargs` everywhere 
+since they're available as class attributes: you can safely use 
+`self.request`, `self.args` and `self.kwargs` (args and kwargs are 
+captured from the URL pattern) from any method of the class that's 
+called after `dispatch()`.</p>
+                                
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
+                    <div class="message-shadow hidden" data-role="message-shadow"></div>
+                    <a href="#" class="more-button hidden" title="see more" data-action="post-expand">see more</a>
+
+                    <footer>
+                        
+    
+        <menu>
+            <li class="realtime" data-role="realtime-notification:396453256">
+                <span style="display:none;" class="realtime-replies"></span>
+                <a style="display:none;" href="#" class="btn small" data-action="load-queued-posts"></a>
+                 <!-- Realtime notification about new replies -->
+            </li>
+
+            <li class="voting" data-role="voting">
+                
+    <a href="#" class="vote-up  count-7" data-action="upvote" title="">
+        <span class="updatable count" data-role="likes">7</span>
+        <span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+    </a>
+    <a class="vote-down  count-0" title="Vote down">
+        <span class="updatable count" data-role="dislikes">0</span>
+        <span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+        <span class="tooltip">You must sign in to down-vote this post.</span>
+    </a>
+
+            </li>
+            <li class="bullet" aria-hidden="true">•</li>
+
+            
+                
+
+                
+                    <li class="reply"><a href="#" data-action="reply"><span class="icon icon-mobile icon-reply"></span><span class="text">Reply</span></a></li>
+                    <li class="bullet" aria-hidden="true">•</li>
+                
+            
+
+            <li class="share">
+                <a class="toggle"><span class="icon icon-mobile icon-share"></span><span class="text">Share ›</span></a>
+                <ul>
+                    <li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+                    <li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+                    <li class="link"><a href="#comment-396453256">Link</a></li>
+                </ul>
+            </li>
+        </menu>
+    
+
+                    </footer>
+                </div>
+
+             
+         
+
+        <div data-role="blacklist-form"></div>
+    </div>
+
+    <!-- Child comments are appended here -->
+    <ul data-role="children" class="children">
+
+</ul></li><li class="post
+    " id="post-396531072">
+
+    <div data-role="post-content" class="post-content ">
+        <div class="indicator"></div>
+
+        
+            
+
+                
+                    <div class="avatar">
+                        <div class="user"><img src="a_data/avatar92_009.jpg" class="user" alt="Avatar"></div>
+                    </div>
+                
+
+                <div class="post-body">
+                    <header>
+                        
+                            <span class="name">Dan</span>
+                        
+
+                        
+
+                        <span class="bullet" aria-hidden="true">•</span>
+
+                        
+                            <a href="#comment-396531072" data-role="relative-time" class="time-ago" title="Thursday, December 29 2011 11:13 PM">2 years ago</a>
+                        
+
+                        <ul class="post-menu">
+
+                            <li class="collapse"><a href="#" data-action="collapse" title="Collapse">−</a></li>
+                            <li class="expand" style="display:none"><a href="#" data-action="collapse" title="Expand">+</a></li>
+
+                            <li class="dropdown" data-role="menu" role="menu">
+                                
+    
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><b class="caret"></b></a>
+        <ul class="dropdown-menu invisible">
+            
+                
+                <li><a href="#" data-action="flag">Flag as inappropriate</a></li>
+            
+        </ul>
+    
+
+                            </li>
+                        </ul>
+                    </header>
+
+                    <!-- Use message-container to manage visible height of the post message (including media) -->
+                    <div class="post-message-container" data-role="message-container">
+                        <!-- Use message-content to measure post content (including media) -->
+                        <div data-role="message-content">
+                            <div class="post-message publisher-anchor-color " data-role="message">
+                                
+                                    <p>Agreed that the best way to learn
+ is to &nbsp;step through the code. &nbsp;However, there are many users 
+(I used to be one), that didn't worry about how the function-based 
+generic views worked under the hood. &nbsp;Instead, they just used them 
+to perform a task. &nbsp;I'm still working on internalizing what the 
+different classes and methods do, and it what order.</p>
+
+<p>In the above comment from burtasse, he mentions that the class 
+variables are available anytime after dispatch() is called. &nbsp;I have
+ been burned by assuming they would be available only to find those 
+arguments haven't yet been pulled in. &nbsp;Maybe a diagram of the flow 
+would help.I'm sure there are Django programmers who wish the 
+function-based views weren't being deprecated. &nbsp;</p>
+
+<p>Having said this, I am fast becoming a fan of the class-based views, and am starting to see the benefits.</p>
+                                
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
+                    <div class="message-shadow hidden" data-role="message-shadow"></div>
+                    <a href="#" class="more-button hidden" title="see more" data-action="post-expand">see more</a>
+
+                    <footer>
+                        
+    
+        <menu>
+            <li class="realtime" data-role="realtime-notification:396531072">
+                <span style="display:none;" class="realtime-replies"></span>
+                <a style="display:none;" href="#" class="btn small" data-action="load-queued-posts"></a>
+                 <!-- Realtime notification about new replies -->
+            </li>
+
+            <li class="voting" data-role="voting">
+                
+    <a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+        <span class="updatable count" data-role="likes">0</span>
+        <span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+    </a>
+    <a class="vote-down  count-0" title="Vote down">
+        <span class="updatable count" data-role="dislikes">0</span>
+        <span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+        <span class="tooltip">You must sign in to down-vote this post.</span>
+    </a>
+
+            </li>
+            <li class="bullet" aria-hidden="true">•</li>
+
+            
+                
+
+                
+                    <li class="reply"><a href="#" data-action="reply"><span class="icon icon-mobile icon-reply"></span><span class="text">Reply</span></a></li>
+                    <li class="bullet" aria-hidden="true">•</li>
+                
+            
+
+            <li class="share">
+                <a class="toggle"><span class="icon icon-mobile icon-share"></span><span class="text">Share ›</span></a>
+                <ul>
+                    <li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+                    <li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+                    <li class="link"><a href="#comment-396531072">Link</a></li>
+                </ul>
+            </li>
+        </menu>
+    
+
+                    </footer>
+                </div>
+
+             
+         
+
+        <div data-role="blacklist-form"></div>
+    </div>
+
+    <!-- Child comments are appended here -->
+    <ul data-role="children" class="children">
+
+</ul></li><li class="post
+    " id="post-396545211">
+
+    <div data-role="post-content" class="post-content ">
+        <div class="indicator"></div>
+
+        
+            
+
+                
+                    <div class="avatar hovercard">
+                        <a href="#" class="user" data-action="profile" data-user="3086210">
+                            <img src="a_data/avatar92_007.jpg" alt="Avatar">
+                        </a>
+                    </div>
+                
+
+                <div class="post-body">
+                    <header>
+                        
+                            <span class="publisher-anchor-color"><a href="#" data-action="profile" data-user="3086210">Mark Lavin</a></span>
+                            
+                        
+
+                        
+
+                        <span class="bullet" aria-hidden="true">•</span>
+
+                        
+                            <a href="#comment-396545211" data-role="relative-time" class="time-ago" title="Thursday, December 29 2011 11:26 PM">2 years ago</a>
+                        
+
+                        <ul class="post-menu">
+
+                            <li class="collapse"><a href="#" data-action="collapse" title="Collapse">−</a></li>
+                            <li class="expand" style="display:none"><a href="#" data-action="collapse" title="Expand">+</a></li>
+
+                            <li class="dropdown" data-role="menu" role="menu">
+                                
+    
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><b class="caret"></b></a>
+        <ul class="dropdown-menu invisible">
+            
+                
+                <li><a href="#" data-action="flag">Flag as inappropriate</a></li>
+            
+        </ul>
+    
+
+                            </li>
+                        </ul>
+                    </header>
+
+                    <!-- Use message-container to manage visible height of the post message (including media) -->
+                    <div class="post-message-container" data-role="message-container">
+                        <!-- Use message-content to measure post content (including media) -->
+                        <div data-role="message-content">
+                            <div class="post-message publisher-anchor-color " data-role="message">
+                                
+                                    <p>As for decorating the views I'm a fan of calling `as_view` in <a href="http://views.py/" rel="nofollow">views.py</a> like</p>
+
+<p><a href="http://views.py/" rel="nofollow">views.py</a>:<br>my_view = login_required(MyViewClass.as_view())</p>
+
+<p>Then your <a href="http://urls.py/" rel="nofollow">urls.py</a> will look the same as with function based views</p>
+
+<p><a href="http://urls.py/" rel="nofollow">urls.py</a>:<br>...<br>url(r'^/$', 'my_view', name='myview'),<br>...</p>
+                                
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
+                    <div class="message-shadow hidden" data-role="message-shadow"></div>
+                    <a href="#" class="more-button hidden" title="see more" data-action="post-expand">see more</a>
+
+                    <footer>
+                        
+    
+        <menu>
+            <li class="realtime" data-role="realtime-notification:396545211">
+                <span style="display:none;" class="realtime-replies"></span>
+                <a style="display:none;" href="#" class="btn small" data-action="load-queued-posts"></a>
+                 <!-- Realtime notification about new replies -->
+            </li>
+
+            <li class="voting" data-role="voting">
+                
+    <a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+        <span class="updatable count" data-role="likes">0</span>
+        <span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+    </a>
+    <a class="vote-down  count-0" title="Vote down">
+        <span class="updatable count" data-role="dislikes">0</span>
+        <span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+        <span class="tooltip">You must sign in to down-vote this post.</span>
+    </a>
+
+            </li>
+            <li class="bullet" aria-hidden="true">•</li>
+
+            
+                
+
+                
+                    <li class="reply"><a href="#" data-action="reply"><span class="icon icon-mobile icon-reply"></span><span class="text">Reply</span></a></li>
+                    <li class="bullet" aria-hidden="true">•</li>
+                
+            
+
+            <li class="share">
+                <a class="toggle"><span class="icon icon-mobile icon-share"></span><span class="text">Share ›</span></a>
+                <ul>
+                    <li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+                    <li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+                    <li class="link"><a href="#comment-396545211">Link</a></li>
+                </ul>
+            </li>
+        </menu>
+    
+
+                    </footer>
+                </div>
+
+             
+         
+
+        <div data-role="blacklist-form"></div>
+    </div>
+
+    <!-- Child comments are appended here -->
+    <ul data-role="children" class="children">
+
+</ul></li><li class="post
+    " id="post-396667407">
+
+    <div data-role="post-content" class="post-content ">
+        <div class="indicator"></div>
+
+        
+            
+
+                
+                    <div class="avatar hovercard">
+                        <a href="#" class="user" data-action="profile" data-user="17908753">
+                            <img src="a_data/avatar92.jpg" alt="Avatar">
+                        </a>
+                    </div>
+                
+
+                <div class="post-body">
+                    <header>
+                        
+                            <span class="publisher-anchor-color"><a href="#" data-action="profile" data-user="17908753">Diederik van der Boor</a></span>
+                            
+                        
+
+                        
+
+                        <span class="bullet" aria-hidden="true">•</span>
+
+                        
+                            <a href="#comment-396667407" data-role="relative-time" class="time-ago" title="Friday, December 30 2011 1:27 AM">2 years ago</a>
+                        
+
+                        <ul class="post-menu">
+
+                            <li class="collapse"><a href="#" data-action="collapse" title="Collapse">−</a></li>
+                            <li class="expand" style="display:none"><a href="#" data-action="collapse" title="Expand">+</a></li>
+
+                            <li class="dropdown" data-role="menu" role="menu">
+                                
+    
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><b class="caret"></b></a>
+        <ul class="dropdown-menu invisible">
+            
+                
+                <li><a href="#" data-action="flag">Flag as inappropriate</a></li>
+            
+        </ul>
+    
+
+                            </li>
+                        </ul>
+                    </header>
+
+                    <!-- Use message-container to manage visible height of the post message (including media) -->
+                    <div class="post-message-container" data-role="message-container">
+                        <!-- Use message-content to measure post content (including media) -->
+                        <div data-role="message-content">
+                            <div class="post-message publisher-anchor-color " data-role="message">
+                                
+                                    <p>Instead of having to write your 
+own `def get()` everywhere, consider using the `DetailView`.This class 
+already provides the retreival of objects, context, and rendering. For 
+example:<br></p><pre>class ArticleDetailView(DetailView):<br>&nbsp;&nbsp;&nbsp; model = Article<br>&nbsp;&nbsp;&nbsp; template_name = "article/details.html"</pre><br><p>Et, voila!</p><br>To override the behavior, see the methods:<br>- get_context_data()<br>- get_object()<br>- get_template()<p></p>
+
+<p>This way, writing view code almost becomes declarative.</p>
+                                
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
+                    <div class="message-shadow hidden" data-role="message-shadow"></div>
+                    <a href="#" class="more-button hidden" title="see more" data-action="post-expand">see more</a>
+
+                    <footer>
+                        
+    
+        <menu>
+            <li class="realtime" data-role="realtime-notification:396667407">
+                <span style="display:none;" class="realtime-replies"></span>
+                <a style="display:none;" href="#" class="btn small" data-action="load-queued-posts"></a>
+                 <!-- Realtime notification about new replies -->
+            </li>
+
+            <li class="voting" data-role="voting">
+                
+    <a href="#" class="vote-up  count-4" data-action="upvote" title="">
+        <span class="updatable count" data-role="likes">4</span>
+        <span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+    </a>
+    <a class="vote-down  count-0" title="Vote down">
+        <span class="updatable count" data-role="dislikes">0</span>
+        <span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+        <span class="tooltip">You must sign in to down-vote this post.</span>
+    </a>
+
+            </li>
+            <li class="bullet" aria-hidden="true">•</li>
+
+            
+                
+
+                
+                    <li class="reply"><a href="#" data-action="reply"><span class="icon icon-mobile icon-reply"></span><span class="text">Reply</span></a></li>
+                    <li class="bullet" aria-hidden="true">•</li>
+                
+            
+
+            <li class="share">
+                <a class="toggle"><span class="icon icon-mobile icon-share"></span><span class="text">Share ›</span></a>
+                <ul>
+                    <li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+                    <li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+                    <li class="link"><a href="#comment-396667407">Link</a></li>
+                </ul>
+            </li>
+        </menu>
+    
+
+                    </footer>
+                </div>
+
+             
+         
+
+        <div data-role="blacklist-form"></div>
+    </div>
+
+    <!-- Child comments are appended here -->
+    <ul data-role="children" class="children">
+
+</ul></li><li class="post
+    " id="post-396798194">
+
+    <div data-role="post-content" class="post-content ">
+        <div class="indicator"></div>
+
+        
+            
+
+                
+                    <div class="avatar hovercard">
+                        <a href="#" class="user" data-action="profile" data-user="19480741">
+                            <img src="a_data/avatar92_003.jpg" alt="Avatar">
+                        </a>
+                    </div>
+                
+
+                <div class="post-body">
+                    <header>
+                        
+                            <span class="publisher-anchor-color"><a href="#" data-action="profile" data-user="19480741">Donald Stufft</a></span>
+                            
+                        
+
+                        
+
+                        <span class="bullet" aria-hidden="true">•</span>
+
+                        
+                            <a href="#comment-396798194" data-role="relative-time" class="time-ago" title="Friday, December 30 2011 4:45 AM">2 years ago</a>
+                        
+
+                        <ul class="post-menu">
+
+                            <li class="collapse"><a href="#" data-action="collapse" title="Collapse">−</a></li>
+                            <li class="expand" style="display:none"><a href="#" data-action="collapse" title="Expand">+</a></li>
+
+                            <li class="dropdown" data-role="menu" role="menu">
+                                
+    
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><b class="caret"></b></a>
+        <ul class="dropdown-menu invisible">
+            
+                
+                <li><a href="#" data-action="flag">Flag as inappropriate</a></li>
+            
+        </ul>
+    
+
+                            </li>
+                        </ul>
+                    </header>
+
+                    <!-- Use message-container to manage visible height of the post message (including media) -->
+                    <div class="post-message-container" data-role="message-container">
+                        <!-- Use message-content to measure post content (including media) -->
+                        <div data-role="message-content">
+                            <div class="post-message publisher-anchor-color " data-role="message">
+                                
+                                    <p>Found an error:</p>
+
+<p>You can't just pass any old kwarg in via as_view. It will throw an 
+exception if the kwarg passed to as_view doesn't already exist as an 
+attribute of the class. Further more anything passed to as_view as a 
+kwarg techincally get's passed as kwargs to the CBV's __init__ method, 
+which the default __init__ method just loops over all the kwargs it is 
+passed and setattr's them onto self.</p>
+
+<p>So the final result is that passing a kwarg to as_view that isn't 
+already an attribute of the CBV is an exception, and passing a kwarg to 
+as_view that is an attribute will make that kwarg end up available at 
+getattr(self, "kwarg_name")</p>
+                                
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
+                    <div class="message-shadow hidden" data-role="message-shadow"></div>
+                    <a href="#" class="more-button hidden" title="see more" data-action="post-expand">see more</a>
+
+                    <footer>
+                        
+    
+        <menu>
+            <li class="realtime" data-role="realtime-notification:396798194">
+                <span style="display:none;" class="realtime-replies"></span>
+                <a style="display:none;" href="#" class="btn small" data-action="load-queued-posts"></a>
+                 <!-- Realtime notification about new replies -->
+            </li>
+
+            <li class="voting" data-role="voting">
+                
+    <a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+        <span class="updatable count" data-role="likes">0</span>
+        <span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+    </a>
+    <a class="vote-down  count-0" title="Vote down">
+        <span class="updatable count" data-role="dislikes">0</span>
+        <span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+        <span class="tooltip">You must sign in to down-vote this post.</span>
+    </a>
+
+            </li>
+            <li class="bullet" aria-hidden="true">•</li>
+
+            
+                
+
+                
+                    <li class="reply"><a href="#" data-action="reply"><span class="icon icon-mobile icon-reply"></span><span class="text">Reply</span></a></li>
+                    <li class="bullet" aria-hidden="true">•</li>
+                
+            
+
+            <li class="share">
+                <a class="toggle"><span class="icon icon-mobile icon-share"></span><span class="text">Share ›</span></a>
+                <ul>
+                    <li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+                    <li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+                    <li class="link"><a href="#comment-396798194">Link</a></li>
+                </ul>
+            </li>
+        </menu>
+    
+
+                    </footer>
+                </div>
+
+             
+         
+
+        <div data-role="blacklist-form"></div>
+    </div>
+
+    <!-- Child comments are appended here -->
+    <ul data-role="children" class="children">
+
+</ul></li><li class="post
+    " id="post-410010830">
+
+    <div data-role="post-content" class="post-content ">
+        <div class="indicator"></div>
+
+        
+            
+
+                
+                    <div class="avatar hovercard">
+                        <a href="#" class="user" data-action="profile" data-user="21156715">
+                            <img src="a_data/avatar92_002.jpg" alt="Avatar">
+                        </a>
+                    </div>
+                
+
+                <div class="post-body">
+                    <header>
+                        
+                            <span class="publisher-anchor-color"><a href="#" data-action="profile" data-user="21156715">Dan O'Donovan</a></span>
+                            
+                        
+
+                        
+
+                        <span class="bullet" aria-hidden="true">•</span>
+
+                        
+                            <a href="#comment-410010830" data-role="relative-time" class="time-ago" title="Saturday, January 14 2012 3:02 AM">a year ago</a>
+                        
+
+                        <ul class="post-menu">
+
+                            <li class="collapse"><a href="#" data-action="collapse" title="Collapse">−</a></li>
+                            <li class="expand" style="display:none"><a href="#" data-action="collapse" title="Expand">+</a></li>
+
+                            <li class="dropdown" data-role="menu" role="menu">
+                                
+    
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><b class="caret"></b></a>
+        <ul class="dropdown-menu invisible">
+            
+                
+                <li><a href="#" data-action="flag">Flag as inappropriate</a></li>
+            
+        </ul>
+    
+
+                            </li>
+                        </ul>
+                    </header>
+
+                    <!-- Use message-container to manage visible height of the post message (including media) -->
+                    <div class="post-message-container" data-role="message-container">
+                        <!-- Use message-content to measure post content (including media) -->
+                        <div data-role="message-content">
+                            <div class="post-message publisher-anchor-color " data-role="message">
+                                
+                                    <p>Great!&nbsp;</p>
+
+<p>small edit;&nbsp;method_decorator&nbsp;lives in&nbsp;django.utils.decorators&nbsp;not:</p>
+
+<p>from django.views.utils.decorators import method_decorator</p>
+                                
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
+                    <div class="message-shadow hidden" data-role="message-shadow"></div>
+                    <a href="#" class="more-button hidden" title="see more" data-action="post-expand">see more</a>
+
+                    <footer>
+                        
+    
+        <menu>
+            <li class="realtime" data-role="realtime-notification:410010830">
+                <span style="display:none;" class="realtime-replies"></span>
+                <a style="display:none;" href="#" class="btn small" data-action="load-queued-posts"></a>
+                 <!-- Realtime notification about new replies -->
+            </li>
+
+            <li class="voting" data-role="voting">
+                
+    <a href="#" class="vote-up  count-1" data-action="upvote" title="">
+        <span class="updatable count" data-role="likes">1</span>
+        <span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+    </a>
+    <a class="vote-down  count-0" title="Vote down">
+        <span class="updatable count" data-role="dislikes">0</span>
+        <span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+        <span class="tooltip">You must sign in to down-vote this post.</span>
+    </a>
+
+            </li>
+            <li class="bullet" aria-hidden="true">•</li>
+
+            
+                
+
+                
+                    <li class="reply"><a href="#" data-action="reply"><span class="icon icon-mobile icon-reply"></span><span class="text">Reply</span></a></li>
+                    <li class="bullet" aria-hidden="true">•</li>
+                
+            
+
+            <li class="share">
+                <a class="toggle"><span class="icon icon-mobile icon-share"></span><span class="text">Share ›</span></a>
+                <ul>
+                    <li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+                    <li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+                    <li class="link"><a href="#comment-410010830">Link</a></li>
+                </ul>
+            </li>
+        </menu>
+    
+
+                    </footer>
+                </div>
+
+             
+         
+
+        <div data-role="blacklist-form"></div>
+    </div>
+
+    <!-- Child comments are appended here -->
+    <ul data-role="children" class="children">
+
+</ul></li><li class="post
+    " id="post-473725107">
+
+    <div data-role="post-content" class="post-content ">
+        <div class="indicator"></div>
+
+        
+            
+
+                
+                    <div class="avatar hovercard">
+                        <a href="#" class="user" data-action="profile" data-user="227162">
+                            <img src="a_data/avatar92_009.jpg" alt="Avatar">
+                        </a>
+                    </div>
+                
+
+                <div class="post-body">
+                    <header>
+                        
+                            <span class="publisher-anchor-color"><a href="#" data-action="profile" data-user="227162">elpargo</a></span>
+                            
+                        
+
+                        
+
+                        <span class="bullet" aria-hidden="true">•</span>
+
+                        
+                            <a href="#comment-473725107" data-role="relative-time" class="time-ago" title="Friday, March 23 2012 12:26 AM">a year ago</a>
+                        
+
+                        <ul class="post-menu">
+
+                            <li class="collapse"><a href="#" data-action="collapse" title="Collapse">−</a></li>
+                            <li class="expand" style="display:none"><a href="#" data-action="collapse" title="Expand">+</a></li>
+
+                            <li class="dropdown" data-role="menu" role="menu">
+                                
+    
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><b class="caret"></b></a>
+        <ul class="dropdown-menu invisible">
+            
+                
+                <li><a href="#" data-action="flag">Flag as inappropriate</a></li>
+            
+        </ul>
+    
+
+                            </li>
+                        </ul>
+                    </header>
+
+                    <!-- Use message-container to manage visible height of the post message (including media) -->
+                    <div class="post-message-container" data-role="message-container">
+                        <!-- Use message-content to measure post content (including media) -->
+                        <div data-role="message-content">
+                            <div class="post-message publisher-anchor-color " data-role="message">
+                                
+                                    <p>One Word: TurboGears&nbsp;</p>
+                                
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
+                    <div class="message-shadow hidden" data-role="message-shadow"></div>
+                    <a href="#" class="more-button hidden" title="see more" data-action="post-expand">see more</a>
+
+                    <footer>
+                        
+    
+        <menu>
+            <li class="realtime" data-role="realtime-notification:473725107">
+                <span style="display:none;" class="realtime-replies"></span>
+                <a style="display:none;" href="#" class="btn small" data-action="load-queued-posts"></a>
+                 <!-- Realtime notification about new replies -->
+            </li>
+
+            <li class="voting" data-role="voting">
+                
+    <a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+        <span class="updatable count" data-role="likes">0</span>
+        <span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+    </a>
+    <a class="vote-down  count-2" title="Vote down">
+        <span class="updatable count" data-role="dislikes">2</span>
+        <span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+        <span class="tooltip">You must sign in to down-vote this post.</span>
+    </a>
+
+            </li>
+            <li class="bullet" aria-hidden="true">•</li>
+
+            
+                
+
+                
+                    <li class="reply"><a href="#" data-action="reply"><span class="icon icon-mobile icon-reply"></span><span class="text">Reply</span></a></li>
+                    <li class="bullet" aria-hidden="true">•</li>
+                
+            
+
+            <li class="share">
+                <a class="toggle"><span class="icon icon-mobile icon-share"></span><span class="text">Share ›</span></a>
+                <ul>
+                    <li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+                    <li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+                    <li class="link"><a href="#comment-473725107">Link</a></li>
+                </ul>
+            </li>
+        </menu>
+    
+
+                    </footer>
+                </div>
+
+             
+         
+
+        <div data-role="blacklist-form"></div>
+    </div>
+
+    <!-- Child comments are appended here -->
+    <ul data-role="children" class="children">
+
+</ul></li><li class="post
+    " id="post-485098626">
+
+    <div data-role="post-content" class="post-content ">
+        <div class="indicator"></div>
+
+        
+            
+
+                
+                    <div class="avatar hovercard">
+                        <a href="#" class="user" data-action="profile" data-user="587400">
+                            <img src="a_data/avatar92_008.jpg" alt="Avatar">
+                        </a>
+                    </div>
+                
+
+                <div class="post-body">
+                    <header>
+                        
+                            <span class="publisher-anchor-color"><a href="#" data-action="profile" data-user="587400">Antonio Ognio</a></span>
+                            
+                        
+
+                        
+
+                        <span class="bullet" aria-hidden="true">•</span>
+
+                        
+                            <a href="#comment-485098626" data-role="relative-time" class="time-ago" title="Wednesday, April 4 2012 8:19 AM">a year ago</a>
+                        
+
+                        <ul class="post-menu">
+
+                            <li class="collapse"><a href="#" data-action="collapse" title="Collapse">−</a></li>
+                            <li class="expand" style="display:none"><a href="#" data-action="collapse" title="Expand">+</a></li>
+
+                            <li class="dropdown" data-role="menu" role="menu">
+                                
+    
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><b class="caret"></b></a>
+        <ul class="dropdown-menu invisible">
+            
+                
+                <li><a href="#" data-action="flag">Flag as inappropriate</a></li>
+            
+        </ul>
+    
+
+                            </li>
+                        </ul>
+                    </header>
+
+                    <!-- Use message-container to manage visible height of the post message (including media) -->
+                    <div class="post-message-container" data-role="message-container">
+                        <!-- Use message-content to measure post content (including media) -->
+                        <div data-role="message-content">
+                            <div class="post-message publisher-anchor-color " data-role="message">
+                                
+                                    <p>Yes, please update the post as suggested by&nbsp;Dan O'Donovan. The correct import line is:</p>
+
+<p>from django.utils.decorators import method_decorator</p>
+                                
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
+                    <div class="message-shadow hidden" data-role="message-shadow"></div>
+                    <a href="#" class="more-button hidden" title="see more" data-action="post-expand">see more</a>
+
+                    <footer>
+                        
+    
+        <menu>
+            <li class="realtime" data-role="realtime-notification:485098626">
+                <span style="display:none;" class="realtime-replies"></span>
+                <a style="display:none;" href="#" class="btn small" data-action="load-queued-posts"></a>
+                 <!-- Realtime notification about new replies -->
+            </li>
+
+            <li class="voting" data-role="voting">
+                
+    <a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+        <span class="updatable count" data-role="likes">0</span>
+        <span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+    </a>
+    <a class="vote-down  count-0" title="Vote down">
+        <span class="updatable count" data-role="dislikes">0</span>
+        <span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+        <span class="tooltip">You must sign in to down-vote this post.</span>
+    </a>
+
+            </li>
+            <li class="bullet" aria-hidden="true">•</li>
+
+            
+                
+
+                
+                    <li class="reply"><a href="#" data-action="reply"><span class="icon icon-mobile icon-reply"></span><span class="text">Reply</span></a></li>
+                    <li class="bullet" aria-hidden="true">•</li>
+                
+            
+
+            <li class="share">
+                <a class="toggle"><span class="icon icon-mobile icon-share"></span><span class="text">Share ›</span></a>
+                <ul>
+                    <li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+                    <li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+                    <li class="link"><a href="#comment-485098626">Link</a></li>
+                </ul>
+            </li>
+        </menu>
+    
+
+                    </footer>
+                </div>
+
+             
+         
+
+        <div data-role="blacklist-form"></div>
+    </div>
+
+    <!-- Child comments are appended here -->
+    <ul data-role="children" class="children">
+
+</ul></li><li class="post
+    " id="post-577817215">
+
+    <div data-role="post-content" class="post-content ">
+        <div class="indicator"></div>
+
+        
+            
+
+                
+                    <div class="avatar">
+                        <div class="user"><img src="a_data/avatar92_009.jpg" class="user" alt="Avatar"></div>
+                    </div>
+                
+
+                <div class="post-body">
+                    <header>
+                        
+                            <span class="name">Ben_Mark</span>
+                        
+
+                        
+
+                        <span class="bullet" aria-hidden="true">•</span>
+
+                        
+                            <a href="#comment-577817215" data-role="relative-time" class="time-ago" title="Friday, July 6 2012 1:26 PM">a year ago</a>
+                        
+
+                        <ul class="post-menu">
+
+                            <li class="collapse"><a href="#" data-action="collapse" title="Collapse">−</a></li>
+                            <li class="expand" style="display:none"><a href="#" data-action="collapse" title="Expand">+</a></li>
+
+                            <li class="dropdown" data-role="menu" role="menu">
+                                
+    
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><b class="caret"></b></a>
+        <ul class="dropdown-menu invisible">
+            
+                
+                <li><a href="#" data-action="flag">Flag as inappropriate</a></li>
+            
+        </ul>
+    
+
+                            </li>
+                        </ul>
+                    </header>
+
+                    <!-- Use message-container to manage visible height of the post message (including media) -->
+                    <div class="post-message-container" data-role="message-container">
+                        <!-- Use message-content to measure post content (including media) -->
+                        <div data-role="message-content">
+                            <div class="post-message publisher-anchor-color " data-role="message">
+                                
+                                    <p>&nbsp;The algorithm looks 
+wonderful. What are the major changes in it when compared to the 
+previous one. Hope the new algorithm give better usage and features</p>
+                                
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
+                    <div class="message-shadow hidden" data-role="message-shadow"></div>
+                    <a href="#" class="more-button hidden" title="see more" data-action="post-expand">see more</a>
+
+                    <footer>
+                        
+    
+        <menu>
+            <li class="realtime" data-role="realtime-notification:577817215">
+                <span style="display:none;" class="realtime-replies"></span>
+                <a style="display:none;" href="#" class="btn small" data-action="load-queued-posts"></a>
+                 <!-- Realtime notification about new replies -->
+            </li>
+
+            <li class="voting" data-role="voting">
+                
+    <a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+        <span class="updatable count" data-role="likes">0</span>
+        <span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+    </a>
+    <a class="vote-down  count-0" title="Vote down">
+        <span class="updatable count" data-role="dislikes">0</span>
+        <span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+        <span class="tooltip">You must sign in to down-vote this post.</span>
+    </a>
+
+            </li>
+            <li class="bullet" aria-hidden="true">•</li>
+
+            
+                
+
+                
+                    <li class="reply"><a href="#" data-action="reply"><span class="icon icon-mobile icon-reply"></span><span class="text">Reply</span></a></li>
+                    <li class="bullet" aria-hidden="true">•</li>
+                
+            
+
+            <li class="share">
+                <a class="toggle"><span class="icon icon-mobile icon-share"></span><span class="text">Share ›</span></a>
+                <ul>
+                    <li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+                    <li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+                    <li class="link"><a href="#comment-577817215">Link</a></li>
+                </ul>
+            </li>
+        </menu>
+    
+
+                    </footer>
+                </div>
+
+             
+         
+
+        <div data-role="blacklist-form"></div>
+    </div>
+
+    <!-- Child comments are appended here -->
+    <ul data-role="children" class="children">
+
+</ul></li><li class="post
+    " id="post-578290243">
+
+    <div data-role="post-content" class="post-content ">
+        <div class="indicator"></div>
+
+        
+            
+
+                
+                    <div class="avatar hovercard">
+                        <a href="#" class="user" data-action="profile" data-user="703757">
+                            <img src="a_data/avatar92_004.jpg" alt="Avatar">
+                        </a>
+                    </div>
+                
+
+                <div class="post-body">
+                    <header>
+                        
+                            <span class="publisher-anchor-color"><a href="#" data-action="profile" data-user="703757">Bithin A</a></span>
+                            
+                        
+
+                        
+
+                        <span class="bullet" aria-hidden="true">•</span>
+
+                        
+                            <a href="#comment-578290243" data-role="relative-time" class="time-ago" title="Friday, July 6 2012 6:28 PM">a year ago</a>
+                        
+
+                        <ul class="post-menu">
+
+                            <li class="collapse"><a href="#" data-action="collapse" title="Collapse">−</a></li>
+                            <li class="expand" style="display:none"><a href="#" data-action="collapse" title="Expand">+</a></li>
+
+                            <li class="dropdown" data-role="menu" role="menu">
+                                
+    
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><b class="caret"></b></a>
+        <ul class="dropdown-menu invisible">
+            
+                
+                <li><a href="#" data-action="flag">Flag as inappropriate</a></li>
+            
+        </ul>
+    
+
+                            </li>
+                        </ul>
+                    </header>
+
+                    <!-- Use message-container to manage visible height of the post message (including media) -->
+                    <div class="post-message-container" data-role="message-container">
+                        <!-- Use message-content to measure post content (including media) -->
+                        <div data-role="message-content">
+                            <div class="post-message publisher-anchor-color " data-role="message">
+                                
+                                    <p>Thanks for the nice write up :)</p>
+                                
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
+                    <div class="message-shadow hidden" data-role="message-shadow"></div>
+                    <a href="#" class="more-button hidden" title="see more" data-action="post-expand">see more</a>
+
+                    <footer>
+                        
+    
+        <menu>
+            <li class="realtime" data-role="realtime-notification:578290243">
+                <span style="display:none;" class="realtime-replies"></span>
+                <a style="display:none;" href="#" class="btn small" data-action="load-queued-posts"></a>
+                 <!-- Realtime notification about new replies -->
+            </li>
+
+            <li class="voting" data-role="voting">
+                
+    <a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+        <span class="updatable count" data-role="likes">0</span>
+        <span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+    </a>
+    <a class="vote-down  count-0" title="Vote down">
+        <span class="updatable count" data-role="dislikes">0</span>
+        <span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+        <span class="tooltip">You must sign in to down-vote this post.</span>
+    </a>
+
+            </li>
+            <li class="bullet" aria-hidden="true">•</li>
+
+            
+                
+
+                
+                    <li class="reply"><a href="#" data-action="reply"><span class="icon icon-mobile icon-reply"></span><span class="text">Reply</span></a></li>
+                    <li class="bullet" aria-hidden="true">•</li>
+                
+            
+
+            <li class="share">
+                <a class="toggle"><span class="icon icon-mobile icon-share"></span><span class="text">Share ›</span></a>
+                <ul>
+                    <li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+                    <li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+                    <li class="link"><a href="#comment-578290243">Link</a></li>
+                </ul>
+            </li>
+        </menu>
+    
+
+                    </footer>
+                </div>
+
+             
+         
+
+        <div data-role="blacklist-form"></div>
+    </div>
+
+    <!-- Child comments are appended here -->
+    <ul data-role="children" class="children">
+
+</ul></li><li class="post
+    " id="post-615848778">
+
+    <div data-role="post-content" class="post-content ">
+        <div class="indicator"></div>
+
+        
+            
+
+                
+                    <div class="avatar">
+                        <div class="user"><img src="a_data/avatar92_009.jpg" class="user" alt="Avatar"></div>
+                    </div>
+                
+
+                <div class="post-body">
+                    <header>
+                        
+                            <span class="name">Sam</span>
+                        
+
+                        
+
+                        <span class="bullet" aria-hidden="true">•</span>
+
+                        
+                            <a href="#comment-615848778" data-role="relative-time" class="time-ago" title="Saturday, August 11 2012 3:10 AM">11 months ago</a>
+                        
+
+                        <ul class="post-menu">
+
+                            <li class="collapse"><a href="#" data-action="collapse" title="Collapse">−</a></li>
+                            <li class="expand" style="display:none"><a href="#" data-action="collapse" title="Expand">+</a></li>
+
+                            <li class="dropdown" data-role="menu" role="menu">
+                                
+    
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><b class="caret"></b></a>
+        <ul class="dropdown-menu invisible">
+            
+                
+                <li><a href="#" data-action="flag">Flag as inappropriate</a></li>
+            
+        </ul>
+    
+
+                            </li>
+                        </ul>
+                    </header>
+
+                    <!-- Use message-container to manage visible height of the post message (including media) -->
+                    <div class="post-message-container" data-role="message-container">
+                        <!-- Use message-content to measure post content (including media) -->
+                        <div data-role="message-content">
+                            <div class="post-message publisher-anchor-color " data-role="message">
+                                
+                                    <p>awesome article, thank you for it i've learned alot.</p>
+                                
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
+                    <div class="message-shadow hidden" data-role="message-shadow"></div>
+                    <a href="#" class="more-button hidden" title="see more" data-action="post-expand">see more</a>
+
+                    <footer>
+                        
+    
+        <menu>
+            <li class="realtime" data-role="realtime-notification:615848778">
+                <span style="display:none;" class="realtime-replies"></span>
+                <a style="display:none;" href="#" class="btn small" data-action="load-queued-posts"></a>
+                 <!-- Realtime notification about new replies -->
+            </li>
+
+            <li class="voting" data-role="voting">
+                
+    <a href="#" class="vote-up  count-1" data-action="upvote" title="">
+        <span class="updatable count" data-role="likes">1</span>
+        <span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+    </a>
+    <a class="vote-down  count-0" title="Vote down">
+        <span class="updatable count" data-role="dislikes">0</span>
+        <span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+        <span class="tooltip">You must sign in to down-vote this post.</span>
+    </a>
+
+            </li>
+            <li class="bullet" aria-hidden="true">•</li>
+
+            
+                
+
+                
+                    <li class="reply"><a href="#" data-action="reply"><span class="icon icon-mobile icon-reply"></span><span class="text">Reply</span></a></li>
+                    <li class="bullet" aria-hidden="true">•</li>
+                
+            
+
+            <li class="share">
+                <a class="toggle"><span class="icon icon-mobile icon-share"></span><span class="text">Share ›</span></a>
+                <ul>
+                    <li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+                    <li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+                    <li class="link"><a href="#comment-615848778">Link</a></li>
+                </ul>
+            </li>
+        </menu>
+    
+
+                    </footer>
+                </div>
+
+             
+         
+
+        <div data-role="blacklist-form"></div>
+    </div>
+
+    <!-- Child comments are appended here -->
+    <ul data-role="children" class="children">
+
+</ul></li><li class="post
+    " id="post-662388964">
+
+    <div data-role="post-content" class="post-content ">
+        <div class="indicator"></div>
+
+        
+            
+
+                
+                    <div class="avatar hovercard">
+                        <a href="#" class="user" data-action="profile" data-user="3788799">
+                            <img src="a_data/avatar92_009.jpg" alt="Avatar">
+                        </a>
+                    </div>
+                
+
+                <div class="post-body">
+                    <header>
+                        
+                            <span class="publisher-anchor-color"><a href="#" data-action="profile" data-user="3788799">acjohnson55</a></span>
+                            
+                        
+
+                        
+
+                        <span class="bullet" aria-hidden="true">•</span>
+
+                        
+                            <a href="#comment-662388964" data-role="relative-time" class="time-ago" title="Wednesday, September 26 2012 3:42 AM">10 months ago</a>
+                        
+
+                        <ul class="post-menu">
+
+                            <li class="collapse"><a href="#" data-action="collapse" title="Collapse">−</a></li>
+                            <li class="expand" style="display:none"><a href="#" data-action="collapse" title="Expand">+</a></li>
+
+                            <li class="dropdown" data-role="menu" role="menu">
+                                
+    
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><b class="caret"></b></a>
+        <ul class="dropdown-menu invisible">
+            
+                
+                <li><a href="#" data-action="flag">Flag as inappropriate</a></li>
+            
+        </ul>
+    
+
+                            </li>
+                        </ul>
+                    </header>
+
+                    <!-- Use message-container to manage visible height of the post message (including media) -->
+                    <div class="post-message-container" data-role="message-container">
+                        <!-- Use message-content to measure post content (including media) -->
+                        <div data-role="message-content">
+                            <div class="post-message publisher-anchor-color " data-role="message">
+                                
+                                    <p>My biggest beef with class based 
+views is that the sequence of what gets called when and how the 
+different built-in classes differ feels very opaque to me, even after 
+poring over the documentation.  This is a helpful start, but are there 
+any good resources that comprehensively cover the workings of 
+class-based views?  I know I can always look through the code, but I'd 
+much rather have something to read for reference when I need a 
+refresher.</p>
+                                
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
+                    <div class="message-shadow hidden" data-role="message-shadow"></div>
+                    <a href="#" class="more-button hidden" title="see more" data-action="post-expand">see more</a>
+
+                    <footer>
+                        
+    
+        <menu>
+            <li class="realtime" data-role="realtime-notification:662388964">
+                <span style="display:none;" class="realtime-replies"></span>
+                <a style="display:none;" href="#" class="btn small" data-action="load-queued-posts"></a>
+                 <!-- Realtime notification about new replies -->
+            </li>
+
+            <li class="voting" data-role="voting">
+                
+    <a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+        <span class="updatable count" data-role="likes">0</span>
+        <span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+    </a>
+    <a class="vote-down  count-0" title="Vote down">
+        <span class="updatable count" data-role="dislikes">0</span>
+        <span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+        <span class="tooltip">You must sign in to down-vote this post.</span>
+    </a>
+
+            </li>
+            <li class="bullet" aria-hidden="true">•</li>
+
+            
+                
+
+                
+                    <li class="reply"><a href="#" data-action="reply"><span class="icon icon-mobile icon-reply"></span><span class="text">Reply</span></a></li>
+                    <li class="bullet" aria-hidden="true">•</li>
+                
+            
+
+            <li class="share">
+                <a class="toggle"><span class="icon icon-mobile icon-share"></span><span class="text">Share ›</span></a>
+                <ul>
+                    <li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+                    <li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+                    <li class="link"><a href="#comment-662388964">Link</a></li>
+                </ul>
+            </li>
+        </menu>
+    
+
+                    </footer>
+                </div>
+
+             
+         
+
+        <div data-role="blacklist-form"></div>
+    </div>
+
+    <!-- Child comments are appended here -->
+    <ul data-role="children" class="children">
+
+</ul></li><li class="post
+    " id="post-764740961">
+
+    <div data-role="post-content" class="post-content ">
+        <div class="indicator"></div>
+
+        
+            
+
+                
+                    <div class="avatar hovercard">
+                        <a href="#" class="user" data-action="profile" data-user="31113787">
+                            <img src="a_data/avatar92_006.jpg" alt="Avatar">
+                        </a>
+                    </div>
+                
+
+                <div class="post-body">
+                    <header>
+                        
+                            <span class="publisher-anchor-color"><a href="#" data-action="profile" data-user="31113787">Bibhas</a></span>
+                            
+                        
+
+                        
+
+                        <span class="bullet" aria-hidden="true">•</span>
+
+                        
+                            <a href="#comment-764740961" data-role="relative-time" class="time-ago" title="Saturday, January 12 2013 6:33 PM">6 months ago</a>
+                        
+
+                        <ul class="post-menu">
+
+                            <li class="collapse"><a href="#" data-action="collapse" title="Collapse">−</a></li>
+                            <li class="expand" style="display:none"><a href="#" data-action="collapse" title="Expand">+</a></li>
+
+                            <li class="dropdown" data-role="menu" role="menu">
+                                
+    
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><b class="caret"></b></a>
+        <ul class="dropdown-menu invisible">
+            
+                
+                <li><a href="#" data-action="flag">Flag as inappropriate</a></li>
+            
+        </ul>
+    
+
+                            </li>
+                        </ul>
+                    </header>
+
+                    <!-- Use message-container to manage visible height of the post message (including media) -->
+                    <div class="post-message-container" data-role="message-container">
+                        <!-- Use message-content to measure post content (including media) -->
+                        <div data-role="message-content">
+                            <div class="post-message publisher-anchor-color " data-role="message">
+                                
+                                    <p>This makes more sense than the conventional way of writing views. I wonder why they didn't document it well.</p>
+                                
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
+                    <div class="message-shadow hidden" data-role="message-shadow"></div>
+                    <a href="#" class="more-button hidden" title="see more" data-action="post-expand">see more</a>
+
+                    <footer>
+                        
+    
+        <menu>
+            <li class="realtime" data-role="realtime-notification:764740961">
+                <span style="display:none;" class="realtime-replies"></span>
+                <a style="display:none;" href="#" class="btn small" data-action="load-queued-posts"></a>
+                 <!-- Realtime notification about new replies -->
+            </li>
+
+            <li class="voting" data-role="voting">
+                
+    <a href="#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+        <span class="updatable count" data-role="likes">0</span>
+        <span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+    </a>
+    <a class="vote-down  count-0" title="Vote down">
+        <span class="updatable count" data-role="dislikes">0</span>
+        <span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+        <span class="tooltip">You must sign in to down-vote this post.</span>
+    </a>
+
+            </li>
+            <li class="bullet" aria-hidden="true">•</li>
+
+            
+                
+
+                
+                    <li class="reply"><a href="#" data-action="reply"><span class="icon icon-mobile icon-reply"></span><span class="text">Reply</span></a></li>
+                    <li class="bullet" aria-hidden="true">•</li>
+                
+            
+
+            <li class="share">
+                <a class="toggle"><span class="icon icon-mobile icon-share"></span><span class="text">Share ›</span></a>
+                <ul>
+                    <li class="twitter"><a href="#" data-action="share:twitter">Twitter</a></li>
+                    <li class="facebook"><a href="#" data-action="share:facebook">Facebook</a></li>
+                    <li class="link"><a href="#comment-764740961">Link</a></li>
+                </ul>
+            </li>
+        </menu>
+    
+
+                    </footer>
+                </div>
+
+             
+         
+
+        <div data-role="blacklist-form"></div>
+    </div>
+
+    <!-- Child comments are appended here -->
+    <ul data-role="children" class="children">
+
+</ul></li></ul>
+
+            <div class="load-more" data-role="more" style="display:none">
+                <a href="#" data-action="more-posts" class="btn">Load more comments</a>
+            </div>
+        </div>
+
+        
+            
+                
+    
+        <section id="reactions" style="display:none;" data-role="main">
+
+            <ul id="reaction-list" class="post-list loading">
+            </ul>
+
+            <div class="load-more" data-role="more" style="display:none">
+                <a href="#" data-action="more-reactions" class="btn">Load more reactions</a>
+            </div>
+        </section>
+    
+
+            
+        
+    </section>
+
+    <section id="community" style="display:none" data-role="main">
+<div>
+    <div class="primary">
+        <h3>Top Discussions on 
+    <strong>Caktus Blog</strong>
+</h3>
+        <div data-role="top-threads"><ol class="loading" id="top-threads"></ol></div>
+    </div>
+
+    <div class="secondary">
+        <h3>Top Commenters</h3>
+
+        <div data-role="top-users"><ol class="loading" id="top-users"></ol></div>
+    </div>
+</div>
+
+</section>
+
+    <section id="dashboard" style="display:none" data-role="main">
+        <!-- Dashboard goes here -->
+        <!-- Default message if there are no notifications or activity to show -->
+        <p style="line-height: 1.4">Nothing for you here ... yet. But as you comment with Disqus and follow
+        other Disqus users, you will start to receive notifications here, as well as a personalized
+        feed of activity by you and the people you follow. So get out there and participate in
+        some discussions!</p>
+    </section>
+
+    <section id="profile" style="display:none" data-role="main">
+    </section>
+
+    
+
+    
+    <div id="discovery"></div>
+
+    <div id="footer">
+        <ul>
+            <li class="logo"><a href="http://disqus.com/" title="Powered by Disqus">Powered by Disqus</a></li>
+            <li class="rss"><a href="http://wwwcaktusblog.disqus.com/class_based_views_in_django_13_django_web_development_raleigh_durham_chapel_hill_caktus_consulting_g/latest.rss"><i aria-hidden="true" class="icon-feed" title="in reply to"></i><span class="clip">Comment feed</span></a></li>
+            <li id="thread-subscribe-button" class="email"> <!-- Three options: nothing, show-form, subscribed -->
+                <div class="default">
+                    <a href="#" data-action="subscribe"><i aria-hidden="true" class="icon-mail" title="Get email updates"></i><span class="clip">Subscribe via email</span> <i aria-hidden="true" class="icon-checkmark" title="Subscribe via email"></i></a>
+                </div>
+                <div class="form">
+                    <div class="input-wrapper"><input id="thread-subscribe-email" placeholder="yourname@email.com" type="email"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div></body></html>

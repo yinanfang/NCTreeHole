@@ -1,0 +1,15 @@
+Serving static files in Django
+http://agiliq.com/blog/2013/03/serving-static-files-in-django/
+detailed guide to configure static files, including location tree, collectstatic
+
+Creating a Django development and production app
+http://programmers.stackexchange.com/questions/104874/creating-a-django-development-and-production-app
+some key settings of 'settings.py'
+
+Webfaction
+    Getting Started with Django
+    http://docs.webfaction.com/software/django/getting-started.html
+
+renren API python SDK代码详解（一）
+http://hi.baidu.com/js_css_html/item/fd219d735ae82e13d0dcb345
+semi detail discussion

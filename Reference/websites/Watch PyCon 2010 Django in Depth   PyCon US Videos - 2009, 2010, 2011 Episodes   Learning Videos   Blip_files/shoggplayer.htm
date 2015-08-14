@@ -1,0 +1,203 @@
+
+<!-- saved from url=(0191)http://blip.tv/scripts/shoggplayer.html#file=http%3A%2F%2Fblip.tv%2Frss%2Fflash%2F3341665&showplayerpath=http%3A%2F%2Fblip.tv%2Fscripts%2Fshoggplayer.html&feedurl=http://blip.tv%2Frss%2Fflash -->
+<html><head _wxlaelhepjgkhpnfpeodbobgikmbjecnne_="shake_1.0"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css"></style></head><body style="margin:0; overflow:hidden" marginwidth="0" marginheight="0">
+<div style="height:100%; overflow:hidden">
+<script>
+	function isoTimeFromSeconds(seconds) {
+		var d = new Date();
+		d.setHours(0);
+		d.setMinutes(0);
+		d.setSeconds(seconds);
+		
+		return [d.getHours(), d.getMinutes(), d.getSeconds()].join(':');		
+	}
+	function getDomain(url) {
+		var a = document.createElement('a');
+		a.href = url;
+		return a.hostname.toLowerCase();
+	}
+	function sendPing(u) {
+		var img = document.createElement("img");
+		img.src = "http://pings.blip.tv/p.gif?l="+u+"&n="+Math.floor(Math.random()*1000000);
+		var body = document.body || document.documentElement;
+		body.appendChild(img);
+	}
+	function onStratosReady(playerId) {
+		var stratos = document.getElementsByTagName('embed')[0];
+		var shogg = document.getElementsByTagName('video')[0];
+		var mediaLength;
+		var episodeData;
+		var eVars = {};
+		var tracked = {
+			twentyfive : false,
+			fifty : false,
+			seventyfive : false
+		};
+		if(stratos) {
+			window.playlist_loaded = function(playlist) {
+				episodeData = playlist[0];
+			};
+			
+			window.getUpdate = function(evt, arg) {
+				if(evt === 'player_state_change' && arg === 'playing') {
+					omniTrackPlaybackStart(episodeData);
+				}
+				else if(evt === 'current_time_change') {
+					omniTrackProgress(arg);
+				}
+				else if(evt === 'complete') {
+					window._c = true;
+					omniTrackComplete()
+				}
+				else if(evt === 'playlist_complete' && parent && parent.postMessage) {
+					// send a message to the parent window, if it exists
+					parent.postMessage("player.complete", "*");
+				}
+			};
+		}
+		else {
+			// init shogg tracking
+		}
+	}
+
+	function omniTrackPlaybackStart (episodeData) {
+		var eVar = {},
+			stratos = document.getElementsByTagName('embed')[0],
+			getDomainName = function(href) {
+				var l = document.createElement('a');
+				l.href = href;
+				return l.hostname;
+			},
+			prepareDate = function(datestamp) {
+				var date = new Date(datestamp);
+				return [date.getFullYear(), date.getMonth() + 1, date.getDay()].join('/');
+				return date;
+			},
+			prepareDuration = function(duration) {
+				var hours, minutes, seconds, lead = function(n) {
+					if(n - Math.floor(n) > 0) {
+						n = Math.round(n);
+					}
+					return n < 10 ? [0, n].join('') : n;
+				};
+				seconds = duration % 60;
+				minutes = duration > 60 ? Math.floor((duration - seconds) / 60) : 0;
+				hours = duration > 60*60 ? Math.floor((duration - seconds - minutes * 60) / 60 * 60) : 0;
+				return [lead(hours), lead(minutes), lead(seconds)].join(':');
+			},
+			prepareList = function(csv) {
+				return csv.split(',').map(prepareString).join(':');
+			},
+			prepareString = function(s) {
+				return s.toLowerCase().replace(/\:|\'|\"/g, '_').trim();
+			};
+
+		
+		if(O.CACHE.TRACKED_VIEW) {
+			return;
+		}
+		eVar[O.EVAR.EPISODE_NAME] = episodeData.title;;
+		eVar[O.EVAR.SERIES_NAME] = episodeData.showname;
+
+		// save it to a public var so the quartile reporting can determine the percentage viewed
+		O.CACHE.DURATION = parseInt(episodeData.time,10);
+		eVar[O.EVAR.LENGTH] = prepareDuration(O.CACHE.DURATION);
+
+		eVar[O.EVAR.DATE_PUBLISHED] = prepareDate(stratos.getPublishDate());
+		eVar[O.EVAR.DOMAIN] = getDomainName(document.referrer).toLowerCase();
+		eVar[O.EVAR.WEIGHTING] = stratos.getCoreValue();
+		eVar[O.EVAR.RATING] = prepareString(stratos.getContentRating());
+		eVar[O.EVAR.QUALITY] = prepareString(stratos.getCurrentRole());
+		eVar[O.LISTS.CATEGORY] = prepareList(stratos.getCategories());
+		eVar[O.LISTS.KEYWORDS] = prepareList(stratos.getKeywords());
+
+		O.trigger(O.EVENT.VIDEO_START, eVar, 'video start');
+		O.CACHE.TRACKED_VIEW = true;
+
+		// reset the progress tracking
+		window.TRACKED_25_PERCENT = window.TRACKED_50_PERCENT = window.TRACKED_75_PERCENT = false;
+	}
+	function omniTrackProgress(secondsPlayed) {
+		var stratos = document.getElementsByTagName('embed')[0],
+			secondsTotal = O.CACHE.DURATION,
+			percentProgress = secondsPlayed / secondsTotal,
+			eVar = {};
+
+		// set the quality again, in case it's been changed
+		eVar[O.EVAR.QUALITY] = stratos.getCurrentRole().toLowerCase();
+
+		if(percentProgress >= .25 && !window.TRACKED_25_PERCENT) {
+			O.trigger(O.EVENT.VIDEO_25_COMPLETE, eVar, '25 percent played');
+			window.TRACKED_25_PERCENT = true;
+		}
+		else if(percentProgress >= .5 && !window.TRACKED_50_PERCENT) {
+			O.trigger(O.EVENT.VIDEO_50_COMPLETE, eVar, '50 percent played');
+			window.TRACKED_50_PERCENT = true;
+		}
+		else if(percentProgress >= .75 && !window.TRACKED_75_PERCENT) {
+			O.trigger(O.EVENT.VIDEO_75_COMPLETE, eVar, '75 percent played');
+			window.TRACKED_75_PERCENT = true;
+		}
+	}
+	function omniTrackComplete() {
+		// set the quality again, in case it's been changed
+		var stratos = document.getElementsByTagName('embed')[0],
+			role = stratos.getCurrentRole(),
+			eVar = {};
+		eVar[O.EVAR.QUALITY] = role.toLowerCase();
+		O.trigger(O.EVENT.VIDEO_COMPLETE, eVar, 'episode watched to completion');
+		O.CACHE.TRACKED_VIEW = false;
+	}
+
+
+	if (/iPad/.test(navigator.userAgent)) {
+		var shogg = '<script type="text\/javascript" src="/scripts/ShoggPlayer-min.js"><\/script>';
+		document.write(shogg);
+		
+		var options = window.location.href;
+		options += '&nativecontrols=true';
+
+		window.addEventListener("load", function() { 
+			var player = new BLIP.ShoggPlayer.Player({
+				'options' : options
+			});
+		}, true);
+	}
+	else if (/iPod|iPhone/.test(navigator.userAgent)) {
+		var url = window.location.href.replace(/(http:\/\/[^\/]+).*lookup=([^&]+).*/,'$1/play/$2.m4v').replace(/http:\/\/(?:static|a)\./,'http://').replace(/blipcdn\.com/,'blip.tv');
+		document.write('<video src="' + url + '" width="100%" height="100%" allowfullscreen controls x-webkit-airplay="allow" airplay="allow" onplaying="sendPing(\''+url+'\');"></video>');
+	}
+	else if (/Android/.test(navigator.userAgent)) {
+		var url = window.location.href.replace(/(http:\/\/[^\/]+).*lookup=([^&]+).*/,'$1/play/$2.mp4').replace(/http:\/\/(?:static|a)\./,'http://').replace(/blipcdn\.com/,'blip.tv');
+		document.write('<video src="' + url + '" width="100%" height="100%" onclick="this.play();"></video>');
+	}
+	else {
+		// detect if on site, and build colors into the embed src for the player GUI if we are.
+		var embedUrl = window.location.href.replace('shoggplayer.html','flash/stratos.swf');
+		var referrer = document.createElement('a');
+		referrer.href = document.referrer;
+		if(window.location.host === referrer.host) {
+			embedUrl += '&basecolor=0x1E1E1E&backcolor=0x1E1E1E&frontcolor=0x999999&lightcolor=0xAAAAAA&floatcontrols=true&fixedcontrols=true&largeplaybutton=true&controlsalpha=.8&autohideidle=6000&autostart=true&showinfo=false&onsite=true&noendcap=true&captionson=true';
+		}
+		document.write('<embed src="' + embedUrl + '" type="application/x-shockwave-flash" width="100%" height="100%" allowscriptaccess="always" allowfullscreen="true" wmode="transparent"></embed>'); 
+	}
+
+</script><embed src="http://blip.tv/scripts/flash/stratos.swf#file=http%3A%2F%2Fblip.tv%2Frss%2Fflash%2F3341665&amp;showplayerpath=http%3A%2F%2Fblip.tv%2Fscripts%2Fshoggplayer.html&amp;feedurl=http://blip.tv%2Frss%2Fflash&amp;basecolor=0x1E1E1E&amp;backcolor=0x1E1E1E&amp;frontcolor=0x999999&amp;lightcolor=0xAAAAAA&amp;floatcontrols=true&amp;fixedcontrols=true&amp;largeplaybutton=true&amp;controlsalpha=.8&amp;autohideidle=6000&amp;autostart=true&amp;showinfo=false&amp;onsite=true&amp;noendcap=true&amp;captionson=true" type="application/x-shockwave-flash" width="100%" height="100%" allowscriptaccess="always" allowfullscreen="true" wmode="transparent">
+</div>
+
+<script type="text/javascript" src="Omni.js"></script>
+<script type="text/javascript">
+var s_account = "blipdev"; // change to a tmpl_if when we launch 
+</script>
+<!-- SiteCatalyst code version: H.25.4.
+Copyright 1996-2013 Adobe, Inc. All Rights Reserved
+More info available at http://www.omniture.com -->
+<script language="JavaScript" type="text/javascript" src="s_code.js"></script>
+<script language="JavaScript" type="text/javascript"><!--
+if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')
+//--></script><noscript>&lt;img src="http://blip.d2.sc.omtrdc.net/b/ss/blipdev/1/H.25.4--NS/0"
+height="1" width="1" border="0" alt="" /&gt;</noscript><!--/DO NOT REMOVE/-->
+<!-- End SiteCatalyst code version: H.25.4. -->
+
+
+</body></html>

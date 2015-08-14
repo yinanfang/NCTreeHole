@@ -1,0 +1,176 @@
+/*  
+Theme Name: NC Tree Hole
+Theme URI: http://nctreehole.tk
+Version: 1.0.0
+Author: Yinan Fang
+Author URI: http://nctreehole.tk
+*/
+/************************************************************************************
+RESET
+*************************************************************************************/
+html, body{
+    margin: 0;
+    padding: 0;
+}
+/************************************************************************************
+GENERAL STYLING
+*************************************************************************************/
+html{
+    background: black url(images/tile05.gif);
+}
+
+body{
+ /*   background-color:rgba(0,0,0,0.1);*/
+}
+
+
+/************************************************************************************
+HEADER
+*************************************************************************************/
+.main-nav {
+    margin: 0;
+    padding: 5px 0 8px;
+}
+.main-nav li {
+    padding: 0;
+    margin: 0 0 5px;
+    float: right;
+    clear: both;
+    list-style: none;
+    position: relative;
+    font-size:18px;
+    font-weight: bold;
+}
+.main-nav a {
+    color: #8f0206;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 100%;
+    background: url(images/nav-icons.png) no-repeat;
+    padding: 2px 27px 2px 10px;
+    -webkit-border-radius: 10em;
+    -moz-border-radius: 10em;
+    border-radius: 10em;
+    -webkit-transition: background-color .4s;
+    -moz-transition: background-color .4s;
+    -o-transition: background-color .4s;
+    transition: background-color .4s;
+}
+.main-nav a:hover {
+    color: #000;
+    background-color: #f5ec82;
+    background-color: rgba(245,236,130,.8);
+}
+.main-nav .home a {
+    background-position: right -177px;
+}
+.main-nav .about a {
+    background-position: right -257px;
+}
+.main-nav .contact a {
+    background-position: right -339px;
+}
+
+/* searchform */
+.searchform #s {
+    width: 100px;
+    background: #f6f4ed url(images/nav-icons.png) no-repeat -8px -497px;
+    font: italic 105%/110% "Times New Roman", Times, serif;
+    color: #86856f;
+    padding: 3px 4px 3px 28px;
+    border: solid 1px #bebdaa;
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    border-radius: 13px;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+    -o-transition: .4s;
+    transition: .4s;
+}
+.searchform #s:focus {
+    color: #333;
+    width: 130px;
+    background-color: #fff;
+
+}
+
+
+
+/************************************************************************************
+CONTENT
+*************************************************************************************/
+
+/************************************************************************************
+FOOTER
+*************************************************************************************/
+
+/************************************************************************************
+MEDIA QUERIES
+*************************************************************************************/
+
+@media screen and (max-width: 9999px) {
+    .container{
+/*        background-color:rgba(0,0,0,0.3);*/
+        width:960px;
+        margin:0 auto;
+
+    }
+    .header{
+        background: /*rgba(0,0,0,0.05)*/ url(images/side-bg.png);
+        width: 190px;
+        height: 100%;
+        /*height:600px;*/
+        position: fixed;
+        text-align: right;
+        padding: 0 10px 0 0;
+
+    }
+    .site-logo{
+        font-family: 'Copse', Georgia, serif;
+        line-height: 130%;
+        font-weight: bold;
+        color: #453630;
+        text-shadow: 0 2px 0 #fcf9ee, 0 4px 0 rgba(0,0,0,.15);
+        font-size:32px;
+        padding: 80px 0 10px;
+        background: /*rgba(0,0,0,0.05)*/ url(images/header-bg.png) no-repeat 70px 65px;
+    }
+    .site-logo a {
+        color: #603913;
+        text-decoration: none;
+    }
+    .site-logo a:hover {
+        color: #000;
+    }
+    .site-description{
+        font: italic 16px/120% Baskerville, "Times New Roman", Times, serif;
+        color: #886c4d;
+        background: /*rgba(0,0,0,0.05)*/ url(images/dashed-single.png) repeat-x left bottom;
+        padding: 0 0 10px 2px;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    .content{
+        background-color: /*rgba(0,0,0,0.05)*/;
+        width: 760px;
+        /*height: 1600px;*/
+        position:relative;
+        left:200px;
+    }
+
+}
+
+
+@media screen and (max-width: 960px) {
+
+}

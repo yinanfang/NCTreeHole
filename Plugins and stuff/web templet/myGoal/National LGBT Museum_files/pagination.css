@@ -1,0 +1,113 @@
+/**
+ * General
+ */
+
+.pagination {
+	font-size: 90%;
+	text-align: center;
+	font-weight:bold;
+}
+        
+.pagination a {
+    text-decoration: none;
+	color: #15B;
+}
+
+.pagination a, .pagination span {
+    display: -moz-inline-box; /* FF2 */
+    display: inline-block; /* Standard. IE8+, Saf, FF3+ */
+    /**
+     * @bugfix inline-block fix
+     * @see http://blog.mozilla.com/webdev/2009/02/20/cross-browser-inline-block/
+     * @valid no
+     */
+    zoom: 1;
+    *display: inline;
+
+    padding: 0.3em 0.5em;
+    margin-right: 5px;
+	margin-bottom: 5px;
+	min-width:1em;
+	text-align:center;
+}
+
+.pagination .current {
+    background: #26B;
+    color: #fff;
+}
+.pagination .prev,
+.pagination .next {
+	
+}
+
+
+/**
+ * Maroon
+ */
+
+.maroon_theme .pagination a {
+	color: #fff;
+	background: #D31245;
+}
+.maroon_theme .pagination .current,
+.maroon_theme .pagination a {
+}
+.maroon_theme .pagination .current {
+	cursor: default;
+	color:#403b39;
+	background-color:#fff4d8;
+}
+
+
+/**
+ * Green
+ */
+
+.green_theme .pagination a {
+	background: #6FB118;
+	color: #fff;
+}
+.green_theme .pagination .current,
+.green_theme .pagination a {
+}
+.green_theme .pagination .current {
+	cursor: default;
+	color:#403b39;
+	background-color:#fff4d8;
+}
+
+
+/**
+ * Blue Theme
+ */
+
+.blue_theme .pagination a {
+	background: #14B6EA;
+	color: #fff;
+}
+.blue_theme .pagination .current,
+.blue_theme .pagination a {
+}
+.blue_theme .pagination .current {
+	cursor: default;
+	color:#403b39;
+	background-color:#fff4d8;
+}
+
+
+/**
+ * Red Theme
+ */
+
+.red_theme .pagination a {
+	background: #e93c46;
+	color: #fff;
+}
+.red_theme .pagination .current,
+.red_theme .pagination a {
+}
+.red_theme .pagination .current {
+	cursor: default;
+	color:#403b39;
+	background-color:#fff4d8;
+}

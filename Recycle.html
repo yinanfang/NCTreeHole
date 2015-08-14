@@ -1,0 +1,154 @@
+<html>
+<!--
+
+<a class="radius button"  id="btn_send2" href="#">告诉PHP</a>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#btn_send2").click(function(){
+		$("#responsebox").text("is clicked");
+    }); 
+    
+});
+  </script>
+
+  
+<!--     
+$.ajax({
+      url: "post_status.php",
+      type: "post",
+      data: {'status':$('#status').val()},
+      responsebox: function(resultData){          
+		$('#responsebox').text(resultData); 
+		
+		
+		
+		
+		
+		
+		
+			<div class = "row">
+				<div class="four columns centered">
+					<center>
+						<a class="radius button"  id="btn_send" href="#">告诉树洞</a> | 
+						<a class="radius button"  id="btn_send" href="#" target="_blank">微信版</a> | 
+						<a class="radius button"  id="btn_send" href="http://www.google.com" target="_blank">别点这里</a>
+					</center>
+				</div>
+			</div>
+			
+			<div class = "row">
+				<div class="large-12 large-centered columns">
+					<div class = "row">
+						<div class="large-4 columns">
+							<a class="radius button"  id="btn_send" href="#">告诉树洞</a>
+						</div>
+						<div class="large-4 columns">
+							<a class="radius button"  id="btn_send" href="#" target="_blank">微信版</a>
+						</div>
+						<div class="large-4 columns">
+							<a class="radius button"  id="btn_send" href="http://www.google.com" target="_blank">别点这里</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class = "row">
+				<div class="large-12 large-centered columns">
+					<div class = "row">
+						<div class="large-3 columns">
+
+						</div>
+						
+						<div class="large-3 columns">
+								<div class = "row">
+									<div class="large-12 large-centered columns">
+										<a class="radius button"  id="btn_send" href="#">告诉树洞</a>
+									</div>	
+								</div>
+						</div>
+						
+						<div class="large-3 columns">
+							<a class="radius button"  id="btn_send" href="#" target="_blank">微信版</a>
+						</div>
+						
+						<div class="large-3 columns">
+							<a class="radius button"  id="btn_send" href="#" target="_blank">微信版</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			
+//Ajax safe version 20130612
+	$(document).ready(function(){
+		$("#btn_send").click(function(){
+			alert("ajax started");
+			$.ajax({
+				type: "post",
+                    url: "renren/post_status.php",
+				data: {'status':$('#status').val()},
+                success: function(result){
+				    alert("SUCCESS!!!\n" + "result: "+result);
+				},
+				error: function(data, textStatus){
+                    alert("FAILED:\n" + "data: " + data + "\n status: " + textStatus);
+				}
+			});
+
+		});
+	})
+			
+			
+			
+				<!-- Right panel send section -->
+			<div class="row">
+				<div class="large-12 columns">
+					<center>
+					<div class="large-2 columns" id="beforesend">.</div>
+					
+					<!-- Right panel send buttom: tell the UNC Tree Hole -->
+					<div class="large-4 columns">
+						<div class = "row">
+							<div class="large-12 columns"  align="right">
+								<a class="radius button"  id="btn_send" href="#">告诉树洞</a>
+							</div>	
+						</div>					
+					</div>		
+
+					<!-- Right panel redirect: WeChat Version -->
+					<div class="large-4 columns">
+						<div class = "row">
+							<div class="large-12 columns"  align="left">
+								<a class="radius button"  id="weixin_redirect" href="#" target="_blank">微信版</a>
+							</div>
+						</div>
+					</div>
+					
+					<div class="large-2 columns"></div>
+					
+				</center>
+				</div>
+			</div>		
+			
+			
+			
+			
+			
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+-->
+</html>

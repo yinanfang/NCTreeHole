@@ -1,0 +1,1 @@
+(function(){stButtons.processCB({"google_search":10,"clicks_total":347,"time":86,"dzone":7,"reddit":330,"total":347,"url":"http:\/\/www.jmanzano.es\/blog\/?p=812","ourl":"http:\/\/www.jmanzano.es\/blog\/?p=812#sthash.yNNDEw3X"})})();

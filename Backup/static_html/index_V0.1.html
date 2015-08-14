@@ -1,0 +1,64 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+
+	<!-- Set the viewport width to the width of the device -->
+	<meta name="viewport" content="width=device-width"/>
+
+	<title>UNC树洞</title>
+	<link rel="icon" type="image/jpg" href="image/uncch.jpg"/>
+
+	<!-- Included CSS Files(Uncompressed) -->
+	<link rel="stylesheet" href="css/style.css"/>
+	
+	<!-- Included CSS Files(Compressed) -->
+	
+</head>
+
+
+
+<body>
+
+
+<div class="msg">
+<textarea rows="4" id="status" type="text"></textarea>
+<a class="radius button"  id="btn_send" href="#">告诉树洞</a>
+
+</div>
+
+<div class="resp">
+<p id="responsebox">If you click on me, I will disappear.</p>
+</div>
+
+<!-- Initialize JS Plugins -->
+<script src="jquery-1.10.1.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#responsebox").text("got it");
+});
+</script>
+  
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#btn_send").click(function(){
+		alert("ajax started");
+		$.post("post_status.php",
+			{
+				'status':$('#status').val()
+			},
+			function(data){
+				alert("Data Loaded: " + data);
+			}
+		)
+    }); 
+    
+});
+  </script>
+  
+  
+  
+
+
+</body>
+</html>

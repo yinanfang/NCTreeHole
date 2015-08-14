@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>北卡树洞</title>
+    <meta name="description" content="北卡树洞">
+    
+    <script src="jquery-1.9.1.js"></script>
+
+</head>
+<body>
+    <div class="container">
+
+        <div>
+            <h4>北卡树洞.那些现实中没有发出的声音，请把它留在这里……</h4>
+        </div>
+
+        <textarea id="status" name="status" placeholder="最凄美的爱"></textarea>
+        
+        <div id="btn_send" class="btn_send">
+            告诉树洞
+        </div>
+        
+        <div id="sending">
+        </div>
+        <div id="after">
+        </div>
+
+    </div>
+    
+    
+<script>
+	$("#btn_send").click(function(){
+		alert("ajax started");
+		$.ajax({
+			type: "post",
+			url: "index.php",
+			data: {'status':$('#status').val()},
+			success: function(result){
+				$('#sending').text("success");
+				$('#status').val('');
+				alert("SUCCESS!!!\n" + "result: "+result);
+                $('#after').text("SUCCESS!!!\n" + "result: "+result);
+                
+			},
+			error: function(data, textStatus){	
+				$('#sending').text("fail");
+				alert("FAILED:\n" + "data: " + data + "\n status: " + textStatus);
+                $('#after').text("FAILED:\n" + "data: " + data + "\n status: " + textStatus);
+			}
+		});
+	});
+
+
+</script>
+    
+    
+</body>
+</html>

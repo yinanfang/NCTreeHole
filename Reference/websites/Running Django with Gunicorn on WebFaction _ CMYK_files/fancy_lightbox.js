@@ -1,0 +1,1 @@
+$(document).ready(function(){$("a.elastic_image").fancybox({'titleShow':false,'transitionIn':'elastic','transitionOut':'elastic'});});

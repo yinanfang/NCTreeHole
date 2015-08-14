@@ -1,0 +1,65 @@
+<?php
+
+require_once 'class/RenrenRestApiService.class.php';
+
+ 
+
+if($_POST['status']==""){
+
+    echo"内容不能为空哦";
+
+    exit();
+
+}
+
+else if(mb_strlen(trim($_POST['status']),"utf-8")<10){
+
+    echo"十个字以上吧，树洞不喜欢空洞的内容..";
+
+    exit();
+
+}
+
+else if(transgress_keyword($_POST['status'])> 0){
+
+    include('ip2locationlite.class.php');
+
+    //Load the class
+
+    $ipLite = new ip2location_lite;
+
+    $ipLite->setKey(XXXXX);
+
+    //Get errors and locations
+
+    $locations = $ipLite->getCity($_SERVER['REMOTE_ADDR']);
+
+    echo $locations['cityName']."(".$locations['ipAddress'].")的朋友你好，树洞不喜欢奇怪的东西..";
+
+    exit();
+
+}
+
+ 
+
+$check=check_log($_SERVER['REMOTE_ADDR'],MD5($_POST['status']));
+
+if($check=="OK"){
+
+  $restApi = new RenrenRestApiService;
+
+  $params = array('status'=>$_POST['status'].'  －－匿名发送自: http://shuhole.sinaapp.com','access_token'=>XXXXX','page_id'=>'601614945');
+
+  $res = $restApi->rr_post_curl('pages.setStatus', $params);//curl函数发送请求
+
+  if($res["result"]=='1'){}
+
+  echo $res["result"];
+
+ 
+
+}
+
+else echo " ".$check;
+
+?>

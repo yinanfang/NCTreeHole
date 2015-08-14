@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html class="js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths wf-pillgothic300mg1-n7-active wf-proximanova1-n1-active wf-active" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>Fast and Beautiful URLs with Django — The Wellfire Blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Slugs and IDs for speedy pretty URLs, a la The Onion">
+<meta name="keywords" content="Web design, web development, web consulting, Arlington, Virginia, Washington DC
+">
+<meta name="author" content="Wellfire Interactive">
+<script data-rocketoptimized="true" data-rocketsrc="http://www.google-analytics.com/ga.js" async="" type="text/javascript"></script><script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) { var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",mirage:{responsive:0,lazy:0},mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/abv=2497138833/"},atok:"73e4a84485f7fa17b030b6f73867f7de",zone:"wellfireinteractive.com",rocket:"a",apps:0}];document.write('<script type="text/javascript" src="//ajax.cloudflare.com/cdn-cgi/nexp/abv=1573736665/cloudflare.min.js"><'+'\/script>')}}catch(e){};
+//]]>
+</script><script type="text/javascript" src="Fast%20and%20Beautiful%20URLs%20with%20Django%20%E2%80%94%20The%20Wellfire%20Blog_files/cloudflare.js"></script><script data-module="cloudflare/rocket" id="cfjs_block_dc17791844" onload="CloudFlare.__cfjs_block_dc17791844_load()" onerror="CloudFlare.__cfjs_block_dc17791844_error()" onreadystatechange="CloudFlare.__cfjs_block_dc17791844_readystatechange()" type="text/javascript" src="Fast%20and%20Beautiful%20URLs%20with%20Django%20%E2%80%94%20The%20Wellfire%20Blog_files/rocket.js"></script>
+<link rel="icon" type="image/png" href="http://www.wellfireinteractive.com/media/favicon.ico">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/TheWellfireInteractiveBlog">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="http://www.wellfireinteractive.com/sitemap.xml">
+<link rel="canonical" href="http://www.wellfireinteractive.com/blog/fast-and-beautiful-urls-with-django/">
+ 
+<link href="Fast%20and%20Beautiful%20URLs%20with%20Django%20%E2%80%94%20The%20Wellfire%20Blog_files/bootstrap.css" rel="stylesheet">
+ 
+<link href="Fast%20and%20Beautiful%20URLs%20with%20Django%20%E2%80%94%20The%20Wellfire%20Blog_files/wellfire.css" rel="stylesheet">
+<link href="Fast%20and%20Beautiful%20URLs%20with%20Django%20%E2%80%94%20The%20Wellfire%20Blog_files/pygments_style.css" rel="stylesheet">
+ 
+ 
+<!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+ 
+ 
+ 
+<script data-rocketoptimized="true" data-rocketsrc="/media/bootie/js/modernizr-2.0.6.min.js" type="text/rocketscript"></script>
+<script data-rocketoptimized="true" type="text/rocketscript" data-rocketsrc="http://use.typekit.com/irj5edd.js"></script>
+<script data-rocketoptimized="true" type="text/rocketscript">
+      try{Typekit.load();}catch(e){}
+    </script>
+<script data-rocketoptimized="true" type="text/rocketscript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1882561-1']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script><link href="Fast%20and%20Beautiful%20URLs%20with%20Django%20%E2%80%94%20The%20Wellfire%20Blog_files/d.css" rel="stylesheet">
+<script data-rocketoptimized="true" data-rocketsrc="http://wellfireinteractive.disqus.com/embed.js" async="" type="text/javascript"></script></head>
+<body style="width: 970px; margin-left: auto; margin-right: auto;">
+<header style="width: 970px;">
+<h2>
+<a href="http://www.wellfireinteractive.com/">Wellfire Interactive</a>
+</h2>
+</header>
+<nav id="primary-nav">
+<ul class="nav">
+<li>
+<a href="http://www.wellfireinteractive.com/what-we-do/">Services</a>
+</li>
+<li>
+<a href="http://www.wellfireinteractive.com/showcase/">Our Work</a>
+</li>
+<li>
+<a href="http://www.wellfireinteractive.com/about/">About</a>
+</li>
+<li class="on">
+<a href="http://www.wellfireinteractive.com/blog/">Blog</a>
+</li>
+</ul>
+</nav>
+<div class="span12">
+<section id="main-content" itemscope="" itemtype="http://schema.org/Article">
+<h1>
+<span class="title" itemprop="name">Fast and Beautiful URLs with Django</span>
+</h1>
+<div class="row">
+<div id="content" class="span8">
+<div id="post-body">
+<meta itemprop="description" content="Slugs and IDs for speedy pretty URLs, a la The Onion">
+<meta itemprop="publisher" content="Wellfire Interactive">
+<meta itemprop="author" content="Ben">
+<meta itemprop="copyrightHolder" content="Wellfire Interactive">
+<meta itemprop="copyrightYear" content="2010">
+<div itemprop="articleBody">
+<p>You’ll notice (for the moment, at least), that the URL of this blog 
+post is made up of a pretty easy to read components. There’s the domain,
+ the /blog/ route, and then the post’s slug, the lowercase title with 
+dashes. It tells the server to use the blog URL configuration, and then 
+to look up a blog post whose slug matches the following text. You could 
+use something like <code>blog.asp?post=12</code> (if you were running 
+ASP… ahem) and the script you’re running there will pull up the blog 
+post with row ID 12. It works, but it’s ugly and not terribly user 
+friendly. Hence the ‘beautiful’ URLs you see here, courtesy of Django.</p>
+<p>Why would you want to change this then? How about performance gains?</p>
+<p>When The Onion launched their Django-based refresh a few weeks ago, I
+ noticed something funky with the article URLs. Instead of the usual 
+slug, like this:</p>
+<p><strong>http://www.theonion.com/articles/chimp-in-cocaine-study-starts-lying-to-friends/</strong></p>
+<p>the new URLs looked like this:</p>
+<p><strong>http://www.theonion.com/articles/chimp-in-cocaine-study-starts-lying-to-friends,17176/</strong></p>
+<p>It looks like they had added the ID of the article to the slug. I 
+wasn’t sure why until I started messing around with both parameters and 
+realized that the slug wasn’t used at all to retrieve the articles. You 
+could change the URL from this:</p>
+<p><strong>http://www.theonion.com/articles/chimp-in-cocaine-study-starts-lying-to-friends,17176/</strong></p>
+<p>to this:</p>
+<p><strong>http://www.theonion.com/articles/rich-guy-feeling-left-out-of-recession,17176/</strong></p>
+<p>and still get the original article about the coke addled chimp.</p>
+<p>The article ID is what Django uses to retrieve the article. The slug 
+is there for human eyes, but it’s just window dressing. It makes sense 
+to you if you see the address bar, it makes it easier to access the page
+ through your location bar history, and it’s got more search result mojo
+ (or so the SEO mavens keep telling us). It would be faster, however, 
+for the database to use the primary key for the article. Since you’re 
+probably not going to want to use the article slug as your primary key, 
+that leaves you with something like a UUID or the row ID. But the whole 
+point of beautiful URLs is that we get away from this ugly article=17176
+ business.</p>
+<p>The Django answer is to use both. Set up your URL to take a slug and 
+an integer as parameters, but in your view use only the integer primary 
+key to access the article (or whatever object it is you want). The 
+object’s get_absolute_url object inserts both slug and primary key into 
+the URL and ouila, fast, readable URLs.</p>
+<p><code>urls.py</code></p>
+<div class="highlight"><pre><code class="python"><span class="n">url</span><span class="p">(</span><span class="s">r'^(?P&lt;slug&gt;[-\w\d]+),(?P&lt;id&gt;\d+)/$'</span><span class="p">,</span> <span class="n">view</span><span class="o">=</span><span class="n">myviews</span><span class="o">.</span><span class="n">article</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">'article'</span><span class="p">),</span>
+</code></pre>
+</div>
+<p><code>views.py</code></p>
+<div class="highlight"><pre><code class="python"><span class="k">def</span> <span class="nf">my_view</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">slug</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+        <span class="n">article</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span>
+        <span class="c"># everything else in your view</span>
+</code></pre>
+</div>
+<p><code>models.py</code></p>
+<div class="highlight"><pre><code class="python"><span class="k">class</span> <span class="nc">Article</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+  <span class="nd">@permalink</span>
+  <span class="k">def</span> <span class="nf">get_absolute_url</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="s">'article'</span><span class="p">,</span> <span class="p">(),</span> <span class="p">{</span>
+            <span class="s">'slug'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">slug</span><span class="p">,</span>
+            <span class="s">'id'</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
+        <span class="p">})</span>
+</code></pre>
+</div>
+<p>You might be better served using generic views, and this doesn’t add 
+in the redirect in The Onion’s views which rewrite the proper slug if 
+something else is there, but it’s a basic way of getting the job done. I
+ switched a view and URL configuration from a slug based to lookup to 
+this primary key lookup and saw a 13% query speed improvement (via the 
+debug toolbar). It’s hardly scientific, but for sites looking for a 
+little performance help it’s a pretty simple improvement to implement.</p>
+</div>
+
+</div>
+<p>Posted: <span itemprop="datePublished">April 15, 2010</span></p>
+<div id="disqus_thread"><iframe src="Fast%20and%20Beautiful%20URLs%20with%20Django%20%E2%80%94%20The%20Wellfire%20Blog_files/client.htm" style="width: 100%; border: medium none; overflow: hidden; height: 0px; display: none;" role="application" allowtransparency="true" data-disqus-uid="2" id="dsq2" frameborder="0" width="100%"></iframe><iframe verticalscrolling="no" horizontalscrolling="no" src="Fast%20and%20Beautiful%20URLs%20with%20Django%20%E2%80%94%20The%20Wellfire%20Blog_files/a.htm" style="width: 100%; border: medium none; overflow: hidden; height: 1216px;" role="complementary" allowtransparency="true" data-disqus-uid="3" id="dsq3" frameborder="0" scrolling="no" width="100%"></iframe></div>
+<script data-rocketoptimized="true" type="text/rocketscript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'wellfireinteractive'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+<div id="sidebar" class="span4"><aside id="right-panel">
+<div class="panel-text">
+<h4>Recent Posts</h4>
+<p><a href="http://www.wellfireinteractive.com/blog/multiple-user-accounts-best-practices/">Table for two: designing multiple user accounts</a></p>
+<p><a href="http://www.wellfireinteractive.com/blog/introduction-to-stylus/">Stylus: a new arrow for your design quiver</a></p>
+<p><a href="http://www.wellfireinteractive.com/blog/snippet-editing-with-django-addendum/">Easy Web Content Snippets with Django-Addendum</a></p>
+<p><a href="http://www.wellfireinteractive.com/blog/development-commandments/">Development Commandments for Collaboration</a></p>
+<p><a href="http://www.wellfireinteractive.com/blog/illustrated-distributed-git-workflow/">An Illustrated Git-based Development Workflow</a></p>
+</div>
+<div class="panel-text">
+<h4>Inbox Hero</h4>
+<p>Get monthly community news, design and development tips, and info about the business side of web development.</p>
+<form action="http://wellfireinteractive.us1.list-manage.com/subscribe/post?u=ec7ac5821cbefebac73d3f9c0&amp;id=867d89187b" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+<label for="mce-EMAIL" style="display: none;">Email Address <span class="asterisk">*</span></label>
+<input name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email address" type="email">
+<input value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" type="submit">
+</form>
+</div>
+</aside></div>
+</div>
+</section>
+</div>  
+<nav id="helper">
+<ul>
+<li class="contact-link">
+<a href="http://www.wellfireinteractive.com/contact/">
+Contact Us&nbsp;<i class="icon-arrow-right icon-wellfire"></i>
+</a>
+</li>
+</ul>
+</nav>
+<footer>
+<ul>
+<li>
+© 2013 Wellfire Interactive
+</li>
+<li>
+<a href="http://www.behance.net/wellfire" rel="nofollow">Bēhance</a>
+</li>
+<li>
+<a href="http://wellfire.tumblr.com/">Tumblr</a>
+</li>
+<li>
+<a href="http://www.linkedin.com/companies/240080" rel="nofollow">LinkedIn</a>
+</li>
+<li>
+<a href="http://twitter.com/wellfire" rel="nofollow">Twitter</a>
+</li>
+</ul>
+</footer>
+ 
+<script data-rocketoptimized="true" data-rocketsrc="/media/bootie/js/jquery.js" type="text/rocketscript"></script>
+<script data-rocketoptimized="true" data-rocketsrc="/media/bootie/js/bootstrap-modal.js" type="text/rocketscript"></script>
+<script data-rocketoptimized="true" type="text/rocketscript">
+      $("aside#right-panel").appendTo("#sidebar");
+    </script>
+
+
+</body></html>

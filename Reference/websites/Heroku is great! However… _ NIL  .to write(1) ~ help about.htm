@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<!--[if IE 6 ]>
+<html id="ie6" lang="en">
+<![endif]-->
+<!--[if IE 7 ]>
+<html id="ie7" lang="en">
+<![endif]-->
+<!--[if !IE]><!-->
+<html lang="en"><!--<![endif]--><!--
+	generated in 0.240 seconds
+	64299 bytes batcached for 300 seconds
+--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+
+	<title>Heroku is great! However… | NIL: .to write(1) ~ help:about</title>
+
+	<link rel="pingback" href="http://tech.blog.aknin.name/xmlrpc.php">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+			<script type="text/javascript" async="" src="Heroku%20is%20great%21%20However%E2%80%A6%20_%20NIL%20%20.to%20write%281%29%20%7E%20help%20about_files/quant.js"></script><script src="Heroku%20is%20great%21%20However%E2%80%A6%20_%20NIL%20%20.to%20write%281%29%20%7E%20help%20about_files/remote-login" type="text/javascript"></script>
+		<script type="text/javascript">
+		/* <![CDATA[ */
+			if ( 'function' === typeof WPRemoteLogin ) {
+				document.cookie = "wordpress_test_cookie=test; path=/";
+				if ( document.cookie.match( /(;|^)\s*wordpress_test_cookie\=/ ) ) {
+					WPRemoteLogin();
+				}
+			}
+		/* ]]> */
+		</script>
+		<link rel="alternate" type="application/rss+xml" title="NIL: .to write(1) ~ help:about » Feed" href="http://tech.blog.aknin.name/feed/">
+<link rel="alternate" type="application/rss+xml" title="NIL: .to write(1) ~ help:about » Comments Feed" href="http://tech.blog.aknin.name/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="NIL: .to write(1) ~ help:about » Heroku is great!&nbsp;However… Comments Feed" href="http://tech.blog.aknin.name/2012/03/09/heroku-is-great-however/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
+/* ]]> */
+</script>
+<link rel="stylesheet" id="all-css-0" href="Heroku%20is%20great%21%20However%E2%80%A6%20_%20NIL%20%20.to%20write%281%29%20%7E%20help%20about_files/a.css" type="text/css" media="all">
+<link rel="stylesheet" id="print-css-0" href="Heroku%20is%20great%21%20However%E2%80%A6%20_%20NIL%20%20.to%20write%281%29%20%7E%20help%20about_files/global-print.css" type="text/css" media="print">
+<script type="text/javascript">
+/* <![CDATA[ */
+var LoggedOutFollow = {"invalid_email":"Your subscription did not succeed, please try again with a valid email address."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Heroku%20is%20great%21%20However%E2%80%A6%20_%20NIL%20%20.to%20write%281%29%20%7E%20help%20about_files/a.js"></script>
+<link rel="stylesheet" id="all-css-0" href="Heroku%20is%20great%21%20However%E2%80%A6%20_%20NIL%20%20.to%20write%281%29%20%7E%20help%20about_files/style.css" type="text/css" media="all">
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='http://s2.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563g&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://niltowrite.wordpress.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://niltowrite.wordpress.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="RESTfully atomically incrementing a counter using HTTP&nbsp;PATCH" href="http://tech.blog.aknin.name/2012/02/08/restfully-atomically-incrementing-a-counter-using-http-patch/">
+<meta name="generator" content="WordPress.com">
+<link rel="canonical" href="http://tech.blog.aknin.name/2012/03/09/heroku-is-great-however/">
+<link rel="shortlink" href="http://wp.me/pRPSU-kC">
+<link rel="alternate" type="application/json+oembed" href="http://public-api.wordpress.com/oembed/1.0/?format=json&amp;url=http%3A%2F%2Ftech.blog.aknin.name%2F2012%2F03%2F09%2Fheroku-is-great-however%2F&amp;for=wpcom-auto-discovery"><link rel="alternate" type="application/xml+oembed" href="http://public-api.wordpress.com/oembed/1.0/?format=xml&amp;url=http%3A%2F%2Ftech.blog.aknin.name%2F2012%2F03%2F09%2Fheroku-is-great-however%2F&amp;for=wpcom-auto-discovery">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Heroku is great! However...">
+<meta property="og:url" content="http://tech.blog.aknin.name/2012/03/09/heroku-is-great-however/">
+<meta property="og:description" content="I like Heroku. We've recently made our first deployment on it, and all things considered, I don't think we could've made a better platform choice at this time. Deploying to Heroku taught me quite a...">
+<meta property="og:site_name" content="NIL: .to write(1) ~ help:about">
+<meta property="og:image" content="http://0.gravatar.com/blavatar/488efa50a3512ade2d4fd7910a778a2c?s=200">
+<meta name="twitter:site" content="@wordpressdotcom">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@wordpressdotcom">
+<link rel="shortcut icon" type="image/x-icon" href="http://1.gravatar.com/blavatar/f3afb107059eb76f7a8b44cdacc44a54?s=16" sizes="16x16">
+<link rel="icon" type="image/x-icon" href="http://1.gravatar.com/blavatar/f3afb107059eb76f7a8b44cdacc44a54?s=16" sizes="16x16">
+<link rel="apple-touch-icon-precomposed" href="http://0.gravatar.com/blavatar/488efa50a3512ade2d4fd7910a778a2c?s=114">
+<link rel="openid.server" href="http://niltowrite.wordpress.com/?openidserver=1">
+<link rel="openid.delegate" href="http://niltowrite.wordpress.com/">
+<link rel="search" type="application/opensearchdescription+xml" href="http://tech.blog.aknin.name/osd.xml" title="NIL: .to write(1) ~ help:about">
+<link rel="search" type="application/opensearchdescription+xml" href="http://wordpress.com/opensearch.xml" title="WordPress.com">
+		<style>
+		/* <![CDATA[ */
+		/* Block: reblog */
+		
+		.reblog-from img                   { margin: 0 10px 0 0; vertical-align: middle; padding: 0; border: 0; }
+		.reblogger-note img.avatar         { float: left; padding: 0; border: 0; }
+		.reblogger-note-content            { margin: 0 0 20px; }
+		.reblog-post .wpcom-enhanced-excerpt-content { border-left: 3px solid #eee; padding-left: 15px; }
+		.reblog-post ul.thumb-list         { display: block; list-style: none; margin: 2px 0; padding: 0; clear: both; }
+		.reblog-post ul.thumb-list li      { display: inline; margin: 0; padding: 0 1px; border: 0; }
+		.reblog-post ul.thumb-list li a    { margin: 0; padding: 0; border: 0; }
+		.reblog-post ul.thumb-list li img  { margin: 0; padding: 0; border: 0; }
+		
+		.reblog-post .wpcom-enhanced-excerpt { clear: both; }
+		
+		.reblog-post .wpcom-enhanced-excerpt address,
+		.reblog-post .wpcom-enhanced-excerpt li,
+		.reblog-post .wpcom-enhanced-excerpt h1,
+		.reblog-post .wpcom-enhanced-excerpt h2,
+		.reblog-post .wpcom-enhanced-excerpt h3,
+		.reblog-post .wpcom-enhanced-excerpt h4,
+		.reblog-post .wpcom-enhanced-excerpt h5,
+		.reblog-post .wpcom-enhanced-excerpt h6,
+		.reblog-post .wpcom-enhanced-excerpt p { font-size: 100% !important; }
+		
+		.reblog-post .wpcom-enhanced-excerpt blockquote,
+		.reblog-post .wpcom-enhanced-excerpt pre,
+		.reblog-post .wpcom-enhanced-excerpt code,
+		.reblog-post .wpcom-enhanced-excerpt q { font-size: 98% !important; }
+		
+
+		/* ]]> */
+		</style>
+		<style type="text/css">
+.widget_twitter li {
+	word-wrap: break-word;
+}
+</style>
+<meta name="application-name" content="NIL: .to write(1) ~ help:about"><meta name="msapplication-window" content="width=device-width;height=device-height"><meta name="msapplication-tooltip" content="Glossolalia about technology by @aknin"><meta name="msapplication-task" content="name=Subscribe;action-uri=http://tech.blog.aknin.name/feed/;icon-uri=http://1.gravatar.com/blavatar/f3afb107059eb76f7a8b44cdacc44a54?s=16"><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=http://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico"><meta name="title" content="Heroku is great!&nbsp;However… | NIL: .to write(1) ~ help:about on WordPress.com">
+<meta name="description" content="Glossolalia about technology by @aknin (by Yaniv Aknin)">
+<style id="syntaxhighlighteranchor"></style>
+<link rel="stylesheet" type="text/css" id="gravatar-card-css" href="Heroku%20is%20great%21%20However%E2%80%A6%20_%20NIL%20%20.to%20write%281%29%20%7E%20help%20about_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="Heroku%20is%20great%21%20However%E2%80%A6%20_%20NIL%20%20.to%20write%281%29%20%7E%20help%20about_files/services.css"></head>
+
+<body class="single single-post postid-1278 single-format-standard color-light mp6 highlander-enabled highlander-light">
+<div id="wrapper">
+
+	
+	<div id="search">
+		<form method="get" id="searchform" action="http://tech.blog.aknin.name/">
+	<div>
+		<span class="search">Search:</span><input size="15" name="s" id="s" type="text">
+		<input id="searchsubmit" value="Go" type="submit">
+	</div>
+</form>	</div>
+
+	<div id="main-nav">
+		<h1 class="masthead"><a href="http://tech.blog.aknin.name/">NIL: .to write(1) ~ help:about</a></h1>
+		<p class="description">Glossolalia about technology by @aknin</p>
+
+		<div class="menu-wrap"><ul class="menu"><li class="page_item page-item-123"><a href="http://tech.blog.aknin.name/q-and-a/">Q&amp;A</a></li><li class="page_item page-item-289"><a href="http://tech.blog.aknin.name/metablogging/">Metablogging</a><ul class="children"><li class="page_item page-item-455"><a href="http://tech.blog.aknin.name/metablogging/errata-policy/">Errata&nbsp;Policy</a></li><li class="page_item page-item-296"><a href="http://tech.blog.aknin.name/metablogging/tools/">Tools</a></li><li class="page_item page-item-264"><a href="http://tech.blog.aknin.name/metablogging/typography/">Typography</a></li></ul></li></ul></div>
+	</div>
+<div id="content">
+
+	<div id="entry-content">
+
+	
+					<div id="post-1278" class="post-1278 post type-post status-publish format-standard hentry category-django tag-cedar tag-heroku tag-polyglot tag-python tag-reverse-proxy tag-static-assets">
+				<h2 class="entry-title">Heroku is great!&nbsp;However…</h2>
+				<p class="date">2012/03/09 <a href="http://tech.blog.aknin.name/2012/03/09/heroku-is-great-however/#comments" title="Comment on Heroku is great!&nbsp;However…">§ <span class="commentcount">7 Comments</span></a></p>
+
+				<div class="entry">
+					<p><span id="footer1-up"><strong>I like Heroku</strong>. We’ve 
+recently made our first deployment on it, and all things considered, I 
+don’t think we could’ve made a better platform choice at this time. 
+Deploying to Heroku taught me quite a few things, easily the most 
+important of them was hearing about the <a href="http://12factor.net/">12 Factor App</a> methodology. If you haven’t heard of it<sup><a href="#footer1-down" id="footer1-up">1</a></sup>,
+ it’s basically a way to design web applications thus that deploying 
+them will be less of a pain in the arse. The methodology’s manifest was 
+written by <code>@hirodusk</code>, Heroku’s CTO, who probably knows 
+something about cloud deployments. The best thing about it is that it’s 
+elegantly platform/language neutral – so theoretically you don’t need to
+ deploy a 12 Factor App to Heroku, you can deploy to <em>any</em> 12 Factor App compatible PaaS (had there been any), or even roll <a href="https://github.com/skookum/base12#readme">your own</a> 12 Factor App platform and deploy there. Then again, why not focus on your core business and pay Heroku to use <em>their</em>
+ awesome 12 Factor App platform? Well, ugh. Like I said, if you’re 
+thinking about deploying to Heroku then you probably should, but I’d 
+like to warn you that I don’t think Heroku is an excellent 
+implementation of a 12 Factor App platform.</span></p>
+<p>It’s a <em>good</em> implementation, yes, sometimes maybe just <em>good enough</em>.
+ It saddens me to say it, but I feel there’s significant disparity 
+between the force and clarity I see in the 12 Factor App theory and what
+ I perceive as murky, surprising or faulty implementation details in the
+ Heroku practice. I will try to illustrate exactly what I mean in this 
+post, after these public service announcements: (1) I’ll be using 12 
+Factor &amp; Heroku jargon freely, so you’d really gain the most from 
+this if you’re familiar with both; (2) the Heroku deployment I did is in
+ Python, so the only stack I know is <code><a href="http://devcenter.heroku.com/articles/stack">Celadon Cedar</a></code>;
+ (3) some of the pain points I mention are related and may be fixed by a
+ single Heroku change, but they still hurt in different ways and finally
+ (4) I’m not looking for cheap shots: I know Heroku’s been grilled for 
+their recent <a href="http://status.heroku.com/">outages</a>, but if you
+ dig in my Twitter feed you’ll see proof that this post has been in the 
+making for a while now, and has nothing to do with this or that outage 
+(maybe a topic in itself, but not now).</p>
+<h3>Handling of static assets is a broken mess</h3>
+<p><span id="footer2-up">Other people <a href="http://www.google.com/webhp?q=heroku%20cedar%20static%20files">wrote enough</a> about strategies to deal with the fact that <code>Cedar</code> has no ‘official’ way to serve static files as Bamboo <a href="http://devcenter.heroku.com/articles/http-caching#static_assets">had</a>. I can’t say I’m happy Heroku’s own documentation about this important issue – for example, the <a href="http://devcenter.heroku.com/articles/django">introduction</a>
+ to django document conveniently sidesteps the issue altogether. But of 
+all the various solutions out there, I didn’t find one that alleviates 
+the much uglier (from a 12 Factor App perspective) underlying issue. 
+See, your statics will either reside in your slug or elsewhere. If you 
+plan on putting them in the slug, you can either compile<sup><a href="#footer2-down">2</a></sup>
+ them during slug creation (with a custom buildback, what else), or 
+locally on your computer and push them. Slug creation time is at best an
+ annoying environment to work with and debug on, if not for anything 
+else (and there is a lot of else), then because of the lack of 
+Polyglotism and the prevalence of multi language asset management tools 
+(also, good luck building Flash/Silverlight/other necessary evils during
+ slug creation).</span></p>
+<p>So you opt to build locally, ignoring the alarm bells as you shatter factors <a href="http://www.12factor.net/codebase">I</a>, <a href="http://www.12factor.net/build-release-run">V</a> and <a href="http://www.12factor.net/dev-prod-parity">X</a>
+ (at least). How will you get the built statics to Heroku? You’ll commit
+ and push build products to your VCS, right &lt;puke/&gt;? And who 
+guarantees two deployments will be identical, since you’re developing on
+ Linux and your coworker on OSX? This goes on. The ramifications of 
+serving your statics from an external storage service are the same, but 
+now you also need to get your files to the storage service. But how? You
+ aren’t supposed to have your S3 secrets on your dev machine, and 
+Heroku’s support for <a href="http://devcenter.heroku.com/articles/labs-user-env-compile">configuration-during-slug-creation</a> has serious caveats and a frightening warning <a href="https://github.com/heroku/heroku-labs">attached</a>
+ to it. This is a serious wart, and I don’t think writing documentation 
+will solve it (it will be better than nothing!), because I don’t see how
+ this can be solved with the building blocks Heroku offers today (the 
+buildpack mechanism as it is, git transport, etc). An nontrivial change 
+is needed for truly awesome 12 Factor static support. I don’t always 
+expect much from my PaaS, but when I do, it’s because I pay five cents 
+per dyno hour.</p>
+<h3>There’s no buffering proxy in Cedar</h3>
+<p>This one isn’t even funny. If you’re not sure what a buffering 
+reverse proxy is or why you need one if your server uses sync workers, 
+you must read <a href="http://serverfault.com/questions/331256/why-do-i-need-nginx-and-something-like-gunicorn/331263#331263">this</a>.
+ Summarizing for the impatient, sync workers are resource hogs, so you 
+never want them idling about waiting clients (which might be slow). A 
+common pattern is to have a cheap async “thing” buffering between your 
+sync workers and the wild Internet. As far as “async things” go, nginx 
+is a great choice, and indeed Heroku’s previous stack, <code>Bamboo</code>, used to use it. However, in <code>Cedar</code>
+ it disappeared, with very serious ramifications. Don’t get me wrong: 
+I’m not too happy with Bamboo’s behaviour, either: it’s very possible an
+ app <em>wouldn’t</em> want buffering: sometimes you want to read the 
+request as it comes along (for example, for various Comet techniques), 
+and you’re designed to handle it (mostly by making the app itself your 
+“async thing”). Bottom line, a one-HTTP-layer-fits-all treatment is at 
+best an inconvenience, and possibly something much worse.</p>
+<p>Indeed, you could solve this by simply using async workers, but one 
+does not “simply” use async workers (there are serious ramifications 
+which are out of scope for now). Choosing your threading model based on a
+ missing feature in your platform sucks, not to mention if you already 
+have a working and field-proven codebase you’re migrating to this 
+platform. I guess the best approach to solve this would be to have a <code>Routefile</code>
+ at the root of the project describing the routes to reach your app: 
+this URL over buffered HTTP, this URL over raw HTTP, maybe even that <em>port</em>
+ over plain old raw UDP. But even if you don’t have this feature, I’d 
+expect warnings, explanations and best-practices to be sprayed all over 
+the documentation. Alas, the documentation doesn’t help even one bit (on
+ the contrary sometimes; I judge <a href="http://devcenter.heroku.com/articles/python-faq#do_python_applications_run_behind_nginx">this</a>
+ FAQ answer to be somewhere between misleading and plain wrong). To top 
+it all, it seems that activating Heroku’s SSL support suddenly makes you
+ go through something which smells to me like remnants from Bamboo, with
+ sudden appearance of nginx and buffered requests. Again, all in utter 
+silence from the documentation.</p>
+<h3>Polyglot programming’s great, but not on Heroku</h3>
+<p>I hear the term <a href="http://blog.heroku.com/archives/2011/8/3/polyglot_platform/">polyglot programming</a> in relation to Heroku all the time. <q>“A true polyglot platform”</q>, they say. I don’t get these claims. Heroku isn’t polyglot. The <a href="http://devcenter.heroku.com/articles/buildpacks">buildpack</a>
+ mechanism (a good idea in itself) is built in such a way that 
+buildpacks are given a chance to detect if your push matches their 
+language, but the first matching buildpack is used to create your app’s <a href="http://devcenter.heroku.com/articles/slug-compiler">slug</a>,
+ ignoring all other buildpacks and potential languages. So your app 
+really has to be in one language. The workarounds are horrendous, the 
+least-horrific one is done by the official Ruby buildpack which “<a href="https://github.com/heroku/heroku-buildpack-ruby/blob/4b05893213ab80b0a97273d3580e43f5c3060466/lib/language_pack/ruby.rb#L446">vendors</a>” node.js into the slug if a certain gem (<a href="https://github.com/sstephenson/execjs">execjs</a>)
+ is required in the Gemfile. Of course, it’s just a package specific 
+hack, it inflates the slugs needlessly, and since it’s just a hack, 
+similar support isn’t built into the Python buildpack for the <a href="https://github.com/doloopwhile/PyExecJS">PyExecJS</a> Python package. Admittedly, for the latter point, the brilliance of custom buildpacks <a href="https://github.com/heroku/heroku-buildpack-python/pull/24">eases</a> the pain it sure as heck doesn’t cure it.</p>
+<h3>A thousand cuts: the smaller things</h3>
+<ul>
+<li>I think separating you from your application (i.e., you’re unable to
+ ssh into a running slug) is brilliant and leads to better design 
+overall. But when I worked on XIV’s grid storage product, I fought to 
+keep controlled ssh access to the discrete storage modules open (for us 
+developers, not for customers), and I think Heroku should provide the 
+same. Show me a big warning, let me click through whatever, but then let
+ me bloody attach my <code>strace</code>/<code>pdb</code>/etc to my running instance.</li>
+<li>I applaud factor X, <a href="http://www.12factor.net/dev-prod-parity">dev/prod parity</a>,
+ but Heroku and especially its add-ons force me to integrate with 
+backing services with unknown and possibly changing configuration. I 
+think a <a href="http://vagrantup.com/">Vagrant</a> box providing a 
+Cedar-like dev environment with some add-ons could help here. This bit 
+me once as I misused the parsed results of <code>REDISTOGO_URL</code> 
+and ignored the password (it was a bit more complex than that, but I see
+ you yawning). A trivial bug really, but it was time consuming to 
+diagnose, because it worked fine against my password-less development 
+Redis (which now does require a password, thank you very much).</li>
+<li>Factor III, <a href="http://www.12factor.net/config">configuration</a>,
+ says you should store configuration in the environment. But Heroku 
+offers nothing to help you set this environment up during development, 
+and share it across a team of five developers. Sure it’s a small thing 
+to arrange on your own, but together with other small cuts regarding 
+local development, I feel Heroku does too little to accommodate 
+multi-developer teams, period (update: since I first wrote this, <code>@kennethreitz</code> wrote <a href="https://github.com/kennethreitz/autoenv">autoenv</a>, which is a good first step in the right direction).</li>
+<li>Putting everything (your language’s runtime, “vendored” binaries, 
+possibly static assets) in your slug makes it easy to go past the <a href="http://devcenter.heroku.com/articles/slug-size">25mb warning mark</a>,
+ and forces you to be tight fisted about slug size. I understand the 
+cause of this limitation, but if every dyno had more stuff built into 
+it, things could be easier and I wouldn’t be counting mere megabytes of 
+disk space in 2012 (just node, Python, Ruby, some C libraries… don’t 
+think I’m asking for much).</li>
+<li>I’ve been pulling my hair out wondering why my video processing worker dynos are getting <a href="http://devcenter.heroku.com/articles/dynos#dyno_memory_behavior">R14 “Memory Quota”</a> exceeded warnings, and only after I instrumented my code to take memory snapshots (<code>ps -ef</code> + <code>cat /proc/meminfo</code>
+ at relevant timings) I got to suspecting that buffer cache is counted 
+against me in my memory quota (why isn’t this documented? why can’t 
+Heroku’s support resolve my ticket asking for explanations regarding my <code>ps -ef</code> outputs for a few weeks now?). We get false R14 positives <em>all the time</em>.</li>
+<li><code>git</code> is a terrific DVCS, but a poor deployment transport
+ – see for example above how it complicates things with deploying 
+compiled static files, or how it makes pushing private submodules 
+impossible (at least now there’s <a href="http://devcenter.heroku.com/articles/git-submodules">some</a> labs support for submodules).</li>
+</ul>
+<p>There’s more, of course, but this post is already insanely long and I
+ feel I got the main things off my chest. I humbly argue that some of 
+these issues actually have a very material impact on Heroku app 
+development/deployment while being not so hard for Heroku to fix, or at 
+least make much more bearable or even just thoroughly documented. You 
+could say many (all?) these things aren’t so bad if you’re a single 
+developer developing a very early prototype and expecting little load, 
+but I think these issues quickly become much worse in a complex 
+professional project with multiple developers and even modest-medium 
+load, which is who I imagine is Heroku’s prime target audience, rather 
+than some Jekyll blog that gets 50 hits per day.</p>
+<p>I’d like to close this post with repeating that I <strong>like Heroku</strong>, and at our current size, I definitely like it more than the alternatives (because deployment is <em>such</em>
+ a bitch). They have many awesome things going that I didn’t list here, 
+others wrote enough favorite reviews as it is. But Heroku still has a 
+lot of hard work to do to get their implementation of a 12 Factor App 
+platform on par with the elegance of the theory itself. I get the 
+feeling the “D” stack beyond Cedar is right around the corner; I’ll be 
+so happy to use a better Heroku 12 Factor stack. Or anyone else’s 12 
+Factor stack, for that matter. I’m an unloyal bastard this way. 
+Challenge accepted, anyone?</p>
+<hr>
+<p><span id="footer1-down" class="footer"><sup><a href="#footer1-up">1</a></sup>&nbsp;If
+ you’re not familiar with The 12 Factor App, I wholeheartedly recommend 
+you go read it right now, it’s an important read. If you’ve got your act
+ together with regard to web app deployment you probably do many/all of 
+these things instinctively, but still, the 12 Factor App puts things in 
+terseness and clarity I didn’t see before and I feel insisting on it 
+(almost to the letter) really helped me design a better app.</span></p>
+<p><span id="footer2-down" class="footer"><sup><a href="#footer2-up">2</a></sup>&nbsp;The
+ way I see it, the toughest thing about static assets is the fact that 
+most of them became sneakily dynamic without us watching. Sprites, 
+CoffeeScript, LESS/scss, heck, even .swf if you have to use them 
+(webcams, anyone?) – they’re all compiled assets with a source form and a
+ built form (sometimes more than one; minimized vs unminimized 
+CoffeeScript, for instance). I think this complicates separation of 
+build time vs. run time and minimization of dev/prod parity. I wrote 
+more about this <a href="http://tech.blog.aknin.name/2011/12/28/i-wish-someone-wrote-django-static-upstream-maybe-even-me/">previously</a>.</span></p>
+<div id="jp-post-flair" class="sharedaddy sd-like-enabled"><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-unloaded" id="like-post-wrapper-12830832-1278-51d1433dc6908" data-src="http://widgets.wp.com/likes/#blog_id=12830832&amp;post_id=1278&amp;origin=http://niltowrite.wordpress.com&amp;obj_id=12830832-1278-51d1433dc6908" data-name="like-post-frame-12830832-1278-51d1433dc6908"><h3 class="sd-title">Like this:</h3><div class="post-likes-widget-placeholder" style="height:55px"><span class="button"><span>Like</span></span> <span class="loading">Loading...</span></div><span class="sd-text-color"></span><a class="sd-link-color"></a></div></div>					
+					<p class="tags"><strong>Tagged:</strong> <a href="http://tech.blog.aknin.name/tag/cedar/" rel="tag">cedar</a>, <a href="http://tech.blog.aknin.name/tag/heroku/" rel="tag">heroku</a>, <a href="http://tech.blog.aknin.name/tag/polyglot/" rel="tag">polyglot</a>, <a href="http://tech.blog.aknin.name/tag/python/" rel="tag">python</a>, <a href="http://tech.blog.aknin.name/tag/reverse-proxy/" rel="tag">reverse proxy</a>, <a href="http://tech.blog.aknin.name/tag/static-assets/" rel="tag">static assets</a></p>
+					
+
+<!-- You can start editing here. -->
+
+
+	<h3 id="comments"><span class="sep">§</span> 7 Responses to <em>Heroku is great!&nbsp;However…</em></h3>
+
+	<ul class="commentlist">
+			<li class="comment even thread-even depth-1 highlander-comment" id="comment-1524">
+				<div id="div-comment-1524" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Heroku%20is%20great%21%20However%E2%80%A6%20_%20NIL%20%20.to%20write%281%29%20%7E%20help%20about_files/facebook_normal.jpg" class="avatar avatar-32" height="32" width="32">			<cite class="fn"><a href="http://twitter.com/ngrilly" rel="external nofollow" class="url">Nicolas Grilly (@ngrilly)</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://tech.blog.aknin.name/2012/03/09/heroku-is-great-however/#comment-1524">
+			2012/03/11 at 15:53</a>		</div>
+
+		<p>I’m happy to read that I’m not the only one wondering how to manage
+ my static files on Heroku :) Still wondering what is the correct way to
+ do it… Thanks for sharing your thoughts.</p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://tech.blog.aknin.name/2012/03/09/heroku-is-great-however/?replytocom=1524#respond" onclick='return addComment.moveForm("div-comment-1524", "1524", "respond", "1278")'>Reply</a>		</div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent highlander-comment" id="comment-1545">
+				<div id="div-comment-1545" class="comment-body">
+				<div class="comment-author vcard">
+			<img id="grav-699c5dd17b5d6be2e25dd50e2c51bf38-0" alt="" src="Heroku%20is%20great%21%20However%E2%80%A6%20_%20NIL%20%20.to%20write%281%29%20%7E%20help%20about_files/699c5dd17b5d6be2e25dd50e2c51bf38.png" class="avatar avatar-32 grav-hashed grav-hijack" height="32" width="32">			<cite class="fn">Baris</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://tech.blog.aknin.name/2012/03/09/heroku-is-great-however/#comment-1545">
+			2012/03/19 at 02:50</a>		</div>
+
+		<p>Have you happened to learn more about how memory is calculated at Heroku? What command outputs refers to actual usage?</p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://tech.blog.aknin.name/2012/03/09/heroku-is-great-however/?replytocom=1545#respond" onclick='return addComment.moveForm("div-comment-1545", "1545", "respond", "1278")'>Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-yanivaknin bypostauthor even depth-2 parent highlander-comment" id="comment-1546">
+				<div id="div-comment-1546" class="comment-body">
+				<div class="comment-author vcard">
+			<img id="grav-9e42ce18ec8a40b6334a6b0283d72528-0" alt="" src="Heroku%20is%20great%21%20However%E2%80%A6%20_%20NIL%20%20.to%20write%281%29%20%7E%20help%20about_files/9e42ce18ec8a40b6334a6b0283d72528.png" class="avatar avatar-32 grav-hashed grav-hijack" height="32" width="32">			<cite class="fn"><a href="http://niltowrite.wordpress.com/" rel="external nofollow" class="url">Yaniv Aknin</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://tech.blog.aknin.name/2012/03/09/heroku-is-great-however/#comment-1546">
+			2012/03/19 at 04:26</a>		</div>
+
+		<p>Here’s a part the answer I eventually got from Heroku (it took a 
+while, but the answer is indeed solid; like I said, I like them…):</p>
+<blockquote><p>The total memory usage that we report consists of “rss + 
+swap + cache”, and in your case the amount of cache memory is what 
+triggers the R14 alerts. Indeed, the large files that your processes 
+manipulate may be the cause for the high cache usage.</p>
+<p>…</p>
+<p>Thanks for bringing this up. It is unfortunate that we currently do 
+not offer a good way for you to introspect your detailed memory usage 
+(swap, cache, etc), but we are going to discuss it internally and 
+hopefully improve the situation soon. Also, we know that you do not have
+ direct control on how much cache memory is being used by your dyno, but
+ rest assured that we are looking at it.</p></blockquote>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://tech.blog.aknin.name/2012/03/09/heroku-is-great-however/?replytocom=1546#respond" onclick='return addComment.moveForm("div-comment-1546", "1546", "respond", "1278")'>Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment odd alt depth-3 parent highlander-comment" id="comment-1548">
+				<div id="div-comment-1548" class="comment-body">
+				<div class="comment-author vcard">
+			<img id="grav-699c5dd17b5d6be2e25dd50e2c51bf38-1" alt="" src="Heroku%20is%20great%21%20However%E2%80%A6%20_%20NIL%20%20.to%20write%281%29%20%7E%20help%20about_files/699c5dd17b5d6be2e25dd50e2c51bf38.png" class="avatar avatar-32 grav-hashed grav-hijack" height="32" width="32">			<cite class="fn">Baris</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://tech.blog.aknin.name/2012/03/09/heroku-is-great-however/#comment-1548">
+			2012/03/20 at 00:04</a>		</div>
+
+		<p>This is actually does not make so much sense. It says: “Memory used
+ above 512MB will go into swap”. So in that case, why are we billed for 
+swap usage? I am not an export on this, but how do we supposed to manage
+ cache memory? Isn’t it at OS level?</p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://tech.blog.aknin.name/2012/03/09/heroku-is-great-however/?replytocom=1548#respond" onclick='return addComment.moveForm("div-comment-1548", "1548", "respond", "1278")'>Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-yanivaknin bypostauthor even depth-4 highlander-comment" id="comment-1549">
+				<div id="div-comment-1549" class="comment-body">
+				<div class="comment-author vcard">
+			<img id="grav-9e42ce18ec8a40b6334a6b0283d72528-1" alt="" src="Heroku%20is%20great%21%20However%E2%80%A6%20_%20NIL%20%20.to%20write%281%29%20%7E%20help%20about_files/9e42ce18ec8a40b6334a6b0283d72528.png" class="avatar avatar-32 grav-hashed grav-hijack" height="32" width="32">			<cite class="fn"><a href="http://niltowrite.wordpress.com/" rel="external nofollow" class="url">Yaniv Aknin</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://tech.blog.aknin.name/2012/03/09/heroku-is-great-however/#comment-1549">
+			2012/03/20 at 01:17</a>		</div>
+
+		<p>Several things:<br>
+1. Indeed, you can not manage cache memory directly, it’s largely up to 
+the kernel and the hoops you can possibly go through to change your 
+cache memory usage aren’t worth it.<br>
+2. The reason I called it “R14 false positives” in the post is that I 
+never saw one of these R14 for much more than 512.0mb. Sometimes 
+512.5mb, sometimes even 513.1mb, never much more. Why is this important?
+ Because it means little (if any) of my process really goes into swap. 
+Lets say my dyno uses 400mb of RSS memory, and the kernel starts 
+allocating cache buffers for my processes. When the kernel reaches about
+ 112mb of cache buffers, two things happen: (1) the R14 alert triggers 
+and (2) the kernel <em>stops allocating cache buffers</em>, and starts 
+eating into these buffers if I allocate more RSS memory. So the net 
+effect on me is just the alert, not much more. That’s not so good, but 
+not horrific.</p>
+
+		<div class="reply">
+					</div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent highlander-comment" id="comment-2297">
+				<div id="div-comment-2297" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="Heroku%20is%20great%21%20However%E2%80%A6%20_%20NIL%20%20.to%20write%281%29%20%7E%20help%20about_files/picture" class="avatar avatar-32" height="32" width="32">			<cite class="fn"><a href="http://www.facebook.com/guillermo.siliceo" rel="external nofollow" class="url">Guillermo Siliceo Trueba</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://tech.blog.aknin.name/2012/03/09/heroku-is-great-however/#comment-2297">
+			2012/10/02 at 02:00</a>		</div>
+
+		<p>I´m also getting this R14 error, i have reduced my gunicorns and i 
+still get about 130% memory usage, i saw you instrumented code to take 
+memory snapshots (ps -ef + cat /proc/meminfo at relevant timings), could
+ you provide specifics on how to do this?<br>
+I´m kind of lost on this issue, i don´t know where to start.</p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://tech.blog.aknin.name/2012/03/09/heroku-is-great-however/?replytocom=2297#respond" onclick='return addComment.moveForm("div-comment-2297", "2297", "respond", "1278")'>Reply</a>		</div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-yanivaknin bypostauthor even depth-2 highlander-comment" id="comment-2298">
+				<div id="div-comment-2298" class="comment-body">
+				<div class="comment-author vcard">
+			<img id="grav-9e42ce18ec8a40b6334a6b0283d72528-2" alt="" src="Heroku%20is%20great%21%20However%E2%80%A6%20_%20NIL%20%20.to%20write%281%29%20%7E%20help%20about_files/9e42ce18ec8a40b6334a6b0283d72528.png" class="avatar avatar-32 grav-hashed grav-hijack" height="32" width="32">			<cite class="fn"><a href="http://niltowrite.wordpress.com/" rel="external nofollow" class="url">Yaniv Aknin</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="http://tech.blog.aknin.name/2012/03/09/heroku-is-great-however/#comment-2298">
+			2012/10/02 at 09:22</a>		</div>
+
+		<p>What I did was fairly simple; after gathering some memory 
+information I just stashed it in Redis (I guess pretty much any backing 
+store would do) with a unique key name and wrote the stored key to the 
+log. Later on, I’d look at the log, find an ‘interesting’ situation 
+(right before or right after an R14 error) and lookup the data on Redis 
+using that unique key name.</p>
+<p>See <a href="https://gist.github.com/81c0024473f77204cf1f" rel="nofollow">this</a>
+ (rough) code for example. Replace logging with whatever logging 
+infrastructure you use (on Heroku, “print” could do the trick as well) 
+and replace the import and invocation some_map_like_backing_store with 
+whatever backing store you like.</p>
+
+		<div class="reply">
+			<a class="comment-reply-link" href="http://tech.blog.aknin.name/2012/03/09/heroku-is-great-however/?replytocom=2298#respond" onclick='return addComment.moveForm("div-comment-2298", "2298", "respond", "1278")'>Reply</a>		</div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	</ul>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+	
+									<div class="js" id="respond">
+				<h3 id="reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://tech.blog.aknin.name/2012/03/09/heroku-is-great-however/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://tech.blog.aknin.name/wp-comments-post.php" method="post" id="commentform">
+																										
+
+
+												<input id="highlander_comment_nonce" name="highlander_comment_nonce" value="4e1c346404" type="hidden"><input name="_wp_http_referer" value="/2012/03/09/heroku-is-great-however/" type="hidden">
+<input name="hc_post_as" id="hc_post_as" value="guest" type="hidden">
+
+<div class="comment-form-field comment-textarea">
+	
+	<div id="comment-form-comment"><textarea aria-hidden="true" tabindex="-1" style="height: 35px; resize: none; overflow-y: hidden; position: absolute; top: 0px; left: -9999px; width: 470px; line-height: 15px; text-decoration: none; letter-spacing: 0px;" placeholder="Enter your comment here..." title="Enter your comment here..."></textarea><textarea style="height: 35px; resize: none; overflow-y: hidden;" placeholder="Enter your comment here..." id="comment" name="comment" title="Enter your comment here..."></textarea></div>
+</div>
+
+<div style="display: none;" id="comment-form-identity">
+
+	<div id="comment-form-nascar">
+		<p>Fill in your details below or click an icon to log in:</p>
+		<ul>
+			<li class="selected" style="display:none;">
+				<a href="#comment-form-guest" id="postas-guest" title="Guest">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:WordPress.com" id="postas-wordpress" title="WordPress.com">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Twitter" id="postas-twitter" title="Twitter">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Facebook" id="postas-facebook" title="Facebook">
+					<span></span>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+<a href="https://gravatar.com/site/signup/" target="_blank">				<img src="Heroku%20is%20great%21%20However%E2%80%A6%20_%20NIL%20%20.to%20write%281%29%20%7E%20help%20about_files/ad516503a11cd5ca435acc9bb6523536.png" alt="Gravatar" class="no-grav" width="25">
+</a>			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Email <span class="required">(required)</span> <span class="nopublish">(Address never made public)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="email"></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Name <span class="required">(required)</span></label>
+					<div class="comment-form-input"><input id="author" name="author" type="text"></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Website</label>
+					<div class="comment-form-input"><input id="url" name="url" type="text"></div>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="Heroku%20is%20great%21%20However%E2%80%A6%20_%20NIL%20%20.to%20write%281%29%20%7E%20help%20about_files/wplogo.png" alt="WordPress.com Logo" class="no-grav" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input name="wp_avatar" id="wordpress-avatar" class="comment-meta-wordpress" value="" type="hidden">
+				<input name="wp_user_id" id="wordpress-user_id" class="comment-meta-wordpress" value="" type="hidden">
+				<input name="wp_access_token" id="wordpress-access_token" class="comment-meta-wordpress" value="" type="hidden">
+				<p class="comment-form-posting-as pa-wordpress"><strong></strong> You are commenting using your WordPress.com account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout(%20'wordpress'%20);">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="Heroku%20is%20great%21%20However%E2%80%A6%20_%20NIL%20%20.to%20write%281%29%20%7E%20help%20about_files/ad516503a11cd5ca435acc9bb6523536.png" alt="Twitter picture" class="no-grav" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="" type="hidden">
+				<input name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="" type="hidden">
+				<input name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="" type="hidden">
+				<p class="comment-form-posting-as pa-twitter"><strong></strong> You are commenting using your Twitter account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout(%20'twitter'%20);">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="Heroku%20is%20great%21%20However%E2%80%A6%20_%20NIL%20%20.to%20write%281%29%20%7E%20help%20about_files/ad516503a11cd5ca435acc9bb6523536.png" alt="Facebook photo" class="no-grav" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="" type="hidden">
+				<input name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="" type="hidden">
+				<input name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="" type="hidden">
+				<p class="comment-form-posting-as pa-facebook"><strong></strong> You are commenting using your Facebook account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout(%20'facebook'%20);">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service">
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();">Cancel</a></div>
+		<p>Connecting to %s</p>
+	</div>
+
+	
+</div>
+
+<script type="text/javascript">
+jQuery(document).ready(function(){
+	var input = document.createElement( 'input' ),
+	    comment = jQuery( '#comment' );
+
+	if ( 'placeholder' in input ) {
+		comment.attr( 'placeholder', jQuery( '.comment-textarea label' ).remove().text() );
+	}
+
+	// Expando Mode: start small, then auto-resize on first click + text length
+	jQuery( '#comment-form-identity' ).hide();
+	jQuery( '#comment-form-subscribe' ).hide();
+	jQuery( '#commentform .form-submit' ).hide();
+
+	comment.css( { 'height':'10px' } ).one( 'focus', function() {
+		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
+		jQuery( this ).animate( { 'height': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
+		jQuery( '#comment-form-identity' ).slideDown();
+		jQuery( '#comment-form-subscribe' ).slideDown();
+		jQuery( '#commentform .form-submit' ).slideDown();
+	});
+});
+</script>
+
+<div style="display: none;" id="comment-form-subscribe">
+	<p class="comment-subscription-form"><input name="subscribe" id="subscribe" value="subscribe" style="width: auto;" tabindex="6" type="checkbox"> <label class="subscribe-label" id="subscribe-label" for="subscribe" style="display: inline;">Notify me of follow-up comments via email.</label></p><p class="post-subscription-form"><input name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto;" tabindex="7" type="checkbox"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog" style="display: inline;">Notify me of new posts via email.</label></p></div>
+
+												<p style="display: none;" class="form-submit">
+							<input name="submit" id="comment-submit" value="Post Comment" type="submit">
+							<input name="comment_post_ID" value="1278" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+						</p>
+						
+<input name="genseq" value="1372668733" type="hidden">
+<p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="93269a0521" type="hidden"></p><script type="text/javascript" src="Heroku%20is%20great%21%20However%E2%80%A6%20_%20NIL%20%20.to%20write%281%29%20%7E%20help%20about_files/form.js"></script>
+<p style="display: none;"><input id="ak_js" name="ak_js" value="142" type="hidden"></p>					</form>
+							</div><!-- #respond -->
+			<div style="clear: both"></div>			
+				</div>
+			</div>
+
+		
+		<div class="navigation">
+			<p class="alignleft"></p>
+			<p class="alignright"><a href="http://tech.blog.aknin.name/2012/02/08/restfully-atomically-incrementing-a-counter-using-http-patch/" rel="prev">RESTfully atomically incrementing a counter using HTTP&nbsp;PATCH</a> »</p>
+		</div>
+
+	
+</div> <!-- close entry-content -->
+
+	<div id="supplementary">
+		<div class="meta">
+
+					<div class="post-nav">
+				<h3>What’s this?</h3>
+				<p>You are currently reading <strong>Heroku is great!&nbsp;However…</strong> at <a href="http://tech.blog.aknin.name/">NIL: .to write(1) ~ help:about</a>.</p>
+
+				<h3>meta</h3>
+				<ul class="single-post-meta">
+					<li><strong>Author:</strong> Yaniv Aknin</li>
+					<li><strong>Comments:</strong> <a href="http://tech.blog.aknin.name/2012/03/09/heroku-is-great-however/#comments" title="Comment on Heroku is great!&nbsp;However…">7 Comments</a></li>
+					<li><strong>Categories:</strong> <a href="http://tech.blog.aknin.name/category/django/" title="View all posts in django" rel="category tag">django</a></li>
+				</ul>
+				<p class="edit"></p>
+			</div>
+
+		
+	</div> <!-- close meta -->
+	</div> <!-- close supplementary -->
+
+</div> <!-- close content -->
+<div id="footer">
+
+	<div id="footer-contact">
+		<p><a href="http://wordpress.com/?ref=footer" rel="generator">Blog at WordPress.com</a>.</p>
+		<p><a href="http://theme.wordpress.com/themes/oulipo/" title="Learn more about this theme">The Oulipo Theme</a>. </p>
+	</div>
+
+</div>
+
+</div> <!-- close wrapper -->
+
+<script type="text/javascript">
+var _qevents = _qevents || [], wpcomQuantcastData = {"qacct":"p-18-mFEk4J448M","labels":",language.en,type.wpcom,posttag.cedar,posttag.heroku,posttag.polyglot,posttag.python,posttag.reverse-proxy,posttag.static-assets"};
+function wpcomQuantcastPixel( labels, options ) {
+	var i, defaults = wpcomQuantcastData, data = { event: 'ajax' };
+
+	labels  = labels  || '';
+	options = options || {};
+
+	if ( typeof labels != 'string' )
+		options = labels;
+
+	for ( i in defaults ) {
+		data[i] = defaults[i];
+	}
+
+	for ( i in options ) {
+		data[i] = options[i];
+	}
+
+	if ( data.labels ) {
+		data.labels += ',' + labels;
+	} else {
+		data.labels = labels;
+	}
+
+	_qevents.push( data );
+};
+(function() {var elem = document.createElement('script');elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";elem.async = true;elem.type = "text/javascript";var scpt = document.getElementsByTagName('script')[0];scpt.parentNode.insertBefore(elem, scpt);  })();
+_qevents.push( wpcomQuantcastData );
+</script>
+<noscript><div style="display: none;"><img src="//pixel.quantserve.com/pixel/p-18-mFEk4J448M.gif?labels=%2Clanguage.en%2Ctype.wpcom%2Cposttag.cedar%2Cposttag.heroku%2Cposttag.polyglot%2Cposttag.python%2Cposttag.reverse-proxy%2Cposttag.static-assets" height="1" width="1" alt="" /></div></noscript>
+
+<script type="text/javascript" src="Heroku%20is%20great%21%20However%E2%80%A6%20_%20NIL%20%20.to%20write%281%29%20%7E%20help%20about_files/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Heroku%20is%20great%21%20However%E2%80%A6%20_%20NIL%20%20.to%20write%281%29%20%7E%20help%20about_files/wpgroho.js"></script>
+<script>jQuery(document).ready(function($){ Gravatar.profile_cb = function( h, d ) { WPGroHo.syncProfileData( h, d );	}; Gravatar.my_hash = WPGroHo.my_hash; Gravatar.init( 'body', '#wp-admin-bar-my-account' ); });</script>	<div style="display:none">
+	<div class="grofile-hash-map-728e733011066788f8a919632f5b4032">
+	</div>
+	<div class="grofile-hash-map-699c5dd17b5d6be2e25dd50e2c51bf38">
+	</div>
+	<div class="grofile-hash-map-9e42ce18ec8a40b6334a6b0283d72528">
+	</div>
+	<div class="grofile-hash-map-7a781dab51284428bf9a44f3e0c85b6a">
+	</div>
+	</div>
+<script type="text/javascript">
+/* <![CDATA[ */
+var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Posting Comment\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"http:\/\/niltowrite.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"http:\/\/niltowrite.wordpress.com\/wp-login.php?action=logout&_wpnonce=88a9c653a8","homeURL":"http:\/\/tech.blog.aknin.name\/","postID":"1278","gravDefault":"identicon","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"","userIsLoggedIn":"","isJetpack":"0"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Heroku%20is%20great%21%20However%E2%80%A6%20_%20NIL%20%20.to%20write%281%29%20%7E%20help%20about_files/a_002.js"></script>
+
+	<div style="bottom: -233px;" id="bit" class="loggedout-follow-normal">
+		<a class="bsub" href="javascript:void(0)"><span id="bsub-text">Follow</span></a>
+		<div id="bitsubscribe">
+
+					<h3><label for="loggedout-follow-field">Follow “NIL: .to write(1) ~ help:about”</label></h3>
+
+			<form action="https://subscribe.wordpress.com" method="post" accept-charset="utf-8" id="loggedout-follow">
+			<p>Get every new post delivered to your Inbox.</p>
+
+			<p id="loggedout-follow-error" style="display: none;"></p>
+
+			
+			<p><input name="email" style="width: 95%; padding: 1px 2px" value="Enter your email address" onfocus='this.value=(this.value=="Enter your email address") ? "" : this.value;' onblur='this.value=(this.value=="") ? "Enter email address" : this.value;' id="loggedout-follow-field" type="email"></p>
+
+			<input name="action" value="subscribe" type="hidden">
+			<input name="blog_id" value="12830832" type="hidden">
+			<input name="source" value="http://tech.blog.aknin.name/2012/03/09/heroku-is-great-however/" type="hidden">
+			<input name="sub-type" value="loggedout-follow" type="hidden">
+
+			<input id="_wpnonce" name="_wpnonce" value="98737663e3" type="hidden"><input name="_wp_http_referer" value="/2012/03/09/heroku-is-great-however/" type="hidden">
+			<p id="bsub-subscribe-button"><input value="Sign me up" type="submit"></p>
+			</form>
+					<div id="bsub-credit"><a href="http://wordpress.com/signup/?ref=lof">Powered by WordPress.com</a></div>
+		</div><!-- #bitsubscribe -->
+	</div><!-- #bit -->
+		<iframe src="Heroku%20is%20great%21%20However%E2%80%A6%20_%20NIL%20%20.to%20write%281%29%20%7E%20help%20about_files/master.xht" id="likes-master" name="likes-master" style="display:none;" scrolling="no"></iframe>
+		<div id="likes-other-gravatars"><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+		<script type="text/javascript">
+		//<![CDATA[
+			var jetpackLikesWidgetQueue = [];
+			var jetpackLikesMasterReady = false;
+
+			function JetpackLikespostMessage( message, target ) {
+				if ( "string" === typeof message ){
+					try{
+						message = JSON.parse( message );
+					}
+					catch(e) {
+						return;
+					}
+				}
+
+				pm( {
+					target: target,
+					type: 'likesMessage',
+					data: message,
+					origin: '*'
+				} );
+			}
+
+			function JetpackLikesMessageListener( event ) {
+				if ( "undefined" == typeof event.event )
+					return;
+
+				if ( 'masterReady' == event.event ) {
+					jQuery( document ).ready( function() {
+						jetpackLikesMasterReady = true;
+
+						var stylesData = {
+								event: 'injectStyles'
+						};
+
+						if ( jQuery( 'iframe.admin-bar-likes-widget' ).length > 0 ) {
+							JetpackLikespostMessage( { event: 'adminBarEnabled' }, window.frames[ 'likes-master' ] );
+
+							stylesData.adminBarStyles = {
+								background: jQuery( '#wpadminbar .quicklinks li#wp-admin-bar-wpl-like > a' ).css( 'background' )
+							};
+						}
+
+						if ( !window.addEventListener )
+							jQuery( '#wp-admin-bar-admin-bar-likes-widget' ).hide();
+
+						stylesData.textStyles = {
+							color: jQuery( '.sd-text-color').css( 'color' ),
+							fontFamily: jQuery( '.sd-text-color' ).css( 'font-family' ),
+							fontSize: jQuery( '.sd-text-color' ).css( 'font-size' ),
+							direction: jQuery( '.sd-text-color' ).css( 'direction' ),
+							fontWeight: jQuery( '.sd-text-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-text-color' ).css( 'font-style' ),
+							textDecoration: jQuery( '.sd-text-color' ).css('text-decoration')
+						};
+
+						stylesData.linkStyles = {
+							color: jQuery( '.sd-link-color' ).css('color'),
+							fontFamily: jQuery( '.sd-link-color' ).css('font-family'),
+							fontSize: jQuery( '.sd-link-color' ).css('font-size'),
+							textDecoration: jQuery( '.sd-link-color' ).css('text-decoration'),
+							fontWeight: jQuery( '.sd-link-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-link-color' ).css( 'font-style' )
+						};
+
+						JetpackLikespostMessage( stylesData, window.frames[ 'likes-master' ] );
+
+						var requests = [];
+						jQuery( '.jetpack-likes-widget-wrapper' ).each( function( i ) {
+							var regex = /like-(post|comment)-wrapper-(\d+)-(\d+)-(\w+)/;
+							var match = regex.exec( this.id );
+							if ( ! match || match.length != 5 )
+								return;
+
+							var info = {
+								blog_id: match[2],
+								width:   this.width
+							};
+
+							if ( 'post' == match[1] ) {
+								info.post_id = match[3];
+							} else if ( 'comment' == match[1] ) {
+								info.comment_id = match[3];
+							}
+
+							info.obj_id = match[4];
+
+							requests.push( info );
+						});
+
+						JetpackLikespostMessage( { event: 'initialBatch', requests: requests }, window.frames['likes-master'] );
+
+						jQuery( document ).on( 'inview', 'div.jetpack-likes-widget-unloaded', function() {
+							jetpackLikesWidgetQueue.push( this.id );
+						});
+					});
+				}
+
+				if ( 'showLikeWidget' == event.event ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 10 );
+					jQuery( '#' + event.id + ' .post-likes-widget-placeholder'  ).fadeOut( 'fast', function() {
+						jQuery( '#' + event.id + ' .post-likes-widget' ).fadeIn( 'fast', function() {
+							JetpackLikespostMessage( { event: 'likeWidgetDisplayed', blog_id: event.blog_id, post_id: event.post_id, obj_id: event.obj_id }, window.frames['likes-master'] );
+						});
+					});
+				}
+
+				if ( 'showOtherGravatars' == event.event ) {
+					var $container = jQuery( '#likes-other-gravatars' );
+					var $list = $container.find( 'ul' );
+
+					$container.hide();
+					$list.html( '' );
+
+					$container.find( '.likes-text span' ).text( event.total );
+
+					jQuery.each( event.likers, function( i, liker ) {
+						$list.append( '<li class="' + liker.css_class + '"><a href="' + liker.profile_URL + '" class="wpl-liker" rel="nofollow" target="_parent"><img src="' + liker.avatar_URL + '" alt="' + liker.name + '" width="30" height="30" style="padding-right: 3px;" /></a></li>');
+					} );
+
+					var offset = jQuery( "[name='" + event.parent + "']" ).offset();
+
+					$container.css( 'left', offset.left + event.position.left - 10 + 'px' );
+					$container.css( 'top', offset.top + event.position.top - 33 + 'px' );
+
+					var rowLength = Math.floor( event.width / 37 );
+					var height = ( Math.ceil( event.likers.length / rowLength ) * 37 ) + 13;
+					if ( height > 204 ) {
+						height = 204;
+					}
+
+					$container.css( 'height', height + 'px' );
+					$container.css( 'width', rowLength * 37 - 7 + 'px' );
+
+					$list.css( 'width', rowLength * 37 + 'px' );
+
+					$container.fadeIn( 'slow' );
+
+					var scrollbarWidth = $list[0].offsetWidth - $list[0].clientWidth;
+					if ( scrollbarWidth > 0 ) {
+						$container.width( $container.width() + scrollbarWidth );
+						$list.width( $list.width() + scrollbarWidth );
+					}
+				}
+			}
+
+			pm.bind( 'likesMessage', function(e) { JetpackLikesMessageListener(e); } );
+
+			jQuery( document ).click( function( e ) {
+				var $container = jQuery( '#likes-other-gravatars' );
+
+				if ( $container.has( e.target ).length === 0 ) {
+					$container.fadeOut( 'slow' );
+				}
+			});
+
+			function JetpackLikesWidgetQueueHandler() {
+				var wrapperID;
+				if ( ! jetpackLikesMasterReady ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				if ( jetpackLikesWidgetQueue.length > 0 ) {
+					// We may have a widget that needs creating now
+					var found = false;
+					while( jetpackLikesWidgetQueue.length > 0 ) {
+						// Grab the first member of the queue that isn't already loading.
+						wrapperID = jetpackLikesWidgetQueue.splice( 0, 1 )[0];
+						if ( jQuery( '#' + wrapperID ).hasClass( 'jetpack-likes-widget-unloaded' ) ) {
+							found = true;
+							break;
+						}
+					}
+					if ( ! found ) {
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				} else if ( jQuery( 'div.jetpack-likes-widget-unloaded' ).length > 0 ) {
+					// Get the next unloaded widget
+					wrapperID = jQuery( 'div.jetpack-likes-widget-unloaded' ).first()[0].id;
+					if ( ! wrapperID ) {
+						// Everything is currently loaded
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				}
+
+				var $wrapper = jQuery( '#' + wrapperID );
+				$wrapper.find( 'iframe' ).remove();
+
+				if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='22px' width='68px' frameBorder='0' scrolling='no' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				} else {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='55px' width='100%' frameBorder='0' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				}
+
+				$wrapper.removeClass( 'jetpack-likes-widget-unloaded' ).addClass( 'jetpack-likes-widget-loading' );
+
+				$wrapper.find( 'iframe' ).load( function( e ) {
+					var $iframe = jQuery( e.target );
+					$wrapper.removeClass( 'jetpack-likes-widget-loading' ).addClass( 'jetpack-likes-widget-loaded' );
+
+					JetpackLikespostMessage( { event: 'loadLikeWidget', name: $iframe.attr( 'name' ), width: $iframe.width() }, window.frames[ 'likes-master' ] );
+
+					if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+						$wrapper.find( 'iframe' ).Jetpack( 'resizeable' );
+					}
+				});
+				setTimeout( JetpackLikesWidgetQueueHandler, 250 );
+			}
+			JetpackLikesWidgetQueueHandler();
+		//]]>
+		</script>
+<script type="text/javascript" src="Heroku%20is%20great%21%20However%E2%80%A6%20_%20NIL%20%20.to%20write%281%29%20%7E%20help%20about_files/devicepx.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script><script src="Heroku%20is%20great%21%20However%E2%80%A6%20_%20NIL%20%20.to%20write%281%29%20%7E%20help%20about_files/w.js" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({'blog':'12830832','v':'wpcom','tz':'3','user_id':'0','post':'1278','subd':'niltowrite'});
+ex_go({'crypt':'UE40eW5QN0p8M2Y/RE1oOHBqWkJdYy5wL35xRnR4SVtWLmluVHQrZ3JdejZPY3Z1KzdLPS5kdmx1VSVDa1FVTTl0MWkvQk5jaVJTayYsbXVuRVIvMGRXJXRXMkpUJXp2czdsbWlxPUhEQ11tYytfRmZJdDRNP05MLV1laXhSSEtibnRUQWJuZj9KU1hzZVE0eH43NmVIP2EzN08/XXhnXXxkXzZzUiUyRU5SQmRlT1Vjb1VoMlZIYndZeHYuX1RCbXBIWjRqZ1hobWRwalUlK2x3MX5ndHNFeUcmXUlIUkhEbm54T1t+PTddLldEK0Z0ZWZaUkdEXS1FUVI3b00rLmtSbkVUWG44TGx3c2FsZ1Z5fHZZVDBsdW5TWkZiMU5UQ3hUTn5CMSYz'});
+addLoadEvent(function(){linktracker_init('12830832',1278);});
+	</script><img id="wpstats" src="Heroku%20is%20great%21%20However%E2%80%A6%20_%20NIL%20%20.to%20write%281%29%20%7E%20help%20about_files/g_002.gif" alt=""><img id="wpstats2" src="Heroku%20is%20great%21%20However%E2%80%A6%20_%20NIL%20%20.to%20write%281%29%20%7E%20help%20about_files/g.gif" alt="" style="display:none">
+<noscript><img src="http://stats.wordpress.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /></noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//stats.wordpress.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>
+</body></html>

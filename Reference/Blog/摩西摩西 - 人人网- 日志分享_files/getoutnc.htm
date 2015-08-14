@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>名片卡</title>
+<link href="getoutnc_data/namecard-all-min.css" rel="stylesheet" type="text/css" media="all">
+<script type="text/javascript">
+document.domain = 'renren.com';
+function centerAvatar(avatar) {
+var offset;
+if(avatar.width >= avatar.height) {
+avatar.width = 100 * avatar.width / avatar.height;
+avatar.height = 100;
+offset = (avatar.width - 100) * .5;
+avatar.style.left = -offset + 'px';
+} else {
+avatar.height = 100 * avatar.height / avatar.width;
+avatar.width = 100;
+offset = (avatar.height - 100) * .5;
+avatar.style.top = -offset + 'px';
+}
+}
+</script>
+</head>
+<body>
+<div id="namecard"></div>
+
+</body></html>

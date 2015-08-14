@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+  <meta charset="utf-8">
+  <title>Class-based views in Django 1.3</title>
+  <meta name="description" content="&lt;p&gt;Django 1.3 added class-based views, but neglected to provide
+documentation to explain what they were or how to use them. So here's
+a basic introduction.&lt;/p&gt;">
+  <meta name="author" content="Caktus Consulting Group, LLC">
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="http://www.caktusgroup.com/static/images/favicon.png">
+  
+    <link rel="stylesheet" href="Class-based%20views%20in%20Django%201.3_files/0d36c27fcece.css" type="text/css" media="all">
+
+
+  
+  <link rel="stylesheet" href="Class-based%20views%20in%20Django%201.3_files/c4dad1b8dfd0.css" type="text/css" media="all">
+  
+
+  
+
+<script src="Class-based%20views%20in%20Django%201.3_files/ga.js" async="" type="text/javascript"></script><script src="Class-based%20views%20in%20Django%201.3_files/embed.js" async="" type="text/javascript"></script></head>
+<body class="white-background post_detail" id="blog-detail">
+  
+      
+        <nav class="navbar">
+            <div class="container">
+              <ul class="nav main hidden-phone">
+                <li><a href="http://www.caktusgroup.com/about/">about</a></li>
+                <li><a href="http://www.caktusgroup.com/services/">services</a></li>
+                <li><a href="http://www.caktusgroup.com/portfolio/">clients</a></li>
+                <li class="brand"><a href="http://www.caktusgroup.com/"><img src="Class-based%20views%20in%20Django%201.3_files/caktus-logo.png" alt="Caktus logo"></a></li>
+                <li><a href="http://www.caktusgroup.com/blog/">blog</a></li>
+                <li><a href="http://www.caktusgroup.com/events/">events</a></li>
+                <li><a href="http://www.caktusgroup.com/contact/">contact</a></li>
+              </ul>
+              <ul class="nav mobile visible-phone">
+                 <li class="brand"><a href="http://www.caktusgroup.com/"><img src="Class-based%20views%20in%20Django%201.3_files/caktus-logo.png" alt="Caktus logo"></a></li>
+                <li class="dropdown">
+                  <form action="." method="post">
+                    <label>
+                      <select id="mobile-nav">
+                        <option value="/">home</option>
+                        <option value="/about/">about</option>
+                        <option value="/services/">services</option>
+                        <option value="/portfolio/">clients</option>
+                        <option selected="selected" value="/blog/">blog</option>
+                        <option value="/events/">events</option>
+                        <option value="/contact/">contact</option>
+                      </select>
+                    </label>
+                  </form>
+                </li>
+              </ul>
+            </div>
+        </nav>
+
+        <script type="text/javascript">
+          // Select the correct nav option depending on path name
+          // This allows you to select the 'home' option when not on 'home'
+          if(location && location.pathname) {
+              var menu = document.getElementById('mobile-nav');
+              var parent = location.pathname.split('/')[1];
+
+              // The split caused '/' for home to be empty (as expected)
+              if(parent) {
+                  menu.value = '/' + parent + '/';
+              } else {
+                  menu.value = '/';
+              }
+          }
+        </script>
+      
+
+    <div id="page">
+      <div class="container" role="main">
+      
+    <div class="row">
+        <div class="span10">
+          <article>
+              <header>
+              
+              
+                <a rel="author" href="http://www.caktusgroup.com/about/#dpoirier"><img alt="Dan Poirier" src="Class-based%20views%20in%20Django%201.3_files/5de5348dc0a04a7d5f21ab378399a4e7.jpg" class="profile"></a>
+              
+              
+              <h2 class="title">Class-based views in Django 1.3</h2>
+              <p class="author">Written by
+                
+                  <a href="http://www.caktusgroup.com/about/#dpoirier">Dan Poirier</a>
+                
+              </p>
+              <time pubdate="" datetime="2011-12-29T06:00:00">December 29, 2011</time>
+              </header>
+              <div class="blog-image">
+                
+              </div>
+              
+                <p>Django class-based views</p>
+<hr>
+<h2>Introduction</h2>
+<p>Django 1.3 added class-based views, but neglected to provide
+documentation to explain what they were or how to use them. So here's
+a basic introduction.</p>
+<hr>
+<h2>Example of a very basic class-based view</h2>
+<p>Let's start with an example of a very basic class-based view.</p>
+<p>urls.py:</p>
+<div class="highlight"><pre><span class="o">...</span>
+<span class="n">url</span><span class="p">(</span><span class="s">r'^/$'</span><span class="p">,</span> <span class="n">MyViewClass</span><span class="o">.</span><span class="n">as_view</span><span class="p">(),</span> <span class="n">name</span><span class="o">=</span><span class="s">'myview'</span><span class="p">),</span>
+<span class="o">...</span>
+</pre></div>
+
+<p>views.py:</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.views.generic.base</span> <span class="kn">import</span> <span class="n">TemplateView</span>
+
+<span class="k">class</span> <span class="nc">MyViewClass</span><span class="p">(</span><span class="n">TemplateView</span><span class="p">):</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s">"index.html"</span>
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="c"># compute what you want to pass to the template</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">render_to_response</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+</pre></div>
+
+<p>This will render your template <code>index.html</code> with the context
+you computed and return it as the content of an <code>HttpResponse</code>.</p>
+<hr>
+<h2>Introduction to class-based views</h2>
+<p>Now that we've seen the obligatory example, how about some instructions?</p>
+<ul>
+<li><p>To create a class-based view, start by creating a class that inherits
+from <code>django.views.generic.View</code> or one of its subclasses.</p></li>
+<li><p>In your URLconf, specify the view method as the name of the new
+class, plus <code>.as_view()</code>:</p>
+<p><code>url(r'urlpattern', MyViewClass.as_view(), ...)</code></p></li>
+<li><p>In your class, write a <code>get</code> method that takes as arguments <code>self</code>
+(as always), <code>request</code> (the HttpRequest), and any other arguments
+from the request as specified in your URLconf.</p></li>
+<li><p>In your get method, use the same logic you'd have used in an old
+view, except that you can assume the request method is <code>GET</code>.  Return an
+HttpResponse as usual.</p></li>
+<li><p>If you need to handle <code>POST</code>, write a <code>post</code> method, just like your <code>get</code>
+method except that you can assume the request method is POST.</p></li>
+<li><p>Any request method that you don't write a handler method for will
+automatically get back a "method not allowed" response; you don't have
+to do anything special.</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">View</span>
+<span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
+
+<span class="k">class</span> <span class="nc">MyViewClass</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">arg1</span><span class="p">,</span> <span class="n">keyword</span><span class="o">=</span><span class="n">value</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">do_something</span><span class="p">()</span>
+    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">arg1</span><span class="p">,</span> <span class="n">keyword</span><span class="o">=</span><span class="n">value</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">do_something_else</span><span class="p">()</span>
+</pre></div>
+
+<hr>
+<h2>Handy subclasses of View</h2>
+<p>Django comes with a number of useful subclasses of View that provide
+some of the function that often ends up as boilerplate in views, just
+by inheriting from them.  You saw <code>TemplateView</code> being used already.
+You'll probably want to base your views on TemplateView almost
+anytime you're generating the content for a response.</p>
+<p>Another useful one is <code>RedirectView</code>.  This can be used to redirect
+all requests.  Example:</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
+<span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">RedirectView</span>
+
+<span class="k">class</span> <span class="nc">MyRedirectView</span><span class="p">(</span><span class="n">RedirectView</span><span class="p">):</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</pre></div>
+
+<p>That is a complete view, and will return a redirect to <code>url</code> on any
+GET, POST, or HEAD request.</p>
+<p>You can optionally set <code>permanent = False</code> to return a temporary
+redirect instead of the default permanent redirect, and <code>query_string
+= True</code> to include any query string from the incoming request on the
+redirect URL:</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.core.urlresolvers</span> <span class="kn">import</span> <span class="n">reverse</span>
+<span class="kn">from</span> <span class="nn">django.views.generic</span> <span class="kn">import</span> <span class="n">RedirectView</span>
+
+<span class="k">class</span> <span class="nc">MyRedirectView</span><span class="p">(</span><span class="n">RedirectView</span><span class="p">):</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+    <span class="n">permanent</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">query_string</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></div>
+
+<hr>
+<h2>Decorators</h2>
+<p>Unfortunately, using decorators with class-based views isn't quite as
+simple as using them with the old method-based views.</p>
+<p>Maybe you're used to doing this:</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.contrib.auth.decorators</span> <span class="kn">import</span> <span class="n">login_required</span>
+
+<span class="nd">@login_required</span>
+<span class="k">def</span> <span class="nf">myview</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="n">context</span> <span class="o">=</span> <span class="o">...</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">'index.html'</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+</pre></div>
+
+<p>With class-based views, you have to decorate the <code>.dispatch()</code> method of
+the class view, which means you have to override it just to decorate
+it. And you need to decorate the decorator, because the decorators
+provided by Django expect to be decorating method-based views, not
+class-based ones:</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.contrib.auth.decorators</span> <span class="kn">import</span> <span class="n">login_required</span>
+<span class="kn">from</span> <span class="nn">django.views.generic.base</span> <span class="kn">import</span> <span class="n">View</span>
+<span class="kn">from</span> <span class="nn">django.views.utils.decorators</span> <span class="kn">import</span> <span class="n">method_decorator</span>
+
+<span class="k">class</span> <span class="nc">MyViewClass</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">context</span> <span class="o">=</span> <span class="o">...</span>
+        <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s">'index.html'</span><span class="p">,</span> <span class="n">context</span><span class="p">)</span>
+
+    <span class="nd">@method_decorator</span><span class="p">(</span><span class="n">login_required</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">dispatch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">MyViewClass</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+
+<p>This is an area of class-based views that could use some improvement.</p>
+<p>You could apply the decorator in urls.py without needing so much
+extra code:</p>
+<p>urls.py:</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.contrib.auth.decorators</span> <span class="kn">import</span> <span class="n">login_required</span>
+<span class="o">...</span>
+    <span class="n">url</span><span class="p">(</span><span class="s">r'^/$'</span><span class="p">,</span> <span class="n">login_required</span><span class="p">(</span><span class="n">MyViewClass</span><span class="o">.</span><span class="n">as_view</span><span class="p">()),</span> <span class="n">name</span><span class="o">=</span><span class="s">'myview'</span><span class="p">),</span>
+<span class="o">...</span>
+</pre></div>
+
+<p>but that moves the policy from the view code to the URLconf, which is
+not where people will be expecting to have to look for it, so I
+wouldn't recommend it.</p>
+<hr>
+<h2>Passing arguments to the view</h2>
+<p>The method signature for <code>get()</code>, <code>post()</code>, etc. in a view class is:</p>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+
+<p>Any unnamed values captured in the URLconf regular expression are
+passed in args, and any named values are passed in kwargs, just
+like before.</p>
+<p>You can pass extra arguments to your view using the third element
+of your URLconf, the same as before, or using a new technique -- passing
+them to the <code>.as_view()</code> call in your url settings.  E.g.</p>
+<div class="highlight"><pre><span class="o">...</span>
+    <span class="n">url</span><span class="p">(</span><span class="s">r'^/$'</span><span class="p">,</span> <span class="n">MyViewClass</span><span class="o">.</span><span class="n">as_view</span><span class="p">(</span><span class="n">extra_arg</span><span class="o">=</span><span class="mi">3</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s">'myview'</span><span class="p">),</span>
+<span class="o">...</span>
+</pre></div>
+
+<p>One warning - don't accidently write <code>MyViewClass(extra_arg=3).as_view()</code>.
+That'll still appear to work, but that extra_arg is just thrown away.</p>
+<hr>
+<h2>Where's the beef?</h2>
+<p>So far, all we've done is the same behavior, written using a different syntax. But
+class-based views enable a whole new level of function.</p>
+<p>Suppose you've got a view that displays some data on a web page, and you write it
+as a class-based view.  Maybe something like this:</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.views.generic.base</span> <span class="kn">import</span> <span class="n">TemplateView</span>
+
+<span class="k">class</span> <span class="nc">MyViewClass</span><span class="p">(</span><span class="n">TemplateView</span><span class="p">):</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s">'index.html'</span>
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c"># Lots of complex logic in here to compute 'context'</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render_to_response</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+</pre></div>
+
+<p>Now you're asked to provide an HTTP API that returns the same data in json.</p>
+<p>Start by refactoring your existing class slightly, moving your business
+logic out of the <code>get()</code> method:</p>
+<div class="highlight"><pre><span class="kn">from</span> <span class="nn">django.views.generic.base</span> <span class="kn">import</span> <span class="n">TemplateView</span>
+
+<span class="k">class</span> <span class="nc">MyViewClass</span><span class="p">(</span><span class="n">TemplateView</span><span class="p">):</span>
+    <span class="n">template_name</span> <span class="o">=</span> <span class="s">'index.html'</span>
+
+    <span class="k">def</span> <span class="nf">compute_context</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c"># Lots of complex logic in here to compute 'context'</span>
+        <span class="k">return</span> <span class="n">context</span>
+
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">render_to_response</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">compute_context</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">))</span>
+</pre></div>
+
+<p>Now, write a new class that subclasses your original class, uses the
+same method to compute the data, but overrides <code>get()</code> with different
+rendering code:</p>
+<div class="highlight"><pre><span class="k">class</span> <span class="nc">MyJsonViewClass</span><span class="p">(</span><span class="n">MyViewClass</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compute_context</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="c"># Very naive way to put your data into json, but a good starting place</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">content_type</span><span class="o">=</span><span class="s">'application/json'</span><span class="p">)</span>
+</pre></div>
+
+<p>Add a new URL to urls.py pointing to your new class-based view, and you're done.  All
+the logic you worked out earlier is still in use, and the power of subclassing let you
+provide the data in a new format almost effortlessly.</p>
+<hr>
+<h2>Class-based views for common policy</h2>
+<p>The previous example was still something you could have done almost as
+easily with method-based views, by refactoring your code into separate
+methods and calling them from all your views.</p>
+<p>A more powerful use of the new class-based views is to provide common
+function for many views. If you have a site with many views, and they
+all inherit from a common view, then you have the potential to change
+behavior across the site by changing that one view.</p>
+<p>Previously, you would probably have used middleware for this kind of thing.
+The problem with middleware is that it's completely hidden from the view
+code. When working on your view, you won't even know middleware is affecting
+things unless you go look at the settings and track down each piece of
+middleware configured there.  </p>
+<p>Furthermore, middleware affects every request, not just the views you
+really wanted it for.</p>
+<p>With a common class-based view, every view affected is declared to
+inherit from that view, making it obvious that we're inheriting
+behavior from elsewhere. With a good IDE, you can even jump straight
+to that superclass to inspect it. Any view that doesn't need the
+common behavior doesn't have to inherit it.</p>
+<hr>
+<h2>References</h2>
+<p>The only documentation page that really discussed class-based views
+in Django 1.3 is this one:</p>
+<p><a target="_blank" href="https://docs.djangoproject.com/en/1.3/topics/class-based-views/">https://docs.djangoproject.com/en/1.3/topics/class-based-views/</a></p>
+<p>Some of the rationale for the current design of class-based views,
+and pros and cons of some alternatives that were considered, are
+documented here:</p>
+<p><a target="_blank" href="https://code.djangoproject.com/wiki/ClassBasedViews">https://code.djangoproject.com/wiki/ClassBasedViews</a></p>
+<p>Beyond that, the best advice I can give is to go read the code. The
+code for the base View is surprisingly small, and can be found at
+<code>django/views/generic/base.py</code>.</p>
+
+              
+          </article>
+
+          
+
+          
+          <p class="inline_tag_list"><strong>Related tags:</strong>
+            
+                <a href="http://www.caktusgroup.com/blog/tags/django/">django</a>, 
+            
+                <a href="http://www.caktusgroup.com/blog/tags/python/">python</a>, 
+            
+                <a href="http://www.caktusgroup.com/blog/tags/views/">views</a>
+            
+          </p>
+          
+
+          <div class="blog-pagination row">
+            <div class="prev span5">
+              
+                 <a href="http://www.caktusgroup.com/blog/2011/12/28/openblock-geocoder-part-3-external-geocoders/" title="OpenBlock Geocoder, Part 3: External Geocoders"><b>← OpenBlock Geocoder, Part 3: External Geocoders</b></a>
+              
+            </div>
+            
+              <div class="next span5">
+                <a href="http://www.caktusgroup.com/blog/2012/01/10/configuring-jenkins-slave/" title="Configuring a Jenkins Slave"><b>Configuring a Jenkins Slave →</b></a>
+              </div>
+            
+          </div>
+
+          <div class="comments">
+            <h2>Comments</h2>
+            
+              
+              <div id="disqus_thread"><iframe src="Class-based%20views%20in%20Django%201.3_files/client.htm" style="width: 100%; border: medium none; overflow: hidden; height: 0px; display: none;" role="application" allowtransparency="true" data-disqus-uid="1" id="dsq1" frameborder="0" width="100%"></iframe><iframe verticalscrolling="no" horizontalscrolling="no" src="Class-based%20views%20in%20Django%201.3_files/a.htm" style="width: 100%; border: medium none; overflow: hidden; height: 2466px;" role="complementary" allowtransparency="true" data-disqus-uid="4" id="dsq4" frameborder="0" scrolling="no" width="100%"></iframe></div>
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var disqus_shortname = 'wwwcaktusblog';
+    var disqus_domain = 'disqus.com';
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.' + disqus_domain + '/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    /* ]]> */
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" href="http://disqus.com/?ref_noscript=">comments powered by Disqus.</a></noscript>
+<p></p>
+            
+          </div>
+        </div>
+    </div>
+
+      </div>
+    </div>
+
+  <footer>
+    <div class="container">
+      <div id="pagelet-47" class="pagelet careers_footer_ad careers row span12">
+	
+	
+	
+    <div class="pagelet-content">
+    
+        <p>
+<a href="http://www.caktusgroup.com/careers/"><strong>We're hiring!</strong> Visit our careers page to see what opportunities await you.</a>
+</p>
+    
+    </div>
+</div>
+
+      <div class="row">
+        <div class="span4">
+          <h3>Let's be friends</h3>
+          <ul class="unstyled social">
+            <li><a target="_blank" class="fb" href="http://www.facebook.com/CaktusGroup/">Facebook</a></li>
+            <li><a target="_blank" class="twt" href="http://twitter.com/caktusgroup/">Twitter</a></li>
+            <li><a target="_blank" class="lnkdin" href="http://www.linkedin.com/company/caktus-consulting-group-llc/">LinkedIN</a></li>
+          </ul>
+        </div>
+
+        <div class="span4">
+          <h3>Our Company</h3>
+          <ul class="unstyled">
+            <li><a href="http://www.caktusgroup.com/about/">About Us</a></li>
+            <li>
+<a href="http://www.caktusgroup.com/careers/">Careers</a>
+</li>
+          </ul>
+        </div>
+
+        <div class="span3">
+          <h3>Contact Us</h3>
+          <ul class="unstyled">
+            <li>919.951.0052</li>
+            <li>Email: <a href="mailto:solutions@caktusgroup.com">solutions@caktusgroup.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <small>© 2007 - 2013 Caktus Consulting Group, LLC.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="Class-based%20views%20in%20Django%201.3_files/jquery.js"></script>
+  <script src="Class-based%20views%20in%20Django%201.3_files/galleria-1.js"></script>
+  <script src="Class-based%20views%20in%20Django%201.3_files/galleria.js"></script>
+
+  <script>var STATIC_URL = '/static/';</script>
+
+  <script src="Class-based%20views%20in%20Django%201.3_files/flickr.js"></script>
+  
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-15492387-4']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $('#mobile-nav').change(function (e) {
+            e.preventDefault();
+            location.href = $('#mobile-nav').val();
+        });
+    });
+  </script>
+
+
+
+
+
+</body></html>

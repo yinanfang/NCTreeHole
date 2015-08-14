@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <title>北卡树洞</title>
+    <meta name="description" content="北卡树洞">
+
+    <link rel="stylesheet" href="{{ STATIC_URL }}style_base.css" />
+    <script src="{{ STATIC_URL }}google_analytics.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="hgroup">
+                <div class="site-logo">
+                    <a href="/">
+                        NC<br> Tree Hole
+                    </a>
+                </div>
+                <div class="site-description">
+                    A place for your unspoken words
+                </div>
+            </div>
+            <div class="nav">
+                <!--
+                <ul id="social-nav">
+                    <li class="twitter"> … </li>
+                    <li class="rss"> … </li>
+                </ul>
+                -->
+                <ul class="main-nav">
+                    <li class="home">
+                        <a href="/blog">
+                            Blog
+                        </a>
+                    </li>
+                    <li class="about"> 
+                        <a href="/about">
+                            About
+                        </a>
+                    </li>
+                    <li class="contact"> 
+                        <a href="/contact">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <form class="searchform" >
+                <input id="s" class="placeholder" type="text" placeholder="Search" name="s"></input>
+            </form>
+            
+            
+            
+        </header>
+        <div class="content">
+            {% block content %}
+
+            {% endblock%}
+        </div>
+        
+        <footer>
+        
+        </footer>
+
+    </div>
+
+</body>
+</html>

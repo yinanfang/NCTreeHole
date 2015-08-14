@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<link rel="stylesheet" href="{{ STATIC_URL }}treehole/style_home.css">
+
+
+
+
+<div class="posting">
+    <div class="icon_block">
+        <img src="{{ STATIC_URL }}treehole/images/hole.jpg" />
+        <div>
+            <div>北卡树洞</div>
+            那些现实中没有发出的声音，让树洞帮你说出来
+        </div>
+    </div>
+    <div class="outter_status_block">
+        <div class="triangle">
+            <div></div>
+        </div>
+        <div class="inner_status_block">
+            <form action="/" method="POST">
+                {% csrf_token %}
+                <textarea id="content" name="content" placeholder="{{PLACEHOLER}}">{{ content }}</textarea>
+                <input type="submit" class="btn_send" value="告诉树洞">
+            </form>
+                      
+            {% if messages %}
+            {% for msg in messages %}
+            <div class="alert">
+                {{ msg }}
+            </div>
+            {% endfor %}
+            {% endif %}
+            
+           
+            
+        </div>
+    </div>
+</div>
+ <div class="display">{{ display }}</div>
+            
+
+{% endblock %}

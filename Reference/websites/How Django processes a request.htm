@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html><head>
+  <meta charset="UTF-8">
+
+  <title>How Django processes a request</title>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="microid" content="d0714f36c065c0c9bd5c0797f690714f050715bc">
+  
+  <link rel="stylesheet" href="How%20Django%20processes%20a%20request_files/b-list-20110815.css" type="text/css">
+  
+
+  
+  <link rel="alternate" title="Feed of latest entries" href="http://www.b-list.org/feeds/entries/" type="application/atom+xml">
+        
+
+
+  <link rel="up" href="http://www.b-list.org/weblog/2006/jun/13/" title="Entries published on June 13, 2006" type="text/html">
+
+
+  <link rel="prev" href="http://www.b-list.org/weblog/2006/jun/10/lets-talk-about-frameworks-when-frameworks-arent/" title="Let's talk about frameworks: When frameworks aren't right" type="text/html">
+
+
+
+
+  <link rel="next" href="http://www.b-list.org/weblog/2006/jun/14/django-tips-template-context-processors/" title="Django tips: Template context processors" type="text/html">
+
+
+
+</head>
+<body>
+  <div id="header">
+    <p>
+      <a href="http://www.b-list.org/">The B-List</a> is the personal weblog of <a href="http://www.b-list.org/about/">James Bennett</a>, a web developer in Lawrence, Kansas.
+    </p>
+  </div>
+
+  <div id="content">
+  
+
+
+<h1>How Django processes a&nbsp;request</h1>
+
+<p class="meta">Published <a href="http://www.b-list.org/weblog/2006/jun/13/">June 13, 2006</a>. Filed under:
+  
+<a href="http://www.b-list.org/weblog/categories/django/">Django</a>, <a href="http://www.b-list.org/weblog/categories/frameworks/">Frameworks</a>.
+  
+
+</p><p>In a comment he left yesterday, Jonathan Snook <a href="http://www.b-list.org/weblog/2006/06/03/lets-talk-about-frameworks-programmer-edition#c82">posed an excellent challenge</a>:
+ document the chain of how Django processes a request, from start to 
+finish, with plenty of detail on the various things being called 
+internally and links to the appropriate&nbsp;documentation.
+</p>
+<p>Simon Willison once <a href="http://simon.incutio.com/archive/2005/08/15/request">wrote such a document</a>,
+ but it was a fairly high-level view and a fair number of things have 
+changed since then, so I’m going to take a stab at it myself, and 
+hopefully the result will be&nbsp;comprehensible.
+</p>
+<p>Note: this is a first draft. Not a finished product, not a complete 
+listing. Expect it to change frequently as I work on it. Ideally I’ll be
+ able to get some help generating a visualization at some point, but for
+ now I’ll stick to plain&nbsp;text.
+</p>
+<p>Where official documentation for an item is available I’ll link to 
+it. For items which don’t yet have documentation I’ll provide links to 
+the current locations of the relevant code in the Django repository — 
+these locations may change over time, particularly because I’m often 
+going to be linking to line numbers in individual files, but I’ll do my 
+best to keep them up to date. If you see something here that’s 
+incorrect, or spot something I’ve left out or could have explained 
+better, please leave a comment to let me&nbsp;know.
+</p>
+<p><ins datetime="2006-10-03T00:50:00-0500">Updated October 2, 2006: 
+I’ve just gone through and done quite a bit of updating of this article;
+ several references to places in the code needed to be updated, and I 
+rewrote a few things to reflect some shuffling around of internal bits 
+that’s taken place recently.</ins> </p>
+<p><ins datetime="2006-11-28T22:06:00-0500">Updated November 28, 2006: Added a note about when the database connection is closed.</ins></p>
+<p><ins datetime="2006-12-20T23:04:00-0500">Updated December 20, 2006: linked to notes on the Django wiki about the dispatcher.</ins></p>
+<p>Let’s get&nbsp;started.
+</p>
+<h2>Incoming!</h2>
+<p>The very first thing that happens is that something else invokes Django. That happens in one of two&nbsp;ways:
+</p>
+<ol>
+<li>
+     Apache/mod_python is the server setup, in which case the request is handed to Django by mod_python creating an instance of <a href="http://code.djangoproject.com/browser/django/trunk/django/core/handlers/modpython.py#L133">django.core.handlers.modpython.ModPythonHandler</a>.
+ </li>
+<li>
+     Something else is the server, in which case it needs to be <a href="http://www.python.org/dev/peps/pep-0333/"><acronym title="Web Server Gateway Interface"><span class="caps">WSGI</span></acronym></a>-compliant. In this situation, an instance of <a href="http://code.djangoproject.com/browser/django/trunk/django/core/handlers/wsgi.py#L173">django.core.handlers.wsgi.WsgiHandler</a> is created by the&nbsp;server.
+ </li>
+</ol>
+<p>Both of those classes inherit from <a href="http://code.djangoproject.com/browser/django/trunk/django/core/handlers/base.py#L6">django.core.handlers.base.BaseHandler</a>, which contains common code needed for any type of&nbsp;request.
+</p>
+<h2>I’ve got a handle on&nbsp;it</h2>
+<p>When one of the above handlers is instantiated, a couple things happen&nbsp;immediately:
+</p>
+<ol>
+<li>
+     The handler imports your Django settings&nbsp;file.
+ </li>
+<li>
+     The handler imports Django’s custom exception&nbsp;classes.
+ </li>
+<li>
+     The handler calls its own <code>load_middleware</code> method, which loads all the <a href="http://www.djangoproject.com/documentation/middleware/">middleware classes</a> it finds listed in the <code>MIDDLEWARE_CLASSES</code> setting and introspects&nbsp;them.
+ </li>
+</ol>
+<p>That last bit is somewhat complicated, so let’s look at it in&nbsp;detail.
+</p>
+<p>A middleware class can hook into any of four phases of processing: 
+request, view, response and exception. It does so by defining methods 
+named, appropriately enough, <code>process_request</code>, <code>process_view</code>, <code>process_response</code> and <code>process_exception</code>. The middleware can define any or all of these depending on what functionality it wants to&nbsp;provide.
+</p>
+<p>When the handler introspects the middleware, it looks for methods 
+with those names, and builds up four lists which are stored as instance 
+variables of the&nbsp;handler:
+</p>
+<ol>
+<li>
+<code>_request_middleware</code> is a list of the <code>process_request</code>
+ methods (in each case these will be the actual methods, so they’re 
+directly callable) from any middleware classes which defined&nbsp;them.
+ </li>
+<li>
+<code>_view_middleware</code> is a list of the <code>process_view</code> methods from any middleware classes which defined&nbsp;them.
+ </li>
+<li>
+<code>_response_middleware</code> is a list of the <code>process_response</code> methods from any middleware classes which defined&nbsp;them.
+ </li>
+<li>
+<code>_exception_middleware</code> is a list of the <code>process_exception</code> methods from any middleware classes which defined&nbsp;them.
+ </li>
+</ol>
+<h2>Green light: now&nbsp;begin</h2>
+<p>Now the handler is ready to really begin processing, so it fires the dispatcher signal <code>request_started</code>
+ (the internal dispatcher in Django allows various components to 
+advertise what they’re doing, and allows other bits of code to listen 
+for certain events; it’s currently not documented officially, but there 
+are <a href="http://code.djangoproject.com/wiki/Signals">some notes on the wiki</a>). Then it instantiates a subclass of <a href="http://www.djangoproject.com/documentation/request_response/#httprequest-objects">django.http.HttpRequest</a>. Depending on the handler, this may be an instance of <a href="http://code.djangoproject.com/browser/django/trunk/django/core/handlers/modpython.py#L13">django.core.handlers.modpython.ModPythonRequest</a> or it may be an instance of <a href="http://code.djangoproject.com/browser/django/trunk/django/core/handlers/wsgi.py#L73">django.core.handlers.wsgi.WSGIRequest</a>. The two different classes are needed because the mod_python and <span class="caps">WSGI</span> <acronym title="Application Programming Interface"><span class="caps">API</span></acronym>s
+ pass in the request information in different formats, and that 
+information needs to be parsed into a single standard format Django can 
+work&nbsp;with.
+</p>
+<p>Once an <code>HttpRequest</code> of some sort exists, the handler calls its own <a href="http://code.djangoproject.com/browser/django/trunk/django/core/handlers/base.py#L51">get_response</a> method, passing the<code>HttpRequest</code> as the only argument. This is where nearly all of the actual activity&nbsp;happens.
+</p>
+<h2>Middleware, round&nbsp;1</h2>
+<p>The first thing <code>get_response</code> does is loop through the handler’s <code>_request_middleware</code> instance variable and call each method in that list, passing in the <code>HttpRequest</code> instance as an argument. These methods have the option of short-circuiting the rest of the process and immediately causing <code>get_response</code> to return, by returning a value themselves (if they do so, the return value needs to be an instance of <a href="http://www.djangoproject.com/documentation/request_response/#httpresponse-objects">django.http.HttpResponse</a>, which we’ll talk about in a bit). If one of them does so, that’s it and we’re back into the main handler code; <code>get_response</code>
+ won’t even wait to see what the other middleware classes wanted to do, 
+it will just return and the handler will go into its 
+response&nbsp;phase.
+</p>
+<p>More commonly, though, the middleware methods applied here simply do 
+some processing and decide whether to add, remove or supplement 
+attributes of the&nbsp;request.
+</p>
+<h2>Resolution&nbsp;time</h2>
+<p>Assuming that none of the middlewares which acted on the request 
+short-circuited straight to a response, the handler next tries to 
+resolve the requested <acronym title="Uniform Resource Locator"><span class="caps">URL</span></acronym>. It looks in the settings file for a setting called <code>ROOT_URLCONF</code>, and hands that, along with a base <span class="caps">URL</span> of <code>/</code>, as arguments to create an instance of <a href="http://code.djangoproject.com/browser/django/trunk/django/core/urlresolvers.py#L142">django.core.urlresolvers.RegexURLResolver</a>, then calls the <code>RegexURLResolver</code>‘s <code>resolve</code> method with the requested <span class="caps">URL</span>&nbsp;path.
+</p>
+<p>The <a href="http://www.djangoproject.com/documentation/url_dispatch/"><span class="caps">URL</span> resolver</a> follows a fairly simple pattern. For each item in the <code>urlpatterns</code> list generated by the <span class="caps">URL</span> configuration file specified by the <code>ROOT_URLCONF</code> setting, it checks whether the requested <span class="caps">URL</span> path matches that item’s regular expression; if so , there are two&nbsp;options:
+</p>
+<ol>
+<li>
+     If the item has a call to <a href="http://www.djangoproject.com/documentation/url_dispatch/#id1">include</a>, the resolver chops off the bit of the <span class="caps">URL</span> that matched, moves to the <span class="caps">URL</span> configuration file specified by the include and begins iterating over the items in its <code>urlpatterns</code> list. Depending on the depth and modularity of your <span class="caps">URL</span> hierarchy, this may be repeated several&nbsp;times.
+ </li>
+<li>
+     Otherwise, the resolver returns three items: the view function 
+specified by the matched item, a list of non-named matched groups from 
+the <span class="caps">URL</span> (to be used as positional arguments 
+for the view) and a dictionary of keyword arguments, built from a 
+combination of any named matched groups in the <span class="caps">URL</span> and any extra keyword arguments specified in that line in the&nbsp;URLConf.
+ </li>
+</ol>
+<p>Note that this stops at the first match which specifies a view, so it’s best to have your <span class="caps">URL</span>
+ configuration proceed from more specific regexes to less specific ones,
+ in order to ensure that the resolver doesn’t match one of the less 
+specific ones first and end up returning the wrong view&nbsp;function.
+</p>
+<p>If no matches are found, the resolver raises the exception <a href="http://code.djangoproject.com/browser/django/trunk/django/core/urlresolvers.py#L14">django.core.urlresolvers.Resolver404</a>, a subclass of the exception <a href="http://code.djangoproject.com/browser/django/trunk/django/http/__init__.py#L15">django.http.Http404</a>. We’ll get to how that’s handled a little later&nbsp;on.
+</p>
+<h2>Middleware, round&nbsp;2</h2>
+<p>Once it knows the view function it will be using and what arguments to pass to it, the handler looks at its <code>_view_middleware</code> list, and calls each method in that list, passing the <code>HttpRequest</code>, the view function, the list of positional arguments for the view and the dictionary of keyword arguments for the&nbsp;view.
+</p>
+<p>Again, it’s possible for middleware to intervene at this stage and force the handler to return&nbsp;immediately.
+</p>
+<h2>Into the&nbsp;view</h2>
+<p>If processing is still going at this point, the handler calls the 
+view function. Views in Django are somewhat nebulous because only a few 
+requirements are placed on&nbsp;them:
+</p>
+<ul>
+<li>
+     They must be&nbsp;callable.
+ </li>
+<li>
+     They must accept as their first positional argument an instance of <code>django.http.HttpRequest</code>.
+ </li>
+<li>
+     They must either raise an exception or return an instance of <code>django.http.HttpResponse</code>.
+ </li>
+</ul>
+<p>Beyond that, the sky’s the limit. Most commonly, though, views will use Django’s <a href="http://www.djangoproject.com/documentation/db_api/">database <span class="caps">API</span></a>
+ to create, retrieve, update or delete something in the database, and 
+they’ll load and render a template to display something to the 
+end&nbsp;user.
+</p>
+<h2>Templates</h2>
+<p>Django’s template system is two-faceted: there’s one part that’s <acronym title="Hypertext Markup Language"><span class="caps">HTML</span></acronym> with a few extra things mixed in and is mostly used by <a href="http://www.djangoproject.com/documentation/templates/">designers</a>, and one part that’s pure Python and is used by <a href="http://www.djangoproject.com/documentation/templates_python/">programmers</a>.
+</p>
+<p>From an <span class="caps">HTML</span> author’s point of view, Django’s template system is pretty simple. There are three constructs you need to know&nbsp;about:
+</p>
+<ol>
+<li>
+     Variable references. In a template they look like this: <code>{{ foo }}</code>.
+ </li>
+<li>
+     Template filters, which act on the above. Using the filter <code>bar</code> on the example above would look like this: <code>{{ foo|bar }}</code>. Generally these are used for output formatting (e.g., running Textile over something, formatting a date,&nbsp;etc.)
+ </li>
+<li>
+     Template tags. They look like this: <code>{% baz %}</code>. This is where the “logic” of templates is implemented, you can do things like <code>{% if foo %}</code>, <code>{% for bar in foo %}</code>, and so on, and <code>if</code> and <code>for</code> are template&nbsp;tags.
+ </li>
+</ol>
+<p>Variable references work in a fairly simple way; if you’re just printing a variable directly, as in <code>{{ foo }}</code>, the template system just outputs it. The only complexity here is when you do something like <code>{{ foo.bar }}</code>; in that case, the template system tries a few things in&nbsp;order:
+</p>
+<ol>
+<li>
+     First it tries a dictionary-style lookup, to see if <code>foo[‘bar’]</code>exists. If it does, then that value is output and that’s the end of the&nbsp;process.
+ </li>
+<li>
+     If dictionary lookup fails, next the template system tries an attribute lookup, to see if <code>foo.bar</code> exists. It also checks whether the attribute is callable, and tries calling it in that&nbsp;case.
+ </li>
+<li>
+     If attribute lookup fails, the template system tries looking it up as a list&nbsp;index.
+ </li>
+</ol>
+<p>If all of these fail, the template system outputs the value of the setting <code>TEMPLATE_STRING_IF_INVALID</code>, which defaults to an empty&nbsp;string.
+</p>
+<p>Template filters are simply Python functions which accept a value and an argument, and return a new value. For example, the <code>date</code> filter takes a Python <code>datetime</code> object as its value and a standard <code>strftime</code> formatting string as its argument, and returns the result of applying that formatting string to that <code>datetime</code> object.
+</p>
+<p>Template tags are where things are a bit complicated, and where you 
+get close to how the Django template system really&nbsp;works.
+</p>
+<h2>The structure of a Django&nbsp;template</h2>
+<p>Internally, a Django template is represented as a collection of 
+‘nodes’; these are Python classes which all inherit from the base node 
+class <a href="http://code.djangoproject.com/browser/django/trunk/django/template/__init__.py#L666">django.template.Node</a>. <code>Node</code>s can do various sorts of processing, but they have one thing in common: every <code>Node</code> <em>must</em> have a method called <code>render</code> which accepts as its second argument (the first argument, of course, will be the <code>Node</code> instance) an instance of <a href="http://www.djangoproject.com/documentation/templates_python/#rendering-a-context">django.template.Context</a>, which is a dictionary-like object containing all the variables which are accessible to the template. The <code>render</code> method of a <code>Node</code> must return a string, but if the <code>Node</code>
+ is meant to carry out some task other than output (for example, if it’s
+ meant to modify the template context by adding, removing or modifying 
+variables in the <code>Context</code> instance passed to it) it can return an empty&nbsp;string.
+</p>
+<p>Django includes a number of subclasses of <code>Node</code> which provide useful functions; each of the <a href="http://www.djangoproject.com/documentation/templates/#built-in-tag-reference">built-in template tags</a>, for example, is handled by a subclass of <code>Node</code> (e.g., there’s an <code>IfNode</code> which implements the <code>if</code> tag, a <code>ForNode</code> which implements the <code>for</code> tag, etc.). All of the built-in tags are found in <a href="http://code.djangoproject.com/browser/django/trunk/django/template/defaulttags.py">django.template.defaulttags</a>. In reality, all of the template constructs described above are <code>Node</code>s of some sort, and so is plain text; a variable lookup is handled by a <code>VariableNode</code>, filters, by their nature, get applied in a <code>VariableNode</code>, tags are <code>Node</code>s of various types and plain text is a <code>TextNode</code>.
+</p>
+<p>Generally, a view renders a template by carrying out the following steps, in&nbsp;order:
+</p>
+<ol>
+<li>
+     Loading the template to be rendered; this is handled by the function <a href="http://code.djangoproject.com/browser/django/trunk/django/template/loader.py#L74">django.template.loader.get_template</a>, which can use any of <a href="http://www.djangoproject.com/documentation/templates_python/#loading-templates">several methods</a> to locate the desired template file. The <code>get_template</code> function returns an instance of <a href="http://code.djangoproject.com/browser/django/trunk/django/template/__init__.py#L139">django.template.Template</a>, which is an object containing the parsed template and methods for using&nbsp;it.
+ </li>
+<li>
+     Instantiating a <code>Context</code> to be used in rendering the template; if the <code>Context</code> subclass <a href="http://code.djangoproject.com/browser/django/trunk/django/template/context.py#L83">django.template.RequestContext</a> is used, additional <a href="http://www.djangoproject.com/documentation/templates_python/#subclassing-context-requestcontext">context-processing functions</a> will be applied which can automatically add variables which were not defined in the view. The constructor method for <code>Context</code> takes a dictionary of key/value pairs (which will become the variable names/values for the template) as its only argument; <code>RequestContext</code> takes an instance of <code>HttpRequest</code> and a&nbsp;dictionary.
+ </li>
+<li>
+     Calling the <code>Template</code> instance’s <code>render</code> method, with the <code>Context</code> object as the first positional&nbsp;argument.
+ </li>
+</ol>
+<p>The return value of the <code>Template</code>‘s <code>render</code> method is a string, which is the concatenation of the return values of the <code>render</code> methods of all the <code>Template</code>‘s constituent <code>Node</code>s, called in the order in which they occur in the <code>Template</code>.
+</p>
+<h2>Response time, sort&nbsp;of</h2>
+<p>Once a template has been rendered, or some other sort of suitable 
+output has been generated, the view is responsible for creating an 
+instance of <code>django.http.HttpResponse</code>. The constructor for this class takes two optional&nbsp;arguments:
+</p>
+<ol>
+<li>
+     A string (which should be the first positional argument, or the keyword argument <code>content</code>)
+ which will be the body of the response. Most of the time, this will be 
+the output of rendering a template, but it doesn’t have to be; you can 
+pass any valid Python string in&nbsp;here.
+ </li>
+<li>
+     A value for the <code>Content-Type</code> header of the response (which should be the second positional argument, or the keyword argument <code>mime_type</code>). If you don’t provide this argument, Django will fill in the value of the setting <code>DEFAULT_MIME_TYPE</code> and the value of the setting <code>DEFAULT_CHARSET</code>
+ which, if you haven’t changed them from the defaults in Django’s global
+ settings file, will be “text/html” and “utf-8”,&nbsp;respectively.
+ </li>
+</ol>
+<h2>Middleware, round 3: exception&nbsp;edition</h2>
+<p>If the view function, or something which happens inside it, raises an exception, then <code>get_response</code>
+ (I know we spent a while digging into views and templates, but once the
+ view returns or raises we pick up again in the middle of the handler’s <code>get_response</code> method) will loop through its <code>_exception_middleware</code> instance variable and call each method there, passing the <code>HttpRequest</code> and the exception as arguments. Hopefully one of those methods will instantiate and return an <code>HttpResponse</code>.
+</p>
+<h2>Still not&nbsp;responding?</h2>
+<p>At this point it’s possible that there still isn’t an <code>HttpResponse</code>; this could be due to a number of&nbsp;factors:
+</p>
+<ol>
+<li>
+     The view might not have returned a&nbsp;value.
+ </li>
+<li>
+     The view might have raised an exception that none of the middleware was able to deal&nbsp;with.
+ </li>
+<li>
+     A middleware method that was trying to deal with an exception might have raised a new exception&nbsp;itself.
+ </li>
+</ol>
+<p>When this happens, <code>get_response</code> falls back to its own exception handling mechanisms; these come in several&nbsp;layers:
+</p>
+<ol>
+<li>
+     If the execption was <code>Http404</code> and the <code>DEBUG</code> setting is <code>True</code>, <code>get_response</code> will execute the view <a href="http://code.djangoproject.com/browser/django/trunk/django/views/debug.py#L133">django.views.debug.technical_404_response</a>, passing the <code>HttpRequest</code> and the exception as arguments. This view displays information about the patterns the <span class="caps">URL</span> resolver tried to match&nbsp;against.
+ </li>
+<li>
+     If <code>DEBUG</code> is <code>False</code>, and the exception was <code>Http404</code>, <code>get_response</code> calls the <span class="caps">URL</span> resolver’s <a href="http://code.djangoproject.com/browser/django/trunk/django/core/urlresolvers.py#L192">resolve_404</a> method; this method looks at the <span class="caps">URL</span> configuration to determine which view has been specified for handling 404 errors. This defaults to <a href="http://code.djangoproject.com/browser/django/trunk/django/views/defaults.py#L68">django.views.defaults.page_not_found</a>, but can be overridden in the <span class="caps">URL</span> configuration by assigning a value to the variable <code>handler404</code>.
+ </li>
+<li>
+     For any other type of exception, If the <code>DEBUG</code> setting is <code>True</code>, <code>get_response</code> will execute the view <a href="http://code.djangoproject.com/browser/django/trunk/django/views/debug.py#L64">django.views.debug.technical_500_response</a>, passing the <code>HttpRequest</code>
+ and exception information as arguments. This view provides detailed 
+information about the exception, including the traceback, local 
+variables at each level of the stack, a detailed representation of the <code>HttpRequest</code> object and a listing of all non-sensitive&nbsp;settings.
+ </li>
+<li>
+     If <code>DEBUG</code> is <code>False</code>, <code>get_response</code> calls the <span class="caps">URL</span> resolver’s <a href="http://code.djangoproject.com/browser/django/trunk/django/core/urlresolvers.py#L195">resolve_500</a> method, which works in mostly the same way as <code>resolve_404</code>; the default view in this case is <a href="http://code.djangoproject.com/browser/django/trunk/django/views/defaults.py#L81">django.views.defaults.server_error</a>, and can be overridden in the <span class="caps">URL</span> configuration by assigning a value to the variable <code>handler500</code>.
+ </li>
+</ol>
+<p>Additionally, for any exception other than <code>django.http.Http404</code> or Python’s built-in <code>SystemExit</code>, the handler will fire the dispatcher signal <code>got_request_exception</code>, and construct a description of the exception which is mailed to each person listed in the Django settings file’s <code>ADMINS</code> setting before&nbsp;returning.
+</p>
+<h2>Middleware, final&nbsp;round</h2>
+<p>At this point, regardless of anything which went wrong at any level in <code>get_response</code>, it should have returned an <code>HttpResponse</code> instance, so we’re back up into the main part of the handler. The first thing it does once it gets that <code>HttpResponse</code> is loop through its <code>_response_middleware</code> instance variable and apply the methods it finds there, passing the <code>HttpRequest</code> and the <code>HttpResponse</code> as&nbsp;arguments.
+</p>
+<p>Note that this is the last chance any middleware has to modify&nbsp;things.
+</p>
+<h2>The check is in the&nbsp;mail</h2>
+<p>And now it’s time to wrap up. Once the final round of middleware has been applied, the handler fires the dispatcher signal <code>request_finished</code>,
+ which is the absolute last call for anything that wanted to execute 
+during the current request. Handlers which listen for this signal should
+ clean up and free any resources which were being used; for example, 
+Django attaches a listener to <code>request_finished</code> which will close any open database&nbsp;connections. 
+</p>
+<p>After that happens, the handler builds up an appropriate return value
+ to send back to whatever instantiated it (currently, either a 
+mod_python-appropriate response or a <span class="caps">WSGI</span>-compliant response depending on the handler), and returns&nbsp;it.
+</p>
+<h2>Whew</h2>
+<p>And we’re done. From beginning to end, that’s how Django processes a&nbsp;request.
+</p>
+
+
+
+  </div>
+  <div id="footer">
+    <p><a href="http://www.b-list.org/about/copyright/">Copyright ©</a> 2006-2013 <a href="http://www.b-list.org/about/">James Bennett</a>. All rights reserved. Opinions expressed here are solely those of the author(s).</p>
+  </div>
+
+
+</body></html>

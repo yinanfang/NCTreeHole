@@ -1,0 +1,2685 @@
+@-css-compiler-profile "not-good-in-ie6";
+/* import by . */
+@-css-compiler-profile "not-good-in-ie6";
+.wp-chat-feelings, .wp-at, .wp-arrow, .wp-arrow-up, .wp-add-file, .wp-voice, .wp-download, .wp-chat-history, .wp-friend-ico, .wp-searchbox input, .wp-list-open dt, .wp-list-close dt, .wp-frid-toleft, .wp-online, .wp-photo-ico, .wp-photolist-ico, .wp-group-ico, .wp-status-ico, .wp-blog-ico, .wp-chat-ico, .wp-share-ico, .wp-xiaozu-ico, .wp-send-done, .wp-rrzm-ico, .slide_left, .slide_right, .wb-message-tip .panelbarbutton p, .wp-preferences a.pref-btn, .wp-preferences dd.pref-on a, .wp-profile, .popupwindow header menu li, .wp-voice-prep .close, .birthday-box .header .minimize, .birthday-box .header .close, .chatroom-set, #add-friend-box .sf-close, .wp-chat-close {
+    background: url(http://a.xnimg.cn/webpager/cssimg/wp-base-ico-13-01.png) no-repeat
+    }
+.panelbarbutton, .friends-window > header, .chat-window > header, .wp-chat-send-box, .wb-message-tip .panelbarbutton, .slide-box {
+    background: url(http://a.xnimg.cn/webpager/cssimg/wp-bg.png) repeat-x
+    }
+.wp-addchat-btn, .wp-addicon {
+    background: url(http://a.xnimg.cn/webpager/cssimg/add.png) no-repeat
+    }
+/*groupchat*/
+/*.wp-chat-content em,*/
+.chat-window .header-title .chat-history, .wp-friend-slider .wp-friend-del, .wp-friend-list .list .checkbox-wrap {
+    background: url(http://a.xnimg.cn/webpager/cssimg/wp-base-ico-13-03.png) no-repeat
+    }
+
+
+/* import by . */
+@-css-compiler-profile "not-good-in-ie6";
+/* buddyList贴边效果,
+框架页面对pager的支 */
+.fixWidthForPager {
+    width: auto;
+    margin-right: 201px
+    }
+/****** css/chat.css wp means webpager ******/
+/**** panelbar button of chat-window ****/
+#tasks-panel .panelbarbutton {
+    width: 113px
+    }
+.actived .panelbarbutton {
+    height: 32px;
+    border: 1px solid #666;
+    border-top: none;
+    z-index: 4
+    }
+#tasks-panel .actived .panelbarbutton {
+    background: #FFF
+    }
+.wb-message-tip .panelbarbutton {
+    background-position: 0 -32px;
+    color: #CBCBCB
+    }
+.wb-message-tip .panelbarbutton .wp-chat-ico {
+    background-position: 0 -365px
+    }
+.wb-message-tip .panelbarbutton .wp-group-ico {
+    background-position: 0 -1294px
+    }
+.wb-message-tip .panelbarbutton .wp-blog-ico {
+    background-position: 0 -1358px
+    }
+.wb-message-tip .panelbarbutton .wp-status-ico {
+    background-position: 0 -1264px
+    }
+.wb-message-tip .panelbarbutton .wp-photo-ico {
+    background-position: 0 -1326px
+    }
+.wb-message-tip .panelbarbutton .wp-share-ico {
+    background-position: 0 -162px
+    }
+.wb-message-tip .panelbarbutton .wp-xiaozu-ico {
+    background-position: 0 -1450px
+    }
+.wb-message-tip .panelbarbutton .wp-gift-ico {
+    background: url(http://a.xnimg.cn/webpager/cssimg/wp-gift-ico.png) no-repeat 0 -31px
+    }
+.wb-message-tip .wp-chat-close {
+    background-position: 0 -1194px
+    }
+.panelbarbutton:hover .wp-chat-close {
+    visibility: visible
+    }
+.wp-chat-close {
+    display: inline-block;
+    position: absolute;
+    top: 10px;
+    right: 7px;
+    width: 10px;
+    height: 10px;
+    background-position: 0 -23px;
+    text-indent: -9999em;
+    visibility: hidden;
+    outline: none;
+    overflow: hidden
+    }
+/* *** chat window style *** */
+.actived > .chat-window {
+    right: 0;
+    z-index: 3
+    }
+.chat-window {
+    position: absolute;
+    bottom: 32px;
+    right: -99999px;
+    width: 320px;
+    height: 376px;
+    margin-left: -1px;
+    border: 1px solid #666;
+    background: #FFF;
+    box-shadow: 0 0 2px #888;
+    min-width: 140px;
+    overflow: hidden
+    }
+/* * chat-window header * */
+.chat-window > header {
+    position: relative;
+    border-bottom: 1px solid #BEBEBE;
+    background-position: 0 0
+    }
+.chat-window > header:after {
+    display: block;
+    clear: both;
+    content: "\20"
+    }
+.chat-window > header h4 {
+    color: #333;
+    font-weight: bold;
+    overflow: hidden
+    }
+.actived .chat-window header p.header-title {
+    float: left;
+    height: 20px;
+    margin: 0;
+    padding: 5px 10px;
+    line-height: 20px;
+    color: #333
+    }
+.chat-window > header h4 .hover {
+    display: inline-block;
+    margin: 0 -5px;
+    padding: 0 5px;
+    border-top: 1px solid #ADADAD;
+    border-bottom: 1px solid #F1F1F1;
+    background: #D9D9D9
+    }
+.chat-window > header h4 .title-bg-l, .chat-window > header h4 .title-bg-r {
+    display: inline-block;
+    background: url(http://a.xnimg.cn/webpager/cssimg/title-bg2.png) no-repeat;
+    line-height: 16px;
+    overflow: hidden
+    }
+.chat-window > header h4 .title-bg-l {
+    height: 18px;
+    padding-left: 8px;
+    /*padding-top: 2px;*/
+    }
+.chat-window > header h4 .title-bg-r {
+    height: 16px;
+    padding: 0 8px 2px 0;
+    /*padding-top: 2px;*/
+    background-position: right -18px
+    }
+.chat-window > header h4 .title-bg-r a {
+    color: #000
+    }
+.chat-window > header h4 .title-bg-r a:hover {
+    color: #369
+    }
+/* * chat-window body * */
+.chat-window .dialog, .chat-window .history-message {
+    float: right;
+    width: 320px
+    }
+/* * chat-window chatlist body * */
+.chat-window .dialogs, .chat-window .history-messages {
+    height: 220px;
+    background-color: #FFF;
+    overflow-y: auto
+    }
+.chat-window .wp-chatlist {
+    position: relative;
+    margin: 0 6px;
+    padding: 6px 0
+    }
+.chat-window .wp-chatlist:after {
+    display: block;
+    clear: both;
+    background-color: #FFF;
+    content: "\20"
+    }
+.chat-window .history-messages {
+    height: 315px
+    }
+.chat-window .history-message {
+    position: relative;
+    padding-bottom: 30px
+    }
+.chat-window .history-message .hm-ft {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    background: url(http://a.xnimg.cn/webpager/cssimg/wp-bg.png) 0 0 repeat-x;
+    font-size: 14px;
+    font-weight: bold
+    }
+.chat-window .history-message .hm-ft a {
+    color: #828fa8;
+    cursor: pointer
+    }
+.chat-window .history-message .hm-ft a:hover {
+    color: #0863ae;
+    text-decoration: none
+    }
+.chat-window .history-message .hm-ft a.disable {
+    cursor: default
+    }
+.chat-window .history-message .hm-ft a.disable:hover {
+    color: #828fa8
+    }
+.chat-window .history-message .hm-ft .prev {
+    float: left;
+    margin-left: 10px
+    }
+.chat-window .history-message .hm-ft .next {
+    float: right;
+    margin-right: 10px
+    }
+.chat-window .history-messages .nomsgdata {
+    color: #ccc;
+    text-align: center;
+    padding: 5px
+    }
+.chat-window .strange-tip {
+    position: absolute;
+    top: 31px;
+    background: #eff3ff;
+    height: 34px;
+    width: 320px;
+    border-bottom: 1px solid #bcc0c3;
+    line-height: 34px;
+    text-align: center;
+    z-index: 9999
+    }
+/*
+.chat-window .wp-chat-time,
+.chat-window .wp-chat-reply{
+    display:none;
+    color:#AAA;
+    background: #FFF;
+}
+.chat-window .wp-chat-reply{
+    color:#005EAC;
+}
+.chat-window .wp-chatlist:hover .wp-chat-time,
+.chat-window .wp-chatlist.hover .wp-chat-time{
+    display:block;
+    position: absolute;
+    right: 5px;
+    text-align: right;
+    bottom: 5px;
+}
+.chat-window .wp-chatlist:hover .wp-chat-reply{
+    display:block;
+    position: absolute;
+    right: 5px;
+    width:26px;
+    bottom: 25px;
+}
+    */
+/*.chat-window .wp-chat-time,
+zhl*/
+.chat-window .wp-chat-reply {
+    display: none;
+    background: #FFF;
+    color: #AAA
+    }
+.chat-window .wp-chat-reply {
+    color: #005EAC
+    }
+/* .chat-window .wp-chatlist footer,
+zhl */
+#voice_decode_obj {
+    visibility: hidden
+    }
+/*.chat-window .wp-chatlist:hover footer {
+    visibility: visible;
+}zhl*/
+/*.chat-window .wp-chatlist .wp-chat-time,
+.chat-window .wp-chatlist.hover .wp-chat-time {
+    display: block;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    text-align: right;
+}zhl*/
+.chat-window .wp-chatlist .wp-chat-reply {
+    display: block;
+    position: absolute;
+    bottom: 25px;
+    right: 5px;
+    width: 26px
+    }
+/* 获取更多历史记录 */
+.chat-window p.wp-get-early {
+    text-align: center
+    }
+/*单聊聊天设置*/
+.f-area ul {
+    margin-left: 25px
+    }
+/* *** edit box *** */
+.wp-edit-box {
+    position: relative
+    }
+/* * chat toolbar with icons * */
+.wp-chat-toolbar {
+    position: relative;
+    height: 14px;
+    padding: 5px 10px;
+    border-bottom: 1px solid #DCDCDC;
+    background: #F2F2F2
+    }
+.wp-chat-history {
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    padding-left: 20px;
+    background-position: 0 -998px;
+    line-height: 16px
+    }
+a:hover.wp-chat-history {
+    background-position: 0 -1026px
+    }
+.wp-chat-feelings, .wp-at, .wp-add-file, .wp-voice {
+    display: block;
+    float: left;
+    margin-right: 10px;
+    width: 14px;
+    height: 14px;
+    background-position: 0 -114px
+    }
+.wp-at {
+    background-position: 0 -143px
+    }
+.wp-add-file {
+    background-position: 0 -457px
+    }
+.wp-voice {
+    margin-left: 25px;
+    background-position: 0 -488px
+    }
+#webpager_uploader_container {
+    margin-top: -1px
+    }
+a:hover.wp-chat-feelings {
+    background-position: 0 -910px
+    }
+a:hover.wp-at {
+    background-position: 0 -852px
+    }
+a:hover.wp-add-file {
+    background-position: 0 -793px
+    }
+a:hover.wp-voice {
+    background-position: 0 -823px
+    }
+/* *** add someone for chat *** */
+.wp-addchat-box {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 304px;
+    padding: 8px;
+    border: 1px solid #DCDCDC;
+    border-width: 1px 0;
+    background: #F5F5F5;
+    z-index: 3
+    }
+.wp-addchat {
+    border: 1px solid #DCDCDC;
+    background: #FFF
+    }
+.wp-add-txt {
+    float: left;
+    width: 230px;
+    padding: 0.4ex;
+    border: none;
+    line-height: 24px
+    }
+.wp-addchat-btn {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 65px;
+    height: 26px;
+    background-position: 0 0;
+    text-indent: -9999em;
+    outline: none
+    }
+a:hover.wp-addchat-btn {
+    background-position: 0 -26px
+    }
+a:active.wp-addchat-btn {
+    background-position: 0 -52px
+    }
+.wp-addicon {
+    display: inline-block;
+    width: 18px;
+    margin-left: 5px;
+    background-position: 0 -80px;
+    text-indent: -9999em;
+    outline: none
+    }
+a:hover.wp-addicon {
+    background-position: -23px -80px
+    }
+a:active.wp-addicon {
+    background-position: -46px -80px
+    }
+.webpager form.editor {
+    background-color: #FFF
+    }
+/* * editor textarea * */
+.webpager form.editor textarea {
+    display: block;
+    width: 314px;
+    height: 60px;
+    border: none;
+    overflow-y: auto;
+    resize: none
+    }
+.wp-chat-send-box {
+    padding: 3px 3px 2px;
+    border-top: 1px solid #D8D8D8;
+    border-bottom: 1px solid #D8D8D8;
+    background-position: 0 -63px
+    }
+.wp-chat-send, .wp-nochat-send {
+    display: inline-block;
+    display: block;
+    float: right;
+    width: 85px;
+    height: 28px;
+    background: url(http://a.xnimg.cn/webpager/cssimg/new-send.png) no-repeat 0 0;
+    text-indent: -9999em;
+    outline: none
+    }
+a:hover.wp-chat-send {
+    background-position: -85px 0
+    }
+a:active.wp-chat-send {
+    background-position: -170px 0
+    }
+.wp-nochat-send {
+    background-position: -255px 0;
+    cursor: default
+    }
+/* * the kinds of chatlist * */
+.wp-download {
+    display: inline-block;
+    width: 13px;
+    height: 14px;
+    margin-right: 3px;
+    background-position: 0 -457px;
+    vertical-align: middle
+    }
+.wp-file-trans {
+    position: relative;
+    margin: 3px 0;
+    padding: 5px 10px 8px;
+    background: #F8F8F8
+    }
+.wp-file-download {
+    margin-left: 40px
+    }
+.wp-file-name {
+    display: inline-block;
+    vertical-align: bottom
+    }
+.wp-mini-pic {
+    display: block;
+    margin-top: 5px;
+    max-width: 231px
+    }
+.wp-file-trans footer {
+    display: block;
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    color: #888
+    }
+.wp-file-trans footer a {
+    font-weight: bold
+    }
+.wp-send-opera, .wp-file-trans:hover .wp-send-num, .wp-file-trans.hover .wp-send-num {
+    display: none
+    }
+.wp-file-trans:hover .wp-send-opera, .wp-file-trans.hover .wp-send-opera .wp-file-download .wp-send-opera {
+    display: block
+    }
+.wp-progress-bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    overflow: hidden
+    }
+.wp-progress-bg {
+    display: block;
+    height: 2px;
+    background-color: #5EA344
+    }
+.wp-send-fail {
+    color: #CC3232
+    }
+/* * about voice xiaobin.li@renren-inc.com* */
+.wp-voice-prep {
+    position: absolute;
+    bottom: 36px;
+    right: 0;
+    width: 320px;
+    height: 66px;
+    border-top: 1px solid #D9DCE2;
+    background: #F7F7F7
+    }
+#voice_encode_obj {
+    position: absolute;
+    bottom: -300px;
+    background: #F7F7F7;
+    z-index: 1998;
+    visibility: hidden
+    }
+.wp-voice-prep .close {
+    display: inline-block;
+    width: 10px;
+    height: 14px;
+    background-position: 0 -924px;
+    outline: none
+    }
+.wp-voice-prep div {
+    margin: 0 10px;
+    font-weight: bold
+    }
+.wp-voice-prep .loading {
+    line-height: 66px;
+    text-align: center
+    }
+.wp-voice-prep p {
+    margin: 9px 10px 0
+    }
+.wp-chat-content .voice {
+    display: block;
+    width: 54px;
+    height: 31px;
+    background: url(http://a.xnimg.cn/webpager/cssimg/voice-btn.png) no-repeat;
+    font-size: 14px;
+    cursor: pointer
+    }
+.wp-chat-content .play {
+    background: url(http://a.xnimg.cn/webpager/cssimg/voice-play.gif) no-repeat;
+    cursor: pointer
+    }
+.wp-chat-content var {
+    margin: 0 0 0 25px;
+    line-height: 31px;
+    font-weight: bold;
+    font-style: normal
+    }
+.wp-chat-content sub {
+    position: relative;
+    left: 2px;
+    top: -1px;
+    color: #666;
+    font-size: 16px
+    }
+.wp-chat-content p img {
+    /*cursor:pointer;*/
+    }
+.wp-chat-content p font img {
+    cursor: default
+    }
+/* *** tips width arrow *** */
+.wp-name-tip, .wp-icons-tip {
+    display: inline-block;
+    position: absolute;
+    padding: 3px 15px;
+    background: #333;
+    color: #CCC
+    }
+.wp-arrow, .wp-arrow-up {
+    display: inline-block;
+    position: absolute;
+    top: 6px;
+    right: -6px;
+    width: 6px;
+    height: 9px;
+    background-position: 0 -323px
+    }
+.wp-arrow-up {
+    position: absolute;
+    left: 10px;
+    top: -6px;
+    width: 9px;
+    height: 6px;
+    background-position: 0 -1089px
+    }
+#wp-sn-new {
+    position: absolute;
+    right: 51px;
+    background: url(http://a.xnimg.cn/webpager/cssimg/new.png) no-repeat;
+    width: 27px;
+    height: 13px;
+    z-index: 1000;
+    top: -4px;
+    border: 0;
+    display: block
+    }
+.emo-mobile {
+    width: 100px;
+    height: 100px
+    }
+
+
+/* import by . */
+@-css-compiler-profile "not-good-in-ie6";
+/** css/friends.css wp means webpager**/
+#friends-panel {
+    z-index: 4
+    }
+#friends-panel .panelbarbutton {
+    width: 184px;
+    text-align: center
+    }
+/**** icons ****/
+.actived .wp-friend-ico {
+    background-position: 0 -338px;
+    padding: 5px 7px;
+    /*width:14px;*/
+    }
+.actived .chat-window header p {
+    margin-left: 10px;
+    font-weight: bold;
+    /*float: left;*/
+    color: #666;
+    /*height: 30px;*/
+    }
+.chat-window header .wp-friend-ico {
+    padding-left: 20px;
+    background-position: 0 -1104px;
+    width: auto
+    }
+.wp-frid-num {
+    color: #666;
+    padding: 0 2px
+    }
+.friends-window {
+    left: 0;
+    width: 200px;
+    display: none
+    }
+.friends-window > header {
+    height: 28px;
+    background-position: 0 0;
+    border-bottom: 1px solid #BEBEBE
+    }
+.friends-window > header:after {
+    content: "\20";
+    display: block;
+    clear: both
+    }
+/*just for ie6 hover
+.friends-window > header .minimize:hover{
+	background-position: 0 -64px;
+}*/
+.popupwindow.actived > .friends-window {
+    display: block
+    }
+#friends-panel .actived .panelbarbutton {
+    box-shadow: 0 0 2px #888;
+    margin-bottom: -1px
+    }
+#friends-panel .panelbarbutton:hover {
+    border-color: #666
+    }
+#friends-panel section.version-stamp {
+    position: absolute;
+    right: 20px;
+    bottom: 49px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #CCC;
+    font-style: italic
+    }
+#friends-panel .chat-window .dialog {
+    width: 200px
+    }
+/** mini panel  **/
+.side-panel .friends-window > header {
+    display: none
+    }
+.side-panel .wp-frid-list {
+    padding-top: 23px
+    }
+#friends-panel.side-panel .chat-window, .side-panel .friends-window {
+    width: 200px;
+    border-top: none;
+    box-shadow: 0 0 0 #D5D5D5;
+    border: 1px solid #c9c9c9
+    }
+#friends-panel.side-panel .panelbarbutton {
+    border: none;
+    box-shadow: 0 0 0 #D5D5D5;
+    border: 1px solid #c9c9c9
+    }
+/** icon of profile in the list **/
+.wp-profile {
+    background-position: 0 -1132px;
+    text-indent: -9999em;
+    outline: none;
+    width: 12px;
+    float: right;
+    visibility: hidden
+    }
+.wp-frid-list dd, .wp-frid-list dd:hover a:hover.wp-profile, .wp-group-list dd:hover a:hover.wp-profile {
+    background-position: 0 -1158px
+    }
+.wp-remove-contact {
+    text-indent: -9999em;
+    outline: none;
+    width: 12px;
+    float: right;
+    visibility: hidden;
+    margin-left: 3px;
+    margin-top: 11px;
+    height: 9px;
+    overflow: hidden;
+    background: url(http://a.xnimg.cn/webpager/cssimg/remove-recent.png) no-repeat 0 0
+    }
+.wp-frid-list dd, .wp-frid-list dd:hover a:hover.wp-remove-contact, .wp-group-list dd:hover a:hover.wp-remove-contact {
+    background: url(http://a.xnimg.cn/webpager/cssimg/remove-recent.png) no-repeat no-repeat -16px 0
+    }
+/**** the list of friends ****/
+.friends-window .wp-frid-box {
+    background-color: #FFF;
+    overflow-x: hidden;
+    height: 410px
+    }
+.wp-group-list {
+    margin: 0 -10px
+    }
+.wp-frid-list {
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 370px
+    }
+.wp-frid-list dt {
+    color: #666;
+    cursor: pointer;
+    padding-left: 20px;
+    margin: 8px 0;
+    line-height: auto
+    }
+.wp-frid-list dd, .wp-group-list dd {
+    padding: 2px 6px 2px 21px;
+    line-height: 30px;
+    height: 30px;
+    cursor: pointer;
+    background: #FFF;
+    vertical-align: top;
+    clear: both
+    }
+.wp-group-list dd {
+    padding: 2px 10px
+    }
+.wp-f-avatar-box, .wp-g-avatar-box {
+    margin-right: 8px;
+    float: left;
+    position: relative
+    }
+.wp-f-avatar-box .wp-status {
+    margin: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border: 1px solid #fff;
+    z-index: 100;
+    width: 7px;
+    height: 7px
+    }
+.wp-f-avatar-box var {
+    position: absolute;
+    right: -12px;
+    top: -9px;
+    z-index: 100;
+    width: 22px;
+    height: 10px;
+    background: #d1604e;
+    border: 1px solid #d1604e;
+    color: #fff;
+    font-size: 9px;
+    -webkit-text-size-adjust: none;
+    overflow: hidden;
+    margin: 0;
+    line-height: 10px;
+    text-align: center;
+    box-shadow: -1px 1px 1px #fff;
+    font-weight: bold;
+    font-style: normal
+    }
+#add-friend-box {
+    border: 1px solid #696969;
+    bottom: 35px;
+    right: 204px;
+    position: absolute;
+    width: 318px;
+    height: 362px;
+    background: #fff;
+    box-shadow: 1px 1px 1px #d9d9d9;
+    box-shadow: -1px -1px 1px #d9d9d9;
+    z-index: 1000
+    }
+#add-friend-box h3 {
+    font-weight: normal;
+    text-align: center;
+    background: url(http://a.xnimg.cn/webpager/cssimg/wp-bg.png) repeat-x;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #bfbfbf
+    }
+#add-friend-box h3 a {
+    position: absolute;
+    right: 5px
+    }
+#add-friend-box .smenu .sitem {
+    width: 157px;
+    background: #f7f7f7;
+    color: #aaa;
+    border: 1px solid #bfbfbf;
+    float: left;
+    height: 34px;
+    line-height: 34px;
+    border-top: 0;
+    text-align: center;
+    cursor: pointer
+    }
+#add-friend-box .smenu .in {
+    background: #fff;
+    border-right: 1px solid #fff;
+    color: #333;
+    border: 1px solid #fff
+    }
+#add-friend-box .sf {
+    border-left: none
+    }
+#add-friend-box .sg {
+    border-right: none
+    }
+#add-friend-box .sw {
+    /*padding:5px;zhl*/
+    }
+.wp-device {
+    width: 13px;
+    height: 13px;
+    background: url(http://a.xnimg.cn/webpager/cssimg/wp-status.png) no-repeat
+    }
+.wp-f-avatar-box .wp-online {
+    background: #38bc00
+    }
+.wp-f-avatar-box .wp-offline {
+    background: #ccc
+    }
+.wp-phone {
+    background-position: 0 -23px
+    }
+.wp-client {
+    background-position: 0 0
+    }
+.wp-f-avatar, .wp-g-avatar {
+    width: 30px;
+    height: 30px;
+    display: block
+    }
+.wp-f-info, .wp-g-info {
+    float: left;
+    white-space: nowrap
+    }
+.wp-f-info, .wp-g-info {
+    width: 86px;
+    overflow-x: hidden
+    }
+#wp-group-list .wp-f-info {
+    width: auto
+    }
+/* 在线的绿点紧贴名字才好看
+.wp-f-info span{
+	width: 100px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: inline-block;
+}*/
+.wp-list-open dt {
+    background-position: 10px -247px
+    }
+.wp-list-open dd {
+    display: none
+    }
+.wp-list-close dt {
+    background-position: 8px -224px
+    }
+.friends-window footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #FFF
+    }
+.wp-searchbox {
+    position: relative;
+    padding: 8px 5px;
+    background-color: #F5F5F5;
+    border-bottom: 1px solid #d1d1d1
+    }
+.wp-searchbox input {
+    width: 156px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #AAA;
+    background-color: #FFF;
+    background-position: 8px -289px;
+    padding: 0 5px 0 26px;
+    border-radius: 12px;
+    outline: none
+    }
+.wp-frid-search {
+    position: absolute;
+    bottom: 92px;
+    height: auto;
+    width: 100%
+    }
+.wp-guide {
+    width: 224px;
+    height: 73px;
+    position: absolute;
+    background: none;
+    bottom: 38px;
+    right: 0
+    }
+.wp-guide .wp-guide-remove {
+    background: url(http://a.xnimg.cn/webpager/cssimg/remove-recent.png) no-repeat 0 0;
+    width: 12px;
+    display: block;
+    position: absolute;
+    right: 6px;
+    top: 5px;
+    visibility: hidden;
+    overflow: hidden
+    }
+.wp-guide .wp-guide-remove:hover {
+    background: url(http://a.xnimg.cn/webpager/cssimg/remove-recent.png) no-repeat no-repeat -16px 0
+    }
+.wp-guide div {
+    background: url(http://a.xnimg.cn/webpager/cssimg/guide-bg.png) repeat-x;
+    height: 33px;
+    border: 1px solid #b3b3b3;
+    border-radius: 5px;
+    padding: 15px 12px
+    }
+.wp-guide span {
+    background: url(http://a.xnimg.cn/webpager/cssimg/guide-arrow.png) no-repeat;
+    width: 16px;
+    height: 9px;
+    position: absolute;
+    bottom: 0;
+    left: 104px;
+    top: 64px
+    }
+.wp-guide .guide-icon {
+    background: url(http://a.xnimg.cn/webpager/cssimg/guide-icon.png) no-repeat;
+    width: 30px;
+    height: 25px;
+    float: left;
+    margin: 4px 12px 0 0
+    }
+.wp-guide a:hover {
+    text-decoration: none
+    }
+.wp-guide div a {
+    margin: 0 2px
+    }
+.buddy-clent-ad {
+    background: #f5f5f5;
+    height: 40px;
+    overflow: hidden;
+    color: #545454;
+    border-top: 1px solid #fff;
+    width: 100%
+    }
+.buddy-clent-ad p {
+    margin: 7px 3px 0 3px;
+    border: 1px solid #afcbe6;
+    border-radius: 4px;
+    box-shadow: 1px 1px 2px #ccc
+    }
+.buddy-clent-ad a {
+    background: url(http://a.xnimg.cn/webpager/cssimg/bud-clent-bg.png) repeat-x;
+    display: block;
+    border-radius: 4px;
+    color: #545454 !important
+    }
+.buddy-clent-ad a:hover {
+    text-decoration: none;
+    color: #545454
+    }
+.buddy-clent-ad a img {
+    margin: 0 2px 0 2px;
+    vertical-align: middle;
+    display: inline-block
+    }
+.buddy-clent-ad a var {
+    font-style: normal;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 23px;
+    cursor: pointer;
+    font-family: "宋体"
+    }
+.pro-clent-ad {
+    width: 184px;
+    height: 88px;
+    background-color: #fdf8ea;
+    background-repeat: no-repeat;
+    zoom: 1;
+    position: absolute;
+    left: 9px;
+    bottom: 31px;
+    overflow: hidden;
+    cursor: pointer
+    }
+.pro-clent-ad h3 {
+    font-size: 12px;
+    color: #333;
+    background: url(http://s.xnimg.cn/img/rrzm.png) no-repeat center left;
+    padding-left: 18px
+    }
+.pro-clent-ad .wp-clent-remove {
+    background: url(http://a.xnimg.cn/webpager/cssimg/remove-recent.png) no-repeat 0 0;
+    width: 12px;
+    display: block;
+    position: absolute;
+    right: 7px;
+    top: 7px
+    }
+.pro-clent-ad .wp-clent-remove:hover {
+    background: url(http://a.xnimg.cn/webpager/cssimg/remove-recent.png) no-repeat no-repeat -16px 0;
+    text-decoration: none
+    }
+/* .pro-clent-ad p{margin-top:57px;text-align:right;} */
+.pro-clent-ad a.download-link {
+    display: block;
+    width: 60px;
+    height: 17px;
+    position: absolute;
+    right: 15px;
+    bottom: 8px
+    }
+.pro-clent-ad a.download-link:hover {
+    border-bottom: #845c1f 1px solid
+    }
+.wp-rrzm-ico {
+    background-position: 0 -1528px;
+    overflow: hidden
+    }
+.wp-rrzm-popup {
+    position: absolute;
+    bottom: 34px;
+    right: 3px;
+    z-index: 10;
+    cursor: pointer
+    }
+.wp-rrzm-popup .btn-close {
+    font-size: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background: url(http://a.xnimg.cn/imgpro/button/close-alpha-all.png) no-repeat 0 0
+    }
+.wp-rrzm-popup .btn-close-small {
+    font-size: 0;
+    display: block;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    right: 10px;
+    top: 9px
+    }
+.wp-rrzm-popup .btn-close:hover {
+    background-position: 0 -20px
+    }
+.wp-rrzm-popup .jump-link {
+    display: block;
+    height: 25px;
+    width: 25px;
+    bottom: 20px;
+    left: 186px;
+    position: absolute
+    }
+.wp-rrzm-popup .jump-link:hover {
+    border-bottom: 1px solid
+    }
+.popupwindow .wp-rrzm-shrink {
+    width: 17px;
+    font-size: 0
+    }
+/* span.wp-rrzm-newtip{display:block;width:12px;height:12px;background:url(http://s.xnimg.cn/webpager/cssimg/rrzm-ico.png) 0 -26px no-repeat;position:absolute;top:0;left:0;} */
+
+
+/* import by . */
+@-css-compiler-profile "not-good-in-ie6";
+.with-topic {
+    border-left: 1px solid #DDD
+    }
+.webpager article.topic-box {
+    overflow: hidden;
+    display: inline-block;
+    float: left
+    }
+#webpager .topic {
+    height: 325px;
+    overflow-y: auto;
+    padding: 10px
+    }
+.wp-group-members {
+    width: 158px
+    }
+.wp-blog-topic, .wp-status-topic, .wp-photo-topic {
+    width: 208px
+    }
+.wp-topic-time {
+    color: #999;
+    padding-left: 5px
+    }
+.wp-photo-topic {
+    text-align: center;
+    padding-right: 0;
+    overflow-x: hidden
+    }
+.wp-photo-topic .wp-photo-dec {
+    font-weight: bold;
+    margin: 5px 0;
+    text-align: left
+    }
+.wp-photo-topic footer {
+    text-align: left
+    }
+.wp-status-topic figure {
+    float: left;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+    margin-right: 10px
+    }
+.wp-status-topic .wp-status-main {
+    margin-left: 40px;
+    line-height: 18px
+    }
+.wp-status-topic .wp-topic-time {
+    padding: 5px 0 0
+    }
+.wp-blog-main {
+    color: #666
+    }
+.wp-blog-main h4 {
+    font-weight: bold;
+    margin-bottom: 5px
+    }
+.wp-blog-main p {
+    margin: 15px 0 5px
+    }
+.wp-share-topic {
+    /* width:125px; */
+    overflow-x: hidden
+    }
+.wp-share-name {
+    font-weight: bold;
+    margin: 5px 0;
+    display: block
+    }
+.wp-video-img {
+    background-position: center center
+    }
+.wp-video-play {
+    display: block;
+    height: 100%;
+    text-indent: -9999px;
+    outline: none;
+    background: url(http://a.xnimg.cn/imgpro/home/home_icon.png?ver=100310) no-repeat -70px -200px;
+    opacity: 0.9
+    }
+a:hover.wp-video-play {
+    display: block;
+    background-position: -70px -280px;
+    text-indent: -9999px
+    }
+.wp-share-topic .operation {
+    text-align: right;
+    margin-top: 5px
+    }
+#webpager .wp-group-topic, #webpager .wp-blog-topic, #webpager .wp-common-topic {
+    padding: 10px
+    }
+.wp-common-topic p, .wp-common-topic div, .wp-group-topic p, .wp-group-topic div, .wp-blog-topic p, .wp-blog-topic div {
+    margin: 4px 0;
+    line-height: 18px;
+    color: #666
+    }
+.wp-group-topic p .host_name {
+    vertical-align: top;
+    margin-left: 10px
+    }
+.wp-common-topic div img, .wp-group-topic div img, .wp-blog-topic div img {
+    display: block
+    }
+.wp-common-topic .wp-common-pic, .wp-group-topic .wp-group-pic, .wp-blog-topic .wp-blog-pic {
+    border: 1px solid #e9e9e9;
+    padding: 2px;
+    background: #fff;
+    display: inline-block
+    }
+
+
+/* import by . */
+/*放置一些不需要opm编译的ie6规则*/
+
+.wp-group-list dd{
+    page-break-before: expression(function(ele){ele.runtimeStyle.pageBreakBefore='auto';Expressions.pseudo.hover(ele,'hover');}(this))
+}
+.wp-frid-list dd{
+    page-break-before: expression(function(ele){ele.runtimeStyle.pageBreakBefore='auto';Expressions.pseudo.hover(ele,'hover');}(this))
+}
+.wp-guide{
+    page-break-before: expression(function(ele){ele.runtimeStyle.pageBreakBefore='auto';Expressions.pseudo.hover(ele,'hover');}(this))
+}
+
+.wp-frid-list dd:hover .wp-profile,
+.wp-frid-list dd.hover .wp-profile,
+.wp-group-list dd:hover .wp-profile,
+.wp-group-list dd.hover .wp-profile,
+.wp-frid-list dd.hover .wp-profile,
+.wp-group-list dd.hover .wp-profile{
+	visibility: visible;
+}
+.wp-frid-list dd:hover .wp-remove-contact,
+.wp-frid-list dd.hover .wp-remove-contact,
+.wp-group-list dd:hover .wp-remove-contact,
+.wp-group-list dd.hover .wp-remove-contact,
+.wp-frid-list dd.hover .wp-remove-contact,
+.wp-group-list dd.hover .wp-remove-contact{
+	visibility: visible;
+}
+
+.wp-guide.hover .wp-guide-remove,.wp-guide:hover .wp-guide-remove{visibility:visible;}
+
+.wp-frid-list dd:hover,
+.wp-frid-list dd.hover,
+.wp-frid-list dd.selecting,
+.wp-group-list dd:hover,
+.wp-group-list dd.hover,
+.wp-group-list dd.selecting{
+	background:#EBEEF3;
+}
+
+
+/* 通用"小齿轮"偏好设置菜单样式  */
+.wp-preferences{
+	width: 33px;
+	height: 100%;
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	border-left: solid 1px #C8C8C8;
+	color: #333333;
+}
+.wp-preferences a.pref-btn{
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 30px;
+	background-position: center -1478px;
+	font-size: 0;
+}
+.wp-preferences-onshow a.pref-btn,
+.wp-preferences a.pref-btn:hover {
+	background-color: #FFF;
+}
+.wp-preferences dl{
+	position: absolute;
+	bottom: 32px;
+	right: 0;
+	width: 115px;
+	border: 1px solid #CCCCCC;
+	background-color: #FFFFFF;
+}
+.wp-preferences-onshow dl{
+	display: block;
+}
+.wp-preferences dd{
+	padding: 2px;
+	height: 25px;
+	line-height: 25px;
+}
+.wp-preferences dd a{
+	display: block;
+	padding-left: 20px;
+	text-align: left;
+	text-decoration: none;
+}
+.wp-preferences dd.pref-on a{
+	background-position: 2px -1503px;
+}
+.wp-preferences dd a:hover {
+	background-color: #F4F4F4;
+	color: #333333;
+}
+
+
+/** 好友列表chrome 滚动条样式**/
+.wp-frid-list::-webkit-scrollbar-track-piece{
+	background-color:transparent;
+}
+.wp-frid-list::-webkit-scrollbar{
+	width:6px;
+	height:8px;
+}
+.wp-frid-list::-webkit-scrollbar:hover{
+	background-color:rgb(236,236,236);
+}
+.wp-frid-list::-webkit-scrollbar-thumb{
+	background-color:rgba(202, 206, 214,0.8);
+	-webkit-border-radius:4px;
+	outline-offset:-2px;
+	overflow:hidden;
+}
+.wp-frid-list::-webkit-scrollbar-thumb:hover{
+	background-color:rgba(204, 204,204,0.8);
+}
+.wp-frid-list::-webkit-scrollbar-button{height:0px;width:0px}
+
+
+
+
+
+
+
+/* import by . */
+/* for mini radio */
+#radio-home-con{
+	position:absolute;
+	height:31px;
+	width:159px;
+	z-index:4000;
+}
+
+#home-radio-bar,
+#home-radio-bar a,
+#home-radio-bar a.playWork:active,
+#home-radio-bar a.playWork:hover,
+#home-radio-bar .listNormal a:hover,
+#home-radio-bar .listNormal a.playactive:hover {
+	background-image:url(http://a.xnimg.cn/apps/radio/images/radio_display_v6.png);
+	background-repeat:no-repeat;
+}
+/* 底部按钮 */
+#home-radio-bar{
+	width:131px;
+	height:31px;
+	padding-left:26px;
+	background-position: 0px -310px;
+	overflow:hidden;
+	border:1px solid #cdcdcd;
+}
+#home-radio-bar .home-radio-playOrPause,
+#home-radio-bar .home-radio-next,
+#home-radio-bar .home-radio-fav{
+	float:left;
+	height:24px;
+	width:25px;
+	margin-top:4px;
+	margin-right:5px;
+}
+#home-radio-bar .home-radio-next,
+#home-radio-bar .home-radio-fav{
+	margin-top:7px;
+}
+
+#home-radio-bar .home-radio-fav{
+	margin-right:9px;
+}
+#home-radio-bar a{
+	display:block;
+	margin:0 auto;
+	text-decoration:none;
+	outline:none;
+	font-size:0;
+	line-height:0;
+}
+#home-radio-play{
+	height:24px;
+	width:24px;
+	
+}
+#home-radio-next,
+#home-radio-fav{
+	height:20px;
+	width:20px;
+}
+
+#home-radio-bar .playWork{
+	background:url(http://a.xnimg.cn/apps/radio/images/playing.gif) no-repeat top left;
+}
+#home-radio-bar .playPause{
+	background-position: 0px -216px;
+}
+#home-radio-bar  a.playPause:hover {
+	background-position: 0px -245px;
+}
+#home-radio-bar a.playWork:hover{
+	background-position: -28px -245px;
+}
+
+#home-radio-bar a.playPause:active {
+	background-position: 0px -275px;
+}
+#home-radio-bar a.playWork:active{
+	background-position: -28px -275px;
+}
+#home-radio-bar .nextWork,
+#home-radio-bar .nextDisable{
+	background-position: -56px -216px;
+}
+#home-radio-bar .nextDisable{
+	cursor:default;
+}
+#home-radio-bar .nextWork:hover{
+	background-position: -56px -245px;
+}
+#home-radio-bar .nextWork:active{
+	background-position: -56px -275px;
+}
+
+#home-radio-bar .favDisable{
+	cursor:default;
+}
+#home-radio-bar .loveNormal,
+#home-radio-bar .favDisable,
+#home-radio-bar a.justnostar,
+#home-radio-bar a.justnostar:hover{
+	background-position: -80px -216px;
+}
+#home-radio-bar .loveWork{
+	background-position: -104px -275px;
+}
+#home-radio-bar .loveNormal:hover,
+#home-radio-bar .loveWork:hover{
+	background-position: -80px -245px;
+} 
+#home-radio-bar .loveWork:active,
+#home-radio-bar .loveNormal:active{
+	background-position: -80px -275px;
+}
+
+#home-radio-bar .loveNormal,
+#home-radio-bar .favDisable,
+#home-radio-bar a.justnostar,
+#home-radio-bar a.justnostar:hover{
+	background-position: -80px -216px;
+}
+#home-radio-bar .listNormal,
+#home-radio-bar .listWork{
+	height:30px;
+	width:20px;
+	float:left;
+}
+/*鼠标在上面的情况*/
+#home-radio-bar .listWork{
+	background-position: -180px 0px;
+}
+#home-radio-bar .listNormal a,
+#home-radio-bar .listNormal a.playactive{
+	background-position:-217px -18px;
+    font-size: 0;
+    height: 15px;
+    margin: 9px 0 0;
+    overflow: hidden;
+    padding: 0;
+    width: 15px;
+}
+#home-radio-bar .listNormal a.playactive{
+	/*background:url(http://a.xnimg.cn/apps/radio/images/circle_active.gif) no-repeat 3px 2px;*/
+}
+#home-radio-bar .listNormal a:hover,
+#home-radio-bar .listNormal a.playactive,
+#home-radio-bar .listNormal a.playactive:hover{	
+	background-position: -235px -18px;
+}
+#home-radio-bar .listNormal a.reqloading{
+	background:url(http://a.xnimg.cn/apps/radio/images/circle_fade6.gif) no-repeat 1px 2px;
+}
+#home-radio-bar .listNormal a.reqloading:hover{
+	background:url(http://a.xnimg.cn/apps/radio/images/circle_fade6.gif) no-repeat 1px 2px;
+}
+
+
+
+/* import by . */
+#webpager .birthday-remind {
+    position: relative;
+}
+
+.webpager .popupwindow {
+    float: left;
+}
+
+.birthday-box {
+    display: none;
+    position: absolute;
+    bottom: 33px;
+    right: -157px;
+    width: 190px;
+    border: 1px solid #C8C8C8;
+    border-bottom: 0;
+    background-color: #FFF;
+    cursor: default;
+    z-index: 1;
+}
+
+.birthday-box .header {
+    position: relative;
+    background: #F5F5F5;
+}
+
+.birthday-box .header h4 {
+    height: 30px;
+    padding: 0 10px;
+    line-height: 30px;
+}
+
+.birthday-box .header .minimize {
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: 30px;
+    width: 14px;
+    height: 14px;
+    background-position: 0 -42px;
+    cursor: pointer;
+
+}
+
+.birthday-box .header .close {
+    display: block;
+    position: absolute;
+    top: 7px;
+    right: 5px;
+    width: 14px;
+    height: 14px;
+    background-position: 0 -85px;
+    cursor: pointer;
+
+}
+
+.birthday-box .head {
+    display: block;
+    float: left;
+}
+
+.birthday-box .a {
+    cursor: default;
+}
+
+.birthday-box .bir-content {
+    position: relative;
+    padding: 10px 5px 0;
+    zoom: 1;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.birthday-box .bir-content ul{
+    position: relative;
+    zoom:1;
+}
+
+.birthday-box .bir-content li {
+    position: relative;
+    height: 40px;
+    padding: 5px 0;
+}
+
+.birthday-box .bir-content .info {
+    _display: inline;
+    float: left;
+    margin: 0 5px;
+}
+
+.birthday-box .bir-content .info a {
+    color: #333;
+}
+
+.birthday-box .bir-content .info img {
+    margin-left: 5px;
+    vertical-align: top;
+}
+
+.birthday-box .bir-content .info p {
+    width: 80px;
+    line-height: 22px;
+    color: #888;
+    overflow: hidden;
+}
+
+.birthday-box .bir-content .gift {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 5px;
+    width: 50px;
+    height: 18px;
+    border: 1px solid #FFBB61;
+    background: #FFE0B9;
+    line-height: 18px;
+    color: #EA5504;
+    text-align: center;
+}
+
+.birthday-box .bir-content .gift:hover {
+    text-decoration: none;
+}
+
+.birthday-btn {
+    display: block;
+    width: 35px;
+    height: 33px;
+    background: url(http://a.xnimg.cn/webpager/cssimg/birthday.gif) center center no-repeat;
+    outline: none;
+}
+
+.birthday-remind .birthday-btn-hovered {
+    background-position: 0 -32px;
+}
+
+.birthday-popup {
+    position: absolute;
+    bottom: 34px;
+    right: -8px;
+    cursor: pointer;
+    z-index: -10;
+}
+
+#birthday-close-small {
+    display: block;
+    position: absolute;
+    top: 9px;
+    right: 10px;
+    width: 8px;
+    height: 8px;
+    font-size: 0;
+}
+
+
+
+/* import by . */
+.actived .chat-window .start-groupchat {
+    _display: inline;
+    float: right;
+    margin-right: 10px;
+    color: #666;
+    font-size: 18px;
+    cursor: pointer;
+    zoom: 1;
+}
+
+.chat-window .chatroom-set {
+    display: block;
+    position: absolute;
+    left: -20px;
+    top: 3px;
+    width: 16px;
+    height: 19px;
+    background-position: 0 -1485px;
+    cursor: pointer;
+}
+
+.actived .chat-window header h4 {
+    *position: relative;
+    height: 30px;
+    *zoom: 1;
+}
+
+.actived .chat-window header h4 .header-title {
+    display: block;
+    position: absolute;
+    left: 30px;
+    top: 0;
+    width: 220px;
+    /*overflow: hidden;*/
+    padding: 5px 10px;
+    text-align: center;
+}
+
+/* **************************好友列表************************** */
+.friends-window .start-groupchat,
+.friends-window .start-groupchat:hover {
+    color: #666;
+    text-decoration: none;
+}
+
+/* **************************添加好友************************** */
+#wp-friend-select {
+    padding-top: 10px;
+}
+
+#wp-friend-select .btn,
+.chat-panel .exitgroup {
+    display: block;
+    position: absolute;
+    top: 7px;
+    right: 12px;
+    width: 48px;
+    height: 24px;
+    border: 1px solid #034072;
+    background: #1370B0;
+    line-height: 24px;
+    color: #FFF;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 0 #5998C9;
+    -webkit-transition: all .1s ease;
+       -moz-transition: all .1s ease;
+        -ms-transition: all .1s ease;
+         -o-transition: all .1s ease;
+            transition: all .1s ease;
+}
+
+#wp-friend-select .btn-disabled {
+    border: 1px solid #AAA;
+    background: #F2F0F0;
+    color: #AAA;
+    box-shadow: inset 0 1px 0 #FFF;
+}
+
+#wp-friend-select .btn:hover,
+.chat-panel .exitgroup:hover {
+    border: 1px solid #034072;
+    background: #3B85BF;
+    text-decoration: none;
+    box-shadow: inset 0 1px 0 #5998C9;
+}
+
+.chat-panel .exitgroup {
+    width: 70px;
+}
+
+#wp-friend-select .wp-friend-confirm-disable,
+#wp-friend-select .wp-friend-confirm-disable:hover {
+    border: 1px solid #A5A5A5;
+    background: #F0EDEF;
+    color: #A5A5A5;
+    cursor: default;
+    box-shadow: none;
+}
+
+/* 搜索框 */
+.wp-friend-search {
+    width: 265px;
+    height: 20px;
+    margin: 0 auto 6px;
+    padding: 5px 10px 5px 25px;
+    border: 1px solid #DDD;
+    background: url(http://a.xnimg.cn/imgpro/v6/search_btn.png) no-repeat 5px 8px;
+    border-radius: 3px;
+}
+
+.wp-friend-search .wp-friend-input {
+    width: 260px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    line-height: 20px;
+    outline: none;
+}
+
+/* 好友列表 */
+.wp-friend-list {
+    width: 298px;
+    margin: 0 auto;
+    padding: 0 10px;
+    border-bottom: 1px solid #E7E7E7;
+}
+
+.wp-friend-list li:hover {
+    background: #EEE;
+}
+
+.wp-friend-list li.no-click:hover {
+    background: none;
+    cursor: default;
+}
+
+.wp-friend-list .list {
+    position: relative;
+    height: 200px;
+    margin-bottom: 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.wp-friend-list .list li {
+    position: relative;
+    height: 30px;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.search-panel .wp-friend-search {
+    margin: 0 auto 9px;
+    _margin: 0 auto 6px;
+}
+
+.search-panel .wp-friend-list .list {
+    height: 246px;
+    _height: 243px;
+    margin-bottom: 6px;
+}
+
+.search-panel .wp-friend-list .list li {
+    height: 31px;
+    _height: 30px;
+}
+
+.wp-friend-list .list .checkbox-wrap {
+    display: block;
+    position: absolute;
+    top: 14px;
+    right: 20px;
+    width: 14px;
+    height: 14px;
+    background-position: 0 -117px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.wp-friend-list .list li:hover .checkbox-wrap {
+    background-position: 0 -102px;
+}
+
+.wp-friend-list .selected .checkbox-wrap,
+.wp-friend-list .list .selected:hover .checkbox-wrap {
+    background-position: 0 -87px;
+}
+
+.wp-friend-list .list p {
+    float: left;
+    height: 30px;
+    padding-left: 5px;
+    line-height: 30px;
+}
+
+.wp-friend-list .list img {
+    margin-right: 10px;
+    vertical-align: top;
+}
+
+/* wp-friend-footer */
+.wp-friend-footer {
+    position: relative;
+    height: 40px;
+    border-top: 1px solid #FFF;
+    background: #E7E7E7;
+}
+
+.wp-friend-slider {
+    _display: inline;
+    position: relative;
+    float: left;
+    height: 30px;
+    margin: 5px 17px;
+}
+
+.wp-friend-slider .list-wrap {
+    position: relative;
+    width: 216px;
+    height: 30px;
+    overflow: hidden;
+}
+
+.wp-friend-slider .list-wrap ul {
+    position: relative;
+    width: 36px;
+    zoom: 1;
+    -webkit-transition: all .1s ease;
+       -moz-transition: all .1s ease;
+        -ms-transition: all .1s ease;
+         -o-transition: all .1s ease;
+            transition: all .1s ease;
+}
+
+.wp-friend-slider .list-wrap li {
+    _display: inline;
+    position: relative;
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin: 0 3px;
+}
+
+.wp-friend-slider .list-wrap .last {
+    width: 28px;
+    height: 28px;
+    border: 1px dashed #888;
+}
+
+.wp-friend-slider span {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 10px;
+    height: 30px;
+    line-height: 30px;
+    color: #8692AA;
+    font-weight: 900;
+    text-align: center;
+    cursor: pointer;
+}
+
+.wp-friend-slider span.disabled {
+    color: #BBB;
+    cursor: default;
+}
+
+.wp-friend-slider .wp-friend-slider-prev {
+    left: -10px;
+}
+
+.wp-friend-slider .wp-friend-slider-next {
+    right: -10px;
+}
+
+.wp-friend-slider .wp-friend-del {
+    display: none;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    width: 22px;
+    height: 22px;
+    background-position: 0 -147px;
+    cursor: pointer;
+}
+
+/* **************************聊天设置************************** */
+#add-friend-box h3 {
+    position: relative;
+}
+
+#add-friend-box .sf-close {
+    position: absolute;
+    top: 6px;
+    right: 7px;
+    width: 10px;
+    height: 14px;
+    background-position: 0 -20px;
+    font-size: 0;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+#add-friend-box h3 {
+    font-weight: 700;
+    font-size: 12px;
+}
+
+/* *******************对话框样式*************************** */
+.chat-window figure.avatar {
+    float: left;
+    margin-right: 5px;
+}
+
+.chat-window .wp-chatlist-self .avatar {
+    float: right;
+    margin: 0 0 0 5px;
+}
+
+.chat-panel .f-area {
+    position: relative;
+    height: 70px;
+    padding-top: 30px;
+    border-bottom: 1px solid #D9DCE1;
+    background: #F6F6F6;
+}
+
+.chat-panel .f-area a:hover {
+    text-decoration: none;
+}
+
+.chat-panel .f-area .fbtn {
+    display: block;
+    position: absolute;
+    top: 30px;
+    width: 10px;
+    height: 38px;
+    border: 1px solid #C8C8C8;
+    background: #ECECEC;
+    line-height: 38px;
+    color: #C8C8C8;
+    text-align: center;
+}
+
+.chat-panel .f-area .fbtn:hover {
+    border-color: #A9BFD0;
+    background: #D8E8F6;
+    color: #A9BFD0;
+}
+
+.chat-panel .f-area .fbtn-disabled:hover {
+    border-color: #C8C8C8;
+    background: #ECECEC;
+    color: #C8C8C8;
+    cursor: default;
+}
+
+.chat-panel .f-area .fbtn-prev {
+    left: 20px;
+}
+
+.chat-panel .f-area .fbtn-next {
+    right: 20px;
+}
+
+.chat-panel .f-area .wp-groupchat {
+    position: relative;
+    width: 250px;
+    height: 60px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.chat-panel .f-area .fbtn,
+.chat-panel .f-area .wp-groupchat ul {
+    -webkit-transition: all .1s ease;
+       -moz-transition: all .1s ease;
+        -ms-transition: all .1s ease;
+         -o-transition: all .1s ease;
+            transition: all .1s ease;
+}
+
+.chat-panel .f-area .wp-groupchat ul {
+    margin-left: 0;
+}
+
+.chat-panel .f-area li {
+    float: left;
+    width: 40px;
+    height: 60px;
+    padding: 0 5px;
+    line-height: 20px;
+    color: #808080;
+    text-align: center;
+    overflow: hidden;
+}
+
+.chat-panel .f-area li img {
+    width: 40px;
+    height: 40px;
+}
+
+.chat-panel .f-area .chat-search {
+    width: 50px;
+    padding: 0;
+}
+
+.chat-panel .f-area .chat-search a {
+    display: block;
+    width: 36px;
+    height: 36px;
+    margin: 0 auto;
+    border: 2px dashed #369;
+    line-height: 38px;
+    color: #369;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+}
+
+.chat-panel .f-area .chat-search em {
+    display: block;
+    width: 50px;
+    height: 14px;
+    text-align: center;
+}
+
+.wp-chatlist .wp-chat-content {
+    position: relative;
+    float: left;
+    margin-left: 10px;
+    padding: 5px 7px;
+    border: 1px solid #B6C7D7;
+    background: #E1EAF6;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 2px #FFF, 1px 1px 1px #B6C7D7;
+    max-width: 185px;
+}
+
+.wp-chatlist-self .wp-chat-content {
+    float: right;
+    margin: 0 10px 0 0;
+    border: 1px solid #BFBFBF;
+    background: #F1F1F1;
+    box-shadow: inset 0 3px 2px #FFF, -1px 1px 1px #BFBFBF;
+}
+
+.wp-chat-content .wp-arrow {
+    position: absolute;
+    left: -6px;
+    top: 5px;
+    width: 0;
+    height: 0;
+    border-right: 6px solid #B6C7D7;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    _border-color: tomato #B6C7D7 tomato tomato;
+    background: none;
+    line-height: 0;
+    font-size: 0;
+    _filter: chroma(color=tomato);
+}
+
+.wp-chat-content .wp-arrow-inner {
+    left: -5px;
+    top: 5px;
+    border-right: 6px solid #E1EAF6;
+}
+
+.wp-chatlist-self .wp-chat-content .wp-arrow {
+    left: auto;
+    right: -6px;
+    border: 0;
+    border-left: 6px solid #BFBFBF;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    _border-color: tomato tomato tomato #BFBFBF;
+    background: none;
+    _filter: chroma(color=tomato);
+}
+
+.wp-chatlist-self .wp-chat-content .wp-arrow-inner {
+    left: auto;
+    right: -5px;
+    border-left: 6px solid #F1F1F1;
+}
+
+.wp-chatlist .wp-chat-content p {
+    display: inline;
+    _height: 16px;
+    min-height: 16px;
+}
+
+/* 添加群成员时的小箭头 */
+/*.wp-chat-content em {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: -7px;
+    width: 7px;
+    height: 13px;
+    background-position: -8px -171px;
+    line-height: 0;
+    font-size: 0;
+}
+
+.wp-chatlist-self .wp-chat-content em {
+    left: -7px;
+    right: auto;
+    background-position: 0 -171px;
+}*/
+.chat-window .header-title .chat-history {
+    display: block;
+    position: absolute;
+    left: -22px;
+    top: 8px;
+    width: 18px;
+    height: 15px;
+    background-position: 0 -54px;
+    line-height: 0;
+    font-size: 0;
+    overflow: hidden;
+}
+
+.chat-window .header-title .chat-history:hover {
+    background-position: 0 -38px;
+}
+
+.wp-chatlist .wp-chatlist .wp-mini-pic {
+    width: 100px;
+    cursor: url(http://a.xnimg.cn/imgpro/bg/zoom.cur), auto;
+    overflow-x: hidden;
+    border-radius: 3px;
+}
+
+.wp-chatlist .wp-chat-pic .wp-img-wrap {
+    position: relative;
+    width: 100px;
+}
+
+/* **************************选择群************************** */
+#wp-group-select {
+    width: 298px;
+    margin: 10px auto 0;
+    padding: 0 10px;
+}
+
+.wp-group-buddy {
+    position: relative;
+    height: 280px;
+    margin-bottom: 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.wp-group-buddy dd {
+    height: 40px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.wp-group-buddy dd:hover {
+    background: #EEE;
+}
+
+.wp-group-buddy img {
+    width: 30px;
+    height: 30px;
+    margin: -3px 6px 0 0;
+    padding-left: 5px;
+}
+
+.wp-group-buddy span {
+    line-height: 40px;
+}
+
+/* **************************群聊天设置************************** */
+#webpager .wp-chat-set .btn {
+    display: inline-block;
+    float: right;
+    width: 70px;
+    height: 28px;
+    margin: 0 10px 0 0;
+    border: 1px solid #AAA;
+    background: #FAFAFA;
+    line-height: 28px;
+    color: #333;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 3px;
+    -webkit-transition: all .1s ease;
+       -moz-transition: all .1s ease;
+        -ms-transition: all .1s ease;
+         -o-transition: all .1s ease;
+            transition: all .1s ease;
+}
+
+#webpager .wp-chat-set .btn:hover {
+    border-color: #666;
+    background: #FDFDFD;
+    text-decoration: none;
+}
+
+.wp-chat-set {
+    height: 182px;
+    padding: 10px 20px;
+}
+
+.wp-chat-set h3 {
+    margin-bottom: 10px;
+    line-height: 20px;
+    font-size: 12px;
+}
+
+.wp-chat-set p {
+    height: 30px;
+    margin-bottom: 10px;
+    line-height: 30px;
+}
+
+.wp-chat-set .chat-name {
+    display: block;
+    width: 150px;
+    height: 22px;
+    padding: 3px 10px;
+    line-height: 24px;
+    vertical-align: top;
+    vertical-align: middle;
+    border-radius: 5px;
+    outline: none;
+}
+
+.chat-panel .exitgroup-wrap {
+    position: relative;
+    height: 42px;
+    background: #F7F7F7;
+}
+
+.chat-panel .exitgroup {
+    left: 20px;
+    padding: 0 10px;
+}
+
+.wp-chatlist footer {
+    display: none;
+}
+
+/* ********************系统消息************************* */
+.chat-window .sys-info {
+    padding: 6px;
+    color: #AAA;
+    text-align: center;
+}
+
+/* ********************UGC聊天************************* */
+.chat-window .wp-chatlist-ugc {
+    position: relative;
+    margin: 0 6px;
+    padding: 6px 0;
+    *zoom: 1;
+}
+
+.chat-window .wp-chatlist-ugc figure.avatar {
+    float: left;
+    margin: 0 5px 0 0;
+}
+
+.chat-window .wp-chatlist-ugc:after {
+    display: block;
+    clear: both;
+    background-color: #FFF;
+    content: '\20';
+}
+
+.chat-window .wp-chatlist-ugc .wp-chat-time,
+.chat-window .wp-chatlist-ugc .wp-chat-reply {
+    display: none;
+    background: #FFF;
+    color: #AAA;
+}
+
+.chat-window .wp-chatlist-ugc .wp-chat-reply {
+    color: #005EAC;
+}
+
+.chat-window .wp-chatlist-ugc:hover .wp-chat-time,
+.chat-window .wp-chatlist-ugc.hover .wp-chat-time {
+    display: block;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    text-align: right;
+}
+
+.chat-window .wp-chatlist-ugc:hover .wp-chat-reply {
+    display: block;
+    position: absolute;
+    bottom: 25px;
+    right: 5px;
+    width: 26px;
+}
+
+.chat-window .wp-chatlist-ugc .wp-chat-time,
+.chat-window .wp-chatlist-ugc .wp-chat-reply {
+    display: none;
+    background: #FFF;
+    color: #AAA;
+}
+
+.chat-window .wp-chatlist-ugc .wp-chat-reply {
+    color: #005EAC;
+}
+
+.chat-window .wp-chatlist-ugc footer {
+    visibility: hidden;
+}
+
+.chat-window .wp-chatlist-ugc:hover footer {
+    visibility: visible;
+}
+
+.chat-window .wp-chatlist-ugc .wp-chat-time,
+.chat-window .wp-chatlist-ugc.hover .wp-chat-time {
+    display: block;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    text-align: right;
+}
+
+.chat-window .wp-chatlist-ugc .wp-chat-reply {
+    display: block;
+    position: absolute;
+    bottom: 25px;
+    right: 5px;
+    width: 26px;
+}
+
+
+
+div#bottombar {
+    left: 0;
+    right: 0;
+    height: 0
+    }
+.wp-font888 {
+    color: #888
+    }
+/* Webpager */
+.webpager {
+    position: relative;
+    float: right;
+    width: 100%;
+    height: 0;
+    word-wrap: break-word;
+    word-break: break-all;
+    /* margin:0 auto; */
+    }
+.webpager .panelbarpanels {
+    position: absolute;
+    bottom: 0
+    }
+.webpager .panelbarpanels > .panel {
+    float: right;
+    min-width: 24px;
+    position: relative
+    }
+#webpager-miniradio {
+    float: left;
+    bottom: 33px;
+    margin-left: 1px
+    }
+.webpager .popupwindow {
+    position: relative;
+    display: inline-block;
+    vertical-align: top
+    }
+/*.webpager .popupwindow.actived{
+	overflow:visible
+}*/
+.panelbarbutton {
+    float: left;
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+    background-position: 0 -63px;
+    border: 1px solid #C8C8C8;
+    height: 31px;
+    width: 224px;
+    padding: 0 8px;
+    line-height: 31px;
+    margin-left: -1px
+    }
+.panelbarbutton:hover {
+    border-color: #666;
+    z-index: 4
+    }
+/** header menu style **/
+.webpager header menu {
+    float: right;
+    position: absolute;
+    height: 12px;
+    right: 0;
+    top: 6px
+    }
+.popupwindow header menu li {
+    float: left;
+    margin: 0 5px;
+    cursor: pointer;
+    width: 10px;
+    height: 14px;
+    display: block;
+    outline: 0;
+    text-indent: -9999px;
+    list-style-type: none
+    }
+.popupwindow header .minimize {
+    width: 12px;
+    background-position: 0 -42px
+    }
+.popupwindow header .minimize:hover {
+    background-position: 0 -64px
+    }
+.popupwindow header .close {
+    background-position: 0 -20px
+    }
+.popupwindow header .close:hover {
+    background-position: 0 -86px
+    }
+.popupwindow header .wp-quit {
+    width: 14px;
+    background-position: 0 -569px
+    }
+.popupwindow header .wp-quit:hover {
+    background-position: 0 -596px
+    }
+/** the longth of name with chat style **/
+.wp-group-ico, .wp-chat-ico {
+    width: 85px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+    }
+/** chat icons style **/
+.wp-photo-ico, .wp-group-ico, .wp-status-ico, .wp-blog-ico, .wp-chat-ico, .wp-friend-ico, .wp-xiaozu-ico, .wp-gift-ico, .wp-rrzm-ico, .wp-share-ico {
+    padding-left: 20px;
+    height: 31px;
+    line-height: 31px
+    }
+.wp-photo-ico {
+    background-position: 0 -932px
+    }
+.wp-group-ico {
+    background-position: 0 -420px
+    }
+.wp-xiaozu-ico {
+    background-position: 0 -1418px
+    }
+.wp-status-ico {
+    background-position: 0 -1048px
+    }
+.wp-blog-ico {
+    background-position: 0 -393px
+    }
+.wp-share-ico {
+    background-position: 0 -871px
+    }
+.wp-chat-ico {
+    background-position: 0 -508px;
+    padding-left: 18px
+    }
+.wp-gift-ico {
+    background: url(http://a.xnimg.cn/webpager/cssimg/wp-gift-ico.png) no-repeat 0 0
+    }
+.wp-friend-ico {
+    background-position: 0 -1104px;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    padding: 5px 5px 5px 22px
+    }
+.friends-window .wp-friend-ico {
+    float: left
+    }
+.wp-frid-toleft {
+    background-position: 0 9px;
+    width: 16px;
+    height: 31px;
+    float: left
+    }
+/** icons in the list **/
+.wp-send-done {
+    background-position: 0 -542px;
+    margin: 0 5px 0 0;
+    height: 13px
+    }
+.wp-photolist-ico {
+    height: 13px;
+    margin-left: 4px;
+    background-position: 0 -200px
+    }
+.wp-online {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-left: 4px;
+    background-position: 0 -273px
+    }
+.slide-box, .winslider {
+    float: left
+    }
+.slide-box {
+    background-position: 0 -62px
+    }
+.slide-box:hover {
+    background-position: 0 -30px
+    }
+.slide_left, .slide_right {
+    background-position: 5px -668px;
+    display: block;
+    height: 31px;
+    line-height: 31px;
+    padding: 0 5px 0 15px;
+    border: 1px solid #C8C8C8;
+    font-weight: bold;
+    border-width: 1px 0 1px 1px;
+    color: #666 !important
+    }
+.slide_right {
+    background-position: right -697px;
+    border-width: 1px 1px 1px 0;
+    padding: 0 15px 0 5px
+    }
+a:hover.slide_left {
+    background-position: 0 -1235px;
+    text-decoration: none;
+    color: #203C57 !important
+    }
+a:hover.slide_right {
+    background-position: right -1209px;
+    text-decoration: none;
+    color: #203C57 !important
+    }
+.tokenizer {
+    width: 99%;
+    padding: 0
+    }
+#webpager_css_loading {
+    display: none
+    }
+/* 状态实时小贴 */
+#seehere-box {
+    position: absolute;
+    bottom: 42px;
+    right: 5px;
+    width: 200px;
+    z-index: 5;
+    overflow: hidden
+    }
+#seehere-box .seehere-message {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #666;
+    border-radius: 4px;
+    margin-top: 7px;
+    background-color: white
+    }
+#seehere-box .seehere-message header {
+    height: 22px;
+    border-bottom: 1px solid #C7C7C7;
+    border-radius: 4px 4px 0 0;
+    background: url(http://a.xnimg.cn/webpager/cssimg/wp-bg.png) 0 0 repeat-x
+    }
+.seehere-message header .remove-btn {
+    background: url(http://a.xnimg.cn/webpager/cssimg/remove-recent.png) no-repeat 0 0;
+    width: 12px;
+    display: block;
+    position: absolute;
+    right: 7px;
+    top: 7px
+    }
+.seehere-message header .remove-btn:hover {
+    background: url(http://a.xnimg.cn/webpager/cssimg/remove-recent.png) no-repeat no-repeat -16px 0;
+    text-decoration: none
+    }
+/* .actor下的元素 任何float都会导致IE6下整个div内容不显示!!所以改用absolute定位实现 */
+#seehere-box .seehere-message .actor {
+    width: 40px;
+    position: absolute;
+    left: 7px
+    }
+#seehere-box .seehere-message .actor figure {
+    padding-top: 5px
+    }
+#seehere-box .seehere-message .content {
+    margin-left: 40px;
+    padding: 5px 3px 7px 5px;
+    overflow: hidden;
+    line-height: 14px;
+    max-height: 77px;
+    word-break: break-all;
+    word-wrap: break-word
+    }
+#seehere-box .seehere-message .actions {
+    clear: both;
+    text-align: right;
+    padding: 7px 14px
+    }
+

@@ -1,0 +1,57 @@
+{
+
+var google_ads = new Array();
+var google_ad;
+var google_radlinks = new Array();
+var google_radlink;
+var google_info = new Object();
+google_radlink = new Object(); 
+google_radlink.n = 1; 
+google_radlink.url = ""; 
+google_radlink.line1 = "How to Create Web Page"; 
+google_radlink.term = "How to Create Web Page"; 
+google_radlink.url_escaped_term = "How+to+Create+Web+Page"; 
+google_radlink.radlink_token = "ChBRxRVIAA3HTQqE-Q_dAFkWEhZIb3cgdG8gQ3JlYXRlIFdlYiBQYWdlGgi_QEIaDbaKPSCxtfYcKAFIsbX2HEjetc8gUhMIu7ScgNj2twIVBvyECh2UfABw"; 
+google_radlinks[0] = google_radlink; 
+google_radlink = new Object(); 
+google_radlink.n = 2; 
+google_radlink.url = ""; 
+google_radlink.line1 = "Website Hit Counter"; 
+google_radlink.term = "Website Hit Counter"; 
+google_radlink.url_escaped_term = "Website+Hit+Counter"; 
+google_radlink.radlink_token = "ChBRxRVIAA3HXwqE-Q_dAFkWEhNXZWJzaXRlIEhpdCBDb3VudGVyGginvUGxQcAwASCxtfYcKAFIsbX2HEjetc8gUhMIu7ScgNj2twIVBvyECh2UfABw"; 
+google_radlinks[1] = google_radlink; 
+google_radlink = new Object(); 
+google_radlink.n = 3; 
+google_radlink.url = ""; 
+google_radlink.line1 = "How to Make a WebPage"; 
+google_radlink.term = "How to Make a WebPage"; 
+google_radlink.url_escaped_term = "How+to+Make+a+WebPage"; 
+google_radlink.radlink_token = "ChBRxRVIAA3HZAqE-Q_dAFkWEhVIb3cgdG8gTWFrZSBhIFdlYlBhZ2UaCJrm8zlJ9O7KILG19hwoAUixtfYcSN61zyBSEwi7tJyA2Pa3AhUG_IQKHZR8AHA"; 
+google_radlinks[2] = google_radlink; 
+google_radlink = new Object(); 
+google_radlink.n = 4; 
+google_radlink.url = ""; 
+google_radlink.line1 = "PHP Coding Tutorials"; 
+google_radlink.term = "PHP Coding Tutorials"; 
+google_radlink.url_escaped_term = "PHP+Coding+Tutorials"; 
+google_radlink.radlink_token = "ChBRxRVIAA3HaAqE-Q_dAFkWEhRQSFAgQ29kaW5nIFR1dG9yaWFscxoI9-nQ0MepHLEgsbX2HCgBSLG19hxI3rXPIFITCLu0nIDY9rcCFQb8hAodlHwAcA"; 
+google_radlinks[3] = google_radlink; 
+google_radlink = new Object(); 
+google_radlink.n = 5; 
+google_radlink.url = ""; 
+google_radlink.line1 = "Make Photo Website"; 
+google_radlink.term = "Make Photo Website"; 
+google_radlink.url_escaped_term = "Make+Photo+Website"; 
+google_radlink.radlink_token = "ChBRxRVIAA3HawqE-Q_dAFkWEhJNYWtlIFBob3RvIFdlYnNpdGUaCOu4v-4a7oyrILG19hwoAUixtfYcSN61zyBSEwi7tJyA2Pa3AhUG_IQKHZR8AHA"; 
+google_radlinks[4] = google_radlink; 
+google_info.feedback_url = "http://www.google.com/url?ct\x3dabg\x26q\x3dhttps://www.google.com/adsense/support/bin/request.py%3Fcontact%3Dabg_afc%26url%3Dhttp://www.wikihow.com/Make-a-PHP-Hit-Counter%26gl%3DUS%26hl%3Den%26client%3Dca-pub-9543332082073187\x26usg\x3dAFQjCNHf7ge_7TZxt69vUXPNQ1_OY40oKg";
+var google_attribution_text = "AdChoices";
+var google_is_rtl = false;
+if (window.google_ad_request_done) {
+google_ad_request_done(google_ads);
+}
+if (window.google_radlink_request_done) {
+google_radlink_request_done(google_radlinks);
+}
+}

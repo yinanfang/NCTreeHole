@@ -1,0 +1,311 @@
+/**
+ * @description ugc所有业务回复样式，base参照状态回复
+ * @author chao.gao
+ */
+/**
+ * @description icons 合并
+ */
+.ugc-icon {
+    display: inline-block;
+    padding-left: 18px;
+    line-height: 14px;
+    zoom: 1;
+    background: url(http://a.xnimg.cn/imgpro/status/icons-51613b8b4b876.png) no-repeat top left;
+    *display: inline;
+}
+
+.icon-ilike { 
+    background-position: 0 -660px;
+}
+.icon-ilike:hover { 
+    background-position: 0 -528px;
+} 
+.icon-reply { 
+    background-position: 0 -330px;
+}
+.icon-reply:hover { 
+    background-position: 0 -264px;
+}
+.icon-share { 
+    background-position: 0 -462px;
+}
+.icon-share:hover { 
+    background-position: 0 -396px;
+}
+.icon-open:hover { 
+    background-position: 0 -132px; 
+} 
+.icon-open { 
+    background-position: 0 -198px; 
+}
+.icon-open:hover { 
+    background-position: 0 -132px; 
+}
+.icon-zan { 
+    background-position: 0 -660px;
+}
+.icon-zan:hover {
+    background-position: 0 -528px;
+}
+
+
+
+/*回复的结构样式*/
+/*ilike部分样式*/
+.ilike-body {
+    margin-bottom: 5px;
+}
+.min-cmtbox {
+    background: transparent none;
+    padding: 0;
+}
+.mincmt-body {
+    width: 434px;
+    overflow: hidden;
+}
+.mincmt-diggers {
+    margin: 5px 0 5px 0;
+    padding: 0 0;
+    background: #F7F7F7;
+    border-bottom: 0 none;
+}
+.mincmt-diggers p,
+.mincmt-diggers .digged {
+    padding: 2px 0 2px 18px;
+    background: url(http://a.xnimg.cn/imgpro/status/icons-514ac9b5e33e2.png) no-repeat top left;
+    background-position: 0 -592px;
+}
+.mincmt-diggers .digger li ,
+.mincmt-diggers .diggers li {
+    display:inline-block;
+    margin-left:5px;
+    padding: 5px 0;
+    width: 30px;
+    border-bottom: 1px solid #E3EEF8;
+    *zoom:1;
+    *display:inline;
+}
+.mincmt-diggers .digger img,
+.mincmt-diggers .diggers img {
+    width: 30px;
+    height:30px;
+}
+/*定义集中body的宽度*/
+.statuscmtbody {
+    width: 468px;
+}
+.statuscmtbody-full {
+    width: 100%;
+}
+/*回复体部分样式*/
+.statuscmtlist {
+    *line-height: 0;
+    *zoom: 1;
+}
+.statuscmtlist .x-to-hide {
+    margin-top: -4px;
+}
+.statuscmtlist .whisper {
+    padding-left: 15px;
+    padding-right: 5px;
+    background: transparent url(http://a.xnimg.cn/img/lock_red_new.png) no-repeat scroll 0 2px;
+    font-weight: bold;
+    line-height: 15px;
+}
+.statuscmtlist .minfriendpic {
+    background-position:center center;
+    float:left;
+    height:30px; 
+    width:30px;
+    margin-right:6px; 
+    *margin-right:2px;
+    _display:inline; 
+}
+.statuscmtlist .comment-icon {
+    float: left;
+    margin-left: 33px;
+}
+.statuscmtlist-large .minfriendpic {
+    width: 50px;
+    height: 50px;
+}
+.statuscmtlist .statuscmtitem {
+    position: relative;
+    padding: 10px 0;
+    border-top: 1px solid #F7F7F7;
+}
+.statuscmtitem-small {
+    padding: 4px 0;
+    margin-bottom: 5px;
+    background-color: #F7F7F7;
+}
+.statuscmtlist .statuscmtitem:hover {
+    background-color: #F7F7F7;
+}
+.statuscmtlist .statuscmtitem-hover {
+    background-color: #F7F7F7;
+}
+
+.statuscmtlist .statuscmtitem .replybody {
+    margin-left:36px;
+    _margin-left:-3px;
+    _zoom:1;
+}
+.statuscmtlist-large .statuscmtitem .replybody {
+    margin-left: 56px;
+}
+.statuscmtlist .statuscmtitem .replycontent {
+    margin-right:0.5em;
+}
+/*btnbox中喜欢，回复的样式*/
+.statuscmtlist .btn-box {
+    display: none;
+    position: relative;
+    width: 80px;
+    height: 14px;
+    float: right;
+    padding-right: 10px;
+    zoom: 1; 
+}
+.statuscmtlist .btn-box .btn-reply {
+    display: inline-block;
+    position: absolute;
+    left: 60px;
+    background: url(http://a.xnimg.cn/imgpro/status/icon-reply.png) no-repeat;
+    padding-left: 16px;
+    background-position: 0px -14px;
+    text-indent: -999px;
+    line-height: 14px;
+    vertical-align: middle;
+    zoom: 1;
+    height: 14px;
+    *width: 10px;
+    *display: inline;
+}
+.statuscmtlist .btn-box .btn-reply:hover{
+    background-position: 0px 0px;
+    _background-position: 0px 0px;
+}
+.statuscmtlist .btn-box .ilike_comment_icon {
+    display: inline-block;
+    position: absolute;
+    left: 15px;
+    padding-left: 18px;
+    height: 14px;
+    line-height: 14px;
+    vertical-align: middle;
+    background: url(http://a.xnimg.cn/imgpro/status/icons-51613b8b4b876.png) no-repeat top left;
+    background-position: 0 -660px;
+    zoom: 1;
+    *display: inline;
+    *width: 10px;
+}
+.statuscmtlist .btn-box .ilike_comment_icon:hover {
+    background-position: 0 -528px;
+}
+.statuscmtlist .btn-box .ilike_comment_liked {
+    background-position: 0 -528px;
+}
+.statuscmtlist .statuscmtitem:hover .btn-box {
+    display: inline-block;
+    *display: inline;
+}
+.statuscmtlist .statuscmtitem-hover .btn-box {
+    display: inline-block;
+    *display: inline;
+} 
+/*回复框样式*/
+.statuscmtlist .reply-adding textarea{
+    width:412px;
+    height:16px;
+    margin-top:0;
+    overflow-y:auto;
+    resize: none;
+}
+.statuscmtlist .reply-adding .minfriendpic,
+.statuscmtlist .reply-adding .reply-nav {
+    position: relative;
+    display:none;
+}
+.statuscmtlist .reply-nav {
+    margin-left:36px;
+    margin-top:2px;
+}
+.statuscmtlist-large .reply-nav {
+    margin-left: 56px;
+}
+.statuscmtlist .reply-nav .newsfeed-emo {
+    background: url(http://a.xnimg.cn/n/core/cssimg/home.png) no-repeat;
+    display: block;
+    text-indent: -9999em;
+    outline: 0 none;
+    float: left;
+    width: 14px;
+    height: 14px;
+    background-position: -211px -191px;
+    margin-right: 20px;
+    zoom: 1;
+    position: relative;
+    z-index: 2;
+}
+.statuscmtlist .reply-nav .newsfeed-emo:hover {
+    background-position: -225px -190px;
+    text-decoration: none;
+}
+.statuscmtlist .reply-nav .mention-btn {
+    background: url(http://a.xnimg.cn/n/core/cssimg/home.png) no-repeat;
+    display: block;
+    padding: 0;
+    text-indent: -9999em;
+    outline: 0 none;
+    float: left;
+    width: 14px;
+    height: 14px;
+    background-position: -211px -205px;
+    margin-right: 20px;
+    zoom: 1;
+    position: relative;
+    z-index: 2;
+}
+.statuscmtlist .reply-nav .mention-btn:hover {
+    background-position: -225px -205px;
+    text-decoration: none;
+}
+.statuscmtlist .reply-nav .input-button {
+    float: right;
+}
+/*单为状态下同时分享准备的代码*/
+.statuscmtlist .reply-nav .replyAll {
+    display: block;
+    position: relative;
+}
+.statuscmtlist .reply-nav .replyAll .mincmtcount {
+    float: right;
+    color: #CCCCCC;
+    margin: 5px 10px 0 0;
+}
+.statuscmtlist .reply-nav .replyAll .fwdthisc {
+    float: left;
+    display: block;
+    zoom: 1;
+}
+.statuscmtlist .reply-nav .replyAll .fwdthisc label {
+    margin-left: 3px;
+    color: #888;
+}
+/*回复框展开时候样式*/
+.statuscmtlist .actived textarea {
+    width:376px;
+    height:32px;
+    *width:377px;
+}
+.statuscmtlist-large .actived textarea {
+    width: 400px;
+    height: 46px;
+}
+.statuscmtlist .actived .minfriendpic,
+.statuscmtlist .actived .reply-nav {
+    display:block;
+}
+
+

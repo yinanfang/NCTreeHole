@@ -1,0 +1,61 @@
+/**
+ * @descript hotlist 模块样式
+ * @author chao.gao
+ */
+#topic-hot-el {
+	margin-top: 14px;
+}
+.focus-model-name{
+	padding: 0 0 9px 0;
+	font-weight: bold;
+	font-size: 14px;
+}
+.focus-moreTopic-ul{
+	margin-bottom:10px;
+}
+.focus-blog-ul li, .focus-moreTopic-ul li{
+	padding: .5em 0;
+}
+.focus-blog-ul li:hover, .focus-moreTopic-ul li:hover{
+	background-color: #fbfbfb;
+}
+.focus-moreTopic-ul .focus-moreTopic-rank{
+	width: 15px;
+	height: 15px;
+	display: block;
+	float:left;
+	-webkit-border-radius: .3em;
+	-moz-border-radius: .3em;
+	border-radius: .3em;
+	border-width:0px;
+	text-align: center;
+	color:white;
+	margin-left: 5px;
+	line-height: 15px;
+	-webkit-transition-duration: 1s;
+	-moz-transition-duration: 1s;
+	-o-transition-duration: 1s;
+}
+.focus-moreTopic-ul li:hover .focus-moreTopic-rank{
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+}
+
+.focus-moreTopic-ul li a {
+	display:block;
+	margin-left: 30px;
+}
+.focus-moreTopic-rank.first{
+	background-color: #cc6666;
+}
+.focus-moreTopic-rank.second{
+	background-color: #d4a458;
+}
+.focus-moreTopic-rank.third{
+	background-color: #82a554;
+}
+.focus-moreTopic-rank.normal{
+	background-color: #999999
+}
+

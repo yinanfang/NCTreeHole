@@ -1,0 +1,17 @@
+function amzn_ads(data) { 
+        window.amzn_ads = data.ads;
+        try {
+           document.amzn_slots = new Array();
+           var arrayIndex = 0;
+	   for(var slot in data.ads) {
+             document.amzn_slots[arrayIndex++] = slot; 
+	   }
+        } catch(e) {}
+}
+function amzn_render(doc, slot) {
+        try {
+	  var ad = window.top.amzn_ads[slot];
+	  if(ad!=null) doc.writeln(ad);
+        } catch(e) {}
+}
+amzn_ads({"ads":{"a300x250p3":"<iframe src=\"http://aax-us-east.amazon-adsystem.com/e/dtb/impi?b=4562425c-8525-4bb2-869c-ae2fac26b4bd&ps=a300x250p3&rnd=464498\" width=\"300\" height=\"250\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" scrolling=\"no\"><\/iframe>"},"status":"ok"})

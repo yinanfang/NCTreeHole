@@ -1,0 +1,24 @@
+
+
+install requirements.txt on webfaction
+pip install -r requirements.txt
+
+http://docs.webfaction.com/software/python.html
+pip-X.Y install package
+
+rm -rf ./myproject and press Enter
+
+
+python2.7 manage.py collectstatic
+
+
+
+Restarting Apache
+The final stage of the process is to restart Apache.
+    Change to Apache’s bin directory. Enter cd /home/username/webapps/django_app/apache2/bin and press Enter.
+    Enter ./restart and press Enter.
+
+    
+The logs in /home/yinanfang/logs/frontend are named after the website. You would need to look in that directory for the front end server logs for the website 'NCTreeHole_Django'.
+ 
+The logs in /home/yinanfang/logs/user are named after the application. You would need to look in that directory for the application logs for the 'nctreehole' application.

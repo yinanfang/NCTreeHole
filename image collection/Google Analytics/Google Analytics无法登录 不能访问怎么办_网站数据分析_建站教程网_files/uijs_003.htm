@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html><head>
+<!-- 0|1;1;1;1;1;1;1;1;1;1;1;1; -->
+<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+<style type="text/css">
+    
+html{color:#000;background-color:transparent;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}input,textarea,select{*font-size:100%}legend{color:#000}body{margin:0;padding:0;}          
+.bd-logo,.bd-logo2,.bd-logo3{text-decoration:none;cursor:pointer;display:block;overflow:hidden;position:absolute;bottom:0px;right:0px;z-index:2147483647;}.bd-logo{height:18px;width:18px;background:url(http://cpro.baidustatic.com/cpro/ui/noexpire/img/2.0.1/bg.png) no-repeat left top;background-position:0px 0px;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,src="http://cpro.baidustatic.com/cpro/ui/noexpire/img/2.0.1/logo-border-light.png",sizingMethod="crop");_background:none;}.bd-logo:hover{background-position:-70px 0px;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,src="http://cpro.baidustatic.com/cpro/ui/noexpire/img/2.0.1/logo-border-dark.png",sizingMethod="crop");}.bd-logo2{margin:0 2px 2px 0;height:14px;width:13px;background:url(http://cpro.baidustatic.com/cpro/ui/noexpire/img/2.0.1/bg.png) no-repeat left top;background-position:0px -20px;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,src="http://cpro.baidustatic.com/cpro/ui/noexpire/img/2.0.1/logo-noborder-light.png",sizingMethod="crop");_background:none;}.bd-logo2:hover{background-position:0px -35px;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,src="http://cpro.baidustatic.com/cpro/ui/noexpire/img/2.0.1/logo-noborder-dark.png",sizingMethod="crop");}.bd-logo3{height:18px;width:18px;background:url(http://cpro.baidustatic.com/cpro/ui/noexpire/img/2.0.1/bg.png) no-repeat left top;background-position:-70px 0px;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,src="http://cpro.baidustatic.com/cpro/ui/noexpire/img/2.0.1/logo-border-dark.png",sizingMethod="crop");_background:none;}.bd-logo3:hover{width:68px;}
+.loader{ text-align:center; width:90%; font-size:12px; padding:8px; border:solid 1px #aaaaaa; margin-top:30px; display:none; }.cf:before,.cf:after{content:"\20";display:table;}.cf:after{clear:both;}.cf{*zoom:1;}
+.textOverflow{white-space:nowrap;overflow:hidden;display:inline-block;width:100%;}.textOverflowEllipsis{-o-text-overflow:ellipsis;text-overflow:ellipsis;}.textOverflowClip{-o-text-overflow:clip;text-overflow:clip;}
+ 
+    .title a:hover {color:#ff0000;}    
+    .title_hover {background-color:#e0e0e0;}
+</style>
+<script src="uijs_data_003/cpro.js" async="" type="text/javascript"></script><script type="text/javascript">
+    
+var Base={config:{},cache:{},getKeysByType:function(b){b=(b||"class").toLowerCase();var a=b+"LoadFinished",c=b+"LoadFnArray",d=b+"LoadMap";this[a]="boolean"===typeof this[a]?this[a]:!0;this[c]=this[c]||[];this[d]=this[d]||{};return{status:a,array:c,map:d,type:b}},updateLoadStatus:function(b,a,c){c=this.getKeysByType(c);if(b&&(this[c.map][b]=a,"loaded"!==a))return this[c.status]=!1;b=!0;for(var d in this[c.map])if(d&&this[c.map].hasOwnProperty(d)&&"loaded"!==this[c.map][d]){b=!1;break}return this[c.status]=
+b},loadImage:function(b){var a=new Image;a.onload=a.onerror=a.onabort=function(){a.onload=a.onerror=a.onabort=null;this.updateLoadStatus(b,"loaded","image");if(this.imageLoadFinished)for(var c,d=0,h=this.imageLoadFnArray.length;d<h;d++)c=this.imageLoadFnArray.shift(),c()}.proxy(this);a.src=b},fastClone:function(b){var a=function(){};a.prototype=b;return new a},declare:function(b){b=b();var a=b.name;if(!a)throw"can't find the obj name";for(var c=b.namespace+"."+a,d=c.split("."),h=d.length,f=window,
+j="",e=0;e<h-1;e++){var g=d[e];f==window?(f[g]=window[g]=window[g]||{},j+=g):(f[g]=f[g]||{},j+="."+g);f=f[g];this.cache[j]=f}f[a]=f[a]||b;this.cache=this.cache||{};this.cache[c]=f[a];return!0},using:function(b,a,c){if(this.cache&&this.cache[b])return this.cache[b];a=a||"class";c=c||this.config.version[a]||"1.0.0";var d;switch(a){case "image":0>b.indexOf("http")&&(b=this.config.baseUrl+"img/"+(c&&"0"!==c?c.toString():"")+"/"+b);this.updateLoadStatus(b,"loading","image");this.loadImage(b);d=b;break;
+case "class":var h=this.getKeysByType(a);a=b.split(".");d=window[a[0]];for(var f=1,j=a.length;f<j;f++)d=d&&d[a[f]]?d[a[f]]:null;if(!d&&!this[h.map][b]){this.updateLoadStatus(b,"loading","class");var e=document.createElement("script");e.type="text/javascript";e.async=!0;a=this.config.baseUrl+"js/";c&&"0"!==c&&(a+=c.toString()+"/");a+=b.replace(/\./gi,"/")+".js";e.src=a.toLowerCase();e.onload=e.onerror=e.onreadystatechange=function(){if(/loaded|complete|undefined/.test(e.readyState)){e.onload=e.onerror=
+e.onreadystatechange=null;if(this.updateLoadStatus(b,"loaded","class"))for(var a,c=0,d=this[h.array].length;c<d;c++)a=this[h.array].shift(),a();e=void 0}}.proxy(this);c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(e,c)}this.cache=this.cache||{};this.cache[b]=d}return d},config:function(b){b&&(this.config=b)},run:function(b){if(b){var a=this.getKeysByType();this[a.status]?b():this[a.array].push(b)}}};
+Function.prototype.proxy=function(b){var a=this,c=Array.prototype.slice.apply(arguments).shift();return function(b){return a.apply(c,arguments)}};window.declare=Base.declare.proxy(Base);window.using=Base.using.proxy(Base);window.run=Base.run.proxy(Base);window.config=Base.config.proxy(Base);document.execCommand("BackgroundImageCache",!1,!0);
+
+</script>
+
+<script type="text/javascript">
+    config({
+        baseUrl: "http://cpro.baidustatic.com/cpro/ui/noexpire/",
+        version: {"class":"2.0.2","image":"2.0.1"}
+    });
+    using('Cpro');
+</script>  
+<style type="text/css">.container {padding-left:0px;padding-right:0px;padding-top:0px;padding-bottom:0px;border-width:0px;border-style:solid;border-color:#FFFFFF;width:250px;height:160px;background-color:transparent;position:relative;overflow:hidden;} 
+.item {padding-left:6px;padding-right:6px;padding-top:1px;padding-bottom:1px;width:98px;height:18px;float:left;overflow:hidden;text-align:left;} 
+.title {padding-left:0px;padding-right:0px;padding-top:0px;padding-bottom:0px;line-height:18px;width:98px;height:18px;overflow:hidden;font-size:14px;font-family:瀹嬩綋,宋体;text-align:center;color:#0000ff;text-decoration:underline;} 
+.title a {line-height:18px;height:18px;font-size:14px;font-family:瀹嬩綋,宋体;text-align:center;color:#0000ff;text-decoration:underline;} 
+.itemColumnSpace {width:30px;height:18px;float:left;overflow:hidden;} 
+.itemRowSpace {width:250px;height:8px;clear:both;overflow:hidden;} 
+</style></head>
+<body>
+    <script type="text/javascript">
+        var ads = [{"title":"建站","desc":" ","surl":"","curl":"http://cpro.baidu.com/cpro/ui/uijs.php?rs=1&u=http%3A%2F%2Fwww%2Eidivcss%2Ecom%2Fdata%2F317%2Ehtml&p=baidu&c=news&n=10&t=tpclicked3&q=21061049_cpr&k=%BD%A8%D5%BE&k0=%BD%A8%D5%BE&k1=%BD%CC%B3%CC&k2=%CE%F7%B0%B2%BD%A8%D5%BE&k3=ps%BD%CC%B3%CC&k4=%CE%F7%B0%B2%BD%A8%D5%BE%B9%AB%CB%BE&k5=%E8%A4%D9%A4%CA%D3%C6%B5%BD%CC%B3%CC&sid=e7d35c93e33164d3&ch=0&tu=u1256737&jk=3125a8a91d25ed28&cf=1&fv=11&stid=0&urlid=0","isHB":false,"bid":"","type":"text"},{"title":"教程","desc":" ","surl":"","curl":"http://cpro.baidu.com/cpro/ui/uijs.php?rs=1&u=http%3A%2F%2Fwww%2Eidivcss%2Ecom%2Fdata%2F317%2Ehtml&p=baidu&c=news&n=10&t=tpclicked3&q=21061049_cpr&k=%BD%CC%B3%CC&k0=%BD%CC%B3%CC&k1=%CE%F7%B0%B2%BD%A8%D5%BE&k2=ps%BD%CC%B3%CC&k3=%CE%F7%B0%B2%BD%A8%D5%BE%B9%AB%CB%BE&k4=%E8%A4%D9%A4%CA%D3%C6%B5%BD%CC%B3%CC&k5=%C3%E2%B7%D1%BD%A8%D5%BE&sid=e7d35c93e33164d3&ch=0&tu=u1256737&jk=3125a8a91d25ed28&cf=1&fv=11&stid=0&urlid=0","isHB":false,"bid":"","type":"text"},{"title":"西安建站","desc":" ","surl":"","curl":"http://cpro.baidu.com/cpro/ui/uijs.php?rs=1&u=http%3A%2F%2Fwww%2Eidivcss%2Ecom%2Fdata%2F317%2Ehtml&p=baidu&c=news&n=10&t=tpclicked3&q=21061049_cpr&k=%CE%F7%B0%B2%BD%A8%D5%BE&k0=%CE%F7%B0%B2%BD%A8%D5%BE&k1=ps%BD%CC%B3%CC&k2=%CE%F7%B0%B2%BD%A8%D5%BE%B9%AB%CB%BE&k3=%E8%A4%D9%A4%CA%D3%C6%B5%BD%CC%B3%CC&k4=%C3%E2%B7%D1%BD%A8%D5%BE&k5=excel%BD%CC%B3%CC&sid=e7d35c93e33164d3&ch=0&tu=u1256737&jk=3125a8a91d25ed28&cf=1&fv=11&stid=0&urlid=0","isHB":false,"bid":"","type":"text"},{"title":"ps教程","desc":" ","surl":"","curl":"http://cpro.baidu.com/cpro/ui/uijs.php?rs=1&u=http%3A%2F%2Fwww%2Eidivcss%2Ecom%2Fdata%2F317%2Ehtml&p=baidu&c=news&n=10&t=tpclicked3&q=21061049_cpr&k=ps%BD%CC%B3%CC&k0=ps%BD%CC%B3%CC&k1=%CE%F7%B0%B2%BD%A8%D5%BE%B9%AB%CB%BE&k2=%E8%A4%D9%A4%CA%D3%C6%B5%BD%CC%B3%CC&k3=%C3%E2%B7%D1%BD%A8%D5%BE&k4=excel%BD%CC%B3%CC&k5=%D7%D4%D6%FA%BD%A8%D5%BE&sid=e7d35c93e33164d3&ch=0&tu=u1256737&jk=3125a8a91d25ed28&cf=1&fv=11&stid=0&urlid=0","isHB":false,"bid":"","type":"text"},{"title":"西安建站公司","desc":" ","surl":"","curl":"http://cpro.baidu.com/cpro/ui/uijs.php?rs=1&u=http%3A%2F%2Fwww%2Eidivcss%2Ecom%2Fdata%2F317%2Ehtml&p=baidu&c=news&n=10&t=tpclicked3&q=21061049_cpr&k=%CE%F7%B0%B2%BD%A8%D5%BE%B9%AB%CB%BE&k0=%CE%F7%B0%B2%BD%A8%D5%BE%B9%AB%CB%BE&k1=%E8%A4%D9%A4%CA%D3%C6%B5%BD%CC%B3%CC&k2=%C3%E2%B7%D1%BD%A8%D5%BE&k3=excel%BD%CC%B3%CC&k4=%D7%D4%D6%FA%BD%A8%D5%BE&k5=word%BD%CC%B3%CC&sid=e7d35c93e33164d3&ch=0&tu=u1256737&jk=3125a8a91d25ed28&cf=1&fv=11&stid=0&urlid=0","isHB":false,"bid":"","type":"text"},{"title":"瑜伽视频教程","desc":" ","surl":"","curl":"http://cpro.baidu.com/cpro/ui/uijs.php?rs=1&u=http%3A%2F%2Fwww%2Eidivcss%2Ecom%2Fdata%2F317%2Ehtml&p=baidu&c=news&n=10&t=tpclicked3&q=21061049_cpr&k=%E8%A4%D9%A4%CA%D3%C6%B5%BD%CC%B3%CC&k0=%E8%A4%D9%A4%CA%D3%C6%B5%BD%CC%B3%CC&k1=%C3%E2%B7%D1%BD%A8%D5%BE&k2=excel%BD%CC%B3%CC&k3=%D7%D4%D6%FA%BD%A8%D5%BE&k4=word%BD%CC%B3%CC&k5=%D6%D0%CD%F8%C3%E2%B7%D1%BD%A8%D5%BE&sid=e7d35c93e33164d3&ch=0&tu=u1256737&jk=3125a8a91d25ed28&cf=1&fv=11&stid=0&urlid=0","isHB":false,"bid":"","type":"text"},{"title":"免费建站","desc":" ","surl":"","curl":"http://cpro.baidu.com/cpro/ui/uijs.php?rs=1&u=http%3A%2F%2Fwww%2Eidivcss%2Ecom%2Fdata%2F317%2Ehtml&p=baidu&c=news&n=10&t=tpclicked3&q=21061049_cpr&k=%C3%E2%B7%D1%BD%A8%D5%BE&k0=%C3%E2%B7%D1%BD%A8%D5%BE&k1=excel%BD%CC%B3%CC&k2=%D7%D4%D6%FA%BD%A8%D5%BE&k3=word%BD%CC%B3%CC&k4=%D6%D0%CD%F8%C3%E2%B7%D1%BD%A8%D5%BE&k5=PS%CA%D3%C6%B5%BD%CC%B3%CC&sid=e7d35c93e33164d3&ch=0&tu=u1256737&jk=3125a8a91d25ed28&cf=1&fv=11&stid=0&urlid=0","isHB":false,"bid":"","type":"text"},{"title":"excel教程","desc":" ","surl":"","curl":"http://cpro.baidu.com/cpro/ui/uijs.php?rs=1&u=http%3A%2F%2Fwww%2Eidivcss%2Ecom%2Fdata%2F317%2Ehtml&p=baidu&c=news&n=10&t=tpclicked3&q=21061049_cpr&k=excel%BD%CC%B3%CC&k0=excel%BD%CC%B3%CC&k1=%D7%D4%D6%FA%BD%A8%D5%BE&k2=word%BD%CC%B3%CC&k3=%D6%D0%CD%F8%C3%E2%B7%D1%BD%A8%D5%BE&k4=PS%CA%D3%C6%B5%BD%CC%B3%CC&k5=%BD%A8%D5%BE&sid=e7d35c93e33164d3&ch=0&tu=u1256737&jk=3125a8a91d25ed28&cf=1&fv=11&stid=0&urlid=0","isHB":false,"bid":"","type":"text"},{"title":"自助建站","desc":" ","surl":"","curl":"http://cpro.baidu.com/cpro/ui/uijs.php?rs=1&u=http%3A%2F%2Fwww%2Eidivcss%2Ecom%2Fdata%2F317%2Ehtml&p=baidu&c=news&n=10&t=tpclicked3&q=21061049_cpr&k=%D7%D4%D6%FA%BD%A8%D5%BE&k0=%D7%D4%D6%FA%BD%A8%D5%BE&k1=word%BD%CC%B3%CC&k2=%D6%D0%CD%F8%C3%E2%B7%D1%BD%A8%D5%BE&k3=PS%CA%D3%C6%B5%BD%CC%B3%CC&k4=%BD%A8%D5%BE&k5=%BD%CC%B3%CC&sid=e7d35c93e33164d3&ch=0&tu=u1256737&jk=3125a8a91d25ed28&cf=1&fv=11&stid=0&urlid=0","isHB":false,"bid":"","type":"text"},{"title":"word教程","desc":" ","surl":"","curl":"http://cpro.baidu.com/cpro/ui/uijs.php?rs=1&u=http%3A%2F%2Fwww%2Eidivcss%2Ecom%2Fdata%2F317%2Ehtml&p=baidu&c=news&n=10&t=tpclicked3&q=21061049_cpr&k=word%BD%CC%B3%CC&k0=word%BD%CC%B3%CC&k1=%D6%D0%CD%F8%C3%E2%B7%D1%BD%A8%D5%BE&k2=PS%CA%D3%C6%B5%BD%CC%B3%CC&k3=%BD%A8%D5%BE&k4=%BD%CC%B3%CC&k5=%CE%F7%B0%B2%BD%A8%D5%BE&sid=e7d35c93e33164d3&ch=0&tu=u1256737&jk=3125a8a91d25ed28&cf=1&fv=11&stid=0&urlid=0","isHB":false,"bid":"","type":"text"},{"title":"中网免费建站","desc":" ","surl":"","curl":"http://cpro.baidu.com/cpro/ui/uijs.php?rs=1&u=http%3A%2F%2Fwww%2Eidivcss%2Ecom%2Fdata%2F317%2Ehtml&p=baidu&c=news&n=10&t=tpclicked3&q=21061049_cpr&k=%D6%D0%CD%F8%C3%E2%B7%D1%BD%A8%D5%BE&k0=%D6%D0%CD%F8%C3%E2%B7%D1%BD%A8%D5%BE&k1=PS%CA%D3%C6%B5%BD%CC%B3%CC&k2=%BD%A8%D5%BE&k3=%BD%CC%B3%CC&k4=%CE%F7%B0%B2%BD%A8%D5%BE&k5=ps%BD%CC%B3%CC&sid=e7d35c93e33164d3&ch=0&tu=u1256737&jk=3125a8a91d25ed28&cf=1&fv=11&stid=0&urlid=0","isHB":false,"bid":"","type":"text"},{"title":"PS视频教程","desc":" ","surl":"","curl":"http://cpro.baidu.com/cpro/ui/uijs.php?rs=1&u=http%3A%2F%2Fwww%2Eidivcss%2Ecom%2Fdata%2F317%2Ehtml&p=baidu&c=news&n=10&t=tpclicked3&q=21061049_cpr&k=PS%CA%D3%C6%B5%BD%CC%B3%CC&k0=PS%CA%D3%C6%B5%BD%CC%B3%CC&k1=%BD%A8%D5%BE&k2=%BD%CC%B3%CC&k3=%CE%F7%B0%B2%BD%A8%D5%BE&k4=ps%BD%CC%B3%CC&k5=%CE%F7%B0%B2%BD%A8%D5%BE%B9%AB%CB%BE&sid=e7d35c93e33164d3&ch=0&tu=u1256737&jk=3125a8a91d25ed28&cf=1&fv=11&stid=0&urlid=0","isHB":false,"bid":"","type":"text"}];
+        var adsStyle = {"containerStyle":{"containerBackgroundColor": "f9f9f9","containerVisibleNumber":15,"containerWidth":250,"containerHeight":160},"titleStyle":{"titleFontFamilyArray":["微软雅黑,Microsoft YaHei"],"titleColorArray":["ff6a2f","a6800f","379be9","333333"],"titleSizeArray":[9,22],"titleFadeOutSpeed":0.02,"titleInitSpeed": 2.5,"titleFadeInPercent":0.4,"maxZ":400,"minZ":-50}};
+        var config = {"n":"21061049_cpr","rsi1":160,"rsi0":250,"rss0":"#FFFFFF","rss1":"#FFFFFF","conOP":1,"rss2":"#0000ff","rss6":"#e10900","rsi5":4,"at":"103","cad":1,"titFS":14,"titFF":"瀹嬩綋","titTA":"center","conBW":0,"hn":6,"wn":2,"lu1stAB":0};
+        var ra = [0,0,0,0,0,0,0,0,0,0,0,0];
+        config.displayType = "inlay";
+        config.stuffType = "linkunit";
+    </script>
+
+    <div id="container" class="container"><div class="item"><div style="height: 18px;" class="title"><a style="white-space: normal; word-break: break-all; word-wrap: break-word;" title="建站" href="http://cpro.baidu.com/cpro/ui/uijs.php?rs=1&amp;u=http%3A%2F%2Fwww%2Eidivcss%2Ecom%2Fdata%2F317%2Ehtml&amp;p=baidu&amp;c=news&amp;n=10&amp;t=tpclicked3&amp;q=21061049_cpr&amp;k=%BD%A8%D5%BE&amp;k0=%BD%A8%D5%BE&amp;k1=%BD%CC%B3%CC&amp;k2=%CE%F7%B0%B2%BD%A8%D5%BE&amp;k3=ps%BD%CC%B3%CC&amp;k4=%CE%F7%B0%B2%BD%A8%D5%BE%B9%AB%CB%BE&amp;k5=%E8%A4%D9%A4%CA%D3%C6%B5%BD%CC%B3%CC&amp;sid=e7d35c93e33164d3&amp;ch=0&amp;tu=u1256737&amp;jk=3125a8a91d25ed28&amp;cf=1&amp;fv=11&amp;stid=0&amp;urlid=0" target="_blank" id="title0">建站</a></div></div><div class="itemColumnSpace"></div><div class="item"><div style="height: 18px;" class="title"><a style="white-space: normal; word-break: break-all; word-wrap: break-word;" title="教程" href="http://cpro.baidu.com/cpro/ui/uijs.php?rs=1&amp;u=http%3A%2F%2Fwww%2Eidivcss%2Ecom%2Fdata%2F317%2Ehtml&amp;p=baidu&amp;c=news&amp;n=10&amp;t=tpclicked3&amp;q=21061049_cpr&amp;k=%BD%CC%B3%CC&amp;k0=%BD%CC%B3%CC&amp;k1=%CE%F7%B0%B2%BD%A8%D5%BE&amp;k2=ps%BD%CC%B3%CC&amp;k3=%CE%F7%B0%B2%BD%A8%D5%BE%B9%AB%CB%BE&amp;k4=%E8%A4%D9%A4%CA%D3%C6%B5%BD%CC%B3%CC&amp;k5=%C3%E2%B7%D1%BD%A8%D5%BE&amp;sid=e7d35c93e33164d3&amp;ch=0&amp;tu=u1256737&amp;jk=3125a8a91d25ed28&amp;cf=1&amp;fv=11&amp;stid=0&amp;urlid=0" target="_blank" id="title1">教程</a></div></div><div class="itemRowSpace"></div><div class="item"><div style="height: 18px;" class="title"><a style="white-space: normal; word-break: break-all; word-wrap: break-word;" title="西安建站" href="http://cpro.baidu.com/cpro/ui/uijs.php?rs=1&amp;u=http%3A%2F%2Fwww%2Eidivcss%2Ecom%2Fdata%2F317%2Ehtml&amp;p=baidu&amp;c=news&amp;n=10&amp;t=tpclicked3&amp;q=21061049_cpr&amp;k=%CE%F7%B0%B2%BD%A8%D5%BE&amp;k0=%CE%F7%B0%B2%BD%A8%D5%BE&amp;k1=ps%BD%CC%B3%CC&amp;k2=%CE%F7%B0%B2%BD%A8%D5%BE%B9%AB%CB%BE&amp;k3=%E8%A4%D9%A4%CA%D3%C6%B5%BD%CC%B3%CC&amp;k4=%C3%E2%B7%D1%BD%A8%D5%BE&amp;k5=excel%BD%CC%B3%CC&amp;sid=e7d35c93e33164d3&amp;ch=0&amp;tu=u1256737&amp;jk=3125a8a91d25ed28&amp;cf=1&amp;fv=11&amp;stid=0&amp;urlid=0" target="_blank" id="title2">西安建站</a></div></div><div class="itemColumnSpace"></div><div class="item"><div style="height: 18px;" class="title"><a style="white-space: normal; word-break: break-all; word-wrap: break-word;" title="ps教程" href="http://cpro.baidu.com/cpro/ui/uijs.php?rs=1&amp;u=http%3A%2F%2Fwww%2Eidivcss%2Ecom%2Fdata%2F317%2Ehtml&amp;p=baidu&amp;c=news&amp;n=10&amp;t=tpclicked3&amp;q=21061049_cpr&amp;k=ps%BD%CC%B3%CC&amp;k0=ps%BD%CC%B3%CC&amp;k1=%CE%F7%B0%B2%BD%A8%D5%BE%B9%AB%CB%BE&amp;k2=%E8%A4%D9%A4%CA%D3%C6%B5%BD%CC%B3%CC&amp;k3=%C3%E2%B7%D1%BD%A8%D5%BE&amp;k4=excel%BD%CC%B3%CC&amp;k5=%D7%D4%D6%FA%BD%A8%D5%BE&amp;sid=e7d35c93e33164d3&amp;ch=0&amp;tu=u1256737&amp;jk=3125a8a91d25ed28&amp;cf=1&amp;fv=11&amp;stid=0&amp;urlid=0" target="_blank" id="title3">ps教程</a></div></div><div class="itemRowSpace"></div><div class="item"><div style="height: 18px;" class="title"><a style="white-space: normal; word-break: break-all; word-wrap: break-word;" title="西安建站公司" href="http://cpro.baidu.com/cpro/ui/uijs.php?rs=1&amp;u=http%3A%2F%2Fwww%2Eidivcss%2Ecom%2Fdata%2F317%2Ehtml&amp;p=baidu&amp;c=news&amp;n=10&amp;t=tpclicked3&amp;q=21061049_cpr&amp;k=%CE%F7%B0%B2%BD%A8%D5%BE%B9%AB%CB%BE&amp;k0=%CE%F7%B0%B2%BD%A8%D5%BE%B9%AB%CB%BE&amp;k1=%E8%A4%D9%A4%CA%D3%C6%B5%BD%CC%B3%CC&amp;k2=%C3%E2%B7%D1%BD%A8%D5%BE&amp;k3=excel%BD%CC%B3%CC&amp;k4=%D7%D4%D6%FA%BD%A8%D5%BE&amp;k5=word%BD%CC%B3%CC&amp;sid=e7d35c93e33164d3&amp;ch=0&amp;tu=u1256737&amp;jk=3125a8a91d25ed28&amp;cf=1&amp;fv=11&amp;stid=0&amp;urlid=0" target="_blank" id="title4">西安建站公司</a></div></div><div class="itemColumnSpace"></div><div class="item"><div style="height: 18px;" class="title"><a style="white-space: normal; word-break: break-all; word-wrap: break-word;" title="瑜伽视频教程" href="http://cpro.baidu.com/cpro/ui/uijs.php?rs=1&amp;u=http%3A%2F%2Fwww%2Eidivcss%2Ecom%2Fdata%2F317%2Ehtml&amp;p=baidu&amp;c=news&amp;n=10&amp;t=tpclicked3&amp;q=21061049_cpr&amp;k=%E8%A4%D9%A4%CA%D3%C6%B5%BD%CC%B3%CC&amp;k0=%E8%A4%D9%A4%CA%D3%C6%B5%BD%CC%B3%CC&amp;k1=%C3%E2%B7%D1%BD%A8%D5%BE&amp;k2=excel%BD%CC%B3%CC&amp;k3=%D7%D4%D6%FA%BD%A8%D5%BE&amp;k4=word%BD%CC%B3%CC&amp;k5=%D6%D0%CD%F8%C3%E2%B7%D1%BD%A8%D5%BE&amp;sid=e7d35c93e33164d3&amp;ch=0&amp;tu=u1256737&amp;jk=3125a8a91d25ed28&amp;cf=1&amp;fv=11&amp;stid=0&amp;urlid=0" target="_blank" id="title5">瑜伽视频教程</a></div></div><div class="itemRowSpace"></div><div class="item"><div style="height: 18px;" class="title"><a style="white-space: normal; word-break: break-all; word-wrap: break-word;" title="免费建站" href="http://cpro.baidu.com/cpro/ui/uijs.php?rs=1&amp;u=http%3A%2F%2Fwww%2Eidivcss%2Ecom%2Fdata%2F317%2Ehtml&amp;p=baidu&amp;c=news&amp;n=10&amp;t=tpclicked3&amp;q=21061049_cpr&amp;k=%C3%E2%B7%D1%BD%A8%D5%BE&amp;k0=%C3%E2%B7%D1%BD%A8%D5%BE&amp;k1=excel%BD%CC%B3%CC&amp;k2=%D7%D4%D6%FA%BD%A8%D5%BE&amp;k3=word%BD%CC%B3%CC&amp;k4=%D6%D0%CD%F8%C3%E2%B7%D1%BD%A8%D5%BE&amp;k5=PS%CA%D3%C6%B5%BD%CC%B3%CC&amp;sid=e7d35c93e33164d3&amp;ch=0&amp;tu=u1256737&amp;jk=3125a8a91d25ed28&amp;cf=1&amp;fv=11&amp;stid=0&amp;urlid=0" target="_blank" id="title6">免费建站</a></div></div><div class="itemColumnSpace"></div><div class="item"><div style="height: 18px;" class="title"><a style="white-space: normal; word-break: break-all; word-wrap: break-word;" title="excel教程" href="http://cpro.baidu.com/cpro/ui/uijs.php?rs=1&amp;u=http%3A%2F%2Fwww%2Eidivcss%2Ecom%2Fdata%2F317%2Ehtml&amp;p=baidu&amp;c=news&amp;n=10&amp;t=tpclicked3&amp;q=21061049_cpr&amp;k=excel%BD%CC%B3%CC&amp;k0=excel%BD%CC%B3%CC&amp;k1=%D7%D4%D6%FA%BD%A8%D5%BE&amp;k2=word%BD%CC%B3%CC&amp;k3=%D6%D0%CD%F8%C3%E2%B7%D1%BD%A8%D5%BE&amp;k4=PS%CA%D3%C6%B5%BD%CC%B3%CC&amp;k5=%BD%A8%D5%BE&amp;sid=e7d35c93e33164d3&amp;ch=0&amp;tu=u1256737&amp;jk=3125a8a91d25ed28&amp;cf=1&amp;fv=11&amp;stid=0&amp;urlid=0" target="_blank" id="title7">excel教程</a></div></div><div class="itemRowSpace"></div><div class="item"><div style="height: 18px;" class="title"><a style="white-space: normal; word-break: break-all; word-wrap: break-word;" title="自助建站" href="http://cpro.baidu.com/cpro/ui/uijs.php?rs=1&amp;u=http%3A%2F%2Fwww%2Eidivcss%2Ecom%2Fdata%2F317%2Ehtml&amp;p=baidu&amp;c=news&amp;n=10&amp;t=tpclicked3&amp;q=21061049_cpr&amp;k=%D7%D4%D6%FA%BD%A8%D5%BE&amp;k0=%D7%D4%D6%FA%BD%A8%D5%BE&amp;k1=word%BD%CC%B3%CC&amp;k2=%D6%D0%CD%F8%C3%E2%B7%D1%BD%A8%D5%BE&amp;k3=PS%CA%D3%C6%B5%BD%CC%B3%CC&amp;k4=%BD%A8%D5%BE&amp;k5=%BD%CC%B3%CC&amp;sid=e7d35c93e33164d3&amp;ch=0&amp;tu=u1256737&amp;jk=3125a8a91d25ed28&amp;cf=1&amp;fv=11&amp;stid=0&amp;urlid=0" target="_blank" id="title8">自助建站</a></div></div><div class="itemColumnSpace"></div><div class="item"><div style="height: 18px;" class="title"><a style="white-space: normal; word-break: break-all; word-wrap: break-word;" title="word教程" href="http://cpro.baidu.com/cpro/ui/uijs.php?rs=1&amp;u=http%3A%2F%2Fwww%2Eidivcss%2Ecom%2Fdata%2F317%2Ehtml&amp;p=baidu&amp;c=news&amp;n=10&amp;t=tpclicked3&amp;q=21061049_cpr&amp;k=word%BD%CC%B3%CC&amp;k0=word%BD%CC%B3%CC&amp;k1=%D6%D0%CD%F8%C3%E2%B7%D1%BD%A8%D5%BE&amp;k2=PS%CA%D3%C6%B5%BD%CC%B3%CC&amp;k3=%BD%A8%D5%BE&amp;k4=%BD%CC%B3%CC&amp;k5=%CE%F7%B0%B2%BD%A8%D5%BE&amp;sid=e7d35c93e33164d3&amp;ch=0&amp;tu=u1256737&amp;jk=3125a8a91d25ed28&amp;cf=1&amp;fv=11&amp;stid=0&amp;urlid=0" target="_blank" id="title9">word教程</a></div></div><div class="itemRowSpace"></div><div class="item"><div style="height: 18px;" class="title"><a style="white-space: normal; word-break: break-all; word-wrap: break-word;" title="中网免费建站" href="http://cpro.baidu.com/cpro/ui/uijs.php?rs=1&amp;u=http%3A%2F%2Fwww%2Eidivcss%2Ecom%2Fdata%2F317%2Ehtml&amp;p=baidu&amp;c=news&amp;n=10&amp;t=tpclicked3&amp;q=21061049_cpr&amp;k=%D6%D0%CD%F8%C3%E2%B7%D1%BD%A8%D5%BE&amp;k0=%D6%D0%CD%F8%C3%E2%B7%D1%BD%A8%D5%BE&amp;k1=PS%CA%D3%C6%B5%BD%CC%B3%CC&amp;k2=%BD%A8%D5%BE&amp;k3=%BD%CC%B3%CC&amp;k4=%CE%F7%B0%B2%BD%A8%D5%BE&amp;k5=ps%BD%CC%B3%CC&amp;sid=e7d35c93e33164d3&amp;ch=0&amp;tu=u1256737&amp;jk=3125a8a91d25ed28&amp;cf=1&amp;fv=11&amp;stid=0&amp;urlid=0" target="_blank" id="title10">中网免费建站</a></div></div><div class="itemColumnSpace"></div><div class="item"><div style="height: 18px;" class="title"><a style="white-space: normal; word-break: break-all; word-wrap: break-word;" title="PS视频教程" href="http://cpro.baidu.com/cpro/ui/uijs.php?rs=1&amp;u=http%3A%2F%2Fwww%2Eidivcss%2Ecom%2Fdata%2F317%2Ehtml&amp;p=baidu&amp;c=news&amp;n=10&amp;t=tpclicked3&amp;q=21061049_cpr&amp;k=PS%CA%D3%C6%B5%BD%CC%B3%CC&amp;k0=PS%CA%D3%C6%B5%BD%CC%B3%CC&amp;k1=%BD%A8%D5%BE&amp;k2=%BD%CC%B3%CC&amp;k3=%CE%F7%B0%B2%BD%A8%D5%BE&amp;k4=ps%BD%CC%B3%CC&amp;k5=%CE%F7%B0%B2%BD%A8%D5%BE%B9%AB%CB%BE&amp;sid=e7d35c93e33164d3&amp;ch=0&amp;tu=u1256737&amp;jk=3125a8a91d25ed28&amp;cf=1&amp;fv=11&amp;stid=0&amp;urlid=0" target="_blank" id="title11">PS视频教程</a></div></div><a title="百度网盟推广" href="http://wangmeng.baidu.com/" target="_blank" class="bd-logo2">&nbsp;</a></div><div id="loader" style="text-align:center; width:90%; font-size:12px; padding:8px; border:solid 1px #aaaaaa; margin-top:30px; display:none;">
+        loading......
+    </div>
+     <script type="text/javascript">
+            var ThisPage = {
+                show:function(){
+                    this.Template = using("Cpro.Template");
+                    this.StyleTemplate = using("Cpro.Template.StyleTemplate");
+                    this.mainFullNameConfig = this.Template.TemplateVariableManager.getVariables(config);
+                    this.mainFullNameConfig.stuffType = config.stuffType;
+                    currentLayoutEngine = this.Template.LayoutEngineManager.getLayoutEngine(this.mainFullNameConfig);
+                    this.MediaLayoutObj = currentLayoutEngine.layout(this.mainFullNameConfig);
+                    this.Template.PaintEngine.paint({
+                        layoutObj: this.MediaLayoutObj,
+                        userFullNameConfig: this.mainFullNameConfig
+                    });     
+                    this.Template.DataEngine.paint({
+                        layoutObj: this.MediaLayoutObj,
+                        data: ads,
+                        slotData: this.mainFullNameConfig
+                    });        
+                },
+                initialize:function(){ 
+                    this.DataEngine = using("Cpro.Template.DataEngine");
+                    var flashHtml=this.DataEngine.createFlashHtml({
+                        url: "http://cpro.baidu.com/cpro/ui/baiduTlinkCloud_as3.swf?"+Math.random(),
+                        width: 250,
+                        height: 160,
+                        id:"cloud"
+                    });
+                   var tempstr =  document.getElementById("cloudContainer").innerHTML;
+                   document.getElementById("cloudContainer").innerHTML = tempstr + flashHtml;
+                },
+                flashOnLoad:function(){
+                    var flashObj = document.cloud || window.cloud;
+                    flashObj.setData({"overall":adsStyle,"data":ads,"browserInIE":ThisPage.isIE()});
+                },
+                openCurl:function(curl){
+                    window.open(curl);
+                },
+                isIE:function(){
+                    var result = 0;
+                    if (/msie (\d+\.\d)/i.test(navigator.userAgent)) {    
+                         result = 1;
+                    }
+                    return result;
+                }      
+            }
+            
+            if( 0==5 ){  
+                document.write("<div id='cloudContainer' style='position:relative;width:250px;height:160px;'><a class='bd-logo2' href='http://wangmeng.baidu.com/' target='_blank' onfocus='this.blur()'></a></div>");
+                window.flashOnLoad = ThisPage.flashOnLoad;
+                window.openCurl = ThisPage.openCurl;
+                run(ThisPage.initialize.proxy(ThisPage));             
+            } else {
+                run(ThisPage.show.proxy(ThisPage))
+            } 
+
+        </script>
+    <script type="text/javascript">
+        function hasClass(element, className) {
+            var reg = new RegExp('(\\s|^)' + className + '(\\s|$)');
+            return element.className.match(reg);
+        }
+        function addClass(element, className) {
+            if (!this.hasClass(element, className)) {
+                element.className += " " + className;
+            }
+        }
+        function removeClass(element, className) {
+            if (hasClass(element, className)) {
+                var reg = new RegExp('(\\s|^)' + className + '(\\s|$)');
+                element.className = element.className.replace(reg, ' ');
+            }
+        }
+
+
+        if(0!=5 && config.lu1stAB == 1) {
+            listen();
+        }
+        var isBindMouseover = false;
+        function listen() {
+            if(isBindMouseover == true){
+                return;
+            }
+            var adContainer = document.getElementById("container");
+
+            if (null == adContainer) {
+                setTimeout(listen,500);
+                return;
+            }
+
+            divs = adContainer.getElementsByTagName("div");
+
+            if (null == divs) {
+                setTimeout(listen,500);
+                return;
+            }
+
+            for (i = 0; i < divs.length; i++) {
+                div = divs[i];
+                if (div.className == "title") {
+                    var as = div.getElementsByTagName("a");
+                    if (as.length == 0) {continue;}
+                    if (as[0].childNodes.length == 0) {continue;}
+                    div.onmouseover = function (e) {
+                        addClass(this, "title_hover");                      
+                        if (config.titHFC != undefined && config.titHFC != "#e0e0e0"){
+                            this.getElementsByTagName("a")[0].style.color = config.titHFC;
+                        }else{
+                            this.getElementsByTagName("a")[0].style.color= "#ff0000";
+                        }
+                    }
+                    div.onmouseout = function (e) {
+                        removeClass(this, "title_hover");
+                        this.getElementsByTagName("a")[0].style.color=config.rss2;
+                    }
+                }
+            }
+            isBindMouseover = true;
+        }
+    </script>
+
+
+</body></html>

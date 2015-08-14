@@ -1,0 +1,1201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8"><meta name="Description" content="人人网 校内是一个真实的社交网络，联络你和你周围的朋友。 加入人人网校内你可以:联络朋友，了解他们的最新动态；和朋友分享相片、音乐和电影；找到老同学，结识新朋友；用照片和日志记录生活,展示自我。">
+<meta name="Keywords" content="Xiaonei,Renren,校内,大学,同学,同事,白领,个人主页,博客,相册,群组,社区,交友,聊天,音乐,视频,校园,人人,人人网"><link rel="shortcut icon" type="image/x-icon" href="http://a.xnimg.cn/favicon-rr.ico?ver=3">
+<link rel="apple-touch-icon" href="http://a.xnimg.cn/wap/apple_icon_.png">
+<link href="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/global2-all-min.css" rel="stylesheet"><script>XN = {get_check:'-2084564119',get_check_x:'4f8111c3',env:{domain:'renren.com',shortSiteName:'人人',siteName:'人人网'}};
+photoSeedSrc= 'http://s.xnimg.cn/a55193/n/apps/photo/photoSeed.js';
+</script>
+<script src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/base-all2.js"></script><script>
+if (window.asyncHTMLManager) {
+window.asyncHTMLManager.addEvent('load', function() {
+load_jebe_ads(1, false, true);
+});
+} else {
+load_jebe_ads(1);
+}XN.getFileVersion([
+'http://s.xnimg.cn/a19816/csspro/apps/profile.css',
+'http://s.xnimg.cn/a54265/csspro/module/friendSelector.css',
+'http://s.xnimg.cn/a16298/csspro/module/status-pop.css',
+'http://s.xnimg.cn/a46783/csspro/module/school-selector.css',
+'http://s.xnimg.cn/a20254/csspro/module/minieditor.css',
+'http://s.xnimg.cn/a20457/jspro/xn.app.recommendFriend.js',
+'http://s.xnimg.cn/a54477/jspro/xn.app.status.js',
+'http://s.xnimg.cn/a54606/jspro/xn.app.share.js',
+'http://s.xnimg.cn/a54689/jspro/xn.app.ilike.js',
+'http://s.xnimg.cn/a13589/jspro/xn.ui.pager.js',
+'http://s.xnimg.cn/a32035/jspro/xn.ui.multiFriendSelectorBox.js',
+'http://s.xnimg.cn/a54262/jspro/xn.app.addFriend.js',
+'http://s.xnimg.cn/a5881/jspro/xn.ui.multiFriendSelectorBox.forGuide.js',
+'http://s.xnimg.cn/a55026/jspro/lib/mediaplayer.js',
+'http://s.xnimg.cn/a55198/jspro/xn.ui.schoolSelectors.js',
+'http://s.xnimg.cn/a13200/jspro/album/ZeroClipboard.js',
+'http://s.xnimg.cn/a45224/jspro/xn.ui.emoticons.js',
+'http://s.xnimg.cn/a30963/n/apps/home/modules/drag-upload/drag-upload.js',
+'http://a.xnimg.cn/a7107/swf/album/ZeroClipboard.swf',
+'http://s.xnimg.cn/n/core/modules/flashUploader/flashUploader.js',
+'http://s.xnimg.cn/a33832/n/core/modules/flashUploader/upload-pop-all-min.css',
+'http://s.xnimg.cn/a52793/apps/wiki/css/wiki-card-all-min.css',
+'http://s.xnimg.cn/a53643/apps/wiki/js/wiki_model.js',
+'http://s.xnimg.cn/a52502/apps/wiki/js/wikicard-load.js'
+]);
+XN.namespace( 'user' );
+XN.$extend(XN.user, {
+'id':'308721944',
+'ruid':'308721944',
+'tinyPic':'http://hdn.xnimg.cn/photos/hdn521/20120602/1850/tiny_HlbD_388c000062271375.jpg',
+'name':"%E6%96%B9%E5%A5%95%E6%A5%A0+Edward",
+'pageVersion':6
+});
+XN.event.addEvent(window, 'load', function(){
+var r = parseInt(Math.random()*150);
+if (r == 5 && window.UGC) UGC.Network.ping.performance.start("100000","sns.home.performance");
+});XN.user.isVip = false;XN.user.hideAds = false;object.predefine('xn/namecard', 'http://s.xnimg.cn/a54261/modules/namecard/js/namecard.js');
+object.predefine('xn/showShareFriend', 'http://s.xnimg.cn/a54260/n/core/modules/show-share-friend/showShareFriendsModule.js');
+object.predefine('xn/mentionMain', 'http://s.xnimg.cn/a45588/n/core/modules/mention/index.js');
+object.predefine('xn/site-nav/switch-account', 'http://s.xnimg.cn/a41752/n/core/modules/site-nav/switch-account.js');
+object.predefine('xn/site-nav/drop-menu-profile xn/site-nav/drop-menu-app', 'http://s.xnimg.cn/a54576/n/core/modules/site-nav/drop-menu.js');
+object.predefine('xn/site-nav/search', 'http://s.xnimg.cn/a55076/n/core/modules/site-nav/search.js');
+object.predefine('xn/ilike', 'http://s.xnimg.cn/a42708/n/core/modules/ilike/index.js');
+object.predefine('xn/group/vote', 'http://s.xnimg.cn/a49736/n/core/feed/group/group-vote.js');
+object.predefine('xn/lib/switch', 'http://s.xnimg.cn/a54374/n/core/lib/switch.js');
+object.predefine('xn/lib/scrollFix', 'http://s.xnimg.cn/a54363/n/core/lib/scrollFix.js');
+object.predefine('xnapp/birthday', 'http://s.xnimg.cn/a32969/apps/home/compatible/birthday.js');
+object.predefine('xn/apps/toolsBox', 'http://s.xnimg.cn/a53568/jspro/modules/tools-box/tools-box.js');
+</script>
+
+<link href="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/blog.css" rel="stylesheet" type="text/css" media="all">
+<!-- <link href="http://s.xnimg.cn/a53549/n/apps/blog/blog-show-all-min.css" rel="stylesheet" type="text/css" media="all" /> -->
+<link href="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/reply-all-min.css" type="text/css" media="all" rel="stylesheet">
+<link href="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/friendSelector.css" rel="stylesheet" type="text/css" media="all">
+<link href="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/detail-all-min.css" rel="stylesheet" type="text/css" media="all">
+<script type="text/javascript" src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/xn_005.js"></script>
+<script type="text/javascript" src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/xn.js"></script>
+<script type="text/javascript" src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/xn_003.js"></script>
+<script type="text/javascript" src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/xn_002.js"></script>
+<script type="text/javascript" src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/mediaplayer.js"></script>
+<!-- 分享转发链展示 -->
+<script type="text/javascript" src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/detail-lib.js"></script>
+<!-- <script src="http://s.xnimg.cn/a54163/jspro/xn.app.multiemotion.js"></script>
+<script src="http://s.xnimg.cn/a55530/jspro/xn.app.multiemotion.seed.js"></script> -->
+<script type="text/javascript">
+XN.DOM.readyDo(function(){
+ILike.init({type:'share',id:16020765725,userId:308721944,ownerId:336924841}); 
+ILike.toggleShowDetail();
+});XN.dom.ready(function()
+{
+playVideoOfContent('blogContent', 'video');
+playAudioOfContent('blogContent', 'audio');
+playMusicOfContent('blogContent', 'music');
+});
+XN.dom.ready(function(){
+var tabView = new XN.ui.tabView({
+selectedClass: 'selected'
+}).addTab({
+label: 'othershareTab',active:true,content: 'othersharelist'
+});
+tabView.addTab({
+label : 'hotshareTab',content : 'hotsharelist'
+});
+var tabView2 = new XN.ui.tabView({
+selectedClass: 'selected'
+}).addTab({
+label: 'othershareTab2',active:true,content: 'othersharelist2'
+});
+tabView2.addTab({
+label : 'hotshareTab2',content : 'hotsharelist2'
+});
+XN.app.share.CommentManger.init({
+tabs: [{tab:'friendCmts',
+content:'friendCmtsList'},
+{tab:'allCmts',
+content:'allCmtsList'}], activeTab:'friendCmtsList',cmtForm : 'comment_form_16020765725', cmtToInput : 'repetNo',shareUrlMd5 : 'a7703934ff9fcb40edec4c3aa2fc9d53',shareId:16020765725,
+shareOwner:336924841,
+isAdmin : '',cmtsListCon: 'cmtsListCon'});
+// 加锚点后IE下恢复title
+if (XN.browser.IE) {
+setTimeout(function() {
+document.title = '人人网- 日志分享';
+}, 100); 
+}
+});
+XN.dom.ready(function(){
+XN.app.share.initRBlog({
+con : $('relative-content-con'),
+data : {blog_id:906684696} 
+});
+}, true);</script>
+<link href="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/share.css" rel="stylesheet" type="text/css" media="all">
+<script type="text/javascript" src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/mediaplayer.js"></script>
+<title>人人网-
+日志分享</title>
+<script type="text/javascript">
+//@小群使用
+XN.mentionGroup = true;
+</script><script src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/photoSeed.js" async="" type="text/javascript"></script><script async="" src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/show_004.js" type="text/javascript"></script><script async="" src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/swfobjectv2.js" type="text/javascript"></script><link href="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/topic-hotlist-all-min.css" type="text/css" rel="stylesheet"><style media="screen" type="text/css">#test123 {visibility:hidden}</style><script async="" src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/xn_006.js" type="text/javascript"></script><style id="jebe-widgetbox-style">.Widget .side-item{padding-top:10px;border-top:1px solid #CEE1EE}					.Widget .share-sidebar .side-item-body,.Widget .side-item-body,#ad100000000001{padding:0 0 10px}					.Widget .side-item-header{position:relative;margin:0;padding:0 0 8px;text-align:right}					.Widget .side-item-header h4{float:left;color:#333;font-weight:bold}					.Widget .side-item-header h4 .title{display:inline-block;width:180px}					.Widget .side-item-header h4 .long_title{display:inline-block;width:100%;text-align:left}					.Widget .side-item-header h4 span,.selfHelp .self-big h4.commonchar,.selfHelp .self-text h4.commonchar,.selfHelp .under h4.commonchar{font-weight:normal}					.Widget .side-item-body .from-sponsor{color:#AAA}					.Widget .side-item-body .btnspace{float:right;margin:10px 0 15px}					.side-item .info p{overflow:hidden;word-wrap:break-word;word-break:break-all}					.side-item-body .fans{margin:0 0 5px;line-height:18px;word-break:break-all;word-wrap:break-word}					.side-item-body .fansapp{height:78px;margin:0 0 5px;line-height:18px;word-break:break-all;word-wrap:break-word}					.side-item-body .infoapp{height:83px;margin:0 0 5px;line-height:18px;word-break:break-all;word-wrap:break-word}					.side-item .footer a,.template .footer a img,.sponsors .footer a img,.wide-sponsors .footer a{text-decoration:none;outline:none;blr:expression(this.onFocus=this.blur())}					.template .side-item-body p,.imgtemplate .side-item-body p,.sponsors .side-item-body p,.wide-sponsors .side-item-body p,.commend-page .side-item-body p,.selected .side-item-body p,.s4-preview-holder .sponsors .side-item-body p,.s4-preview-holder .wide-sponsors .side-item-body p{margin-bottom:.5ex}					.template .figure,.selected .figure,.commend-page .figure,.sponsors .figure,.wide-sponsors .figure,.s4-preview-holder .template .figure,.s4-preview-holder  .sponsors .figure{float:left;margin-bottom:10px}					.template .info{margin:0 0 10px 73px;color:#333}					.sponsors .info{float:left;width:120px;height:83px;color:#333;font-size:12px}					.wide-sponsors .info,.s4-preview-holder .sponsors .info{margin-left:108px;color:#333}					.sponsors .side-item-header a,.wide-sponsors .side-item-header a,.sw_button_area .link,.selfHelp a,.nuomi-ad a{outline:none;blr:expression(this.onFocus=this.blur())}					.commend-page .info{margin-left:85px;color:#333}					.template .footer,.sponsors .footer,.wide-sponsors .footer,.s4-preview-holder .wide-sponsors .footer,.s4-preview-holder .sponsors .footer,.s4-preview-holder .template .footer,.wide-sponsors .side-item-header,.sponsors .side-item-body{clear:both}					.wide-sponsors .footer a img{zoom:1}					.template .info ul li a{display:inline-block}					.sponsors .figure,.figure{position:relative;*zoom:1}					.sponsors .figure{position:inherit;margin-right:8px}					.template .play,.sponsors .play,.wide-sponsors .play{display:block;position:absolute;left:0;top:0;width:100px;height:80px;background:url(http://jebe.xnimg.cn/default/img/play2_1.gif) no-repeat center center;text-indent:-9999px;outline:0;opacity:.9;*filter:alpha(opacity=90)}					.template .play:hover,.sponsors .play:hover,.wide-sponsors .play:hover{background:url(http://jebe.xnimg.cn/default/img/play2_2.gif) no-repeat center center}					.template .play{width:64px;height:64px;background:url(http://jebe.xnimg.cn/default/img/play_a.png) no-repeat center center}					.template .play:hover{background:url(http://jebe.xnimg.cn/default/img/play_b.png) no-repeat center center}					.sponsors .play:hover{background-image:url(http://jebe.xnimg.cn/default/img/play21.gif)}					.wide-sponsors .play{width:220px;height:120px}					#sponsorsWidget a.link img{*position:relative;zoom:1}					a.text,.s4-preview-holder a.text{color:#333;text-decoration:none}					a.text:hover{color:#333;text-decoration:none}					#send-gift-form{margin-bottom:10px;padding-left:20px;background:url(http://jebe.xnimg.cn/default/img/gift.gif) no-repeat left 3px}					#send-gift-form p.submit{text-align:right}					#send-gift-form .input-text,#send-gift-form textarea{width:190px}					.sent-gift:after{display:block;clear:both;height:0;content:'.';visibility:hidden}					.sent-gift{margin-bottom:5px;padding:5px;background-color:#F0F5F8;*zoom:1}					.sent-gift .avatar{float:left;margin-right:5px}					.sent-gift .gift,.nuomi-ad .nuomi-city{float:right}					.sent-gift p{word-wrap:break-word}					.wide-sponsors .footer .link:hover,.sponsors .footer .link:hover{text-decoration:underline}					#sponsorsAdFlash,#sponsorsComments .publisher .section,.widget-ad-for-56 .avatar,.ad-show-box .img img{float:left}					#sponsorsComments{float:right;width:350px;height:360px;background:#FFF}					#sponsorsComments .diggs{margin-bottom:1px;padding:5px 10px 0;border-bottom:1px solid #F0F5F8;background:#F0F5F8}					#sponsorsComments .diggers:after{display:block;clear:both;content:'.'}					#sponsorsComments .diggs p,.sw_operate_area,.sw_vote_item,.widget-ad-for-56 .detail h4{margin-bottom:5px}					#sponsorsComments .diggers{margin-left:20px;*zoom:1}					#sponsorsComments .diggers li{float:left;width:50px;height:69px;margin-right:10px;text-align:center;overflow:hidden}					#sponsorsComments .diggers li .name{*margin-top:5px}					#sponsorsComments .publisher{height:59px;margin:0 0 1px;padding:10px 15px;border-bottom:1px solid #F0F5F8;background:#F0F5F8;*zoom:1;*overflow:hidden}					#sponsorsComments .publisher:after{display:block;clear:both;content:'.'}					#sponsorsComments .publisher .figure,#sponsorsComments .comment .figure{_display:inline;float:left;margin-right:5px}					#sponsorsComments .publisher textarea{width:276px;height:22px;margin-top:0;margin-bottom:5px;resize:none}					#sponsorsComments .publisher .text-count{float:right;color:#AAA}					#sponsorsComments .comments{height:227px;border-bottom:1px solid #C2D8E7;background:#FFF url(http://a.xnimg.cn/imgpro/homeAd/ex/renren-bg.png) no-repeat center top;overflow:auto;word-wrap:break-word}					#sponsorsComments.diggers-showed .comments{height:158px}					#sponsorsComments .more-comments{height:24px;_height:22px;padding-right:20px;background:#F0F5F8;line-height:24px;text-align:right;_overflow:hidden}					#sponsorsComments .more-comments a{line-height:24px}					#sponsorsComments .more-comments .count{float:left;margin-left:10px;color:#888}					#sponsorsComments .comment{padding:5px 10px;border-bottom:2px solid #FFF;background:#F0F5F8}					#sponsorsComments .comment .section p{line-height:15px}					#sponsorsComments .comment .x-to-hide{float:right;text-indent:-9999px;outline:0}					#sponsorsComments .comment .reply,.loadMask .maskView span,.loadMask-small .maskView span{margin-left:10px}					.sw_mobile_num_input{width:120px;height:15px;padding:2px;color:#AAA;vertical-align:middle}					.sw_button_img{margin-right:5px;vertical-align:middle}					.ad_btn{position:absolute;left:0;bottom:0;padding:5px 0 7px 10px;text-align:left;z-index:1}					.btn_bg,.btn_bg1{position:absolute;left:0;bottom:0;width:100%}					.btn_bg_gray{background:#000;opacity:.50;filter:Alpha(Opacity=50)}.ad_btn a{display:inline-block;width:86px;height:21px;margin-bottom:2px;margin-top:5px;margin-left:1px;border:1px solid #8B8B8B;vertical-align:top;1margin-left:10px}					.ad_btn a:hover{margin-bottom:0;margin-top:5px;border:1px solid #333;border-bottom:3px solid #333}					#aShare{width:54px}					.ad_join_btn{background:url(http://jebe.xnimg.cn/default/img/i-want-join-button.png) -1px -1px no-repeat}					.ad_buy_btn{background:url(http://jebe.xnimg.cn/20100624/1755/a_main_L3gO_57_040250.png) -1px -1px no-repeat}					.ad_download_btn{background:url(http://jebe.xnimg.cn/20100305/2006/a_main_hatH_ac_073157.png) -1px -1px no-repeat}					.ad_share_btn{background:url(http://jebe.xnimg.cn/default/img/sw_share_button.png) -1px -1px no-repeat}					.ad_like_btn{background:url(http://jebe.xnimg.cn/default/follow-button1.gif) -1px -1px no-repeat}					.home .side-item .sw_mobile_backinfo li{margin-bottom:1px;padding:5px 3px 5px 5px;background:#F3FAFF}					.sw_mobile_backinfo li .img{display:block;float:left}					.sw_mobile_backinfo li .info_area{display:block;float:left;padding-left:5px}					.sw_block,.widget-ad-for-56 .avatar img{display:block}					.sw_mobile_backinfo li .info_area span,.selfHelp .will a,#ad1000000063 .will a{color:#888}					.sw_mobile_backinfo li .info_area span span{color:#333;font-weight:700}					.sw_vote_title{margin-bottom:10px;font-weight:700}					.sw_vote_icon{background:url(http://jebe.xnimg.cn/default/img/someicons.gif) 0 1px no-repeat;vertical-align:middle}					.sw_vote_title_text,.link img,.ad110429 input,.ad110429 label{vertical-align:middle}					.sw_vote_item input{height:16px}					.sw_vote_p{display:block;float:left;width:35px}					.sw_vote_itemtext_holder{display:block;position:relative;float:left;width:170px;height:15px;padding-left:10px}					.sw_vote_itemtext_holder .sw_vote_itemtext{position:absolute;left:9px;*top:2px;_top:0;vertical-align:middle;white-space:nowrap}					.sw_vote_more{background:#005EAC;color:#FFF}					.sw_vote_less{background:#CEE1EE;color:#666}					.sw_vote_info{margin:12px 0;color:#888}					.sw_vote_item input{font-family:tahoma, verdana, arial, STHeiTi, simsun, sans-serif;vertical-align:middle}					.sw_vote_item label{font-weight:normal;font-family:tahoma, verdana, arial, STHeiTi, simsun, sans-serif;vertical-align:middle}					.sw_button_area{margin-top:12px}					.sw_button_area a:hover{text-decoration:none}					.sw-refresh-button{display:block;position:absolute;top:-3px;right:0;width:14px;height:22px;background:url(http://a.xnimg.cn/imgpro/icons/wbPage.gif) no-repeat 0 0;text-indent:-9999px;z-index:999;overflow:hidden;outline:0 none}					.sw-refresh-button:hover{background-position:0 -22px}					.sw-x-button{display:none;position:absolute;top:-3px;right:0;width:14px;height:22px;background:url(http://jebe.xnimg.cn/default/img/action-bottons.gif) 0 -75px no-repeat;text-indent:-9999px;z-index:999;overflow:hidden;outline:0 none}					.sw-x-button:hover{background-position:0 -116px}					.sw-buttons-holder{position:absolute;top:0;right:0}					.s4-preview-holder .side-item{margin-bottom:10px;border-bottom:1px solid #FFF}					.s4-preview-holder .side-item-header{padding:0 0 8px;text-align:right}					.s4-preview-holder .side-item-header h4{float:left;color:#333;font-size:12px;text-align:left}					.s4-preview-holder .side-item-body,.wide-sponsors .side-item-body{padding:0 0 7px}					.s4-preview-holder .sponsors .figure,.s4-preview-holder  .figure,.wide-sponsors,.sponsors,.ifr-wrap{position:relative}					.s4-preview-holder .wide-sponsors .play{display:block;position:absolute;left:0;top:0;width:220px;height:120px;background:url(http://jebe.xnimg.cn/default/img/play1_1.gif) no-repeat scroll 85px 45px transparent;text-indent:-9999px;opacity:.9;outline:0 none}					.s4-preview-holder .wide-sponsors .play:hover{background-position:85px -55px}					.s4-preview-holder .template .info{margin:0 0 10px 73px;color:#333}					#sponsorsWidget .sw-buttons-holder{top:0;zoom:1}					.selfHelp{width:240px}					.selfHelp div{padding:10px 0;_zoom:1;overflow:hidden}					.selfHelp div.addedtop{width:213px;margin:0 auto;padding:22px 0 22px 5px;border:1px solid #B8D4E8!important;background:#F0F5F8}					.selfHelp div.under .inner-under{border:none}					.selfHelp div.under{width:240px;border-bottom:1px solid #CEE1EE}					.selfHelp div.under a.closebtn,.selfHelp div.inner-under .closebtn,.self-big div.under a.closebtn,.self-big div.inner-under .closebtn{position:absolute;left:218px;top:10px;width:14px;height:14px;background:url(http://a.xnimg.cn/imgpro/bg/cs_home.png) no-repeat scroll -225px -24px transparent}					.selfHelp div.under .closebtn:hover{background-position:-225px -38px}					.selfHelp div.under .closebtn span,.selfHelp div.inner-under .closebtn span,.self-big div.under .closebtn span,.self-big div.inner-under .closebtn span,.has-flash a.advert-more,.Widget .has-flash a.advert-more,#ad100000000072 .selfHelp .has-flash a.advert-more,#adla100000000072 .selfHelp .has-flash a.advert-more,#ad100000000073 .selfHelp .has-flash a.advert-more,#ad100000000071 .selfHelp .has-flash a.advert-more,#ad100000000070 .selfHelp .has-flash a.advert-more{display:none}					.selfHelp div.inner-under .closebtn:hover{background-position:-225px -38px}					.selfHelp div.under .closebtn:hover{background-position:-225px -38px}					.self-big div.inner-under .closebtn:hover{background-position:-225px -38px}					.selfHelp .self-big h4,.selfHelp .self-text h4,.selfHelp .under h4{margin:0;padding:0 0 10px;border:none;font-weight:bold}					.selfHelp .img{display:inline;float:left;width:77px;height:77px;margin:0 5px 0 10px;}					.selfHelp img{display:block;margin:0 auto}					.selfHelp .rr{margin:0 80px 0 5px;padding-left:13px;word-wrap:break-word}					.selfHelp .rr.rrnew{margin:0 80px 0 5px;padding-left:0}					.selfHelp .adr{display:inline-block;padding-top:5px;color:#5CBC5C}					.selfHelp p a{color:#000}					.selfHelp p a:link,.selfHelp p a:visited,.selfHelp p a:hover,.selfHelp p a:active{color:#000;text-decoration:none}					.selfHelp .will{margin:0 10px 0 -2px;padding:0 0 10px;text-align:right}					.self-big,.self-text{width:240px;padding:10px 0;border-bottom:1px solid #CEE1EE}					.self-text .txt,.self-text .txt:hover{color:#000;text-decoration:none}					.self-text .addr{color:#009600}					.self-text a:hover{text-decoration:underline}					.wide-sponsors .side-item-body{position:relative;padding:0 0 7px;z-index:999}					.side-item-body .figureWide{position:absolute;top:0;right:0;z-index:999}					.nobtborder{border-bottom:none!important}					.noborder{border:none !important}					.text-link-ad{padding:6px 0;font-weight:bold}					.loadMask{position:absolute;top:121px;right:0;width:200px;height:40px;z-index:9999}					.loadMask .maskBg,.loadMask-small .maskBg{position:absolute;left:3px;top:3px;width:200px;height:40px;background:#888;z-index:1;opacity:.3;filter:alpha(opacity=30)}					.loadMask .maskView,.loadMask-small .maskView{position:absolute;left:0;top:0;width:198px;height:38px;border:1px solid #888;background:#FFF;line-height:38px;font-size:14px;z-index:100}					.suspendWb{position:absolute;top:121px;right:0;width:297px;height:248px;z-index:9999}					.side-item-body .userPic img{margin:0 0 4px;vertical-align:middle}					.suspendWb .suspendBg,.suspendWb-small .suspendBg{position:absolute;left:3px;top:3px;width:297px;height:248px;background:#888;z-index:1;opacity:.3;filter:alpha(opacity=30)}					.suspendWb .suspendView,.suspendWb-small .suspendView{position:absolute;left:0;top:0;width:295px;height:246px;border:1px solid #888;background:#FFF;z-index:100}					.suspendWb .suspendView img,.suspendWb-small .suspendView img{border:0;vertical-align:middle}					.loadMask-small{position:absolute;top:81px;right:120px;width:200px;height:40px;z-index:9999}					.suspendWb-small{position:absolute;top:81px;right:120px;width:297px;height:248px;z-index:9999}					.nuomi-ad .nuomi-ad-header{height:18px;padding:10px 10px 0 0}					.nuomi-ad h4{float:left;width:80px}					.nuomi-ad h4 a:link,.nuomi-ad h4 a:visited{color:#333}					.nuomi-ad h4 a:hover{text-decoration:none}					.nuomi-ad del{color:#888;text-decoration:line-through}					.nuomi-ad-body a.nuomi-pic{float:left;width:150px;margin:4px 0 0}					.nuomi-ad-body a.nuomi-title{float:left;margin:7px 0 4px;+margin-top:10px}					.nuomi-ad-body p{float:left;width:100%}					.nuomi-ad-body p a{display:inline-block;margin-right:10px}					.nuomi-ad-body p a:link,.nuomi-ad-body p a:visited{color:#000}					.nuomi-ad-body p a:hover{text-decoration:none}					.ifr-wrap div{position:absolute;left:0;top:0;cursor:pointer}					.navigation .banner .float-right{overflow:visible}					.hideAd{display:block;position:absolute;bottom:0;right:-25px;width:12px;padding:5px;*padding-bottom:3px;background:#EEF5FB;line-height:12px;color:#779CB7;text-decoration:none;overflow:hidden}					.hideAd:link,.hideAd:visited{color:#779CB7}					.hideAd:hover{background:#CCE3F1;color:#779CB7;text-decoration:none}					.praiseInfo .hasBg{display:block;padding:5px 0;background:#F3FAFF}					.sw_backinfo .userPic img{position:relative;top:1px}					.footer a{float:left;*padding-bottom:1px;outline:none}					.footer a.sms-link{float:none}					.wide-sponsors .side-item-header,.sponsors .side-item-header{height:15px}					.side-item{*zoom:1}					.share-ads,#ad100000000075 p{margin:0}					.ad110429 .box{position:relative;padding:10px;background:#F0F5F8;background:#F0F5F8 url(http://jebe.xnimg.cn/default/img/logo.png) no-repeat 90% 90%}					.ad110429 .tl,.ad110429 .tr,.ad110429 .bl,.ad110429 .br{position:absolute;width:4px;height:4px;background:url(http://jebe.xnimg.cn/default/img/corner.png) no-repeat;overflow:hidden}					.ad110429 .tl{left:0;top:0;background-position:0 0}					.ad110429 .tr{top:0;right:0;background-position:-4px 0}					.ad110429 .bl{left:0;bottom:0;background-position:0 -4px}					.ad110429 .br{bottom:0;right:0;background-position:-4px -4px}					.ad110429 .box .icon{margin-right:8px}					.ad110429 .box .ql,.ad110429 .box .qr{display:inline-block;width:10px;height:7px;background:url(http://a.xnimg.cn/imgpro/home/home_icon.png) no-repeat;vertical-align:top}					.ad110429 .box .ql{margin-right:.5ex;background-position:0 -333px}					.ad110429 .box .qr{margin-left:.5ex;background-position:-10px -333px}					.ad110429 input{margin-right:3px}					.ad110429 label{line-height:normal;font-weight:normal}					.ad110429 li{margin-top:10px}					.widget-ad-for-56{margin-bottom:8px;zoom:1;overflow:hidden}					.widget-ad-for-56 .detail{margin-left:80px}					.widget-ad-for-56 #content{width:auto!important;color:#333;text-decoration:none!important}					.advert-con{position:relative;border:none !important;font-size:12px}					.advert-con .advert-title{height:16px;padding-bottom:8px;line-height:16px}					.advert-con .advert-title .advert-link:link,.advert-con .advert-title .advert-link:visited{color:#005EAC;font-weight:bold;font-size:12px;text-decoration:none}					.advert-con .advert-title .advert-link:hover{color:#005EAC;text-decoration:underline}					.advert-con .advert-more{display:block;position:absolute;top:0;right:0;width:25px;height:18px;background:url(http://jebe.xnimg.cn/default/newpager.png) no-repeat 0 -18px;text-indent:-9999em;z-index:1;overflow:hidden;outline:0 none}					.advert-con .advert-more:hover{display:block;background-position:0 -90px}					.advert-con:hover a.advert-more{display:block}					.has-flash{behavior:expression(function(ele){ele.runtimeStyle.behavior='none';Expressions.pseudo.hover(ele, 'has-flash_hover')}(this))}					.has-flash:hover a.advert-more,.has-flash_hover a.advert-more{display:block;position:absolute;top:0;right:23px;width:25px;height:18px;background:url(http://jebe.xnimg.cn/default/newpager.png) no-repeat 0 -18px;text-indent:-9999em;z-index:9999px;overflow:hidden;outline:0 none}					.has-flash a.advert-more:hover{background-position:0 -90px;cursor:pointer}					.advert-con .advert-main .side-item.wide-sponsors{margin-top:0 !important}					#ad100000000072 .advert-con a.advert-more,#adla100000000072 .advert-con a.advert-more,#ad100000000073 .advert-con a.advert-more{top:13px}					.Widget .advert-con a.advert-more{display:inline-block;position:absolute;top:10px;right:0;width:25px;height:18px;background:url(http://jebe.xnimg.cn/default/newpager.png) 0 -18px no-repeat;text-indent:-9999em;z-index:1;overflow:hidden;outline:0 none}					.Widget .has-flash:hover a.advert-more,.Widget .has-flash_hover a.advert-more{display:inline-block;position:absolute;top:15px;right:5px;width:25px;height:18px;background:url(http://jebe.xnimg.cn/default/newpager.png) no-repeat 0 -18px;text-indent:-9999em;z-index:9999;overflow:hidden;outline:0 none}					.Widget .advert-con .advert-more:hover{background-position:0 -90px;cursor:pointer}					.Widget .has-flash a.advert-more:hover{background-position:0 -90px;cursor:pointer}					#ad100000000072 .selfHelp .advert-con,#adla100000000072 .selfHelp .advert-con,#ad100000000073 .selfHelp .advert-con,#ad100000000071 .selfHelp .advert-con,#ad100000000070 .selfHelp .advert-con{padding:0;border-top:1px solid #CEE1EE !important}					#ad100000000072 .selfHelp .advert-con .advert-main,#adla100000000072 .selfHelp .advert-con .advert-main,#ad100000000073 .selfHelp .advert-con .advert-main,#ad100000000071 .selfHelp .advert-con .advert-main,#ad100000000070 .selfHelp .advert-con .advert-main{padding:0}					#ad100000000072 .selfHelp .advert-con .advert-more,#adla100000000072 .selfHelp .advert-con .advert-more,#ad100000000073 .selfHelp .advert-con .advert-more,#ad100000000071 .selfHelp .advert-con .advert-more,#ad100000000070 .selfHelp .advert-con .advert-more{top:22px}					#ad100000000072 .selfHelp .advert-con .advert-more:hover,#adla100000000072 .selfHelp .advert-con .advert-more:hover,#ad100000000073 .selfHelp .advert-con .advert-more:hover,#ad100000000071 .selfHelp .advert-con .advert-more:hover,#ad100000000070 .selfHelp .advert-con .advert-more:hover{background-position:-20px -38px;cursor:pointer}					#ad100000000072 .selfHelp .has-flash:hover a.advert-more,#adla100000000072 .selfHelp .has-flash:hover a.advert-more,#ad100000000072 .selfHelp .has-flash_hover a.advert-more,#adla100000000072 .selfHelp .has-flash_hover a.advert-more,#ad100000000073 .selfHelp .has-flash:hover a.advert-more,#ad100000000073 .selfHelp .has-flash_hover a.advert-more,#ad100000000071 .selfHelp .has-flash:hover a.advert-more,#ad100000000071 .selfHelp .has-flash_hover a.advert-more,#ad100000000070 .selfHelp .has-flash:hover a.advert-more,#ad100000000070 .selfHelp .has-flash_hover a.advert-more{display:block;display:inline-block;position:absolute;top:15px;right:5px;width:25px;height:18px;background:url(http://jebe.xnimg.cn/default/newpager.png) no-repeat 0 -18px;text-indent:-9999em;z-index:9999px;overflow:hidden;outline:0 none}					#ad1000000063 .under{padding:10px 0;border-bottom:1px solid #CEE1EE;line-height:140%}					#ad1000000063 .under .rr{margin-right:5px}					#ad1000000063 div h4{padding-bottom:10px}#ad1000000063 .selfHelp .img{margin-left:0}					#ad1000000063 .will{clear:both;margin-right:10px;padding:0 0 10px;color:#888;text-align:right}					#ad1000000063 p a:link,#ad1000000063 p a:visited,#ad1000000063 p a:hover,#ad1000000063 p a:active{color:#000;text-decoration:none}					#ad1000000063 .under,#ad1000000063 div.nobtborder{margin-bottom:0!important}					#ad1000000063 .selfHelp .img{width:85px}					#ad1000000060 .wide-sponsors,#ad1000000060 .sponsors{position:static}					#ad1000000060 .wide-sponsors .side-item-body{position:static;z-index:auto}					#ad1000000060 .wide-sponsors .side-item-header,#ad1000000060 .sponsors .side-item-header{height:auto}					#ad1000000060 .wide-sponsors .side-item-header,#ad1000000060 .sponsors .side-item-body{clear:none}					.adspicholder{display:block;float:left;width:75px;heith:75px}					.ads-wrap{margin:3px 0 0 85px;word-wrap:break-word;word-break:break-all}					.ads-description{margin-top:5px;line-height:18px}					.side-item  a.ads-linkout{display:inline;color:#888;text-decoration:none !important}					.vote-con{margin-bottom:-5px9;font-size:12px;font-weight:normal}					.vote-main li{position:relative;height:25px;margin-bottom:5px;background:#F7F7F7;*zoom:1}					.vote-main li input,.vote-main li span{position:absolute;z-index:1}					.vote-main li input{left:10px;top:6px;*top:2px}					.vote-main li .choice-word{left:35px;top:6px;color:#000}					.vote-main li .choice-percent{top:6px;right:5px}					.vote-main li .choice-bg{position:absolute;left:0;top:0;width:0;height:25px;background:#D8DBE1}					.side-item-body .voteUserPic,.vote-info .fans-avatar{display:inline-block;float:left;width:25px;height:25px;margin-right:5px;margin-top:2px}					.side-item-body .voteUserPic img,.vote-info .fans-avatar img{width:100%;height:100%}					.side-item-body .fans p{height:28px;padding-top:1px;line-height:1.2em}					.fans-avatar-opt{display:inline-block;display:inline;float:left;width:25px;height:25px;margin:2px 5px 0 0;}					.fans-avatar-opt img{float:left;width:100%;height:100%}					.vote-main li .votePic{width:100%;margin-left:245px}					.vote-info{margin-bottom:10px;margin-bottom:5px9}					.vote-info p{margin:10px 0 6px;color:#666}					.vote-info .vote-fans{*height:28px;min-height:28px}					.vote-list li{background:none}					.vote-list .voteTxt{position:absolute;left:0;width:240px;height:25px;background:#F7F7F7}					.vote-list li .votePic{width:auto}					.vote-list .votePic a{margin-top:0}					.vote-list .votePic a img,.fans-avatar img{opacity:.4;filter:alpha(opacity=40)}					.vote-list .votePic a:hover img,.fans-avatar:hover img,.vote-list .votePic .fans-self img{opacity:1;filter:alpha(opacity=100)}					.vote-main .voteTxt .choice-word{top:2px}					.ad-contrainer{padding:0;border-bottom:1px solid #CEE1EE;zoom:1}					.ad-show-box{margin-bottom:0;padding-bottom:10px}					.ad-show-box .header{position:relative;font-weight:bold}					.ad-show-box .img{float:left;margin:0}					.ad-show-box .discribe{float:right;width:130px;height:75px;font-family:'宋体';outline:0 none}					.ad-show-box .ad-content{display:block;width:130px;height:75px;color:#000;text-decoration:none;word-wrap:break-word;word-break:break-all}					.ad-show-box .close-btn{display:none;position:absolute;top:0;right:0;width:18px;height:18px;background:url(http://jebe.xnimg.cn/default/close-btn.png) 0 0 no-repeat;cursor:pointer;outline:medium none}					.ad-show-box .close-btn:hover{background:url(http://jebe.xnimg.cn/default/close-hover.png) no-repeat 0 0;}					.ad-show-box:hover .close-btn{display:block}					.ad-show-box .footer{padding:6px 0 1px}					.ad-show-box .footer a:hover{text-decoration:underline}					.ad-show-box .footer .like-ad{padding:0 0 0 16px;background:url(http://jebe.xnimg.cn/default/iFeeds-and-Requests-101102.png) no-repeat scroll left -1559px transparent;*line-height:18px;_line-height:16px;cursor:pointer}					.ad-close{padding:0 0 0 5px}					.ad-close .close-reason{width:150px;color:#999}					.ad-close .ad-confirm-btn,.ad-close .ad-cancel-btn{padding:1px 8px;border:1px solid #8B8B8B;background:url(http://jebe.xnimg.cn/default/icons2.png) no-repeat scroll -1px -300px transparent;color:#666;text-shadow:1px 1px #FFF}					.thank-slogan{padding:10px;text-align:center}					.thank-slogan .thanks{padding:20px 10px;border:1px solid #CFC274;background:#FFF9D7;line-height:20px;font-size:12px;font-family:'宋体','Microsoft Yahei','微软雅黑','黑体';-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px}					.ad-standard-65{margin-bottom:-7px;padding-top:10px}					.sideBar .c .ad-area{padding-bottom:1px}					#ad1000000060 .has-flash:hover a.advert-more{top:2px;right:2px}					#ad1000000060 .has-flash_hover a.advert-more{top:2px;right:2px}					.Widget #ad1000000060 .has-flash:hover a.advert-more{top:12px;right:2px}					.Widget #ad1000000060 .has-flash_hover a.advert-more{top:12px;right:2px}					#ad1000000065{margin-top:-5px}#ad100000000100{font-size:0}</style><link rel="stylesheet" href="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/webpager-std-min.css"><script data-module="webpager/im" data-src="http://s.xnimg.cn/a57348/webpager/im.js"></script><script data-module="webpager/ugc/photo webpager/ugc/video webpager/ugc/group webpager/ugc/blog" data-src="http://s.xnimg.cn/a54997/webpager/ugc.js"></script><script data-module="xn/apps/status/tiper" data-src="http://s.xnimg.cn/a51441/n/apps/status/module/webpager/tip.js"></script><script async="" src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/im.js" type="text/javascript"></script><script async="" src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/show_002.js" type="text/javascript"></script><script async="" src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/show.js" type="text/javascript"></script><script async="" src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/show_005.js" type="text/javascript"></script><script async="" src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/show_010.js" type="text/javascript"></script><script async="" src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/show_009.js" type="text/javascript"></script><script async="" src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/show_008.js" type="text/javascript"></script><script async="" src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/show_003.js" type="text/javascript"></script><script async="" src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/show_007.js" type="text/javascript"></script><script async="" src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/show_006.js" type="text/javascript"></script></head>
+<body id="pageShare" class="page-share-blog page-detail-new page-share-blog-nopic"><iframe src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/ajaxproxy.htm" style="display: none;"></iframe><iframe src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/ajaxproxy_002.htm" style="display: none;"></iframe><iframe src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/ajaxproxy_003.htm" style="display: none;"></iframe><iframe src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/ajaxproxy_004.htm" style="display: none;"></iframe><iframe src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/ajaxproxy_005.htm" style="display: none;"></iframe>		
+<div id="showNewNav" style="display:none"></div>
+<div id="dropmenuHolder" class="dropmenu-holder dropmenu-holder-new rr">
+<div id="accountDropDownMenu" class="menu-dropdown" style="display: none">
+<div class="menu-dropdown-border">
+<div class="account-menu">
+<div class="accounts" id="otherAccount" style="display:none"></div>
+<div class="optionmenu options">
+<ul>
+<li><a class="optionprivacy" href="http://safe.renren.com/">帐户设置</a></li>
+<li><a href="http://i.renren.com/" class="optionvip">VIP中心</a></li>
+<li><a href="http://pay.renren.com/" class="optionpay">充值中心</a></li></ul>
+</div><div class="optionsupport"><a href="http://help.renren.com/helpcenter">联系客服</a></div>
+<a accesskey="0" href="http://www.renren.com/Logout.do?requesttoken=-2084564119" class="logout">退出</a>
+</div>
+</div>
+</div>
+<div id="appsMenuPro" class="menu-dropdown" style="position: absolute; display: block; z-index: 10001; left: -9999px; top: -9999px; "></div><div style="position: absolute; z-index: 10001; left: -9999px; top: -9999px; display: block; width: 338px;"><div class=" m-editor"></div></div></div>
+<div class="site-nav-wrapper">
+<div id="navBar" class="site-nav fixed">
+<div id="navigation-for-buddylist">
+<div class="navigation-wrapper">
+<div class="navigation navigation-new clearfix"><div id="logo2"><h1><a href="http://www.renren.com/" title="人人网 renren.com - 人人网校内是一个真实的社交网络，联系朋友，一起玩游戏"><img alt="人人网 renren.com - 人人网校内是一个真实的社交网络，联系朋友，一起玩游戏" title="人人网 renren.com - 人人网校内是一个真实的社交网络，联系朋友，一起玩游戏" src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/logo.png" height="31" width="160"></a></h1></div><div class="nav-body clearfix">
+<div class="nav-main"><div class="menu">
+<div class="menu-title">
+<a accesskey="1" href="http://www.renren.com/home?id=308721944"><span class="menu-title-text" stats="V6Hd_home">首页</span></a></div>
+</div><div class="menu">
+<div id="profileMenuActive" class="menu-title"><a id="showProfileMenu" accesskey="2" href="http://www.renren.com/profile.do?id=308721944"><span stats="V6Hd_Profile" class="menu-title-text">个人主页</span><span class="nav-drop-menu-btn"></span></a></div>
+</div>
+<div class="menu"><div class="menu-title" id="friendMenuActive"><a id="showFriendMenu" accesskey="3" href="http://friend.renren.com/myfriendlistx.do"><span class="menu-title-text" stats="V6Hd_frd">好友</span></a></div>
+</div>							
+<div class="menu">
+<div class="menu-title" id="showAppMenu">
+<a href="http://app.renren.com/?origin=40182" target="_blank"><span class="menu-title-text">应用</span><span class="nav-drop-menu-btn"></span>
+</a>
+</div>
+</div>											 </div><div class="nav-other">
+<div id="navMessage">
+<span class="remind" title="提醒">
+<a href="#nogo" onclick="return false;" hidefocus="true">&nbsp;</a>
+<i style="display: none;"><u><b>&nbsp;</b><var>0</var></u><em>&nbsp;</em></i></span>
+<span class="apply" title="请求">
+<a href="#nogo" onclick="return false;" hidefocus="true">&nbsp;</a>
+<i style="display: none;"><u><b>&nbsp;</b><var>0</var></u><em>&nbsp;</em></i></span>
+<span class="notice" title="通知">
+<a href="#nogo" onclick="return false;" hidefocus="true">&nbsp;</a>
+<i style="display: none;"><u><b>&nbsp;</b><var>0</var></u><em>&nbsp;</em></i></span>
+</div>
+<div id="navSearch_new" class="navSearch">
+<input stats="Hd_sInput" maxlength="100" id="navSearchInput" class="navSearchInput" accesskey="/" name="q" defaultval="找人、视频、日志、照片" value="找人、视频、日志、照片" tabindex="1" autocomplete="off" type="text">
+<a href="javascript:;" id="searchBtnAC" class="searchBtnAC">搜索</a>
+</div><div class="menu account-action" id="accountMenu">
+<div class="menu-title"><a href="#" onclick="return false;">帐号</a></div>
+</div></div>
+</div>
+</div>
+<div class="nav-drop-menu-holder" id="navDropMenuHolder"><div class="nav-drop-menu nav-drop-menu-profile" id="navProfileDropMenu"><a class="nav-drop-menu-item" href="http://i.renren.com/store/view/home?wc=10000"><img src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/Vipdraw.gif" class="icon"> 装扮主页</a>
+<a class="nav-drop-menu-item" href="http://www.renren.com/profile.do?id=308721944&amp;v=info&amp;act=edit"><img src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/account.gif" class="icon"> 修改资料</a></div>
+<div class="nav-app-drop-menu nav-app-drop-menu-a" id="appsMenuWrap"></div></div>
+</div>
+</div>
+</div>
+</div><div id="container-for-buddylist">
+
+<div class="full-page-holder">
+<div class="full-page clearfix"><div class="pagemain">
+<div class="page-titletabs clearfix">
+<ul class="nav-tabs Third">
+<li class="title-name title-share"><a href="http://share.renren.com/share/hot"><span>分享首页</span></a></li>
+<li class="angleright"></li>
+<li><a href="http://www.renren.com/profile.do?id=336924841" namecard="336924841">
+<span>唐冬陶</span>
+</a></li>
+<li class="angleright"></li>
+<li><a href="http://share.renren.com/share/336924841"><span>唐冬陶的分享</span></a>
+</li>
+<li class="angleright"></li>
+<li><strong>当前分享</strong></li>
+</ul></div>
+<div class="share-home share-home2 terminal">
+<!-- 转发链 -->
+<div style="position: relative; left: 0px;" id="shareChainBox" class="share-chain-box">
+<div class="share-chain-pad">
+<div id="shareChainMain" class="share-chain-main clearfix">
+<a class="avatar float-left" title="唐冬陶" target="_blank" namecard="336924841" href="http://www.renren.com/336924841"> <img src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/h_tiny_UG1f_20b10001ff4f2f74.jpg" alt="唐冬陶" class="avatar" height="30" width="30"></a>
+<p class="float-left share-chain-forward"><a target="_blank" namecard="336924841" href="http://www.renren.com/336924841" title="唐冬陶">唐冬陶</a><span>:so young... //</span><a href="http://www.renren.com/286708038" namecard="286708038" target="_blank">傅凯迪</a><span>:好喜欢这孩子写暗恋的语气……虽然这辈子姐估计和暗恋这两个字就没什么关系//</span><a href="http://www.renren.com/251592776" namecard="251592776" target="_blank">那弘晓</a><span>:才知道啥是小清新，跪求大学毕业的各位就别老黄瓜刷绿漆了。。。这暗恋的小腻文儿写的，四中今年的文科小状元果然不一般啊~//</span><a href="http://www.renren.com/232123855" namecard="232123855" target="_blank">何天天</a><span>:啧……文科状元//</span><a href="http://www.renren.com/242649387" namecard="242649387" target="_blank">李晓溪</a><span>:这样的单恋和所有的小情绪，过了这个年纪就再不会有了 珍惜吧//杨云飞:很有前途的...</span><span class="share-chain-cover"> <a id="shareChainBtn" href="javascript:;">展开全部</a> <span class="arr-top-more"></span>
+</span></p>
+<span class="share-chain-cover"> <a id="shareChainBtn" href="javascript:;">展开全部</a> <span class="arr-top-more"></span>
+</span>
+</div>
+</div>
+<span class="arr-top-out">◆<span class="arr-top-in">◆</span></span>
+</div><div class=" terminal-blog clearfix">
+<div class="share-newacts">
+<a class="share-btn" onclick="detailLog('336924841', '16020765725', '01030320100', '1')" href="#nogo">
+<span class="icon-share share_new" data-share="{stype:'create_share_sysn',id:16020765725,owner:336924841,host:336924841,top:30, shfrom: '01030320300'}">分享</span></a>
+</div><h3 class="title-article">
+<strong>论我的脑袋是如何被毛驴们踩过的</strong> 
+</h3>
+<div class="text-article">
+<div class="content-body" id="shareBody">
+
+<p>日子很短，455天。</p><p>直至在今天我站在结点处向从前张望，还是不能解释冬天的心动感。不过不着急，在之后那些等待的日子里我已然慢慢编织着属于你的光亮。</p><p>我很感激你答应的我的每一个要求，当你和我交谈时你的眼神总是认真的。</p><p>也慢慢理解你说的不对等。</p><p>不过我可以讲完这个故事。</p><p>&nbsp;</p><p>&nbsp;</p><p>1.</p><p>我是一只个子矮长得不是特别丑的名不副实的女学霸，智商大致与情商成相反数。有过一次从初三开始持续了两年的手都没拉过的情感经历，习惯被别人喜欢。</p><p>初中日子很闲，于是在每日中午一小时的八卦中从闺蜜那里扒拉出了许多她喜欢多年的男生的事情。在四中、人很帅、英语好，“是一个名副其实的男学霸（或者那时还木有发明这个词？）啊”。我夸奖她有眼光，以及祝愿在一起…</p><p>被四中录了以后我想无论如何要见到这位传说中很帅的林学霸。于是看到分班名单的那天简直欢欣鼓舞。报到时记住了这位林学霸的座位，在老路说第一个“扯淡”时回头瞥了一眼……</p><p>放学第一件事是打电话给闺蜜问她她脑袋是被一队毛驴踩过了么。</p><p>&nbsp;</p><p>一次应闺蜜要求偷拍一张林学霸的照片，于是我拿着手机走到学霸面前问他你能笑一下我给你拍张照片吗有人想要。导致闺蜜一个月没理我。</p><p>其实我还是用像素极低的手机拍了一张他在打乒乓球的，躲在拐角处枝杈伸出来的那棵柏树（？）下面。只能看到一个白点，以及秋天晚上刮起来的风。</p><p>后来很多次我站在相同的地方，能听到打乒乓球的人里面他的声音。真正拿着单反时，却少了向前迈一步的勇气。</p><p>&nbsp;</p><p>&nbsp;</p><p>2.</p><p>高二进入13班是这3年最幸运的事情，生活中有新的朋友，以及张恩（！！！！）。但是总感觉开心的背后有一个等量的黑洞。</p><p>黑洞大概是随着你的短信一点点消解的。你跟我说你的困惑、8班的事情以及其实一点也不难看的考试成绩。每个问题我都会很认真的想。你发的很勤，我发现再有人可以聆听我的生活，于是我很信任你。</p><p>至于什么时候变成喜欢的我也解释不清。何况我很相信一个人不会平白无故地突然和自己发短信，且第一次说“我昨天晚上梦见你了”。</p><p>&nbsp;</p><p>晚上熄灯后就把手机静音盯着屏幕等你的短信，后来改成一边背政治一边等，可以耗两个小时，收获几次被宿管王赞扬“热爱学习”的违纪。</p><p>&nbsp;</p><p>2012年3月28日22:20左右我表白来着，你好像以为我在开玩笑。虽然我确实是用“呵呵”两字开头的。</p><p>回忆到这里我大致看到第一头驴从我脑壳上踏过的痕迹，当然此处也为以后我的表白们埋下伏笔。</p><p>&nbsp;</p><p>&nbsp;</p><p>3.</p><p>表白后没几天你又像没事人似的给我发短信，于是我就当你忘了再也没提起。</p><p>历史老师让每人准备2套教材，于是我借了套你的，把自己的书送了出去。所谓的发情与学习两不误。</p><p>那天晚上好像是说为什么原来在8班的时候不快乐，你说你们太复杂而我太专注。怎么说服你相信有简单而又美好的很纯粹的地方呢？于是我想到我的风景。</p><p>是沿着综合楼的外楼梯上到5层的玻璃房子一样的地方，不开心时会到那里想事情，考前会去背政治。可以看到房顶上的鸽子、整个校园以及对面上自习的学霸们。就是一个很安静的地方，当然只带我很喜欢的人去过。</p><p>于是我说带你去看一个很美好的东西吧，周一晚自习课间的时候。</p><p>第二天统练完了以后你发短信问我去看什么啊，好奇心真强像孩子一样。突然你说</p><p>--要是我说我只希望和你做朋友你不会骂我吧。</p><p>--……</p><p>--恩…那你认为我会有喜欢的人么？</p><p>--你想告诉我么？</p><p>--有…你别生气</p><p>彼时我正拉着很沉的箱子过马路，看见短信猛然停下来差点被车撞死。</p><p>--我认识吗？</p><p>--你肯定认识。我上课去了啊bye</p><p>高一的时候我列过长长一条单子是我这辈子不会做的2B事情，其中之一是不会在地铁上当众哭。没想到这么快就破了戒。</p><p>后来才发现我从没正面问过你这个问题，一定是另一头驴从我脑顶上踩过去了。</p><p>&nbsp;</p><p>&nbsp;</p><p>4.</p><p>看风景时你已经忘了周五奇葩的对话，于是我也不必说看着你笑有多难。记得最深的是回来上楼梯时我突然转过头来问你：“是春哥么？”</p><p>你看也不看我说了一句“你怎么猜她呢”径自以我跟不上的速度回8班关上门。</p><p>我虽然脑袋被驴踩过了，但又不是傻子。</p><p>&nbsp;</p><p>于是我开始漫长的学习、偷窥、睡觉三点一线的生活。在篮赛偷窥在日本偷窥上网找SK视频偷窥在北大偷窥，以及跟固定的几个人倾诉呈现花痴状直至遭到养羊的暴打。从5月到10月。</p><p>&nbsp;</p><p>&nbsp;</p><p>5．那个阳光明媚的正午体活课身边的维祎姐姐给我普及8班八卦说春哥好像和yao很好，然后她一脸惊恐地看着我说你怎么突然笑得那么high啊…</p><p>&nbsp;</p><p>于是光棍节前一天我问了憋了许久的问题。</p><p>--你明天用过节么？</p><p>--用，真的用…</p><p>第一次在光棍节时觉得生活如此美好。</p><p>&nbsp;</p><p>&nbsp;</p><p>6.</p><p>很开心地发现你发的短信又多起来，虽然主题十分一致：春哥今天不回家/春哥喜欢睡懒觉/春哥很任性的/春哥不理我你帮我看一下她睡着了没。</p><p>不过没关系只要你想跟我说话就好。我不想听这些也没关系，我已经不跟春哥一个宿舍也没关系，我跟春哥一点也不熟也没关系。如果能帮上你我就开心了。</p><p>&nbsp;</p><p>一天实在没忍住说我一直喜欢你你知道吧。后来想到春哥刚不理你我说这样的话有些太不合时宜，很内疚。</p><p>&nbsp;</p><p>不过内疚感没持续多久。第二天晚上你又发短信来了。</p><p>--你今晚住宿么？</p><p>--春哥不回我短信，好像生气了，能帮我问问为什么吗。-</p><p>--不住…呃，帮你问一下</p><p>于是我继续脑袋被驴踢。</p><p>--春哥能麻烦你个事吗？</p><p>--恩~</p><p>--恩…林想知道你为什么不高兴。</p><p>--什么人啊…米有啊…</p><p>--她怎么说？</p><p>--她说没有不开心啊…</p><p>--不行，你让她回我短信。</p><p>--对不起，我知道这样对你很不好</p><p>--（给春哥）呃，他说他特别想让你回短信…</p><p>--素质啊，不想回。兔兔还是你跟他聊吧~</p><p>--（给春哥）唔好吧不过他好像真的很伤心的样子…</p><p>--（给…）她说她不想回。</p><p>--现在你知道她对我是什么样了吧。</p><p>--麻烦你了，晚安了。</p><p>--你貌似需要倾诉的样子…</p><p>原来你是真的需要倾诉。具体的话有损你一向猥琐的形象就不往上搁了。你说很喜欢春哥，喜欢和她在一起的感觉。很安静，很美好。</p><p>我不会安慰人，只能把我所能想到的所有的话都打上去。你说不太想和别人说这些，那我猝不及防地发现你有vulnerable的一遍是应该感激你给我的信任么。我不知道你真会那么伤心，不过也相信就算是和春哥你也会最终修补好关系的。</p><p>&nbsp;</p><p>而且事实证明第二天你们就和好了。</p><p>&nbsp;</p><p>&nbsp;</p><p>7.</p><p>平安夜那天我约你到看风景的地方，给你听了我最喜欢的coldplay的christmas lights，你没有听完。我让你看着我，然后只问了一个问题——你是不是特别肯定，肯定不会喜欢我？</p><p>--这个嘛…怎么说呢…现在这样不是挺好的么？就像在平安夜你约我到这样的地方看风景，我也不会拒绝。在高中大家都还处理不好，到大学再说吧。比如我考北大、你也考北大，到时候在一起也说不定。我可以把你当作所有女生朋友里最好的啊。</p><p>还作补充一样摸了一下我的头。</p><p>你根本就没有回答我的问题。</p><p>好吧，你现在不愿意想，我等。半年多我已经坚持下来了，再有等长的时间有什么不可以。我可以更努力，成为一名真学霸，因为你说将来在北大还有可能。为了未来的某一天能够自信地站在你面前被你所欣赏的自己，有一天我会good enough。</p><p>&nbsp;</p><p>&nbsp;</p><p>8.</p><p>进入高三下你猛然成为秒掉高老师的学神。于是我开始害怕，害怕被你甩得很远，疯狂地写总结刷题，那两个月从来没有如此想当过年级第一。终于在一模时狠狠折了一次。</p><p>还是在看风景的地方我跟你吐槽惨淡的文综成绩，而你说“你就想万一真考不上大学也没什么啊，你看许多成功人士也都是没上过大学的啊…”</p><p>&nbsp;</p><p>在考完同样惨淡的海淀一模的周五我让你答应我一件事。</p><p>--过几天跟我说“你一定要超了圆姐！！”要很认真地说</p><p>--哦好吧 怎么给自己那么大压力</p><p>--需要更大动力嘛</p><p>--好吧 反正我觉得为了这点分没必要</p><p>--我有我的理由</p><p>--好</p><p>我的理由大概就是强烈的不存在感和不安全感。其实跟圆姐没太大关系，只是对于一个更好的我呢，也许你的感觉会存在不确定性。我不知道自己是在找借口更努力学习呢还是找借口不去从我编织的幻想中走出来。至少我的确在迷茫后更拼命了。</p><p>&nbsp;</p><p>&nbsp;</p><p>9.</p><p>考二模时大致是《致青春》刚刚上映的时候。考前一天问你考完去看场电影怎么样，你竟然同意了。</p><p>有一种恍惚的感觉，于是带着这种感觉去考二模，看到小确幸的作文题竟然写了暗恋——估计引发了年年的某种共鸣给了个不低的分——大概是高中三年唯一一次写得那么真实。</p><p>考完回家花了半个晚上熬焦糖做饼干，从很久之前一直想看你吃一块我做的饼干，不过从来只是臆想而已。</p><p>二模还不错，于是带着快乐的心情翘了下午自习坐地铁去大悦城。看到你站在地铁口等我，很开心。因为不论做什么事，从来都是我等你。</p><p>观
+《致青春》的感受，怎么说，我觉得我的青春大概不会是那样的。不是说只有长得好看的人才有青春么…不过郑微疯狂追陈孝正就算他不搭理她也死心塌地在他教室
+外等他在雨中淋着等他还是有一点点共鸣的，怎么说也有一些insight…不过还很庆幸在看电影前把剧情通读了一遍，否则哭了可不太好。</p><p>得出结论是以后一定不能和自己喜欢而对方不喜欢自己的人看电影，135分钟都保持同一个坐姿，不敢向右看一眼，比背政治还累。</p><p>&nbsp;</p><p>&nbsp;</p><p>10.</p><p>向前倒一点点说一下我送给你的东西。</p><p>秋天，就是在刚刚知道你不和春哥在一起的十月，我送给你一片捡到的很红的枫叶。不知道你有木有留下来。</p><p>同样是十月，葡萄变成白菜价的时候我研磨碎了很多很多，和砂糖混在一起，每天搅拌一次，七天之后过滤，倒在玻璃瓶中就慢慢由粉色的葡萄汁变成深色的酒了。半年后给你作生日礼物倒在一个小瓶里，你尝了，我很开心。</p><p>以
+及我很信任的给养羊讲而被她当作笑料传颂了许久的花瓣们。春天我的习惯之一是捡花瓣，而送给你的目的也很简单，是想当毕业礼物来着，就想让你记住有过我，
+在某个春天用每一片细碎的花瓣说出我喜欢你。从三月初开的迎春开始收集，还玫瑰、山茶花、海棠、石榴花以及不同颜色的桃花。每周捡花瓣的那一个小时我可以
+扣上耳机，把自己沉入到一个阳光很明媚的很单纯的世界。我把它们放在盒子里摆成整齐的一排在阳光下晒着，房间变得很香。</p><p>毕业前一天把纸一样薄的花瓣一次倒入玻璃瓶子里，分6层不同的颜色。别人说很漂亮像彩虹一样。</p><p>&nbsp;</p><p>&nbsp;</p><p>11.</p><p>毕业那天我穿了唯一一条大裙子，原因是去年夏天你看到我的超短裤后诧异不已说你以为我是穿长及脚踝的裙子的人。</p><p>只是想站在你面前时你不会再叫我小朋友或者用摸我头的方式敷衍我，希望你注意，我不是那个别人用“萌”来形容的女生，因为你是很少的几个可以跟我深入谈问题的人。</p><p>中午时我把你拽到楼梯拐角问我其实早该问的问题。我问上了大学之后，是不是有可能真的在一起。</p><p>你大概也知道这次不能像以往一样绕一大圈把我带跑了。虽然每次不论你说什么，我都会顺着你的话题，早已打好的腹稿也七零八落。</p><p>你说要是需要肯定的答案的话，就是不能吧。你很喜欢我，当作一个朋友一样喜欢，可以是最好的，因为可以和我聊一些比较深的话题，互相了解很多。但想要转化成另一种感觉恐怕不可能。</p><p>本来曲悦还自告奋勇地写了篇充盈着复杂骂人句式的纸条，打算让我在你说不以后一板一眼地读给你听。不过我还是选择硬把花瓣塞到你手里后跑掉了。</p><p>&nbsp;</p><p>还记得我看着你很久，只说出一句：可是…我喜欢你…很久a</p><p>你说：我知道，可是这种事情有什么对等可言啊。</p><p>你说的话总是很对。</p><p>&nbsp;</p><p>那天本来想拿着单反走到你面前说傻X笑一个然后按下快门迅速消失，只是等我在看风景的地方哭完了，四中所有的灯都灭了。</p><p>&nbsp;</p><p>&nbsp;</p><p>12.</p><p>我以为故事就这样完了。没想到5月31日抱着最后一摞书走到楼梯拐角时碰到李珅同学抱着8班没人要的花花草草们下楼，发现我的花瓣倒扣在一个花瓶上。</p><p>于是我抽出来那个轻飘飘的瓶子从三楼直接扔到水泥地上，看着地上粉红鹅黄的一摊我知道自己心里的什么东西碎掉了。</p><p>&nbsp;</p><p>有
+一些话你还是说错了的，比如你说你和我互相之间了解很多。你对我大部分时间是向外排挤的，当我想了解真正的你，生活中的你时你总是把话题向别的方向转；而
+你只是强化了你脑海中对我的认识而已，我不是一个清新细胞泛滥的诗词不离手的文科生或者一只软软的卖萌的从来不得罪别人的学霸。我以为在一年半以后你至少
+会知道会尊重那些对我而言极为重要的东西。你的很多话我不敢再相信。</p><p>&nbsp;</p><p>&nbsp;</p><p>13.</p><p>最后这次也没再哭。</p><p>告
+诉自己不能再伤心竟然也没再想。高考那几天前所未有地专注。只是当英语考试结束时撑着一把伞走在去地铁的路上雨滴突然变成像直接泼下来的水，看着人行道上
+的人们匆忙着奔跑向邻近的房檐下突然感觉心里压抑许久的情感爆发出来，像这雨一样。我停下来看着四周，不清楚自己身在何处。</p><p>&nbsp;</p><p>发现喜欢你就和准备高考的过程很像。用很长时间揣摩、很大精力努力，结束时却出乎意料地轻飘和草率。就在我将要以不一样的姿态，作为一个更好的自己触到结点时为之而努力的人突然drop out了。</p><p>但一切还要继续下去。</p><p>&nbsp;</p><p>&nbsp;</p><p>14.</p><p>一直想写这么一篇东西，只是一直在等一个结尾。</p><p>当所有都结束了的今天，当我一整天坐在电脑前打下这些再熟悉不过的场景，才能看清平时朋友们调侃我的贱样傻气中二诸如此类的情感特征。但我还是需要把这些都写下来。</p><p>如果你在看，不用担心，这里没有任何虚构夸大的情节。事实就是，你说过的每句话、发过的每个信息、与你的每次也许是不经意的相遇，只要是与你有关，我都记得。</p><p>&nbsp;</p><p>&nbsp;</p><p>15.</p><p>我的爱情观？</p><p>也许是三毛看多了的另一个副作用，我想每一次经历，即使是单恋，也可以像她一样。</p><p>Nono不是我平时瞎说的西班牙大叔，是她在塞戈维亚的大街上狂奔只为逃避那个认识3天却似曾相识的希腊人。</p><p>我
+希望自己可以成为那样一个人，有明确的爱与恨，有胆量、能执著地坚持并追寻自己认为值得的事，可以把它抬举到与自己的生命同等的高度，无论是梦想是爱情还
+是其他。所以我有勇气一遍遍看着你的眼睛说出我对你的想法，会去问一些别人看起来很desperate的问题。我只是需要由你而来的对等的坦诚而已。</p><p>因此当你终于不再绕圈子跟我暧昧给我明确的答案时，虽然没有表现出来，我还是很感激你的诚实。</p><p>但毕竟只是第一次用力去爱别人，很多还没学会，所有的错事你都忘了吧。</p><p>&nbsp;</p><p>看完《致青春》后你说感觉自己快要把握不住青春了，感觉有些东西逝去了才会觉得很美好。</p><p>先不去揣测你在说谁了。至少我知道在今天、以至很多年后的我在想起这455天时不会因为有未言的情愫而唏嘘不已。</p><p>&nbsp;</p><p>&nbsp;</p><p>16.</p><p>5月31日那天在大家围成圈彼此爆料的时候被问了我喜欢的男生的三个特征。当时时间急说的比较短，现在重新整合了一下。林同学可以浏览一遍提高自信。</p><p>① 有很特别的眼神</p><p>② 很绅士，只要情愿可以变得很温柔</p><p>比
+如当你在他之前推开门时他会说抱歉然后伸手支持着门让你先进去；比如当你散开头发戴一个其实是用来卖萌的熊帽子时他会说刚洗完头吧小心着凉；比如当他听
+christmas 
+lights听到一半时会自觉地摘下一只耳机递给你；比如他会在跟你说完考不上大学也有出路的晚上告诉你晚安加油相信自己；比如对他来说当面拒绝一件事、
+一个人会很难会有负罪感。</p><p>由此可以推知被林同学喜欢会是一件很荣幸的事</p><p>③ 会想一些很深的问题</p><p>只要有一个比较安静的环境，认真听他说自己的想法，也许会讶异他没有他自己所说的那么浮躁。其实他是一个很踏实很现实，有很明确追求的人。也许他谈论的不是当下而是不熟悉的空间或是很远的将来，但是你能深切体会到他所谈及的问题的存在感。</p><p>如果我不是着急找他关于信仰的表述中的loophole而是再专注一些，也许会更为他的思考、责任感、热忱以及价值观感动。</p><p>总之林同学是一个比已知的情况更优秀的人。</p><p>不过有时浪漫主义一下也是可以的。</p><p>&nbsp;</p><p>&nbsp;</p><p>17.几句话</p><p>对
+许多人而言，第一个恋爱的对象就是自己。在恋爱的过程中，开始把自己美好的一面发展出来了。有时会无缘无故地站到树荫繁花下，开始想要知道生命的意义是什
+么，开始会把衣服穿得更讲究一点，走过暗恋的人面前，希望被注意到。当你在暗恋一个人时，你的生命正在转换，从中发展出完美的自我。</p><p align="right">——蒋勋《孤独六讲•情欲孤独》</p><p>&nbsp;</p><p>也许事情总是不一定能如人意的。可是，我总是在想，只要给我一段美好的回忆就够了。哪怕只有一天，一个晚上，也就应该知足了。</p><p>&nbsp;</p><p>日子绝不是白白过去的，一定有一些记忆是值得珍惜，值得收藏的。只要能留下来，就留下来了。不管是只有一次或者只有一刹那，也不管是在我知道的人还是不知道的人心里。</p><p>&nbsp;</p><p>并不是夜夜都有那样一轮满月的，也并不是人人都能遇到那样一轮满月的。青春的美丽与珍贵，就在于它的无邪与无瑕，在于它的可遇而不可求，在于它的永不重回。</p><p align="right">——席慕容《前尘•昨夜•此刻》</p><p>&nbsp;<object style="visibility: visible;" id="test123" data="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/smallPlayer_20110819.swf" type="application/x-shockwave-flash" height="33" width="190"><param value="false" name="menu"><param value="noScale" name="scale"><param value="true" name="allowFullscreen"><param value="always" name="allowScriptAccess"><param value="transparent" name="wmode"><param value="songId=130830" name="flashvars"></object></p>
+</div>
+</div><div class="share-infomation">
+<div class="share-num-info clearfix">
+<div class="float-right">
+<a href="http://support.renren.com/report/share?contentId=16020765725&amp;userId=336924841&amp;origURL=http://share.renren.com/share/GetShare.do?id=16020765725%26owner=336924841" target="_blank" class="report">举报</a> </div>
+<div class="share-origin float-left"> 
+<span class="">来源：<a href="http://name.renren.com/283897031" target="_blank">张韵凝</a></span>
+</div>
+<div class="float-left">
+<span class="pipe">|</span>
+<span class="color color-gray">分享(3900)</span>
+<span class="pipe">|</span>
+<span class="color color-gray">浏览(<span id="viewCount">7164</span>)</span>
+</div>
+</div>
+<div class="share-origins">
+<div class="share-origin"><div class="share-source share-from">
+<span class="color color-gray">源地址:&nbsp;</span><a href="http://blog.renren.com/GetEntry.do?id=906684696&amp;owner=283897031" target="_blank" onclick="detailLog('336924841', '16020765725', '01030324300', '1')">http://blog.renren.com/GetEntry.do?id=906684696&amp;owner=283897031</a>
+</div>
+</div>
+</div>   
+</div>
+</div><div class="share-operations">
+<a class="share-btn" href="#mycomment" onclick="share_reply_comment(16020765725); detailLog('336924841', '16020765725', '01030321900', '1');return false;"><span class="icon-reply">评论</span></a>
+<a class="share-btn" onclick="detailLog('336924841', '16020765725', '01030322500', '1')" href="#nogo"><span class="icon-ilike" onclick="ILike.toggleUserLike()" id="ILike_UserLike_Handle">赞</span></a>    
+<a class="share-btn" href="#nogo" onclick="detailLog('336924841', '16020765725', '01030322100', '1')">
+<span class="icon-share share_new" data-share="{stype:'create_share_sysn',id:16020765725,owner:336924841,host:336924841,from:'0101030803', shfrom: '01030322300'}">分享</span>
+</a>
+</div>
+<div class="combox_share">
+<br>
+<div></div><div class="attachceilwrap attachceilwrap-nofix" data-fix="30" style="width:468px; background: #fff; z-index: 10;">
+<ul class="filter clearfix">
+<li><a class=" select" id="friendCmts" href="javascript:;" onclick="detailLog('336924841', '16020765725', '01030324600', '1')"> <span> TA的分享评论</span>
+</a></li>
+<li><a id="allCmts" href="javascript:;" onclick="detailLog('336924841', '16020765725', '01030323800', '1')"><span>全站评论</span></a>
+</li>
+</ul>
+</div>
+<div id="cmtsListCon">
+<div class="replies" id="friendCmtsList" style=""><div class="replies mincmt-diggers" id="ilike">
+<dl class="replies  with-arrow" id="ILike_Box"><dt class="digged" style="display:none;"><span id="ILike_Text_16020765725"></span></dt><dd id="ILike_Detail_16020765725" class="diggers" style="display: block;"><ul class="figures"></ul></dd></dl><dl class="replies" style="display: none"></dl>
+</div><div id="boxcont_friendCmts_16020765725"><div class="statuscmtlist statuscmtlist-large" id="friendCmts_comment_list"><div class="statuscmtitem clearfix" id="friendCmts_comment_3455399085" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');"><a class="minfriendpic" style="background-image: url(http://hdn.xnimg.cn/photos/hdn321/20110109/2145/h_tiny_UG1f_20b10001ff4f2f74.jpg)" namecard="336924841" target="_blank" title="唐冬陶" href="http://name.renren.com/336924841"></a>
+<p class="replybody">
+<a href="http://name.renren.com/336924841" namecard="336924841" target="_blank" title="唐冬陶">唐冬陶</a>:
+<span class="replycontent">so young...</span>
+</p>
+<p class="replyinfo clearfix">
+<span class="float-right"><a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=336924841&amp;contentId=3455399085&amp;userId=336924841&amp;pid=16020765725&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16020765725%26owner%3D336924841" class="reply-report">举报</a></span>                  <span class="time">2013-06-25 14:47</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455399085', 'rid':'16020765725', 'uid':'308721944', 'oid':'336924841', 'roid':'336924841', 'name':'唐冬陶', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030322700', '1')"> 赞</a>
+|
+<a class="btn-reply" onclick="share_reply_comment(16020765725, 336924841, '唐冬陶', 3455399085);detailLog('336924841', '16020765725', '01030322900', '1');return false" href="#nogo">回复</a></span>
+</p>
+</div>	
+</div>
+</div>
+</div>
+<div class="replies" id="allCmtsList" style="display: none"><div id="boxcont_allCmts_16020765725">
+<div id="showMore_16020765725" class="statuscmtitem statuscmtitem-small">
+<a href="javascript:" onclick="share_show_more_comments(16020765725, 336924841, 'allCmts', false)">显示较早之前的评论</a>
+<span id="allCmts_tempLoading_16020765725" style="visibility:hidden">加载中&nbsp;<img src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/indicator_blue_small.gif"></span>        
+</div><div class="statuscmtlist statuscmtlist-large" id="allCmts_comment_list"><div class="statuscmtitem clearfix" id="allCmts_comment_3455328223" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn521/20121219/1055/h_tiny_5ukC_03dd000003ef1376.jpg)" namecard="271121719" target="_blank" title="孙婧" href="http://name.renren.com/271121719"></a>
+<p class="replybody">
+<a href="http://name.renren.com/271121719" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="271121719" target="_blank" title="孙婧">孙婧</a>:
+<span class="replycontent">回复冯宇婷：坑爹也。你在学GRE？</span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/267858800/16018891916#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=267858800&amp;contentId=3455328223&amp;userId=271121719&amp;pid=16018891916&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16018891916%26owner%3D271121719" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 13:53</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455328223', 'rid':'16020765725', 'uid':'308721944', 'oid':'271121719', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455329322" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn321/20130408/1335/h_tiny_RGM4_598800000a03111a.jpg)" namecard="267858800" target="_blank" title="冯宇婷" href="http://name.renren.com/267858800"></a>
+<p class="replybody">
+<a href="http://name.renren.com/267858800" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="267858800" target="_blank" title="冯宇婷">冯宇婷</a>:
+<span class="replycontent">回复孙婧：GMAT! 你要学gre？快来上海！咱们做伴儿！</span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/267858800/16018891916#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=267858800&amp;contentId=3455329322&amp;userId=267858800&amp;pid=16018891916&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16018891916%26owner%3D267858800" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 13:54</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455329322', 'rid':'16020765725', 'uid':'308721944', 'oid':'267858800', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455329928" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn521/20121219/1055/h_tiny_5ukC_03dd000003ef1376.jpg)" namecard="271121719" target="_blank" title="孙婧" href="http://name.renren.com/271121719"></a>
+<p class="replybody">
+<a href="http://name.renren.com/271121719" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="271121719" target="_blank" title="孙婧">孙婧</a>:
+<span class="replycontent">回复冯宇婷：我不学。。。我化学都学不过来了</span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/267858800/16018891916#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=267858800&amp;contentId=3455329928&amp;userId=271121719&amp;pid=16018891916&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16018891916%26owner%3D271121719" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 13:55</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455329928', 'rid':'16020765725', 'uid':'308721944', 'oid':'271121719', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455332572" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn321/20130510/2240/h_tiny_V5GH_128f00000159111a.jpg)" namecard="436137660" target="_blank" title="王雅帆" href="http://name.renren.com/436137660"></a>
+<p class="replybody">
+<a href="http://name.renren.com/436137660" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="436137660" target="_blank" title="王雅帆">王雅帆</a>:
+<span class="replycontent">回复丁维铮:那是、、<img src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/10.gif" alt="酷"><img src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/16.gif" alt="大笑"><img src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/16.gif" alt="大笑"><img src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/16.gif" alt="大笑"></span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/436137660/16007929496#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=436137660&amp;contentId=3455332572&amp;userId=436137660&amp;pid=16007929496&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16007929496%26owner%3D436137660" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 13:57</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455332572', 'rid':'16020765725', 'uid':'308721944', 'oid':'436137660', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455373413" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn321/20130522/1430/tiny_55xX_ec4300037550113e.jpg)" namecard="270188243" target="_blank" title="腾远芳" href="http://name.renren.com/270188243"></a>
+<p class="replybody">
+<a href="http://name.renren.com/270188243" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="270188243" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">腾远芳</a>:
+<span class="replycontent">回复刘丹_Doccino: 我一定是女汉子，无法欣赏文的美并且看到无故空行就有帮她按回车的冲动....</span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/251271221/16019870445#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=251271221&amp;contentId=3455373413&amp;userId=270188243&amp;pid=16019870445&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16019870445%26owner%3D270188243" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 14:27</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455373413', 'rid':'16020765725', 'uid':'308721944', 'oid':'270188243', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455381307" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn521/20110210/1505/tiny_DwOB_139615o019118.jpg)" namecard="354092383" target="_blank" title="虞湛源" href="http://name.renren.com/354092383"></a>
+<p class="replybody">
+<a href="http://name.renren.com/354092383" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="354092383" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">虞湛源</a>:
+<span class="replycontent">回复沙一依:状元的，我看一下呗。</span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/354092383/16008817959#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=354092383&amp;contentId=3455381307&amp;userId=354092383&amp;pid=16008817959&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16008817959%26owner%3D354092383" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 14:33</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455381307', 'rid':'16020765725', 'uid':'308721944', 'oid':'354092383', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455381312" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn521/20110210/1505/tiny_DwOB_139615o019118.jpg)" namecard="354092383" target="_blank" title="虞湛源" href="http://name.renren.com/354092383"></a>
+<p class="replybody">
+<a href="http://name.renren.com/354092383" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="354092383" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">虞湛源</a>:
+<span class="replycontent">回复沙一依:状元的，我看一下呗。</span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/354092383/16020695214#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=354092383&amp;contentId=3455381312&amp;userId=354092383&amp;pid=16020695214&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16020695214%26owner%3D354092383" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 14:33</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455381312', 'rid':'16020765725', 'uid':'308721944', 'oid':'354092383', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455386251" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn121/20130530/1545/tiny_6lz7_f93b0003ca22111a.jpg)" namecard="264911870" target="_blank" title="王也" href="http://name.renren.com/264911870"></a>
+<p class="replybody">
+<a href="http://name.renren.com/264911870" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="264911870" target="_blank" title="王也">王也</a>:
+<span class="replycontent">只是你的脑袋一样被驴踢过啊右边</span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/264911870/16020714374#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=264911870&amp;contentId=3455386251&amp;userId=264911870&amp;pid=16020714374&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16020714374%26owner%3D264911870" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 14:37</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455386251', 'rid':'16020765725', 'uid':'308721944', 'oid':'264911870', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455386593" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn521/20130606/1355/tiny_EHM5_f91b00041248111a.jpg)" namecard="286708038" target="_blank" title="傅凯迪" href="http://name.renren.com/286708038"></a>
+<p class="replybody">
+<a href="http://name.renren.com/286708038" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="286708038" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">傅凯迪</a>:
+<span class="replycontent">好喜欢这孩子写暗恋的语气……虽然这辈子姐估计和暗恋这两个字就没什么关系</span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/286708038/16020715697#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=286708038&amp;contentId=3455386593&amp;userId=286708038&amp;pid=16020715697&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16020715697%26owner%3D286708038" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 14:37</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455386593', 'rid':'16020765725', 'uid':'308721944', 'oid':'286708038', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455386853" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn111/20090326/00/00/tiny_Rym9_236772o204236.jpg)" namecard="227050408" target="_blank" title="张海鸥" href="http://name.renren.com/227050408"></a>
+<p class="replybody">
+<a href="http://name.renren.com/227050408" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="227050408" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">张海鸥</a>:
+<span class="replycontent">花瓣那段真是。。。。</span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/227050408/16020716677#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=227050408&amp;contentId=3455386853&amp;userId=227050408&amp;pid=16020716677&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16020716677%26owner%3D227050408" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 14:38</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455386853', 'rid':'16020765725', 'uid':'308721944', 'oid':'227050408', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455398283" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn421/20130124/1000/tiny_zx3O_c52000000892111a.jpg)" namecard="177371357" target="_blank" title="华严" href="http://name.renren.com/177371357"></a>
+<p class="replybody">
+<a href="http://name.renren.com/177371357" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="177371357" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">华严</a>:
+<span class="replycontent">女神不用暗恋啊</span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/286708038/16020715697#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=286708038&amp;contentId=3455398283&amp;userId=177371357&amp;pid=16020715697&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16020715697%26owner%3D177371357" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 14:46</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455398283', 'rid':'16020765725', 'uid':'308721944', 'oid':'177371357', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455399085" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn321/20110109/2145/h_tiny_UG1f_20b10001ff4f2f74.jpg)" namecard="336924841" target="_blank" title="唐冬陶" href="http://name.renren.com/336924841"></a>
+<p class="replybody">
+<a href="http://name.renren.com/336924841" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="336924841" target="_blank" title="唐冬陶">唐冬陶</a>:
+<span class="replycontent">so young...</span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/336924841/16020765725#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=336924841&amp;contentId=3455399085&amp;userId=336924841&amp;pid=16020765725&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16020765725%26owner%3D336924841" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 14:47</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455399085', 'rid':'16020765725', 'uid':'308721944', 'oid':'336924841', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455405092" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn421/20130221/2205/tiny_ECVq_190d0000058f113e.jpg)" namecard="341570888" target="_blank" title="李月颜 Cynthia" href="http://name.renren.com/341570888"></a>
+<p class="replybody">
+<a href="http://name.renren.com/341570888" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="341570888" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">李月颜 Cynthia</a>:
+<span class="replycontent">回复刘旺:暂时没有发掘出我有搞百合的潜质。。。</span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/341570888/16015068734#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=341570888&amp;contentId=3455405092&amp;userId=341570888&amp;pid=16015068734&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16015068734%26owner%3D341570888" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 14:52</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455405092', 'rid':'16020765725', 'uid':'308721944', 'oid':'341570888', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455411285" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn421/20130530/1555/tiny_2DL6_ebf30003c8e0113e.jpg)" namecard="250991928" target="_blank" title="洪沁" href="http://name.renren.com/250991928"></a>
+<p class="replybody">
+<a href="http://name.renren.com/250991928" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="250991928" target="_blank" title="洪沁">洪沁</a>:
+<span class="replycontent">花瓣那个好美啊（摩拳擦掌中</span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/250991928/16020820794#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=250991928&amp;contentId=3455411285&amp;userId=250991928&amp;pid=16020820794&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16020820794%26owner%3D250991928" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 14:56</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455411285', 'rid':'16020765725', 'uid':'308721944', 'oid':'250991928', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455412030" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn521/20130606/1355/tiny_EHM5_f91b00041248111a.jpg)" namecard="286708038" target="_blank" title="傅凯迪" href="http://name.renren.com/286708038"></a>
+<p class="replybody">
+<a href="http://name.renren.com/286708038" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="286708038" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">傅凯迪</a>:
+<span class="replycontent">回复华严：一把辛酸泪啊</span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/286708038/16020715697#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=286708038&amp;contentId=3455412030&amp;userId=286708038&amp;pid=16020715697&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16020715697%26owner%3D286708038" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 14:57</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455412030', 'rid':'16020765725', 'uid':'308721944', 'oid':'286708038', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455412214" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn121/20130212/2120/h_tiny_l8lF_1309000000de113e.jpg)" namecard="288765999" target="_blank" title="张贝旎Melly" href="http://name.renren.com/288765999"></a>
+<p class="replybody">
+<a href="http://name.renren.com/288765999" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="288765999" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">张贝旎Melly</a>:
+<span class="replycontent">回复洪沁: 我也觉得花瓣那个贼好</span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/250991928/16020820794#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=250991928&amp;contentId=3455412214&amp;userId=288765999&amp;pid=16020820794&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16020820794%26owner%3D288765999" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 14:57</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455412214', 'rid':'16020765725', 'uid':'308721944', 'oid':'288765999', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455413600" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn421/20130530/1555/tiny_2DL6_ebf30003c8e0113e.jpg)" namecard="250991928" target="_blank" title="洪沁" href="http://name.renren.com/250991928"></a>
+<p class="replybody">
+<a href="http://name.renren.com/250991928" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="250991928" target="_blank" title="洪沁">洪沁</a>:
+<span class="replycontent">回复张贝旎Melly：行动力低下星人巨多礼物都是未成品……或者直接胎死腹中</span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/250991928/16020820794#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=250991928&amp;contentId=3455413600&amp;userId=250991928&amp;pid=16020820794&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16020820794%26owner%3D250991928" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 14:58</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455413600', 'rid':'16020765725', 'uid':'308721944', 'oid':'250991928', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455414072" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn121/20130212/2120/h_tiny_l8lF_1309000000de113e.jpg)" namecard="288765999" target="_blank" title="张贝旎Melly" href="http://name.renren.com/288765999"></a>
+<p class="replybody">
+<a href="http://name.renren.com/288765999" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="288765999" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">张贝旎Melly</a>:
+<span class="replycontent">回复洪沁：啧啧，你不是还写过给你男人的一篇么，写的也点赞</span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/250991928/16020820794#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=250991928&amp;contentId=3455414072&amp;userId=288765999&amp;pid=16020820794&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16020820794%26owner%3D288765999" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 14:58</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455414072', 'rid':'16020765725', 'uid':'308721944', 'oid':'288765999', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455419760" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn421/20130124/1000/tiny_zx3O_c52000000892111a.jpg)" namecard="177371357" target="_blank" title="华严" href="http://name.renren.com/177371357"></a>
+<p class="replybody">
+<a href="http://name.renren.com/177371357" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="177371357" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">华严</a>:
+<span class="replycontent">回复傅凯迪:你有啥心酸的？</span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/286708038/16020715697#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=286708038&amp;contentId=3455419760&amp;userId=177371357&amp;pid=16020715697&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16020715697%26owner%3D177371357" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 15:03</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455419760', 'rid':'16020765725', 'uid':'308721944', 'oid':'177371357', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455420765" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn521/20130606/1355/tiny_EHM5_f91b00041248111a.jpg)" namecard="286708038" target="_blank" title="傅凯迪" href="http://name.renren.com/286708038"></a>
+<p class="replybody">
+<a href="http://name.renren.com/286708038" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="286708038" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">傅凯迪</a>:
+<span class="replycontent"><a href="http://www.renren.com/g/250991928" namecard="250991928" target="_blank">@洪沁</a> 我竟然看了两遍，纪念我们都被毛驴踩过的青春</span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/286708038/16020715697#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=286708038&amp;contentId=3455420765&amp;userId=286708038&amp;pid=16020715697&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16020715697%26owner%3D286708038" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 15:04</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455420765', 'rid':'16020765725', 'uid':'308721944', 'oid':'286708038', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455423317" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn421/20130530/1555/tiny_2DL6_ebf30003c8e0113e.jpg)" namecard="250991928" target="_blank" title="洪沁" href="http://name.renren.com/250991928"></a>
+<p class="replybody">
+<a href="http://name.renren.com/250991928" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="250991928" target="_blank" title="洪沁">洪沁</a>:
+<span class="replycontent">回复傅凯迪:哈哈哈挺好的啊这种事年轻时候不做青春有缺失啊（我就是这么安慰自己的，嗯</span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/286708038/16020715697#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=286708038&amp;contentId=3455423317&amp;userId=250991928&amp;pid=16020715697&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16020715697%26owner%3D250991928" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 15:06</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455423317', 'rid':'16020765725', 'uid':'308721944', 'oid':'250991928', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455427887" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn521/20120919/2215/tiny_z5Dl_72e10000fd2a1375.jpg)" namecard="405218502" target="_blank" title="周方闻" href="http://name.renren.com/405218502"></a>
+<p class="replybody">
+<a href="http://name.renren.com/405218502" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="405218502" target="_blank" title="周方闻">周方闻</a>:
+<span class="replycontent">我就说嘛</span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/337220056/16019191612#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=337220056&amp;contentId=3455427887&amp;userId=405218502&amp;pid=16019191612&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16019191612%26owner%3D405218502" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 15:09</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455427887', 'rid':'16020765725', 'uid':'308721944', 'oid':'405218502', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455429265" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn221/20100911/1055/h_tiny_AVot_6f9e0000cf232f76.jpg)" namecard="337220056" target="_blank" title="尚雨辰" href="http://name.renren.com/337220056"></a>
+<p class="replybody">
+<a href="http://name.renren.com/337220056" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="337220056" target="_blank" title="尚雨辰">尚雨辰</a>:
+<span class="replycontent">回复周方闻: 你就说什么^_^<img src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/2.gif" alt="谄笑"></span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/337220056/16019191612#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=337220056&amp;contentId=3455429265&amp;userId=337220056&amp;pid=16019191612&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16019191612%26owner%3D337220056" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 15:10</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455429265', 'rid':'16020765725', 'uid':'308721944', 'oid':'337220056', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455432640" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn521/20130504/0010/tiny_ycM5_f9bb0002a9c6111a.jpg)" namecard="249094352" target="_blank" title="朱昱炫HFLSer" href="http://name.renren.com/249094352"></a>
+<p class="replybody">
+<a href="http://name.renren.com/249094352" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="249094352" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">朱昱炫HFLSer</a>:
+<span class="replycontent">微感动。日子很短。</span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/249094352/16020915405#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=249094352&amp;contentId=3455432640&amp;userId=249094352&amp;pid=16020915405&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16020915405%26owner%3D249094352" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 15:13</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455432640', 'rid':'16020765725', 'uid':'308721944', 'oid':'249094352', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455448686" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn521/20130603/1730/tiny_rvVK_f8db0003f625111a.jpg)" namecard="221045407" target="_blank" title="侯磊Leon" href="http://name.renren.com/221045407"></a>
+<p class="replybody">
+<a href="http://name.renren.com/221045407" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="221045407" target="_blank" title="侯磊Leon">侯磊Leon</a>:
+<span class="replycontent">那种存在感，是一致的吧</span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/221045407/16020986116#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=221045407&amp;contentId=3455448686&amp;userId=221045407&amp;pid=16020986116&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16020986116%26owner%3D221045407" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 15:26</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455448686', 'rid':'16020765725', 'uid':'308721944', 'oid':'221045407', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455453592" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn321/20130621/1720/tiny_UtKx_ec530004a427113e.jpg)" namecard="249834288" target="_blank" title="李荣莎" href="http://name.renren.com/249834288"></a>
+<p class="replybody">
+<a href="http://name.renren.com/249834288" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="249834288" target="_blank" title="李荣莎">李荣莎</a>:
+<span class="replycontent">遗忘了很久的小清新</span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/249834288/16021009098#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=249834288&amp;contentId=3455453592&amp;userId=249834288&amp;pid=16021009098&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16021009098%26owner%3D249834288" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 15:30</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455453592', 'rid':'16020765725', 'uid':'308721944', 'oid':'249834288', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455477453" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn521/20130504/1730/tiny_TkXJ_ec930002ae77113e.jpg)" namecard="282668753" target="_blank" title="沙一依" href="http://name.renren.com/282668753"></a>
+<p class="replybody">
+<a href="http://name.renren.com/282668753" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="282668753" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">沙一依</a>:
+<span class="replycontent">回复虞湛源:你也看不懂。。。</span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/354092383/16008817959#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=354092383&amp;contentId=3455477453&amp;userId=282668753&amp;pid=16008817959&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16008817959%26owner%3D282668753" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 15:48</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455477453', 'rid':'16020765725', 'uid':'308721944', 'oid':'282668753', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455479393" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn121/20130428/0335/tiny_Jvw3_ebe3000260dd113e.jpg)" namecard="340092707" target="_blank" title="芮睿" href="http://name.renren.com/340092707"></a>
+<p class="replybody">
+<a href="http://name.renren.com/340092707" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="340092707" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">芮睿</a>:
+<span class="replycontent">“我希望自己可以成为那样一个人，有明确的爱与恨，有胆量、能执著地坚持并追寻自己认为值得的事，可以把它抬举到与自己的生命同等的高度，无论是梦想是爱情还是其他。”</span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/340092707/16021110925#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=340092707&amp;contentId=3455479393&amp;userId=340092707&amp;pid=16021110925&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16021110925%26owner%3D340092707" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 15:49</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455479393', 'rid':'16020765725', 'uid':'308721944', 'oid':'340092707', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455483299" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn421/20130609/0850/h_tiny_vFBa_19d600000687111a.jpg)" namecard="476288386" target="_blank" title="喬曉俊" href="http://name.renren.com/476288386"></a>
+<p class="replybody">
+<a href="http://name.renren.com/476288386" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="476288386" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">喬曉俊</a>:
+<span class="replycontent">…… </span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/476288386/16021125956#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=476288386&amp;contentId=3455483299&amp;userId=476288386&amp;pid=16021125956&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16021125956%26owner%3D476288386" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 15:52</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455483299', 'rid':'16020765725', 'uid':'308721944', 'oid':'476288386', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div><div class="statuscmtitem clearfix" id="allCmts_comment_3455487883" onmouseover="$(this).addClass('statuscmtitem-hover');" onmouseout="$(this).delClass('statuscmtitem-hover');" data-wiki=""><a class="minfriendpic" rel="nofollow" onclick="shareLog('blog', 'click', 4)" style="background-image: url(http://hdn.xnimg.cn/photos/hdn121/20101002/2340/tiny_Ktp5_21047j019116.jpg)" namecard="331738617" target="_blank" title="王誉弼" href="http://name.renren.com/331738617"></a>
+<p class="replybody">
+<a href="http://name.renren.com/331738617" rel="nofollow" onclick="shareLog('blog', 'click', 4)" namecard="331738617" target="_blank" title="连续登录7天, 即可获得橙名特权" class="lively-user">王誉弼</a>:
+<span class="replycontent">回忆到这里我大致看到第一头驴从我脑壳上踏过的痕迹，当然此处也为以后我的表白们埋下伏笔。</span>         
+</p>
+<p class="clearfix replyinfo">
+<span class="float-right">
+<a href="http://share.renren.com/share/331738617/16021143234#friendCmts" target="_blank" class="reply-origin" onclick="detailLog('336924841', '16020765725', '01030324100', '1')">查看源评论</a>
+<span class="pipe">|</span>
+<a target="_blank" href="http://support.renren.com/report/common?type=30&amp;owner=331738617&amp;contentId=3455487883&amp;userId=331738617&amp;pid=16021143234&amp;origURL=http%3A%2F%2Fshare.renren.com%2Fshare%2FGetShare.do%3Fid%3D16021143234%26owner%3D331738617" class="reply-report">举报</a>
+</span>                  <span class="time">2013-06-25 15:56</span>
+<span class="btn-box">
+<a class="ilike_comment" comment-data="{'stype':'share','cid':'3455487883', 'rid':'16020765725', 'uid':'308721944', 'oid':'331738617', 'roid':'336924841', 'name':'', 'url':'http://blog.renren.com/share/336924841/16020765725', 'liked':false }" href="javascript:void(0)" onclick="detailLog('336924841', '16020765725', '01030324400', '1')"> 赞</a></span>
+</p>
+</div>    
+</div>
+</div>
+</div>
+</div>
+<input value="方奕楠 Edward" id="guestName" type="hidden">
+<div class="statuscmtlist statuscmtlist-large">
+<div id="ajax_msgerror" class="errors_div ajax_msgerror" style="display: none;"></div>
+<link href="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/minieditor.css" rel="stylesheet" type="text/css" media="all">
+<script type="text/javascript" src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/xn_004.js"></script>
+<div false="" class="statuscmtitem reply-adding actived">
+<form id="comment_form_16020765725" onsubmit="return false;" onkeydown="if(event.keyCode == 13 &amp;&amp; event.ctrlKey) {share_add_comment_submit(16020765725, 336924841);detailLog('336924841', '16020765725', '01030324800', '1');}">
+<span id="user_head308721944" alt="方奕楠 Edward" style="background-image: url(http://hdn.xnimg.cn/photos/hdn521/20120602/1850/tiny_HlbD_388c000062271375.jpg);" class="minfriendpic"></span>
+<textarea eicons_obj_id="4" name="comment" id="comment16020765725" class="cmtbody" placeholder="评论两句？"></textarea>
+<div id="shareVerify_16020765725" style="display:none">
+<label for="schoolInfoCode"><em>*</em>验证码:</label>
+<input tabindex="21" maxlength="5" size="5" id="shareInfoCode16020765725" name="shareInfoCode16020765725" class="inputtext validate-code" type="text"></div>
+<div class="reply-nav clearfix">
+<input id="submit_comment" name="submit_comment" value="发表评论" class="input-button" onclick="share_add_comment_submit(16020765725, 336924841);detailLog('336924841', '16020765725', '01030323100', '1')" type="button">
+<label style="margin-left:10px" class="doshare"> <input id="doShare16020765725" style="margin-right:3px" onclick="var from = this.checked ? '01030323300' : '01030323500'; detailLog('336924841', '16020765725', from, '1');" type="checkbox">同时分享给好友</label>
+<label style="margin-left:10px; float: right; line-height: 24px;"> <input id="sysnblog" value="1" style="margin-right:3px" checked="checked" onclick="var from = this.checked ? '01030325000' : '01030325200'; detailLog('336924841', '16020765725', from, '1');" type="checkbox">同时评论给原作者</label>
+<a href="#nogo" onclick="return false;" id="mentionBtn16020765725" class="mention-btn">点名</a>
+<a href="#emotion" onclick="return false;" id="addEmoBtn16020765725" class="newsfeed-emo">表情</a>	
+</div>
+<input id="repetNo" name="repetNo" value="0" type="hidden">
+<input id="replyToCommentId" name="replyToCommentId" value="0" type="hidden">
+<input id="shareId" name="shareId" value="16020765725" type="hidden">
+<input id="shareOwner" name="shareOwner" value="336924841" type="hidden">
+<input value="-2084564119" name="requestToken" type="hidden"><input value="4f8111c3" name="_rtk" type="hidden"></form>
+</div>
+<script>share_init_textarea(16020765725);</script>
+</div>
+<div class="show-more">
+<a href="#cmtsListCon" onclick="detailLog('336924841', '16020765725', '01030325500', '1')">点击全站评论，查看更多精彩 &gt;</a>
+</div></div>
+</div>
+<div style="height: 1099px;" class="share-sidebar terminal-side">
+<div class="Widget_flash">
+<div id="ad100000000069"></div>
+</div>
+<div class="more-shares">
+<div class="nav-tabs">
+<ul class="tabs">
+<li class=" selected" id="othershareTab"><a href="#nogo" onfocus="this.blur()" onclick="detailLog('336924841', '16020765725', '01030321700', '1')"> 
+TA的其它分享</a></li>
+<li id="hotshareTab"><a href="#nogo" onfocus="this.blur()" onclick="detailLog('336924841', '16020765725', '01030321300', '1')">热门分享</a>
+</li>
+</ul>
+</div>
+<div id="othersharelist" class="hot-blog-sidebar shares-list">
+<ul class="blog-list clearfix">
+<li><a title="【每天來點兒負能量】精選負能量！無碼高清大合集！zz fro..." href="http://blog.renren.com/GetEntry.do?id=907516090&amp;owner=221051921&amp;shareID=16019083568&amp;shareOwner=336924841&amp;from=otherblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320900', '1')">【每天來點兒負能量】精選負能量！無碼高清大合集！zz fro...</a>
+</li>
+<li><a title="摩西摩西。" href="http://blog.renren.com/GetEntry.do?id=907459400&amp;owner=400775763&amp;shareID=15998720723&amp;shareOwner=336924841&amp;from=otherblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320900', '1')">摩西摩西。</a>
+</li>
+<li><a title="香港：一座城的高差" href="http://blog.renren.com/GetEntry.do?id=907051635&amp;owner=288750033&amp;shareID=15975849301&amp;shareOwner=336924841&amp;from=otherblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320900', '1')">香港：一座城的高差</a>
+</li>
+<li><a title="&quot;我一直在等你一起吃饭&quot;" href="http://blog.renren.com/GetEntry.do?id=906668387&amp;owner=338963000&amp;shareID=15939346830&amp;shareOwner=336924841&amp;from=otherblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320900', '1')">"我一直在等你一起吃饭"</a>
+</li>
+<li><a title="陪伴是最长情的告白" href="http://blog.renren.com/GetEntry.do?id=905963207&amp;owner=287767093&amp;shareID=15929312611&amp;shareOwner=336924841&amp;from=otherblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320900', '1')">陪伴是最长情的告白</a>
+</li></ul>
+<div class="show-more">
+<a href="http://share.renren.com/share/336924841?shfrom=01030321500">进入更多TA的分享，查看精彩内容 &gt;</a>
+</div>
+</div><div style="display: none;" id="hotsharelist" class="hot-blog-sidebar shares-list">
+<div style="left: -240px;" id="blogListWrap" class="share-gallery">
+<ul class="blog-list clearfix">
+<li class="clearfix">
+<span class="float-right icon-share">2049</span>
+<a class="float-left" title="林志玲的眼角纹" href="http://blog.renren.com/GetEntry.do?id=906406092&amp;owner=257360839&amp;shareID=15950832046&amp;shareOwner=287286452&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">林志玲的眼角纹</a>
+</li>
+<li class="clearfix">
+<span class="float-right icon-share">3220</span>
+<a class="float-left" title="致南审" href="http://blog.renren.com/GetEntry.do?id=907372649&amp;owner=328390658&amp;shareID=15984229073&amp;shareOwner=402385140&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">致南审</a>
+</li>
+<li class="clearfix">
+<span class="float-right icon-share">1772</span>
+<a class="float-left" title="谈谈袁佳怡姑娘读过的梭罗" href="http://blog.renren.com/GetEntry.do?id=906987544&amp;owner=255864564&amp;shareID=15958922367&amp;shareOwner=432552465&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">谈谈袁佳怡姑娘读过的梭罗</a>
+</li>
+<li class="clearfix">
+<span class="float-right icon-share">2154</span>
+<a class="float-left" title="肉饼店吃肉饼" href="http://blog.renren.com/GetEntry.do?id=846956685&amp;owner=307078586&amp;shareID=15973602237&amp;shareOwner=240855855&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">肉饼店吃肉饼</a>
+</li>
+<li class="clearfix">
+<span class="float-right icon-share">6938</span>
+<a class="float-left" title="苦难有什么价值？" href="http://blog.renren.com/GetEntry.do?id=907215193&amp;owner=402385140&amp;shareID=15973788510&amp;shareOwner=449284868&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">苦难有什么价值？</a>
+</li></ul>
+<ul class="blog-list clearfix">
+<li class="clearfix">
+<span class="float-right icon-share">3697</span>
+<a class="float-left" title="江湖厨房" href="http://blog.renren.com/GetEntry.do?id=907050022&amp;owner=249693315&amp;shareID=15964303357&amp;shareOwner=287286115&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">江湖厨房</a>
+</li>
+<li class="clearfix">
+<span class="float-right icon-share">1199</span>
+<a class="float-left" title="妻子倒车撞死丈夫 自己头探窗外被夹致死(图)" href="http://blog.renren.com/GetEntry.do?id=907446593&amp;owner=402385140&amp;shareID=15988631399&amp;shareOwner=263353981&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">
+妻子倒车撞死丈夫 自己头...</a>
+</li>
+<li class="clearfix">
+<span class="float-right icon-share">7113</span>
+<a class="float-left" title="五问袁佳怡同学" href="http://blog.renren.com/GetEntry.do?id=906975982&amp;owner=293753300&amp;shareID=15958924566&amp;shareOwner=263353981&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">五问袁佳怡同学</a>
+</li>
+<li class="clearfix">
+<span class="float-right icon-share">19109</span>
+<a class="float-left" title="愿好姑娘们光芒万丈" href="http://blog.renren.com/GetEntry.do?id=907012899&amp;owner=268453662&amp;shareID=15972618757&amp;shareOwner=305971774&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">愿好姑娘们光芒万丈</a>
+</li>
+<li class="clearfix">
+<span class="float-right icon-share">1958</span>
+<a class="float-left" title="微博谣言是如何传播的------------揭秘病毒式传播的..." href="http://blog.renren.com/GetEntry.do?id=907277554&amp;owner=230471237&amp;shareID=15979117213&amp;shareOwner=367614280&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">
+微博谣言是如何传播的--...</a>
+</li></ul>
+<ul class="blog-list clearfix">
+<li class="clearfix">
+<span class="float-right icon-share">2397</span>
+<a class="float-left" title="为什么 2012-13 赛季 NBA 总决赛第六场 热火 1..." href="http://blog.renren.com/GetEntry.do?id=907394340&amp;owner=432535883&amp;shareID=15985438889&amp;shareOwner=432535883&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">
+为什么 2012-13 ...</a>
+</li>
+<li class="clearfix">
+<span class="float-right icon-share">9978</span>
+<a class="float-left" title="谁唱了KTV前50首歌" href="http://blog.renren.com/GetEntry.do?id=907237417&amp;owner=330695953&amp;shareID=15978737468&amp;shareOwner=11611&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">谁唱了KTV前50首歌</a>
+</li>
+<li class="clearfix">
+<span class="float-right icon-share">3898</span>
+<a class="float-left" title="渣男和玻璃心" href="http://blog.renren.com/GetEntry.do?id=907666878&amp;owner=351332719&amp;shareID=16014040097&amp;shareOwner=289135194&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">渣男和玻璃心</a>
+</li>
+<li class="clearfix">
+<span class="float-right icon-share">3141</span>
+<a class="float-left" title="看模电的小女孩" href="http://blog.renren.com/GetEntry.do?id=907153254&amp;owner=330052325&amp;shareID=15973261439&amp;shareOwner=369783788&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">看模电的小女孩</a>
+</li>
+<li class="clearfix">
+<span class="float-right icon-share">4553</span>
+<a class="float-left" title="哥哥" href="http://blog.renren.com/GetEntry.do?id=865029009&amp;owner=307078586&amp;shareID=15973293219&amp;shareOwner=404478938&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">哥哥</a>
+</li></ul>
+</div>
+<div class="trigger">
+<a href="#nogo" class=" " onclick="detailLog('336924841', '16020765725', '01030325400', '1')">●</a>
+<a class="  active" href="#nogo" onclick="detailLog('336924841', '16020765725', '01030325400', '1')">●</a>
+<a class=" " href="#nogo" onclick="detailLog('336924841', '16020765725', '01030325400', '1')">●</a>
+</div>
+<div class="show-more">
+<a href="http://share.renren.com/share/hot" onclick="detailLog('336924841', '16020765725', '01030321500', '1')">进入分享首页，查看精彩内容&gt;</a>
+</div>
+</div>
+</div>
+<div id="relative-content-con"></div><div class="Widget">
+<div id="ad100000000070"></div>
+<div id="ad100000000071"></div>
+</div>
+<p class="share-corporation-side share-corporation-new">
+<a href="http://share.renren.com/share/help/corporation" target="_blank">如何给网站添加快捷分享</a>
+</p>
+<!-- 推荐位 -->
+<div class="side-item pymk " style="display: block;" id="pymk">
+<div class="side-item-header pymk-header clearfix">
+<h4>推荐</h4>
+<div class="option">
+<a href="javascript:;" class="pager-back pager-back-disable" onclick="XN.app.pymk.pagerBack();" title="上一页"></a>
+<a href="javascript:;" class="pager-forward" onclick="XN.app.pymk.pagerForward();" title="下一页"></a>
+<a href="http://friend.renren.com/myfriendlistx.do?portal=4#item_1" class="more"></a>
+</div>
+</div>
+<div class="side-item-body pymk-body clearfix">
+<ul class="recognize" id="commonFriends">
+<div class="group"><li data-index="0" class="recommend-someone clearfix" id="commonFriend_450979993" uid="450979993" onmouseover="Sizzle('a.shut-new',this)[0].style.display='block'" onmouseout="Sizzle('a.shut-new',this)[0].style.display='none'"><a logtype="cancle" uid="450979993" class="shut-new x-to-hide" href="javascript:;" title="不再推荐此人" onclick="XN.app.pymk.remove('450979993');return false;"></a><span class="headpichold"><a logtype="imgToPrf" uid="450979993" target="_blank" href="http://www.renren.com/profile.do?id=450979993"><img logtype="imgToPrf" uid="450979993" src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/h_tiny_Wnwh_2cdf000008bd111a.jpg" onload="clipImage(this)" height="50" width="50"></a></span><span><a logtype="nameToPrf" uid="450979993" class="name" target="_blank" href="http://www.renren.com/profile.do?id=450979993" title="李盈熹Katherine">李盈熹Katherine</a><p><span class="pymk-type">32个共同好友</span></p><a logtype="addFriend" uid="450979993" class="addfriend_action" href="javascript:;" onclick="showRequestFriendDialog('450979993','李盈熹Katherine','http://hdn.xnimg.cn/photos/hdn421/20130620/2355/h_tiny_Wnwh_2cdf000008bd111a.jpg', '', 'socialgraph_rcd_home_3syn', XN.app.pymk.removeFromAdd);return false;">好友</a><p><a logtype="info" uid="450979993" href="javascript:;" onclick="XN.app.pymk.showProfile('450979993');">查看资料</a></p></span><div style="display:none;" class="comefrom" id="more-mayknow-450979993"><div id="more-person-data-450979993"></div><p><span class="profile-label">共同好友：</span>&nbsp;<a href="http://www.renren.com/profile.do?id=366308366" target="_blank">吴明峻</a>&nbsp;<a href="http://www.renren.com/profile.do?id=277175024" target="_blank">孙丽颖</a>&nbsp;<a href="http://www.renren.com/profile.do?id=342714387" target="_blank">韦彦尔</a>&nbsp;<a href="http://www.renren.com/profile.do?id=736919525" target="_blank">郑詠蔚</a>&nbsp;<a href="http://www.renren.com/profile.do?id=357691364" target="_blank">张展</a>&nbsp;<a href="http://www.renren.com/profile.do?id=260036668" target="_blank">尹博</a>&nbsp;<a href="http://www.renren.com/profile.do?id=321612208" target="_blank">陈卓❤Joyce</a>&nbsp;<a href="http://www.renren.com/profile.do?id=274047604" target="_blank">梅沙酮Stereo</a>&nbsp;<a href="http://www.renren.com/profile.do?id=265295942" target="_blank">任天舒</a>&nbsp;<a href="http://www.renren.com/profile.do?id=243799411" target="_blank">艾芯宇 JERROW</a>&nbsp;等32人</p></div><input id="type_value_450979993" value="BR_O" type="hidden"><input id="guest_450979993" value="450979993" type="hidden"><input id="log_cancle_450979993" value="RecMixed_cancle" type="hidden"><input id="log_imgToPrf_450979993" value="RecMixed_imgToPrf" type="hidden"><input id="log_nameToPrf_450979993" value="RecMixed_nameToPrf" type="hidden"><input id="log_addFriend_450979993" value="RecMixed_addFriend" type="hidden"><input id="log_info_450979993" value="RecMixed_info" type="hidden"><input id="log_show_450979993" value="RecMixed_show" type="hidden"><input id="log_addFriendEnd_450979993" value="RecMixed_addFriendEnd" type="hidden"></li><li data-index="1" class="recommend-someone clearfix" id="commonFriend_727618589" uid="727618589" onmouseover="Sizzle('a.shut-new',this)[0].style.display='block'" onmouseout="Sizzle('a.shut-new',this)[0].style.display='none'"><a logtype="cancle" uid="727618589" class="shut-new x-to-hide" href="javascript:;" title="不再推荐此人" onclick="XN.app.pymk.remove('727618589');return false;"></a><span class="headpichold"><a logtype="imgToPrf" uid="727618589" target="_blank" href="http://www.renren.com/profile.do?id=727618589"><img logtype="imgToPrf" uid="727618589" src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/tiny_Jk0P_246074k019116.jpg" onload="clipImage(this)" height="50" width="50"></a></span><span><a logtype="nameToPrf" uid="727618589" class="name" target="_blank" href="http://www.renren.com/profile.do?id=727618589" title="宋咏怡">宋咏怡</a><p><span class="pymk-type">14个共同好友</span></p><a logtype="addFriend" uid="727618589" class="addfriend_action" href="javascript:;" onclick="showRequestFriendDialog('727618589','宋咏怡','http://hdn.xnimg.cn/photos/hdn321/20101114/1410/tiny_Jk0P_246074k019116.jpg', '', 'socialgraph_rcd_home_3syn', XN.app.pymk.removeFromAdd);return false;">好友</a><p><a logtype="info" uid="727618589" href="javascript:;" onclick="XN.app.pymk.showProfile('727618589');">查看资料</a></p></span><div style="display:none;" class="comefrom" id="more-mayknow-727618589"><div id="more-person-data-727618589"></div><p><span class="profile-label">共同好友：</span>&nbsp;<a href="http://www.renren.com/profile.do?id=305159278" target="_blank">詹鸿宇</a>&nbsp;<a href="http://www.renren.com/profile.do?id=282218464" target="_blank">汤蕙维</a>&nbsp;<a href="http://www.renren.com/profile.do?id=279062963" target="_blank">文洋Alexanda</a>&nbsp;<a href="http://www.renren.com/profile.do?id=281930883" target="_blank">苏岩</a>&nbsp;<a href="http://www.renren.com/profile.do?id=277128734" target="_blank">谭琦琳 Gra</a>&nbsp;<a href="http://www.renren.com/profile.do?id=274951554" target="_blank">罗琳 Rita</a>&nbsp;<a href="http://www.renren.com/profile.do?id=280323242" target="_blank">黄思云</a>&nbsp;<a href="http://www.renren.com/profile.do?id=284054964" target="_blank">余梦若</a>&nbsp;<a href="http://www.renren.com/profile.do?id=280029144" target="_blank">李子欣</a>&nbsp;<a href="http://www.renren.com/profile.do?id=289220144" target="_blank">张妤Ana</a>&nbsp;等14人</p></div><input id="type_value_727618589" value="BR_O" type="hidden"><input id="guest_727618589" value="727618589" type="hidden"><input id="log_cancle_727618589" value="RecMixed_cancle" type="hidden"><input id="log_imgToPrf_727618589" value="RecMixed_imgToPrf" type="hidden"><input id="log_nameToPrf_727618589" value="RecMixed_nameToPrf" type="hidden"><input id="log_addFriend_727618589" value="RecMixed_addFriend" type="hidden"><input id="log_info_727618589" value="RecMixed_info" type="hidden"><input id="log_show_727618589" value="RecMixed_show" type="hidden"><input id="log_addFriendEnd_727618589" value="RecMixed_addFriendEnd" type="hidden"></li><li data-index="2" class="recommend-someone clearfix" id="commonFriend_314489625" uid="314489625" onmouseover="Sizzle('a.shut-new',this)[0].style.display='block'" onmouseout="Sizzle('a.shut-new',this)[0].style.display='none'"><a logtype="cancle" uid="314489625" class="shut-new x-to-hide" href="javascript:;" title="不再推荐此人" onclick="XN.app.pymk.remove('314489625');return false;"></a><span class="headpichold"><a logtype="imgToPrf" uid="314489625" target="_blank" href="http://www.renren.com/profile.do?id=314489625"><img logtype="imgToPrf" uid="314489625" src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/h_tiny_OElh_3e3900004e771376.jpg" onload="clipImage(this)" height="50" width="50"></a></span><span><a logtype="nameToPrf" uid="314489625" class="name" target="_blank" href="http://www.renren.com/profile.do?id=314489625" title="李诗乐 yuè ！">李诗乐 yuè ！</a><p><span class="pymk-type">22个共同好友</span></p><a logtype="addFriend" uid="314489625" class="addfriend_action" href="javascript:;" onclick="showRequestFriendDialog('314489625','李诗乐 yuè ！','http://hdn.xnimg.cn/photos/hdn121/20121008/1235/h_tiny_OElh_3e3900004e771376.jpg', '', 'socialgraph_rcd_home_3syn', XN.app.pymk.removeFromAdd);return false;">好友</a><p><a logtype="info" uid="314489625" href="javascript:;" onclick="XN.app.pymk.showProfile('314489625');">查看资料</a></p></span><div style="display:none;" class="comefrom" id="more-mayknow-314489625"><div id="more-person-data-314489625"></div><p><span class="profile-label">共同好友：</span>&nbsp;<a href="http://www.renren.com/profile.do?id=282042260" target="_blank">傅敏</a>&nbsp;<a href="http://www.renren.com/profile.do?id=277928084" target="_blank">李琦娅LisaQiya☆</a>&nbsp;<a href="http://www.renren.com/profile.do?id=248094619" target="_blank">金煜寒</a>&nbsp;<a href="http://www.renren.com/profile.do?id=286561897" target="_blank">江小巽</a>&nbsp;<a href="http://www.renren.com/profile.do?id=330539771" target="_blank">李梦泽Saga</a>&nbsp;<a href="http://www.renren.com/profile.do?id=336418106" target="_blank">李开成</a>&nbsp;<a href="http://www.renren.com/profile.do?id=264734629" target="_blank">丘深</a>&nbsp;<a href="http://www.renren.com/profile.do?id=271924325" target="_blank">王琮惠Brian</a>&nbsp;<a href="http://www.renren.com/profile.do?id=246800756" target="_blank">吴海超</a>&nbsp;<a href="http://www.renren.com/profile.do?id=368515808" target="_blank">宫宇鸣</a>&nbsp;等22人</p></div><input id="type_value_314489625" value="BR_O" type="hidden"><input id="guest_314489625" value="314489625" type="hidden"><input id="log_cancle_314489625" value="RecMixed_cancle" type="hidden"><input id="log_imgToPrf_314489625" value="RecMixed_imgToPrf" type="hidden"><input id="log_nameToPrf_314489625" value="RecMixed_nameToPrf" type="hidden"><input id="log_addFriend_314489625" value="RecMixed_addFriend" type="hidden"><input id="log_info_314489625" value="RecMixed_info" type="hidden"><input id="log_show_314489625" value="RecMixed_show" type="hidden"><input id="log_addFriendEnd_314489625" value="RecMixed_addFriendEnd" type="hidden"></li></div></ul>
+</div>
+</div>
+<script type="text/javascript">
+object.use('xn.pymk, dom', function(exports, xn, dom) {
+dom.ready(function() {
+XN.namespace('app');
+XN.app.pymk = new xn.pymk.PYMK({ box: '#pymk', ul: '#commonFriends' });
+});
+});
+</script>
+<!-- 人人话题 -->
+<div id="topic-hot-el"><div class="focus-model-name"><span style="color:black;">人人话题</span></div>			<ul class="focus-moreTopic-ul" id="focus-moreTopic-ul">								<li class="back-animate"><span class="focus-moreTopic-rank first">1</span><a target="_blank" href="http://huati.renren.com/renda?from=800">美女毕业生登人大主页</a></li>								<li class="back-animate"><span class="focus-moreTopic-rank second">2</span><a target="_blank" href="http://huati.renren.com/huzhuang?from=800">父子闹市豪车互撞续</a></li>								<li class="back-animate"><span class="focus-moreTopic-rank third">3</span><a target="_blank" href="http://huati.renren.com/qianjin?from=800">热议前进达瓦里希</a></li>								<li class="back-animate"><span class="focus-moreTopic-rank normal">4</span><a target="_blank" href="http://huati.renren.com/dipu?from=800">华师体育馆打地铺</a></li>								<li class="back-animate"><span class="focus-moreTopic-rank normal">5</span><a target="_blank" href="http://huati.renren.com/gushi?from=800">股市受重挫暴跌</a></li>								<li class="back-animate"><span class="focus-moreTopic-rank normal">6</span><a target="_blank" href="http://huati.renren.com/gou?from=800">自黑一下你是哪种狗</a></li>								<li class="back-animate"><span class="focus-moreTopic-rank normal">7</span><a target="_blank" href="http://huati.renren.com/aimei?from=800">最美的时光是暧昧的时候</a></li>								<li class="back-animate"><span class="focus-moreTopic-rank normal">8</span><a target="_blank" href="http://huati.renren.com/gouroujie?from=800">玉林夏至狗肉节引争议</a></li>				</ul></div>
+<!-- 搜索热门列表 -->
+<script type="text/javascript">
+document.write('<script type="text/javascript" src="http://sg.renren.com/sg/hot"><\/script>'); 
+</script><script type="text/javascript" src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/hot.htm"></script><style> .hotSearch_sharePage{margin-top:20px;z-index:0;} .hotSearch_sharePage .title{font-size:14px;font-weight:bold;} .hotSearch_sharePage .con_list{margin-top:8px;} .hotSearch_sharePage .con_list li a{display:block;line-height:22px;width:240px;text-decoration:none;color:#369;}	.hotSearch_sharePage .con_list li a:hover{line-height:22px;background:#f0f4f7;color:#369;} .hotSearch_sharePage .con_list li a span{margin-right:8px;color:#000;}</style><div id="hotSearch" class="hotSearch_sharePage" style="margin-top:10px;"><span class="title" style="font-size:14px;font-weight:bold;">热搜排行榜</span><ul class="con_list" style="margin:8px 0 0 0;padding:0px;list-style:none;"><li><a hidefocus="true" target="_blank" href="http://browse.renren.com/s/all?q=%E6%A0%B9%E5%8F%94%E6%BC%94%E8%AE%B2+2013&amp;from=fromshare"><span>1</span>根叔演讲 2013</a></li><li><a hidefocus="true" target="_blank" href="http://browse.renren.com/s/all?q=2013+%E9%AB%98%E8%80%83%E5%88%86%E6%95%B0%E7%BA%BF&amp;from=fromshare"><span>2</span>2013 高考分数线</a></li><li><a hidefocus="true" target="_blank" href="http://browse.renren.com/s/all?q=%E7%96%AF%E7%8B%82%E7%8C%9C%E5%9B%BE&amp;from=fromshare"><span>3</span>疯狂猜图</a></li><li><a hidefocus="true" target="_blank" href="http://browse.renren.com/s/all?q=%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6+%E5%8F%8D%E5%AF%B9+%E6%96%B0%E6%A0%A1%E9%95%BF&amp;from=fromshare"><span>4</span>浙江大学 反对 新校长</a></li><li><a hidefocus="true" target="_blank" href="http://browse.renren.com/s/all?q=%E5%B0%8F%E6%97%B6%E4%BB%A3&amp;from=fromshare"><span>5</span>小时代</a></li></ul></div>
+<div></div><div class="attachceilwrap already-fixed" data-fix="40" style="width: 240px; position: fixed; top: 40px;">
+<div class="more-shares">
+					
+						<div class="nav-tabs">
+							<ul class="tabs">
+								<li class=" selected" id="othershareTab2"><a href="#nogo" onfocus="this.blur()" onclick="detailLog('336924841', '16020765725', '01030321700', '1')"> 
+											
+											
+TA的其它分享
+										</a></li>
+								<li id="hotshareTab2"><a href="#nogo" onfocus="this.blur()" onclick="detailLog('336924841', '16020765725', '01030321300', '1')">热门分享</a>
+								</li>
+							</ul>
+						</div>
+					
+					
+						<div id="othersharelist2" class="hot-blog-sidebar shares-list">
+							<ul class="blog-list clearfix">
+								
+									<li><a title="【每天來點兒負能量】精選負能量！無碼高清大合集！zz fro..." href="http://blog.renren.com/GetEntry.do?id=907516090&amp;owner=221051921&amp;shareID=16019083568&amp;shareOwner=336924841&amp;from=otherblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320900', '1')">【每天來點兒負能量】精選負能量！無碼高清大合集！zz fro...</a>
+										</li>
+								
+									<li><a title="摩西摩西。" href="http://blog.renren.com/GetEntry.do?id=907459400&amp;owner=400775763&amp;shareID=15998720723&amp;shareOwner=336924841&amp;from=otherblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320900', '1')">摩西摩西。</a>
+										</li>
+								
+									<li><a title="香港：一座城的高差" href="http://blog.renren.com/GetEntry.do?id=907051635&amp;owner=288750033&amp;shareID=15975849301&amp;shareOwner=336924841&amp;from=otherblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320900', '1')">香港：一座城的高差</a>
+										</li>
+								
+									<li><a title="&quot;我一直在等你一起吃饭&quot;" href="http://blog.renren.com/GetEntry.do?id=906668387&amp;owner=338963000&amp;shareID=15939346830&amp;shareOwner=336924841&amp;from=otherblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320900', '1')">"我一直在等你一起吃饭"</a>
+										</li>
+								
+									<li><a title="陪伴是最长情的告白" href="http://blog.renren.com/GetEntry.do?id=905963207&amp;owner=287767093&amp;shareID=15929312611&amp;shareOwner=336924841&amp;from=otherblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320900', '1')">陪伴是最长情的告白</a>
+										</li>
+								
+							</ul>
+                            <div class="show-more">
+                                <a href="http://share.renren.com/share/336924841?shfrom=01030321500">进入更多TA的分享，查看精彩内容 &gt;</a>
+                            </div>
+						</div>
+					
+					<div style="display: none;" id="hotsharelist2" class="hot-blog-sidebar shares-list">
+						<div style="left: -240px;" id="blogListWrap" class="share-gallery">
+							<ul class="blog-list clearfix">
+								
+									<li class="clearfix">
+										<span class="float-right icon-share">2049</span>
+										<a class="float-left" title="林志玲的眼角纹" href="http://blog.renren.com/GetEntry.do?id=906406092&amp;owner=257360839&amp;shareID=15950832046&amp;shareOwner=287286452&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">
+										林志玲的眼角纹
+									</a>
+
+									</li>
+								
+									<li class="clearfix">
+										<span class="float-right icon-share">3220</span>
+										<a class="float-left" title="致南审" href="http://blog.renren.com/GetEntry.do?id=907372649&amp;owner=328390658&amp;shareID=15984229073&amp;shareOwner=402385140&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">
+										致南审
+									</a>
+
+									</li>
+								
+									<li class="clearfix">
+										<span class="float-right icon-share">1772</span>
+										<a class="float-left" title="谈谈袁佳怡姑娘读过的梭罗" href="http://blog.renren.com/GetEntry.do?id=906987544&amp;owner=255864564&amp;shareID=15958922367&amp;shareOwner=432552465&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">
+										谈谈袁佳怡姑娘读过的梭罗
+									</a>
+
+									</li>
+								
+									<li class="clearfix">
+										<span class="float-right icon-share">2154</span>
+										<a class="float-left" title="肉饼店吃肉饼" href="http://blog.renren.com/GetEntry.do?id=846956685&amp;owner=307078586&amp;shareID=15973602237&amp;shareOwner=240855855&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">
+										肉饼店吃肉饼
+									</a>
+
+									</li>
+								
+									<li class="clearfix">
+										<span class="float-right icon-share">6938</span>
+										<a class="float-left" title="苦难有什么价值？" href="http://blog.renren.com/GetEntry.do?id=907215193&amp;owner=402385140&amp;shareID=15973788510&amp;shareOwner=449284868&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">
+										苦难有什么价值？
+									</a>
+
+									</li>
+								
+							</ul>
+							<ul class="blog-list clearfix">
+								
+									<li class="clearfix">
+										<span class="float-right icon-share">3697</span>
+										<a class="float-left" title="江湖厨房" href="http://blog.renren.com/GetEntry.do?id=907050022&amp;owner=249693315&amp;shareID=15964303357&amp;shareOwner=287286115&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">
+										江湖厨房
+									</a>
+
+									</li>
+								
+									<li class="clearfix">
+										<span class="float-right icon-share">1199</span>
+										<a class="float-left" title="妻子倒车撞死丈夫 自己头探窗外被夹致死(图)" href="http://blog.renren.com/GetEntry.do?id=907446593&amp;owner=402385140&amp;shareID=15988631399&amp;shareOwner=263353981&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">
+										
+												妻子倒车撞死丈夫 自己头...
+											
+									</a>
+
+									</li>
+								
+									<li class="clearfix">
+										<span class="float-right icon-share">7113</span>
+										<a class="float-left" title="五问袁佳怡同学" href="http://blog.renren.com/GetEntry.do?id=906975982&amp;owner=293753300&amp;shareID=15958924566&amp;shareOwner=263353981&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">
+										五问袁佳怡同学
+									</a>
+
+									</li>
+								
+									<li class="clearfix">
+										<span class="float-right icon-share">19109</span>
+										<a class="float-left" title="愿好姑娘们光芒万丈" href="http://blog.renren.com/GetEntry.do?id=907012899&amp;owner=268453662&amp;shareID=15972618757&amp;shareOwner=305971774&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">
+										愿好姑娘们光芒万丈
+									</a>
+
+									</li>
+								
+									<li class="clearfix">
+										<span class="float-right icon-share">1958</span>
+										<a class="float-left" title="微博谣言是如何传播的------------揭秘病毒式传播的..." href="http://blog.renren.com/GetEntry.do?id=907277554&amp;owner=230471237&amp;shareID=15979117213&amp;shareOwner=367614280&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">
+										
+												微博谣言是如何传播的--...
+											
+									</a>
+
+									</li>
+								
+							</ul>
+							<ul class="blog-list clearfix">
+								
+									<li class="clearfix">
+										<span class="float-right icon-share">2397</span>
+										<a class="float-left" title="为什么 2012-13 赛季 NBA 总决赛第六场 热火 1..." href="http://blog.renren.com/GetEntry.do?id=907394340&amp;owner=432535883&amp;shareID=15985438889&amp;shareOwner=432535883&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">
+										
+												为什么 2012-13 ...
+											
+									</a>
+
+									</li>
+								
+									<li class="clearfix">
+										<span class="float-right icon-share">9978</span>
+										<a class="float-left" title="谁唱了KTV前50首歌" href="http://blog.renren.com/GetEntry.do?id=907237417&amp;owner=330695953&amp;shareID=15978737468&amp;shareOwner=11611&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">
+										谁唱了KTV前50首歌
+									</a>
+
+									</li>
+								
+									<li class="clearfix">
+										<span class="float-right icon-share">3898</span>
+										<a class="float-left" title="渣男和玻璃心" href="http://blog.renren.com/GetEntry.do?id=907666878&amp;owner=351332719&amp;shareID=16014040097&amp;shareOwner=289135194&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">
+										渣男和玻璃心
+									</a>
+
+									</li>
+								
+									<li class="clearfix">
+										<span class="float-right icon-share">3141</span>
+										<a class="float-left" title="看模电的小女孩" href="http://blog.renren.com/GetEntry.do?id=907153254&amp;owner=330052325&amp;shareID=15973261439&amp;shareOwner=369783788&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">
+										看模电的小女孩
+									</a>
+
+									</li>
+								
+									<li class="clearfix">
+										<span class="float-right icon-share">4553</span>
+										<a class="float-left" title="哥哥" href="http://blog.renren.com/GetEntry.do?id=865029009&amp;owner=307078586&amp;shareID=15973293219&amp;shareOwner=404478938&amp;from=endhotblog" target="_blank" onclick="detailLog('336924841', '16020765725', '01030320500', '1')">
+										哥哥
+									</a>
+
+									</li>
+								
+							</ul>
+						</div>
+						<div class="trigger">
+                            <a href="#nogo" class=" " onclick="detailLog('336924841', '16020765725', '01030325400', '1')">●</a>
+                            <a class="  active" href="#nogo" onclick="detailLog('336924841', '16020765725', '01030325400', '1')">●</a>
+                            <a class=" " href="#nogo" onclick="detailLog('336924841', '16020765725', '01030325400', '1')">●</a>
+                        </div>
+						<div class="show-more">
+							<a href="http://share.renren.com/share/hot" onclick="detailLog('336924841', '16020765725', '01030321500', '1')">进入分享首页，查看精彩内容&gt;</a>
+						</div>
+					</div>
+				</div>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+<div id="footer">	
+<div class="site-footer" style="background:#fff;position:relative;">
+<div class="main">
+<ul class="link">
+<li><a href="http://www.renren.com/siteinfo/about">关于</a></li>
+<li><a href="http://dev.renren.com/">开放平台</a></li>
+<li><a href="http://wan.renren.com/">人人游戏</a></li>
+<li><a href="http://page.renren.com/register/regGuide/">公共主页</a></li>
+<li><a href="http://mobile.renren.com/mobilelink.do?psf=40002">手机人人</a></li>
+<li><a href="http://www.nuomi.com/">团购</a></li>
+<li><a href="http://www.jiexi.com/">皆喜网</a></li>
+<li><a href="http://ads.renren.com/">营销服务</a></li>
+<li><a href="http://job.renren-inc.com/">招聘</a></li>
+<li><a href="http://www.renren.com/siteinfo/link">友情链接</a></li>
+<li><a href="http://support.renren.com/helpcenter">客服帮助</a></li>
+<li><a href="http://www.renren.com/siteinfo/privacy">隐私</a></li>
+</ul>
+<span class="copyright">
+人人网<span title="revision90201; SJSWT42-13.opi.com">©</span>2013</span>
+</div>
+<div class="haoes">
+<span class="company-name">北京千橡网景科技发展有限公司：</span>
+<span>文网文[2009]169号</span><span class="dot">·</span><a href="http://www.miibeian.gov.cn/" target="_blank">京ICP证090254号</a><span class="dot">·</span><span>京公网安备110000000009号</span><span class="dot">·</span><span>甲测资字11002066</span><span class="dot">·</span><span>文化部监督电子邮箱：wlwh@vip.sina.com</span><span class="dot">·</span><a href="http://a.xnimg.cn/n/core/res/certificate.jpg" target="_blank">互联网药品信息服务资格证</a><br>
+<p class="special-add"><span>文明办网文明上网举报电话：4000803580 举报邮箱：admin1@renren-inc.com</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.bjjubao.org/" target="_blank"><img src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/c_1.jpg" height="24" width="25">不良信息举报中心</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.bj.cyberpolice.cn/index.jsp" target="_blank"><img src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/c_2.jpg" height="24" width="25">网络110报警服务</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.bjwhzf.gov.cn/accuse.do" target="_blank"><img src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/c_3.jpg" height="24" width="25">北京文化市场举报热线</a>
+</p></div>
+</div>
+</div><div style="z-index: 1999;" id="bottombar"><span id="voice_encode_obj"></span><div class="webpager" id="webpager"><div style="right: 0px;" class="panelbarpanels"><div style="margin-left: 5px; margin-right: 5px;" id="friends-panel" class="panel"><div class="popupwindow"><div class="panelbarbutton" style="width: 97px;">	<p class="wp-rrzm-ico">下载人人桌面</p></div></div><div class="popupwindow"><div class="panelbarbutton" onselectstart="return false;">	<a style="display: none;" data-old-display="block" href="#nogo" onclick="return false;" class="wp-chat-close">关闭</a>	<p class="wp-friend-ico" title="展开列表">好友列表<span class="wp-frid-num"></span></p><div><div class="wp-preferences">	<a class="pref-btn">O</a>	<dl class="pref-menu" style="display:none">	</dl></div></div></div><article style="height: 420px;" class="chat-window friends-window">	<header>		<h4></h4>		<menu>			<li title="最小化" label="最小化" class="minimize">最小化</li>			<li style="display: none;" data-old-display="block" title="关闭" class="close">关闭</li>		</menu>	</header>	<section> <div class="dialog wp-frid-box"></div> <div style="display: none; position: absolute; width: 100%; height: 100%; opacity: 0.7; background: none repeat scroll 0% 0% rgb(245, 246, 249);"><p style="position:relative;width:90px;margin:auto;top:50%">好友加载中&nbsp;<img src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/loading.gif"></p></div></section></article></div></div><div class="panel" id="tasks-panel"><div data-old-display="none" class="slide-box" style="display: none"><a href="#nogo" onclick="return false;" class="slide_left"></a></div> <div class="winslider"></div><div data-old-display="none" class="slide-box" style="display: none"><a href="#nogo" onclick="return false;" class="slide_right"></a></div></div></div><div style="left: 105px;" id="webpager-miniradio" class="panelbarpanels"><div id="radio-home-con">	<div class="radio-display" id="radio-home-panel" style="display:none;"></div>	<div id="home-radio-bar">   	<div id="home-radio-btns">			<div class="home-radio-playOrPause"><a id="home-radio-play" href="#nogo" onclick="return false;" hidefocus="true" title="播放" class="playPause"><span></span></a></div>			<div class="home-radio-next"><a id="home-radio-next" href="#nogo" onclick="return false;" hidefocus="true" title="播放音乐时可用" class="nextDisable"><span></span></a></div>			<div class="home-radio-fav"><a id="home-radio-fav" href="#nogo" onclick="return false;" hidefocus="true" title="播放音乐时可用" class="favDisable"><span></span></a></div>    	</div>		<div class="listNormal"><a id="home-radio-listbar" href="#nogo" onclick="return false;" title="电台列表" hidefocus="true"></a></div>	</div><div id="radio-home-favPanel" style="display:none;"><span class="heart"></span><span class="addHeartSucc">加心成功！</span></div><div id="radio-home-songInfoPanel" style="display:none;"></div></div>	<div id="radio_home_flashcon"></div></div></div></div>
+
+<div id="toolBackTo" class="back-to" style="left: 1095px;">
+<a stats="site_footer_back_to_top" class="backtotop" href="#top">返回顶部
+<img stats="site_footer_back_to_top" src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/back-tip.png" class="back-tip">
+</a>
+</div><script src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/beacon.js"></script>
+<script>
+COMSCORE.beacon({ c1:2, c2:6934070, c3:"", c4:"", c5:"", c6:"", c15:"" });
+</script>
+<noscript>
+<img src="http://b.scorecardresearch.com/p?c1=2&c2=6934070&c3=&c4=&c5=&c6=&c15=&cj=1" />
+</noscript>
+
+
+
+<script type="text/javascript">
+XN.dom.ready(
+function(){
+playVideoOfContent( 'text-article', 'videoimg' );
+function removeNonInvidPhoto(){
+var con = $('shareBody');
+var imgs = con.getElementsByTagName('img');
+var reg = /kaixin001.com/;
+XN.array.each(imgs, function( i, v){
+if( reg.test(  v.src ) ) $(v).hide();
+})
+}
+removeNonInvidPhoto();
+}
+);
+XN.dom.ready(function(){
+var sendInfo = {
+id :  906684696,
+owner : 283897031,
+itemName : "论我的脑袋是如何被毛驴们踩过的",
+feedComment : true,
+only_to_me : 0,
+guestName : "方奕楠 Edward",
+isfromshare : true
+};
+function sendHandle(){
+if( !$('sysnblog').checked ) return false;
+if( !$('comment16020765725').value ) return false;
+if( $('repetNo').value != 0 ) return false;
+$extend( sendInfo, {
+comment : $('comment16020765725').value
+});
+new XN.net.xmlhttp({
+url:'http://blog.' + XN.env.domain + '/PostComment.do',
+data : XN.array.toQueryString( sendInfo )
+});
+}
+XN.array.each(Sizzle('.reply a:contains(回复)'), function(i,v){
+XN.event.addEvent(v,'click',function(){
+$('sysnblog').checked = false;
+$('sysnblog').disabled = true;
+});
+});
+XN.app.share.addEvent('commentSubmitSuccess',sendHandle);
+});</script>
+
+
+<iframe style="position: absolute; left: -1000pt; top: 20pt; width: 200pt; height: 100pt;" src="%E4%BA%BA%E4%BA%BA%E7%BD%91-%20%E6%97%A5%E5%BF%97%E5%88%86%E4%BA%AB_files/ime.htm" name="imengine" id="imengine" frameborder="0"></iframe></body><span id="voice_decode_obj"></span></html>

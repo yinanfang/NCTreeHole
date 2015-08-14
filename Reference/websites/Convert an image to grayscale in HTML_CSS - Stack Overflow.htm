@@ -1,0 +1,2638 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        
+    <title>Convert an image to grayscale in HTML/CSS - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    
+    <script src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/adzerk1_2_4_43adzerk2_2_17_45adzerk3_2_4_44" async="" type="text/javascript"></script><script src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/ga.js" async="" type="text/javascript"></script><script src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/quant.js" async="" type="text/javascript"></script><script type="text/javascript" src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/jquery.js"></script>
+    <script type="text/javascript" src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/all.css">
+    
+    <link rel="canonical" href="http://stackoverflow.com/questions/609273/convert-an-image-to-grayscale-in-html-css">
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'Convert an image to grayscale in HTML/CSS'" href="http://stackoverflow.com/feeds/question/609273">
+    <script type="text/javascript">
+        
+        StackExchange.ready(function () {
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({votesCast:[],autoShowCommentHelp:true,showAnswerHelp:true,totalCommentCount:5,shownCommentCount:5,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:609273});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '609273');
+            
+                
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        StackExchange.init({"stackAuthUrl":"https://stackauth.com","serverTime":1371953750,"styleCode":true,"enableUserHovercards":true,"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","enableSocialMediaInSharePopup":true},"user":{"fkey":"764c7fd9bf2f41bf53fc7c053357fdf5","isRegistered":true,"userId":2278266,"accountId":2632742,"gravatar":"<div class=\"\"><img src=\"https://www.gravatar.com/avatar/c90e086ecbb7f0e3bc05144cf07b3515?s=32&d=identicon&r=PG\" alt=\"\" width=\"32\" height=\"32\"></div>","profileUrl":"http://stackoverflow.com/users/2278266/yinan-fang","notificationsUnviewedCount":0,"inboxUnviewedCount":0}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.js":"6c261bebf56a","js/moderator.js":"f96f7e4ee5dc","js/full-anon.js":"1eb568badf37","js/full.js":"aa97a412d4d1","js/wmd.js":"2f79c03846d5","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/mobile.js":"6eb68240242f","js/help.js":"6e6623243cf6","js/tageditor.js":"450c9e8426fc","js/tageditornew.js":"b6c68ad4c7dd","js/inline-tag-editing.js":"8e84e8a137f7","js/revisions.js":"7273bb714bba","js/review.js":"56c3941a5bfc","js/tagsuggestions.js":"aa48ef6154df","js/post-validation.js":"bb996020492a","js/explore-qlist.js":"1c5bbd79b562"});
+        
+    </script>
+    <script type="text/javascript">
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+<script src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/full.js" type="text/javascript" async=""></script><script src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/post-validation.js" type="text/javascript" async=""></script><script src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/prettify-full.js" type="text/javascript" async=""></script><script src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/adFeedback.js" type="text/javascript"></script><link href="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/adFeedback.css" rel="stylesheet"><link rel="stylesheet" type="text/css" href="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/sidebar.css"></head>
+<body class="question-page">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+    <div class="container">
+        <div id="header">
+            <div id="portalLink">
+                <a class="genu" onclick="StackExchange.ready(function(){genuwine.click();});return false;">Stack Exchange</a>
+            </div>
+            <div id="topbar">
+                <div id="hlinks">
+                    
+<span id="hlinks-user">        <span class="profile-triangle">▼</span><a href="http://stackoverflow.com/users/2278266/yinan-fang" class="profile-link">Yinan Fang</a>&nbsp;<a href="http://stackoverflow.com/users/2278266/yinan-fang?tab=reputation"><span class="reputation-score" title="your reputation; view reputation changes" dir="ltr">1</span></a>
+ <span class="lsep">|</span>
+
+</span>
+<span id="hlinks-nav"></span>
+<span id="hlinks-custom">            <a href="http://chat.stackoverflow.com/">chat</a>
+
+ <span class="lsep">|</span>
+                <a href="http://meta.stackoverflow.com/">meta</a>
+
+ <span class="lsep">|</span>
+            <a href="http://stackoverflow.com/about">about</a>
+
+ <span class="lsep">|</span>
+        <a href="http://stackoverflow.com/help">help</a>
+</span>
+                </div>
+                <div id="hsearch">
+                    <form id="search" action="/search" method="get" autocomplete="off">
+                        <div>
+                            <input autocomplete="off" name="q" class="textbox" placeholder="search" tabindex="1" maxlength="240" size="28" type="text">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs ">
+                    <ul>
+                            <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                            <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                            <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                            <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                            <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content">
+            
+
+<div itemscope="" itemtype="http://schema.org/Article">
+<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+<div id="question-header">
+    <h1 itemprop="name"><a href="http://stackoverflow.com/questions/609273/convert-an-image-to-grayscale-in-html-css" class="question-hyperlink">Convert an image to grayscale in HTML/CSS</a></h1>
+</div>
+<div id="mainbar">
+
+
+
+<div class="question" data-questionid="609273" id="question">
+    
+                <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiY20iOjg0NywiY2giOjExNzgsImNyIjo1OTE5LCJkaSI6IjhiNGIwZDYyNTYzOTQ2Mzc5NGY0NjIxODM4MjA2YWU3IiwiZG0iOjEsImZjIjo4ODA1LCJmbCI6MjQ0NCwia3ciOiJjc3MsaW1hZ2UsY3NzMyxmaWx0ZXIsZ3JheXNjYWxlLHgtdXNlci1yZWdpc3RlcmVkIiwibnciOjIyLCJyZiI6Imh0dHA6Ly93d3cuZ29vZ2xlLmNvbS5oay91cmw_c2E9dCIsInJ2IjowLCJwciI6MTU2OCwic3QiOjgyNzcsInpuIjo0MywidXIiOiJodHRwOi8vY2FyZWVycy5zdGFja292ZXJmbG93LmNvbS8ifQ&amp;s=a5DV5g3erVm3g3mhQUi-8pKni-o" rel="nofollow" target="_blank" title=""><img src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/4c4f1be011a447efbce49c1811022e7a.png" title="" alt="" border="0" height="90" width="728"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/i.gif" border="0" height="0px" width="0px"></div>
+
+
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input value="609273" type="hidden">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear (click again to undo)">up vote</a>
+    <span class="vote-count-post ">227</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful (click again to undo)">down vote</a>
+    
+    <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b>150</b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="description">
+        <p>Is there a simple way to display a color bitmap in grayscale 
+with just HTML/CSS?  It doesn't need to be IE-compatible (and I imagine 
+it won't be) -- if it works in FF3 and/or Sf3, that's good enough for 
+me.</p>
+
+<p>I know I can do it with both SVG and Canvas, but that seems like a 
+lot of work right now.  Is there a truly lazy person's way to do this?</p>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/css" class="post-tag" title="show questions tagged 'css'" rel="tag">css</a> <a href="http://stackoverflow.com/questions/tagged/image" class="post-tag" title="show questions tagged 'image'" rel="tag">image</a> <a href="http://stackoverflow.com/questions/tagged/css3" class="post-tag" title="show questions tagged 'css3'" rel="tag">css3</a> <a href="http://stackoverflow.com/questions/tagged/filter" class="post-tag" title="show questions tagged 'filter'" rel="tag">filter</a> <a href="http://stackoverflow.com/questions/tagged/grayscale" class="post-tag" title="show questions tagged 'grayscale'" rel="tag">grayscale</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/q/609273/2278266" title="short permalink to this question" class="short-link" id="link-post-609273">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/609273/edit" class="suggest-edit-post" title="revise and improve this post">edit</a></div>        
+    </td>
+    <td class="post-signature" align="right">
+
+
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+                            <a href="http://stackoverflow.com/posts/609273/revisions" title="show all edits to this post">edited <span title="2013-02-04 10:12:10Z" class="relativetime">Feb 4 at 10:12</span></a>
+
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/362006/salmanpk"><div class=""><img src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/ae3a8a87c97b3f2a74d6c8a9d808049c.jpg" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/362006/salmanpk">SalmanPK</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">3,876</span><span title="2 gold badges"><span class="badge1"></span><span class="badgecount">2</span></span><span title="23 silver badges"><span class="badge2"></span><span class="badgecount">23</span></span><span title="33 bronze badges"><span class="badge3"></span><span class="badgecount">33</span></span>
+        </div>
+    </div>
+    </td>
+    <td class="post-signature owner">
+        
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                    asked <span title="2009-03-04 04:51:26Z" class="relativetime">Mar 4 '09 at 4:51</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/73105/ken"><div class=""><img src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/063728cf137e95d95869aea2b70e31a3.png" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/73105/ken">Ken</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">1,489</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="8 silver badges"><span class="badge2"></span><span class="badgecount">8</span></span><span title="8 bronze badges"><span class="badge3"></span><span class="badgecount">8</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-609273" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-4203004" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="cool">1</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">Would you be willing to use jQuery?</span> –&nbsp;<a href="http://stackoverflow.com/users/463065/trufa" title="8159 reputation" class="comment-user">Trufa</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment4203004_609273"><span title="2010-10-14 21:39:45Z" class="relativetime-clean">Oct 14 '10 at 21:39</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-4215532" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">Long gone question??</span> –&nbsp;<a href="http://stackoverflow.com/users/463065/trufa" title="8159 reputation" class="comment-user">Trufa</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment4215532_609273"><span title="2010-10-16 01:08:05Z" class="relativetime-clean">Oct 16 '10 at 1:08</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-15011361" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="warm">7</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy"><i>"It doesn't need to be IE-compatible (and I imagine it won't be)"</i>?? 
+IE is providing a set of <a href="http://bit.ly/j8TnAG" rel="nofollow">DX filters</a> <b>since 1997</b> (IE4) which does this job with mere CSS and lot more. Now they have <a href="http://bit.ly/rVt1aH" rel="nofollow">dropped DX filters in IE10</a> and are strictly following the standard SVG based filters. You might want to take a look at <a href="http://bit.ly/oFcgbl" rel="nofollow">this</a> and <a href="http://bit.ly/oSYpAe" rel="nofollow">this demo</a>.</span> –&nbsp;<a href="http://stackoverflow.com/users/863980/vulcan-raven" title="4811 reputation" class="comment-user">vulcan raven</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment15011361_609273"><span title="2012-07-09 00:52:59Z" class="relativetime-clean">Jul 9 '12 at 0:52</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-17999297" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="cool">1</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">@vulcanraven It's not really 'mere CSS' - if you disable active scripting in IE the filters stop working.</span> –&nbsp;<a href="http://stackoverflow.com/users/8655/robertc" title="25543 reputation" class="comment-user">robertc</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment17999297_609273"><span title="2012-11-04 07:40:42Z" class="relativetime-clean">Nov 4 '12 at 7:40</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-18002455" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="cool">1</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">@robertc,
+ thats about right. In contrast, if you disable javascript in any 
+browser almost every RIA including Stackoverflow will stop working 
+(unless the web developer have implemented the HTML-only version 
+fallback).</span> –&nbsp;<a href="http://stackoverflow.com/users/863980/vulcan-raven" title="4811 reputation" class="comment-user">vulcan raven</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment18002455_609273"><span title="2012-11-04 13:06:48Z" class="relativetime-clean">Nov 4 '12 at 13:06</span></a></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>            </tbody></table>    
+</div>
+
+
+<div id="answers">
+
+    <a name="tab-top"></a>
+    <div id="answers-header">
+        <div class="subheader answers-subheader">
+            <h2>
+                    15 Answers
+            </h2>
+            <div id="tabs">
+                <a href="http://stackoverflow.com/questions/609273/convert-an-image-to-grayscale-in-html-css?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+<a href="http://stackoverflow.com/questions/609273/convert-an-image-to-grayscale-in-html-css?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+<a class="youarehere" href="http://stackoverflow.com/questions/609273/convert-an-image-to-grayscale-in-html-css?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+
+            </div>
+        </div>    
+    </div>    
+
+
+
+
+  
+<a name="8612047"></a>
+<div id="answer-8612047" class="answer" data-answerid="8612047">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input value="8612047" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post ">259</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p><a href="http://updates.html5rocks.com/2011/12/CSS-Filter-Effects-Landing-in-WebKit">Support for CSS filters has landed in Webkit.</a>  So we now have a cross-browser solution.</p>
+
+<p>Create a file named <code>filters.svg</code> with the following contents:-</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="tag">&lt;svg</span><span class="pln"> </span><span class="atn">xmlns</span><span class="pun">=</span><span class="atv">"http://www.w3.org/2000/svg"</span><span class="tag">&gt;</span><span class="pln">
+ </span><span class="tag">&lt;filter</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"grayscale"</span><span class="tag">&gt;</span><span class="pln">
+  </span><span class="tag">&lt;feColorMatrix</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"matrix"</span><span class="pln"> </span><span class="atn">values</span><span class="pun">=</span><span class="atv">"0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0"</span><span class="tag">/&gt;</span><span class="pln">
+ </span><span class="tag">&lt;/filter&gt;</span><span class="pln">
+</span><span class="tag">&lt;/svg&gt;</span></code></pre>
+
+<p>Then use this CSS:- [<a href="http://dl.dropbox.com/u/11137205/grayscale.html">Demo</a>]</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="pln">img </span><span class="pun">{</span><span class="pln">
+    filter</span><span class="pun">:</span><span class="pln"> url</span><span class="pun">(</span><span class="pln">filters</span><span class="pun">.</span><span class="pln">svg</span><span class="com">#grayscale); /* Firefox 3.5+ */</span><span class="pln">
+    filter</span><span class="pun">:</span><span class="pln"> gray</span><span class="pun">;</span><span class="pln"> </span><span class="com">/* IE6-9 */</span><span class="pln">
+    </span><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">filter</span><span class="pun">:</span><span class="pln"> grayscale</span><span class="pun">(</span><span class="lit">1</span><span class="pun">);</span><span class="pln"> </span><span class="com">/* Google Chrome &amp; Safari 6+ */</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p></p><hr>
+To disable grayscale on hover you can use:-<p></p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="pln">img</span><span class="pun">:</span><span class="pln">hover </span><span class="pun">{</span><span class="pln">
+    filter</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">filter</span><span class="pun">:</span><span class="pln"> grayscale</span><span class="pun">(</span><span class="lit">0</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/8612047/2278266" title="short permalink to this answer" class="short-link" id="link-post-8612047">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/8612047/edit" class="suggest-edit-post" title="revise and improve this post">edit</a></div>                    </td>
+    <td class="post-signature" align="right">
+
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                            <a href="http://stackoverflow.com/posts/8612047/revisions" title="show all edits to this post">edited <span title="2012-09-02 23:49:21Z" class="relativetime">Sep 2 '12 at 23:49</span></a>
+
+        </div>
+        <div class="user-gravatar32">
+            
+        </div>
+        <div class="user-details">
+            <br>
+            
+        </div>
+    </div>
+    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    
+
+    <div class="user-info">
+        <div class="user-details">
+            <span class="community-wiki" title="This post is community owned as of Jun 29 '12 at 6:16. Votes do not generate reputation, and it can be edited by users with 100 rep">
+                community wiki
+            </span>
+        </div><br>
+        <div class="user-details">
+            <a id="history-8612047" href="http://stackoverflow.com/posts/8612047/revisions" title="show revision history for this post">
+13 revs, 3 users 80%<br></a><a href="http://stackoverflow.com/users/362006">SalmanPK</a>
+            
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-8612047" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-10718361" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="cool">2</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">I have tested it in IE 6,7,8 and 9 - works fine.</span> –&nbsp;<a href="http://stackoverflow.com/users/362006/salmanpk" title="3876 reputation" class="comment-user">SalmanPK</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment10718361_8612047"><span title="2011-12-25 19:13:34Z" class="relativetime-clean">Dec 25 '11 at 19:13</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-10825004" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="cool">2</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">Of course. Just use <code>img:hover</code> selector instead of <code>img</code>.</span> –&nbsp;<a href="http://stackoverflow.com/users/362006/salmanpk" title="3876 reputation" class="comment-user">SalmanPK</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment10825004_8612047"><span title="2012-01-02 12:27:48Z" class="relativetime-clean">Jan 2 '12 at 12:27</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-11899705" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="cool">1</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">@CamiloMartin CSS filters are only supported by Chrome 18+</span> –&nbsp;<a href="http://stackoverflow.com/users/362006/salmanpk" title="3876 reputation" class="comment-user">SalmanPK</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment11899705_8612047"><span title="2012-02-23 14:40:56Z" class="relativetime-clean">Feb 23 '12 at 14:40</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-15129179" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="cool">4</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">Is there any solution for Opera?</span> –&nbsp;<a href="http://stackoverflow.com/users/1136141/rustam" title="1018 reputation" class="comment-user">Rustam</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment15129179_8612047"><span title="2012-07-12 21:52:27Z" class="relativetime-clean">Jul 12 '12 at 21:52</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-22228671" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="cool">4</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">So, what's the solution for IE10?</span> –&nbsp;<a href="http://stackoverflow.com/users/467386/tom-auger" title="2677 reputation" class="comment-user">Tom Auger</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment22228671_8612047"><span title="2013-03-27 15:05:24Z" class="relativetime-clean">Mar 27 at 15:05</span></a></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    <a id="comments-link-8612047" class="comments-link" data-comments-count="16" title="expand to show all comments on this post">show <b>16</b> more comments</a>
+</td>
+</tr>
+    </tbody></table>
+</div>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk3"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiY20iOjI5MTEsImNoIjoxMTc4LCJjciI6NTkyNCwiZGkiOiIyNDgwNDBlNTEzNDA0MWMyYmEwMTBjODdlMTRjMjFiNCIsImRtIjoxLCJmYyI6MTAxODksImZsIjo3NDcyLCJrdyI6ImNzcyxpbWFnZSxjc3MzLGZpbHRlcixncmF5c2NhbGUseC11c2VyLXJlZ2lzdGVyZWQiLCJudyI6MjIsInJmIjoiaHR0cDovL3d3dy5nb29nbGUuY29tLmhrL3VybD9zYT10IiwicnYiOjAsInByIjoxNjA0LCJzdCI6ODI3Nywiem4iOjQ0LCJ1ciI6Imh0dHA6Ly9jYXJlZXJzLnN0YWNrb3ZlcmZsb3cuY29tLyJ9&amp;s=MOFFV4Y4LtYESF2XwP98Go1vUQ8" rel="nofollow" target="_blank" title=""><img src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/0a96cc99c1784d6abe3cae6b8c8bf013.png" title="" alt="" border="0" height="90" width="728"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/i_002.gif" border="0" height="0px" width="0px"></div>
+
+
+
+  
+<a name="4028908"></a>
+<div id="answer-4028908" class="answer" data-answerid="4028908">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input value="4028908" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post ">70</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p>Following on from <a href="http://stackoverflow.com/questions/609273/convert-an-image-to-grayscale-in-html-css/4027029#4027029">brillout.com's answer</a>, and also <a href="http://stackoverflow.com/questions/609273/convert-an-image-to-grayscale-in-html-css/979261#979261">Roman Nurik's answer</a>,
+ and relaxing somewhat the the 'no SVG' requirement, you can desaturate 
+images in Firefox using only a single SVG file and some CSS.</p>
+
+<p>Your SVG file will look like this:</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="pun">&lt;?</span><span class="pln">xml version</span><span class="pun">=</span><span class="str">"1.0"</span><span class="pln"> encoding</span><span class="pun">=</span><span class="str">"UTF-8"</span><span class="pun">?&gt;</span><span class="pln">
+</span><span class="tag">&lt;svg</span><span class="pln"> </span><span class="atn">version</span><span class="pun">=</span><span class="atv">"1.1"</span><span class="pln">
+     </span><span class="atn">baseProfile</span><span class="pun">=</span><span class="atv">"full"</span><span class="pln">
+     </span><span class="atn">xmlns</span><span class="pun">=</span><span class="atv">"http://www.w3.org/2000/svg"</span><span class="tag">&gt;</span><span class="pln">
+    </span><span class="tag">&lt;filter</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"desaturate"</span><span class="tag">&gt;</span><span class="pln">
+        </span><span class="tag">&lt;feColorMatrix</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"matrix"</span><span class="pln"> </span><span class="atn">values</span><span class="pun">=</span><span class="atv">"0.3333 0.3333 0.3333 0 0
+                                             0.3333 0.3333 0.3333 0 0
+                                             0.3333 0.3333 0.3333 0 0
+                                             0      0      0      1 0"</span><span class="tag">/&gt;</span><span class="pln">
+    </span><span class="tag">&lt;/filter&gt;</span><span class="pln">
+</span><span class="tag">&lt;/svg&gt;</span></code></pre>
+
+<p>Save that as resources.svg, it can be reused from now on for any image you want to change to greyscale.</p>
+
+<p>In your CSS you reference the filter using the Firefox specific <code>filter</code> property:</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="pun">.</span><span class="pln">target </span><span class="pun">{</span><span class="pln">
+    filter</span><span class="pun">:</span><span class="pln"> url</span><span class="pun">(</span><span class="pln">resources</span><span class="pun">.</span><span class="pln">svg</span><span class="com">#desaturate);</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>Add the MS proprietary ones too if you feel like it, <a href="http://www.boogdesign.com/examples/svg/desaturate.html">apply that class to any image you want to convert to greyscale (works in Firefox &gt;3.5, IE8)</a>.</p>
+
+<p><strong>edit</strong>:  <a href="http://demosthenes.info/blog/532/Convert-Images-To-Black-And-White-With-CSS">Here's a nice blog post</a> which describes using the new CSS3 <code>filter</code>
+ property in SalmanPK's answer in concert with the SVG approach 
+described here.  Using that approach you'd end up with something like:</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="pln">img</span><span class="pun">.</span><span class="pln">desaturate</span><span class="pun">{</span><span class="pln">
+    filter</span><span class="pun">:</span><span class="pln"> grayscale</span><span class="pun">(</span><span class="lit">100</span><span class="pun">%);</span><span class="pln"> </span><span class="com">/* Current draft standard */</span><span class="pln">
+    </span><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">filter</span><span class="pun">:</span><span class="pln"> grayscale</span><span class="pun">(</span><span class="lit">100</span><span class="pun">%);</span><span class="pln"> </span><span class="com">/* New WebKit */</span><span class="pln">
+    </span><span class="pun">-</span><span class="pln">moz</span><span class="pun">-</span><span class="pln">filter</span><span class="pun">:</span><span class="pln"> grayscale</span><span class="pun">(</span><span class="lit">100</span><span class="pun">%);</span><span class="pln">
+    </span><span class="pun">-</span><span class="pln">ms</span><span class="pun">-</span><span class="pln">filter</span><span class="pun">:</span><span class="pln"> grayscale</span><span class="pun">(</span><span class="lit">100</span><span class="pun">%);</span><span class="pln"> 
+    </span><span class="pun">-</span><span class="pln">o</span><span class="pun">-</span><span class="pln">filter</span><span class="pun">:</span><span class="pln"> grayscale</span><span class="pun">(</span><span class="lit">100</span><span class="pun">%);</span><span class="pln"> </span><span class="com">/* Not yet supported in Gecko, Opera or IE */</span><span class="pln"> 
+    filter</span><span class="pun">:</span><span class="pln"> url</span><span class="pun">(</span><span class="pln">resources</span><span class="pun">.</span><span class="pln">svg</span><span class="com">#desaturate); /* Gecko */</span><span class="pln">
+    filter</span><span class="pun">:</span><span class="pln"> gray</span><span class="pun">;</span><span class="pln"> </span><span class="com">/* IE */</span><span class="pln">
+    </span><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">filter</span><span class="pun">:</span><span class="pln"> grayscale</span><span class="pun">(</span><span class="lit">1</span><span class="pun">);</span><span class="pln"> </span><span class="com">/* Old WebKit */</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p><a href="http://caniuse.com/#feat=css-filters">Further browser support info here</a>.</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/4028908/2278266" title="short permalink to this answer" class="short-link" id="link-post-4028908">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/4028908/edit" class="suggest-edit-post" title="revise and improve this post">edit</a></div>                    </td>
+    <td class="post-signature" align="right">
+
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                            <a href="http://stackoverflow.com/posts/4028908/revisions" title="show all edits to this post">edited <span title="2012-08-08 12:07:11Z" class="relativetime">Aug 8 '12 at 12:07</span></a>
+
+        </div>
+        <div class="user-gravatar32">
+            
+        </div>
+        <div class="user-details">
+            <br>
+            
+        </div>
+    </div>
+    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    
+
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+                                        answered <span title="2010-10-26 23:45:45Z" class="relativetime">Oct 26 '10 at 23:45</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/8655/robertc"><div class=""><img src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/556f7b6ad8246f13ad6edc76be170bd4.png" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/8655/robertc">robertc</a><br>
+            <span class="reputation-score" title="reputation score 25543" dir="ltr">25.5k</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="61 silver badges"><span class="badge2"></span><span class="badgecount">61</span></span><span title="78 bronze badges"><span class="badge3"></span><span class="badgecount">78</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-4028908" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-5226702" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="cool">4</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">This is cleaner, thanks. Unluckily not working at webkit</span> –&nbsp;<a href="http://stackoverflow.com/users/255869/swan" title="653 reputation" class="comment-user">swan</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment5226702_4028908"><span title="2011-01-18 23:56:13Z" class="relativetime-clean">Jan 18 '11 at 23:56</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-12602894" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="cool">3</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">In webkit you do this: <code>-webkit-filter: grayscale(100%);</code> then this: <code>-webkit-filter: grayscale(0);</code> to remove it.</span> –&nbsp;<a href="http://stackoverflow.com/users/75924/seanja" title="3310 reputation" class="comment-user">SeanJA</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment12602894_4028908"><span title="2012-03-26 23:41:28Z" class="relativetime-clean">Mar 26 '12 at 23:41</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-12603266" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">@SeanJA Thanks for the update, WebKit started implementing this stuff <a href="http://updates.html5rocks.com/2011/12/CSS-Filter-Effects-Landing-in-WebKit" rel="nofollow">in December</a></span> –&nbsp;<a href="http://stackoverflow.com/users/8655/robertc" title="25543 reputation" class="comment-user">robertc</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment12603266_4028908"><span title="2012-03-27 00:16:34Z" class="relativetime-clean">Mar 27 '12 at 0:16</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-12641374" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">I see 
+it in chrome beta on both my linux laptop and my win7 machine. It didn't
+ seem to work in chrome stable in linux (but then again, it is possible 
+linux's version is behind windows').</span> –&nbsp;<a href="http://stackoverflow.com/users/75924/seanja" title="3310 reputation" class="comment-user">SeanJA</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment12641374_4028908"><span title="2012-03-28 12:39:15Z" class="relativetime-clean">Mar 28 '12 at 12:39</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-14266954" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">This method works fine for me in Chrome, but has no effect in Safari. In FF, it's making my images invisible until hover.</span> –&nbsp;<a href="http://stackoverflow.com/users/560291/moppy" title="167 reputation" class="comment-user">Moppy</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment14266954_4028908"><span title="2012-06-07 15:56:50Z" class="relativetime-clean">Jun 7 '12 at 15:56</span></a></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+    </tbody></table>
+</div>
+
+  
+<a name="13640428"></a>
+<div id="answer-13640428" class="answer" data-answerid="13640428">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input value="13640428" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post ">28</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p>For Firefox you don't need to create a filter.svg file, you can use <a href="http://en.wikipedia.org/wiki/Data_URI_scheme">data URI scheme</a>.</p>
+
+<p>Taking up the css code of the first answer gives:</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="pln">filter</span><span class="pun">:</span><span class="pln"> url</span><span class="pun">(</span><span class="str">"data:image/svg+xml;utf8,&lt;svg%20xmlns='http://www.w3.org/2000/svg'&gt;&lt;filter%20id='grayscale'&gt;&lt;feColorMatrix%20type='matrix'%20values='0.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200.3333%200.3333%200.3333%200%200%200%200%200%201%200'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale"</span><span class="pun">);</span><span class="pln"> </span><span class="com">/* Firefox 3.5+ */</span><span class="pln">
+filter</span><span class="pun">:</span><span class="pln"> gray</span><span class="pun">;</span><span class="pln"> </span><span class="com">/* IE6+ */</span><span class="pln">
+filter</span><span class="pun">:</span><span class="pln"> grayscale</span><span class="pun">(</span><span class="lit">100</span><span class="pun">%);</span><span class="pln"> </span><span class="com">/* Current draft standard */</span><span class="pln">
+</span><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">filter</span><span class="pun">:</span><span class="pln"> grayscale</span><span class="pun">(</span><span class="lit">100</span><span class="pun">%);</span><span class="pln"> </span><span class="com">/* New WebKit */</span><span class="pln">
+</span><span class="pun">-</span><span class="pln">moz</span><span class="pun">-</span><span class="pln">filter</span><span class="pun">:</span><span class="pln"> grayscale</span><span class="pun">(</span><span class="lit">100</span><span class="pun">%);</span><span class="pln">
+</span><span class="pun">-</span><span class="pln">ms</span><span class="pun">-</span><span class="pln">filter</span><span class="pun">:</span><span class="pln"> grayscale</span><span class="pun">(</span><span class="lit">100</span><span class="pun">%);</span><span class="pln"> 
+</span><span class="pun">-</span><span class="pln">o</span><span class="pun">-</span><span class="pln">filter</span><span class="pun">:</span><span class="pln"> grayscale</span><span class="pun">(</span><span class="lit">100</span><span class="pun">%);</span></code></pre>
+
+<p>Take care to replace "utf-8" string by your file encoding.</p>
+
+<p>This method should be faster than the other because the browser will not need to do a second HTTP request.</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/13640428/2278266" title="short permalink to this answer" class="short-link" id="link-post-13640428">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/13640428/edit" class="suggest-edit-post" title="revise and improve this post">edit</a></div>                    </td>
+    <td class="post-signature" align="right">
+
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                            <a href="http://stackoverflow.com/posts/13640428/revisions" title="show all edits to this post">edited <span title="2013-04-14 16:26:16Z" class="relativetime">Apr 14 at 16:26</span></a>
+
+        </div>
+        <div class="user-gravatar32">
+            
+        </div>
+        <div class="user-details">
+            <br>
+            
+        </div>
+    </div>
+    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                        answered <span title="2012-11-30 06:57:02Z" class="relativetime">Nov 30 '12 at 6:57</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/1652064/mquandalle"><div class=""><img src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/bf7b2dcfdd64ac00c9d25135a0129f9f.png" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/1652064/mquandalle">mquandalle</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">596</span><span title="3 silver badges"><span class="badge2"></span><span class="badgecount">3</span></span><span title="10 bronze badges"><span class="badge3"></span><span class="badgecount">10</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-13640428" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-20781815" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="cool">3</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">Just a 
+note to save headaches: YUI Compressor strips spaces in data urls. So 
+you might consider using another minifier if you want to use this 
+solution.</span> –&nbsp;<a href="http://stackoverflow.com/users/1729183/malte" title="61 reputation" class="comment-user">Malte</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment20781815_13640428"><span title="2013-02-12 12:13:33Z" class="relativetime-clean">Feb 12 at 12:13</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-21646769" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="cool">4</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">@Malte Or maybe just replace spaces by a "%20" string ?</span> –&nbsp;<a href="http://stackoverflow.com/users/1652064/mquandalle" title="596 reputation" class="comment-user">mquandalle</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment21646769_13640428"><span title="2013-03-10 23:53:54Z" class="relativetime-clean">Mar 10 at 23:53</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-21709289" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">Oh wow, that totally works. Thank you, sir!</span> –&nbsp;<a href="http://stackoverflow.com/users/1729183/malte" title="61 reputation" class="comment-user">Malte</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment21709289_13640428"><span title="2013-03-12 15:05:57Z" class="relativetime-clean">Mar 12 at 15:05</span></a></span><span class="edited-yes" title="this comment was edited"></span></div></td>
+    </tr>
+            
+    <tr id="comment-21723871" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">@Malte I've editted my answer</span> –&nbsp;<a href="http://stackoverflow.com/users/1652064/mquandalle" title="596 reputation" class="comment-user">mquandalle</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment21723871_13640428"><span title="2013-03-12 21:41:47Z" class="relativetime-clean">Mar 12 at 21:41</span></a></span><span class="edited-yes" title="this comment was edited"></span></div></td>
+    </tr>
+            
+    <tr id="comment-22447080" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="cool">1</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">+1 Excellent Datai URl scheme usuage</span> –&nbsp;<a href="http://stackoverflow.com/users/365265/cept0" title="1150 reputation" class="comment-user">cept0</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment22447080_13640428"><span title="2013-04-03 13:05:59Z" class="relativetime-clean">Apr 3 at 13:05</span></a></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    <a id="comments-link-13640428" class="comments-link" data-comments-count="3" title="expand to show all comments on this post">show <b>3</b> more comments</a>
+</td>
+</tr>
+    </tbody></table>
+</div>
+
+  
+<a name="4389308"></a>
+<div id="answer-4389308" class="answer" data-answerid="4389308">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input value="4389308" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post ">12</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p>If you are able to use JavaScript, then 
+this script may be what you are looking for. It works cross browser and 
+is working fine for me so far. You can't use it with images loaded from a
+ different domain.</p>
+
+<p><a href="http://james.padolsey.com/demos/grayscale/" rel="nofollow">http://james.padolsey.com/demos/grayscale/</a></p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/4389308/2278266" title="short permalink to this answer" class="short-link" id="link-post-4389308">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/4389308/edit" class="suggest-edit-post" title="revise and improve this post">edit</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                        answered <span title="2010-12-08 15:41:21Z" class="relativetime">Dec 8 '10 at 15:41</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/170239/chrismacp"><div class=""><img src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/7b0cf58f8d94386078c791c813f0420c.png" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/170239/chrismacp">chrismacp</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">1,600</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="9 silver badges"><span class="badge2"></span><span class="badgecount">9</span></span><span title="16 bronze badges"><span class="badge3"></span><span class="badgecount">16</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-4389308" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+    </tbody></table>
+</div>
+
+  
+<a name="979261"></a>
+<div id="answer-979261" class="answer" data-answerid="979261">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input value="979261" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post ">5</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p>Doesn't look like it's possible (yet), even with CSS3 or proprietary <code>-webkit-</code> or <code>-moz-</code> CSS properties.</p>
+
+<p>However, I did find <a href="http://weblogs.mozillazine.org/roc/archives/2008/06/applying_svg_ef.html">this post from last June</a>
+ that used SVG filters on HTML. Not available in any current browser 
+(the demo hinted at a custom WebKit build), but very impressive as a 
+proof of concept.</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/979261/2278266" title="short permalink to this answer" class="short-link" id="link-post-979261">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/979261/edit" class="suggest-edit-post" title="revise and improve this post">edit</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    
+
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+                                        answered <span title="2009-06-11 04:05:36Z" class="relativetime">Jun 11 '09 at 4:05</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/102703/roman-nurik"><div class=""><img src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/875f29e3c00f00de0b43329e01c8c3bc.png" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/102703/roman-nurik">Roman Nurik</a><br>
+            <span class="reputation-score" title="reputation score 13849" dir="ltr">13.8k</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="41 silver badges"><span class="badge2"></span><span class="badgecount">41</span></span><span title="58 bronze badges"><span class="badge3"></span><span class="badgecount">58</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-979261" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+    </tbody></table>
+</div>
+
+  
+<a name="4027029"></a>
+<div id="answer-4027029" class="answer" data-answerid="4027029">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input value="4027029" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post ">4</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p>in Internet Explorer use the filter property</p>
+
+<p>in webkit and firefox there is currently no way to desatuarte an image solely with CSS.
+so you will need to use either canvas or SVG for a client side solution.</p>
+
+<p>but i think using SVG is more elegant. check out my blog post for the SVG solution that works for both firefox and webkit:
+<a href="http://webdev.brillout.com/2010/10/desaturate-image-without-javascript.html" rel="nofollow">http://webdev.brillout.com/2010/10/desaturate-image-without-javascript.html</a></p>
+
+<p>and strictly speaking since SVG is html the solution is pure html+css :-)</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/4027029/2278266" title="short permalink to this answer" class="short-link" id="link-post-4027029">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/4027029/edit" class="suggest-edit-post" title="revise and improve this post">edit</a></div>                    </td>
+    <td class="post-signature" align="right">
+
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                            <a href="http://stackoverflow.com/posts/4027029/revisions" title="show all edits to this post">edited <span title="2010-11-03 14:47:18Z" class="relativetime">Nov 3 '10 at 14:47</span></a>
+
+        </div>
+        <div class="user-gravatar32">
+            
+        </div>
+        <div class="user-details">
+            <br>
+            
+        </div>
+    </div>
+    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    
+
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+                                        answered <span title="2010-10-26 18:58:22Z" class="relativetime">Oct 26 '10 at 18:58</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/270274/brillout-com"><div class=""><img src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/bdbf1d52a5d321938d61856116ef0d50.png" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/270274/brillout-com">brillout.com</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">1,337</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="11 silver badges"><span class="badge2"></span><span class="badgecount">11</span></span><span title="22 bronze badges"><span class="badge3"></span><span class="badgecount">22</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-4027029" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-5258016" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">hi brillout. I noticed that your grayscale actually fails at safari. Any followup? Thanks</span> –&nbsp;<a href="http://stackoverflow.com/users/255869/swan" title="653 reputation" class="comment-user">swan</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment5258016_4027029"><span title="2011-01-20 23:50:02Z" class="relativetime-clean">Jan 20 '11 at 23:50</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-11907962" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">SVG is <b><i>not</i></b> HTML. It's a whole different spec.</span> –&nbsp;<a href="http://stackoverflow.com/users/124119/camilo-martin" title="3227 reputation" class="comment-user">Camilo Martin</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment11907962_4027029"><span title="2012-02-23 19:52:42Z" class="relativetime-clean">Feb 23 '12 at 19:52</span></a></span><span class="edited-yes" title="this comment was edited"></span></div></td>
+    </tr>
+            
+    <tr id="comment-15782068" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">@CamiloMartin <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/the-map-element.html#svg-0" rel="nofollow">Here is SVG in the HTML spec</a>.</span> –&nbsp;<a href="http://stackoverflow.com/users/8655/robertc" title="25543 reputation" class="comment-user">robertc</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment15782068_4027029"><span title="2012-08-08 12:10:25Z" class="relativetime-clean">Aug 8 '12 at 12:10</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-15794293" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">@robertc That link is about putting an SVG in an HTML, but here's the <a href="http://www.w3.org/TR/SVG11/" rel="nofollow">SVG spec</a> and here's the <a href="http://www.w3.org/TR/html/" rel="nofollow">HTML spec</a>. The fact that both are similar to each other (or, to XML) doesn't mean they are the same thing...</span> –&nbsp;<a href="http://stackoverflow.com/users/124119/camilo-martin" title="3227 reputation" class="comment-user">Camilo Martin</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment15794293_4027029"><span title="2012-08-08 19:34:48Z" class="relativetime-clean">Aug 8 '12 at 19:34</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-15794434" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">But 
+this doesn't affect the fact you're right about using SVG filters :) In 
+the near future (or now already, didn't check) we'll even have SVG 
+filters for any HTML element in stable browsers (the fact we didn't have
+ them already speaks a lot about the separation of both formats - the 
+blur filter in particular will rock).</span> –&nbsp;<a href="http://stackoverflow.com/users/124119/camilo-martin" title="3227 reputation" class="comment-user">Camilo Martin</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment15794434_4027029"><span title="2012-08-08 19:41:15Z" class="relativetime-clean">Aug 8 '12 at 19:41</span></a></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    <a id="comments-link-4027029" class="comments-link" data-comments-count="2" title="expand to show all comments on this post">show <b>2</b> more comments</a>
+</td>
+</tr>
+    </tbody></table>
+</div>
+
+  
+<a name="16259904"></a>
+<div id="answer-16259904" class="answer" data-answerid="16259904">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input value="16259904" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post ">3</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p>For people who are asking about the ignored IE10+ support in other answers, checkout this piece of CSS:</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="pln">img</span><span class="pun">.</span><span class="pln">grayscale</span><span class="pun">:</span><span class="pln">hover </span><span class="pun">{</span><span class="pln">
+    filter</span><span class="pun">:</span><span class="pln"> url</span><span class="pun">(</span><span class="str">"data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale"</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+svg </span><span class="pun">{</span><span class="pln">
+    background</span><span class="pun">:</span><span class="pln">url</span><span class="pun">(</span><span class="pln">http</span><span class="pun">:</span><span class="com">//4.bp.blogspot.com/-IzPWLqY4gJ0/T01CPzNb1KI/AAAAAAAACgA/_8uyj68QhFE/s400/a2cf7051-5952-4b39-aca3-4481976cb242.jpg);</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+svg image</span><span class="pun">:</span><span class="pln">hover </span><span class="pun">{</span><span class="pln">
+    opacity</span><span class="pun">:</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>Applied on this markup:</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="dec">&lt;!DOCTYPE HTML&gt;</span><span class="pln">
+</span><span class="tag">&lt;html&gt;</span><span class="pln">
+</span><span class="tag">&lt;head&gt;</span><span class="pln">
+
+    </span><span class="tag">&lt;title&gt;</span><span class="pln">Grayscaling in Internet Explorer 10+</span><span class="tag">&lt;/title&gt;</span><span class="pln">
+
+</span><span class="tag">&lt;/head&gt;</span><span class="pln">
+</span><span class="tag">&lt;body&gt;</span><span class="pln">
+
+    </span><span class="tag">&lt;p&gt;</span><span class="pln">IE10 with inline SVG</span><span class="tag">&lt;/p&gt;</span><span class="pln">
+    </span><span class="tag">&lt;svg</span><span class="pln"> </span><span class="atn">xmlns</span><span class="pun">=</span><span class="atv">"http://www.w3.org/2000/svg"</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"svgroot"</span><span class="pln"> </span><span class="atn">viewBox</span><span class="pun">=</span><span class="atv">"0 0 400 377"</span><span class="pln"> </span><span class="atn">width</span><span class="pun">=</span><span class="atv">"400"</span><span class="pln"> </span><span class="atn">height</span><span class="pun">=</span><span class="atv">"377"</span><span class="tag">&gt;</span><span class="pln">
+      </span><span class="tag">&lt;defs&gt;</span><span class="pln">
+         </span><span class="tag">&lt;filter</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"filtersPicture"</span><span class="tag">&gt;</span><span class="pln">
+           </span><span class="tag">&lt;feComposite</span><span class="pln"> </span><span class="atn">result</span><span class="pun">=</span><span class="atv">"inputTo_38"</span><span class="pln"> </span><span class="atn">in</span><span class="pun">=</span><span class="atv">"SourceGraphic"</span><span class="pln"> </span><span class="atn">in2</span><span class="pun">=</span><span class="atv">"SourceGraphic"</span><span class="pln"> </span><span class="atn">operator</span><span class="pun">=</span><span class="atv">"arithmetic"</span><span class="pln"> </span><span class="atn">k1</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="atn">k2</span><span class="pun">=</span><span class="atv">"1"</span><span class="pln"> </span><span class="atn">k3</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="atn">k4</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+           </span><span class="tag">&lt;feColorMatrix</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"filter_38"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"saturate"</span><span class="pln"> </span><span class="atn">values</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="atn">data-filterid</span><span class="pun">=</span><span class="atv">"38"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+        </span><span class="tag">&lt;/filter&gt;</span><span class="pln">
+      </span><span class="tag">&lt;/defs&gt;</span><span class="pln">
+      </span><span class="tag">&lt;image</span><span class="pln"> </span><span class="atn">filter</span><span class="pun">=</span><span class="atv">"url(&amp;quot;#filtersPicture&amp;quot;)"</span><span class="pln"> </span><span class="atn">x</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="atn">y</span><span class="pun">=</span><span class="atv">"0"</span><span class="pln"> </span><span class="atn">width</span><span class="pun">=</span><span class="atv">"400"</span><span class="pln"> </span><span class="atn">height</span><span class="pun">=</span><span class="atv">"377"</span><span class="pln"> </span><span class="atn">xmlns:xlink</span><span class="pun">=</span><span class="atv">"http://www.w3.org/1999/xlink"</span><span class="pln"> </span><span class="atn">xlink:href</span><span class="pun">=</span><span class="atv">"http://4.bp.blogspot.com/-IzPWLqY4gJ0/T01CPzNb1KI/AAAAAAAACgA/_8uyj68QhFE/s1600/a2cf7051-5952-4b39-aca3-4481976cb242.jpg"</span><span class="pln"> </span><span class="tag">/&gt;</span><span class="pln">
+    </span><span class="tag">&lt;/svg&gt;</span><span class="pln">
+
+</span><span class="tag">&lt;/body&gt;</span><span class="pln">
+</span><span class="tag">&lt;/html&gt;</span></code></pre>
+
+<p>For more demos, checkout IE testdrive's <a href="http://ie.microsoft.com/testdrive/Graphics/hands-on-css3/hands-on_svg-filter-effects.htm" rel="nofollow">CSS3 Graphics section</a> and this old IE blog <a href="http://blogs.msdn.com/b/ie/archive/2011/10/14/svg-filter-effects-in-ie10.aspx" rel="nofollow">http://blogs.msdn.com/b/ie/archive/2011/10/14/svg-filter-effects-in-ie10.aspx</a></p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/16259904/2278266" title="short permalink to this answer" class="short-link" id="link-post-16259904">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/16259904/edit" class="suggest-edit-post" title="revise and improve this post">edit</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                        answered <span title="2013-04-28 05:23:54Z" class="relativetime">Apr 28 at 5:23</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/1712065/annie"><div class=""><img src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/a01e7526819002d3b8afd13600c7f979.png" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/1712065/annie">Annie</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">351</span><span title="17 bronze badges"><span class="badge3"></span><span class="badgecount">17</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-16259904" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+    </tbody></table>
+</div>
+
+  
+<a name="13184202"></a>
+<div id="answer-13184202" class="answer" data-answerid="13184202">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input value="13184202" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post ">3</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p>I originally used <a href="http://stackoverflow.com/a/8612047/1268612">SalmanPK's answer</a>,
+ but then created the variation below to eliminate the extra HTTP 
+request required for the SVG file. The inline SVG works in Firefox 
+versions 10 and above, and versions lower than 10 no longer account for 
+even 1% of the global browser market.</p>
+
+<p>I have since been keeping the solution updated on <a href="http://www.karlhorky.com/2012/06/cross-browser-image-grayscale-with-css.html" rel="nofollow">this blog post</a>, adding support for fading back to color, IE10 support with SVG, and partial grayscale in the demo.</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="pln">img</span><span class="pun">.</span><span class="pln">grayscale </span><span class="pun">{</span><span class="pln">
+    filter</span><span class="pun">:</span><span class="pln"> url</span><span class="pun">(</span><span class="str">"data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale"</span><span class="pun">);</span><span class="pln"> </span><span class="com">/* Firefox 10+, Firefox on Android */</span><span class="pln">
+    filter</span><span class="pun">:</span><span class="pln"> gray</span><span class="pun">;</span><span class="pln"> </span><span class="com">/* IE6-9 */</span><span class="pln">
+    </span><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">filter</span><span class="pun">:</span><span class="pln"> grayscale</span><span class="pun">(</span><span class="lit">100</span><span class="pun">%);</span><span class="pln"> </span><span class="com">/* Chrome 19+, Safari 6+, Safari 6+ iOS */</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+
+img</span><span class="pun">.</span><span class="pln">grayscale</span><span class="pun">.</span><span class="pln">disabled </span><span class="pun">{</span><span class="pln">
+    filter</span><span class="pun">:</span><span class="pln"> none</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">filter</span><span class="pun">:</span><span class="pln"> grayscale</span><span class="pun">(</span><span class="lit">0</span><span class="pun">%);</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/13184202/2278266" title="short permalink to this answer" class="short-link" id="link-post-13184202">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/13184202/edit" class="suggest-edit-post" title="revise and improve this post">edit</a></div>                    </td>
+    <td class="post-signature" align="right">
+
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                            <a href="http://stackoverflow.com/posts/13184202/revisions" title="show all edits to this post">edited <span title="2012-11-01 22:15:15Z" class="relativetime">Nov 1 '12 at 22:15</span></a>
+
+        </div>
+        <div class="user-gravatar32">
+            
+        </div>
+        <div class="user-details">
+            <br>
+            
+        </div>
+    </div>
+    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                        answered <span title="2012-11-01 19:32:33Z" class="relativetime">Nov 1 '12 at 19:32</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/1268612/karl-horky"><div class=""><img src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/c6368794d8eacf0127fbb12569c40c14.jpg" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/1268612/karl-horky">Karl Horky</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">488</span><span title="3 silver badges"><span class="badge2"></span><span class="badgecount">3</span></span><span title="9 bronze badges"><span class="badge3"></span><span class="badgecount">9</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-13184202" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+    </tbody></table>
+</div>
+
+  
+<a name="9569866"></a>
+<div id="answer-9569866" class="answer" data-answerid="9569866">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input value="9569866" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post ">3</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p>Just got the same problem today. I've initially used <a href="http://stackoverflow.com/a/8612047/933464">SalmanPK solution</a>
+ but found out that effect differs between FF and other browsers. That's
+ because conversion matrix works on lightness only not luminosity like 
+filters in Chrome/IE . To my surprise I've found out that alternative 
+and simpler solution in SVG also works in FF4+ and produces better 
+results:</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="tag">&lt;svg</span><span class="pln"> </span><span class="atn">xmlns</span><span class="pun">=</span><span class="atv">"http://www.w3.org/2000/svg"</span><span class="tag">&gt;</span><span class="pln">
+  </span><span class="tag">&lt;filter</span><span class="pln"> </span><span class="atn">id</span><span class="pun">=</span><span class="atv">"desaturate"</span><span class="tag">&gt;</span><span class="pln">
+    </span><span class="tag">&lt;feColorMatrix</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"saturate"</span><span class="pln"> </span><span class="atn">values</span><span class="pun">=</span><span class="atv">"0"</span><span class="tag">/&gt;</span><span class="pln">
+  </span><span class="tag">&lt;/filter&gt;</span><span class="pln">
+</span><span class="tag">&lt;/svg&gt;</span></code></pre>
+
+<p>With css:</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="pln">img </span><span class="pun">{</span><span class="pln">
+    filter</span><span class="pun">:</span><span class="pln"> url</span><span class="pun">(</span><span class="pln">filters</span><span class="pun">.</span><span class="pln">svg</span><span class="com">#desaturate); /* Firefox 3.5+ */</span><span class="pln">
+    filter</span><span class="pun">:</span><span class="pln"> gray</span><span class="pun">;</span><span class="pln"> </span><span class="com">/* IE6-9 */</span><span class="pln">
+    </span><span class="pun">-</span><span class="pln">webkit</span><span class="pun">-</span><span class="pln">filter</span><span class="pun">:</span><span class="pln"> grayscale</span><span class="pun">(</span><span class="lit">1</span><span class="pun">);</span><span class="pln"> </span><span class="com">/* Google Chrome &amp; Safari 6+ */</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>One more caveat is that IE10 doesn't support "filter: gray:" in 
+standards compliant mode anymore, so needs compatibility mode switch in 
+headers to work:</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="tag">&lt;meta</span><span class="pln"> </span><span class="atn">http-equiv</span><span class="pun">=</span><span class="atv">"X-UA-Compatible"</span><span class="pln"> </span><span class="atn">content</span><span class="pun">=</span><span class="atv">"IE=9"</span><span class="pln"> </span><span class="tag">/&gt;</span></code></pre>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/9569866/2278266" title="short permalink to this answer" class="short-link" id="link-post-9569866">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/9569866/edit" class="suggest-edit-post" title="revise and improve this post">edit</a></div>                    </td>
+    <td class="post-signature" align="right">
+
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                            <a href="http://stackoverflow.com/posts/9569866/revisions" title="show all edits to this post">edited <span title="2012-09-25 21:29:03Z" class="relativetime">Sep 25 '12 at 21:29</span></a>
+
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/193886/ivy"><div class=""><img src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/19ec765fde16982a521a466c51514c4c.jpg" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/193886/ivy">ivy</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">3,064</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="11 silver badges"><span class="badge2"></span><span class="badgecount">11</span></span><span title="27 bronze badges"><span class="badge3"></span><span class="badgecount">27</span></span>
+        </div>
+    </div>
+    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                        answered <span title="2012-03-05 16:04:24Z" class="relativetime">Mar 5 '12 at 16:04</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/933464/robertt"><div class=""><img src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/30f87096d4620c97aec8bc6fb6bf1d70.jpg" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/933464/robertt">RobertT</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">436</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="8 bronze badges"><span class="badge3"></span><span class="badgecount">8</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-9569866" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+    </tbody></table>
+</div>
+
+  
+<a name="3965452"></a>
+<div id="answer-3965452" class="answer" data-answerid="3965452">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input value="3965452" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post ">2</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p>If you're willing to use Javascript, then 
+you can use a canvas to convert the image to grayscale. Since Firefox 
+and Safari support <code>&lt;canvas&gt;</code>, it should work.</p>
+
+<p>So I googled "canvas grayscale", and the first result was <a href="http://www.permadi.com/tutorial/jsCanvasGrayscale/index.html" rel="nofollow">http://www.permadi.com/tutorial/jsCanvasGrayscale/index.html</a> which seems to work.</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/3965452/2278266" title="short permalink to this answer" class="short-link" id="link-post-3965452">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/3965452/edit" class="suggest-edit-post" title="revise and improve this post">edit</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    
+
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+                                        answered <span title="2010-10-19 04:58:39Z" class="relativetime">Oct 19 '10 at 4:58</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/54491/scraimer"><div class=""><img src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/e9486eb138a602b0aaac1e6db6c1d64d.jpg" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/54491/scraimer">scraimer</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">5,708</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="26 silver badges"><span class="badge2"></span><span class="badgecount">26</span></span><span title="60 bronze badges"><span class="badge3"></span><span class="badgecount">60</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-3965452" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+    </tbody></table>
+</div>
+
+  
+<a name="609327"></a>
+<div id="answer-609327" class="answer" data-answerid="609327">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input value="609327" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post ">1</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p>It's in fact easier to do it with IE if I remember correctly using a proprietary CSS property. Try this <code>FILTER: Gray</code> from <a href="http://www.ssi-developer.net/css/visual-filters.shtml" rel="nofollow">http://www.ssi-developer.net/css/visual-filters.shtml</a></p>
+
+<p>The method by <a href="http://stackoverflow.com/questions/609273/convert-an-image-to-grayscale-in-html-css/609302#609302">Ax</a> simply makes the image transparent and has a black background behind it. I'm sure you could argue this is grayscale.</p>
+
+<p>Although you didn't want to use Javascript, I think you'll have to use it. You could also use a server side language to do it.</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/609327/2278266" title="short permalink to this answer" class="short-link" id="link-post-609327">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/609327/edit" class="suggest-edit-post" title="revise and improve this post">edit</a></div>                    </td>
+    <td class="post-signature" align="right">
+
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                            <a href="http://stackoverflow.com/posts/609327/revisions" title="show all edits to this post">edited <span title="2010-10-26 23:04:53Z" class="relativetime">Oct 26 '10 at 23:04</span></a>
+
+        </div>
+        <div class="user-gravatar32">
+            
+        </div>
+        <div class="user-details">
+            <br>
+            
+        </div>
+    </div>
+    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    
+
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+                                        answered <span title="2009-03-04 05:20:43Z" class="relativetime">Mar 4 '09 at 5:20</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/31671/alex"><div class=""><img src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/e96a421d76c1fc107a5d291c6999b2ef.jpg" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/31671/alex">alex</a><br>
+            <span class="reputation-score" title="reputation score 144003" dir="ltr">144k</span><span title="55 gold badges"><span class="badge1"></span><span class="badgecount">55</span></span><span title="277 silver badges"><span class="badge2"></span><span class="badgecount">277</span></span><span title="477 bronze badges"><span class="badge3"></span><span class="badgecount">477</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-609327" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-421794" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">I do not even have a Windows box, so thanks, but that's of little use to me.</span> –&nbsp;<a href="http://stackoverflow.com/users/73105/ken" title="1489 reputation" class="comment-user owner">Ken</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment421794_609327"><span title="2009-03-04 05:38:11Z" class="relativetime-clean">Mar 4 '09 at 5:38</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-421798" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">In that
+ case, you can look at it with a Virtual Machine with IE, implement ax's
+ method or use canvas... note that grayscaling on large images with 
+canvas can be quite taxing on the Javascript engine.</span> –&nbsp;<a href="http://stackoverflow.com/users/31671/alex" title="144003 reputation" class="comment-user">alex</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment421798_609327"><span title="2009-03-04 05:40:08Z" class="relativetime-clean">Mar 4 '09 at 5:40</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-4319551" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="warm">5</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy"><code>filter: gray</code> is present in Internet Explorer since <i>Version 4</i>. They have taken a lot of crap for their product - rightly! - but they were really ahead of their time with this stuff</span> –&nbsp;<a href="http://stackoverflow.com/users/187606/pekka" title="204025 reputation" class="comment-user">Pekka 웃</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment4319551_609327"><span title="2010-10-26 19:19:47Z" class="relativetime-clean">Oct 26 '10 at 19:19</span></a></span><span class="edited-yes" title="this comment was edited"></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+    </tbody></table>
+</div>
+
+  
+<a name="10617083"></a>
+<div id="answer-10617083" class="answer" data-answerid="10617083">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input value="10617083" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post ">1</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p>support for native CSS filters in webkit has been added from the current version 19.0.1084.46</p>
+
+<p>so -webkit-filter: grayscale(1) will work and which is easier than SVG approach for webkit...</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/10617083/2278266" title="short permalink to this answer" class="short-link" id="link-post-10617083">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/10617083/edit" class="suggest-edit-post" title="revise and improve this post">edit</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                        answered <span title="2012-05-16 10:56:05Z" class="relativetime">May 16 '12 at 10:56</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/707701/hjindal"><div class=""><img src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/16ab4430a8bed267a002a6271aee3335.png" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/707701/hjindal">hjindal</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">276</span><span title="1 silver badge"><span class="badge2"></span><span class="badgecount">1</span></span><span title="9 bronze badges"><span class="badge3"></span><span class="badgecount">9</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-10617083" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+    </tbody></table>
+</div>
+
+  
+<a name="3947171"></a>
+<div id="answer-3947171" class="answer" data-answerid="3947171">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input value="3947171" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post ">1</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p>I found the solution!!! :)</p>
+
+<p>I was playing around with PHP and remembered this question (god knows why)!</p>
+
+<p>I think this might be exactly what you want, I got it from the PHP GD library and added some variable to automate the process...</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="pun">&lt;?</span><span class="pln">php
+$img </span><span class="pun">=</span><span class="pln"> </span><span class="lit">@imagecreatefromgif</span><span class="pun">(</span><span class="str">"php.gif"</span><span class="pun">);</span><span class="pln">
+
+</span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$img</span><span class="pun">)</span><span class="pln"> $img_height </span><span class="pun">=</span><span class="pln"> imagesy</span><span class="pun">(</span><span class="pln">$img</span><span class="pun">);</span><span class="pln">
+</span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">$img</span><span class="pun">)</span><span class="pln"> $img_width </span><span class="pun">=</span><span class="pln"> imagesx</span><span class="pun">(</span><span class="pln">$img</span><span class="pun">);</span><span class="pln">
+
+</span><span class="com">// Create image instances</span><span class="pln">
+$dest </span><span class="pun">=</span><span class="pln"> imagecreatefromgif</span><span class="pun">(</span><span class="str">'php.gif'</span><span class="pun">);</span><span class="pln">
+$src </span><span class="pun">=</span><span class="pln"> imagecreatefromgif</span><span class="pun">(</span><span class="str">'php.gif'</span><span class="pun">);</span><span class="pln">
+
+</span><span class="com">// Copy and merge - Gray = 20%</span><span class="pln">
+imagecopymergegray</span><span class="pun">(</span><span class="pln">$dest</span><span class="pun">,</span><span class="pln"> $src</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pun">,</span><span class="pln"> $img_width</span><span class="pun">,</span><span class="pln"> $img_height</span><span class="pun">,</span><span class="pln"> </span><span class="lit">20</span><span class="pun">);</span><span class="pln">
+
+</span><span class="com">// Output and free from memory</span><span class="pln">
+header</span><span class="pun">(</span><span class="str">'Content-Type: image/gif'</span><span class="pun">);</span><span class="pln">
+imagegif</span><span class="pun">(</span><span class="pln">$dest</span><span class="pun">);</span><span class="pln">
+
+imagedestroy</span><span class="pun">(</span><span class="pln">$dest</span><span class="pun">);</span><span class="pln">
+imagedestroy</span><span class="pun">(</span><span class="pln">$src</span><span class="pun">);</span><span class="pln">
+
+</span><span class="pun">?&gt;</span></code></pre>
+
+<p>It is not html but it might just be what you want!</p>
+
+<p>Good luck!</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/3947171/2278266" title="short permalink to this answer" class="short-link" id="link-post-3947171">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/3947171/edit" class="suggest-edit-post" title="revise and improve this post">edit</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    
+
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+                                        answered <span title="2010-10-16 00:56:41Z" class="relativetime">Oct 16 '10 at 0:56</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/463065/trufa"><div class=""><img src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/edb56216fd1104b03e56477dfc1a282c.png" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/463065/trufa">Trufa</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">8,159</span><span title="12 gold badges"><span class="badge1"></span><span class="badgecount">12</span></span><span title="48 silver badges"><span class="badge2"></span><span class="badgecount">48</span></span><span title="87 bronze badges"><span class="badge3"></span><span class="badgecount">87</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-3947171" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-4319564" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="warm">10</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">The question is about using HTML/CSS only...</span> –&nbsp;<a href="http://stackoverflow.com/users/393406/joltmode" title="3636 reputation" class="comment-user">joltmode</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment4319564_3947171"><span title="2010-10-26 19:20:58Z" class="relativetime-clean">Oct 26 '10 at 19:20</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-4319744" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="cool">2</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">@Tom, 
+based on the votes and favorites on the original question, the OP isn't 
+the only person who wondered if this is possible.  Sure, this answer 
+might bend the rules, but I don't see the point in downvoting an answer 
+that might be useful to a lot of people.</span> –&nbsp;<a href="http://stackoverflow.com/users/388639/michael-martin-smucker" title="1013 reputation" class="comment-user">Michael Martin-Smucker</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment4319744_3947171"><span title="2010-10-26 19:37:57Z" class="relativetime-clean">Oct 26 '10 at 19:37</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-4320103" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="cool">1</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">@Tom, I
+ though though it might no be an exact reply to the question,it  might 
+come in handy as it actually "solves" the problem of the grayscale 
+without the "hassle" of javascript, maybe he didnt even consider or knew
+ about PHP GD, no harm intended. @mlms13 that was the point exactly, 
+thanks :)</span> –&nbsp;<a href="http://stackoverflow.com/users/463065/trufa" title="8159 reputation" class="comment-user">Trufa</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment4320103_3947171"><span title="2010-10-26 20:12:02Z" class="relativetime-clean">Oct 26 '10 at 20:12</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-4784065" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="cool">3</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">That 
+did help me, put me on the right track after a few other dead ends. I 
+found that using "imagefilter($source, IMG_FILTER_GRAYSCALE);" gave a 
+much better result though. (PHP 5 only)</span> –&nbsp;<a href="http://stackoverflow.com/users/170239/chrismacp" title="1600 reputation" class="comment-user">chrismacp</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment4784065_3947171"><span title="2010-12-08 17:20:00Z" class="relativetime-clean">Dec 8 '10 at 17:20</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-17122631" class="comment">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="cool">3</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">Voted down, since it's virtually off topic. Grayscaling an image on the server side is completely different from CSS/HTML.</span> –&nbsp;<a href="http://stackoverflow.com/users/996638/nasmon" title="862 reputation" class="comment-user">Nasmon</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment17122631_3947171"><span title="2012-10-02 07:03:26Z" class="relativetime-clean">Oct 2 '12 at 7:03</span></a></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    <a id="comments-link-3947171" class="comments-link" data-comments-count="2" title="expand to show all comments on this post">show <b>2</b> more comments</a>
+</td>
+</tr>
+    </tbody></table>
+</div>
+
+  
+<a name="979342"></a>
+<div id="answer-979342" class="answer" data-answerid="979342">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input value="979342" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post ">0</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p>One terrible but workable solution: render
+ the image using a Flash object, which then gives you all the 
+transformations possible in Flash.</p>
+
+<p><strong>If</strong> your users are using bleeding-edge browsers and <strong>if</strong> Firefox 3.5 and Safari 4 support it (I don't know that either do/will), you could adjust the CSS <em>color-profile</em> attribute of the image, setting it to a grayscale ICC profile URL. But that's a lot of if's!</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/979342/2278266" title="short permalink to this answer" class="short-link" id="link-post-979342">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/979342/edit" class="suggest-edit-post" title="revise and improve this post">edit</a></div>                    </td>
+    <td class="post-signature" align="right">
+
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                            <a href="http://stackoverflow.com/posts/979342/revisions" title="show all edits to this post">edited <span title="2009-06-11 04:57:54Z" class="relativetime">Jun 11 '09 at 4:57</span></a>
+
+        </div>
+        <div class="user-gravatar32">
+            
+        </div>
+        <div class="user-details">
+            <br>
+            
+        </div>
+    </div>
+    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    
+
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+                                        answered <span title="2009-06-11 04:41:43Z" class="relativetime">Jun 11 '09 at 4:41</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/16306/richardtallent"><div class=""><img src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/8bf7167234617d5143c1de7bd58b7449.png" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/16306/richardtallent">richardtallent</a><br>
+            <span class="reputation-score" title="reputation score 14540" dir="ltr">14.5k</span><span title="8 gold badges"><span class="badge1"></span><span class="badgecount">8</span></span><span title="36 silver badges"><span class="badge2"></span><span class="badgecount">36</span></span><span title="70 bronze badges"><span class="badge3"></span><span class="badgecount">70</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-979342" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+    </tbody></table>
+</div>
+
+  
+<a name="17169545"></a>
+<div id="answer-17169545" class="answer" data-answerid="17169545">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input value="17169545" type="hidden">
+    <a class="vote-up-off" title="This answer is useful (click again to undo)">up vote</a>
+    <span class="vote-count-post ">0</span>
+    <a class="vote-down-off" title="This answer is not useful (click again to undo)">down vote</a>
+    
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p>be <strong>An alternative for older browser</strong> could be to use mask produced by pseudo-elements or inline tags.  </p>
+
+<p>Absolute positionning hover an  img (or text area wich needs no click nor selection) can closely mimic effects of color scale , <em>via rgba() or translucide png</em> .</p>
+
+<p>It will not give one single color scale, but will shades color out of range.</p>
+
+<p>test on code pen with 10 different colors via pseudo-element, last is gray . <a href="http://codepen.io/gcyrillus/pen/nqpDd" rel="nofollow">http://codepen.io/gcyrillus/pen/nqpDd</a> (reload to switch to another image)</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/17169545/2278266" title="short permalink to this answer" class="short-link" id="link-post-17169545">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/17169545/edit" class="suggest-edit-post" title="revise and improve this post">edit</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    
+
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+                                        answered <span title="2013-06-18 13:01:16Z" class="relativetime">Jun 18 at 13:01</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/2442099/gcyrillus"><div class="gravatar-wrapper-32"><img src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/Jtx0O.jpg" alt=""></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/2442099/gcyrillus">GCyrillus</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">1,713</span><span title="8 bronze badges"><span class="badge3"></span><span class="badgecount">8</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-17169545" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+    </tbody></table>
+</div>
+    <div class="question-status">
+        <h2><strong>protected</strong> by <a href="http://stackoverflow.com/users/468793/bazmegakapa">bažmegakapa</a> <span title="2013-03-31 12:16:59Z" class="relativetime">Mar 31 at 12:16</span></h2>
+        <p>This question is protected to prevent "thanks!", "me too!", or spam answers by new users. 
+To answer it, you must have earned at least 10 <a href="http://stackoverflow.com/help/whats-reputation">reputation</a> on this site.</p>
+    </div>
+
+
+
+        <h2 class="bottom-notice">
+                Not the answer you're looking for? 
+            Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/css" class="post-tag" title="show questions tagged 'css'" rel="tag">css</a> <a href="http://stackoverflow.com/questions/tagged/image" class="post-tag" title="show questions tagged 'image'" rel="tag">image</a> <a href="http://stackoverflow.com/questions/tagged/css3" class="post-tag" title="show questions tagged 'css3'" rel="tag">css3</a> <a href="http://stackoverflow.com/questions/tagged/filter" class="post-tag" title="show questions tagged 'filter'" rel="tag">filter</a> <a href="http://stackoverflow.com/questions/tagged/grayscale" class="post-tag" title="show questions tagged 'grayscale'" rel="tag">grayscale</a> 
+                or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.
+        </h2>
+</div>
+</div>
+<div id="sidebar" class="show-votes">
+
+
+
+     <script type="text/javascript">
+         window.showNewUser = false;
+
+     </script>
+    <div class="module newuser newuser-greeting" id="newuser-box" style="display:none;">
+        <h4>Hello World!</h4>
+        <div>
+            <p>This is a collaboratively edited question and answer site for <b>professional and enthusiast programmers</b>. It's 100% free, no registration required.</p>
+            <p class="ar">
+                    <a href="http://stackoverflow.com/about?mnu=1">about »</a>&nbsp;&nbsp;&nbsp;
+                <a href="http://stackoverflow.com/help?mnu=1">help »</a>
+            </p>
+        </div>
+    </div>
+     <script type="text/javascript">
+        if (showNewUser) {
+            document.getElementById('newuser-box').style.display = '';
+        }
+     </script>
+        <div class="module question-stats">
+        <p class="label-key">tagged</p>
+        <div class="tagged"><a href="http://stackoverflow.com/questions/tagged/css" class="post-tag" title="show questions tagged 'css'" rel="tag">css</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">140074</span></span><br>
+<a href="http://stackoverflow.com/questions/tagged/image" class="post-tag" title="show questions tagged 'image'" rel="tag">image</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">34188</span></span><br>
+<a href="http://stackoverflow.com/questions/tagged/css3" class="post-tag" title="show questions tagged 'css3'" rel="tag">css3</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">16446</span></span><br>
+<a href="http://stackoverflow.com/questions/tagged/filter" class="post-tag" title="show questions tagged 'filter'" rel="tag">filter</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">5306</span></span><br>
+<a href="http://stackoverflow.com/questions/tagged/grayscale" class="post-tag" title="show questions tagged 'grayscale'" rel="tag">grayscale</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">230</span></span><br>
+</div>
+        <table id="qinfo">
+            <tbody><tr>
+                <td><p class="label-key">asked</p></td>
+                <td style="padding-left:10px"><p class="label-key" title="2009-03-04 04:51:26Z"><b>4 years ago</b></p></td>
+            </tr>
+            <tr>
+                <td><p class="label-key">viewed</p></td>
+
+                <td style="padding-left:10px">
+                    <p class="label-key">
+                        <b>131193 times</b>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td><p class="label-key">active</p></td>
+                <td style="padding-left:10px"><p class="label-key"><b><a href="http://stackoverflow.com/questions/609273/convert-an-image-to-grayscale-in-html-css?lastactivity" class="lastactivity-link" title="2013-06-18 13:01:16Z">4 days ago</a></b></p></td>
+            </tr>
+        </tbody></table>
+    </div>
+        
+                    <script type="text/javascript">
+                    var scriptSrc = "http://engine.adzerk.net/z/8277/adzerk1_2_4_43,adzerk2_2_17_45,adzerk3_2_4_44?keywords=css,image,css3,filter,grayscale,x-user-registered";
+                    if (document.referrer) {
+                        if (/\?/.test(scriptSrc))
+                            scriptSrc += "&";
+                        else
+                            scriptSrc += "?";
+                        scriptSrc += "xReferrer=" + document.referrer;
+                    }
+                    StackExchange.ready(function() {
+                        var z = document.createElement("script");
+                        z.type = "text/javascript";
+                        z.async = "true";
+                        z.src = scriptSrc;
+                        var s = document.getElementsByTagName("script")[0];
+                        s.parentNode.insertBefore(z, s);
+                    });
+                </script>
+            
+    <div id="hireme"> <a href="http://careers.stackoverflow.com/jobs?a=24" class="top" target="_blank"></a> <ul class="jobs"> <li> <a href="http://careers.stackoverflow.com/jobs/33259/front-end-web-developer-caspio?a=DijH808" target="_blank" title="Front End Web Developer at Caspio. Click to learn more."> Front End Web Developer<br> <span class="company">Caspio</span> <span class="location">Santa Clara, CA</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/32516/web-developer-axcient?a=CpTfJHa" target="_blank" title="Web Developer at Axcient. Click to learn more."> Web Developer<br> <span class="company">Axcient</span> <span class="location">Mountain View, CA</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/36199/ecommerce-developer-speck-products?a=GLG84CY" target="_blank" title="eCommerce Developer at Speck Products. Click to learn more."> eCommerce Developer<br> <span class="company">Speck Products</span> <span class="location">Mountain View, CA</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/36197/seeking-front-end-web-developer-to-join-wheelhouse-enterprises?a=GLx473q" target="_blank" title="Seeking Front End Web Developer to Join Exceptional Team at Wheelhouse Enterprises. Click to learn more."> Seeking Front End Web Developer to Join Exceptional Team<br> <span class="company">Wheelhouse Enterprises</span> <span class="location">Palo Alto, CA</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/35164/front-end-developer-sugarcrm?a=FxRxXd6" target="_blank" title="Front End Developer at SugarCRM. Click to learn more."> Front End Developer<br> <span class="company">SugarCRM</span> <span class="location">Cupertino, CA</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/35897/software-engineer-data-team-shazam-entertainment?a=GpyzwHK" target="_blank" title="Software Engineer (Data Team) at Shazam Entertainment. Click to learn more."> Software Engineer (Data Team)<br> <span class="company">Shazam Entertainment</span> <span class="location">Menlo Park, CA</span> </a> </li> </ul> <img alt="" class="impression" src="Convert%20an%20image%20to%20grayscale%20in%20HTML_CSS%20-%20Stack%20Overflow_files/DijH808-CpTfJHa-GLG84CY-GLx473q-FxRxXd6-GpyzwHK-24.gif" style="display:none"></div>
+
+
+
+    
+  
+    
+    <div class="module sidebar-linked">
+        <h4 id="h-linked">Linked</h4>
+        <div class="linked" data-tracker="lq=1">
+            <div class="spacer">
+<a href="http://stackoverflow.com/q/7273927?lq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">9</div>
+</a>
+<a href="http://stackoverflow.com/questions/7273927/image-greyscale-with-css-re-color-on-mouse-over?lq=1" class="question-hyperlink">Image Greyscale with CSS &amp; re-color on mouse-over?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/5993406?lq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes default">4</div>
+</a>
+<a href="http://stackoverflow.com/questions/5993406/css-how-to-turn-an-colour-image-to-a-grey-or-black-white-image?lq=1" class="question-hyperlink">CSS: how to turn an colour image to a grey or black/white image</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/8874422?lq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">1</div>
+</a>
+<a href="http://stackoverflow.com/questions/8874422/grayscale-in-chrome-via-css?lq=1" class="question-hyperlink">grayscale in chrome via css</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/3937216?lq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">2</div>
+</a>
+<a href="http://stackoverflow.com/questions/3937216/display-color-picture-as-monochrome?lq=1" class="question-hyperlink">Display color picture as monochrome</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/9455973?lq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">2</div>
+</a>
+<a href="http://stackoverflow.com/questions/9455973/image-to-grayscale-svg-issue?lq=1" class="question-hyperlink">Image to grayscale (SVG) issue</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/9508271?lq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes default">1</div>
+</a>
+<a href="http://stackoverflow.com/questions/9508271/jquery-make-an-image-greyscale?lq=1" class="question-hyperlink">jQuery make an image greyscale</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/6389017?lq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">0</div>
+</a>
+<a href="http://stackoverflow.com/questions/6389017/css-js-ps-best-way-to-desaturate-multiple-images?lq=1" class="question-hyperlink">CSS/JS/PS - Best way to desaturate multiple images</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/5070788?lq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">2</div>
+</a>
+<a href="http://stackoverflow.com/questions/5070788/using-html-js-css-only-is-there-a-way-to-render-a-color-image-in-black-white?lq=1" class="question-hyperlink">Using HTML/JS/CSS Only - Is there a way to render a color image in Black &amp; White?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/11433628?lq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">0</div>
+</a>
+<a href="http://stackoverflow.com/questions/11433628/svg-filter-not-working-on-ff-with-godaddy?lq=1" class="question-hyperlink">svg filter not working on FF with godaddy</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/9673753?lq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">2</div>
+</a>
+<a href="http://stackoverflow.com/questions/9673753/firefox-does-not-pick-up-svg-filter-to-desaturate-image-thumbs?lq=1" class="question-hyperlink">Firefox does not pick up SVG filter to desaturate image thumbs</a>
+</div>
+<div class="spacer more">
+<a href="http://stackoverflow.com/questions/linked/609273?lq=1">see more linked questions…</a></div>
+
+        </div>
+    </div>
+    <div class="module sidebar-related">
+        <h4 id="h-related">Related</h4>
+        <div class="related" data-tracker="rq=1">
+            <div class="spacer">
+<a href="http://stackoverflow.com/q/3373860?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">12</div>
+</a>
+<a href="http://stackoverflow.com/questions/3373860/convert-a-bitmap-to-grayscale-in-android?rq=1" class="question-hyperlink">Convert a Bitmap to GrayScale in Android</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/3815261?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes default">1</div>
+</a>
+<a href="http://stackoverflow.com/questions/3815261/python-3-converting-image-to-grayscale?rq=1" class="question-hyperlink">Python 3: Converting image to grayscale</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/6292806?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes default">-3</div>
+</a>
+<a href="http://stackoverflow.com/questions/6292806/how-to-convert-pixel-data-to-grayscale-image-in-java?rq=1" class="question-hyperlink">How to convert pixel data to grayscale image in java?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/10533489?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes default">2</div>
+</a>
+<a href="http://stackoverflow.com/questions/10533489/color-image-to-grayscale-image-with-raphael-js-not-working-in-i-e-9?rq=1" class="question-hyperlink">Color image to grayscale image with Raphael.js not working in I.E. 9</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/10804281?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">1</div>
+</a>
+<a href="http://stackoverflow.com/questions/10804281/jquery-plugin-converting-color-css-to-grayscale?rq=1" class="question-hyperlink">jQuery plugin converting color css to grayscale?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/11460679?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes default">2</div>
+</a>
+<a href="http://stackoverflow.com/questions/11460679/convert-an-image-to-grayscale-in-html-css-and-save-the-new-image?rq=1" class="question-hyperlink">Convert an image to grayscale in HTML/CSS and save the new image</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/12246894?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">2</div>
+</a>
+<a href="http://stackoverflow.com/questions/12246894/css-grayscale-in-ie-with-percentage?rq=1" class="question-hyperlink">CSS: grayscale in IE (with percentage)</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/12685794?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">5</div>
+</a>
+<a href="http://stackoverflow.com/questions/12685794/grayscale-image-with-css-on-safari-5-x?rq=1" class="question-hyperlink">Grayscale image with CSS on Safari 5.x</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/16402727?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">6</div>
+</a>
+<a href="http://stackoverflow.com/questions/16402727/firefox-filter-grayscale-and-printing?rq=1" class="question-hyperlink">Firefox filter grayscale and printing</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/16407268?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">2</div>
+</a>
+<a href="http://stackoverflow.com/questions/16407268/css-filter-grayscale-image-for-ie-10?rq=1" class="question-hyperlink">CSS filter grayscale image for IE 10</a>
+</div>
+
+        </div>
+    </div>
+</div>
+
+<div id="feed-link">
+    <div id="feed-link-text"><a href="http://stackoverflow.com/feeds/question/609273" title="feed of this question and its answers"><span class="feed-icon"></span>question feed</a></div>
+</div>
+<script type="text/javascript">
+StackExchange.ready(function(){$.get('/posts/609273/ivc/ab85');});
+</script>
+<noscript>
+    <div><img src="/posts/609273/ivc/ab85" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">default</div></div>
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://stackoverflow.com/about">about</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                    <a href="http://blog.stackexchange.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/about/hiring">jobs</a>
+                    <a href="http://engine.adzerk.net/redirect/0/2776/2751/0/4de3c60f719c4dfcb1a57531c7050090/0">advertising info</a>
+
+                    <a onclick='StackExchange.switchMobile("on", "/questions/609273/convert-an-image-to-grayscale-in-html-css")'>mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                </div>
+                <div id="footer-sites">
+                <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="professional system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems.">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Answers</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="IT security professionals">IT Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="statisticians, data analysts, data miners and data visualization experts">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackoverflow.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Overflow</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2013 stack exchange inc; 
+                user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc-wiki</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="footer-flair">
+                <a href="http://creativecommons.org/licenses/by-sa/3.0/" class="cc-wiki-link"></a>
+            </div>
+            <div id="svnrev">
+                rev 2013.6.22.757
+            </div>
+            
+        </div>
+    </div>
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+    <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-5620270-1']);
+        _gaq.push(['_setCustomVar', 1, 'tags', '|css|image|css3|filter|grayscale|']); 
+        _gaq.push(['_setCustomVar', 2, 'accountid', '2632742',2]); 
+_gaq.push(['_trackPageview']);
+    var _qevents = _qevents || [];
+    (function(){
+        var s=document.getElementsByTagName('script')[0];
+        var ga=document.createElement('script');
+        ga.type='text/javascript';
+        ga.async=true;
+        ga.src='http://www.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(ga,s);
+        var sc=document.createElement('script');
+        sc.type='text/javascript';
+        sc.async=true;
+        sc.src='http://edge.quantserve.com/quant.js'; 
+        s.parentNode.insertBefore(sc,s);
+    })();
+    </script>
+    <script type="text/javascript">
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>        
+    
+
+</body></html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html><head><script src="Running%20Django%20with%20Gunicorn%20on%20WebFaction%20_%20CMYK_files/auth013.js" type="text/javascript"></script><link media="all" href="Running%20Django%20with%20Gunicorn%20on%20WebFaction%20_%20CMYK_files/widget115.css" type="text/css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="page speed, gunicorn, django, webfaction">
+<meta name="description" content="This howto post from _Render To Response_ on CMYK is filed under: page speed, gunicorn, django, webfaction.">
+<meta name="google-site-verification" content="_KXyn5r9LS1ycoUiHejk_0GoLzFz6xbTSOkaNpKTVtM">
+<title>Running Django with Gunicorn on WebFaction | CMYK</title>
+<script src="Running%20Django%20with%20Gunicorn%20on%20WebFaction%20_%20CMYK_files/ga.js" async="" type="text/javascript"></script><script src="Running%20Django%20with%20Gunicorn%20on%20WebFaction%20_%20CMYK_files/cloudflare.js" async=""></script><script type="text/javascript">
+//<![CDATA[
+window.__CF=window.__CF||{};window.__CF.AJS={"prnc":{"dalytkn":"Tor5PuwADfv_DcVmE2zYQ7W7_y515zt7IcXEDd3KFhyAH4Yi-G6JPQHoXMc7HBBMV"},"highlight":null};
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) { var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",mirage:{responsive:0,lazy:0},mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/abv=2706741234/"},atok:"77973146948c2ca8d90ebe49fa676448",zone:"sevennineteen.com",rocket:"0",apps:{"prnc":{"dalytkn":"Tor5PuwADfv_DcVmE2zYQ7W7_y515zt7IcXEDd3KFhyAH4Yi-G6JPQHoXMc7HBBMV"},"highlight":null}}];var a=document.createElement("script"),b=document.getElementsByTagName("script")[0];a.async=!0;a.src="//ajax.cloudflare.com/cdn-cgi/nexp/abv=3609848800/cloudflare.min.js";b.parentNode.insertBefore(a,b);}}catch(e){};
+//]]>
+</script>
+<link href="http://cmyk.sevennineteen.com/common/favicon.ico" rel="icon" type="image/x-icon">
+<link href="http://cmyk.sevennineteen.com/common/favicon.ico" rel="shortcut icon" type="image/x-icon">
+<link rel="stylesheet" href="Running%20Django%20with%20Gunicorn%20on%20WebFaction%20_%20CMYK_files/screen.css" type="text/css">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-11828083-4']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<link rel="alternate" type="application/rss+xml" title="CMYK: latest" href="http://cmyk.sevennineteen.com/feeds/section/code">
+<link rel="stylesheet" href="Running%20Django%20with%20Gunicorn%20on%20WebFaction%20_%20CMYK_files/jquery-ui.css" type="text/css">
+<script type="text/javascript" src="Running%20Django%20with%20Gunicorn%20on%20WebFaction%20_%20CMYK_files/jquery_003.js"></script>
+<script type="text/javascript" src="Running%20Django%20with%20Gunicorn%20on%20WebFaction%20_%20CMYK_files/jquery-ui.js"></script>
+<script type="text/javascript" src="Running%20Django%20with%20Gunicorn%20on%20WebFaction%20_%20CMYK_files/jquery_002.js"></script>
+<script type="text/javascript" src="Running%20Django%20with%20Gunicorn%20on%20WebFaction%20_%20CMYK_files/jquery.js"></script>
+<script type="text/javascript" src="Running%20Django%20with%20Gunicorn%20on%20WebFaction%20_%20CMYK_files/jquery_004.js"></script>
+<div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; z-index: 100000;"><iframe src="Running%20Django%20with%20Gunicorn%20on%20WebFaction%20_%20CMYK_files/sh123.htm" style="height: 1px; width: 1px; position: absolute; z-index: 100000; border: 0px none; left: 0px; top: 0px;" title="AddThis utility frame" id="_atssh415"></iframe></div><script src="Running%20Django%20with%20Gunicorn%20on%20WebFaction%20_%20CMYK_files/core085.js" type="text/javascript"></script><script src="Running%20Django%20with%20Gunicorn%20on%20WebFaction%20_%20CMYK_files/count.js" type="text/javascript" async=""></script><script src="Running%20Django%20with%20Gunicorn%20on%20WebFaction%20_%20CMYK_files/embed.js" async="" type="text/javascript"></script><style type="text/css">div#cf_pronounce_popup {display:none; top:100; left:100; position:fixed; background:transparent; cursor:pointer;}</style><script src="Running%20Django%20with%20Gunicorn%20on%20WebFaction%20_%20CMYK_files/count-data.js" async="" type="text/javascript"></script><script charset="UTF-8" async="" src="Running%20Django%20with%20Gunicorn%20on%20WebFaction%20_%20CMYK_files/alfie.js"></script></head>
+<body>
+<div class="container">
+<header>
+<div class="box quad banner">
+<a class="heading" href="http://cmyk.sevennineteen.com/">cmyk.sevennineteen.com</a>
+<span>&nbsp;</span>
+<div style="float: right;">
+<nav>
+<a title="Render To Response" href="http://cmyk.sevennineteen.com/blogs/code"><span class="cyan">C</span></a>
+<a title="The Haçienda" href="http://cmyk.sevennineteen.com/blogs/music"><span class="magenta">M</span></a>
+<a title="Yeastie" href="http://cmyk.sevennineteen.com/blogs/libations"><span class="yellow">Y</span></a>
+<a title="A Boy and His Dawg" href="http://cmyk.sevennineteen.com/blogs/cinema"><span class="black">K</span></a>
+</nav>
+</div>
+</div>
+<div class="box quad">
+<h2 class="c">
+<a href="http://cmyk.sevennineteen.com/blogs/code">Render To Response</a>
+</h2>
+</div>
+<div class="clearit"></div>
+</header>
+<div class="box single">
+<aside>
+<h3 class="generic">Meta</h3>
+<div class="blister">
+<p><b>Author:</b> sevennineteen</p>
+<p><b>Date:</b> 2.26.12</p>
+<p><b>Type:</b> Howto</p>
+<p>
+<b>Tags:</b>
+<a href="http://cmyk.sevennineteen.com/blogs/tags/django">django</a>,
+<a href="http://cmyk.sevennineteen.com/blogs/tags/gunicorn">gunicorn</a>,
+<a href="http://cmyk.sevennineteen.com/blogs/tags/page%20speed">page speed</a>,
+<a href="http://cmyk.sevennineteen.com/blogs/tags/webfaction">webfaction</a>
+</p>
+</div>
+<h3 class="generic">Social</h3>
+<div class="blister">
+<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+<a href="#" title="Tweet" class="addthis_button_twitter at300b"><span class=" at300bs at15nc at15t_twitter"><span class="at_a11y">Share on twitter</span></span></a>
+<a title="Reddit" target="_blank" href="http://www.addthis.com/bookmark.php?v=300&amp;winname=addthis&amp;pub=sevennineteen&amp;source=tbx32-300&amp;lng=en-US&amp;s=reddit&amp;url=http%3A%2F%2Fcmyk.sevennineteen.com%2Fblogs%2Fcode%2Frunning-django-gunicorn-webfaction%2F&amp;title=Running%20Django%20with%20Gunicorn%20on%20WebFaction%20%7C%20CMYK&amp;ate=AT-sevennineteen/-/-/51e2a7cc1ef8a4af/2&amp;frommenu=1&amp;uid=51e2a7cc27c40073&amp;trackurl=http%3A%2F%2Fcmyk.sevennineteen.com%2Fblogs%2Fcode%2Frunning-django-gunicorn-webfaction%2F%23.UdrMkm3hMWw&amp;ct=1&amp;rsi=51dacc926de1316c&amp;gen=1&amp;pre=http%3A%2F%2Fwww.google.com.hk%2Furl%3Fsa%3Dt%26rct%3Dj%26q%3D%26esrc%3Ds%26source%3Dweb%26cd%3D9%26ved%3D0CG8QFjAI%26url%3D%2568%2574%2574%2570%253a%252f%252f%2563%256d%2579%256b%252e%2573%2565%2576%2565%256e%256e%2569%256e%2565%2574%2565%2565%256e%252e%2563%256f%256d%252f%2562%256c%256f%2567%2573%252f%2563%256f%2564%2565%252f%2572%2575%256e%256e%2569%256e%2567%252d%2564%256a%2561%256e%2567%256f%252d%2567%2575%256e%2569%2563%256f%2572%256e%252d%2577%2565%2562%2566%2561%2563&amp;tt=0&amp;captcha_provider=nucaptcha" class="addthis_button_reddit at300b"><span class=" at300bs at15nc at15t_reddit"><span class="at_a11y">Share on reddit</span></span></a>
+<a title="StumbleUpon" target="_blank" href="http://www.addthis.com/bookmark.php?v=300&amp;winname=addthis&amp;pub=sevennineteen&amp;source=tbx32-300&amp;lng=en-US&amp;s=stumbleupon&amp;url=http%3A%2F%2Fcmyk.sevennineteen.com%2Fblogs%2Fcode%2Frunning-django-gunicorn-webfaction%2F&amp;title=Running%20Django%20with%20Gunicorn%20on%20WebFaction%20%7C%20CMYK&amp;ate=AT-sevennineteen/-/-/51e2a7cc1ef8a4af/3&amp;frommenu=1&amp;uid=51e2a7cc565f1e5d&amp;trackurl=http%3A%2F%2Fcmyk.sevennineteen.com%2Fblogs%2Fcode%2Frunning-django-gunicorn-webfaction%2F%23.UdrMkm3hMWw&amp;ct=1&amp;rsi=51dacc926de1316c&amp;gen=1&amp;pre=http%3A%2F%2Fwww.google.com.hk%2Furl%3Fsa%3Dt%26rct%3Dj%26q%3D%26esrc%3Ds%26source%3Dweb%26cd%3D9%26ved%3D0CG8QFjAI%26url%3D%2568%2574%2574%2570%253a%252f%252f%2563%256d%2579%256b%252e%2573%2565%2576%2565%256e%256e%2569%256e%2565%2574%2565%2565%256e%252e%2563%256f%256d%252f%2562%256c%256f%2567%2573%252f%2563%256f%2564%2565%252f%2572%2575%256e%256e%2569%256e%2567%252d%2564%256a%2561%256e%2567%256f%252d%2567%2575%256e%2569%2563%256f%2572%256e%252d%2577%2565%2562%2566%2561%2563&amp;tt=0&amp;captcha_provider=nucaptcha" class="addthis_button_stumbleupon at300b"><span class=" at300bs at15nc at15t_stumbleupon"><span class="at_a11y">Share on stumbleupon</span></span></a>
+<a title="Delicious" target="_blank" href="http://www.addthis.com/bookmark.php?v=300&amp;winname=addthis&amp;pub=sevennineteen&amp;source=tbx32-300&amp;lng=en-US&amp;s=delicious&amp;url=http%3A%2F%2Fcmyk.sevennineteen.com%2Fblogs%2Fcode%2Frunning-django-gunicorn-webfaction%2F&amp;title=Running%20Django%20with%20Gunicorn%20on%20WebFaction%20%7C%20CMYK&amp;ate=AT-sevennineteen/-/-/51e2a7cc1ef8a4af/4&amp;frommenu=1&amp;uid=51e2a7cc3870beb8&amp;trackurl=http%3A%2F%2Fcmyk.sevennineteen.com%2Fblogs%2Fcode%2Frunning-django-gunicorn-webfaction%2F%23.UdrMkm3hMWw&amp;ct=1&amp;rsi=51dacc926de1316c&amp;gen=1&amp;pre=http%3A%2F%2Fwww.google.com.hk%2Furl%3Fsa%3Dt%26rct%3Dj%26q%3D%26esrc%3Ds%26source%3Dweb%26cd%3D9%26ved%3D0CG8QFjAI%26url%3D%2568%2574%2574%2570%253a%252f%252f%2563%256d%2579%256b%252e%2573%2565%2576%2565%256e%256e%2569%256e%2565%2574%2565%2565%256e%252e%2563%256f%256d%252f%2562%256c%256f%2567%2573%252f%2563%256f%2564%2565%252f%2572%2575%256e%256e%2569%256e%2567%252d%2564%256a%2561%256e%2567%256f%252d%2567%2575%256e%2569%2563%256f%2572%256e%252d%2577%2565%2562%2566%2561%2563&amp;tt=0&amp;captcha_provider=nucaptcha" class="addthis_button_delicious at300b"><span class=" at300bs at15nc at15t_delicious"><span class="at_a11y">Share on delicious</span></span></a>
+<a href="#" class="addthis_button_compact at300m"><span class=" at300bs at15nc at15t_compact"><span class="at_a11y">More Sharing Services</span></span></a>
+<div class="atclear"></div></div>
+<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+<script type="text/javascript" src="Running%20Django%20with%20Gunicorn%20on%20WebFaction%20_%20CMYK_files/addthis_widget.js"></script>
+</div>
+<div class="blister">
+<p><a href="#disqus_thread" data-disqus-identifier="post_80">10 Comments</a></p>
+<script type="text/javascript">
+
+	var disqus_shortname = 'cmyk719';
+
+
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function () {
+		var s = document.createElement('script'); s.async = true;
+		s.type = 'text/javascript';
+		s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+		(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+	}());
+</script>
+</div>
+</aside>
+</div>
+<div class="box double">
+<article>
+<h1 class="section">Running Django with Gunicorn on WebFaction</h1>
+<div class="blister">
+<div class="postdesc">
+<p>If you're like me, you've probably been hearing a lot lately about 
+asynchronous/event-driven/non-blocking web applications and the 
+advantage these have in terms of performance and scalability. You've 
+probably heard of this in the context of <a target="_blank" href="http://nodejs.org/">Node.js</a>, <a target="_blank" href="http://www.tornadoweb.org/">Tornado</a>, or <a target="_blank" href="http://en.wikipedia.org/wiki/Comet_%28programming%29">Comet</a>
+ in general. These technologies are indeed opening the door to whole new
+ classes of web applications and have enormous impact on the degree of 
+interactivity possible on the web. These new applications are a paradigm
+ shift from classical web applications and require fundamentally 
+different implementations; this is a topic for another day. However, 
+from an architecture point-of-view, it's possible for conventional 
+applications to take advantage of async web servers for signficant 
+performance gains with minimal changes to the application code.</p>
+<p>This morning I went through the process of transitioning <a href="http://cmyk.sevennineteen.com/">CMYK</a> – a <a target="_blank" href="https://www.djangoproject.com/">Django</a> site formerly served by <a target="_blank" href="http://httpd.apache.org/">Apache</a> with <a target="_blank" href="http://code.google.com/p/modwsgi/">mod_wsgi</a> – to run on the <a target="_blank" href="http://gunicorn.org/">Gunicorn</a> WSGI server with <a target="_blank" href="http://www.gevent.org/">Gevent</a> workers. In this post I'll share some notes on getting this deployed on <a target="_blank" href="http://www.webfaction.com/">WebFaction</a> – my awesome Django hosting provider – as well as some performance metrics captured using <a target="_blank" href="http://blitz.io/">Blitz.io</a>. </p>
+<p><em>Spoiler: the difference is uncanny.</em> </p>
+<h3>The Setup</h3>
+<p>Before I start, I have to give credit to the following resources which helped me along the way:</p>
+<ul>
+<li><a target="_blank" href="http://dbinit.com/blog/going-green/">http://dbinit.com/blog/going-green/</a></li>
+<li><a target="_blank" href="http://ericholscher.com/blog/2011/jan/10/handling-django-settings-files/">http://ericholscher.com/blog/2011/jan/10/handling-django-settings-files/</a></li>
+<li><a target="_blank" href="http://devcenter.heroku.com/articles/django">http://devcenter.heroku.com/articles/django</a></li>
+</ul>
+<p>My approach is a hodge-podge of the above ideas. Some of the changes I
+ made are not directly related to Gunicorn and are just general 
+improvements I made to the deployment model, specifically making better 
+use of <a target="_blank" href="http://www.virtualenv.org/">virtualenv</a> and <a target="_blank" href="http://www.pip-installer.org/">pip</a> and taming my Django settings files, but I'll try to cover everything I did as best as I can remember.</p>
+<p><strong>Set up Virtualenv</strong></p>
+<p>In your local dev environment, create and activate a new <code>virtualenv</code>, and copy the Django app into it.</p>
+<pre><code>cd ~/mysite
+mkdir myapp_gunicorn
+cd myapp_gunicorn
+virtualenv --distribute .
+source bin/activate
+cp -R ~/mysite/myapp .
+</code></pre>
+<p>Install <code>django</code>, <code>gunicorn</code>, <code>gevent</code>, and whatever else your app needs. (This make take a few tries to get everything.)</p>
+<pre><code>pip install django gunicorn gevent
+pip install other-shit-i-need
+</code></pre>
+<p>Once you've got everything and your app starts properly (using <code>manage.py</code> for now), save the requirements to a text file which we can use later on WebFaction to mirror the setup.</p>
+<pre><code>pip freeze &gt; requirements.txt
+</code></pre>
+<p><strong>The settings file interlude</strong></p>
+<p>In the past I'd struggled to find a satisfactory approach to managing
+ Django settings files across different environments. At first, I didn't
+ keep these in the repo at all. For awhile I used a semi-clever approach
+ split out environment specific settings into separate files and import 
+them into the main <code>settings.py</code> file, but annoyingly this 
+required the shell game of specifying which environment-specific module 
+to import. Here's a better way.</p>
+<p>Create a new <code>settings</code> directory in the app, organized as follows:</p>
+<pre><code>myapp/
+    settings/
+        __init__.py
+        base.py
+        dev.py
+        prod.py
+</code></pre>
+<p><code>base.py</code> will contain the general application settings (e.g., <code>INSTALLED_APPS</code>). <code>dev.py</code> and <code>prod.py</code>
+ contain all the environment-specific stuff (e.g., database connections,
+ template paths, debug options, etc.). Rather than importing the 
+environment-specific stuff into the general settings, we do the reverse.
+ At the top of <code>dev.py</code> and <code>prod.py</code>:</p>
+<pre><code>from .base import *
+</code></pre>
+<blockquote>
+<p>Once we do this, we're done using <code>manage.py</code> and lose some magic, but in the end this is a good thing. (Eric Holscher's post linked above still uses <code>manage.py</code> in development, but I prefer my approach which reduces the stack differences to a minimum.)</p>
+</blockquote>
+<p>Now, we'll set up some configuration files for gunicorn in the following structure:</p>
+<pre><code>etc/
+    gunicorn.dev.conf
+    gunicorn.prod.conf
+</code></pre>
+<p>These <code>conf</code> files should look like this:</p>
+<pre><code>bind = "127.0.0.1:8000"
+workers = 3
+worker_class = "gevent"
+</code></pre>
+<p>The <code>prod</code> configuration will differ in the bind port number and possibly the number of workers. FYI, Gunicorn recommends the formula <code>(2 x $num_cores) + 1</code> as a starting point.</p>
+<p>As the <em>coup de grâce</em>, we can use a startup script (<code>start_myapp.sh</code>) to fire up our app:</p>
+<pre><code>#!/bin/bash
+source bin/activate
+export DJANGO_SETTINGS_MODULE=cmyk.settings.$1
+gunicorn_django -c etc/gunicorn.$1.conf &amp;
+</code></pre>
+<p>Now we can start our app with the command <code>./start_myapp.sh $env</code> and the appropriate settings for both Gunicorn and Django will kick in.</p>
+<p>You'll probably have some minor debugging to do, particularly being more specific in imports since <code>manage.py</code> is not there to make assumptions for you, but after that your app should be running locally on Gunicorn. (Shut it down with a <code>kill $pid</code> to the Gunicorn master process.)</p>
+<p><strong>Deployment in WebFaction</strong></p>
+<p>In the <strong>Applications</strong> section of the WebFaction control panel, create a new <em>Custom app (listening on port)</em> (<code>myapp_gunicorn</code>). Copy the created app's port number into your WebFaction-specific Gunicorn config (<code>etc/gunicorn.prod.conf</code>).</p>
+<p>Commit your code, push it up to your repo host of choice, and clone it into your new <code>~/webapps/myapp_gunicorn</code> directory. If you're using <a target="_blank" href="http://git-scm.com/">Git</a>, the following <code>.gitignore</code> should leave what you need:</p>
+<pre><code>bin
+build
+include
+lib
+.Python
+*.pyc
+</code></pre>
+<p>Now install <code>virtualenv</code> (if it's not already there), get the dependencies installed, and fire up your app:</p>
+<pre><code>cd ~/webapps/myapp_gunicorn
+easy_install-2.7 install virtualenv
+~/bin/virtualenv --distribute .
+source bin/activate
+pip install -r requirements.txt
+./start_myapp.sh prod
+</code></pre>
+<p>To complete the cutover, go to the <strong>Websites</strong> section 
+of the WebFaction control panel, and change the appropriate site app 
+from your old Apache-powered Django instance to your new <code>myapp_gunicorn</code>. Once you click <strong>Update</strong> you should be off to the races. After you've verified your app is working as expected, you can tear down the Apache Django app.</p>
+<h3>The Bake-Off</h3>
+<p>I used Blitz.io to measure the difference in performance. Blitz is a 
+handy and massively entertaining load-testing tool which I use as an 
+add-on to <a target="_blank" href="https://www.cloudflare.com/">CloudFlare</a>, a value-added CDN which I also highly recommend. </p>
+<blockquote>
+<p>It's important to note that, through their partnership, CloudFlare 
+lets the Blitz traffic pass through to the origin servers, so the 
+metrics below are direct hits into the WebFaction Gunicorn server. 
+Therefore, real-world site performance should be even better when the 
+CDN and/or HTTP caching is in play.</p>
+</blockquote>
+<p>I configured the Blitz "rush" as follows:</p>
+<pre><code>-p 1-250:60 -T 5000 http://cmyk.sevennineteen.com/
+</code></pre>
+<p>This means: <em>rush the CMYK homepage, increasing traffic from 1 to 250 concurrent users over the course of 1 minute, with a 5 second timeout</em>.</p>
+<p>And now, the numbers you've all been waiting for. Again, both 
+versions are running the same Django application code and differ only in
+ the WSGI container.</p>
+<p><strong>Apache + mod_wsgi</strong></p>
+<ul>
+<li>137 hits, 1,039 timeouts, 25 errors</li>
+<li>The average hit rate of 2.31/second translates to about 199,772 hits/day</li>
+<li>The first error happened at 17.59 seconds into the test when the number of concurrent users was at 74</li>
+</ul>
+<p><strong>Gunicorn + gevent</strong></p>
+<ul>
+<li>2,029 hits, 154 timeouts, 154 errors</li>
+<li>The average hit rate of 31/second translates to about 2,713,363 hits/day</li>
+<li>The first timeout happened at 45.20 seconds into the test when the number of concurrent users was at 189</li>
+</ul>
+<p>As you can see, the Gunicorn setup is capable of handling over 13.5x 
+more traffic than Apache (and yes, I ran the test several times). I 
+expected there to be some improvement in performance due to the async 
+Gevent workers, but nothing like this.</p>
+<p>It's worth noting that 99% of Django sites, including mine, will 
+probably be fine with the basic Apache + mod_wsgi setup, and no doubt 
+the heavy-hitter Django sites that <em>need</em> this kind of scalability (e.g., <a target="_blank" href="http://instagr.am/">Instagram</a>, <a target="_blank" href="http://disqus.com/">Disqus</a>, <a target="_blank" href="http://pinterest.com/">Pinterest</a>, <a target="_blank" href="http://www.theonion.com/">The Onion</a>)
+ have already discovered the virtues of Gunicorn/Gevent/Twisted/Tornado.
+ But this is food for thought for fledgling sites starting to tackle 
+scalability concerns, as asynchronous servers can provide a huge amount 
+of headroom with minimal application refactoring.</p>
+</div>
+</div>
+</article>
+</div>
+<div class="wrapper single">
+<script src="Running%20Django%20with%20Gunicorn%20on%20WebFaction%20_%20CMYK_files/fancy_lightbox.js" type="text/javascript"></script>
+<div>
+<a target="_blank" class="elastic_image" href="http://farm5.static.flickr.com/4033/4675775163_7d9297993b_b.jpg">
+<img alt="Render To Response" class="box single empty" src="Running%20Django%20with%20Gunicorn%20on%20WebFaction%20_%20CMYK_files/4675775163_7d9297993b_m.jpg" title="Render To Response">
+</a>
+</div>
+<script type="text/javascript"> 
+  var publicApiUrl = "http://d5etf.api.searchify.com/";
+  var indexName = "sevennineteen";
+  var elementId = "#search_terms_id";
+  var remoteSource = publicApiUrl + "v1/indexes/" + indexName + "/autocomplete";
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+$(function() {
+
+var sourceCallback = function( request, responseCallback ) {
+  $.ajax( {
+    url: remoteSource,
+    dataType: "jsonp",
+    data: { query: request.term },
+    success: function( data ) { responseCallback( data.suggestions ); }
+  } );
+};
+
+var selectCallback = function( event, ui ) { 
+  event.target.value = ui.item.value;
+  event.target.form.submit();
+};
+
+$( elementId ).autocomplete( {
+  source: sourceCallback,
+  minLength: 2,
+  delay: 100,
+  select: selectCallback
+} );
+
+});
+});
+
+</script>
+<form class="box single c" action="/search/basic/">
+<div>
+<input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" class="ui-autocomplete-input" id="search_terms_id" name="search_terms" style="width: 226px; height: 32px; padding: 0; margin: 0; font-size: 24px;" type="text">
+<input id="search_submit_id" value="Search" class="hidden" type="submit">
+</div>
+</form>
+<div class="box single">
+<aside>
+<h3 class="generic">Related Posts</h3>
+<div class="blister">
+<h4><a class="postlink" href="http://cmyk.sevennineteen.com/blogs/code/simple-rss-link-list-django-and-jquery">A Simple RSS Link List with Django and JQuery</a></h4>
+<h4><a class="postlink" href="http://cmyk.sevennineteen.com/blogs/code/cloud-based-site-search-using-indextank">Cloud-based Site Search Using IndexTank</a></h4>
+<h4><a class="postlink" href="http://cmyk.sevennineteen.com/blogs/code/controlling-post-truncation-django">Controlling Post Truncation in Django</a></h4>
+<h4><a class="postlink" href="http://cmyk.sevennineteen.com/blogs/code/django-11-released">Django 1.1 Released</a></h4>
+<h4><a class="postlink" href="http://cmyk.sevennineteen.com/blogs/code/django-webfaction">Docs for Django on WebFaction</a></h4>
+<h4><a class="postlink" href="http://cmyk.sevennineteen.com/blogs/code/exploiting-widthratio-django">Exploiting widthratio in Django</a></h4>
+<h4><a class="postlink" href="http://cmyk.sevennineteen.com/blogs/code/first-live">First! is live!</a></h4>
+<h4><a class="postlink" href="http://cmyk.sevennineteen.com/blogs/code/minification-easy-site-speedups">Minification for Easy Site Speedups</a></h4>
+<h4><a class="postlink" href="http://cmyk.sevennineteen.com/blogs/code/implementation-site">On the implementation of this site</a></h4>
+<h4><a class="postlink" href="http://cmyk.sevennineteen.com/blogs/code/ridiculously-simple-syndication">Ridiculously Simple Syndication</a></h4>
+<h4><a class="postlink" href="http://cmyk.sevennineteen.com/blogs/code/strategic-caching-django-memcached">Strategic caching for Django with Memcached</a></h4>
+<h4><a class="postlink" href="http://cmyk.sevennineteen.com/blogs/code/wrestling-django-tag-clouds">Wrestling with Django tag clouds</a></h4>
+</div>
+</aside>
+</div>
+</div>
+<div class="clearit"></div>
+<section>
+<div class="box quad">
+<div class="blister">
+<div id="disqus_thread"><iframe src="Running%20Django%20with%20Gunicorn%20on%20WebFaction%20_%20CMYK_files/client.htm" style="width: 100%; border: medium none; overflow: hidden; height: 0px; display: none;" role="application" allowtransparency="true" data-disqus-uid="1" id="dsq1" frameborder="0" width="100%"></iframe><iframe verticalscrolling="no" horizontalscrolling="no" src="Running%20Django%20with%20Gunicorn%20on%20WebFaction%20_%20CMYK_files/a.htm" style="width: 100%; border: medium none; overflow: hidden; height: 1372px;" role="complementary" allowtransparency="true" data-disqus-uid="4" id="dsq4" frameborder="0" scrolling="no" width="100%"></iframe></div>
+<script type="text/javascript">
+/* <![CDATA[ */
+
+	var disqus_shortname = 'cmyk719';
+	var disqus_identifier = "post_80";
+	var disqus_title = "Running Django with Gunicorn on WebFaction";
+
+	/* * * DON'T EDIT BELOW THIS LINE * * */
+	(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</div>
+</div>
+</section>
+<div class="clearit"></div>
+<div class="box quad footer">
+<footer>
+©2009-13 <a target="_blank" class="copyright" href="http://www.sevennineteen.com/">sevennineteen</a> and friends.
+<span>&nbsp;</span>
+<div style="float: right;">
+<nav>
+<a title="Render To Response" href="http://cmyk.sevennineteen.com/blogs/code"><span class="cyan">C</span></a>
+<a title="The Haçienda" href="http://cmyk.sevennineteen.com/blogs/music"><span class="magenta">M</span></a>
+<a title="Yeastie" href="http://cmyk.sevennineteen.com/blogs/libations"><span class="yellow">Y</span></a>
+<a title="A Boy and His Dawg" href="http://cmyk.sevennineteen.com/blogs/cinema"><span class="black">K</span></a>
+</nav>
+</div>
+</footer>
+</div>
+</div>
+<script type="text/javascript" src="Running%20Django%20with%20Gunicorn%20on%20WebFaction%20_%20CMYK_files/externallinks.js"></script>
+
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancy-bg" id="fancy-bg-n"></div><div class="fancy-bg" id="fancy-bg-ne"></div><div class="fancy-bg" id="fancy-bg-e"></div><div class="fancy-bg" id="fancy-bg-se"></div><div class="fancy-bg" id="fancy-bg-s"></div><div class="fancy-bg" id="fancy-bg-sw"></div><div class="fancy-bg" id="fancy-bg-w"></div><div class="fancy-bg" id="fancy-bg-nw"></div><div id="fancybox-inner"></div><a target="_blank" id="fancybox-close"></a><a target="_blank" href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a target="_blank" href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div><ul style="z-index: 1; top: 0px; left: 0px; display: none;" aria-activedescendant="ui-active-menuitem" role="listbox" class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all"></ul><div id="cf_pronounce_popup"><img src="Running%20Django%20with%20Gunicorn%20on%20WebFaction%20_%20CMYK_files/pronounce-popup-normal.png"></div><div id="cf_pronounce"></div><div style="display: block; position: absolute; width: 154px; height: 43px; background: url(&quot;http://ajax.cloudflare.com/cdn-cgi/custom/images/highlight.png&quot;) no-repeat scroll 0px 0px transparent; margin: 0px; padding: 0px; z-index: 99999; top: 401px; left: 654px;" id="CFHighlightWidget"><div style="display: block;position: absolute;top: 1px;left: 0px;z-index: 5;margin: 0;padding: 0 0 0 45px;width: 68px;height: 30px;border-right: 1px solid #4d4d4d" class="hit"><span style="color: #fff;font-family: 'Helvetica Neue', Arial, sans-serif;font-size: 13px;font-weight: 500;line-height: 30px;cursor: default;text-align: left" class="title">More info</span></div><div style="display: block;position: absolute;width: 24px;height: 13px;top : 9px;left: 10px;z-index: 2;background: url('http://ajax.cloudflare.com/cdn-cgi/custom/images/highlight.png') no-repeat 0px -43px" class="cloudIconWhite"></div><div style="position: absolute;width: 24px;height: 13px;top: 9px;left: 10px;z-index: 3;background: url('http://ajax.cloudflare.com/cdn-cgi/custom/images/highlight.png') no-repeat 0px -56px;display: none" class="cloudIconOrange"></div><div style="display: block;position: absolute;width: 39px;height: 30px;top: 1px;right: 0px;cursor: pointer;border-left: 1px solid #7d7d7d" class="pronounceButton"><div style="display: block;position: absolute;width: 24px;height: 23px;left: 5px;top: 3px;background: url('http://ajax.cloudflare.com/cdn-cgi/custom/images/highlight.png') no-repeat 0px -92px" class="pronounceIcon"></div></div></div><div style="display: none; position: absolute; width: 480px; height: 480px; border: 1px solid rgb(207, 207, 207); border-radius: 6px 6px 6px 6px; background: none repeat scroll 0% 0% rgb(255, 255, 255); box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.15); z-index: 99999;" id="CFHighlight"><div style="display: block;position: relative;padding: 0;margin: 0;height: 53px;background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAA2CAIAAAADJ/2KAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QTA3MDRBMkExOTM3MTFFMUFGQjhGN0ExN0ExQTIyODYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QTA3MDRBMkIxOTM3MTFFMUFGQjhGN0ExN0ExQTIyODYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBMDcwNEEyODE5MzcxMUUxQUZCOEY3QTE3QTFBMjI4NiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBMDcwNEEyOTE5MzcxMUUxQUZCOEY3QTE3QTFBMjI4NiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PhT+kAEAAAe5SURBVHjazJnJbiM5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') repeat-x;-webkit-border-top-right-radius: 4px;-moz-border-top-right-radius: 4px;border-top-right-radius: 4px;-webkit-border-top-left-radius: 4px;-moz-border-top-left-radius: 4px;border-top-left-radius: 4px" class="top"><div style="display: block;position: absolute;top: 0;left: 0;margin: 0;padding: 0;width: 98px;height: 100%;z-index: 1;border-right: 1px solid #c0c0c0" class="logo"><div style="display: block;position: absolute;top: 17px;left: 28px;width: 40px;height: 21px;background: url('http://ajax.cloudflare.com/cdn-cgi/custom/images/highlight.png') no-repeat -25px -65px" class="cloudflareIcon"></div></div><div style="display: block;position: absolute;width: 16px;height: 31px;background: url('http://ajax.cloudflare.com/cdn-cgi/custom/images/highlight.png') no-repeat -25px -89px;top: 60px;left: -16px" class="arrow"></div><div style="display: block;position: absolute;top: 0;left: 0;right: 0;bottom: 0;z-index: 2" class="dragHit"></div><div style="display: block;position: absolute;top: 0;left: 99px;margin: 0;padding: 0;width: 1px;height: 100%;border-left: 1px solid #f6f6f6;z-index: 1" class="tools"></div><input placeholder="pip install -r requirements.txt" style="display: block;position: absolute;top: 12px;left: 130px;width: 278px;height: 27px;margin: 0;color: #444;background: #fff;font-family: 'Helvetica Neue', Arial, sans-serif;padding: 0 0 0 26px;border: 1px solid #cdcdcd;-webkit-border-radius: 20px;-moz-border-radius: 20px;border-radius: 20px;font-size: 12px;-webkit-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);-moz-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.15);z-index: 5;outline: none" class="searchBox" type="text"><div style="display: block;position: absolute;top: 21px;left: 140px;width: 13px;height: 13px;z-index: 6;background: url('http://ajax.cloudflare.com/cdn-cgi/custom/images/highlight.png') no-repeat 0 -138px" class="searchIcon"></div><div style="display: block;position: absolute;top: 18px;left: 445px;width: 22px;height: 22px;margin: 0px;padding: 0px;background: url('http://ajax.cloudflare.com/cdn-cgi/custom/images/highlight.png') no-repeat -69px -43px;cursor: pointer;z-index: 5" class="closeButton"></div></div><div style="display: block;position: absolute;top: 53px;left: 0px;width: 98px;bottom: 0px;border-right: 1px solid #c0c0c0;-webkit-border-bottom-left-radius: 4px;-moz-border-bottom-left-radius: 4px;border-bottom-left-radius: 4px;background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAA2CAIAAAADJ/2KAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QTA3MDRBMkUxOTM3MTFFMUFGQjhGN0ExN0ExQTIyODYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QTA3MDRBMkYxOTM3MTFFMUFGQjhGN0ExN0ExQTIyODYiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBMDcwNEEyQzE5MzcxMUUxQUZCOEY3QTE3QTFBMjI4NiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBMDcwNEEyRDE5MzcxMUUxQUZCOEY3QTE3QTFBMjI4NiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pprwf+AAAAbASURBVHjafJlZVutA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')" class="categories"><div style="display: block;position: relative;height: 50px;width: 98px;cursor: pointer" class="category"><span style="font-family: 'Helvetica Neue', sans-serif;color: #fff;font-size: 11px;line-height: 50px;margin-left: 16px;cursor: pointer;text-align: left" class="label">Web search</span><div style="display: block;position: absolute;right: 0px;bottom: 0px;width: 100%;height: 2px;background: url('http://ajax.cloudflare.com/cdn-cgi/custom/images/highlight.png') no-repeat 0px -162px"></div></div></div><div style="display: block;position: absolute;top: 53px;left: 99px;right: 0px;bottom: 0px;width: auto;overflow: auto;overflow-x: hidden;text-align: left" class="content"><div style="display: block;position: relative;font-size: 16px;font-weight: bold;font-family: 'Helvetica Neue', Arial, sans-serif;color: #f68b1f;margin: 15px;padding: 0px" id="queryTopic">pip install -r requirements.txt</div><span style="display: block;position: relative;font-weight: bold;font-size: 23px;font-family: 'Helvetica Neue', Arial, sans-serif;color: #000;margin: 15px;padding: 0px;text-align: left" class="queryHeader">[object
+ Object],[object Object],[object Object],[object Object],[object 
+Object],[object Object],[object Object],[object Object],[object 
+Object],[object Object]</span><span style="display: block;position: relative;font-weight: bold;font-size: 13px;font-family: 'Helvetica Neue', Arial, sans-serif;color: #f68b1f;margin: 15px;padding: 0;text-align: left" class="searchHeader">Web search: pip install -r requirements.txt...</span><div style="display: block;position: relative;padding: 15px 50px 15px 15px;border-bottom: 1px dotted #e5e5e5;cursor: pointer"><span style="display: block;position: relative;font-weight: bold;font-size: 12px;font-family: 'Helvetica Neue', Arial, sans-serif;color: #000;text-align: left"><strong>StackOverflow</strong> - python - virtualenv is not activated when I run <strong><strong>pip</strong> <strong>install</strong></strong> - r <strong><strong>requirements</strong>.<strong>txt</strong></strong> - Stack Overflow</span><span style="display: block;position: relative;font-weight: normal;font-size: 12px;font-family: 'Helvetica Neue', Arial, sans-serif;color: #000;text-align: left">Not the answer you're looking for.  Browse other questions tagged python virtualenv <strong>pip</strong> or ask your own question.  Virtualenv is not activated when I run "<strong><strong>pip</strong> <strong>install</strong></strong> -r <strong><strong>requirements</strong>.<strong>txt</strong></strong>".  Stack Overflow is a question and answer site for professional and enthusiast programmers.</span><span style="display: block;position: relative;font-weight: normal;font-size: 11px;font-family: 'Helvetica Neue', Arial, sans-serif;text-align: left;color: #777">stackoverflow.com/.../virtualenv-is-not-activated-when-i-run...</span></div><div style="display: block;position: relative;padding: 15px 50px 15px 15px;border-bottom: 1px dotted #e5e5e5;cursor: pointer"><span style="display: block;position: relative;font-weight: bold;font-size: 12px;font-family: 'Helvetica Neue', Arial, sans-serif;color: #000;text-align: left"><strong>Requirements</strong> files — <strong>pip</strong> 1.2.1.post1 documentation</span><span style="display: block;position: relative;font-weight: normal;font-size: 12px;font-family: 'Helvetica Neue', Arial, sans-serif;color: #000;text-align: left">If you save this in <strong><strong>requirements</strong>.<strong>txt</strong></strong>, then you can <strong><strong>pip</strong> <strong>install</strong></strong> -r <strong><strong>requirements</strong>.<strong>txt</strong></strong>.  When <strong>installing</strong> software, and Python packages in particular, it's common that you get a lot of libraries <strong>installed</strong>.  This will write a listing of all <strong>installed</strong> libraries to stable-req.<strong>txt</strong> with exact versions for every library.</span><span style="display: block;position: relative;font-weight: normal;font-size: 11px;font-family: 'Helvetica Neue', Arial, sans-serif;text-align: left;color: #777">pip-installer.org/en/latest/&lt;b&gt;requirements&lt;/b&gt;.html</span></div><div style="display: block;position: relative;padding: 15px 50px 15px 15px;border-bottom: 1px dotted #e5e5e5;cursor: pointer"><span style="display: block;position: relative;font-weight: bold;font-size: 12px;font-family: 'Helvetica Neue', Arial, sans-serif;color: #000;text-align: left">Technical articles - Django, Pinax, virtualenv, setuptools, <strong>pip</strong>, easy_install and <strong><strong>requirements</strong>.<strong>txt</strong></strong></span><span style="display: block;position: relative;font-weight: normal;font-size: 12px;font-family: 'Helvetica Neue', Arial, sans-serif;color: #000;text-align: left"><strong>Pip</strong>
+ COMMAND # bundle: Create pybundles (archives containing multiple 
+packages) download: Download packages freeze: Output all currently <strong>installed</strong> packages (exact versions) to stdout help: Show available commands <strong>install</strong>: <strong>Install</strong> packages unzip: Unzip individual packages zip: Zip individual packages.</span><span style="display: block;position: relative;font-weight: normal;font-size: 11px;font-family: 'Helvetica Neue', Arial, sans-serif;text-align: left;color: #777">blog.yourlabs.org/.../django-pinax-virtualenv-setuptools-&lt;b&gt;pip&lt;/b&gt;</span></div><div style="display: block;position: relative;padding: 15px 50px 15px 15px;border-bottom: 1px dotted #e5e5e5;cursor: pointer"><span style="display: block;position: relative;font-weight: bold;font-size: 12px;font-family: 'Helvetica Neue', Arial, sans-serif;color: #000;text-align: left">muelli - openpgp-rollover - source - <strong><strong>requirements</strong>.<strong>txt</strong></strong> — Bitbucket</span><span style="display: block;position: relative;font-weight: normal;font-size: 12px;font-family: 'Helvetica Neue', Arial, sans-serif;color: #000;text-align: left">You might want to <strong>install</strong>
+ these dependencies like this.  Filter by directory path eg /media 
+app.js to search for public/media/app.js.  Use camelCasing eg ProjME to 
+search for ProjectModifiedEvent.java.  Filter by extension type eg 
+/repo.js to search for all.js files in the /repo directory.</span><span style="display: block;position: relative;font-weight: normal;font-size: 11px;font-family: 'Helvetica Neue', Arial, sans-serif;text-align: left;color: #777">bitbucket.org/.../&lt;b&gt;&lt;b&gt;requirements&lt;/b&gt;.&lt;b&gt;txt&lt;/b&gt;&lt;/b&gt;</span></div><div style="display: block;position: relative;padding: 15px 50px 15px 15px;border-bottom: 1px dotted #e5e5e5;cursor: pointer"><span style="display: block;position: relative;font-weight: bold;font-size: 12px;font-family: 'Helvetica Neue', Arial, sans-serif;color: #000;text-align: left"><strong>pip</strong> recursive <strong>install</strong> from <strong><strong>requirements</strong>.<strong>txt</strong></strong> - order of <strong>requirements</strong> - Google Groups - virtualenv</span><span style="display: block;position: relative;font-weight: normal;font-size: 12px;font-family: 'Helvetica Neue', Arial, sans-serif;color: #000;text-align: left"><strong>Pip</strong> determines the full set of pkgs up front, and then begins <strong>installing</strong>
+ things independently, w/o requiring a certain order.  If you give an 
+example, I could probably give a you more tangible answer related to the
+ problem you're having.  End of messages.  Google Groups Home.</span><span style="display: block;position: relative;font-weight: normal;font-size: 11px;font-family: 'Helvetica Neue', Arial, sans-serif;text-align: left;color: #777">groups.google.com/.../browse_thread/thread/dab92564857a3ca8</span></div><div style="display: block;position: relative;padding: 15px 50px 15px 15px;border-bottom: 1px dotted #e5e5e5;cursor: pointer"><span style="display: block;position: relative;font-weight: bold;font-size: 12px;font-family: 'Helvetica Neue', Arial, sans-serif;color: #000;text-align: left">Distutils - Having trouble with <strong><strong>pip</strong> <strong>install</strong></strong></span><span style="display: block;position: relative;font-weight: normal;font-size: 12px;font-family: 'Helvetica Neue', Arial, sans-serif;color: #000;text-align: left">Having trouble with <strong><strong>pip</strong> <strong>install</strong></strong>.  Vladik Rikhter vladik.rikhter at gmail.com Wed Aug 24 07:29:06 CEST 2011.</span><span style="display: block;position: relative;font-weight: normal;font-size: 11px;font-family: 'Helvetica Neue', Arial, sans-serif;text-align: left;color: #777">mail.python.org/.../distutils-sig/2011-August/017971.html</span></div><div style="display: block;position: relative;padding: 15px 50px 15px 15px;border-bottom: 1px dotted #e5e5e5;cursor: pointer"><span style="display: block;position: relative;font-weight: bold;font-size: 12px;font-family: 'Helvetica Neue', Arial, sans-serif;color: #000;text-align: left">osqa/<strong>INSTALL</strong>.<strong>pip</strong> at 1b3e97f9b85e4c2c861e82883816e729997ad0ca - OSQA/osqa - GitHub</span><span style="display: block;position: relative;font-weight: normal;font-size: 12px;font-family: 'Helvetica Neue', Arial, sans-serif;color: #000;text-align: left">This <strong>text</strong> will be italic* _This will also be italic_ **This <strong>text</strong>
+ will be bold** __This will also be bold__ *You **can** combine them.  
+Item 3 * Item 3a * Item 3b.  Code Examples in Markdown.  Syntax 
+highlighting with GFM.  Or, indent your code 4 spaces.</span><span style="display: block;position: relative;font-weight: normal;font-size: 11px;font-family: 'Helvetica Neue', Arial, sans-serif;text-align: left;color: #777">github.com/.../&lt;b&gt;INSTALL&lt;/b&gt;.&lt;b&gt;pip&lt;/b&gt;</span></div><div style="display: block;position: relative;padding: 15px 50px 15px 15px;border-bottom: 1px dotted #e5e5e5;cursor: pointer"><span style="display: block;position: relative;font-weight: bold;font-size: 12px;font-family: 'Helvetica Neue', Arial, sans-serif;color: #000;text-align: left">Python Dependencies via <strong>Pip</strong> - Heroku Dev Center</span><span style="display: block;position: relative;font-weight: normal;font-size: 12px;font-family: 'Helvetica Neue', Arial, sans-serif;color: #000;text-align: left">Any <strong>requirements</strong> that <strong>install</strong> locally with the following command will behave as expected on Heroku.  To specify Python module dependencies on Heroku, add a <strong>pip</strong> <strong>requirements</strong> file named <strong><strong>requirements</strong>.<strong>txt</strong></strong> to the root of your repository.</span><span style="display: block;position: relative;font-weight: normal;font-size: 11px;font-family: 'Helvetica Neue', Arial, sans-serif;text-align: left;color: #777">devcenter.heroku.com/articles/python-&lt;b&gt;pip&lt;/b&gt;</span></div><div style="display: block;position: relative;padding: 15px 50px 15px 15px;border-bottom: 1px dotted #e5e5e5;cursor: pointer"><span style="display: block;position: relative;font-weight: bold;font-size: 12px;font-family: 'Helvetica Neue', Arial, sans-serif;color: #000;text-align: left">How To <strong>Install</strong> Python, <strong>pip</strong>, and virtualenv on Windows with PowerShell - Tyler Butler</span><span style="display: block;position: relative;font-weight: normal;font-size: 12px;font-family: 'Helvetica Neue', Arial, sans-serif;color: #000;text-align: left">If you have a project with lots of package <strong>requirements</strong>, it might have come with (or you might have written) a <strong>requirements</strong> file (often called <strong><strong>requirements</strong>.<strong>txt</strong></strong>).</span><span style="display: block;position: relative;font-weight: normal;font-size: 11px;font-family: 'Helvetica Neue', Arial, sans-serif;text-align: left;color: #777">tylerbutler.com/.../how-to-&lt;b&gt;install&lt;/b&gt;-python-&lt;b&gt;pip&lt;/b&gt;-and-virtualenv...</span></div><div style="display: block;position: relative;padding: 15px 50px 15px 15px;border-bottom: 1px dotted #e5e5e5;cursor: pointer"><span style="display: block;position: relative;font-weight: bold;font-size: 12px;font-family: 'Helvetica Neue', Arial, sans-serif;color: #000;text-align: left"><strong><strong>pip</strong> <strong>install</strong></strong> - Lightspeed and Bulletproof - tartley.com</span><span style="display: block;position: relative;font-weight: normal;font-size: 12px;font-family: 'Helvetica Neue', Arial, sans-serif;color: #000;text-align: left">Mkdir packages <strong><strong>pip</strong> <strong>install</strong></strong> --download=packages -r <strong><strong>requirements</strong>.<strong>txt</strong></strong>.  Step two, <strong>install</strong> from the 'packages' dir.  (The above syntax works on <strong>pip</strong>
+ 1.3, released yesterday.  Step 2 works even if PyPI is unreachable.  It
+ works even if some of your dependencies are self-hosted by the authors,
+ and that website is unreachable.</span><span style="display: block;position: relative;font-weight: normal;font-size: 11px;font-family: 'Helvetica Neue', Arial, sans-serif;text-align: left;color: #777">tartley.com/?p=1423</span></div><div style="text-align: right;font-size: 11px;font-family: 'Helvetica Neue', Arial, sans-serif;margin: 5px;text-decoration: none;color: #777" id="bingAttribution">Search results from <a style="color: inherit;" href="http://blekko.com/">blekko</a><sup style="font-size: 7px;" class="tmText">TM</sup></div></div></div></body></html>

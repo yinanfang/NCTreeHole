@@ -1,0 +1,117 @@
+﻿.m-editor{width:100%;position:relative;}
+.m-editor .m-editor-action{height:23px;float:left;color:#808080;padding-top:9px}
+.m-editor .m-editor-action span.m-editor-photo{background:url(http://a.xnimg.cn/imgpro/icons/photo.gif) no-repeat  left center;color:#808080;display:inline-block;float:left;height:23px;line-height:23px;padding-left:18px}
+.m-editor .m-editor-action a{display:block;outline:none;float:left;line-height:23px;background-image:url(http://a.xnimg.cn/imgpro/minieditor/action_btn.png);background-repeat:no-repeat;}
+.m-editor .m-editor-action a.m-editor-emo{height:23px;padding-left:25px;background-position:0 -23px;}
+/***** at button  By bo.hu@opi-corp.com 2011.05.06 *****/
+.m-editor .m-editor-action a.m-editor-at{background:url(http://a.xnimg.cn/imgpro/icons/mention.gif) no-repeat center left; padding-left:18px;}
+.m-editor .m-editor-action a.m-editor-color{height:23px;padding-left:25px;background-position:0 -50px;}
+.m-editor .m-editor-action a.m-editor-graycolor{height:23px;padding-left:25px;background-position:0 -75px;color:#AAAAAA}
+.m-editor .m-editor-action span.file-name{float:left;margin-right:5px}
+.m-editor .m-editor-action a.delete{background-position:-999px -999px}
+.m-editor .m-editor-action .m-editor-more-action a{text-indent:0;background:none;line-height:23px;float:right;padding-right:10px;}
+.m-editor .m-editor-action a.m-editor-addlink{height:23px;padding-left:27px;width:32px;background-position:-40px 0;}
+.m-editor .m-editor-textarea textarea{border:1px solid #B8D4E8;margin:0;}
+.m-editor .m-editor-submit{padding-top:10px;}
+.m-editor .m-editor-submit .whisper{margin-left:10px;}
+.m-editor .m-editor-submit .whisper #whisper{margin-right:3px;}
+
+.m-editor-emo-holder{background:#fff;padding:10px;border:1px solid #8496BA;width:334px;overflow:hidden;}
+.m-editor-emo-holder .emo-header { overflow:hidden;position:relative; width:334px;}
+.m-editor-emo-holder .emo-header ul{padding:0 10px;margin-bottom:10px;list-style:none;border-bottom:1px solid #B8D4E8;position:relative;*zoom:1;height:22px;width:999px}
+.m-editor-emo-holder .emo-header ul:after{content:".";display:block;clear:both;height:0;visibility:hidden;}
+.m-editor-emo-holder .emo-header li{display:inline-block;margin-right:3px;padding:3px 10px;*padding:5px 10px 1px;*display:inline;*zoom:1}
+.m-editor-emo-holder .emo-header li a{float:left;display:block;outline:none;}
+.m-editor-emo-holder .emo-header li.current{
+	background-color: #FFF;
+	border: 1px solid #B8D4E8;
+    padding: 1px 10px 5px;
+	border-bottom: 0 none;
+	position: relative;
+	bottom: -1px;
+	border-radius: 5px 5px 0 0;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius: 5px 5px 0 0;
+	*border: 0 none;
+	*background: url(http://a.xnimg.cn/imgpro/bg/corner.gif) #FFF no-repeat left top;
+	*padding: 0;
+	*padding-left: 5px;
+    *bottom: -2px;
+    _bottom: -4px;
+}
+/* webkit hack */
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    .m-editor-emo-holder .emo-header li.current {
+        bottom: -2px;
+    }
+}
+.m-editor-emo-holder .emo-header li.current a {
+	*padding: 4px 11px 3px 8px;
+	*background: url(http://a.xnimg.cn/imgpro/bg/corner.gif) #FFF no-repeat right top;
+}
+.m-editor-emo-holder .emo-header li.current a {font-weight:bold;color:#000;}
+.m-editor-emo-holder .emo-list{*zoom:1;width:336px;cursor:default;}
+.m-editor-emo-holder .emo-list:after{content:".";display:block;clear:both;height:0;visibility:hidden;}
+.m-editor-emo-holder .emo-list li{float:left;cursor:pointer;margin:0 2px 2px 0;width:24px;height:16px;padding:4px 0;text-align:center;border:1px solid #B8D4E8;}
+.m-editor-emo-holder .emo-list li img{height:16px;}
+.m-editor-emo-holder .emo-list li:hover{border-color:#808080;}
+.m-editor-emo-holder .emo-list.big-emo li a{width:38px;height:32px;padding:3px 0;}
+.m-editor-emo-holder .emo-list.big-emo li a img{width:32px;height:32px;}
+.meditor-emo-preview img{width:50px;height:50px;}
+
+/*** emotab switcher bo.hu 2010.11.04***/
+.m-editor-emo-holder .emo-header .emo-tab-switch { position:absolute;top:2px;right:0px;background:#fff; }
+.m-editor-emo-holder .emo-header .emo-tab-switch a{ z-index:5; border:1px solid #B8D4E8; width:13px; height:15px; display:inline-block;*zoom:1;*display:inline;background:#fff; position:relative;overflow:hidden }
+.m-editor-emo-holder .emo-header .emo-tab-switch a.left{ margin-right:2px; }
+.m-editor-emo-holder .emo-header .emo-tab-switch a span{ z-index:4; margin:1px 0 0 0; display:block; border:6px solid #fff; position:relative  }
+.m-editor-emo-holder .emo-header .emo-tab-switch .left span{ border-right:7px solid #ccc; right:4px; }
+.m-editor-emo-holder .emo-header .emo-tab-switch .right span{ border-left:7px solid #B8D4E8; left:4px; }
+
+
+/* X5 Guide-message */
+td.pop_content h2 a{padding:2px 3px}
+td.pop_content .guide-message{background:#F0F5F8;padding:0 20px 10px 20px}
+td.pop_content .guide-message h1.box-header {display:block;font-size:12px;height:15px;line-height:15px;padding:8px 5px 8px 0}
+.m-editor-submit{float:right}
+td.pop_content .guide-message textarea{width:410px}
+td.pop_content .guide-message .m-editor .m-editor-action span.m-editor-photo{display:none}
+td.pop_content .guide-message .m-editor .m-editor-action a.m-editor-emo{background-position:-5px -23px;padding-left:22px}
+
+/* palette */
+.m-editor-color-palette{position:absolute;border:1px solid #B8D4E8;left:0;top:77px;_top:78px;background-color:#fff;padding:5px;_display:inline}
+.m-editor-color-palette ul{}
+.m-editor-color-palette li{display:block;float:left;margin-right:3px}
+.m-editor-color-palette li a{display:block;border:1px solid #C5C5C5;width:16px;height:16px}
+.m-editor-color-palette li a:hover{border:1px solid #333}
+.m-editor-color-palette li a span{display:block;width:14px;height:14px;margin:1px}
+.red{background-color:#FF0000}
+.yellow{background-color:#FFB900}
+.brown{background-color:#930004}
+.blue{background-color:#00A5FF}
+.green{background-color:#11BB22}
+.purple{background-color:#9500FF}
+.pink{background-color:#FF00C0}
+
+.color-palette{}
+.color-palette .float-left{text-align:center;margin-right:10px}
+.color-palette .float-left span{display:block;line-height:20px;color:#888}
+.color-palette p{padding-bottom:10px;display:display}
+.color-palette p span{color:#E83928}
+.color-palette .btn_level{}
+.color-palette .btn_vip{display:inline-block;background:url(http://a.xnimg.cn/imgpro/vip/btn_vip.png) no-repeat 0 0;width:76px;padding-left:15px;height:23px;line-height:23px;color:#fff;*display:inline;*zoom:1}
+.color-palette .btn_vip:visited{color:#fff}
+a.behavior{display:inline-block;background:url(http://a.xnimg.cn/imgpro/bg/behavior_bg.png) repeat-x 0 0;padding:0 10px;height:21px;line-height:21px;border:1px #8B8B8B solid;color:#333333}
+a.behavior:visited{color:#333333}
+a.behavior:hover{border:1px #333 solid;text-decoration:none;color:#333333}
+a.behavior:active{background-image:none;background-color:#DDDDDD;border:1px #999 solid;text-decoration:none;color:#333333}
+
+/*** vip tip add by bo.hu ***/
+.emotion-icon{float:left;padding-left:10px}
+.m-editor-emo-holder .notVip-tip{width:334px;padding:10px 0;background:#fff}
+.m-editor-emo-holder .notVip-tip p{margin-left:90px;padding-bottom:5px;color:#666;line-height:18px}
+.m-editor-emo-holder .notVip-tip .red{color:#f00;padding-bottom:3px;background:transparent}
+.m-editor-emo-holder .notVip-tip p.btn{width:210px;height:23px;line-height:23px}
+.m-editor-emo-holder .notVip-tip p.btn .join-vip{display:block;float:right;outline:none;width:91px;height:24px;background:url(http://a.xnimg.cn/imgpro/button/upgrade-vip.png) no-repeat}
+.m-editor-emo-holder .notVip-tip p.btn .lookup-class{display:block;float:left;outline:none;margin-right:9px;_margin-right:5px;width:91px;height:24px;background:url(http://a.xnimg.cn/imgpro/button/lookup-class.png) no-repeat}
+.m-editor-emo-holder .emotion-icon p{margin:0;color:#888;text-align:center;padding:0;line-height:18px}

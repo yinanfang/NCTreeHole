@@ -1,0 +1,14 @@
+https://github.com/spetacular/weixin/blob/master/defaultweixin.php
+https://github.com/zingvy/wx_reply
+https://github.com/xhxu/weixin
+https://github.com/dodgepudding/wechat-php-sdk
+
+
+
+
+
+
+
+
+
+

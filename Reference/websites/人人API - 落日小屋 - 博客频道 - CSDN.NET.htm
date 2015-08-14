@@ -1,0 +1,852 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<title>人人API - 落日小屋 - 博客频道 - CSDN.NET</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="API 列表 接口分类接口名描述用户信息users.getInfo得到用户的信息，支持批量获取。&nbsp;users.getLoggedInUser得到当前session的用户ID。&nbsp;users.hasAppPermission根据用户的id，以及相应在人人网的操作权限(接收email,更新状态等),来判断用户是否可以">
+<script src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/log.js" async="" charset="utf-8"></script><script src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ga.js" async="" type="text/javascript"></script><script src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/jquery.js" type="text/javascript"></script>
+<script type="text/javascript" src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ad.js"></script>
+<link rel="Stylesheet" type="text/css" href="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/style_002.css">
+<link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="http://blog.csdn.net/SJF0115/rss/list">
+<link rel="shortcut icon" href="http://blog.csdn.net/favicon.ico">
+<link type="text/css" rel="stylesheet" href="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/default.css">
+<link href="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/style.css" rel="stylesheet" type="text/css"></head>
+<body>
+<script src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/pub_topnav_2011.js" type="text/javascript"></script><link rel="stylesheet" type="text/css" href="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/navtop_2012.css">
+<div class="nav_top_2011">
+<p><span style="color:red;">您还未登录！</span>|<a href="https://passport.csdn.net/account/login" target="_top">登录</a>|<a href="https://passport.csdn.net/account/register" target="_top">注册</a>|<a href="https://passport.csdn.net/help/faq" target="_blank">帮助</a></p><ul>
+<li><a href="http://www.csdn.net/" target="_blank" style="color: red;">首页</a></li>
+<li><a href="http://news.csdn.net/" target="_blank">业界</a></li>
+<li><a href="http://mobile.csdn.net/" target="_blank">移动</a></li>
+<li><a href="http://cloud.csdn.net/" target="_blank">云计算</a></li>
+<li><a href="http://sd.csdn.net/" target="_blank">研发</a></li>
+<li><a href="http://bbs.csdn.net/" target="_blank">论坛</a></li>
+<li><a href="http://blog.csdn.net/" target="_blank">博客</a></li>
+<li><a href="http://download.csdn.net/" target="_blank">下载</a></li>
+<li class="more"><h2 id="topnav_btnmore" onclick="showNavMore(this)"><a href="javascript:void(0);">更多</a></h2>
+<div id="topnav_hidlist">
+<iframe name="nav_frm" src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/a_002.htm" frameborder="no" height="178" scrolling="no" width="92"></iframe>
+</div>
+</li>
+</ul>
+</div>
+
+
+<div id="container">
+<div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h1><a href="http://blog.csdn.net/SJF0115">落日小屋</a></h1>
+            <h2>Stay Hungry, Stay Foolish</h2>
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg"></div>
+    <div class="navigator">
+        <ul>
+            <li id="btnContents"><a href="http://blog.csdn.net/SJF0115?viewmode=contents"><span><img src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ico_list.gif">目录视图</span></a></li>
+            <li id="btnView"><a href="http://blog.csdn.net/SJF0115?viewmode=list"><span><img src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ico_summary.gif">摘要视图</span></a></li>
+            <li id="btnRss"><a href="http://blog.csdn.net/SJF0115/rss/list"><span><img src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ico_rss.gif">订阅</span></a></li>
+</ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var username = "SJF0115";
+    var _blogger = username;
+    var blog_address = "http://blog.csdn.net/sjf0115";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "";
+</script>
+
+<div id="body">
+<div id="main">
+<div class="main">
+<div class="notice"> 
+
+<a href="http://www.csdn.net/article/2013-07-09/2816160" target="_blank">
+<font color="red">专访赵霏：应把握机会 HTML5游戏开发已臻成熟 </font></a>
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="http://blog.csdn.net/blogdevteam/article/details/9226601" target="_blank"><font color="blue">2013年7月微软MVP当选名单揭晓
+</font></a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="http://blog.csdn.net/csdnproduct/article/details/9226265" target="_blank">
+<font color="red">CSDN博客频道自定义摘要、图片水印、热门标签等功能上线啦 
+
+
+ </font></a>
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="http://blog.csdn.net/blogdevteam/article/details/9136613" target="_blank">
+<font color="red">CSDN博客第二期云计算最佳博主评选
+
+ </font></a>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+<a href="http://blog.csdn.net/blogdevteam/article/details/9126517" target="_blank">
+<font color="blue">2013年10月微软MVP申请开始
+ </font></a>
+
+
+
+
+</div>
+<div id="article_details" class="details">
+    <div class="article_title">
+    <span class="ico ico_type_Original"></span>
+    <h3>
+        <span class="link_title"><a href="http://blog.csdn.net/sjf0115/article/details/7298233">
+        人人API
+        </a></span>
+    </h3>
+</div>
+
+        
+    <div class="article_manage">
+        <span class="link_categories">
+        分类：
+            <a href="http://blog.csdn.net/SJF0115/article/category/1065068">Android</a> 
+        </span>
+    <span class="link_postdate">2012-02-27 14:37</span>
+    <span class="link_view" title="阅读次数">491人阅读</span>
+    <span class="link_comments" title="评论次数"><a href="#comments">评论</a>(0)</span>
+    <span class="link_collect"><a href="javascript:void(0);" onclick="javascript:collectArticle('人人API','7298233');return false;" title="收藏">收藏</a></span>
+    <span class="link_report"><a href="#report" onclick="javascript:report(7298233,2);return false;" title="举报">举报</a></span>
+    
+</div>
+<div class="tag2box"><a href="http://blog.csdn.net/tag/details.html?tag=api" target="_blank">api</a><a href="http://blog.csdn.net/tag/details.html?tag=deprecated" target="_blank">deprecated</a><a href="http://blog.csdn.net/tag/details.html?tag=%e7%85%a7%e7%89%87" target="_blank">照片</a><a href="http://blog.csdn.net/tag/details.html?tag=%e7%9b%b8%e5%86%8c" target="_blank">相册</a><a href="http://blog.csdn.net/tag/details.html?tag=session" target="_blank">session</a><a href="http://blog.csdn.net/tag/details.html?tag=url" target="_blank">url</a></div>
+
+
+    
+<div id="article_content" class="article_content">
+
+<span class="mw-headline">API 列表 </span>
+<hr>
+<table class="restapi_table ">
+<tbody>
+<tr>
+<th>接口分类</th>
+<th>接口名</th>
+<th>描述</th>
+</tr>
+<tr>
+<th rowspan="6">用户信息</th>
+<td><a title="Users.getInfo" href="http://blog.csdn.net/wiki/Users.getInfo">users.getInfo</a></td>
+<td>得到用户的信息，支持批量获取。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a title="Users.getLoggedInUser" href="http://blog.csdn.net/wiki/Users.getLoggedInUser">users.getLoggedInUser</a></td>
+<td>得到当前session的用户ID。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a title="Users.hasAppPermission" href="http://blog.csdn.net/wiki/Users.hasAppPermission">users.hasAppPermission</a></td>
+<td>根据用户的id，以及相应在人人网的操作权限(接收email,更新状态等),来判断用户是否可以进行此操作。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a title="Users.isAppUser" href="http://blog.csdn.net/wiki/Users.isAppUser">users.isAppUser</a></td>
+<td>判断用户是否已对App授权。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a title="Users.getProfileInfo" href="http://blog.csdn.net/wiki/Users.getProfileInfo">users.getProfileInfo</a></td>
+<td>获取用户个人主页的信息</td>
+</tr>
+<tr>
+<td><a title="Users.getVisitors" href="http://blog.csdn.net/wiki/Users.getVisitors">users.getVisitors</a></td>
+<td>获取用户最近来访列表</td>
+</tr>
+<tr>
+<th rowspan="7">好友关系</th>
+<td><a title="Friends.areFriends" href="http://blog.csdn.net/wiki/Friends.areFriends">friends.areFriends</a></td>
+<td>判断两组用户是否互为好友关系，比较的两组用户数必须相等。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a title="Friends.get" href="http://blog.csdn.net/wiki/Friends.get">friends.get</a></td>
+<td>得到当前登录用户的好友列表，得到的只是含有好友id的列表。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a title="Friends.getSameFriends" href="http://blog.csdn.net/wiki/Friends.getSameFriends">friends.getSameFriends</a></td>
+<td>获取两个用户的共同好友。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a title="Friends.getFriends" href="http://blog.csdn.net/wiki/Friends.getFriends">friends.getFriends</a></td>
+<td>得到当前登录用户的好友列表。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a title="Friends.getAppUsers" href="http://blog.csdn.net/wiki/Friends.getAppUsers">friends.getAppUsers</a></td>
+<td>返回已经添加了一个应用的好友的用户Id列表,即将过期，不推荐使用，请使用<a title="Friends.getAppFriends" href="http://blog.csdn.net/wiki/Friends.getAppFriends">friends.getAppFriends</a>。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a title="Friends.getAppFriends" href="http://blog.csdn.net/wiki/Friends.getAppFriends">friends.getAppFriends</a></td>
+<td>查询当前用户安装某个应用的好友列表，此接口返回全部数据（2008-12-18）。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a title="Friends.search" href="http://blog.csdn.net/wiki/Friends.search">friends.search</a></td>
+<td>搜索用户，根据搜索条件返回搜索结果。</td>
+</tr>
+<tr>
+<th rowspan="5">日志</th>
+<td><a title="Blog.addBlog" href="http://blog.csdn.net/wiki/Blog.addBlog">blog.addBlog</a></td>
+<td>发表一篇日志。</td>
+</tr>
+<tr>
+<td><a title="Blog.gets" href="http://blog.csdn.net/wiki/Blog.gets">blog.gets</a></td>
+<td>获取指定用户的可见日志列表。</td>
+</tr>
+<tr>
+<td><a title="Blog.get" href="http://blog.csdn.net/wiki/Blog.get">blog.get</a></td>
+<td>获取自己或好友一篇日志的全部信息。</td>
+</tr>
+<tr>
+<td><a title="Blog.getComments" href="http://blog.csdn.net/wiki/Blog.getComments">blog.getComments</a></td>
+<td>获取一篇日志的评论。</td>
+</tr>
+<tr>
+<td><a title="Blog.addComment" href="http://blog.csdn.net/wiki/Blog.addComment">blog.addComment</a></td>
+<td>对日志评论。</td>
+</tr>
+<tr>
+<th rowspan="10">相册</th>
+<td><a title="Photos.createAlbum" href="http://blog.csdn.net/wiki/Photos.createAlbum">photos.createAlbum</a></td>
+<td>创建新的相册。</td>
+</tr>
+<tr>
+<td><a title="Photos.getAlbums" href="http://blog.csdn.net/wiki/Photos.getAlbums">photos.getAlbums</a></td>
+<td>获取用户的相册列表。</td>
+</tr>
+<tr>
+<td><a title="Photos.upload" href="http://blog.csdn.net/wiki/Photos.upload">photos.upload</a></td>
+<td>上传照片到用户的相册。</td>
+</tr>
+<tr>
+<td><a title="Photos.get" href="http://blog.csdn.net/wiki/Photos.get">photos.get</a></td>
+<td>获取单个相册的照片列表或某张照片的信息。</td>
+</tr>
+<tr>
+<td><a title="Photos.addComment" href="http://blog.csdn.net/wiki/Photos.addComment">photos.addComment</a></td>
+<td>对可见照片或者相册进行评论。</td>
+</tr>
+<tr>
+<td><a title="Photos.getComments" href="http://blog.csdn.net/wiki/Photos.getComments">photos.getComments</a></td>
+<td>获取可见照片的相关评论内容。</td>
+</tr>
+<tr>
+<td><a title="Photos.tag" href="http://blog.csdn.net/wiki/Photos.tag">photos.tag</a></td>
+<td>以session_key对应用户的身份圈出照片中的好友或人，此API会发送圈人请求，待用户接受圈人请求后会发出圈人新鲜事。</td>
+</tr>
+<tr>
+<td><a title="Photos.getTags" href="http://blog.csdn.net/wiki/Photos.getTags">photos.getTags</a></td>
+<td>以session_key对应用户的身份获取照片中圈出的好友或人。</td>
+</tr>
+<tr>
+<td><a title="Photos.acceptTag" href="http://blog.csdn.net/wiki/Photos.acceptTag">photos.acceptTag</a></td>
+<td>接受圈人请求，此API会触发一个圈人新鲜事。</td>
+</tr>
+<tr>
+<td><a title="Photos.refuseTag" href="http://blog.csdn.net/wiki/Photos.refuseTag">photos.refuseTag</a></td>
+<td>拒绝接受圈人请求，此API会删除圈人请求。</td>
+</tr>
+<tr>
+<th rowspan="7">状态</th>
+<td><a title="Status.gets" href="http://blog.csdn.net/wiki/Status.gets">status.gets</a></td>
+<td>获取用户的状态列表。</td>
+</tr>
+<tr>
+<td><a title="Status.set" href="http://blog.csdn.net/wiki/Status.set">status.set</a></td>
+<td>用户更新状态。</td>
+</tr>
+<tr>
+<td><a title="Status.get" href="http://blog.csdn.net/wiki/Status.get">status.get</a></td>
+<td>返回用户某条状态。</td>
+</tr>
+<tr>
+<td><a title="Status.getComment" href="http://blog.csdn.net/wiki/Status.getComment">status.getComment</a></td>
+<td>获取一条状态中的所有回复内容。</td>
+</tr>
+<tr>
+<td><a title="Status.addComment" href="http://blog.csdn.net/wiki/Status.addComment">status.addComment</a></td>
+<td>对一条状态增加一条回复。</td>
+</tr>
+<tr>
+<td><a title="Status.getEmoticons" href="http://blog.csdn.net/wiki/Status.getEmoticons">status.getEmoticons</a></td>
+<td>获取状态中的表情图片和表情符号对应列表。</td>
+</tr>
+<tr>
+<td><a title="Status.forward" href="http://blog.csdn.net/wiki/Status.forward">status.forward</a></td>
+<td>用户转发状态的操作，支持同时评论给转发人。</td>
+</tr>
+<tr>
+<th rowspan="4">分享</th>
+<td><a title="Share.publish" href="http://blog.csdn.net/wiki/Share.publish">share.publish</a><span style="color:red">(deprecated)</span></td>
+<td>发布分享，例如分享视频、音乐、链接、日志、商品、照片等。</td>
+</tr>
+<tr>
+<td><a title="Share.share" href="http://blog.csdn.net/wiki/Share.share">share.share</a></td>
+<td>发布分享，例如分享视频、音乐、链接、日志、商品、照片等<br>
+<span style="color:red">(此接口是share.publish接口的升级，支持二次分享，且返回分享Id，分享url等更多信息)</span>。</td>
+</tr>
+<tr>
+<td><a title="Share.getComments" href="http://blog.csdn.net/wiki/Share.getComments">share.getComments</a></td>
+<td>以Session Key对应的用户的身份获取某个分享的评论。</td>
+</tr>
+<tr>
+<td><a title="Share.addComment" href="http://blog.csdn.net/wiki/Share.addComment">share.addComment</a></td>
+<td>以Session Key对应的用户的身份对某个分享进行评论。</td>
+</tr>
+<tr>
+<th rowspan="4">喜欢</th>
+<td><a title="Like.isLiked" href="http://blog.csdn.net/wiki/Like.isLiked">like.isLiked</a></td>
+<td>判断用户是否喜欢过url。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a title="Like.getCount" href="http://blog.csdn.net/wiki/Like.getCount">like.getCount</a></td>
+<td>获取url被喜欢的次数。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a title="Like.like" href="http://blog.csdn.net/wiki/Like.like">like.like</a></td>
+<td>针对某个url执行like操作(可以是站内资源url，如：日志、照片、相册、视频等。也可以是站外的资源url)。</td>
+</tr>
+<tr>
+<td><a title="Like.unlike" href="http://blog.csdn.net/wiki/Like.unlike">like.unlike</a></td>
+<td>针对某个url执行取消like操作(可以是站内资源url，如：日志、照片、相册、视频等，也可以是站外的资源url)。</td>
+</tr>
+<tr>
+<th rowspan="2">地理位置信息(LBS)</th>
+<td><a title="Places.create" href="http://blog.csdn.net/wiki/Places.create">places.create</a></td>
+<td>创建一个地点。</td>
+</tr>
+<tr>
+<td><a title="Checkins.checkin" href="http://blog.csdn.net/wiki/Checkins.checkin">checkins.checkin</a></td>
+<td>签到。</td>
+</tr>
+<tr>
+<th rowspan="3">新鲜事</th>
+<td><a title="Feed.get" href="http://blog.csdn.net/wiki/Feed.get">feed.get</a></td>
+<td>获取新鲜事，可指定新鲜事的类型。</td>
+</tr>
+<tr>
+<td><a title="Feed.publish" href="http://blog.csdn.net/wiki/Feed.publish">feed.publish</a><span style="color:red">(deprecated)</span></td>
+<td>发布用户的个人动态信息到用户人人网主页，同时会出现在好友的新鲜事中。</td>
+</tr>
+<tr>
+<td><a title="Feed.publishFeed" href="http://blog.csdn.net/wiki/Feed.publishFeed">feed.publishFeed</a></td>
+<td>发布用户的个人动态信息到用户人人网主页，同时会出现在好友的新鲜事中<br>
+<span style="color:red">(此接口区别于老的feed.publish,它不需要注册新鲜事模版，且自带回复框)</span>。</td>
+</tr>
+<tr>
+<th rowspan="1">通知</th>
+<td><a title="Notifications.send" href="http://blog.csdn.net/wiki/Notifications.send">notifications.send</a></td>
+<td>给指定的用户发送通知。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<th rowspan="2">邀请</th>
+<td><a title="Invitations.createLink" href="http://blog.csdn.net/wiki/Invitations.createLink">invitations.createLink</a></td>
+<td>创建站外邀请的链接地址。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a title="Invitations.getInfo" href="http://blog.csdn.net/wiki/Invitations.getInfo">invitations.getInfo</a></td>
+<td>根据用户ID或者时间段，获得邀请的详细信息（邀请人、邀请时间、被邀请人）。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<th rowspan="5">支付</th>
+<td><a title="Pay.isCompleted" href="http://blog.csdn.net/wiki/Pay.isCompleted">pay.isCompleted</a></td>
+<td>查询某个用户在一个应用中一次消费是否完成（2008-10-27）。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a title="Pay.regOrder" href="http://blog.csdn.net/wiki/Pay.regOrder">pay.regOrder</a></td>
+<td>预存入用户在应用中消费产生的订单数据，消费金额等信息，<br>
+返回保证一个用户某次在一个应用中支付人人豆安全性的Token（2008-10-27）。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a title="Pay4Test.isCompleted" href="http://blog.csdn.net/wiki/Pay4Test.isCompleted">pay4Test.isCompleted</a></td>
+<td>只用于开发者模拟人人豆支付的测试，功能与<a title="Pay.isCompleted" href="http://blog.csdn.net/wiki/Pay.isCompleted">pay.isCompleted</a>一样（2008-12-18）。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a title="Pay4Test.regOrder" href="http://blog.csdn.net/wiki/Pay4Test.regOrder">pay4Test.regOrder</a></td>
+<td>只用于开发者模拟人人豆支付的测试，功能与<a title="Pay.regOrder" href="http://blog.csdn.net/wiki/Pay.regOrder">pay.regOrder</a>一样（2008-12-18）。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a title="Pay.queryOrders" href="http://blog.csdn.net/wiki/Pay.queryOrders">pay.queryOrders</a></td>
+<td>查询订单状态。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<th rowspan="9">公共主页</th>
+<td><a title="Pages.getManagedList" href="http://blog.csdn.net/wiki/Pages.getManagedList">pages.getManagedList</a></td>
+<td>获取当前用户管理的Page列表。</td>
+</tr>
+<tr>
+<td><a title="Pages.setStatus" href="http://blog.csdn.net/wiki/Pages.setStatus">pages.setStatus</a></td>
+<td>Page管理员修改Page的状态。</td>
+</tr>
+<tr>
+<td><a title="Pages.isFan" href="http://blog.csdn.net/wiki/Pages.isFan">pages.isFan</a></td>
+<td>判断用户是否为Page（公共主页）的粉丝。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a title="Pages.getCategories" href="http://blog.csdn.net/wiki/Pages.getCategories">pages.getCategories</a></td>
+<td>获取Page类别。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a title="Pages.getInfo" href="http://blog.csdn.net/wiki/Pages.getInfo">pages.getInfo</a></td>
+<td>获取某个Page的信息。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a title="Pages.isAdmin" href="http://blog.csdn.net/wiki/Pages.isAdmin">pages.isAdmin</a></td>
+<td>判断用户是否为Page的管理员。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a title="Pages.isPage" href="http://blog.csdn.net/wiki/Pages.isPage">pages.isPage</a></td>
+<td>判断一个ID是否为PAGE。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a title="Pages.getList" href="http://blog.csdn.net/wiki/Pages.getList">pages.getList</a></td>
+<td>获取Page的列表。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a title="Pages.getFansList" href="http://blog.csdn.net/wiki/Pages.getFansList">pages.getFansList</a></td>
+<td>获取Page粉丝的列表。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<th rowspan="2">管理</th>
+<td><a title="Admin.getAllocation" href="http://blog.csdn.net/wiki/Admin.getAllocation">admin.getAllocation</a></td>
+<td>得到一个应用当天可以发送的通知和邀请的配额。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><a title="Admin.textFilter" href="http://blog.csdn.net/wiki/Admin.textFilter">admin.textFilter</a></td>
+<td>对给定的文本进行过滤，返回过滤后的文本，如果不合法，则给出错误信息。</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<th rowspan="1">请求</th>
+<td><a title="Requests.getTagRequests" href="http://blog.csdn.net/wiki/Requests.getTagRequests">requests.getTagRequests</a></td>
+<td>获取用户的圈人请求列表。</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p><br>
+</p>
+
+</div>
+
+<div class="share_buttons" id="sharePanel"><span>分享到：</span> <a name="sina" class="share_sina" title="分享到新浪微博"></a><a name="qq" class="share_qq" title="分享到腾讯微博"></a></div>
+<!--192.168.100.34-->
+<div class="article_next_prev">
+    <li class="prev_article"><span>上一篇：</span><a href="http://blog.csdn.net/sjf0115/article/details/7293304">Android学习笔记技巧之垂直和水平滚动视图</a></li>
+    <li class="next_article"><span>下一篇：</span><a href="http://blog.csdn.net/sjf0115/article/details/7303463">SP2-1503: 无法初始化 Oracle 调用界面 SP2-1503: 无法初始化 Oracle 问题</a></li>
+</div>
+
+
+    
+</div>
+<div id="ad_cen">
+<script type="text/javascript">BAIDU_CLB_SLOT_ID = "117306";</script>
+<script type="text/javascript" src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/o.js"></script><script charset="utf-8" src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ecom"></script><div id="baidu_clb_slot_117306"><iframe id="baidu_clb_slot_iframe_117306" src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/a_002.htm" onload="BAIDU_CLB_renderFrame('117306')" vspace="0" hspace="0" allowtransparency="true" marginheight="0" marginwidth="0" style="border: 0; vertical-align: bottom; margin: 0; display: block;" frameborder="0" height="90" scrolling="no" width="728"></iframe></div>
+</div>
+<script type="text/javascript">
+    //new Ad(4, 'ad_cen');
+</script>
+<div id="comment_title" class="panel_head">查看评论<a name="comments"></a></div>
+<div id="comment_list"><br>&nbsp;&nbsp;暂无评论<br><br><div class="clear"></div></div>
+<div id="comment_bar"></div>
+<div id="comment_form"><div class="guest_link">您还没有登录,请<a href="javascript:void(0);" onclick="javascript:csdn.showLogin(function (dat) {js_logined(dat.data.userName);});">[登录]</a>或<a href="http://passport.csdn.net/account/register?from=http%3A%2F%2Fblog.csdn.net%2Fsjf0115%2Farticle%2Fdetails%2F7298233">[注册]</a></div></div>
+<div class="announce">* 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+<script type="text/javascript">
+    var fileName = '7298233';
+    var commentscount = 0;
+    var islock = false
+</script>
+<script type="text/javascript" src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/comment.js"></script>
+<div id="ad_bot"><iframe src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ad.htm" style="border-width: 0px; overflow: hidden; width: 789px; height: 170px;" id="ad_frm_0" frameborder="0" scrolling="no"></iframe></div>
+<script type="text/javascript">
+    new Ad(5, 'ad_bot');
+</script>
+<div id="report_dialog"></div>
+
+<div id="d-top" style="display:none;">
+<a id="d-top-a" href="#" title="回到顶部">
+<img src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/top.png" alt="TOP"></a>
+</div>
+<script type="text/javascript">
+    $(function(){
+        var d_top=$('#d-top');
+        document.onscroll=function(){
+            var scrTop=(document.body.scrollTop||document.documentElement.scrollTop);
+            if(scrTop>500){
+                d_top.show();
+            }else{
+                d_top.hide();
+            }
+        }
+        $('#d-top-a').click(function(){
+            scrollTo(0,0);
+            this.blur();
+            return false;
+        });
+    });
+</script>
+
+<div class="clear"></div>
+</div>
+</div>
+
+<div id="side">
+<div class="side">
+<div id="panel_Profile" class="panel">
+<ul class="panel_head"><span>个人资料</span></ul>
+<ul class="panel_body profile">
+<div id="blog_userface">
+    <a href="http://my.csdn.net/SJF0115" target="_blank">
+    <img src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/1_sjf0115.jpg" title="访问我的空间" style="max-width:90%">
+    </a>
+    <br>
+    <span><a href="http://my.csdn.net/SJF0115" class="user_name" target="_blank">SJF0115</a></span>
+</div>
+<div class="interact">
+<a href="javascript:void(0);" class="attent" id="span_add_follow" title="[加关注]"></a>
+<a href="javascript:void(0);" class="letter" onclick="loginto(1)" title="[发私信]"></a>
+</div>
+<div id="blog_medal">
+<div id="bms_box"><a href="http://medal.blog.csdn.net/allmedal.aspx" target="_blank"><img src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/columnstar_s.gif" onmouseover="m_over_m(this,0)" onmouseout="m_out_m()" alt=""></a><a href="http://medal.blog.csdn.net/allmedal.aspx" target="_blank"><img src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/holdon_s2.gif" onmouseover="m_over_m(this,1)" onmouseout="m_out_m()" alt=""></a></div></div>
+<ul id="blog_rank">
+    <li>访问：<span>337492次</span></li>
+    <li>积分：<span>8950分</span></li>
+    <li>排名：<span>第336名</span></li>
+</ul>
+<ul id="blog_statistics">
+    <li>原创：<span>493篇</span></li>
+    <li>转载：<span>213篇</span></li>
+    <li>译文：<span>0篇</span></li>
+    <li>评论：<span>247条</span></li>
+</ul>
+</ul>
+</div>
+
+
+
+<div class="panel" id="panel_Search">
+    <ul class="panel_head"><span>文章搜索</span></ul>
+    <ul class="panel_body">
+        <form id="frmSearch" action="http://so.csdn.net/search" class="form_search" target="_blank">
+        <span><input id="inputSearch" class="blogsearch" title="请输入关键字" type="text"></span>
+        <input id="btnSubmit" value="搜索" title="search in blog" type="submit">
+        <input name="q" id="inputQ" type="hidden">
+        <input name="t" value="blog" type="hidden">
+        <a id="btnSearchBlog" target="_blank"></a>
+        </form>
+    </ul>
+</div><div id="panel_Category" class="panel">
+    <ul class="panel_head"><span>博客专栏</span></ul>
+    <ul class="panel_body" id="sp_column">
+    <table cellpadding="0" cellspacing="0"><tbody><tr>
+    <td style="padding:10px 10px 0 0;">
+    <a href="http://blog.csdn.net/column/details/step2.html" target="_blank"><img src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/20120317141253114.jpg" style="width:75px;height:75px;"></a>
+    </td>
+    <td style="padding:10px 0; vertical-align:top;">
+    <a href="http://blog.csdn.net/column/details/step2.html" target="_blank">Android进阶2</a>
+    <p>文章：17篇</p>
+    <span>阅读：18847</span>
+    </td>
+    </tr></tbody></table>
+    <table cellpadding="0" cellspacing="0"><tbody><tr>
+    <td style="padding:10px 10px 0 0;">
+    <a href="http://blog.csdn.net/column/details/sjf0115.html" target="_blank"><img src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/20120313100559137.jpg" style="width:75px;height:75px;"></a>
+    </td>
+    <td style="padding:10px 0; vertical-align:top;">
+    <a href="http://blog.csdn.net/column/details/sjf0115.html" target="_blank">Android菜鸟分享</a>
+    <p>文章：44篇</p>
+    <span>阅读：63758</span>
+    </td>
+    </tr></tbody></table>
+    </ul>
+</div><div id="custom_column_18052976" class="panel">
+<ul class="panel_head"><span>友情链接</span></ul>
+<ul class="panel_body">
+
+<a href="http://ac.jobdu.com/problemset.php">九度OJ</a><br>
+<a href="http://acm.hdu.edu.cn/">杭电OJ</a><br>
+<a href="http://poj.org/">POJ</a><br>
+<a href="http://acmclub.com/problemset.php">天勤OJ</a><br>
+
+</ul>
+</div><div id="panel_Category" class="panel">
+<ul class="panel_head"><span>文章分类</span></ul>
+<ul class="panel_body">
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/category/1065068">Android</a><span>(55)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/category/922291">Java</a><span>(89)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/category/1078664">Android进阶</a><span>(38)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/category/1094904">Android总结</a><span>(3)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/category/1094903">Android进阶2</a><span>(23)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/category/1074231">Android开发技巧</a><span>(7)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/category/1079558">Android（转载）</a><span>(77)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/category/1149511">Div+CSS+JavaScript</a><span>(35)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/category/910592">OJ</a><span>(70)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/category/934649">算法</a><span>(53)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/category/910590">九度&amp;天勤OJ</a><span>(198)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/category/943337">Linux</a><span>(3)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/category/1073943">我的工具</a><span>(7)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/category/910594">南阳理工</a><span>(7)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/category/943328">计算机</a><span>(7)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/category/943338">杂谈</a><span>(5)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/category/1154793">JSP</a><span>(4)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/category/1177584">剑指Offer</a><span>(18)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/category/1397675">Mysql</a><span>(0)</span>
+</li>
+</ul>
+</div><div id="panel_Archive" class="panel">
+<ul class="panel_head"><span>文章存档</span></ul>
+<ul class="panel_body">
+<div id="archive_list"><li><a href="http://blog.csdn.net/sjf0115/article/month/2013/05">2013年05月</a><span>(9)</span></li><li><a href="http://blog.csdn.net/sjf0115/article/month/2013/04">2013年04月</a><span>(18)</span></li><li><a href="http://blog.csdn.net/sjf0115/article/month/2013/03">2013年03月</a><span>(76)</span></li><li><a href="http://blog.csdn.net/sjf0115/article/month/2013/02">2013年02月</a><span>(111)</span></li><li><a href="http://blog.csdn.net/sjf0115/article/month/2013/01">2013年01月</a><span>(37)</span></li><span class="hidelist" style="display:none;"><li><a href="http://blog.csdn.net/sjf0115/article/month/2012/09">2012年09月</a><span>(1)</span></li><li><a href="http://blog.csdn.net/sjf0115/article/month/2012/07">2012年07月</a><span>(3)</span></li><li><a href="http://blog.csdn.net/sjf0115/article/month/2012/06">2012年06月</a><span>(17)</span></li><li><a href="http://blog.csdn.net/sjf0115/article/month/2012/05">2012年05月</a><span>(27)</span></li><li><a href="http://blog.csdn.net/sjf0115/article/month/2012/04">2012年04月</a><span>(9)</span></li><li><a href="http://blog.csdn.net/sjf0115/article/month/2012/03">2012年03月</a><span>(54)</span></li><li><a href="http://blog.csdn.net/sjf0115/article/month/2012/02">2012年02月</a><span>(109)</span></li><li><a href="http://blog.csdn.net/sjf0115/article/month/2012/01">2012年01月</a><span>(41)</span></li><li><a href="http://blog.csdn.net/sjf0115/article/month/2011/12">2011年12月</a><span>(74)</span></li><li><a href="http://blog.csdn.net/sjf0115/article/month/2011/11">2011年11月</a><span>(78)</span></li><li><a href="http://blog.csdn.net/sjf0115/article/month/2011/10">2011年10月</a><span>(41)</span></li><li><a href="http://blog.csdn.net/sjf0115/article/month/2010/08">2010年08月</a><span>(1)</span></li></span><div id="archive_list_button" class="list_closed">展开</div></div>
+</ul>
+</div>
+<div id="hotarticls" class="panel">
+<ul class="panel_head"><span>阅读排行</span></ul>
+<ul class="panel_body itemlist">
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/details/7222913" title="Android视频教学下载大全（VeryCD上）">Android视频教学下载大全（VeryCD上）</a><span>(6012)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/details/7306284" title="Android得到控件在屏幕中的坐标">Android得到控件在屏幕中的坐标</a><span>(5530)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/details/7333718" title="Android学习笔记进阶之在图片上涂鸦(能清屏)">Android学习笔记进阶之在图片上涂鸦(能清屏)</a><span>(3937)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/details/7266998" title="android图片特效处理之模糊效果">android图片特效处理之模糊效果</a><span>(3733)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/details/7262064" title="Android学习笔记之滑动翻页（屏幕切换）">Android学习笔记之滑动翻页（屏幕切换）</a><span>(3522)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/details/7387467" title="Android进阶2之Activity之间数据交流（onActivityResult的用法）">Android进阶2之Activity之间数据交流（onActivityResult的用法）</a><span>(3231)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/details/7267017" title="android图片特效处理之怀旧效果">android图片特效处理之怀旧效果</a><span>(3185)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/details/7267063" title="android图像处理系列之三－－图片色调饱和度、色相、亮度处理">android图像处理系列之三－－图片色调饱和度、色相、亮度处理</a><span>(3011)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/details/7583043" title="css 图片排列">css 图片排列</a><span>(2824)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/details/7262777" title="Android学习笔记之Bitmap位图的缩放">Android学习笔记之Bitmap位图的缩放</a><span>(2661)</span>
+</li>
+</ul>
+</div>
+<div id="hotarticls2" class="panel">
+<ul class="panel_head"><span>评论排行</span></ul>
+<ul class="panel_body itemlist">
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/details/8683134" title="计算机复试上机题解题报告">计算机复试上机题解题报告</a><span>(12)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/details/7082132" title="Java课程设计之学习成绩管理系统">Java课程设计之学习成绩管理系统</a><span>(10)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/details/7333718" title="Android学习笔记进阶之在图片上涂鸦(能清屏)">Android学习笔记进阶之在图片上涂鸦(能清屏)</a><span>(9)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/details/7311501" title="Android开发经验之在图片上随意点击移动文字">Android开发经验之在图片上随意点击移动文字</a><span>(8)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/details/7266979" title="android图像处理（3）浮雕效果">android图像处理（3）浮雕效果</a><span>(8)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/details/7590660" title="js更换背景图片">js更换背景图片</a><span>(6)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/details/8665157" title="牛人博客收集">牛人博客收集</a><span>(6)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/details/7266870" title="Android 给图片加边框">Android 给图片加边框</a><span>(5)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/details/7322276" title="Android学习笔记之百度地图（驾车路线搜索及RouteOverlay步行路线搜索及RouteOverlay）">Android学习笔记之百度地图（驾车路线搜索及RouteOverlay步行路线搜索及RouteOverlay）</a><span>(5)</span>
+</li>
+<li>
+<a href="http://blog.csdn.net/sjf0115/article/details/7387467" title="Android进阶2之Activity之间数据交流（onActivityResult的用法）">Android进阶2之Activity之间数据交流（onActivityResult的用法）</a><span>(5)</span>
+</li>
+</ul>
+</div>
+<div id="newcomments" class="panel">
+<ul class="panel_head"><span>最新评论</span></ul>
+<ul class="panel_body itemlist">
+    <li>
+    <a href="http://blog.csdn.net/SJF0115/article/details/7254409#comments">Android学习笔记之ImageSwitcher</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/xiaoping_ustc" class="user_name">xiaoping_ustc</a>:
+您好强啊，请问android开发应该怎么学习呀。最近在看一本书学习，把握不住结构，请指导一下-给个方...
+    </p>
+    </li>
+    <li>
+    <a href="http://blog.csdn.net/SJF0115/article/details/7264552#comments">Android控件开发之Gallery3D效果</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/severaldays" class="user_name">水货</a>:
+06-03 03:01:45.574: E/AndroidRuntime(3624): 	at an...
+    </p>
+    </li>
+    <li>
+    <a href="http://blog.csdn.net/SJF0115/article/details/7264552#comments">Android控件开发之Gallery3D效果</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/severaldays" class="user_name">水货</a>:
+你好，首先谢谢分享你的代码。问个问题？　我把　Integer[]   public Integer ...
+    </p>
+    </li>
+    <li>
+    <a href="http://blog.csdn.net/SJF0115/article/details/7333718#comments">Android学习笔记进阶之在图片上涂鸦(能清屏)</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/rengfeng" class="user_name">rengfeng</a>:
+一直在想办法实现这功能，不过思维定式了，把图片放在ImageView，怎么也实现不了，把图片直接放到...
+    </p>
+    </li>
+    <li>
+    <a href="http://blog.csdn.net/SJF0115/article/details/7082132#comments">Java课程设计之学习成绩管理系统</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/u010651168" class="user_name">u010651168</a>:
+求解，数据库怎么连接
+    </p>
+    </li>
+    <li>
+    <a href="http://blog.csdn.net/SJF0115/article/details/7306284#comments">Android得到控件在屏幕中的坐标</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/zhengxia0529" class="user_name">zhengxia0529</a>:
+用触摸事件处理x=0 不变，有bug
+    </p>
+    </li>
+    <li>
+    <a href="http://blog.csdn.net/SJF0115/article/details/8600599#comments">编程之美读书笔记（3） 统计在从1到n的正整数中1出现的次数</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/u010747448" class="user_name">u010747448</a>:
+真不错
+    </p>
+    </li>
+    <li>
+    <a href="http://blog.csdn.net/SJF0115/article/details/7267043#comments">android图像处理系列之五－－给图片添加边框（中）</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/lun123451" class="user_name">lun123451</a>:
+lz，resize(bitmap, bm.getWidth(), bm.getHeight()); ...
+    </p>
+    </li>
+    <li>
+    <a href="http://blog.csdn.net/SJF0115/article/details/7242305#comments">Android学习笔记之GridView</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/mufaith" class="user_name">晓之不难</a>:
+楼主东西写的可以，不错谢谢分享！
+    </p>
+    </li>
+    <li>
+    <a href="http://blog.csdn.net/SJF0115/article/details/7634558#comments">android 开发资源</a>
+    <p style="margin:0px;"><a href="http://blog.csdn.net/mufaith" class="user_name">晓之不难</a>:
+楼主用心的总结，太伟大了，必须顶起！
+    </p>
+    </li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+</div>
+
+<div class="clear"></div>
+</div>
+
+<script type="text/javascript" src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/newblog.js"></script>
+<script type="text/javascript" src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/showblogmedal.js"></script>
+
+<script type="text/javascript">
+document.write('<script type="text/javascript" src="http://csdnimg.cn/pubfooter/js/publib_footer.js?' + Math.floor(new Date()/120000).toString(36) + '="></'+'script>');
+</script><script type="text/javascript" src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/publib_footer.js"></script><link rel="stylesheet" type="text/css" href="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/pub_footer_2012.css"><div id="pub_footerall" class="pub_footerall"><dl><dt></dt> <dd><a href="http://www.csdn.net/company/about.html" target="_blank">公司简介</a>|<a href="http://www.csdn.net/company/recruit.html" target="_blank">招贤纳士</a>|<a href="http://www.csdn.net/company/marketing.html" target="_blank">广告服务</a>|<a href="http://www.csdn.net/company/account.html" target="_blank">银行汇款帐号</a>|<a href="http://www.csdn.net/company/contact.html" target="_blank">联系方式</a>|<a href="http://www.csdn.net/company/statement.html" target="_blank">版权声明</a>|<a href="http://www.csdn.net/company/layer.html" target="_blank">法律顾问</a>|<a href="mailto:webmaster@csdn.net">问题报告</a></dd><dd><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=2355263776&amp;site=qq&amp;menu=yes" target="_blank" class="qq">QQ客服</a> <a href="http://e.weibo.com/csdnsupport/profile" target="_blank" class="weibo">微博客服</a> <a href="http://bbs.csdn.net/forums/Service" target="_blank" class="online">论坛反馈</a> <a href="mailto:webmaster@csdn.net" class="email">联系邮箱：webmaster@csdn.net</a> <span class="phone">服务热线：400-600-2320</span></dd><dd>京&nbsp;ICP&nbsp;证&nbsp;070598&nbsp;号</dd><dd>北京创新乐知信息技术有限公司 版权所有</dd><dd>世纪乐知(北京)网络技术有限公司 提供技术支持</dd><dd>江苏乐知网络技术有限公司 提供商务支持</dd><dd>Copyright © 1999-2012, CSDN.NET, All Rights Reserved&nbsp;<a href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202001032100010" target="_blank"><img src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/gongshang_logos.gif" alt="GongshangLogo" title=""></a></dd></dl></div><script id="noticeScript" type="text/javascript" btnid="header_notice_num" wrapid="note1" count="5" subcount="5" src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/notify.js"></script><script type="text/javascript" charset="utf-8" src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/tracking.js"></script>
+
+<script type="text/javascript" src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/login.js"></script>
+<script type="text/javascript">document.write("<img src=http://counter.csdn.net/pv.aspx?id=24 border=0 width=0 height=0>");</script><img src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/pv.xml" height="0" border="0" width="0">
+<script type="text/javascript" src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/counter.js"></script><script type="text/javascript" charset="UTF-8" src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/msg.js"></script>
+
+
+<script type="text/javascript" src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ad-blog.js"></script><script type="text/javascript" src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/ad-ms537.js"></script>
+
+
+<script type="text/javascript" src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/count.js"></script><iframe src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/logs.htm" frameborder="0" height="0" width="0"></iframe>
+
+</div>
+
+<link type="text/css" rel="stylesheet" href="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/message_pop.css"><div id="_popup_msg_container" style="display: block;">
+
+<div style="display: block; height: 240px;" wistate="max" id="im_popupWindow_miniMsg" class="im_popupWindow">
+	<h6 class="wi_draggable"><span>
+</span><a onclick="_message_tips_pop('down');return false;"><img alt="close" class="founctionpic3" src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/pic_close.gif"></a></h6>
+    <div id="im_popupWindow_miniMsgContent" class="wi_content">
+		<div class="kuai">
+			<div style="width:280px;"><a href="http://powerlinux.com.cn/newsignup" target="_blank"><img src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/im.jpg" alt="" style="border:0;" title="" border="0"></a></div>
+		</div>
+	</div>
+	<div class="content_qq"><span onclick="window.open('')" target="_blank"></span>
+ </div>
+ 
+ 
+</div>
+</div><img style="display: none;" src="%E4%BA%BA%E4%BA%BAAPI%20-%20%E8%90%BD%E6%97%A5%E5%B0%8F%E5%B1%8B%20-%20%E5%8D%9A%E5%AE%A2%E9%A2%91%E9%81%93%20-%20CSDN.NET_files/count_new.htm"></body></html>

@@ -1,0 +1,39 @@
+/**
+ * GravityForms Style Reset
+ */
+
+/* Clearfix */
+.xd-clearfix:before, .xd-clearfix:after,
+.gform_fields:before, .gform_fields:after,
+.gfield_checkbox:before, .gfield_checkbox:after,
+.gfield_radio:before, .gfield_radio:after { content: ""; display: table; }
+.xd-clearfix:after,
+.gform_fields:after,
+.gfield_checkbox:after,
+.gfield_radio:after { clear: both; }
+.xd-clearfix,
+.gform_fields,
+.gfield_checkbox,
+.gfield_radio { zoom: 1; }
+
+.gform_fields,
+.gfield_checkbox,
+.gfield_radio {
+	list-style-type: none;
+	margin: 0;
+}
+
+.gform_body .validation_message,
+form .validation_error {
+	color: #f00;
+}
+
+
+.xd-label-hide .gfield_label,
+.xd-progressbar-hide .gf_progressbar_wrapper {
+	display: none;
+}
+
+.xd-horizontal li {
+	float: left;
+}

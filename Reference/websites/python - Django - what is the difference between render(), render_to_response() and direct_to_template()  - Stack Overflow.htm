@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        
+    <title>python - Django - what is the difference between render(), render_to_response() and direct_to_template()? - Stack Overflow</title>
+    <link rel="shortcut icon" href="https://cdn.sstatic.net/stackoverflow/img/favicon.ico">
+    <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    
+    <script src="python%20-%20Django%20-%20what%20is%20the%20difference%20between%20render%28%29,%20render_to_response%28%29%20and%20direct_to_template%28%29%20%20-%20Stack%20Overflow_files/adzerk1_2_4_43adzerk2_2_17_45adzerk3_2_4_44" async="" type="text/javascript"></script><script src="python%20-%20Django%20-%20what%20is%20the%20difference%20between%20render%28%29,%20render_to_response%28%29%20and%20direct_to_template%28%29%20%20-%20Stack%20Overflow_files/ga.js" async="" type="text/javascript"></script><script src="python%20-%20Django%20-%20what%20is%20the%20difference%20between%20render%28%29,%20render_to_response%28%29%20and%20direct_to_template%28%29%20%20-%20Stack%20Overflow_files/quant.js" async="" type="text/javascript"></script><script type="text/javascript" src="python%20-%20Django%20-%20what%20is%20the%20difference%20between%20render%28%29,%20render_to_response%28%29%20and%20direct_to_template%28%29%20%20-%20Stack%20Overflow_files/jquery.js"></script>
+    <script type="text/javascript" src="python%20-%20Django%20-%20what%20is%20the%20difference%20between%20render%28%29,%20render_to_response%28%29%20and%20direct_to_template%28%29%20%20-%20Stack%20Overflow_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="python%20-%20Django%20-%20what%20is%20the%20difference%20between%20render%28%29,%20render_to_response%28%29%20and%20direct_to_template%28%29%20%20-%20Stack%20Overflow_files/all.css">
+    
+    <link rel="canonical" href="http://stackoverflow.com/questions/5154358/django-what-is-the-difference-between-render-render-to-response-and-direc">
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'Django - what is the difference between render(), render_to_response() and direct_to_template()?'" href="http://stackoverflow.com/feeds/question/5154358">
+    <script type="text/javascript">
+        
+        StackExchange.ready(function () {
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({votesCast:[],autoShowCommentHelp:true,showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:5154358});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '5154358');
+            
+                    });
+    </script>
+
+
+    <script type="text/javascript">
+        StackExchange.init({"stackAuthUrl":"https://stackauth.com","serverTime":1373601263,"styleCode":true,"enableUserHovercards":true,"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","enableSocialMediaInSharePopup":true},"user":{"fkey":"764c7fd9bf2f41bf53fc7c053357fdf5","isRegistered":true,"userId":2278266,"accountId":2632742,"gravatar":"<div class=\"\"><img src=\"https://www.gravatar.com/avatar/c90e086ecbb7f0e3bc05144cf07b3515?s=32&d=identicon&r=PG\" alt=\"\" width=\"32\" height=\"32\"></div>","profileUrl":"http://stackoverflow.com/users/2278266/yinan-fang","notificationsUnviewedCount":0,"inboxUnviewedCount":0}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.js":"6c261bebf56a","js/moderator.js":"6d4561e0a9f0","js/full-anon.js":"e1044a47439e","js/full.js":"088e040ee5e3","js/wmd.js":"2f79c03846d5","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/mobile.js":"e8e23ad37820","js/help.js":"6e6623243cf6","js/tageditor.js":"450c9e8426fc","js/tageditornew.js":"b6c68ad4c7dd","js/inline-tag-editing.js":"8e84e8a137f7","js/revisions.js":"7273bb714bba","js/review.js":"22e2371bd68f","js/tagsuggestions.js":"aa48ef6154df","js/post-validation.js":"bb996020492a","js/explore-qlist.js":"1c5bbd79b562","js/events.js":"f903012aa22d"});
+        
+    </script>
+    <script type="text/javascript">
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+<script src="python%20-%20Django%20-%20what%20is%20the%20difference%20between%20render%28%29,%20render_to_response%28%29%20and%20direct_to_template%28%29%20%20-%20Stack%20Overflow_files/full.js" type="text/javascript" async=""></script><script src="python%20-%20Django%20-%20what%20is%20the%20difference%20between%20render%28%29,%20render_to_response%28%29%20and%20direct_to_template%28%29%20%20-%20Stack%20Overflow_files/post-validation.js" type="text/javascript" async=""></script><script src="python%20-%20Django%20-%20what%20is%20the%20difference%20between%20render%28%29,%20render_to_response%28%29%20and%20direct_to_template%28%29%20%20-%20Stack%20Overflow_files/prettify-full.js" type="text/javascript" async=""></script><script src="python%20-%20Django%20-%20what%20is%20the%20difference%20between%20render%28%29,%20render_to_response%28%29%20and%20direct_to_template%28%29%20%20-%20Stack%20Overflow_files/wmd.js" type="text/javascript" async=""></script><script src="python%20-%20Django%20-%20what%20is%20the%20difference%20between%20render%28%29,%20render_to_response%28%29%20and%20direct_to_template%28%29%20%20-%20Stack%20Overflow_files/adFeedback.js" type="text/javascript"></script><link href="python%20-%20Django%20-%20what%20is%20the%20difference%20between%20render%28%29,%20render_to_response%28%29%20and%20direct_to_template%28%29%20%20-%20Stack%20Overflow_files/adFeedback.css" rel="stylesheet"><link rel="stylesheet" type="text/css" href="python%20-%20Django%20-%20what%20is%20the%20difference%20between%20render%28%29,%20render_to_response%28%29%20and%20direct_to_template%28%29%20%20-%20Stack%20Overflow_files/sidebar.css"></head>
+<body class="question-page">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+    <div class="container">
+        <div id="header">
+            <div id="portalLink">
+                <a class="genu" onclick="StackExchange.ready(function(){genuwine.click();});return false;">Stack Exchange</a>
+            </div>
+            <div id="topbar">
+                <div id="hlinks">
+                    
+<span id="hlinks-user">        <span class="profile-triangle">▼</span><a href="http://stackoverflow.com/users/2278266/yinan-fang" class="profile-link">Yinan Fang</a>&nbsp;<a href="http://stackoverflow.com/users/2278266/yinan-fang?tab=reputation"><span class="reputation-score" title="your reputation; view reputation changes" dir="ltr">1</span></a>
+ <span class="lsep">|</span>
+
+</span>
+<span id="hlinks-nav"></span>
+<span id="hlinks-custom">            <a href="http://chat.stackoverflow.com/">chat</a>
+
+ <span class="lsep">|</span>
+                <a href="http://meta.stackoverflow.com/">meta</a>
+
+ <span class="lsep">|</span>
+            <a href="http://stackoverflow.com/about">about</a>
+
+ <span class="lsep">|</span>
+            <a href="http://stackoverflow.com/help">help</a>
+</span>
+                </div>
+                <div id="hsearch">
+                    <form id="search" action="/search" method="get" autocomplete="off">
+                        <div>
+                            <input autocomplete="off" name="q" class="textbox" placeholder="search" tabindex="1" maxlength="240" size="28" type="text">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs ">
+                    <ul>
+                            <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                            <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                            <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                            <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                            <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content">
+            
+
+<div itemscope="" itemtype="http://schema.org/Article">
+<link itemprop="image" href="https://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+<div id="question-header">
+    <h1 itemprop="name"><a href="http://stackoverflow.com/questions/5154358/django-what-is-the-difference-between-render-render-to-response-and-direc" class="question-hyperlink">Django - what is the difference between render(), render_to_response() and direct_to_template()?</a></h1>
+</div>
+<div id="mainbar">
+
+    
+
+<div class="question" data-questionid="5154358" id="question">
+    
+                <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk1">
+            <iframe id="ados_frame_adzerk1_49626" frameborder="0" height="90" scrolling="no" width="728"></iframe><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img src="python%20-%20Django%20-%20what%20is%20the%20difference%20between%20render%28%29,%20render_to_response%28%29%20and%20direct_to_template%28%29%20%20-%20Stack%20Overflow_files/i.gif" height="0px" border="0" width="0px"></div>
+
+
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input value="5154358" type="hidden">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+    <span class="vote-count-post ">47</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+    
+    <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b>17</b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="description">
+        <p>Whats the difference (in language a python/django noob can understand) in a view between <code>render()</code>, <code>render_to_response()</code> and <code>direct_to_template()</code>?</p>
+
+<p>e.g. from <a href="https://github.com/nathanborror/django-basic-apps">Nathan Borror's basic apps examples</a></p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="kwd">def</span><span class="pln"> comment_edit</span><span class="pun">(</span><span class="pln">request</span><span class="pun">,</span><span class="pln"> object_id</span><span class="pun">,</span><span class="pln"> template_name</span><span class="pun">=</span><span class="str">'comments/edit.html'</span><span class="pun">):</span><span class="pln">
+    comment </span><span class="pun">=</span><span class="pln"> get_object_or_404</span><span class="pun">(</span><span class="typ">Comment</span><span class="pun">,</span><span class="pln"> pk</span><span class="pun">=</span><span class="pln">object_id</span><span class="pun">,</span><span class="pln"> user</span><span class="pun">=</span><span class="pln">request</span><span class="pun">.</span><span class="pln">user</span><span class="pun">)</span><span class="pln">
+    </span><span class="com"># ...</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> render</span><span class="pun">(</span><span class="pln">request</span><span class="pun">,</span><span class="pln"> template_name</span><span class="pun">,</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="str">'form'</span><span class="pun">:</span><span class="pln"> form</span><span class="pun">,</span><span class="pln">
+        </span><span class="str">'comment'</span><span class="pun">:</span><span class="pln"> comment</span><span class="pun">,</span><span class="pln">
+    </span><span class="pun">})</span></code></pre>
+
+<p>But I've also seen</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="pln">    </span><span class="kwd">return</span><span class="pln"> render_to_response</span><span class="pun">(</span><span class="pln">template_name</span><span class="pun">,</span><span class="pln"> my_data_dictionary</span><span class="pun">,</span><span class="pln">
+              context_instance</span><span class="pun">=</span><span class="typ">RequestContext</span><span class="pun">(</span><span class="pln">request</span><span class="pun">))</span></code></pre>
+
+<p>And</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="pln">    </span><span class="kwd">return</span><span class="pln"> direct_to_template</span><span class="pun">(</span><span class="pln">request</span><span class="pun">,</span><span class="pln"> template_name</span><span class="pun">,</span><span class="pln"> my_data_dictionary</span><span class="pun">)</span></code></pre>
+
+<p>Whats the difference, what to use in any particular situation?</p>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/python" class="post-tag" title="show questions tagged 'python'" rel="tag">python</a> <a href="http://stackoverflow.com/questions/tagged/django" class="post-tag" title="show questions tagged 'django'" rel="tag">django</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/q/5154358/2278266" title="short permalink to this question" class="short-link" id="link-post-5154358">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/5154358/edit" class="suggest-edit-post" title="revise and improve this post">edit</a></div>        
+    </td>
+    <td class="post-signature" align="right">
+
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                            <a href="http://stackoverflow.com/posts/5154358/revisions" title="show all edits to this post">edited <span title="2012-05-19 08:47:06Z" class="relativetime">May 19 '12 at 8:47</span></a>
+
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/455833/san4ez"><div class=""><img src="python%20-%20Django%20-%20what%20is%20the%20difference%20between%20render%28%29,%20render_to_response%28%29%20and%20direct_to_template%28%29%20%20-%20Stack%20Overflow_files/fd65b40840658af546626f13d37fba24.png" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/455833/san4ez">San4ez</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">3,324</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="8 silver badges"><span class="badge2"></span><span class="badgecount">8</span></span><span title="27 bronze badges"><span class="badge3"></span><span class="badgecount">27</span></span>
+        </div>
+    </div>
+    </td>
+    <td class="post-signature owner">
+        
+
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+                                    asked <span title="2011-03-01 12:13:50Z" class="relativetime">Mar 1 '11 at 12:13</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/20198/ryan"><div class=""><img src="python%20-%20Django%20-%20what%20is%20the%20difference%20between%20render%28%29,%20render_to_response%28%29%20and%20direct_to_template%28%29%20%20-%20Stack%20Overflow_files/1b664e15ba1afb28f320cfa93b350f4a.jpg" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/20198/ryan">Ryan</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">9,914</span><span title="4 gold badges"><span class="badge1"></span><span class="badgecount">4</span></span><span title="31 silver badges"><span class="badge2"></span><span class="badgecount">31</span></span><span title="75 bronze badges"><span class="badge3"></span><span class="badgecount">75</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-5154358" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>            </tbody></table>    
+</div>
+
+
+    <div id="answers">
+
+    <a name="tab-top"></a>
+    <div id="answers-header">
+        <div class="subheader answers-subheader">
+            <h2>
+                    5 Answers
+            </h2>
+            <div id="tabs">
+                <a href="http://stackoverflow.com/questions/5154358/django-what-is-the-difference-between-render-render-to-response-and-direc?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+<a href="http://stackoverflow.com/questions/5154358/django-what-is-the-difference-between-render-render-to-response-and-direc?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+<a class="youarehere" href="http://stackoverflow.com/questions/5154358/django-what-is-the-difference-between-render-render-to-response-and-direc?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+
+            </div>
+        </div>    
+    </div>    
+
+
+
+
+  
+<a name="5154458"></a>
+<div id="answer-5154458" class="answer accepted-answer" data-answerid="5154458">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input value="5154458" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span class="vote-count-post ">35</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+            <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p><a href="https://docs.djangoproject.com/en/1.3/topics/http/shortcuts/#render">https://docs.djangoproject.com/en/1.3/topics/http/shortcuts/#render</a></p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="pln">render</span><span class="pun">(</span><span class="pln">request</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">template</span><span class="pun">[,</span><span class="pln"> dictionary</span><span class="pun">][,</span><span class="pln"> context_instance</span><span class="pun">][,</span><span class="pln"> content_type</span><span class="pun">][,</span><span class="pln"> status</span><span class="pun">][,</span><span class="pln"> current_app</span><span class="pun">])</span></code></pre>
+
+<p><code>render()</code> is a brand spanking new shortcut for <code>render_to_response</code> in 1.3 that will automatically use <code>RequestContext</code> that I will most definitely be using from now on.</p>
+
+<hr>
+
+<p><a href="https://docs.djangoproject.com/en/1.3/topics/http/shortcuts/#render-to-response">https://docs.djangoproject.com/en/1.3/topics/http/shortcuts/#render-to-response</a></p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="pln">render_to_response</span><span class="pun">(</span><span class="kwd">template</span><span class="pun">[,</span><span class="pln"> dictionary</span><span class="pun">][,</span><span class="pln"> context_instance</span><span class="pun">][,</span><span class="pln"> mimetype</span><span class="pun">])¶</span></code></pre>
+
+<p><code>render_to_response</code> is your standard render function used in the tutorials and such. To use <code>RequestContext</code> you'd have to specify <code>context_instance=RequestContext(request)</code></p>
+
+<hr>
+
+<p><a href="https://docs.djangoproject.com/en/1.3/ref/generic-views/#django-views-generic-simple-direct-to-template">https://docs.djangoproject.com/en/1.3/ref/generic-views/#django-views-generic-simple-direct-to-template</a></p>
+
+<p><code>direct_to_template</code> is a generic view that I use in my views (as opposed to in my urls) because like the new <code>render()</code> function, it automatically uses <code>RequestContext</code> and all its <code>context_processor</code>s.</p>
+
+<p>But <code>direct_to_template</code> <em>should be avoided</em> as function based generic views are deprecated. Either use <code>render</code> or an actual class, see <a href="https://docs.djangoproject.com/en/1.3/topics/generic-views-migration/">https://docs.djangoproject.com/en/1.3/topics/generic-views-migration/</a></p>
+
+<p>I'm happy I haven't typed <code>RequestContext</code> in a long, long time. </p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/5154458/2278266" title="short permalink to this answer" class="short-link" id="link-post-5154458">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/5154458/edit" class="suggest-edit-post" title="revise and improve this post">edit</a></div>                    </td>
+    <td class="post-signature" align="right">
+
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                            <a href="http://stackoverflow.com/posts/5154458/revisions" title="show all edits to this post">edited <span title="2012-11-27 03:53:05Z" class="relativetime">Nov 27 '12 at 3:53</span></a>
+
+        </div>
+        <div class="user-gravatar32">
+            
+        </div>
+        <div class="user-details">
+            <br>
+            
+        </div>
+    </div>
+    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    
+
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+                                        answered <span title="2011-03-01 12:22:45Z" class="relativetime">Mar 1 '11 at 12:22</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/267887/yuji-tomita-tomita"><div class="gravatar-wrapper-32"><img src="python%20-%20Django%20-%20what%20is%20the%20difference%20between%20render%28%29,%20render_to_response%28%29%20and%20direct_to_template%28%29%20%20-%20Stack%20Overflow_files/MzpbS.jpg" alt=""></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/267887/yuji-tomita-tomita">Yuji 'Tomita' Tomita</a><br>
+            <span class="reputation-score" title="reputation score 33147" dir="ltr">33.1k</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="45 silver badges"><span class="badge2"></span><span class="badgecount">45</span></span><span title="69 bronze badges"><span class="badge3"></span><span class="badgecount">69</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-5154458" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-18605521" class="comment" data-commentid="18605521">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">Correction. According to docs <code>render()</code> is available from 1.3.</span> –&nbsp;<a href="http://stackoverflow.com/users/137893/applegrew" title="1542 reputation" class="comment-user">AppleGrew</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment18605521_5154458"><span title="2012-11-27 03:14:22Z" class="relativetime-clean">Nov 27 '12 at 3:14</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-18606011" class="comment" data-commentid="18606011">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">@AppleGrew, nice catch! The "Community" modified my post to point to specific branches and they picked 1.4</span> –&nbsp;<a href="http://stackoverflow.com/users/267887/yuji-tomita-tomita" title="33147 reputation" class="comment-user">Yuji 'Tomita' Tomita</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment18606011_5154458"><span title="2012-11-27 03:54:13Z" class="relativetime-clean">Nov 27 '12 at 3:54</span></a></span></div></td>
+    </tr>
+            
+    <tr id="comment-22209098" class="comment" data-commentid="22209098">
+        <td class="comment-actions"><table><tbody><tr>
+<td class="comment-score">
+<span title="number of 'useful comment' votes received" class="cool">2</span>
+</td>
+<td>
+&nbsp;
+</td></tr>
+</tbody></table></td>
+        <td class="comment-text"><div><span class="comment-copy">Do note: function based <b>generic views</b> are deprecated, not function based <b>views</b>.
+ Generic views that ship with Django are now implemented using class 
+based views (TemplateView), they used to be implemented as functions 
+(direct_to_template, etc). Views implemented as functions, my personal 
+preference, are still supported and that won't change.</span> –&nbsp;<a href="http://stackoverflow.com/users/1959/nick" title="3004 reputation" class="comment-user">Nick</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment22209098_5154458"><span title="2013-03-27 01:35:53Z" class="relativetime-clean">Mar 27 at 1:35</span></a></span><span class="edited-yes" title="this comment was edited 7 times"></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+    </tbody></table>
+</div>
+            <div class="everyonelovesstackoverflow adzerk-vote" id="adzerk3"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiY20iOjI5MTEsImNoIjoxMTc4LCJjciI6NTkxOSwiZGkiOiI0ZDcxYjRkOTAyMmQ0ZDIwODJjY2ViNmI0MTY2ODNlNiIsImRtIjoxLCJmYyI6MTAxODQsImZsIjo3NDcyLCJrdyI6InB5dGhvbixkamFuZ28seC11c2VyLXJlZ2lzdGVyZWQiLCJudyI6MjIsInJmIjoiaHR0cDovL3d3dy5nb29nbGUuY29tLmhrL3VybD9zYT10IiwicnYiOjAsInByIjoxNjA0LCJzdCI6ODI3Nywiem4iOjQ0LCJ1ciI6Imh0dHA6Ly9jYXJlZXJzLnN0YWNrb3ZlcmZsb3cuY29tLyJ9&amp;s=dW00Eh30-mBhgcqh7rLyGlXj5j4" rel="nofollow" target="_blank" title=""><img src="python%20-%20Django%20-%20what%20is%20the%20difference%20between%20render%28%29,%20render_to_response%28%29%20and%20direct_to_template%28%29%20%20-%20Stack%20Overflow_files/4c4f1be011a447efbce49c1811022e7a.png" title="" alt="" height="90" border="0" width="728"></a><div class="adzerk-vote-controls" style="display:none;"><div class="adzerk-vote-option adzerk-vote-up"><div class="adzerk-vote-icon"></div></div><div class="adzerk-vote-option adzerk-vote-down"><div class="adzerk-vote-icon"></div></div></div><div class="adzerk-vote-survey" style="display:none;"><form><span>No problem. We won't show you that ad again. Why didn't you like it?</span><ul><li><label><input value="12" name="downvoteReason" type="radio">Uninteresting</label></li><li><label><input value="13" name="downvoteReason" type="radio">Misleading</label></li><li><label><input value="14" name="downvoteReason" type="radio">Offensive</label></li><li><label><input value="15" name="downvoteReason" type="radio">Repetitive</label></li></ul><a href="#" class="adzerk-vote-cancel">Oops! I didn't mean to do this.</a></form></div><img src="python%20-%20Django%20-%20what%20is%20the%20difference%20between%20render%28%29,%20render_to_response%28%29%20and%20direct_to_template%28%29%20%20-%20Stack%20Overflow_files/i_002.gif" height="0px" border="0" width="0px"></div>
+
+
+
+  
+<a name="5154474"></a>
+<div id="answer-5154474" class="answer" data-answerid="5154474">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input value="5154474" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span class="vote-count-post ">11</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p>Render is</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="kwd">def</span><span class="pln"> render</span><span class="pun">(</span><span class="pln">request</span><span class="pun">,</span><span class="pln"> </span><span class="pun">*</span><span class="pln">args</span><span class="pun">,</span><span class="pln"> </span><span class="pun">**</span><span class="pln">kwargs</span><span class="pun">):</span><span class="pln">
+    </span><span class="str">""" Simple wrapper for render_to_response. """</span><span class="pln">
+    kwargs</span><span class="pun">[</span><span class="str">'context_instance'</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="typ">RequestContext</span><span class="pun">(</span><span class="pln">request</span><span class="pun">)</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> render_to_response</span><span class="pun">(*</span><span class="pln">args</span><span class="pun">,</span><span class="pln"> </span><span class="pun">**</span><span class="pln">kwargs</span><span class="pun">)</span></code></pre>
+
+<p>So there is really no difference between render_to_response except it wraps your context making the template preprocessors work</p>
+
+<p>Direct to template is a <a href="https://docs.djangoproject.com/en/1.4/ref/generic-views/#django-views-generic-simple-direct-to-template">generic view</a>.</p>
+
+<p>There is really no sense in using it here because there is overhead over render_to_response in the form of view function.</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/5154474/2278266" title="short permalink to this answer" class="short-link" id="link-post-5154474">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/5154474/edit" class="suggest-edit-post" title="revise and improve this post">edit</a></div>                    </td>
+    <td class="post-signature" align="right">
+
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                            <a href="http://stackoverflow.com/posts/5154474/revisions" title="show all edits to this post">edited <span title="2012-06-09 09:13:04Z" class="relativetime">Jun 9 '12 at 9:13</span></a>
+
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/785541/wladimir-palant"><div class=""><img src="python%20-%20Django%20-%20what%20is%20the%20difference%20between%20render%28%29,%20render_to_response%28%29%20and%20direct_to_template%28%29%20%20-%20Stack%20Overflow_files/7806629160a492b05d21fd738953a4cf.png" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/785541/wladimir-palant">Wladimir Palant</a><br>
+            <span class="reputation-score" title="reputation score 27486" dir="ltr">27.5k</span><span title="4 gold badges"><span class="badge1"></span><span class="badgecount">4</span></span><span title="21 silver badges"><span class="badge2"></span><span class="badgecount">21</span></span><span title="47 bronze badges"><span class="badge3"></span><span class="badgecount">47</span></span>
+        </div>
+    </div>
+    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    
+
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+                                        answered <span title="2011-03-01 12:24:47Z" class="relativetime">Mar 1 '11 at 12:24</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/321187/frost-baka"><div class=""><img src="python%20-%20Django%20-%20what%20is%20the%20difference%20between%20render%28%29,%20render_to_response%28%29%20and%20direct_to_template%28%29%20%20-%20Stack%20Overflow_files/4f83d7c745c16b48266caf032714241c.jpg" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/321187/frost-baka">Frost.baka</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">1,598</span><span title="8 silver badges"><span class="badge2"></span><span class="badgecount">8</span></span><span title="14 bronze badges"><span class="badge3"></span><span class="badgecount">14</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-5154474" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+    </tbody></table>
+</div>
+
+  
+<a name="5154816"></a>
+<div id="answer-5154816" class="answer" data-answerid="5154816">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input value="5154816" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span class="vote-count-post ">9</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p>Rephrasing Yuri, Fábio, and Frosts answers
+ for the Django noob (i.e. me) - almost certainly a simplification, but a
+ good starting point?</p>
+
+<ul>
+<li><p><code>render_to_response()</code> is the "original", but requires you putting <code>context_instance=RequestContext(request)</code> in nearly all the time, a PITA.</p></li>
+<li><p><code>direct_to_template()</code> is designed to be used just in urls.py without a view defined in views.py but it <a href="http://www.import-awesome.com/youre-using-rendertoresponse-psh-heres-direct">can be used in views.py to avoid having to type RequestContext</a></p></li>
+<li><p><code>render()</code> is a shortcut for render_to_response() that automatically supplies context_instance=Request....
+Its available in the django development version (1.2.1) but many have created their own shortcuts such as <a href="http://fi.am/entry/shortcutting-render_to_response/">this one</a>, <a href="http://djangosnippets.org/snippets/133/">this one</a> or the one that threw me initially, Nathans <a href="https://github.com/nathanborror/django-basic-apps/blob/master/basic/tools/shortcuts.py">basic.tools.shortcuts.py</a> </p></li>
+</ul>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/5154816/2278266" title="short permalink to this answer" class="short-link" id="link-post-5154816">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/5154816/edit" class="suggest-edit-post" title="revise and improve this post">edit</a></div>                    </td>
+            
+
+
+    <td class="post-signature owner" align="right">   
+       
+
+    
+
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+                                        answered <span title="2011-03-01 12:59:39Z" class="relativetime">Mar 1 '11 at 12:59</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/20198/ryan"><div class=""><img src="python%20-%20Django%20-%20what%20is%20the%20difference%20between%20render%28%29,%20render_to_response%28%29%20and%20direct_to_template%28%29%20%20-%20Stack%20Overflow_files/1b664e15ba1afb28f320cfa93b350f4a.jpg" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/20198/ryan">Ryan</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">9,914</span><span title="4 gold badges"><span class="badge1"></span><span class="badgecount">4</span></span><span title="31 silver badges"><span class="badge2"></span><span class="badgecount">31</span></span><span title="75 bronze badges"><span class="badge3"></span><span class="badgecount">75</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-5154816" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+    </tbody></table>
+</div>
+
+  
+<a name="5154431"></a>
+<div id="answer-5154431" class="answer" data-answerid="5154431">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input value="5154431" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span class="vote-count-post ">6</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p>From django <a href="https://docs.djangoproject.com/en/1.4/topics/http/shortcuts/#render" rel="nofollow">docs</a>: </p>
+
+<blockquote>
+  <p>render() is the same as a call to
+  render_to_response() with a
+  context_instance argument that that
+  forces the use of a RequestContext.</p>
+</blockquote>
+
+<p><code>direct_to_template</code> is something different. It's a 
+generic view that uses a data dictionary to render the html without the 
+need of the views.py, you use it in urls.py. Docs <a href="https://docs.djangoproject.com/en/1.4/ref/generic-views/#django-views-generic-simple-direct-to-template" rel="nofollow">here</a></p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/5154431/2278266" title="short permalink to this answer" class="short-link" id="link-post-5154431">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/5154431/edit" class="suggest-edit-post" title="revise and improve this post">edit</a></div>                    </td>
+    <td class="post-signature" align="right">
+
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                            <a href="http://stackoverflow.com/posts/5154431/revisions" title="show all edits to this post">edited <span title="2012-06-09 09:12:21Z" class="relativetime">Jun 9 '12 at 9:12</span></a>
+
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/785541/wladimir-palant"><div class=""><img src="python%20-%20Django%20-%20what%20is%20the%20difference%20between%20render%28%29,%20render_to_response%28%29%20and%20direct_to_template%28%29%20%20-%20Stack%20Overflow_files/7806629160a492b05d21fd738953a4cf.png" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/785541/wladimir-palant">Wladimir Palant</a><br>
+            <span class="reputation-score" title="reputation score 27486" dir="ltr">27.5k</span><span title="4 gold badges"><span class="badge1"></span><span class="badgecount">4</span></span><span title="21 silver badges"><span class="badge2"></span><span class="badgecount">21</span></span><span title="47 bronze badges"><span class="badge3"></span><span class="badgecount">47</span></span>
+        </div>
+    </div>
+    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    
+
+    <div class="user-info user-hover">
+        <div class="user-action-time">
+                                        answered <span title="2011-03-01 12:20:11Z" class="relativetime">Mar 1 '11 at 12:20</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/541842/fabio-diniz"><div class=""><img src="python%20-%20Django%20-%20what%20is%20the%20difference%20between%20render%28%29,%20render_to_response%28%29%20and%20direct_to_template%28%29%20%20-%20Stack%20Overflow_files/8f7f40878fd90c71f8ec6abfcafeb20c.jpg" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/541842/fabio-diniz">Fábio Diniz</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">2,962</span><span title="10 silver badges"><span class="badge2"></span><span class="badgecount">10</span></span><span title="23 bronze badges"><span class="badge3"></span><span class="badgecount">23</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-5154431" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-5787146" class="comment" data-commentid="5787146">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">Thanks +1 from me too, I gave the answer to Yuri as it was a more complete answer though.</span> –&nbsp;<a href="http://stackoverflow.com/users/20198/ryan" title="9914 reputation" class="comment-user owner">Ryan</a> <span class="comment-date" dir="ltr"><a class="comment-link" href="#comment5787146_5154431"><span title="2011-03-01 13:01:15Z" class="relativetime-clean">Mar 1 '11 at 13:01</span></a></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+    </tbody></table>
+</div>
+
+  
+<a name="15712111"></a>
+<div id="answer-15712111" class="answer" data-answerid="15712111">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input value="15712111" type="hidden">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span class="vote-count-post ">0</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text"><p>Just one note I could not find in the answers above. In this code:</p>
+
+<pre style="" class="default prettyprint prettyprinted"><code><span class="pln">context_instance </span><span class="pun">=</span><span class="pln"> </span><span class="typ">RequestContext</span><span class="pun">(</span><span class="pln">request</span><span class="pun">)</span><span class="pln">
+</span><span class="kwd">return</span><span class="pln"> render_to_response</span><span class="pun">(</span><span class="pln">template_name</span><span class="pun">,</span><span class="pln"> user_context</span><span class="pun">,</span><span class="pln"> context_instance</span><span class="pun">)</span></code></pre>
+
+<p>What the third parameter <code>context_instance</code> actually does? Being <a href="https://docs.djangoproject.com/en/1.3/ref/templates/api/#django.template.RequestContext" rel="nofollow">RequestContext</a> it sets up some basic context which is then added to <code>user_context</code>. So the template gets this extended context. What variables are added is given by <code>TEMPLATE_CONTEXT_PROCESSORS</code> in settings.py. For instance django.contrib.auth.context_processors.auth adds variable <code>user</code> and variable <code>perm</code> which are then accessible in the template.</p>
+</div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+
+
+
+
+
+
+
+
+
+
+
+<div class="post-menu"><a href="http://stackoverflow.com/a/15712111/2278266" title="short permalink to this answer" class="short-link" id="link-post-15712111">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/15712111/edit" class="suggest-edit-post" title="revise and improve this post">edit</a></div>                    </td>
+            
+
+
+    <td class="post-signature" align="right">   
+       
+
+    
+
+    <div class="user-info ">
+        <div class="user-action-time">
+                                        answered <span title="2013-03-29 22:02:44Z" class="relativetime">Mar 29 at 22:02</span>
+        </div>
+        <div class="user-gravatar32">
+            <a href="http://stackoverflow.com/users/1152915/clime"><div class=""><img src="python%20-%20Django%20-%20what%20is%20the%20difference%20between%20render%28%29,%20render_to_response%28%29%20and%20direct_to_template%28%29%20%20-%20Stack%20Overflow_files/258be2ca1a8c0b090d90aa6e9de7cc48.jpg" alt="" height="32" width="32"></div></a>
+        </div>
+        <div class="user-details">
+            <a href="http://stackoverflow.com/users/1152915/clime">clime</a><br>
+            <span class="reputation-score" title="reputation score" dir="ltr">1,291</span><span title="4 silver badges"><span class="badge2"></span><span class="badgecount">4</span></span><span title="21 bronze badges"><span class="badge3"></span><span class="badgecount">21</span></span>
+        </div>
+    </div>
+
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-15712111" class="comments dno">
+        <table>
+        <tbody>
+        
+            <tr><td></td><td></td></tr>
+        
+        </tbody>
+    
+        </table>
+    </div>
+    
+</td>
+</tr>
+    </tbody></table>
+</div>
+    <a name="new-answer"></a>
+    <form id="post-form" action="/questions/5154358/answer/submit" method="post" class="post-form">
+        <input id="post-id" value="5154358" type="hidden">
+        <h2 class="space">Your Answer</h2>
+
+
+
+    
+<script type="text/javascript">
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+         
+        prepareEditor({
+            heartbeatType: 'answer',
+            bindNavPrevention: true,
+            postfix: "",
+            onDemand: false,
+            discardSelector: ".discard-answer"
+            ,immediatelyShowMarkdownHelp:true
+        });
+        
+
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul class="wmd-button-row" id="wmd-button-row"><li title="Strong &lt;strong&gt; Ctrl+B" id="wmd-bold-button" style="left: 0px;" class="wmd-button"><span style="background-position: 0px 0px;"></span></li><li title="Emphasis &lt;em&gt; Ctrl+I" id="wmd-italic-button" style="left: 25px;" class="wmd-button"><span style="background-position: -20px 0px;"></span></li><li id="wmd-spacer1" class="wmd-spacer wmd-spacer1"></li><li title="Hyperlink &lt;a&gt; Ctrl+L" id="wmd-link-button" style="left: 75px;" class="wmd-button"><span style="background-position: -40px 0px;"></span></li><li title="Blockquote &lt;blockquote&gt; Ctrl+Q" id="wmd-quote-button" style="left: 100px;" class="wmd-button"><span style="background-position: -60px 0px;"></span></li><li title="Code Sample &lt;pre&gt;&lt;code&gt; Ctrl+K" id="wmd-code-button" style="left: 125px;" class="wmd-button"><span style="background-position: -80px 0px;"></span></li><li title="Image &lt;img&gt; Ctrl+G" id="wmd-image-button" style="left: 150px;" class="wmd-button"><span style="background-position: -100px 0px;"></span></li><li id="wmd-spacer2" class="wmd-spacer wmd-spacer2"></li><li title="Numbered List &lt;ol&gt; Ctrl+O" id="wmd-olist-button" style="left: 200px;" class="wmd-button"><span style="background-position: -120px 0px;"></span></li><li title="Bulleted List &lt;ul&gt; Ctrl+U" id="wmd-ulist-button" style="left: 225px;" class="wmd-button"><span style="background-position: -140px 0px;"></span></li><li title="Heading &lt;h1&gt;/&lt;h2&gt; Ctrl+H" id="wmd-heading-button" style="left: 250px;" class="wmd-button"><span style="background-position: -160px 0px;"></span></li><li title="Horizontal Rule &lt;hr&gt; Ctrl+R" id="wmd-hr-button" style="left: 275px;" class="wmd-button"><span style="background-position: -180px 0px;"></span></li><li id="wmd-spacer3" class="wmd-spacer wmd-spacer3"></li><li title="Undo - Ctrl+Z" id="wmd-undo-button" style="left: 325px;" class="wmd-button"><span style="background-position: -200px -20px;"></span></li><li title="Redo - Ctrl+Y" id="wmd-redo-button" style="left: 350px;" class="wmd-button"><span style="background-position: -220px -20px;"></span></li><li title="Markdown Editing Help" style="right: 0px;" id="wmd-help-button" class="wmd-button wmd-help-button active-help"><span style="background-position: -240px 0px;"></span></li><div style="right: -8px; width: 668px; top: 25px;" id="mdhelp" class="mdhelp">
+    <ul id="mdhelp-tabs" class="mdhelp-tabs">
+        <li data-tab="mdhelp-links" data-buttons="link">Links</li>
+        <li data-tab="mdhelp-images" data-buttons="image">Images</li>
+        <li data-tab="mdhelp-styles" data-buttons="bold,italic,heading">Styling/Headers</li>
+        <li data-tab="mdhelp-lists" data-buttons="olist,ulist">Lists</li>
+        <li data-tab="mdhelp-blockquotes" data-buttons="quote">Blockquotes</li>
+        <li data-tab="mdhelp-code" data-buttons="code">Code</li>
+        <li data-tab="mdhelp-html">HTML</li>
+        <li style="float:right"><a href="http://stackoverflow.com/editing-help" target="_blank">advanced help »</a></li>
+    </ul>
+    
+    <div class="mdhelp-tab" id="mdhelp-links">
+            <p>
+                In most cases, a plain URL will be recognized as such and automatically linked:
+            </p>
+            <pre>Visit http://area51.stackexchange.com/ regularly!
+Use angle brackets to force linking: Have you seen &lt;http://superuser.com&gt;?
+</pre>
+            <p>
+                To create fancier links, use Markdown:
+            </p>
+                <pre>Here's [a link](http://www.example.com/)! And a reference-style link to [a panda][1].
+References don't have to be [numbers][question].
+
+ [1]: http://notfound.stackexchange.com/
+ [question]: http://english.stackexchange.com/questions/11481
+</pre>
+                <p>You can add tooltips to links:</p>
+<pre>Click [here](http://diy.stackexchange.com<span class="spaces">&nbsp;</span>"this text appears when you mouse over")!
+This works with [reference links][blog] as well.
+
+ [blog]: http://blog.stackoverflow.com/<span class="spaces">&nbsp;</span>"click here for updates"
+</pre>
+    </div>
+
+    <div class="mdhelp-tab" id="mdhelp-images">
+        <p>Images are exactly like links, but they have an exclamation point in front of them:</p>
+        <pre>![a busy cat](http://sstatic.net/stackoverflow/img/error-lolcat-problemz.jpg)
+![two muppets][1]
+
+ [1]: http://i.imgur.com/I5DFV.jpg "tooltip"
+</pre>
+        <p>
+            The word in square brackets is the alt text, which gets displayed if the browser
+            can't show the image. Be sure to include meaningful alt text for screen-reading
+            software.
+        </p>
+   
+    </div>
+    <div class="mdhelp-tab" id="mdhelp-styles">
+        <div class="col1">
+            <p>Be sure to use text styling sparingly; only where it helps readability.</p>
+                <pre>*This is italicized*, and so
+is _this_.
+
+**This is bold**, just like __this__.
+
+You can ***combine*** them
+if you ___really have to___.
+</pre>
+        
+        </div>
+        <div class="col2">
+            <p>
+                To break your text into sections, you can use headers:
+            </p>
+                <pre>A Large Header
+==============
+
+Smaller Subheader
+-----------------
+</pre>
+            <p>
+                Use hash marks if you need several levels of headers:</p>
+    <pre># Header 1 #
+## Header 2 ##
+### Header 3 ###
+</pre>
+
+            
+        </div>
+
+    </div>
+    <div class="mdhelp-tab" id="mdhelp-lists">
+        <p>Both bulleted and numbered lists are possible:</p>
+        <div class="col1">
+<pre>-<span class="spaces">&nbsp;</span>Use a minus sign for a bullet
++<span class="spaces">&nbsp;</span>Or plus sign
+*<span class="spaces">&nbsp;</span>Or an asterisk
+
+1.<span class="spaces">&nbsp;</span>Numbered lists are easy
+2.<span class="spaces">&nbsp;</span>Markdown keeps track of
+   the numbers for you
+7.<span class="spaces">&nbsp;</span>So this will be item 3.
+</pre>
+        </div>
+        <div class="col2">
+<pre>1.<span class="spaces">&nbsp;</span>Lists in a list item:
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>-<span class="spaces">&nbsp;</span>Indented four spaces.
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>*<span class="spaces">&nbsp;</span>indented eight spaces.
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>-<span class="spaces">&nbsp;</span>Four spaces again.
+2.<span class="spaces">&nbsp;&nbsp;</span>You can have multiple
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>paragraphs in a list items.
+<span class="spaces">&nbsp;</span>
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>Just be sure to indent.
+</pre>        
+        </div>
+    </div>
+
+    <div class="mdhelp-tab" id="mdhelp-blockquotes">
+        <div class="col1">
+            <pre>&gt; Create a blockquote by
+&gt; prepending “&gt;” to each line.
+&gt;
+&gt; Other formatting also works here, e.g.
+&gt;
+&gt; 1. Lists or
+&gt; 2. Headings:
+&gt;
+&gt; ## Quoted Heading ##
+            </pre>
+        </div>
+        <div class="col2">
+                <p>
+                    You can even put blockquotes in blockquotes:
+                </p>
+                <pre>&gt; A standard blockquote is indented
+&gt; &gt; A nested blockquote is indented more
+&gt; &gt; &gt; &gt; You can nest to any depth.
+</pre>
+        </div>
+    </div>
+
+    <div class="mdhelp-tab" id="mdhelp-code">
+        <p>
+            To create code blocks or other preformatted text, indent by four spaces:
+        </p>
+        <pre><span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>This will be displayed in a monospaced font. The first four spaces
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>will be stripped off, but all other whitespace will be preserved.
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>Markdown and HTML are turned off in code blocks:
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;</span>&lt;i&gt;This is not italic&lt;/i&gt;, and [this is not a link](http://example.com)
+</pre>
+        <p>
+            To create not a block, but an inline code span, use backticks:
+        </p>
+        <pre>The `$` character is just a shortcut for `window.jQuery`.
+</pre>
+        <p>
+            If you want to have a preformatted block within a list, indent by eight spaces:
+        </p>
+        <pre>1. This is normal text.
+2. So is this, but now follows a code block:
+<span class="spaces">&nbsp;</span>
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Skip a line and indent eight spaces.
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>That's four spaces for the list
+<span class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>and four to trigger the code block.
+</pre>
+    </div>
+
+    <div class="mdhelp-tab" id="mdhelp-html">
+        <p>
+            If you need to do something that Markdown can't handle, use HTML. Note that
+            <a href="http://meta.stackoverflow.com/questions/1777/what-html-tags-are-allowed" target="_blank">we only support a very strict subset of HTML!</a>
+        </p>
+        <pre>Strikethrough humor is &lt;strike&gt;funny&lt;/strike&gt;.
+</pre>
+        <p>
+            Markdown is smart enough not to mangle your span-level HTML:
+        </p>
+        <pre>&lt;b&gt;Markdown works *fine* in here.&lt;/b&gt;
+</pre>
+        <p>
+            Block-level HTML elements have a few restrictions:
+        </p>
+        <ol>
+            <li>They must be separated from surrounding text by blank lines.</li>
+            <li>The begin and end tags of the outermost block element must not be indented.</li>
+            <li>Markdown can't be used within HTML blocks.</li>
+        </ol>
+        <br>
+        <pre>&lt;pre&gt;
+    You can &lt;em&gt;not&lt;/em&gt; use Markdown in here.
+&lt;/pre&gt;
+</pre>
+    </div>
+
+    <div class="cbt"></div>
+</div></ul></div>
+            <div style="clear: both; height: 23px;"></div><textarea id="wmd-input" class="wmd-input processed" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        <div style="margin-right: 0px;" class="grippie"></div></div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="764c7fd9bf2f41bf53fc7c053357fdf5" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+        <div style="position: relative;"> 
+        </div>
+           
+            <div class="form-submit cbt">
+            <input id="submit-button" value="Post Your Answer" tabindex="110" type="submit">
+            <a href="#" class="discard-answer dno">discard</a>
+        </div>
+    </form>
+
+
+
+        <h2 class="bottom-notice">
+                Not the answer you're looking for? 
+            Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/python" class="post-tag" title="show questions tagged 'python'" rel="tag">python</a> <a href="http://stackoverflow.com/questions/tagged/django" class="post-tag" title="show questions tagged 'django'" rel="tag">django</a> 
+                or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.
+        </h2>
+</div>
+</div>
+<div id="sidebar" class="show-votes">
+
+
+
+<script type="text/javascript">
+    window.showNewUser = false;
+
+</script>
+
+<div class="module newuser newuser-greeting" id="newuser-box" style="display:none;">
+    <h4>Hello World!</h4>
+    <div>
+        <p>This is a collaboratively edited question and answer site for <b>professional and enthusiast programmers</b>. It's 100% free, no registration required.</p>
+        <p class="ar">
+                <a href="http://stackoverflow.com/about?mnu=1">about »</a>&nbsp;&nbsp;&nbsp;
+            <a href="http://stackoverflow.com/help?mnu=1">help »</a>
+        </p>
+    </div>
+</div>
+    <script type="text/javascript">
+    if (showNewUser) {
+        document.getElementById('newuser-box').style.display = '';
+    }
+    </script>        <div class="module question-stats">
+        <p class="label-key">tagged</p>
+        <div class="tagged"><a href="http://stackoverflow.com/questions/tagged/python" class="post-tag" title="" rel="tag">python</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">202719</span></span><br>
+<a href="http://stackoverflow.com/questions/tagged/django" class="post-tag" title="show questions tagged 'django'" rel="tag">django</a>&nbsp;<span class="item-multiplier"><span class="item-multiplier-x">×</span>&nbsp;<span class="item-multiplier-count">54909</span></span><br>
+</div>
+        <table id="qinfo">
+            <tbody><tr>
+                <td><p class="label-key">asked</p></td>
+                <td style="padding-left:10px"><p class="label-key" title="2011-03-01 12:13:50Z"><b>2 years ago</b></p></td>
+            </tr>
+            <tr>
+                <td><p class="label-key">viewed</p></td>
+
+                <td style="padding-left:10px">
+                    <p class="label-key">
+                        <b>9618 times</b>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td><p class="label-key">active</p></td>
+                <td style="padding-left:10px"><p class="label-key"><b><a href="http://stackoverflow.com/questions/5154358/django-what-is-the-difference-between-render-render-to-response-and-direc?lastactivity" class="lastactivity-link" title="2013-03-29 22:02:44Z">3 months ago</a></b></p></td>
+            </tr>
+        </tbody></table>
+    </div>
+        
+                    <script type="text/javascript">
+                    var scriptSrc = "http://engine.adzerk.net/z/8277/adzerk1_2_4_43,adzerk2_2_17_45,adzerk3_2_4_44?keywords=python,django,x-user-registered";
+                    if (document.referrer) {
+                        if (/\?/.test(scriptSrc))
+                            scriptSrc += "&";
+                        else
+                            scriptSrc += "?";
+                        scriptSrc += "xReferrer=" + document.referrer;
+                    }
+                    StackExchange.ready(function() {
+                        var z = document.createElement("script");
+                        z.type = "text/javascript";
+                        z.async = "true";
+                        z.src = scriptSrc;
+                        var s = document.getElementsByTagName("script")[0];
+                        s.parentNode.insertBefore(z, s);
+                    });
+                </script>
+            
+    <div id="hireme"> <a href="http://careers.stackoverflow.com/jobs?a=24" class="top" target="_blank"></a> <ul class="jobs"> <li> <a href="http://careers.stackoverflow.com/jobs/34797/sr-web-application-developer-mentor-graphics?a=F6ZS3o4" target="_blank" title="Sr. Web Application Developer at Mentor Graphics. Click to learn more."> Sr. Web Application Developer<br> <span class="company">Mentor Graphics</span> <span class="location">Portland, OR / relocation</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/37207/developer-to-build-site-like-stickygram-com-on-pixelist-custom-oil?a=HXuZuvK" target="_blank" title="Developer to build site like stickygram.com on Shopify (fluid RWD &amp; simple UX) at Pixelist: custom oil paintings of your instagrams. Click to learn more."> Developer to build site like stickygram.com on Shopify…<br> <span class="company">Pixelist: custom oil paintings…</span> <span class="location">Wan Tsai, Hong Kong / remote</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/36070/chief-architect-lead-developer-amvonet?a=GCd75FC" target="_blank" title="Chief Architect / Lead Developer at AMVONET. Click to learn more."> Chief Architect / Lead Developer<br> <span class="company">AMVONET</span> <span class="location">Alliance, OH / remote</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/36894/java-engineer-vodori?a=HAzqCyc" target="_blank" title="Java Engineer at Vodori. Click to learn more."> Java Engineer<br> <span class="company">Vodori</span> <span class="location">Chicago, IL / relocation</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/33990/software-developer-functional-programming-jane-street?a=E9QwloY" target="_blank" title="Software Developer (Functional Programming) - Hong Kong at Jane Street. Click to learn more."> Software Developer (Functional Programming) - Hong Kong<br> <span class="company">Jane Street</span> <span class="location">Hong Kong</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/34960/data-architecture-engineer-quantifind?a=FiTT7zO" target="_blank" title="Data Architecture Engineer at quantiFind. Click to learn more."> Data Architecture Engineer<br> <span class="company">quantiFind</span> <span class="location">Menlo Park, CA / remote /…</span> </a> </li> </ul> <img alt="" class="impression" src="python%20-%20Django%20-%20what%20is%20the%20difference%20between%20render%28%29,%20render_to_response%28%29%20and%20direct_to_template%28%29%20%20-%20Stack%20Overflow_files/HXuZuvK-GCd75FC-HAzqCyc-E9QwloY-F6ZS3o4-FiTT7zO-24.gif" style="display:none"></div>
+
+
+
+      
+    
+    <div class="module sidebar-linked">
+        <h4 id="h-linked">Linked</h4>
+        <div class="linked" data-tracker="lq=1">
+            <div class="spacer">
+<a href="http://stackoverflow.com/q/15692001?lq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes default">0</div>
+</a>
+<a href="http://stackoverflow.com/questions/15692001/example-of-when-to-use-render-to-response-over-render?lq=1" class="question-hyperlink">Example of when to use render_to_response over render</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/5268588?lq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">14</div>
+</a>
+<a href="http://stackoverflow.com/questions/5268588/what-is-a-good-django-workflow?lq=1" class="question-hyperlink">What is a good Django workflow?</a>
+</div>
+
+        </div>
+    </div>
+    <div class="module sidebar-related">
+        <h4 id="h-related">Related</h4>
+        <div class="related" data-tracker="rq=1">
+            <div class="spacer">
+<a href="http://stackoverflow.com/q/2264503?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">0</div>
+</a>
+<a href="http://stackoverflow.com/questions/2264503/why-i-cant-alert-this-string-which-is-return-from-django-render-to-response?rq=1" class="question-hyperlink">why i can't alert this string which is return from django render_to_response</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/8027011?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">0</div>
+</a>
+<a href="http://stackoverflow.com/questions/8027011/always-anonymous-user-when-using-render-to-response-in-django-code?rq=1" class="question-hyperlink">Always anonymous user when using render_to_response in django code</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/8874582?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">1</div>
+</a>
+<a href="http://stackoverflow.com/questions/8874582/django-form-fails-to-render-to-response?rq=1" class="question-hyperlink">django form fails to render_to_response</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/9200880?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">4</div>
+</a>
+<a href="http://stackoverflow.com/questions/9200880/django-show-render-to-response-in-template?rq=1" class="question-hyperlink">Django show render_to_response in template</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/9828465?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">1</div>
+</a>
+<a href="http://stackoverflow.com/questions/9828465/whats-the-difference-between-adding-a-dictionary-as-part-of-requestcontext-or-p?rq=1" class="question-hyperlink">What's the difference between adding a dictionary as part of RequestContext or part of render_to_response in Django?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/10678249?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">1</div>
+</a>
+<a href="http://stackoverflow.com/questions/10678249/edit-add-objects-using-the-same-django-form?rq=1" class="question-hyperlink">Edit/Add objects using the same django form</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/11996899?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">0</div>
+</a>
+<a href="http://stackoverflow.com/questions/11996899/direct-to-template-and-render-to-response-on-templates-request?rq=1" class="question-hyperlink">direct_to_template and render_to_response on templates - {{request}}</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/14185064?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">1</div>
+</a>
+<a href="http://stackoverflow.com/questions/14185064/difference-between-django-modelform-and-model-instance-save-methods?rq=1" class="question-hyperlink">Difference between Django ModelForm and Model instance save methods</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/15276382?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes default">-1</div>
+</a>
+<a href="http://stackoverflow.com/questions/15276382/django-render-to-response-redirect-to-another-view?rq=1" class="question-hyperlink">django render_to_response redirect to another view</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/q/15536011?rq=1" title="Vote score (upvotes - downvotes)">
+        <div class="answer-votes answered-accepted default">-2</div>
+</a>
+<a href="http://stackoverflow.com/questions/15536011/django-render-to-response-some-stuff-is-rendered?rq=1" class="question-hyperlink">django - render_to_response - some stuff is rendered</a>
+</div>
+
+        </div>
+    </div>
+</div>
+
+<div id="feed-link">
+    <div id="feed-link-text"><a href="http://stackoverflow.com/feeds/question/5154358" title="feed of this question and its answers"><span class="feed-icon"></span>question feed</a></div>
+</div>
+<script type="text/javascript">
+StackExchange.ready(function(){$.get('/posts/5154358/ivc/44c2');});
+</script>
+<noscript>
+    <div><img src="/posts/5154358/ivc/44c2" class="dno" alt="" width="0" height="0"></div>
+</noscript><div style="display:none" id="prettify-lang">default</div></div>
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://stackoverflow.com/about">about</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                    <a href="http://blog.stackexchange.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/about/hiring">jobs</a>
+                    <a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6MjAsImNtIjo5NTQsImNoIjoxMTc4LCJjciI6Mjc3NiwiZG0iOjQsImZjIjoyODYyLCJmbCI6Mjc1MSwibnciOjIyLCJydiI6MCwicHIiOjExNSwic3QiOjAsInVyIjoiaHR0cDovL3N0YWNrb3ZlcmZsb3cuY29tL2Fib3V0L2NvbnRhY3QiLCJyZSI6MX0&amp;s=hRods5B22XvRBwWIwtIMekcyNF8">advertising info</a>
+
+                    <a onclick='StackExchange.switchMobile("on", "/questions/5154358/django-what-is-the-difference-between-render-render-to-response-and-direc")'>mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                </div>
+                <div id="footer-sites">
+                <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="professional system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems.">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Answers</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="IT security professionals">IT Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (13)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="statisticians, data analysts, data miners and data visualization experts">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="mathematicians">MathOverflow</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackoverflow.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Overflow</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2013 stack exchange inc; 
+                user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc-wiki</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="footer-flair">
+                <a href="http://creativecommons.org/licenses/by-sa/3.0/" class="cc-wiki-link"></a>
+            </div>
+            <div id="svnrev">
+                rev 2013.7.12.839
+            </div>
+            
+        </div>
+    </div>
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+    <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-5620270-1']);
+        _gaq.push(['_setCustomVar', 1, 'tags', '|python|django|']); 
+        _gaq.push(['_setCustomVar', 2, 'accountid', '2632742',2]); 
+_gaq.push(['_trackPageview']);
+    var _qevents = _qevents || [];
+    (function () {
+        var ssl='https:'==document.location.protocol,
+            s=document.getElementsByTagName('script')[0],
+            ga=document.createElement('script');
+        ga.type='text/javascript';
+        ga.async=true;
+        ga.src=(ssl?'https://ssl':'http://www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(ga,s);
+        var sc=document.createElement('script');
+        sc.type='text/javascript';
+        sc.async=true;
+        sc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+        s.parentNode.insertBefore(sc,s);
+    })();
+    _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>        
+    
+
+<div style="overflow: hidden; position: absolute; z-index: 1002; width: 278px; height: 158px; top: 262.7px; left: 1029px;"><div id="tag-menu"><div><div class="tm-heading"><span class="tm-sub-info"><a title="toggle this tag between favorite, ignored, and normal" class="tm-favorite-clear">★</a> <span title="34979">35k</span> followers <span class="tm-sub-links" style="float:right;"><a class="tm-se-subscription" title="subscribe for email notifications on this tag">subscribe</a> <span style="color:#727272;">|</span> <a href="http://stackoverflow.com/feeds/tag/python" title="add this tag to your rss reader">rss</a></span></span></div><div class="tm-description">Python
+ is a dynamically and strongly typed programming language whose design 
+philosophy emphasizes code readability. Two significantly different 
+versions of Python (2 and 3) are in use. Please mention the version that
+ you are using when asking a question about Python.</div></div><span class="tm-links"><a href="http://stackoverflow.com/questions/tagged/python?sort=faq">faq</a> <a href="http://stackoverflow.com/tags/python/info">info</a> <a href="http://stackoverflow.com/tags/python/topusers">top users</a></span></div></div></body></html>

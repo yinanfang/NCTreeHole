@@ -1,0 +1,3698 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+	<meta charset="UTF-8">
+
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+	<meta name="viewport" content="width=device-width">
+
+	
+	<title>How To Create an IE-Only Stylesheet | CSS-Tricks</title>
+
+	<link rel="shortcut icon" href="http://cdn.css-tricks.com/favicon.ico">
+
+	<link rel="apple-touch-icon" href="http://css-tricks.com/apple-touch-icon.png">
+
+	<link rel="search" type="application/opensearchdescription+xml" href="http://css-tricks.com/opensearch.xml" title="CSS-Tricks Search">
+
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.feedburner.com/CssTricks">
+
+	<link rel="author" href="https://plus.google.com/101987072260327250694/posts">
+
+	
+<!-- This site is optimized with the Yoast WordPress SEO plugin v1.4.7 - http://yoast.com/wordpress/seo/ -->
+<meta name="description" content="This article has been updated from an older version (originally Sept 24, 2007). I just wanted to expand it and make it more clear. If you read this">
+<link rel="canonical" href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@Real_CSS_Tricks">
+<meta name="twitter:description" content="
+This article has been updated from an older version (originally Sept 24, 2007). I just wanted to expand it and make it more clear.
+If you read this blog, there is a 99% chance you've had a hair-pulling experience with IE. But if you are worth your salt as a CSS coder, you should be able to deal with it. I am of the opinion that you can handle anything IE can throw at you without the use of hacks. …">
+<meta name="twitter:title" content="How To Create an IE-Only Stylesheet - CSS-Tricks">
+<meta name="twitter:url" content="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/">
+<!-- / Yoast WordPress SEO plugin. -->
+
+<link rel="alternate" type="application/rss+xml" title="CSS-Tricks » How To Create an IE-Only Stylesheet Comments Feed" href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/feed/">
+<link rel="stylesheet" id="jetpack-widgets-css" href="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/widgets.css" type="text/css" media="all">
+<div class="fit-vids-style">­<style>               .fluid-width-video-wrapper {                 width: 100%;                              position: relative;                       padding: 0;                            }                                                                                   .fluid-width-video-wrapper iframe,        .fluid-width-video-wrapper object,        .fluid-width-video-wrapper embed,         .fluid-width-video-wrapper video {           position: absolute;                       top: 0;                                   left: 0;                                  width: 100%;                              height: 100%;                          }                                       </style></div><script type="text/javascript" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/jquery.js"></script>
+<link rel="shortlink" href="http://css-tricks.com/?p=132">
+<!-- Better Art Direction Styles -->
+
+
+<style type="text/css">img#wpstats{display:none}</style>  <script>window.jQuery || document.write('<script src="/wp-includes/js/jquery/jquery.js"><\/script>')</script>
+
+      <link rel="stylesheet" href="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/fonts.css">
+  
+  <!--[if !IE]><!-->
+  <link rel="stylesheet" href="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/style.css">
+  <!--<![endif]-->
+  <!--[if lt IE 9]>
+  <link rel="stylesheet" href="http://cdn.css-tricks.com/wp-content/themes/CSS-Tricks-10/css/oldie.css">
+  <![endif]-->
+  <!--[if IE 9]>
+  <link rel="stylesheet" href="http://cdn.css-tricks.com/wp-content/themes/CSS-Tricks-10/style.css?v1.2">
+  <![endif]-->
+
+  
+			<script src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/comment-reply.js"></script>
+    <script src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/showdown-ck.js"></script>
+	
+	
+	
+	
+	
+  
+	
+	
+  
+  
+	
+	
+<script src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/bsa.js" async="" type="text/javascript"></script><script async="async" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/s_3469a2a501a9e18091036aa0c89f9dcb.js" id="_bsap_js_3469a2a501a9e18091036aa0c89f9dcb" type="text/javascript"></script><script src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/ga.js" async="" type="text/javascript"></script><style id="bsa_css" type="text/css">.one{position:relative}.one .bsa_it_ad{display:block;padding:15px;border:1px solid #e1e1e1;background:#f9f9f9;font-family:helvetica,arial,sans-serif;line-height:100%;position:relative}.one .bsa_it_ad a{text-decoration:none}.one .bsa_it_ad a:hover{text-decoration:none}.one .bsa_it_ad .bsa_it_t{display:block;font-size:12px;font-weight:bold;color:#212121;line-height:125%;padding:0 0 5px 0}.one .bsa_it_ad .bsa_it_d{display:block;font-size:11px;color:#434343;font-size:12px;line-height:135%}.one .bsa_it_ad .bsa_it_i{float:left;margin:0 15px 10px 0}.one .bsa_it_p{display:block;text-align:right;position:absolute;bottom:10px;right:15px}.one .bsa_it_p a{font-size:10px;color:#666;text-decoration:none}.one .bsa_it_ad .bsa_it_p a:hover{font-style:italic}div.bsap_1279518{width:100%;display:block}div.bsap_1279518 a{width:200px}div.bsap_1279518 a img{padding:0}div.bsap_1279518 a em{font-style:normal}div.bsap_1279518 a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 4px 10px 0;text-align:center;text-decoration:none;overflow:hidden;float:left;}div.bsap_1279518 img{border:0;clear:right;}div.bsap_1279518 a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}div.bsap_1279518 a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}div.bsap_1279518 a{line-height:100%}div.bsap_1279518 a.adhere{width:200px;height:200px;line-height:1600%}html>body div.bsap_1279518 a.adhere{width:198px;height:198px}div.bsap_1279518 img.s{height:0;width:0}</style></head>
+
+<body class="single single-post postid-132 single-format-standard user-0">
+
+    <script>
+  (function(){
+    var bsa = document.createElement('script');
+       bsa.type = 'text/javascript';
+       bsa.async = true;
+       bsa.src = 'http://s3.buysellads.com/ac/bsa.js';
+    (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+  })();
+  </script>
+  
+  <header id="top" class="top">
+
+  <div class="logo">
+    <a href="http://css-tricks.com/">
+      CSS<span>-Tricks</span>
+    </a>
+  </div>
+
+    <a class="top-treehouse-ad" href="http://teamtreehouse.com/redirect/css-tricks">
+    <div class="frog-foot-box">
+    <svg class="frog-foot" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 409.48 446.978" enable-background="new 0 0 409.48 446.978" xml:space="preserve"><path d="M361.51 82.324c-14.695-8.308-38.162 5.053-52.414 29.844l-25.805 44.9 c-9.43 18.662-8.137 40.9 3.8 58.034l0.752 1.082c11.959 17.2 28 33 33.3 38.7 c3.117 3.3 5.5 7.4 6.8 12.124c4.357 15.584-4.74 31.751-20.324 36.112c-15.584 4.359-31.752-4.738-36.111-20.324 c-1.096-3.912-1.34-7.859-0.848-11.648c0.838-6.439-1.229-16.927-10.461-27.223s-28.102 9.15-34.203 29.149l-0.281 0.9 c-6.102 19.998-9.953 37.45-8.801 39.13c0.686 1 1.3 2.1 1.9 3.147c8.561 16.1 2.4 36.105-13.664 44.7 c-16.108 8.562-36.105 2.444-44.668-13.662c-8.561-16.108-2.443-36.105 13.664-44.667c0.723-0.385 1.454-0.739 2.191-1.064 c1.23-0.541 4.72-8.948 7.748-18.878c3.031-9.932 5.486-17.98 5.486-17.98c0.324-1.057 0.605-2.102 0.861-3.138l16.3-58.202 l-17.435 35.785c-2.066-6.794-5.482-7.036-12.964-1.684c-4.513 3.229-11.974 9.586-15.618 12.2 c-6.844 4.897-12.569 14.408-15.6 20.235c-1.783 3.43-4.281 6.558-7.474 9.146c-12.482 10.128-30.81 8.219-40.937-4.263 c-10.127-12.48-8.218-30.808 4.262-40.935c3.658-2.969 7.821-4.903 12.131-5.841c7.333-1.593 32.271-16.827 47.296-27.578 c2.69-1.924 4.947-3.745 6.783-5.433l40.118-30.468l-34.939 18.879c0 0-3.555-0.36-7.913 0.1 c-12.788 1.419-25.957 3.221-28.445 6.388c-1.472 1.87-3.224 3.568-5.253 5.027c-11.66 8.4-27.924 5.756-36.324-5.906 c-8.402-11.663-5.755-27.928 5.905-36.326c4.812-3.464 10.404-5.049 15.901-4.896c9.353 0.3 34 5.2 54.5 1.6 l5.288-0.937c20.589-3.648 45.238-21.57 55.06-40.03c0 0 9.617-16.893 21.479-37.731c11.863-20.838 10.986-43.664-1.955-50.98 l-23.436-13.25c-11.824-6.685-31.18-6.697-43.013-0.025L22.827 97.395c-11.832 6.671-21.514 23.243-21.514 36.826v177.826 c0 13.6 9.7 30.2 21.5 36.828l161.416 90.997c11.833 6.7 31.2 6.7 43.013-0.025l160.863-90.947 c11.826-6.685 21.502-23.269 21.502-36.853V134.221c0-13.583-9.676-30.168-21.502-36.853 C388.12 97.4 376.2 90.6 361.5 82.324z" class="frog-foot-shape"></path>
+    </svg>
+    </div>
+    <div class="top-treehouse-text">
+    <h5><span class="treehouse-brand">treehouse : </span> <strong>what would you like to learn today?</strong></h5>
+    <div class="treehouse-topics">
+      <span>Web Design</span>
+      <span>Web Development</span>
+      <span>iOS Development</span>
+    </div>
+    </div>
+  </a>
+  
+  <section class="search" role="search">
+
+    <div class="open-search">
+      <a href="#" title="Show search box" role="button">
+         <span data-icon="m" aria-hidden="true"></span>
+         <span class="screen-reader">Show search box</span>
+      </a>
+    </div>
+
+    <div class="close-search">
+      <form id="search-form" action="/search-results/">
+
+        <div>
+          <label for="q" id="search-label" class="screen-reader">Search</label>
+          <input aria-labelledby="search-label" id="q" name="q" class="search-field" placeholder="Search terms..." type="search">
+          <input value="Search" class="button search-button" type="submit">
+        </div>
+
+        <div class="search-parts">
+          <strong>Search in:</strong>
+          <a data-url="/search-results/" class="active">All</a>
+          <a data-url="/search-results/articles/">Articles</a>
+          <a data-url="/search-results/forums/">Forums</a>
+          <a data-url="/search-results/snippets/">Snippets</a>
+          <a data-url="/search-results/video/">Videos</a>
+
+          <a href="#" id="x-search" class="x-search">✕</a>
+        </div>
+
+      </form>
+    </div>
+
+  </section>
+
+</header>
+  <div class="page-wrap">
+
+    <nav class="main-nav" id="main-nav">
+  <a href="http://css-tricks.com/" class="home">
+    <span data-icon="" aria-hidden="true"></span>Home
+  </a>
+  <a href="http://css-tricks.com/forums/" class="forums">
+    <span data-icon="9" aria-hidden="true"></span>Forums
+  </a>
+  <a href="http://css-tricks.com/snippets/" class="snippets">
+    <span data-icon="Q" aria-hidden="true"></span>Snippets
+  </a>
+  <a href="http://css-tricks.com/gallery/" class="gallery">
+    <span data-icon="p" aria-hidden="true"></span>Gallery
+  </a>
+  <a href="http://css-tricks.com/video-screencasts/" class="videos">
+    <span data-icon="q" aria-hidden="true"></span>Videos
+  </a>
+  <a href="http://css-tricks.com/almanac/" class="almanac">
+    <span data-icon="ó" aria-hidden="true"></span>Almanac
+  </a>
+  <a href="http://css-tricks.com/downloads/" class="demos">
+    <span data-icon="w" aria-hidden="true"></span>Demos
+  </a>
+  <a href="http://css-tricks.com/lodge/" class="lodge">
+    <span data-icon="6" aria-hidden="true"></span>Lodge
+  </a>
+
+
+  <a href="#main-nav" class="show-hide-navigation" id="show-hide-navigation">
+    Navigation 'n' Search
+  </a>
+</nav>
+<div class="grid group">
+
+	<section class="blog-posts grid-2-3">
+
+		<article class="module" id="post-132">
+
+			<h1>How To Create an IE-Only Stylesheet</h1>
+
+			<p class="time">
+
+				Published
+				<time datetime="2010-01-20">
+					January 20, 2010				</time>
+
+				by Chris Coyier			</p>
+
+			<div class="google-ad">
+        				<div id="bsap_1279518" class="bsap_1279518 bsap"><a href="http://stats.buysellads.com/click.go?z=1279518&amp;b=3297627&amp;g=&amp;s=&amp;sw=1366&amp;sh=768&amp;br=firefox,21,win&amp;r=0.324816666040894&amp;link=http://www.xhtmlweaver.com/?utm_source=css-tricks.com" onmouseover="window.status = 'http://www.xhtmlweaver.com/?utm_source=css-tricks.com'; return true;" onmouseout="window.status=''; return true;" class="ad1 odd" title="PSD TO HTML5" id="bsa_3297627" target="_blank"><img src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/162687-1363519646.jpg" alt="PSD TO HTML5" height="200" width="200"></a></div>
+              </div>
+
+			<p><img src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/ie-only-css.gif" alt="ie-only-css.gif"></p>
+<div class="explanation">This article has been updated from an older 
+version (originally Sept 24, 2007). I just wanted to expand it and make 
+it more clear.</div>
+<p>If you read this blog, there is a 99% chance you've had a 
+hair-pulling experience with IE. But if you are worth your salt as a CSS
+ coder, you should be able to deal with it. I am of the opinion that you
+ can handle anything IE can throw at you without the use of hacks. Hacks
+ are dangerous, since they are based on non-standard exploits, you can't
+ predict how they are going to behave in future browsers. The tool of 
+choice for fighting IE problems is the <strong>conditional stylesheet</strong>.
+ IE provides comment tags, supported all the way up to the current IE 8 
+to target specific versions, as well as greater-than/less-than stuff for
+ targeting multiple versions at once.</p>
+<p><span id="more-132"></span></p>
+<h3>Why use conditional stylesheets?</h3>
+<ul>
+<li>You got problems, they need fixin'</li>
+<li>Keeps your code hack-free and valid</li>
+<li>Keeps your main stylesheet clean</li>
+<li>Perfectly acceptable technique, sanctioned by Microsoft</li>
+</ul>
+<p>And remember, these conditional tags don't have to be used only for 
+CSS. You could load JavaScript, or even use them down in the content of 
+your site to display special IE-specific messages.</p>
+<h3>The Code</h3>
+<p>This would go in your &lt;head&gt; with all the other regular CSS 
+&lt;link&gt;ed CSS files. The opening and closing tags should be 
+familiar, that's just regular ol' <a href="http://css-tricks.com/snippets/html/comments-in-html/">HTML comments</a>.
+ Then between the brackets, "IF" and "IE" should be fairly obvious. The 
+syntax to note is "!" stand for "not", so !IE means "not IE". <tt>gt</tt> means "greater than", <tt>gte</tt> means "greater than or equal", <tt>lt</tt> means "less than", <tt>lte</tt> means "less than or equal."</p>
+<h4>Target ALL VERSIONS of IE</h4>
+<pre><code>&lt;!--[if IE]&gt;
+	&lt;link rel="stylesheet" type="text/css" href="all-ie-only.css" /&gt;
+&lt;![endif]--&gt;</code></pre>
+<h4>Target everything EXCEPT IE</h4>
+<pre><code>&lt;!--[if !IE]&gt;&lt;!--&gt;
+	&lt;link rel="stylesheet" type="text/css" href="not-ie.css" /&gt;
+ &lt;!--&lt;![endif]--&gt;</code></pre>
+<h4>Target IE 7 ONLY</h4>
+<pre><code>&lt;!--[if IE 7]&gt;
+	&lt;link rel="stylesheet" type="text/css" href="ie7.css"&gt;
+&lt;![endif]--&gt;</code></pre>
+<h4>Target IE 6 ONLY</h4>
+<pre><code>&lt;!--[if IE 6]&gt;
+	&lt;link rel="stylesheet" type="text/css" href="ie6.css" /&gt;
+&lt;![endif]--&gt;</code></pre>
+<h4>Target IE 5 ONLY</h4>
+<pre><code>&lt;!--[if IE 5]&gt;
+	&lt;link rel="stylesheet" type="text/css" href="ie5.css" /&gt;
+&lt;![endif]--&gt;</code></pre>
+<h4>Target IE 5.5 ONLY</h4>
+<pre><code>&lt;!--[if IE 5.5000]&gt;
+&lt;link rel="stylesheet" type="text/css" href="ie55.css" /&gt;
+&lt;![endif]--&gt;</code></pre>
+<h4>Target IE 6 and LOWER</h4>
+<pre><code>&lt;!--[if lt IE 7]&gt;
+	&lt;link rel="stylesheet" type="text/css" href="ie6-and-down.css" /&gt;
+&lt;![endif]--&gt;</code></pre>
+<pre><code>&lt;!--[if lte IE 6]&gt;
+	&lt;link rel="stylesheet" type="text/css" href="ie6-and-down.css" /&gt;
+&lt;![endif]--&gt;</code></pre>
+<h4>Target IE 7 and LOWER</h4>
+<pre><code>&lt;!--[if lt IE 8]&gt;
+	&lt;link rel="stylesheet" type="text/css" href="ie7-and-down.css" /&gt;
+&lt;![endif]--&gt;</code></pre>
+<pre><code>&lt;!--[if lte IE 7]&gt;
+	&lt;link rel="stylesheet" type="text/css" href="ie7-and-down.css" /&gt;
+&lt;![endif]--&gt;</code></pre>
+<h4>Target IE 8 and LOWER</h4>
+<pre><code>&lt;!--[if lt IE 9]&gt;
+	&lt;link rel="stylesheet" type="text/css" href="ie8-and-down.css" /&gt;
+&lt;![endif]--&gt;</code></pre>
+<pre><code>&lt;!--[if lte IE 8]&gt;
+	&lt;link rel="stylesheet" type="text/css" href="ie8-and-down.css" /&gt;
+&lt;![endif]--&gt;</code></pre>
+<h4>Target IE 6 and HIGHER</h4>
+<pre><code>&lt;!--[if gt IE 5.5]&gt;
+	&lt;link rel="stylesheet" type="text/css" href="ie6-and-up.css" /&gt;
+&lt;![endif]--&gt;</code></pre>
+<pre><code>&lt;!--[if gte IE 6]&gt;
+	&lt;link rel="stylesheet" type="text/css" href="ie6-and-up.css" /&gt;
+&lt;![endif]--&gt;</code></pre>
+<h4>Target IE 7 and HIGHER</h4>
+<pre><code>&lt;!--[if gt IE 6]&gt;
+	&lt;link rel="stylesheet" type="text/css" href="ie7-and-up.css" /&gt;
+&lt;![endif]--&gt;</code></pre>
+<pre><code>&lt;!--[if gte IE 7]&gt;
+	&lt;link rel="stylesheet" type="text/css" href="ie7-and-up.css" /&gt;
+&lt;![endif]--&gt;</code></pre>
+<h4>Target IE 8 and HIGHER</h4>
+<pre><code>&lt;!--[if gt IE 7]&gt;
+	&lt;link rel="stylesheet" type="text/css" href="ie8-and-up.css" /&gt;
+&lt;![endif]--&gt;</code></pre>
+<pre><code>&lt;!--[if gte IE 8]&gt;
+	&lt;link rel="stylesheet" type="text/css" href="ie8-and-up.css" /&gt;
+&lt;![endif]--&gt;</code></pre>
+<h3>Universal IE 6 CSS</h3>
+<p>Dealing with IE 6 and below is always an extra-special challenge. 
+These days people are dropping support for it right and left, including 
+major businesses, major web apps, and even governments. There is a 
+better solution than just letting the site go to hell, and that is to 
+server IE 6 and below a special stripped-down stylesheet, and then serve
+ IE 7 and above (and all other browsers) the regular CSS. This is been 
+coined the <a href="http://css-tricks.com/snippets/html/universal-ie6-css/">universal IE 6 CSS</a>. </p>
+<pre class=" language-markup" rel="HTML"><code class=" language-markup"><span class="token comment" spellcheck="true">&lt;!--[if !IE 6]&gt;&lt;!--&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span>"stylesheet"</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span>"text/css"</span> <span class="token attr-name">media</span><span class="token attr-value"><span class="token punctuation">=</span>"screen, projection"</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span>"REGULAR-STYLESHEET.css"</span> <span class="token punctuation">/&gt;</span></span>
+<span class="token comment" spellcheck="true">&lt;!--&lt;![endif]--&gt;</span>
+
+<span class="token comment" spellcheck="true">&lt;!--[if gte IE 7]&gt;
+  &lt;link rel="stylesheet" type="text/css" media="screen, projection" href="REGULAR-STYLESHEET.css" /&gt;
+&lt;![endif]--&gt;</span>
+
+<span class="token comment" spellcheck="true">&lt;!--[if lte IE 6]&gt;
+  &lt;link rel="stylesheet" type="text/css" media="screen, projection" href="http://universal-ie6-css.googlecode.com/files/ie6.0.3.css" /&gt;
+&lt;![endif]--&gt;</span></code></pre>
+<h3>Hacks</h3>
+<p>If you must...</p>
+<h4>IE-6 ONLY</h4>
+<pre><code>* html #div { 
+    height: 300px;
+}</code></pre>
+<h4>IE-7 ONLY</h4>
+<pre><code>*+html #div { 
+    height: 300px;
+}</code></pre>
+<h4>IE-8 ONLY</h4>
+<pre><code>#div {
+  height: 300px\0/;
+}</code></pre>
+<h4>IE-7 &amp; IE-8</h4>
+<pre><code>#div {
+  height: 300px\9;
+}</code></pre>
+<h4>NON IE-7 ONLY:</h4>
+<pre><code>#div {
+   _height: 300px;
+}</code></pre>
+<h4>Hide from IE 6 and LOWER:</h4>
+<pre><code>#div {
+   height/**/: 300px;
+}</code></pre>
+<pre><code>html &gt; body #div {
+      height: 300px;
+}</code></pre>
+<h3>Argument against conditional stylesheets</h3>
+<p>We shouldn't need them. They are against the spirit of web standards.</p>
+<h3>Argument for conditional stylesheets</h3>
+<p>Yeah, but we do need them.</p>
+<h3>Additional Resources</h3>
+<ul>
+<li><a href="http://css-tricks.com/ie-css-bugs-thatll-get-you-every-time/">IE bugs that'll get you every time.</a></li>
+<li><a href="http://www.positioniseverything.net/explorer.html">Documentation of IE bugs</a></li>
+</ul>
+
+			
+		</article>
+
+		<div class="yarpp-related">
+<section class="related-posts group">
+
+
+  
+    <div class="module module-related">
+
+      <h2 class="h4">
+        <a href="http://css-tricks.com/css-tricks-finally-gets-a-print-stylesheet/">
+          CSS-Tricks Finally Gets A Print Stylesheet        </a>
+      </h2>
+
+      <p>This is way past due…but it’s finally here: a print stylesheet!</p>
+<p></p>
+<p>I’ll start by showing you the entire stylesheet, then …</p>
+
+      <a href="http://css-tricks.com/css-tricks-finally-gets-a-print-stylesheet/">Read Article →</a>
+
+    </div>
+
+  
+    <div class="module module-related">
+
+      <h2 class="h4">
+        <a href="http://css-tricks.com/lark-queries/">
+          How to Create Stunning Effects With 165 Media Queries or Less!        </a>
+      </h2>
+
+      <p>One bizarre trend emerging in this new RWD era is 
+desktop-browsing web designers resizing their browsers to watch the 
+break-points change the layout. The average user never <em>sits</em> at their desk repetitively shrinking and expanding the browser window like a mad scientist. Yup, we’re all strange.</p>
+
+      <a href="http://css-tricks.com/lark-queries/">Read Article →</a>
+
+    </div>
+
+  
+
+</section>
+<img src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/e42758635938f2ca7d47dfaa85074d5f.htm">
+</div>
+
+    		<div id="bsap_1250418" class="bsap_1250418 bsap"><div class="bsa_it one"><div class="bsa_it_ad ad1 odd" id="bsa_1945764"><a href="http://stats.buysellads.com/click.go?z=1250418&amp;b=1945764&amp;g=&amp;s=&amp;sw=1366&amp;sh=768&amp;br=firefox,21,win&amp;r=0.5951500051243722&amp;link=http://www.psd2html.com/?utm_source=css-tricks.com&amp;utm_medium=banner&amp;utm_campaign=new-p2h" onmouseover="window.status = 'http://www.psd2html.com/?utm_source=css-tricks.com&amp;utm_medium=banner&amp;utm_campaign=new-p2h'; return true;" onmouseout="window.status=''; return true;" target="_blank"><span class="bsa_it_i"><img src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/168075-1366362405.png" alt="PSD to HTML conversion" height="90" width="120"></span></a><a href="http://stats.buysellads.com/click.go?z=1250418&amp;b=1945764&amp;g=&amp;s=&amp;sw=1366&amp;sh=768&amp;br=firefox,21,win&amp;r=0.7830962639375597&amp;link=http://www.psd2html.com/?utm_source=css-tricks.com&amp;utm_medium=banner&amp;utm_campaign=new-p2h" onmouseover="window.status = 'http://www.psd2html.com/?utm_source=css-tricks.com&amp;utm_medium=banner&amp;utm_campaign=new-p2h'; return true;" onmouseout="window.status=''; return true;" target="_blank"><span class="bsa_it_t">PSD to HTML conversion</span><span class="bsa_it_d">PSD2HTML.com with over 370 professionals takes the designs to HTML and beyond</span></a><div style="clear:both"></div></div><div class="bsa_it_ad ad2 even" id="bsa_2238760"><a href="http://stats.buysellads.com/click.go?z=1250418&amp;b=2238760&amp;g=&amp;s=&amp;sw=1366&amp;sh=768&amp;br=firefox,21,win&amp;r=0.9574688201623426&amp;link=http://www.awwwards.com/?campaign=css-tricks_120_90" onmouseover="window.status = 'http://www.awwwards.com/?campaign=css-tricks_120_90'; return true;" onmouseout="window.status=''; return true;" target="_blank"><span class="bsa_it_i"><img src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/159460-1361881350.jpg" alt="Web Design Awards" height="90" width="120"></span></a><a href="http://stats.buysellads.com/click.go?z=1250418&amp;b=2238760&amp;g=&amp;s=&amp;sw=1366&amp;sh=768&amp;br=firefox,21,win&amp;r=0.2808607099477096&amp;link=http://www.awwwards.com/?campaign=css-tricks_120_90" onmouseover="window.status = 'http://www.awwwards.com/?campaign=css-tricks_120_90'; return true;" onmouseout="window.status=''; return true;" target="_blank"><span class="bsa_it_t">Web Design Awards</span><span class="bsa_it_d">Awwwards. Recognition and Prestige for Web Designers.</span></a><div style="clear:both"></div></div><span class="bsa_it_p"><a href="http://buysellads.com/buy/detail/1098/zone/1250418?utm_source=site_1098&amp;utm_medium=website&amp;utm_campaign=imagetext&amp;utm_content=zone_1250418">ads by BSA</a></span></div></div>
+    
+					<a href="#" class="button full-width-button view-comments-button" id="view-comments-button">View Comments</a>
+
+<section id="comments">
+
+
+
+	<h1 class="h2 comments-title">
+		<span aria-hidden="true" data-icon="9"></span>Comments
+	</h1>
+
+	<ol class="commentlist group">
+		
+		<li class="comment even thread-even depth-1" id="li-comment-131">
+
+      <div class="grid group nopadding comment-wrap" id="comment-131">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/790e6fec288392034b0a88f15e42b85b.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://germworks.net/blog/" rel="external nofollow" class="url">Jermayn Parker</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-131"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2007-09-24T20:51:05+00:00">September 24, 2007</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>While I agree that using hacks for IE is a dirty method, I
+ would personally not agree that using the IE 6 and IE 7 selectors 
+(*html, * etc) as I think they are useful and help you get your design 
+closer to pixel perfect.</p>
+<p>In regards to the min-height/ min width issue I personally use a hack (<a href="http://germworks.net/blog/2007/01/31/width-ie-hack/" rel="nofollow">read about it hear</a>) as it makes my life easier…<br>
+Pretty much the only other hack I will use would be for pngs for ie6 (<a href="http://germworks.net/blog/2007/08/31/warriors-for-christ-websites-dissected/" rel="nofollow">also read how I used it hear</a>)</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	<ul class="children">
+
+		<li class="comment odd alt depth-2" id="li-comment-68213">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68213">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/1f2ad4fb4a673350c195b2af95c3ce28.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.japhex.net/v3" rel="external nofollow" class="url">Jamie</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68213"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T08:39:31+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Your links didn’t seem to work dude, but i’m guessing you
+ mean the expression used for min-width/height in ie6 which i do 
+personally use, along with the 
+‘background:none;filter:progID:DXImageTransform’….etc. stylesheet fix 
+for png’s – which i also use, i can’t see a tidier way to do both of 
+these and i do believe they are both fine to use also.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+</ul>
+</li>
+
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-132">
+
+      <div class="grid group nopadding comment-wrap" id="comment-132">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/790e6fec288392034b0a88f15e42b85b.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://germworks.net/blog/" rel="external nofollow" class="url">Jermayn Parker</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-132"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2007-09-24T20:51:48+00:00">September 24, 2007</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>btw I would be interested in your tips on how to get around these problems without the hacks I mentioned above…</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment odd alt thread-even depth-1 buried" id="li-comment-134">
+
+      <div class="grid group nopadding comment-wrap" id="comment-134">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/e6a1b65778a800d5e2cd227505a9e049.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Romz</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-134"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2007-09-24T22:54:45+00:00">September 24, 2007</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>What a great post. I already knew the technique and I even use it, but it’s well explained ! Grreat job !</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even thread-odd thread-alt depth-1 buried" id="li-comment-135">
+
+      <div class="grid group nopadding comment-wrap" id="comment-135">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/e72b5e1420e98c98240309cd31249724.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.rockoyster.com.au/" rel="external nofollow" class="url">Graham Bannister</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-135"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2007-09-25T03:11:31+00:00">September 25, 2007</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Nice work Chris, keep ‘em coming.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment odd alt thread-even depth-1 buried" id="li-comment-139">
+
+      <div class="grid group nopadding comment-wrap" id="comment-139">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/03a57082c08b752d9647f5697cd5c2f8.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.rockfuse.com/blog" rel="external nofollow" class="url">ROCKFUSE|blog</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-139"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2007-09-25T08:59:50+00:00">September 25, 2007</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Hey Chris.. Find this article really useful.. Well done!</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even thread-odd thread-alt depth-1 buried" id="li-comment-29669">
+
+      <div class="grid group nopadding comment-wrap" id="comment-29669">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/2524fd6d6598990d02d89f1b83d39ab3.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://tomleo.com/" rel="external nofollow" class="url">Tom</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-29669"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2008-07-19T18:58:33+00:00">July 19, 2008</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Hey thanks this is just what I needed! God I hate IE!</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment odd alt thread-even depth-1" id="li-comment-32357">
+
+      <div class="grid group nopadding comment-wrap" id="comment-32357">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/1a631ed351d82621f6a5c2f56bf23e07.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.marketstone.com/" rel="external nofollow" class="url">Randy</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-32357"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2008-08-28T19:51:02+00:00">August 28, 2008</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>You know micro-s did that on purpose. Now that bill 
+jumped ship maybe they can get there act together. also pass word 
+protect the registry micro-s! Nice work on Your sites Chris and i Love 
+Portland O.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even thread-odd thread-alt depth-1 buried" id="li-comment-36093">
+
+      <div class="grid group nopadding comment-wrap" id="comment-36093">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/7cabc8006c7d3946f88358721fb71491.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">enrique</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-36093"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2008-10-15T18:56:52+00:00">October 15, 2008</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>very useful post, thank you for instructing people on the best practices for css.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment odd alt thread-even depth-1" id="li-comment-36846">
+
+      <div class="grid group nopadding comment-wrap" id="comment-36846">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/841ce59ffb59dfc0ff006741d9b94b2a.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Ace_ov_Spade</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-36846"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2008-10-22T00:54:02+00:00">October 22, 2008</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>the underscore hack like [   _height: 300px;   ] works with non IE-7. but one problem: [   _height: <strong>-<em></em></strong>300px;   ] doesnt work</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-40807">
+
+      <div class="grid group nopadding comment-wrap" id="comment-40807">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/ab88b2c235f0bd57dc71ee92b66f88d0.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://dofollow001.com/blog" rel="external nofollow" class="url">andy</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-40807"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2008-12-02T06:20:57+00:00">December 2, 2008</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>* html #div {<br>
+    height: 300px;<br>
+} </p>
+<p>For IE7 only? </p>
+<p>Never used it – I go for  </p>
+<p>*:first-child+html  "selector here" {<br>
+ height: 300px;<br>
+} </p>
+<p>And this is what I'd use for IE6: </p>
+<p>* html  "selector here" {<br>
+ height: 300px;<br>
+} </p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment odd alt thread-even depth-1" id="li-comment-46047">
+
+      <div class="grid group nopadding comment-wrap" id="comment-46047">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/b33ba275a32e0ec620aa6d0cbf86dcf6.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.evophp.com/" rel="external nofollow" class="url">evophp</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-46047"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2009-01-08T15:15:40+00:00">January 8, 2009</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Thanks for the post. I’m going mad with IE8! Is there a 
+way to create a separate sheet with only the hacks, which would be 
+opened and overwrite normal CSS if IE? Not having much luck :(</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even thread-odd thread-alt depth-1 buried" id="li-comment-50204">
+
+      <div class="grid group nopadding comment-wrap" id="comment-50204">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/cdff138b1f7fe2574bc81d8eadfaa77a.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Adam</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-50204"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2009-01-31T10:38:39+00:00">January 31, 2009</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Thank you for the conditionals! Helped me out of a bind.</p>
+<p>(It might just be me, but you might want to check this page in IE6. 
+Each person’s tiny-image is covering up their name and part of their 
+text.)</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment odd alt thread-even depth-1" id="li-comment-68191">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68191">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/598490742d437768d46865bdca37522c.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://kovshenin.com/" rel="external nofollow" class="url">Konstantin</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68191"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T06:57:59+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Damn, another hacking IE post :) Well, these hacks do work sometimes, so thanks for listing them Chris! Cheers!</p>
+<p>~ K.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even thread-odd thread-alt depth-1 featured" id="li-comment-68192">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68192">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/965afb3fd6484d15844fa22a06e54b1b.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Chris</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68192"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T07:02:10+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>I prefer including conditional stylesheet content inside a
+ global.css file – this means that you’re reducing header requests (ok, 
+one isn’t the end of the world, but I’m a little OCD) and you don’t 
+spend ages switching between stylesheets when developing (uses “non-IE” 
+conditional):</p>
+<pre><code>&lt;!-- BEGIN: Site container --&gt;    
+&lt;!--[if !IE]&gt;&lt;!--&gt;&lt;div class="container"&gt;&lt;!--&lt;![endif]--&gt;
+&lt;!--[if IE 8]&gt;&lt;div id="ie8" class="container"&gt;&lt;![endif]--&gt;
+&lt;!--[if IE 7]&gt;&lt;div id="ie7" class="container"&gt;&lt;![endif]--&gt;
+&lt;!--[if lte IE 6]&gt;&lt;div id="ie6" class="container"&gt;&lt;![endif]--&gt;</code></pre>
+<p>Then simply reference those IDs from within your global.css:</p>
+<pre class=" language-css" rel="CSS"><code class=" language-css"><span class="token comment" spellcheck="true">/*	IE FIXES: IDs applied to "div.container"
+	-------------------------------------------------- */</span>
+	<span class="token selector">#ie6 </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+	<span class="token selector">#ie7 </span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+	<span class="token selector">#ie8 </span><span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
+<p>Using “!important” or stacking parent IDs/classes, you can easily override styles and keep your fixes in one place.</p>
+<p>Note: credit where credit’s due; I didn’t come up with this technique
+ but I can’t remember who did so if anyone knows then please do respond!
+ </p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	<ul class="children">
+
+		<li class="comment odd alt depth-2" id="li-comment-68243">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68243">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/cbb79dcc1de709689f577ab2f8623100.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://joshbetz.com/" rel="external nofollow" class="url">Josh</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68243"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T14:22:05+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>I like this. You could probably also generate the ID with PHP to clean up the HTML even more.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even depth-2" id="li-comment-68281">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68281">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/93760641c57cd36294c10dc76b335690.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Kristoffer</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68281"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-21T02:06:54+00:00">January 21, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Correct me if I’m wrong, but I thought IE had some “issues” with !important</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment odd alt depth-2" id="li-comment-68287">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68287">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/965afb3fd6484d15844fa22a06e54b1b.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Chris</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68287"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-21T03:24:21+00:00">January 21, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>None that I’ve ever come across. IE6 has issues with 
+inheritance but using multiple selectors (parent elements) should work –
+ an ID usually works!</p>
+<p>There are definitely ways to improve this – using php would work great!</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even depth-2" id="li-comment-68757">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68757">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/8fa4ef4128edd5214a9c4f3d02243dc3.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Tim Mackey</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68757"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-27T15:11:50+00:00">January 27, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Chris, in your example in this comment, you use the “if not IE” syntax correctly:</p>
+<p><code>&lt;!--[if !IE]&gt;&lt;!--&gt;<br>
+*content*<br>
+&lt;!--&lt;![endif]--&gt;</code></p>
+<p>However, in the article, you have it as:</p>
+<p><code>&lt;!--[if IE 6]&gt;<br>
+*content*<br>
+&lt;![endif]--&gt;</code></p>
+<p>What you have in the article doesn’t actually work; Browsers see it 
+as just a comment. Anything inside doesn’t appear in ANY browser. You 
+should probably correct the article to reflect this, so that people 
+don’t get confused.<br>
+Thanks for the article, though! It’s nice to have all of these variations collected in one place.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment odd alt depth-2" id="li-comment-69284">
+
+      <div class="grid group nopadding comment-wrap" id="comment-69284">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/0562eacf6b5ede8be26fd47700f81e1a.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">stansult</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-69284"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-02-02T17:29:03+00:00">February 2, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p><code>&lt;!--[if IE]&gt;<br>
+&lt;link rel='stylesheet' type='text/css' href='ie.css' /&gt;<br>
+&lt;![endif]--&gt;</code></p>
+<p>works for me in ie7</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+</ul>
+</li>
+
+		<li class="comment even thread-even depth-1" id="li-comment-68193">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68193">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/8d546498f9258ba67dfbea2a05da6202.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.techacs.com/" rel="external nofollow" class="url">Long Island Web Design</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68193"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T07:02:59+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Nice post … really beneficial<br>
+Thanks for sharing<br>
+but i have a query …….Is there any CSS property to make font smooth in IE?<br>
+waiting for reply</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-68195">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68195">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/a7bf121ff29c67f31c4d858c81d36570.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.jordanwalker.net/index.php" rel="external nofollow" class="url">Jordan Walker</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68195"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T07:15:51+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Why is it that lately anything with the Microsoft brand 
+name is failing to meet the standard. Zero day exploits, critical patch 
+Tuesdays, IE hacks. It is hard to image that a company with deficient 
+products is still in business. </p>
+<p>I guess it goes to show the lack of innovation and ingenuity of Redmond.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	<ul class="children">
+
+		<li class="comment even depth-2" id="li-comment-68244">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68244">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/cbb79dcc1de709689f577ab2f8623100.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://joshbetz.com/" rel="external nofollow" class="url">Josh</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68244"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T14:28:15+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Come on now. We don’t need to rip on Microsoft. Have you 
+seen IE 8? It doesn’t do so bad at rendering pages and it’s a 
+heck-of-a-lot more secure than previous versions. As for critical patch 
+Tuesdays — let’s just say there are people working against you when you 
+have 85% of the market. Don’t worry, there will be viruses you have to 
+watch out for on your Mac soon enough. I’ll admit, I primarily use my 
+macbook, but I love my PC too.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment odd alt depth-2" id="li-comment-68259">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68259">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/a450bf1db9578690209dd0f80427a4b1.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Lampica</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68259"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T19:14:44+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>What? Are you joking? IE8 is only even semi-passable when
+ compared to older versions of IE. It’s like a broken down car, but now 
+at least it has wheels so you can tow it. It is still a broken down car 
+that needs to be towed. IE8 barely squeeks by supporting a bare minimum 
+of todays standards. It is still making our lives difficult though with 
+no support for basic stuff like psuedo-selectors and when you look 
+toward more advanced stuff there is no support on any horizon from the 
+IE front. In a few years I will be shocked if IE8 is not the bane of web
+ development, and the primary thing holding us back. It barely scrapes 
+by today, in a few years it will be a nightmare just like IE6 is now.</p>
+<p>Really, MSs whole strategy with IE is just horrid, always has been, 
+and hasn’t changed. Years between updates? I guess that is so that there
+ is time for a million sites to be built which depend on IEs 
+shortcomings to work properly. IE8 represents no change from their 
+terribly lacking modus operandi.</p>
+<p>I think the fact that Microsoft remains a successful business is a 
+clear statement about what is wrong with our economy. Even MS Office has
+ become a convoluted mess of applications now. I used to feel like at 
+least Office was a solid product, but I switched to Open Office last 
+year and have been perfectly happy with it.</p>
+<p>How many new OS versions has MS put out in the past 10 years? Yet XP 
+is still the standard and XP sucks, just not quite as badly as 
+everything else MS has put out over the past decade.</p>
+<p>I mean who else intentionally builds in support for hundreds of bugs 
+because they waited so long to fix the bugs that if they now don’t 
+support these ‘legacy’ bugs the “internet will break”?? As if the 
+internet wouldn’t get along perfectly fine without any help at all from 
+MS..</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even depth-2" id="li-comment-68296">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68296">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/a7bf121ff29c67f31c4d858c81d36570.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.jordanwalker.net/index.php" rel="external nofollow" class="url">Jordan Walker</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68296"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-21T08:31:03+00:00">January 21, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>While I do understand the software development cycle and 
+knowing that with each version there are going to be many problems 
+solved. I am merely stating that with the current market share and 
+amount of time Internet Explorer has spent in that market, that a better
+ product would surly have emerged.</p>
+<p>And no I will not be watching out for viruses on my SE version of Linux!</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+</ul>
+</li>
+
+		<li class="comment odd alt thread-even depth-1" id="li-comment-68196">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68196">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/501526fdc5c88dfdc7397d82d46c5d34.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">riccardo</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68196"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T07:16:45+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>last example Universal IE 6 CSS is</p>
+<p><!--[if !IE]&gt;&lt;!--></p>
+<p>instead of</p>
+<p><!--[if !IE 6]&gt;&lt;!--></p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-68201">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68201">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/e15d8725aa42ce94ff509dd9136284d8.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://davidwalsh.name/" rel="external nofollow" class="url">David Walsh</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68201"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T07:53:35+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Hacks FTW.  </p>
+<p>They don’t take up much space and I hate having to deal with multiple
+ stylesheets.  They’re also an extra request.  Using hacks within your 
+main stylesheet also allows you to skip conditional comments.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	<ul class="children">
+
+		<li class="comment byuser comment-author-chriscoyier-2 bypostauthor odd alt depth-2" id="li-comment-68210">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68210">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/8081b26e05bb4354f7d65ffc34cbbd67.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://chriscoyier.net/" rel="external nofollow" class="url">Chris Coyier</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68210"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T08:10:12+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>My concern is primarily, what if IE 9 comes out and the 
+hacks that were supposed to be targeting IE 6 or 7 specifically now all 
+the sudden fuck stuff up in IE 9. That would suck. That will never 
+happen with conditional comments.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even depth-2" id="li-comment-68225">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68225">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/6c278e2d9c25a5280d4c00f77c7932a6.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.hectorguedea.com/" rel="external nofollow" class="url">Héctor Guedea</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68225"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T10:32:16+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>I’m agree with you, but the evolution of IE is 
+progressive no retrospective, so when I see the new features of IE9, I 
+found them very interesting, standars, SVG, etc. I think in the same way
+ to David Walsh.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment odd alt depth-2" id="li-comment-68226">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68226">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/e15d8725aa42ce94ff509dd9136284d8.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://davidwalsh.name/" rel="external nofollow" class="url">David Walsh</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68226"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T10:50:18+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>I see your point, but I think the “emulation” meta tag should be used to prevent that problem.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+</ul>
+</li>
+
+		<li class="comment even thread-even depth-1" id="li-comment-68202">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68202">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/0dba268206a8fb2828eeb08292b9964f.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://noaa.gov/" rel="external nofollow" class="url">elias</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68202"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T08:01:48+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>As always, nice article Chris. Regarding Government 
+dropping support for IE6, we did that a year ago and many others are 
+following suit.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-68206">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68206">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/73073bce98767248b84effc5aa165926.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Sam</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68206"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T08:06:17+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <pre><code>&lt;!--[if !IE]&gt;
+	&lt;link rel="stylesheet" type="text/css" href="not-ie.css" /&gt;
+&lt;![endif]--&gt;</code></pre>
+<p>should be </p>
+<pre><code>&lt;![if !IE]&gt;
+	&lt;link rel="stylesheet" type="text/css" href="not-ie.css" /&gt;
+&lt;![endif]&gt;</code></pre>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even thread-even depth-1" id="li-comment-68214">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68214">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/ea74cf7f528273838138e9ae407cd8ef.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://jeremie.patonnier.net/" rel="external nofollow" class="url">Jeremie</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68214"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T08:54:23+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Well, I agree that using conditional comments is a good 
+(maybe the best) way to avoid (or deal with) some IE6 (and sometimes 
+IE7) limitations or specificities.</p>
+<p>But I’m not sure that using the “Target everything EXCEPT IE” is a good idea.</p>
+<p>I strongly suggest to use a regular stylesheet that every browser 
+(including IE) will use and add some IE specifics stylesheets that will 
+overload some of the CSS selector and properties that could trouble IE 
+in the regular stylesheet.</p>
+<p>I think that using the cascade is far more safe than maintaining 2 specifics steelsheets.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	<ul class="children">
+
+		<li class="comment odd alt depth-2" id="li-comment-72190">
+
+      <div class="grid group nopadding comment-wrap" id="comment-72190">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/ea26f395a7bf615850bcef55c66f9339.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.blackletter.ie/" rel="external nofollow" class="url">Niall</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-72190"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-03-09T08:34:58+00:00">March 9, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Yup, put the c back in css please!</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+</ul>
+</li>
+
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-68215">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68215">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/380030a0b674fa9546c6062a25aef05b.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://kgo.it/" rel="external nofollow" class="url">Daniel</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68215"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T08:58:30+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>great will be the party when IE6 will finally die..</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	<ul class="children">
+
+		<li class="comment odd alt depth-2" id="li-comment-68250">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68250">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/5e44918dea0e1b11d62abbd72c2fed83.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://ripie6.com/" rel="external nofollow" class="url">Jason</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68250"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T15:33:38+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Here is a nice <a href="http://ripie6.com/" rel="nofollow">"grave"</a></p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+</ul>
+</li>
+
+		<li class="comment even thread-even depth-1" id="li-comment-68218">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68218">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/b89d4de46f95f4364c093b8105ae2403.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Anton</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68218"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T09:30:27+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Example only ie8:]</p>
+<p>#add{height/*\**/:25px;}</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-68220">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68220">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/2828f96cc5d074dd373b6b2014244508.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Steven L Braun</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68220"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T09:39:56+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Hasn’t it becoming obvious that folks that use IE really 
+don’t give a flip about how the web looks? Serve them Helvetica (it’s 
+too good for them) and Times. Save your hard work for those that 
+appreciate it; the ones who are browsing the web with a modern browser. 
+Serve your CSS 3 and stop using javascript to make it nice for IE6-7.<br>
+Stop supporting IE. Even MS is saying that now. <a href="http://www.abc.net.au/news/stories/2010/01/19/2795684.htm" rel="nofollow">http://www.abc.net.au/news/stories/2010/01/19/2795684.htm</a></p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	<ul class="children">
+
+		<li class="comment even depth-2" id="li-comment-68275">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68275">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/6adc351b4e674973e0c6561816ad173c.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://oldguygaming.com/" rel="external nofollow" class="url">OldGuy</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68275"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-21T00:37:39+00:00">January 21, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Everyone should ask their mother (and grandmother) what 
+browser version they are using. After explaining to them what a browser 
+ is, you will probably not be surprised that they don’t know what 
+version they are using. And less surprised that they don’t know how to 
+upgrade. It’s not that they don’t care; they just don’t know how.</p>
+<p>I’m not advocating an additional full-blown design just to support an
+ antique browser but have a heart. It’s not much work to add a one-line 
+conditional statement to give them a tiny bit of support.</p>
+<p>The web isn’t just for the tech-savvy.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+</ul>
+</li>
+
+		<li class="comment odd alt thread-even depth-1" id="li-comment-68222">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68222">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/e71723e8334c6f82a88f21f1aab3420a.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.bespokeds.com/" rel="external nofollow" class="url">Jon</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68222"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T10:23:01+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Am I the only one who noticed that CSS Tricks isn’t styled in IE6?</p>
+<p>There are no visual elements to the site at all. I find it bizarre 
+you would make a posting about styling for IE6, when, in a way, you 
+don’t bother.</p>
+<p>Is there a certain reason for this Chris?</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	<ul class="children">
+
+		<li class="comment byuser comment-author-chriscoyier-2 bypostauthor even depth-2" id="li-comment-68224">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68224">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/8081b26e05bb4354f7d65ffc34cbbd67.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://chriscoyier.net/" rel="external nofollow" class="url">Chris Coyier</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68224"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T10:30:30+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>It does have SOME styling. I use the Universal IE 6 CSS (see above).</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment odd alt depth-2" id="li-comment-68235">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68235">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/df4af7b5bc0b9cbb7cc91946a14a5100.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.citruscreativestudio.com/" rel="external nofollow" class="url">Josh</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68235"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T13:02:04+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Lol that’s actually kind of funny :P</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even depth-2" id="li-comment-68245">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68245">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/cbb79dcc1de709689f577ab2f8623100.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://joshbetz.com/" rel="external nofollow" class="url">Josh</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68245"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T14:32:24+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>No, he does bother. If he didn’t bother you would just 
+the regular styles in whatever way IE 6 decided to render them. Instead 
+you see a semi-bare, more readable version than you otherwise would.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+</ul>
+</li>
+
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-68223">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68223">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/19bd74d1e278f5ce8620cf988c865f6c.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.crearedesign.co.uk/" rel="external nofollow" class="url">Damian Web</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68223"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T10:29:42+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>I can’t say that i have ever used fixes or separate 
+stylesheets when designing, most of my designs I create so that even if 
+IE6 does display something slightly different it still looks “normal”. I
+ probably spend more time than the average person on my stylesheets but 
+its well worth the effort so that you only need one stylesheet and no 
+fixes.</p>
+<p>And considering the usage of IE6 is dropping each year Im not 100% 
+put off if something is quite the same in the rest of the browsers.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even thread-even depth-1" id="li-comment-68229">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68229">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/25baa2e0f526eff1e32dbde64b468944.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.cancelbubble.com/" rel="external nofollow" class="url">cancel bubble</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68229"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T11:28:20+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Another big fan of “hacks” opposed to maintaining multiple stylesheets.</p>
+<p>Use a proper/valid doctype.<br>
+Use a CSS reset.</p>
+<p>p {<br>
+    color:blue;       good browsers<br>
+    *color:red;       ie 7 and below<br>
+    _color:green;   ie6 and below (to override any ie7 specific style)<br>
+}</p>
+<p>Just document the * and _ at the top of your stylesheet for anyone 
+who may not know what they mean.  It then becomes crystal clear in your 
+code what each hack does.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	<ul class="children">
+
+		<li class="comment odd alt depth-2" id="li-comment-68248">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68248">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/5abc7f5801ab7c18c5533457d6e67f24.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Chrissy</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68248"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T15:06:55+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>These are the hacks I use as well, they are my preferred 
+method.  It is so much easier to see them with the rest of the normal 
+styles.</p>
+<p>In addition, for IE8 I use this:</p>
+<p>p {<br>
+ color: black\9;<br>
+}</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+</ul>
+</li>
+
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-68230">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68230">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/3ace57af0e09cceb9458e6fbdf768f95.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.eclipsedesign.eu/" rel="external nofollow" class="url">Kartlos Tchavelachvili</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68230"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T12:03:12+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>This is my standard thing for IE6:</p>
+<p><code>&lt;!--[if lt IE 7]&gt;<br>
+  &lt;link rel="stylesheet" type="text/css" href="/css/IE6.css" media="screen" /&gt;<br>
+  &lt;meta http-equiv="imagetoolbar" content="false" /&gt;<br>
+&lt;![endif]--&gt;</code></p>
+<p>Chris,<br>
+For Additional Resources you should include this website, It is all about IE6 bugs: <a href="http://www.virtuosimedia.com/tutorials/ultimate-ie6-cheatsheet-how-to-fix-25-internet-explorer-6-bugs" rel="nofollow">http://www.virtuosimedia.com/tutorials/ultimate-ie6-cheatsheet-how-to-fix-25-internet-explorer-6-bugs</a></p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	<ul class="children">
+
+		<li class="comment odd alt depth-2" id="li-comment-68241">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68241">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/61a1d08040925043bbf536f5998a22d5.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Will</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68241"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T13:31:16+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>That link leads to a PDF/Exploit.Gen Trojan.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+</ul>
+</li>
+
+		<li class="comment even thread-even depth-1" id="li-comment-68234">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68234">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/632f8ef8c595126d035622ae18ebf718.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://olegkorneitchouk.com/" rel="external nofollow" class="url">Oleg</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68234"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T12:31:56+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>There are less and less users of IE6 and IE7/8 renders 
+just about the same as Firefox. Hopefully, in the not so distant future,
+ everyone will be using compliant browsers and we wouldn’t have to make 
+separate stylesheets for these browsers.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-68236">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68236">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/df4af7b5bc0b9cbb7cc91946a14a5100.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.citruscreativestudio.com/" rel="external nofollow" class="url">Josh</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68236"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T13:05:24+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Ok, so I’m just getting into using conditional statements
+ as we’ve had a few layouts recently we just couldn’t get to work 
+universally.</p>
+<p>I’m kind of curious about how you are formulating your stylesheets 
+then.  Are you essentially just say, make 3 copies of your .css file for
+ IE6, 7+ and FF, and each copy is the complete stylesheet but 
+accommodates the elements?</p>
+<p>Or do you only have the page elements (pagewrap, container, content, 
+etc) in this conditional .css?  And then you have another .css that 
+contains all the stuff like forms, p, h1, etc?</p>
+<p>Or do you just have to put fixes to the 1 or 2 divs in your conditional .css file, and IE will override that one div?</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	<ul class="children">
+
+		<li class="comment byuser comment-author-chriscoyier-2 bypostauthor even depth-2" id="li-comment-68237">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68237">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/8081b26e05bb4354f7d65ffc34cbbd67.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://chriscoyier.net/" rel="external nofollow" class="url">Chris Coyier</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68237"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T13:11:22+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>You should list your MAIN stylesheet first, then the 
+conditional stylesheets AFTER. That way the conditionals you just 
+OVERRIDE whatever little things need tweaking.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment odd alt depth-2" id="li-comment-68247">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68247">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/df4af7b5bc0b9cbb7cc91946a14a5100.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.citruscreativestudio.com/" rel="external nofollow" class="url">Josh</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68247"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T14:44:07+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Great thanks!  That’s WAY better than what we did – which
+ was just duplicate the same stylesheet and messed with a couple of the 
+elements.  Really cluttered compared to what we could have done.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+</ul>
+</li>
+
+		<li class="comment even thread-even depth-1" id="li-comment-68246">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68246">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/c2427f2f932a172b5de2a4073ea2cd6d.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://website.../" rel="external nofollow" class="url">r_jake</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68246"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T14:38:13+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>I don’t like hacks, a separate stylesheet may be an extra
+ request but it will usually be a very small file and it makes things 
+much easier to maintain.</p>
+<p>Having said that I had an interesting scenario a while back where I needed a conditional comment to target <em>all</em> browsers (including non-IE!) <em>except</em>
+ IE6 because an embedded .swf that my client insisted upon would cause 
+it to crash. Stu Nicholls came to the rescue with a bizarre range of 
+what I am guessing are hacks that do just this:</p>
+<p><a href="http://www.cssplay.co.uk/menu/conditional.html" rel="nofollow">http://www.cssplay.co.uk/menu/conditional.html</a></p>
+<p>This allowed me to embed the .swf for all browsers, except IE6, which just got a static image.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	<ul class="children">
+
+		<li class="comment odd alt depth-2" id="li-comment-68262">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68262">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/a450bf1db9578690209dd0f80427a4b1.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Lampica</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68262"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T21:06:34+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Don’t see why this should have been any problem. I also 
+don’t see why you would want to invert your wording “all browsers except
+ IE6″ when really you only needed to target IE6.</p>
+<p>Maybe it was your oddly inverted wording which caused your trouble in
+ the first place (because you were looking at it wrong). All you needed 
+was a single conditional stylesheet for IE6 with something like 
+.display:none; in it. because then whatever was nested in the thing 
+which get’s .display:none; won’t even DL at all (unlike with 
+.visibility:hidden; where the content is still there, but invisible).</p>
+<p>IF for some reason that wouldn’t work then you could have still just 
+used conditional comments in the HTML to add in some comment tags before
+ and after your SWF. So that in IE6 only the SWF gets commented out. Not
+ sure if that would work because conditionals may or may not be able to 
+contain comments, but there are other methods too.</p>
+<p>Like useing a single IE6 conditional comment to add a few characters 
+to the filename of the SWF, thereby pointing IE6 at a different file 
+that doesn’t cause it to crash.</p>
+<p>There are 100 other ways to address this sort of issue by targeting 
+only IE6. So saying you really needed to target everything BUT IE6 is 
+bass ackwards and serves only to confuse the issue. You needed to target
+ IE6, nothing special about it.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even depth-2" id="li-comment-68476">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68476">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/c2427f2f932a172b5de2a4073ea2cd6d.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://website.../" rel="external nofollow" class="url">r_jake</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68476"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-24T05:15:09+00:00">January 24, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Yeah, maybe you’re right. I guess I just got carried away with the excitement of doing things backwards…</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+</ul>
+</li>
+
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-68249">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68249">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/185cd965e0e8ccd15df2f90977cbeaf3.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.sjlwebdesign.co.uk/" rel="external nofollow" class="url">Sam Logan</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68249"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T15:24:39+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Thanks for the conditional statements and useful hacks, I
+ know you ‘shouldn’t’ use them but some times it’s the only solution 
+when dealing with IE6.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even thread-even depth-1" id="li-comment-68251">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68251">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/0ee5ce13c8485207e94895362b6e80ba.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://shop.saqib-ansari.com/" rel="external nofollow" class="url">Saqib Ansari</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68251"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T15:45:55+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Great tips. These are most useful hacks for IE.</p>
+<p>Thanks</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-68263">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68263">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/ff02e345097146af53a7809d58dd33c6.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.thinksnapdesign.com/" rel="external nofollow" class="url">Snapper Cridge</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68263"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T21:48:56+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>I read this article after reading numerous articles about
+ the Google-China-IE-exploit-hole-blah-blah-blah.  I am glad that my 
+small business market has no desire to worry if their websites function 
+in IE6.  This is mainly because of me pointing out the perils of 
+something that is outdated and unsafe!  I am using a <a href="http://css-tricks.com/ie-6-blocker-script/" rel="nofollow">wonderful piece of javascript</a>
+ found right here at CSS-Tricks on my current 3 projects and will be 
+adding it to all future projects.  I am of the mindset that feeding into
+ something that is broken will never allow it to truly be fixed.  Begone
+ IE6 you dirty bastard!</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even thread-even depth-1" id="li-comment-68265">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68265">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/1e76544479d5cea2a436a7d7566f4733.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Joe</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68265"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T22:16:57+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Chris, thanks…you just saved me many hours in the future.
+ I can remember !FONDLY! being up at 3AM working on a deliverable and 
+everything was great except for IE6 compatibility……Such fond memories…no
+ more!</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-68267">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68267">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/1bb0ea156c7154f63c261bc6b83587dc.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://blog.complimedia.com/" rel="external nofollow" class="url">Montana Flynn</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68267"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-20T22:54:50+00:00">January 20, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>I have been looking for this!  But I wonder how many 
+browsers support the !IE rule? I mean wouldn’t it be better to just use 
+the regular link instead of putting it in a comment?</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even thread-even depth-1" id="li-comment-68280">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68280">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/a7a2942d1532f66690a797480d719ab6.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Roy</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68280"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-21T01:50:32+00:00">January 21, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Why using hacks in the first place, just download en use Conditional CSS, <a href="http://conditional-css.com/" rel="nofollow">http://conditional-css.com/</a></p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	<ul class="children">
+
+		<li class="comment odd alt depth-2" id="li-comment-68427">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68427">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/205b49c45390c0dcd6f813617cdcdebc.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Arpit</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68427"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-22T22:31:47+00:00">January 22, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>i have try this example but i need css different browser 
+different css that example not working perfectly. please you will try 
+and let me know</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+</ul>
+</li>
+
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-68282">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68282">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/c0b757ad830e5d263580e7c2319ae15b.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://soma.urlich.ch/" rel="external nofollow" class="url">Soma</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68282"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-21T02:29:54+00:00">January 21, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>After designing and coding websites for 15 years now, I 
+slowly got to the point, where I’m able to do any layout without even 
+one IE specific css or hack except for maybe png’s. Makes handling of 
+the site and life a lot easier. I now laugh at others needing an 
+seperate IE6/7/8 and what not stylesheet… nightmare!</p>
+<p>When I code, I often just take a quick look at IE6/7/8 in the process
+ to make sure, but rarely need to adjust something. Most things are 
+possible to do pixel exact, sometimes you just have to accept slight 
+differences. It also depends a lot on how you design a layout and what 
+your excpectations are. For years I was like crazy spending lots of time
+ creating IE stylesheets and using hacks just to have it 2 pixel more to
+ the left and didn’t know better or wanted to change to try different. 
+What a waste.</p>
+<p>Reducing HTML code and go for the most minimalistic code possible and
+ the right way of padding/margins and floats etc., is what turned out to
+ be the way to go. Of course experience in what is possible and what can
+ cause problems in different browsers, and also adapting each new 
+project to try it different and not stick with “how I do it always”, 
+helped alot.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	<ul class="children">
+
+		<li class="comment odd alt depth-2" id="li-comment-68283">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68283">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/79a7c802d9ddbd3cbd877c2d418272e7.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.adesignweb.co.nz/" rel="external nofollow" class="url">AL</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68283"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-21T02:57:17+00:00">January 21, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>I have to agree with @soma on this. I’ve never needed a 
+specific IE 6/7/8 hack – just test as you code in all (well, as many as 
+you can muster) browsers and if it truly is f***ed in IE work around it.
+ You are a designer – it is a challenge! – First rule of web page design
+ I was taught ” a clean well presented layout makes for easier reading, a
+ happier visitor and a credible web page”.<br>
+Once in a while the png scenario pops up but there is a quick easy work 
+around/hack article on this site somewhere. As stated above – get the 
+basics learned and learned good (padding, margin, float, “display: 
+inline;” – and build from there.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even depth-2" id="li-comment-68946">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68946">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/68ba30b9c3bb5a08cff554412e150366.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Josh</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68946"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-29T11:52:55+00:00">January 29, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>I kind of agree that most of the time, it’s possible to 
+produce css that works across most browsers. In my experience, I’ve 
+found that the exceptions are a. using other peoples plugins (jQuery 
+plugins etc…) and b. inherited projects from other designers. Other than
+ these two situations, I typically don’t have to use conditional 
+comments.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+</ul>
+</li>
+
+		<li class="comment odd alt thread-even depth-1" id="li-comment-68286">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68286">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/21f4971707a00270b92e2ae791d5633d.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">V1</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68286"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-21T03:13:29+00:00">January 21, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>By using conditional stylesheets you are punishing your 
+IE users with an extra additional HTTP requests for the conditional 
+item. 1 Doesn’t sound like much, but if you use a crap browser like IE. 
+Every request counts to have good performing web page.</p>
+<p>There for I would advice to use CSS hacks instead. </p>
+<p>Oh, and you forgot the star hack for IE7 and lower</p>
+<p>*background:red;</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even thread-odd thread-alt depth-1" id="li-comment-68288">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68288">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/dcb7cc657c19726b709098172efa1b6d.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://sideradesign.com/" rel="external nofollow" class="url">paul</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68288"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-21T05:03:44+00:00">January 21, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>what do you think of the Google IE8.js ?</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	<ul class="children">
+
+		<li class="comment odd alt depth-2" id="li-comment-68478">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68478">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/c2427f2f932a172b5de2a4073ea2cd6d.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://website.../" rel="external nofollow" class="url">r_jake</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68478"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-24T05:32:31+00:00">January 24, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>It does what it claims, and is good for getting older IEs
+ to recognise some of the more advanced CSS selectors, but it is pretty 
+hefty (about 40k), and I have noticed a considerable lag in page load 
+times whilst it does its stuff.</p>
+<p>Not worth it if you only have a few issues that can be fixed with a couple of extra lines of CSS.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+</ul>
+</li>
+
+		<li class="comment even thread-even depth-1" id="li-comment-68289">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68289">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/91b6d11dcd155780f8f09ba3ed979bbf.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Aditia.numberOnE</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68289"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-21T05:50:04+00:00">January 21, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>I have a problem with png files in internet explorer 6, “how to remove the background”</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	<ul class="children">
+
+		<li class="comment odd alt depth-2" id="li-comment-68428">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68428">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/205b49c45390c0dcd6f813617cdcdebc.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Arpit</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68428"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-22T22:36:21+00:00">January 22, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>hi</p>
+<p>you need remove to background in png in &lt;img /&gt; tag you have 
+put so apply pngfix.js and you have use in background class so use 
+filter background css</p>
+<p>please check this example<br>
+<a href="http://jquery.andreaseberhard.de/pngFix/" rel="nofollow">http://jquery.andreaseberhard.de/pngFix/</a></p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even depth-2" id="li-comment-68477">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68477">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/c2427f2f932a172b5de2a4073ea2cd6d.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://website.../" rel="external nofollow" class="url">r_jake</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68477"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-24T05:21:21+00:00">January 24, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>I have found DD_BelatedPNG to be a good solution:</p>
+<p><a href="http://dillerdesign.com/experiment/DD_belatedPNG/" rel="nofollow">http://dillerdesign.com/experiment/DD_belatedPNG/</a></p>
+<p>As it gets around the some of the issues experienced with the MS Filters by using VML instead.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+</ul>
+</li>
+
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-68398">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68398">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/b8eb0184e62e8a6e71a2d1d7be558248.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.impressivewebs.com/" rel="external nofollow" class="url">Louis</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68398"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-22T05:27:32+00:00">January 22, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Chris, unless I’m missing something, you seem to have 
+made a mistake. You’ve listed “* html (selector)” as “IE7 Only” but that
+ should be “IE6 Only”.</p>
+<p>For “IE7 Only” someone else pointed out the “first-child+html” hack, 
+which works, but apparently you can also use “*+html (selector)”. That 
+seems to target IE7 only as well, but I’ve never used it in a real 
+example, just in tests.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even thread-even depth-1" id="li-comment-68599">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68599">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/71e4aafb586d12529e52dfb893a850be.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Taha</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68599"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-25T20:55:14+00:00">January 25, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>I once tried these codes but it doubled my work. Then i 
+tried CSS reset and able to make one CSS file for ever browser. I think 
+if we use CSS reset and know some bugs in IE6 bout float we can easily 
+create global CSS.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-68786">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68786">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/e68aba895eed939c0c2b481a03cf1962.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.harka.com.np/" rel="external nofollow" class="url">Harka Lopchan</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68786"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-27T23:37:28+00:00">January 27, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Really good article. I am also fade-up with IE6.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even thread-even depth-1" id="li-comment-68789">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68789">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/4178041f3720cf60c1ce1fd190f359cc.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Alex</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68789"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-28T01:07:16+00:00">January 28, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Thank you!</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-68987">
+
+      <div class="grid group nopadding comment-wrap" id="comment-68987">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/b0dd0f1177d64fdc533498301765eb14.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://alexlais.com/" rel="external nofollow" class="url">A Lais</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-68987"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-29T17:28:18+00:00">January 29, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>One addition on the hacks:</p>
+<p>body<br>
+{<br>
+background: white; /* all browsers */<br>
+*background: black; /* will show black on ie7 only */<br>
+_background: blue; /* will show blue on ie 6 only */<br>
+}</p>
+<p>so no need for * html ….. Much simpler ah?</p>
+<p>Just make sure you put the one for all browsers first, of course, so it doesnt overwrite the other ones!</p>
+<p>Curious: How did I find this out? Accidentally: After so many years 
+coding I accidentally placed an _ before a command and noticed that it 
+was working only on ie6. The * for ie 7 I learned from Michael at Bravo 
+TV.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even thread-even depth-1" id="li-comment-69036">
+
+      <div class="grid group nopadding comment-wrap" id="comment-69036">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/b97e05b8a655a59b79bd346bb6afc65b.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://westblog.ru/" rel="external nofollow" class="url">Goodwin</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-69036"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-30T10:33:08+00:00">January 30, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>You know micro-s did that on purpose. Now that bill 
+jumped ship maybe they can get there act together. also pass word 
+protect the registry micro-s! Nice work on Your sites Chris</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-69096">
+
+      <div class="grid group nopadding comment-wrap" id="comment-69096">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/1d341e333c78f9693b5e8b226d6109de.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.ihaletakipsitesi.com/ihale_tarihi_yaklasanlar_konuk.asp" rel="external nofollow" class="url">Ozgur</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-69096"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-01-31T11:07:20+00:00">January 31, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Hello All,</p>
+<p>I need a solution for my site css (i have been stuck :(</p>
+<p> i am using jquery toggle and toggle a div when click “Kisa Yollar” 
+(on the top right of page, means shortcuts), in firefox or chrome, it 
+works great but in ie the div goes more right (out of page)</p>
+<p>Here is sample page:<br>
+<a href="http://www.ihaletakipsitesi.com/ihale_tarihi_yaklasanlar_konuk.asp" rel="nofollow">http://www.ihaletakipsitesi.com/ihale_tarihi_yaklasanlar_konuk.asp</a></p>
+<p>I will be appritiate if you help me for this, and thanks so much</p>
+<p>All the best</p>
+<p>Ozgur</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even thread-even depth-1" id="li-comment-69281">
+
+      <div class="grid group nopadding comment-wrap" id="comment-69281">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/f95bef10cd129cb44fa4df72e0c90baf.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://ilovepeople.com/" rel="external nofollow" class="url">I Love You</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-69281"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-02-02T17:02:24+00:00">February 2, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p><strong>I LOVE YOU!</strong> Firefox is so much better than IE.</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-69470">
+
+      <div class="grid group nopadding comment-wrap" id="comment-69470">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/164f43a161f344d4ba200e904efe405d.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.hpfconsulting.ch/" rel="external nofollow" class="url">HP</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-69470"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-02-05T08:22:11+00:00">February 5, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>hi all,<br>
+might share this in case anyone has wondered if there’s an easy way to 
+trick wordpress to take another css if IE6 is used to view a site. so 
+you could make a modern theme for IE7 and proper browsers, but also have
+ it working with IE6 and below.<br>
+short description of how to do it using the stylesheet filter is <a href="http://www.hpfconsulting.ch/2010/02/05/use-different-css-for-ie-6-or-lower/" rel="nofollow">here</a></p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even thread-even depth-1" id="li-comment-69979">
+
+      <div class="grid group nopadding comment-wrap" id="comment-69979">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/e322d093075a23ca791fce11b5a872a3.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Babazumbul</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-69979"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-02-11T08:05:58+00:00">February 11, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>I have problem with conditional stylesheet. You can see on <a href="http://www.parkic.byethost7.com/" rel="nofollow">http://www.parkic.byethost7.com/</a> I made two stylesheets. One for lt IE 7, and other for IE7, IE8 and other browsers. The point is that my statement <!--[if lt IE 7.0]&gt;&lt;![endif]--> doesn’t actually work, which gives me a plenty of headache. Any solutions?</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-70290">
+
+      <div class="grid group nopadding comment-wrap" id="comment-70290">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/472c61f15b552b07a41e921b597c8541.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.hauntedradio.net/" rel="external nofollow" class="url">Regan222</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-70290"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-02-13T22:10:10+00:00">February 13, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Is it really worthwhile to create style sheets for IE 7, 
+IE 8, IE6 and then one for other browsers?  I use a style sheet for IE 
+only and one other for others.  I make sure that everything looks OK in 
+Firefox and Safari and then I reposition everything in the IE specific 
+sheet.  Shouldn’t that be enough?</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even thread-even depth-1" id="li-comment-70569">
+
+      <div class="grid group nopadding comment-wrap" id="comment-70569">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/e176a9bb511ae6324257b3625dafd620.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.northstar-website-design.com/" rel="external nofollow" class="url">Fred</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-70569"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-02-17T12:48:33+00:00">February 17, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Today IE6 has dropped down to 10.2% as soon as it gets 
+into single figures I’m going to drop support. Most of its quirks I can 
+handle, but the fact that it completely screws up when you have a png 
+background really compromises my designs. Who on earth uses IE6 anyway?</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-70594">
+
+      <div class="grid group nopadding comment-wrap" id="comment-70594">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/7bd364d135ceca27bc145a2fe9339f17.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.gpscenter.com/" rel="external nofollow" class="url">GPS</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-70594"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-02-17T20:26:31+00:00">February 17, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>wow, I never thought this could be possible. Thank you so much</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even thread-even depth-1" id="li-comment-70620">
+
+      <div class="grid group nopadding comment-wrap" id="comment-70620">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/8c653da1da3d68082263836476f2349a.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.bestofcampuscrimelog.com/" rel="external nofollow" class="url">bestofca</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-70620"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-02-18T06:35:20+00:00">February 18, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>I have one site which is giving me trouble with IE 8 and 
+Firefox. It wont render a drop down menu as Google Chrome. I tried to 
+change the “if lte IE 6″ to “if lte IE 8″ and still not working. Please 
+help if you have any idea</p>
+<p>Here’s the site: bestofcampuscrimelog.com</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-71123">
+
+      <div class="grid group nopadding comment-wrap" id="comment-71123">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/c340433d28c1d44c1c847ceb85e5e2c8.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">Adam</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-71123"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-02-25T07:00:28+00:00">February 25, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Hey all can someone please help me with this. Been trying
+ to fix this float/margin problems for days now on IE6 I’ve tried the 
+display:inline; and researched all possibilities with no luck.</p>
+<p>Please review you can see that the problem in IE6 is in the header as well as the main content. How can this be rectified.</p>
+<p>Heres the link:<br>
+omved.boldwerks.com</p>
+<p>Thanks a ton this is nuts,</p>
+<p>-Adam</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even thread-even depth-1" id="li-comment-71448">
+
+      <div class="grid group nopadding comment-wrap" id="comment-71448">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/bbabfcc49b66dd6a6edc8ab890b28418.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.adaircameron.co.uk/" rel="external nofollow" class="url">Adair</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-71448"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-03-02T04:51:59+00:00">March 2, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Great post! This is my first attempt to create a CSS file specifically for IE. I’ve taken the code from above</p>
+<p><code>&lt;!-- [if lt IE 8] --&gt;</code></p>
+<p>And it appears to work fine for the homepage but doesn’t seem to work
+ on other pages within my site? I’ve added a little more detail on my 
+blog here  <a href="http://bit.ly/9q6xdF" rel="nofollow">http://bit.ly/9q6xdF</a></p>
+<p>Would appreciate some advice,</p>
+<p>Thanks</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-72206">
+
+      <div class="grid group nopadding comment-wrap" id="comment-72206">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/e027f2292d14064296bdb60b8e3d5398.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author">The 3D Data Labs Guy</div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-72206"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-03-09T12:02:48+00:00">March 9, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Hi Chris, nice post. Very informative post this.<br>
+The following code correctly identifies Internet Explorer 5.</p>
+<p>&lt;!–[if IE 5.0000]&gt;–&gt;<br>
+Internet Explorer 5.0!</p>
+<p>Ie 5, which shipped with Windows 2000, has a version vector equal to 
+5.0002. Pls note: the conditional expression [if lte IE 5.0000] returns 
+false when evaluated in the release build of IE 5.<br>
+The value of the expression is called a <b>version vector</b> by the way.<br>
+Thks!</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even thread-even depth-1" id="li-comment-72232">
+
+      <div class="grid group nopadding comment-wrap" id="comment-72232">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/e027f2292d14064296bdb60b8e3d5398.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.3ddatalabs.com/" rel="external nofollow" class="url">The 3D Data Labs Guy</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-72232"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-03-09T21:13:25+00:00">March 9, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Trying to send the code here..</p>
+<p>echo”<code>";<br>
+echo"&lt;!--[if IE 5.0000]&gt;\n";<br>
+echo"&lt;p&gt;Internet Explorer 5.0! &lt;/p&gt;\n";<br>
+echo"&lt;![endif]--&gt; </code>\n”;</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="li-comment-72233">
+
+      <div class="grid group nopadding comment-wrap" id="comment-72233">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/e027f2292d14064296bdb60b8e3d5398.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.3ddatalabs.com/" rel="external nofollow" class="url">The 3D Data Labs Guy</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-72233"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-03-09T21:50:42+00:00">March 9, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>ok. this should work :) sorry for the above.</p>
+<pre><code>&lt;!--[if IE 5.0000]&gt;
+&lt;p&gt;Internet Explorer 5.0! &lt;/p&gt;
+&lt;![endif]--&gt;</code></pre>
+<p>Some have experimented some strange action with IE 5.5 </p>
+<pre><code>&lt;!--[if IE 5.5]&gt; is not interpreted
+&lt;!--[if IE 5.500]&gt; is not interpreted
+&lt;!--[if IE 5.5000]&gt;<b> is interpreted</b></code></pre>
+<p>May be IE is right! I think one need to be more specific when targeting ie. Instead one can try this:</p>
+<pre><code>&lt;!--[if (gte IE 5.5)&amp;(lt IE 7)]&gt;
+&lt;p&gt;You are using IE 5.5 or IE 6 &lt;/p&gt;&lt;![endif]--&gt;</code></pre>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment even thread-even depth-1" id="li-comment-72237">
+
+      <div class="grid group nopadding comment-wrap" id="comment-72237">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/e027f2292d14064296bdb60b8e3d5398.png" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://www.3ddatalabs.com/" rel="external nofollow" class="url">The 3D Data Labs Guy</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-72237"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-03-09T23:26:37+00:00">March 9, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>In the ex below, only the major ver number is specified; 
+therefore, the code evaluates as true for both Internet Explorer 5 and 
+Internet Explorer 5.5.<br>
+<code><br>
+&lt;!--[if IE 5]&gt;<br>
+&lt;p&gt;using any incremental version of IE 5! &lt;/p&gt;<br>
+&lt;![endif]--&gt;<br>
+</code><br>
+Hope it helps.<br>
+thks!</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+
+		<li class="comment odd alt thread-odd thread-alt depth-1 buried" id="li-comment-72896">
+
+      <div class="grid group nopadding comment-wrap" id="comment-72896">
+
+        <div class="comment-avatar grid-1-5">
+          <img alt="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/fff67acd424240025bec0bf59a27e620.jpg" class="avatar avatar-160 photo" height="160" width="160">        </div>
+
+        <div class="comment-body group grid-4-5">
+
+          <div class="comment-author-wrap vcard">
+            <div class="comment-author"><a href="http://hamroawaaz.com/" rel="external nofollow" class="url">Web Guru</a></div> <div class="comment-time"><a href="http://css-tricks.com/how-to-create-an-ie-only-stylesheet/#comment-72896"><span class="screen-reader">Permalink to comment</span>#</a> <time pubdate="" datetime="2010-03-16T23:23:12+00:00">March 16, 2010</time></div>
+            
+          </div>
+          
+          <div class="comment-content">
+
+            <p>Thanks a ton for this wonderful hack for IE. It has taken some time, but slowly I’ve started doing ok for IE.</p>
+<p>;)</p>
+
+            <div class="reply">
+                          </div><!-- .reply -->
+
+          </div>
+        </div>
+      </div>
+    
+	</li>
+	</ol>
+
+
+
+<div class="module explanation">
+	This comment thread is closed. If you have important information to share, you can always <a href="http://css-tricks.com/contact/">contact me</a>.
+</div>
+
+
+</section>		
+	</section>
+
+	<aside class="grid-1-3">
+
+    <div class="module module-image-ad module-treehouse">
+
+    <a href="http://teamtreehouse.com/redirect/css-tricks/sidebar">
+    <img src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/Treehouse_600x500_02.jpg">
+    </a>
+
+    <p class="note">I recommend using <a href="http://teamtreehouse.com/redirect/css-tricks/sidebar">Treehouse</a>
+ for learning web design, web development, and iOS development. Their 
+structured course-based learning is like a more modern college at about 
+1% of the price.</p>
+
+  </div>
+  
+  <div class="module group module-lodge">
+    
+  
+    <p class="intro-lodge"><a href="http://css-tricks.com/lodge/">The Lodge</a> is a <a href="http://css-tricks.com/wp-login.php">member login</a> only area with access to video training on how to build websites from scratch using the best modern tools.</p>
+
+    <div class="lodge-actions">
+      <a href="http://css-tricks.com/lodge/signup/" class="button">Sign up!</a>
+    </div>
+
+  
+  </div>
+
+    <div class="module module-image-ad">
+    <a id="wufoo-ad-graphic" class="wufoo-ad-graphic" href="http://ad.doubleclick.net/clk;270735259;98920367;x?http://www.wufoo.com/landing/1/?utm_source=csstricks&amp;utm_medium=ppc&amp;cmpid=brand&amp;utm_network=d&amp;utm_term=csstricks600x600banner">
+    </a>
+    <p class="note">
+      You already know 
+      <a href="http://ad.doubleclick.net/clk;270735316;98920367;r?http://www.wufoo.com/landing/1/?utm_source=csstricks&amp;utm_medium=ppc&amp;cmpid=brand&amp;utm_network=d&amp;utm_term=csstrickstextlinkwufoo">Wufoo</a>
+ is the best online form builder. 
+      But did you know Wufoo forms can accept payments? That means you 
+can take donations, start subscriptions, handle paid event 
+registrations, or even sell Girl Scout cookies online as easy as, well, 
+Wufoo.
+
+      <a href="http://ad.doubleclick.net/clk;270735352;98920367;r?http://www.wufoo.com/landing/1/?utm_source=csstricks&amp;utm_medium=ppc&amp;cmpid=brand&amp;utm_network=d&amp;utm_term=csstrickstextlinktryitfree">Try&nbsp;it&nbsp;free!</a><img src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/B7043538.gif">
+    </p>
+  </div>
+  
+  <div class="module module-poll">
+    <div id="polls-43" class="wp-polls">
+	<form id="polls_form_43" class="wp-polls-form" action="/how-to-create-an-ie-only-stylesheet/" method="post">
+		<p style="display: none;"><input id="poll_43_nonce" name="wp-polls-nonce" value="4325062687" type="hidden"></p>
+		<p style="display: none;"><input name="poll_id" value="43" type="hidden"></p>
+		<h4>I like my code editor colors with:</h4>
+
+<div id="polls-43-ans" class="wp-polls-ans">
+
+<ul class="wp-polls-ul group">
+		<li class="group"><input id="poll-answer-249" name="poll_43" value="249" type="radio"> <label for="poll-answer-249">Light code on dark background</label></li>
+		<li class="group"><input id="poll-answer-250" name="poll_43" value="250" type="radio"> <label for="poll-answer-250">Dark code on light background</label></li>
+		</ul>
+
+<p class="voting-buttons">
+
+<input name="vote" value="   Vote   " class="button" onclick="poll_vote(43);" onkeypress="poll_result(43);" type="button"> &nbsp; <a href="#ViewPollResults" class="button" onclick="poll_result(43); return false;" onkeypress="poll_result(43); return false;" title="View Results Of This Poll">View Results</a>
+
+</p>
+
+</div>
+	</form>
+</div>
+  </div>
+  <div class="module module-subscribe">
+    <h4>Over 100,000 of the best looking web workers subscribe to CSS-Tricks. Join them?</h4>
+    <div class="module-subscribe-buttons">
+      <a class="button" href="http://feeds.feedburner.com/CssTricks">
+        <span aria-hidden="true" data-icon="S"></span>RSS
+      </a>
+      <br>
+      <a class="button" href="http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=273881728">
+        <span aria-hidden="true" data-icon="a"></span>iTunes
+      </a>
+    </div>
+    <a href="http://css-tricks.com/subscription-options/">See all Subscription Options</a>
+  </div>
+
+</aside>
+</div>
+  </div>
+  <footer class="site-footer top-footer group">
+
+    <ul class="link-list left-links">
+      <li><a href="http://css-tricks.com/contact/">Contact CSS-Tricks<span></span></a></li>
+      <li class="space"><a href="http://css-tricks.com/advertising/">Advertise on CSS-Tricks<span></span></a></li>
+
+      <li><a href="http://twitter.com/real_css_tricks">Twitter: real_css_tricks<span></span></a></li>
+      <li><a href="http://facebook.com/CSSTricks">Facebook: CSSTricks<span></span></a></li>
+      <li><a href="http://www.youtube.com/realcsstricks">YouTube: realcsstricks<span></span></a></li>
+      <li class="space"><a href="https://github.com/CSS-Tricks/">GitHub: CSS-Tricks Org<span></span></a></li>
+
+      <li><a href="http://twitter.com/chriscoyier">Twitter: chriscoyier<span></span></a></li>
+      <li><a href="http://codepen.io/chriscoyier">CodePen: chriscoyier<span></span></a></li>
+      <li><a href="http://dribbble.com/chriscoyier">Dribbble: chriscoyier<span></span></a></li>
+      <li><a href="http://pinboard.in/u:chriscoyier">Pinboard: chriscoyier<span></span></a></li>
+      <li><a href="http://plus.google.com/101987072260327250694/posts">Google+: chriscoyier<span></span></a></li>
+    </ul>
+
+    <ul class="link-list right-links">
+      <li><a href="http://css-tricks.com/bookshelf/">The Bookshelf<span></span></a></li>
+      <li><a href="http://css-tricks.com/polls/">Poll Archive<span></span></a></li>
+      <li><a href="http://css-tricks.com/design-history/">Design Archive<span></span></a></li>
+      <li class="space"><a href="http://css-tricks.com/archives/">Article Archive<span></span></a></li>
+
+      <li><a href="http://digwp.com/">Digging into WordPress<span></span></a></li>
+      <li><a href="http://www.lynda.com/home/DisplayCourse.aspx?lpk2=67160&amp;utm_medium=affiliate&amp;utm_source=ldc_affiliate&amp;utm_content=524&amp;utm_campaign=CD2269&amp;bid=524&amp;aid=CD2269&amp;opt=">Lynda.com WP Theme Course<span></span></a></li>
+
+      <li><a href="http://quotesondesign.com/">Quotes on Design<span></span></a></li>
+      <li class="space"><a href="http://html-ipsum.com/">HTML-Ipsum<span></span></a></li>
+
+      <li><a href="http://css-tricks.com/deals/">Deals<span></span></a></li>
+      <li><a class="footer-store-link" href="http://css-tricks.com/store/">The Store<span></span></a></li>
+      <li><a href="http://css-tricks.com/license/">The License<span></span></a></li>
+    </ul>
+
+  </footer>
+
+  <footer class="site-footer bottom-footer group">
+
+    <div class="bottom-footer-part footer-codepen">
+      <a href="http://codepen.io/" class="footer-logo">
+        <img src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/footer-logo-codepen.png" alt="CodePen Logo">
+      </a>
+      <p>
+        <a href="http://codepen.io/">
+          CodePen
+        </a>
+        is a social code playground for web designers and developers. Build demos, find inspiration, or troubleshoot code. With <a href="http://blog.codepen.io/documentation/pro-features/">CodePen PRO</a> you can teach students, pair program, host files, and more!
+      </p>
+    </div>
+
+    <div class="bottom-footer-part footer-shoptalk">
+      <a href="http://shoptalkshow.com/" class="footer-logo">
+        <img src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/footer-logo-shoptalk.png" alt="ShopTalk Logo">
+      </a>
+      <p>
+        <a href="http://shoptalkshow.com/">
+          ShopTalk
+        </a>
+         is a podcast about all things web design and development hosted
+ by Dave Rupert and me. The show is recorded live and covers the week in
+ #hotdrama and listener Q&amp;A.
+       </p>
+    </div>
+
+  </footer>
+
+  <footer class="site-footer slogan">
+    CSS-Tricks* is created, written by, and maintained by <a href="http://chriscoyier.net/">Chris Coyier</a>. It is built on <a href="http://wordpress.org/">WordPress</a>, hosted by <a href="http://www.mediatemple.net/#a_aid=4e25c84480ed2">Media Temple</a> and <a href="http://www.netdna.com/">NetDNA</a>, with fonts by <a href="http://www.typography.com/">H&amp;FJ</a>. *May or may not contain any "CSS" or "Tricks".
+  </footer>
+
+		<div style="display:none">
+	<div class="grofile-hash-map-790e6fec288392034b0a88f15e42b85b">
+	</div>
+	<div class="grofile-hash-map-1f2ad4fb4a673350c195b2af95c3ce28">
+	</div>
+	<div class="grofile-hash-map-e6a1b65778a800d5e2cd227505a9e049">
+	</div>
+	<div class="grofile-hash-map-e72b5e1420e98c98240309cd31249724">
+	</div>
+	<div class="grofile-hash-map-03a57082c08b752d9647f5697cd5c2f8">
+	</div>
+	<div class="grofile-hash-map-2524fd6d6598990d02d89f1b83d39ab3">
+	</div>
+	<div class="grofile-hash-map-1a631ed351d82621f6a5c2f56bf23e07">
+	</div>
+	<div class="grofile-hash-map-7cabc8006c7d3946f88358721fb71491">
+	</div>
+	<div class="grofile-hash-map-841ce59ffb59dfc0ff006741d9b94b2a">
+	</div>
+	<div class="grofile-hash-map-ab88b2c235f0bd57dc71ee92b66f88d0">
+	</div>
+	<div class="grofile-hash-map-b33ba275a32e0ec620aa6d0cbf86dcf6">
+	</div>
+	<div class="grofile-hash-map-cdff138b1f7fe2574bc81d8eadfaa77a">
+	</div>
+	<div class="grofile-hash-map-598490742d437768d46865bdca37522c">
+	</div>
+	<div class="grofile-hash-map-965afb3fd6484d15844fa22a06e54b1b">
+	</div>
+	<div class="grofile-hash-map-cbb79dcc1de709689f577ab2f8623100">
+	</div>
+	<div class="grofile-hash-map-93760641c57cd36294c10dc76b335690">
+	</div>
+	<div class="grofile-hash-map-8fa4ef4128edd5214a9c4f3d02243dc3">
+	</div>
+	<div class="grofile-hash-map-0562eacf6b5ede8be26fd47700f81e1a">
+	</div>
+	<div class="grofile-hash-map-8d546498f9258ba67dfbea2a05da6202">
+	</div>
+	<div class="grofile-hash-map-a7bf121ff29c67f31c4d858c81d36570">
+	</div>
+	<div class="grofile-hash-map-a450bf1db9578690209dd0f80427a4b1">
+	</div>
+	<div class="grofile-hash-map-501526fdc5c88dfdc7397d82d46c5d34">
+	</div>
+	<div class="grofile-hash-map-e15d8725aa42ce94ff509dd9136284d8">
+	</div>
+	<div class="grofile-hash-map-8081b26e05bb4354f7d65ffc34cbbd67">
+	</div>
+	<div class="grofile-hash-map-6c278e2d9c25a5280d4c00f77c7932a6">
+	</div>
+	<div class="grofile-hash-map-0dba268206a8fb2828eeb08292b9964f">
+	</div>
+	<div class="grofile-hash-map-73073bce98767248b84effc5aa165926">
+	</div>
+	<div class="grofile-hash-map-ea74cf7f528273838138e9ae407cd8ef">
+	</div>
+	<div class="grofile-hash-map-ea26f395a7bf615850bcef55c66f9339">
+	</div>
+	<div class="grofile-hash-map-380030a0b674fa9546c6062a25aef05b">
+	</div>
+	<div class="grofile-hash-map-5e44918dea0e1b11d62abbd72c2fed83">
+	</div>
+	<div class="grofile-hash-map-b89d4de46f95f4364c093b8105ae2403">
+	</div>
+	<div class="grofile-hash-map-2828f96cc5d074dd373b6b2014244508">
+	</div>
+	<div class="grofile-hash-map-71329f4a0dbd245de9c6c5fa320ef6f3">
+	</div>
+	<div class="grofile-hash-map-e71723e8334c6f82a88f21f1aab3420a">
+	</div>
+	<div class="grofile-hash-map-df4af7b5bc0b9cbb7cc91946a14a5100">
+	</div>
+	<div class="grofile-hash-map-19bd74d1e278f5ce8620cf988c865f6c">
+	</div>
+	<div class="grofile-hash-map-25baa2e0f526eff1e32dbde64b468944">
+	</div>
+	<div class="grofile-hash-map-5abc7f5801ab7c18c5533457d6e67f24">
+	</div>
+	<div class="grofile-hash-map-3ace57af0e09cceb9458e6fbdf768f95">
+	</div>
+	<div class="grofile-hash-map-61a1d08040925043bbf536f5998a22d5">
+	</div>
+	<div class="grofile-hash-map-632f8ef8c595126d035622ae18ebf718">
+	</div>
+	<div class="grofile-hash-map-c2427f2f932a172b5de2a4073ea2cd6d">
+	</div>
+	<div class="grofile-hash-map-185cd965e0e8ccd15df2f90977cbeaf3">
+	</div>
+	<div class="grofile-hash-map-0ee5ce13c8485207e94895362b6e80ba">
+	</div>
+	<div class="grofile-hash-map-ff02e345097146af53a7809d58dd33c6">
+	</div>
+	<div class="grofile-hash-map-1e76544479d5cea2a436a7d7566f4733">
+	</div>
+	<div class="grofile-hash-map-1bb0ea156c7154f63c261bc6b83587dc">
+	</div>
+	<div class="grofile-hash-map-a7a2942d1532f66690a797480d719ab6">
+	</div>
+	<div class="grofile-hash-map-205b49c45390c0dcd6f813617cdcdebc">
+	</div>
+	<div class="grofile-hash-map-c0b757ad830e5d263580e7c2319ae15b">
+	</div>
+	<div class="grofile-hash-map-79a7c802d9ddbd3cbd877c2d418272e7">
+	</div>
+	<div class="grofile-hash-map-68ba30b9c3bb5a08cff554412e150366">
+	</div>
+	<div class="grofile-hash-map-9ff958c669be464410e21f1c33e8b0f6">
+	</div>
+	<div class="grofile-hash-map-dcb7cc657c19726b709098172efa1b6d">
+	</div>
+	<div class="grofile-hash-map-91b6d11dcd155780f8f09ba3ed979bbf">
+	</div>
+	<div class="grofile-hash-map-b8eb0184e62e8a6e71a2d1d7be558248">
+	</div>
+	<div class="grofile-hash-map-71e4aafb586d12529e52dfb893a850be">
+	</div>
+	<div class="grofile-hash-map-e68aba895eed939c0c2b481a03cf1962">
+	</div>
+	<div class="grofile-hash-map-4178041f3720cf60c1ce1fd190f359cc">
+	</div>
+	<div class="grofile-hash-map-b0dd0f1177d64fdc533498301765eb14">
+	</div>
+	<div class="grofile-hash-map-b97e05b8a655a59b79bd346bb6afc65b">
+	</div>
+	<div class="grofile-hash-map-1d341e333c78f9693b5e8b226d6109de">
+	</div>
+	<div class="grofile-hash-map-a4a47bd4eb9a81b7423f0c1287a9c134">
+	</div>
+	<div class="grofile-hash-map-164f43a161f344d4ba200e904efe405d">
+	</div>
+	<div class="grofile-hash-map-e322d093075a23ca791fce11b5a872a3">
+	</div>
+	<div class="grofile-hash-map-472c61f15b552b07a41e921b597c8541">
+	</div>
+	<div class="grofile-hash-map-e176a9bb511ae6324257b3625dafd620">
+	</div>
+	<div class="grofile-hash-map-7bd364d135ceca27bc145a2fe9339f17">
+	</div>
+	<div class="grofile-hash-map-8c653da1da3d68082263836476f2349a">
+	</div>
+	<div class="grofile-hash-map-c340433d28c1d44c1c847ceb85e5e2c8">
+	</div>
+	<div class="grofile-hash-map-bbabfcc49b66dd6a6edc8ab890b28418">
+	</div>
+	<div class="grofile-hash-map-e027f2292d14064296bdb60b8e3d5398">
+	</div>
+	<div class="grofile-hash-map-fff67acd424240025bec0bf59a27e620">
+	</div>
+	</div>
+<script type="text/javascript" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/devicepx-jetpack.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var pollsL10n = {"ajax_url":"http:\/\/css-tricks.com\/wp-admin\/admin-ajax.php","text_wait":"Your last request is still being processed. Please wait a while ...","text_valid":"Please choose a valid poll answer.","text_multiple":"Maximum number of choices allowed: ","show_loading":"0","show_fading":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/polls-js.js"></script>
+
+	<script src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/e-201325.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	st_go({v:'ext',j:'1:2.2.5',blog:'45537868',post:'132',tz:'-7'});
+	var load_cmc = function(){linktracker_init(45537868,132,2);};
+	if ( typeof addLoadEvent != 'undefined' ) addLoadEvent(load_cmc);
+	else load_cmc();
+	</script>
+  <script src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/global-ck.js"></script>
+  <script async="" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/ei.js"></script>
+
+  
+  
+  <script>
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-68528-29']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+  })();
+</script>
+
+<script>
+/* <![CDATA[ */
+var google_conversion_id = 1017883234;
+var google_conversion_label = "BsxVCM7ImAMQ4tSu5QM";
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/conversion.js">
+</script><iframe name="google_conversion_frame" src="How%20To%20Create%20an%20IE-Only%20Stylesheet%20_%20CSS-Tricks_files/a.htm" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" frameborder="0" height="13" scrolling="no" width="300">&lt;img
+ height="1" width="1" border="0" 
+src="http://googleads.g.doubleclick.net/pagead/viewthroughconversion/1017883234/?frame=0&amp;random=1371799518343&amp;cv=7&amp;fst=1371799518343&amp;num=1&amp;fmt=1&amp;label=BsxVCM7ImAMQ4tSu5QM&amp;guid=ON&amp;u_h=768&amp;u_w=1366&amp;u_ah=768&amp;u_aw=1366&amp;u_cd=24&amp;u_his=1&amp;u_tz=480&amp;u_java=true&amp;u_nplug=36&amp;u_nmime=130&amp;ref=http%3A//www.google.com.hk/url%3Fsa%3Dt%26rct%3Dj%26q%3D%26esrc%3Ds%26source%3Dweb%26cd%3D1%26ved%3D0CCoQFjAA%26url%3D%2568%2574%2574%2570%253a%252f%252f%2563%2573%2573%252d%2574%2572%2569%2563%256b%2573%252e%2563%256f%256d%252f%2568%256f%2577%252d%2574%256f%252d%2563%2572%2565%2561%2574%2565%252d%2561%256e%252d%2569%2565%252d%256f%256e%256c%2579%252d%2573%2574%2579%256c%2565%2573%2568%2565%2565%2574%25&amp;url=http%3A//css-tricks.com/how-to-create-an-ie-only-stylesheet/&amp;frm=0"
+ /&gt;</iframe>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1017883234/?value=0&amp;label=BsxVCM7ImAMQ4tSu5QM&amp;guid=ON&amp;script=0">
+</div>
+</noscript>
+
+
+
+
+</body></html>
+<!-- Performance optimized by W3 Total Cache. Learn more: http://www.w3-edge.com/wordpress-plugins/
+
+Page Caching using disk
+Content Delivery Network via cdn.css-tricks.com
+
+ Served from: css-tricks.com @ 2013-06-20 23:26:10 by W3 Total Cache -->

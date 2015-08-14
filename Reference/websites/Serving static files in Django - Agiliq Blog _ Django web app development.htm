@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><script async="" src="Serving%20static%20files%20in%20Django%20-%20Agiliq%20Blog%20_%20Django%20web%20app%20development_files/cbgapi.loaded_0"></script><script src="Serving%20static%20files%20in%20Django%20-%20Agiliq%20Blog%20_%20Django%20web%20app%20development_files/shares.json" type="text/javascript"></script><script src="Serving%20static%20files%20in%20Django%20-%20Agiliq%20Blog%20_%20Django%20web%20app%20development_files/auth013.js" type="text/javascript"></script><script src="Serving%20static%20files%20in%20Django%20-%20Agiliq%20Blog%20_%20Django%20web%20app%20development_files/counter016.js" type="text/javascript"></script><link media="all" href="Serving%20static%20files%20in%20Django%20-%20Agiliq%20Blog%20_%20Django%20web%20app%20development_files/counter013.css" type="text/css" rel="stylesheet"><script gapi_processed="true" src="Serving%20static%20files%20in%20Django%20-%20Agiliq%20Blog%20_%20Django%20web%20app%20development_files/plusone.js" type="text/javascript"></script><script src="Serving%20static%20files%20in%20Django%20-%20Agiliq%20Blog%20_%20Django%20web%20app%20development_files/widgets.js" type="text/javascript"></script><link media="all" href="Serving%20static%20files%20in%20Django%20-%20Agiliq%20Blog%20_%20Django%20web%20app%20development_files/floating010.css" type="text/css" rel="stylesheet"><link media="all" href="Serving%20static%20files%20in%20Django%20-%20Agiliq%20Blog%20_%20Django%20web%20app%20development_files/widget115.css" type="text/css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>
+    Serving static files in Django -  Agiliq Blog | Django web app development 
+</title>
+<link rel="stylesheet" href="Serving%20static%20files%20in%20Django%20-%20Agiliq%20Blog%20_%20Django%20web%20app%20development_files/e11e93710fa3.css" type="text/css">
+<link href="Serving%20static%20files%20in%20Django%20-%20Agiliq%20Blog%20_%20Django%20web%20app%20development_files/css.css" rel="stylesheet" type="text/css">
+<link href="Serving%20static%20files%20in%20Django%20-%20Agiliq%20Blog%20_%20Django%20web%20app%20development_files/css_002.css" rel="stylesheet" type="text/css">
+<link href="Serving%20static%20files%20in%20Django%20-%20Agiliq%20Blog%20_%20Django%20web%20app%20development_files/css_003.css" rel="stylesheet" type="text/css">
+
+
+    <link rel="alternate" type="application/rss+xml" title="The Agiliq Blog - Django Web Development RSS Feed" href="http://agiliq.com/blog/rss/latest/">
+
+
+    <link rel="canonical" href="http://agiliq.com/blog/2013/03/serving-static-files-in-django/">
+
+
+<link rel="pingback" href="http://agiliq.com/blog/xmlrpc/">
+
+</head>
+<body onload="pretty_print()">
+<!--BASE CONTAINER STARTS-->
+<div id="mainpage_bg">
+  <!--PAGE CONTAINER STARTS-->
+  <div id="page_container">
+    <!-- HEADER STARTS HERE -->
+    <div id="header">
+      <a href="http://agiliq.com/">
+        <img src="Serving%20static%20files%20in%20Django%20-%20Agiliq%20Blog%20_%20Django%20web%20app%20development_files/agiliq_blog_logo.png" alt="Agiliq Solutions" height="67" width="206">
+      </a>
+      <h2 class="message">
+        We are a small, intelligent App development studio. We love 
+"Building Amazing Apps", solving problems and cultivating strong 
+relationships with our clients.
+      </h2>
+    </div>
+    <!-- HEADER ENDS HERE -->
+    <!-- BREADCRUMBS STARTS HERE -->
+    <div id="breadcrumbs">
+      <ul id="crumbs">
+        <li><a href="http://agiliq.com/" rel="nofollow">Home</a></li>
+        
+    <li><a href="http://agiliq.com/blog/" rel="nofollow">Blog</a></li>
+    <li><a href="http://agiliq.com/blog/archive/2013/mar/" rel="nofollow"> March 2013</a></li>
+	<li>Serving static files in Django</li>
+
+      </ul>
+    </div>
+    <!-- BREADCRUMBS STARTS HERE -->
+    <!-- CONTENT BLOCK STARTS HERE -->
+    <div id="content_block">
+      <div class="leftpanel">
+        
+
+
+    
+
+
+
+<article itemscope="" itemtype="http://schema.org/BlogPosting">
+<div class="comment_block">
+  <div class="left_panel">
+    <div class="frame_bg">
+        
+          
+            <img src="Serving%20static%20files%20in%20Django%20-%20Agiliq%20Blog%20_%20Django%20web%20app%20development_files/bdc71d46e22e948d42cbeea1e29cabae.png" alt="akshar" height="72">
+          
+        
+    </div>
+    <div class="italics">
+      <a href="http://agiliq.com/blog/archive/2013/mar/">
+        21st March, 2013
+      </a>
+    </div>
+
+    <div class="comment_bg"><a href="http://agiliq.com/blog/2013/03/serving-static-files-in-django/#comments">2</a></div>
+    <div class="italics">Comments</div>
+    
+    
+      <div class="addthis">
+
+     <!-- AddThis Button BEGIN -->
+    <div class="addthis_toolbox addthis_floating_style addthis_counter_style" style="left:50px;top:50px;"><div class="at-floatingbar-inner"><div class="at-floatingbar-share"><div class="addthis_internal_container">
+    <a class="addthis_button_facebook_like at300b" fb:like:layout="box_count"><iframe src="Serving%20static%20files%20in%20Django%20-%20Agiliq%20Blog%20_%20Django%20web%20app%20development_files/like.xht" style="overflow: hidden; border: 0px none; width: 55px; height: 65px;"></iframe></a>
+    <a class="addthis_button_tweet at300b" tw:count="vertical"><a data-height="62" data-hashtags="" data-related="" data-text="Serving static files in Django - Agiliq Blog | Django web app development:" data-counturl="http://agiliq.com/blog/2013/03/serving-static-files-in-django/" data-url="http://agiliq.com/blog/2013/03/serving-static-files-in-django/#.Ud9WnfwsmF8.twitter" data-count="vertical" class="twitter-share-button" href="http://twitter.com/share">Tweet</a></a>
+    <a class="addthis_button_google_plusone at300b" g:plusone:size="tall"><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 50px; height: 60px;"><iframe title="+1" data-gapiattached="true" allowtransparency="true" src="Serving%20static%20files%20in%20Django%20-%20Agiliq%20Blog%20_%20Django%20web%20app%20development_files/fastbutton.htm" name="I0_1373591198320" id="I0_1373591198320" vspace="0" tabindex="0" style="position: static; top: 0px; width: 50px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 60px;" marginwidth="0" marginheight="0" hspace="0" frameborder="0" scrolling="no" width="100%"></iframe></div></a>
+    <a href="#" style="display: block;" class="addthis_counter"><a href="#" title="View more services" target="_blank" class="addthis_button_expanded">4</a><a class="atc_s addthis_button_compact"><span></span></a></a>
+    </div></div></div><div class="atclear"></div></div>
+    <script src="Serving%20static%20files%20in%20Django%20-%20Agiliq%20Blog%20_%20Django%20web%20app%20development_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript" src="Serving%20static%20files%20in%20Django%20-%20Agiliq%20Blog%20_%20Django%20web%20app%20development_files/addthis_widget.js"></script><div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; z-index: 100000;"><iframe src="Serving%20static%20files%20in%20Django%20-%20Agiliq%20Blog%20_%20Django%20web%20app%20development_files/sh122.htm" style="height: 1px; width: 1px; position: absolute; z-index: 100000; border: 0px none; left: 0px; top: 0px;" title="AddThis utility frame" id="_atssh200"></iframe></div><script src="Serving%20static%20files%20in%20Django%20-%20Agiliq%20Blog%20_%20Django%20web%20app%20development_files/core084.js" type="text/javascript"></script>
+    <!-- AddThis Button END -->
+
+</div>
+
+    
+  </div>
+
+  <div class="right_panel">
+    <a href="http://agiliq.com/blog/2013/03/serving-static-files-in-django/" class="noline"><h1 class="post_title" itemprop="headline">Serving static files in Django</h1></a>
+    <h6 class="posted_by">By : <a href="http://agiliq.com/blog/author/akshar/">Akshar Raaj</a></h6>
+    
+      <p></p><p>Serving static files, especially during development, is 
+frequently a pain point. In this post, we will discuss the various 
+settings and directory structure and how they interact with each other. 
+Let's start with development when you have DEBUG = True.</p>
+<p>We will create a Django project from scratch so that we are fully 
+aware about what file in what directory we are talking about. So, this 
+blog post will be a little longer than it should be. We will try these 
+things with Django 1.4, but these will work on Django 1.3 as well. I 
+have not tested it with Django 1.2, so not sure about 1.2.</p>
+<h3>Setting up the project.</h3>
+<p>If you think you don't need this section, then skip to the next section titled <a href="#servee">Serving static files</a>.
+ Just make sure to see the directory structure at the end of this 
+section to get an idea of it, so that you will be comfortable in the 
+next section.</p>
+<p>We will try everything inside a virtual environment. We name our virtual environment as staticvirt. So the command we need is <strong>virtualenv staticvirt</strong>.</p>
+<div class="highlight"><pre class="prettyprint"><span class="o"><span class="pun">~</span></span><span class="nv"><span class="pln">$</span></span><span class="pln"> </span><span class="nv"><span class="pln">virtualenv</span></span><span class="pln"> </span><span class="n"><span class="pln">staticvirt</span></span></pre></div>
+
+
+<p>Next we need to start a Django project inside this virtualenv. Make 
+sure you are inside the virtualenv and have activated it. Also make sure
+ that you install Django inside your virtual environment as we don't 
+want to pollute your system wide site packages.</p>
+<div class="highlight"><pre class="prettyprint"><span class="o"><span class="pun">~</span></span><span class="nv"><span class="pln">$</span></span><span class="pln"> </span><span class="nv"><span class="pln">cd</span></span><span class="pln"> </span><span class="n"><span class="pln">staticvirt</span></span><span class="o"><span class="pun">/</span></span><span class="pln"><br></span><span class="o"><span class="pun">~</span></span><span class="sr"><span class="str">/staticvirt$ source bin/</span></span><span class="n"><span class="pln">activate</span></span><span class="pln"><br></span><span class="p"><span class="pun">(</span></span><span class="n"><span class="pln">staticvirt</span></span><span class="p"><span class="pun">)</span></span><span class="o"><span class="pun">~</span><span class="str">/</span></span><span class="n"><span class="str">staticvirt</span></span><span class="nv"><span class="str">$</span></span><span class="str"> </span><span class="nv"><span class="str">pip</span></span><span class="str"> </span><span class="n"><span class="str">install</span></span><span class="str"> </span><span class="n"><span class="str">django</span></span><span class="o"><span class="str">==</span></span><span class="mf"><span class="str">1.4</span></span></pre></div>
+
+
+<p>Start a Django project.</p>
+<div class="highlight"><pre class="prettyprint"><span class="n"><span class="pln">django</span></span><span class="o"><span class="pun">-</span></span><span class="n"><span class="pln">admin</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"> </span><span class="n"><span class="pln">startproject</span></span><span class="pln"> </span><span class="n"><span class="pln">test_project</span></span></pre></div>
+
+
+<p>Change to directory containing the project.</p>
+<div class="highlight"><pre class="prettyprint"><span class="n"><span class="pln">cd</span></span><span class="pln"> </span><span class="n"><span class="pln">test_project</span></span><span class="o"><span class="pun">/</span></span></pre></div>
+
+
+<p>Let's see the directory structure at this point.</p>
+<div class="highlight"><pre class="prettyprint"><span class="p"><span class="pun">(</span></span><span class="n"><span class="pln">staticvirt</span></span><span class="p"><span class="pun">)</span></span><span class="o"><span class="pun">~</span></span><span class="sr"><span class="str">/staticvirt/</span></span><span class="n"><span class="pln">test_project</span></span><span class="nv"><span class="pln">$</span></span><span class="pln"> </span><span class="nv"><span class="pln">tree</span></span><span class="pln"><br></span><span class="o"><span class="pun">.</span></span><span class="pln"><br></span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">manage</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"><br></span><span class="sb"><span class="str">`-- test_project</span></span><span class="str"><br></span><span class="sb"><span class="str"> &nbsp; &nbsp;|-- __init__.py</span></span><span class="str"><br></span><span class="sb"><span class="str"> &nbsp; &nbsp;|-- settings.py</span></span><span class="str"><br></span><span class="sb"><span class="str"> &nbsp; &nbsp;|-- urls.py</span></span><span class="str"><br></span><span class="sb"><span class="str"> &nbsp; &nbsp;`</span></span><span class="o"><span class="pun">--</span></span><span class="pln"> </span><span class="n"><span class="pln">wsgi</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"><br><br></span><span class="mi"><span class="lit">1</span></span><span class="pln"> </span><span class="n"><span class="pln">directory</span></span><span class="p"><span class="pun">,</span></span><span class="pln"> </span><span class="mi"><span class="lit">5</span></span><span class="pln"> </span><span class="n"><span class="pln">files</span></span></pre></div>
+
+
+<p>Check the contents of test_project/settings.py. Search for all the lines which contain the substring <strong>static</strong>. I will list all those lines below.</p>
+<div class="highlight"><pre class="prettyprint"><span class="n"><span class="pln">STATIC_ROOT</span></span><span class="pln"> </span><span class="o"><span class="pun">=</span></span><span class="pln"> </span><span class="s"><span class="str">''</span></span><span class="pln"><br><br></span><span class="n"><span class="pln">STATIC_URL</span></span><span class="pln"> </span><span class="o"><span class="pun">=</span></span><span class="pln"> </span><span class="s"><span class="str">'/static/'</span></span><span class="pln"><br><br></span><span class="n"><span class="pln">STATICFILES_DIRS</span></span><span class="pln"> </span><span class="o"><span class="pun">=</span></span><span class="pln"> </span><span class="p"><span class="pun">(</span></span><span class="pln"><br></span><span class="p"><span class="pun">)</span></span><span class="pln"><br><br></span><span class="n"><span class="pln">STATICFILES_FINDERS</span></span><span class="pln"> </span><span class="o"><span class="pun">=</span></span><span class="pln"> </span><span class="p"><span class="pun">(</span></span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="s"><span class="str">'django.contrib.staticfiles.finders.FileSystemFinder'</span></span><span class="p"><span class="pun">,</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="s"><span class="str">'django.contrib.staticfiles.finders.AppDirectoriesFinder'</span></span><span class="p"><span class="pun">,</span></span><span class="pln"><br></span><span class="c1"><span class="com"># &nbsp; &nbsp;'django.contrib.staticfiles.finders.DefaultStorageFinder',</span></span><span class="pln"><br></span><span class="p"><span class="pun">)</span></span><span class="pln"><br><br></span><span class="n"><span class="pln">INSTALLED_APPS</span></span><span class="pln"> </span><span class="o"><span class="pun">=</span></span><span class="pln"> </span><span class="p"><span class="pun">(</span></span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="o"><span class="pun">....</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="o"><span class="pun">....</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="s"><span class="str">'django.contrib.staticfiles'</span></span><span class="p"><span class="pun">,</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="o"><span class="pun">....</span></span><span class="pln"><br></span><span class="p"><span class="pun">)</span></span></pre></div>
+
+
+<p>Whatever we saw till here is the default setting provided to us by Django. We have not made any modifications.</p>
+<p>Let's create an app in which we will have a template and then we will
+ write a static file, which will be a stylesheet, and will use that 
+stylesheet in this template.</p>
+<div class="highlight"><pre class="prettyprint"><span class="n"><span class="pln">python</span></span><span class="pln"> </span><span class="n"><span class="pln">manage</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"> </span><span class="n"><span class="pln">startapp</span></span><span class="pln"> </span><span class="n"><span class="pln">some_app</span></span></pre></div>
+
+
+<p>Add <strong>some_app</strong> to INSTALLED_APPS in test_project/settings.py.</p>
+<p>We need a urls.py file for some_app where we will define the urls 
+available on some_app. Project's urls.py should include the urls.py of 
+some_app. So, we add the following line to test_project/urls.py.</p>
+<div class="highlight"><pre class="prettyprint"><span class="n"><span class="pln">url</span></span><span class="p"><span class="pun">(</span></span><span class="n"><span class="pln">r</span></span><span class="s"><span class="str">'^some_app/'</span></span><span class="p"><span class="pun">,</span></span><span class="pln"> </span><span class="n"><span class="pln">include</span></span><span class="p"><span class="pun">(</span></span><span class="s"><span class="str">'some_app.urls'</span></span><span class="p"><span class="pun">))</span></span></pre></div>
+
+
+<p>We have following line in urls.py of some_app i.e in some_app/urls.py.</p>
+<div class="highlight"><pre class="prettyprint"><span class="n"><span class="pln">url</span></span><span class="p"><span class="pun">(</span></span><span class="n"><span class="pln">r</span></span><span class="s"><span class="str">'^home$'</span></span><span class="p"><span class="pun">,</span></span><span class="pln"> </span><span class="n"><span class="pln">direct_to_template</span></span><span class="p"><span class="pun">,</span></span><span class="pln"> </span><span class="p"><span class="pun">{</span></span><span class="s"><span class="str">"template"</span></span><span class="p"><span class="pun">:</span></span><span class="pln"> </span><span class="s"><span class="str">"some_app/home.html"</span></span><span class="p"><span class="pun">})</span></span></pre></div>
+
+
+<p>Create a directory called <strong>templates</strong> and add it to TEMPLATE_DIRS. I created this <strong>templates</strong> directory on the same level as manage.py.</p>
+<p>Adding <strong>templates</strong> directory to TEMPLATE_DIRS require 
+following changes for me. It will be same if you use the same directory 
+structure as I am using.</p>
+<div class="highlight"><pre class="prettyprint"><span class="n"><span class="pln">PROJECT_DIR</span></span><span class="pln"> </span><span class="o"><span class="pun">=</span></span><span class="pln"> </span><span class="n"><span class="pln">os</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">path</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">dirname</span></span><span class="p"><span class="pun">(</span></span><span class="n"><span class="pln">__file__</span></span><span class="p"><span class="pun">)</span></span><span class="pln"><br><br></span><span class="n"><span class="pln">TEMPLATE_DIRS</span></span><span class="pln"> </span><span class="o"><span class="pun">=</span></span><span class="pln"> </span><span class="p"><span class="pun">(</span></span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="n"><span class="pln">os</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">path</span></span><span class="o"><span class="pun">.</span></span><span class="nb"><span class="pln">join</span></span><span class="p"><span class="pun">(</span></span><span class="n"><span class="pln">PROJECT_DIR</span></span><span class="p"><span class="pun">,</span></span><span class="pln"> </span><span class="s"><span class="str">'../templates'</span></span><span class="p"><span class="pun">),</span></span><span class="pln"><br></span><span class="p"><span class="pun">)</span></span></pre></div>
+
+
+<p>We need to create home.html for app some_app and it needs to go into templates. So, we create a template file <strong>templates/some_app/home.html</strong>. We have the following content in the html file.</p>
+<div class="highlight"><pre class="prettyprint"><span class="nt"><span class="pun">&lt;</span><span class="tag">html</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;</span><span class="tag">body</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;</span><span class="tag">h1</span><span class="pun">&gt;</span></span><span class="pln">This is home for some_app</span><span class="nt"><span class="pun">&lt;/</span><span class="tag">h1</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;/</span><span class="tag">body</span><span class="pun">&gt;</span></span><span class="pln"><br></span><span class="nt"><span class="pun">&lt;/</span><span class="tag">html</span><span class="pun">&gt;</span></span></pre></div>
+
+
+<p>Let's check our project directory structure, so as to remove any confusion.</p>
+<div class="highlight"><pre class="prettyprint"><span class="o"><span class="pun">~</span></span><span class="sr"><span class="str">/staticvirt/</span></span><span class="n"><span class="pln">test_project</span></span><span class="nv"><span class="pln">$</span></span><span class="pln"> </span><span class="nv"><span class="pln">tree</span></span><span class="pln"> </span><span class="o"><span class="pun">-</span></span><span class="n"><span class="pln">I</span></span><span class="pln"> </span><span class="o"><span class="pun">*.</span></span><span class="n"><span class="pln">pyc</span></span><span class="pln"><br></span><span class="o"><span class="pun">.</span></span><span class="pln"><br></span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">manage</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"><br></span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">some_app</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">__init__</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">models</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">tests</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">urls</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="sb"><span class="str">`-- views.py</span></span><span class="str"><br></span><span class="sb"><span class="str">|-- templates</span></span><span class="str"><br></span><span class="sb"><span class="str">| &nbsp; `</span></span><span class="o"><span class="pun">--</span></span><span class="pln"> </span><span class="n"><span class="pln">some_app</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; &nbsp; &nbsp; </span><span class="sb"><span class="str">`-- home.html</span></span><span class="str"><br></span><span class="sb"><span class="str">`</span></span><span class="o"><span class="pun">--</span></span><span class="pln"> </span><span class="n"><span class="pln">test_project</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">__init__</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">settings</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">urls</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="err"><span class="str">`</span></span><span class="o"><span class="str">--</span></span><span class="str"> </span><span class="n"><span class="str">wsgi</span></span><span class="o"><span class="str">.</span></span><span class="n"><span class="str">py</span></span><span class="str"><br><br></span><span class="mi"><span class="str">4</span></span><span class="str"> </span><span class="n"><span class="str">directories</span></span><span class="p"><span class="str">,</span></span><span class="str"> </span><span class="mi"><span class="str">11</span></span><span class="str"> </span><span class="n"><span class="str">files</span></span></pre></div>
+
+
+<p>We did not want .pyc files to be shown and so used a switch with <em>tree</em> to ignore .pyc files.</p>
+<p>Start the server. Make sure you have added your database settings.</p>
+<div class="highlight"><pre class="prettyprint"><span class="p"><span class="pun">(</span></span><span class="n"><span class="pln">staticvirt</span></span><span class="p"><span class="pun">)</span></span><span class="o"><span class="pun">~</span></span><span class="sr"><span class="str">/staticvirt/</span></span><span class="n"><span class="pln">test_project</span></span><span class="nv"><span class="pln">$</span></span><span class="pln"> </span><span class="nv"><span class="pln">python</span></span><span class="pln"> </span><span class="n"><span class="pln">manage</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"> </span><span class="n"><span class="pln">runserver</span></span></pre></div>
+
+
+<p>Navigate to <strong>http://127.0.0.1:8000/some_app/home</strong>. Hereafter, we will call this page as home page of some_app. You should see the html we just wrote.</p>
+<p><a name="servee"></a></p>
+<h3>Serving static files.</h3>
+<p>Let's edit home.html of some_app and add a stylesheet to it. There 
+doesn't exist any stylesheet yet, we will create it after editing html.</p>
+<div class="highlight"><pre class="prettyprint"><span class="nt"><span class="pun">&lt;</span><span class="tag">html</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;</span><span class="tag">head</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;</span><span class="tag">link</span></span><span class="pln"> </span><span class="na"><span class="atn">href</span><span class="pun">=</span></span><span class="s"><span class="atv">"{{STATIC_URL}}styles.css"</span></span><span class="pln"> </span><span class="na"><span class="atn">rel</span><span class="pun">=</span></span><span class="s"><span class="atv">"stylesheet"</span></span><span class="pln"> </span><span class="na"><span class="atn">type</span><span class="pun">=</span></span><span class="s"><span class="atv">"text/css"</span></span><span class="nt"><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;/</span><span class="tag">head</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;</span><span class="tag">body</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;</span><span class="tag">h1</span><span class="pun">&gt;</span></span><span class="pln">This is home for some_app</span><span class="nt"><span class="pun">&lt;/</span><span class="tag">h1</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;/</span><span class="tag">body</span><span class="pun">&gt;</span></span><span class="pln"><br></span><span class="nt"><span class="pun">&lt;/</span><span class="tag">html</span><span class="pun">&gt;</span></span></pre></div>
+
+
+<p>Refresh home page of some_app. You will not see any changes yet because we have not created the stylesheet file.</p>
+<p>Also navigate to <strong>http://127.0.0.1:8000/static/styles.css</strong>, you will see a 404 page.</p>
+<p><strong>Static files should be created inside the static/ subdirectory of apps</strong></p>
+<p>Let's create the stylesheet file. Since we want to use this 
+stylesheet in the template of some_app, we will create it inside the <strong>static/</strong> subdirectory of some_app.
+So, let's create a file some_app/static/styles.css. Add following contents to this file.</p>
+<div class="highlight"><pre class="prettyprint"><span class="n"><span class="pln">body</span></span><span class="pln"><br></span><span class="p"><span class="pun">{</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="n"><span class="pln">background</span></span><span class="o"><span class="pun">-</span></span><span class="n"><span class="pln">color</span><span class="pun">:</span></span><span class="pln"> </span><span class="n"><span class="pln">red</span></span><span class="p"><span class="pun">;</span></span><span class="pln"><br></span><span class="p"><span class="pun">}</span></span></pre></div>
+
+
+<p>Refresh home page of some_app. You should see that the background of this page becomes red. Also, refresh page at <strong>http://127.0.0.1:8000/static/styles.css</strong>.
+ You will see that it's no more a 404 page and you will see the contents
+ of your stylesheet at this url. If you can't see these changes, make 
+sure that <strong>some_app</strong> is added to INSTALLED_APPS and restart the server.</p>
+<h4>Points to be noted</h4>
+<ul>
+<li>We did not make any changes to any of the static settings provided 
+by Django to us. We left the static settings as they were in default 
+settings.py provided by Django.</li>
+<li>You don't need any change in your urls.py for serving your static 
+files in development. You don't need to add staticfiles_urlpatterns(). 
+Many a times, I got confused with this.</li>
+<li>You do not need <strong>python manage.py collectstatic</strong> for serving static files in development.
+<br></li>
+</ul>
+<h4>How it works internally</h4>
+<ul>
+<li>First, check all the static settings we have in settings.py</li>
+<li>They are STATIC_URL, STATIC_ROOT, STATICFILES_FINDERS, STATICFILES_DIRS.</li>
+<li>Also, we have 'django.contrib.staticfiles' in INSTALLED_APPS.</li>
+<li>For now, forget about STATIC_ROOT and STATICFILES_DIRS. Even if you 
+comment it or delete it from settings, your project will continue to 
+work as it is working currently.</li>
+<li>We need 'django.contrib.staticfiles' in our INSTALLED_APPS if we want Django's default server to serve static files.</li>
+<li>By Django's default server, we mean <strong>python manage.py runserver</strong>, that's provided with Django.</li>
+<li>
+<p>Django's default server will serve the static files at STATIC_URL. Notice that STATIC_URL is set to '/static/'. </p>
+<p>That's why we have our static file, ie stylesheet, getting served at <code>http://127.0.0.1:8000/static/styles.css</code>. If you try to get it at <code>http://127.0.0.1:8000/static_changed/styles.css</code>, you will not be able to, you will get a 404 instead.</p>
+<p>If you want to get the stylesheet at <code>http://127.0.0.1:8000/static_changed/styles.css</code>,
+ make STATIC_URL='/static_changed/'. Go ahead make this change and 
+check. With this change, static files will get served at 
+/static_changed/.</p>
+<p>This change was only to illustrate what is the purpose of STATIC_URL. Change it back to its default, i.e STATIC_URL='/static/'. </p>
+</li>
+<li>
+<p>Next question is how does Django know from where to read the static 
+files or where to find the static files. That's where 
+STATICFILES_FINDERS comes into picture.</p>
+<p>Check that we have two entries in STATICFILES_FINDERS, i.e 
+'django.contrib.staticfiles.finders.FileSystemFinder' and 
+'django.contrib.staticfiles.finders.AppDirectoriesFinder'. You can 
+ignore FileSystemFinder for now, if you wish you can go ahead and 
+comment the FileSystemFinder line.</p>
+<p>Appdirectoriesfinder tells Django to look into static/ subdirectory 
+of each app in INSTALLED_APPS while looking for static files. Remember, 
+we have styles.css under static/ subdirectory of some_app. That's why 
+Django was able to find it and it got served properly by Django server. </p>
+<p>If you change the name of this subdirectory from 'static/' to 
+something else, your static resources will not be served. Go ahead, try 
+it.</p>
+<p>Try commenting Appdirectoriesfinder line and your css file at 
+http://127.0.0.1:8000/static/styles.css will not be served anymore. Ok, 
+uncomment it back after trying this out.</p>
+</li>
+</ul>
+<p>Now, we are fine with what STATIC_URL and STATICFILES_FINDERS does. We still do not need STATIC_ROOT and STATICFILES_DIRS.</p>
+<p>To understand few other things about serving static files, we need one more app.</p>
+<p>Let's create it.</p>
+<div class="highlight"><pre class="prettyprint"><span class="n"><span class="pln">python</span></span><span class="pln"> </span><span class="n"><span class="pln">manage</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"> </span><span class="n"><span class="pln">startapp</span></span><span class="pln"> </span><span class="n"><span class="pln">other_app</span></span></pre></div>
+
+
+<p>Edit project urls.py to include the url for other_app. Now project's urls.py i.e test_project/urls.py contains two lines.</p>
+<div class="highlight"><pre class="prettyprint"><span class="n"><span class="pln">url</span></span><span class="p"><span class="pun">(</span></span><span class="n"><span class="pln">r</span></span><span class="s"><span class="str">'^some_app/'</span></span><span class="p"><span class="pun">,</span></span><span class="pln"> </span><span class="n"><span class="pln">include</span></span><span class="p"><span class="pun">(</span></span><span class="s"><span class="str">'some_app.urls'</span></span><span class="p"><span class="pun">)),</span></span><span class="pln"><br></span><span class="n"><span class="pln">url</span></span><span class="p"><span class="pun">(</span></span><span class="n"><span class="pln">r</span></span><span class="s"><span class="str">'^other_app/'</span></span><span class="p"><span class="pun">,</span></span><span class="pln"> </span><span class="n"><span class="pln">include</span></span><span class="p"><span class="pun">(</span></span><span class="s"><span class="str">'other_app.urls'</span></span><span class="p"><span class="pun">)),</span></span></pre></div>
+
+
+<p>We need following line in other_app's urls.py i.e in other_app/urls.py</p>
+<div class="highlight"><pre class="prettyprint"><span class="n"><span class="pln">url</span></span><span class="p"><span class="pun">(</span></span><span class="n"><span class="pln">r</span></span><span class="s"><span class="str">'^home$'</span></span><span class="p"><span class="pun">,</span></span><span class="pln"> </span><span class="n"><span class="pln">direct_to_template</span></span><span class="p"><span class="pun">,</span></span><span class="pln"> </span><span class="p"><span class="pun">{</span></span><span class="s"><span class="str">"template"</span></span><span class="p"><span class="pun">:</span></span><span class="pln"> </span><span class="s"><span class="str">"other_app/home.html"</span></span><span class="p"><span class="pun">})</span></span></pre></div>
+
+
+<p>Let's create other_app/home.html inside templates/ directory.</p>
+<div class="highlight"><pre class="prettyprint"><span class="nt"><span class="pun">&lt;</span><span class="tag">html</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;</span><span class="tag">body</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;</span><span class="tag">h1</span><span class="pun">&gt;</span></span><span class="pln">This is home for other_app</span><span class="nt"><span class="pun">&lt;/</span><span class="tag">h1</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;/</span><span class="tag">body</span><span class="pun">&gt;</span></span><span class="pln"><br></span><span class="nt"><span class="pun">&lt;/</span><span class="tag">html</span><span class="pun">&gt;</span></span></pre></div>
+
+
+<p>Check the directory structure at this point.</p>
+<div class="highlight"><pre class="prettyprint"><span class="o"><span class="pun">~</span></span><span class="sr"><span class="str">/staticvirt/</span></span><span class="n"><span class="pln">test_project</span></span><span class="nv"><span class="pln">$</span></span><span class="pln"> </span><span class="nv"><span class="pln">tree</span></span><span class="pln"> </span><span class="o"><span class="pun">-</span></span><span class="n"><span class="pln">I</span></span><span class="pln"> </span><span class="o"><span class="pun">*.</span></span><span class="n"><span class="pln">pyc</span></span><span class="pln"><br></span><span class="o"><span class="pun">.</span></span><span class="pln"><br></span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">manage</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"><br></span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">other_app</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">__init__</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">models</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">tests</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">urls</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="sb"><span class="str">`-- views.py</span></span><span class="str"><br></span><span class="sb"><span class="str">|-- some_app</span></span><span class="str"><br></span><span class="sb"><span class="str">| &nbsp; |-- __init__.py</span></span><span class="str"><br></span><span class="sb"><span class="str">| &nbsp; |-- models.py</span></span><span class="str"><br></span><span class="sb"><span class="str">| &nbsp; |-- static</span></span><span class="str"><br></span><span class="sb"><span class="str">| &nbsp; | &nbsp; `</span></span><span class="o"><span class="pun">--</span></span><span class="pln"> </span><span class="n"><span class="pln">styles</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">css</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">tests</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">urls</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="sb"><span class="str">`-- views.py</span></span><span class="str"><br></span><span class="sb"><span class="str">|-- templates</span></span><span class="str"><br></span><span class="sb"><span class="str">| &nbsp; |-- other_app</span></span><span class="str"><br></span><span class="sb"><span class="str">| &nbsp; | &nbsp; `</span></span><span class="o"><span class="pun">--</span></span><span class="pln"> </span><span class="n"><span class="pln">home</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">html</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="sb"><span class="str">`-- some_app</span></span><span class="str"><br></span><span class="sb"><span class="str">| &nbsp; &nbsp; &nbsp; `</span></span><span class="o"><span class="pun">--</span></span><span class="pln"> </span><span class="n"><span class="pln">home</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">html</span></span><span class="pln"><br></span><span class="sb"><span class="str">`-- test_project</span></span><span class="str"><br></span><span class="sb"><span class="str"> &nbsp; &nbsp;|-- __init__.py</span></span><span class="str"><br></span><span class="sb"><span class="str"> &nbsp; &nbsp;|-- settings.py</span></span><span class="str"><br></span><span class="sb"><span class="str"> &nbsp; &nbsp;|-- urls.py</span></span><span class="str"><br></span><span class="sb"><span class="str"> &nbsp; &nbsp;`</span></span><span class="o"><span class="pun">--</span></span><span class="pln"> </span><span class="n"><span class="pln">wsgi</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span></pre></div>
+
+
+<p>Add other_app to INSTALLED_APPS.</p>
+<p>Now check the url <strong>http://127.0.0.1:8000/other_app/home</strong>.</p>
+<p>Let's add a stylesheet to home of other_app. Let's assume we want to 
+make background color of other_app's home as blue. For this we create 
+the stylesheet other_app/static/other_style.css</p>
+<div class="highlight"><pre class="prettyprint"><span class="n"><span class="pln">body</span></span><span class="pln"><br></span><span class="p"><span class="pun">{</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="n"><span class="pln">background</span></span><span class="o"><span class="pun">-</span></span><span class="n"><span class="pln">color</span><span class="pun">:</span></span><span class="pln"> </span><span class="n"><span class="pln">blue</span></span><span class="p"><span class="pun">;</span></span><span class="pln"><br></span><span class="p"><span class="pun">}</span></span></pre></div>
+
+
+<p>Now add this stylesheet to other_app's home template. So, we edit templates/other_app/home.html and change its content to</p>
+<div class="highlight"><pre class="prettyprint"><span class="nt"><span class="pun">&lt;</span><span class="tag">html</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;</span><span class="tag">head</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;</span><span class="tag">link</span></span><span class="pln"> </span><span class="na"><span class="atn">href</span><span class="pun">=</span></span><span class="s"><span class="atv">"{{STATIC_URL}}other_style.css"</span></span><span class="pln"> </span><span class="na"><span class="atn">rel</span><span class="pun">=</span></span><span class="s"><span class="atv">"stylesheet"</span></span><span class="pln"> </span><span class="na"><span class="atn">type</span><span class="pun">=</span></span><span class="s"><span class="atv">"text/css"</span></span><span class="nt"><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;/</span><span class="tag">head</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;</span><span class="tag">body</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;</span><span class="tag">h1</span><span class="pun">&gt;</span></span><span class="pln">This is home for other_app</span><span class="nt"><span class="pun">&lt;/</span><span class="tag">h1</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;/</span><span class="tag">body</span><span class="pun">&gt;</span></span><span class="pln"><br></span><span class="nt"><span class="pun">&lt;/</span><span class="tag">html</span><span class="pun">&gt;</span></span></pre></div>
+
+
+<p>Refresh your page at <code>http://127.0.0.1:8000/other_app/home</code>.
+ You will see a blue background on this page. You might have to restart 
+your server to see this change. Also, you will be able to see the 
+stylesheet for this page at <code>http://127.0.0.1:8000/static/other_style.css</code>.</p>
+<p>Also, verify that home of some_app still has a red background at <code>http://127.0.0.1:8000/some_app/home</code>.</p>
+<h4>What happened here.</h4>
+<p>When we made a request for /static/other_style.css, Django knows that
+ STATIC_URL is set to '/static/' which matches the first fragment of the
+ url we provide and hence infers that we want it to serve a static file.
+ So, it starts looking into static/ subdirectory of all the apps. It 
+looks into 'static/' subdirectory of all apps because 
+STATICFILES_FINDERS contains 
+'django.contrib.staticfiles.finders.AppDirectoriesFinder'. Since it 
+finds a file called other_style.css in the static/ subdirectory of 
+other_app, it serves it.</p>
+<p>However, there is one problem with this approach. You must have 
+noticed that we named the stylesheet of other_app as other_style.css. 
+What if we wanted to name this stylesheet as styles.css. Let's try doing
+ it.</p>
+<div class="highlight"><pre class="prettyprint"><span class="n"><span class="pln">mv</span></span><span class="pln"> </span><span class="n"><span class="pln">other_app</span></span><span class="sr"><span class="pun">/</span><span class="pln">static</span><span class="pun">/</span><span class="pln">o</span></span><span class="n"><span class="pln">ther_style</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">css</span></span><span class="pln"> </span><span class="n"><span class="pln">other_app</span></span><span class="sr"><span class="pun">/</span><span class="pln">static</span><span class="pun">/</span><span class="pln">s</span></span><span class="n"><span class="pln">tyles</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">css</span></span></pre></div>
+
+
+<p>Once we make this change, we will also have to change the html of 
+homepage of other_app to include this file. So, edit 
+templates/other_app/home.html and make this change. We have to do this 
+because we renamed other_style.css to styles.css. Html of other_app 
+changes to:</p>
+<div class="highlight"><pre class="prettyprint"><span class="nt"><span class="pun">&lt;</span><span class="tag">html</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;</span><span class="tag">head</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;</span><span class="tag">link</span></span><span class="pln"> </span><span class="na"><span class="atn">href</span><span class="pun">=</span></span><span class="s"><span class="atv">"{{STATIC_URL}}styles.css"</span></span><span class="pln"> </span><span class="na"><span class="atn">rel</span><span class="pun">=</span></span><span class="s"><span class="atv">"stylesheet"</span></span><span class="pln"> </span><span class="na"><span class="atn">type</span><span class="pun">=</span></span><span class="s"><span class="atv">"text/css"</span></span><span class="nt"><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;/</span><span class="tag">head</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;</span><span class="tag">body</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;</span><span class="tag">h1</span><span class="pun">&gt;</span></span><span class="pln">This is home for other_app</span><span class="nt"><span class="pun">&lt;/</span><span class="tag">h1</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;/</span><span class="tag">body</span><span class="pun">&gt;</span></span><span class="pln"><br></span><span class="nt"><span class="pun">&lt;/</span><span class="tag">html</span><span class="pun">&gt;</span></span></pre></div>
+
+
+<p>Now see both the html pages, we have created.</p>
+<p><code>http://127.0.0.1:8000/some_app/home</code></p>
+<p><code>http://127.0.0.1:8000/other_app/home</code></p>
+<p>You will find that the background of both pages is shown as red now. 
+It depends on what order you have the apps listed in INSTALLED_APPS. If 
+some_app appears before other_app in INSTALLED_APPS, both the pages will
+ have red background. If other_app appears before some_app, both the 
+pages will have blue background. In my INSTALLED_APPS, some_app appears 
+before other_app, so both pages have red background for me.</p>
+<h4>Why this happened:</h4>
+<p>Both these pages try to access a static file named styles.css. Django
+ tries to find this file in the static/ subdirectory of each app listed 
+in INSTALLED_APPS. Once it finds it in static/ subdirectory of some_app,
+ it serves it and does not try to find it in static/ subdirectory of 
+other_app. Since, static/styles.css for some_app says that the 
+background should be red, so the background is shown red for both of 
+these pages. </p>
+<h4>How do we prevent it:</h4>
+<p>So, we want to name stylesheet in both apps as styles.css. For this, 
+we need one extra level of directory inside static/ subdirectory of each
+ app. Let's do the following</p>
+<div class="highlight"><pre class="prettyprint"><span class="nb"><span class="pln">mkdir</span></span><span class="pln"> </span><span class="n"><span class="pln">some_app</span></span><span class="sr"><span class="pun">/</span><span class="pln">static</span><span class="pun">/</span><span class="pln">som</span></span><span class="n"><span class="pln">e_app</span></span><span class="pln"><br></span><span class="n"><span class="pln">mv</span></span><span class="pln"> </span><span class="n"><span class="pln">some_app</span></span><span class="sr"><span class="pun">/</span><span class="pln">static</span><span class="pun">/</span><span class="pln">s</span></span><span class="n"><span class="pln">tyles</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">css</span></span><span class="pln"> </span><span class="n"><span class="pln">some_app</span></span><span class="sr"><span class="pun">/</span><span class="pln">static</span><span class="pun">/</span><span class="pln">som</span></span><span class="n"><span class="pln">e_app</span></span><span class="pln"><br><br></span><span class="nb"><span class="pln">mkdir</span></span><span class="pln"> </span><span class="n"><span class="pln">other_app</span></span><span class="sr"><span class="pun">/</span><span class="pln">static</span><span class="pun">/</span><span class="pln">o</span></span><span class="n"><span class="pln">ther_app</span></span><span class="pln"><br></span><span class="n"><span class="pln">mv</span></span><span class="pln"> </span><span class="n"><span class="pln">other_app</span></span><span class="sr"><span class="pun">/</span><span class="pln">static</span><span class="pun">/</span><span class="pln">s</span></span><span class="n"><span class="pln">tyles</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">css</span></span><span class="pln"> &nbsp;</span><span class="n"><span class="pln">other_app</span></span><span class="sr"><span class="pun">/</span><span class="pln">static</span><span class="pun">/</span><span class="pln">o</span></span><span class="n"><span class="pln">ther_app</span></span><span class="o"><span class="pun">/</span></span></pre></div>
+
+
+<p>So, we created a directory inside static/ subdirectory of each app. 
+The name of this directory is the same as the app name. Then we moved 
+the static resource i.e stylesheet inside the new directory.</p>
+<p>We will also have to change the path to stylesheet in the templates.</p>
+<p>Edit templates/some_app/home.html and change the path of stylesheet. So, the new content becomes:</p>
+<div class="highlight"><pre class="prettyprint"><span class="nt"><span class="pun">&lt;</span><span class="tag">html</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;</span><span class="tag">head</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;</span><span class="tag">link</span></span><span class="pln"> </span><span class="na"><span class="atn">href</span><span class="pun">=</span></span><span class="s"><span class="atv">"{{STATIC_URL}}some_app/styles.css"</span></span><span class="pln"> </span><span class="na"><span class="atn">rel</span><span class="pun">=</span></span><span class="s"><span class="atv">"stylesheet"</span></span><span class="pln"> </span><span class="na"><span class="atn">type</span><span class="pun">=</span></span><span class="s"><span class="atv">"text/css"</span></span><span class="nt"><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;/</span><span class="tag">head</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;</span><span class="tag">body</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;</span><span class="tag">h1</span><span class="pun">&gt;</span></span><span class="pln">This is home for some_app</span><span class="nt"><span class="pun">&lt;/</span><span class="tag">h1</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;/</span><span class="tag">body</span><span class="pun">&gt;</span></span><span class="pln"><br></span><span class="nt"><span class="pun">&lt;/</span><span class="tag">html</span><span class="pun">&gt;</span></span></pre></div>
+
+
+<p>Make similar change to templates/other_app/home.html, so that new content becomes:</p>
+<div class="highlight"><pre class="prettyprint"><span class="nt"><span class="pun">&lt;</span><span class="tag">html</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;</span><span class="tag">head</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;</span><span class="tag">link</span></span><span class="pln"> </span><span class="na"><span class="atn">href</span><span class="pun">=</span></span><span class="s"><span class="atv">"{{STATIC_URL}}other_app/styles.css"</span></span><span class="pln"> </span><span class="na"><span class="atn">rel</span><span class="pun">=</span></span><span class="s"><span class="atv">"stylesheet"</span></span><span class="pln"> </span><span class="na"><span class="atn">type</span><span class="pun">=</span></span><span class="s"><span class="atv">"text/css"</span></span><span class="nt"><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;/</span><span class="tag">head</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;</span><span class="tag">body</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;</span><span class="tag">h1</span><span class="pun">&gt;</span></span><span class="pln">This is home for other_app</span><span class="nt"><span class="pun">&lt;/</span><span class="tag">h1</span><span class="pun">&gt;</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="nt"><span class="pun">&lt;/</span><span class="tag">body</span><span class="pun">&gt;</span></span><span class="pln"><br></span><span class="nt"><span class="pun">&lt;/</span><span class="tag">html</span><span class="pun">&gt;</span></span></pre></div>
+
+
+<p>Now see both the html pages again</p>
+<p><code>http://127.0.0.1:8000/some_app/home</code></p>
+<p><code>http://127.0.0.1:8000/other_app/home</code></p>
+<p>You should find red background for some_app and blue background for other_app. </p>
+<h4>What happened here</h4>
+<ul>
+<li>Template of some_app references <code>http://127.0.0.1:8000/static/some_app/styles.css</code>.</li>
+<li>Django sees that this url starts with /static/, which is the 
+STATIC_URL and infers that it needs to serve the static file 
+some_app/styles.css</li>
+<li>It starts looking for file some_app/styles.css in static/ subdirectory of apps.</li>
+<li>It finds this file in static/ of some_app and serves it.</li>
+<li>Template of other_app references <code>http://127.0.0.1:8000/static/other_app/styles.css</code>.</li>
+<li>Django starts looking for file other_app/styles.css in static/ subdirectory of apps.</li>
+<li>It finds it in static/ of other_app and serves it.</li>
+</ul>
+<p>Hope STATIC_URL, STATICFILES_FINDERS and how static files are served makes more sense now.</p>
+<h3>About STATICFILES_DIRS</h3>
+<p>Till now our assumption was that we need separate styling on 
+templates of some_app and other_app. So, we wrote different stylesheet 
+for them.</p>
+<p>Assume we want some style which should be common on all the pages 
+across the project and they are not specific to a particular app. In 
+that case, we do not keep such stylesheet in the static/ subdirectory of
+ any particular app. Instead we create a directory at the same level as 
+manage.py and put project wide static resources in that directory.</p>
+<p>Let's see it in action.</p>
+<p>Create a directory called <strong>project_static</strong> at the same level as manage.py.</p>
+<div class="highlight"><pre class="prettyprint"><span class="nb"><span class="pln">mkdir</span></span><span class="pln"> </span><span class="n"><span class="pln">project_static</span></span></pre></div>
+
+
+<p>Let's create a file named base.css inside it.</p>
+<div class="highlight"><pre class="prettyprint"><span class="n"><span class="pln">touch</span></span><span class="pln"> </span><span class="n"><span class="pln">project_static</span></span><span class="o"><span class="pun">/</span></span><span class="n"><span class="kwd">base</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">css</span></span></pre></div>
+
+
+<p>Edit this file project_static/base.css and add the following content to it.</p>
+<div class="highlight"><pre class="prettyprint"><span class="n"><span class="pln">h1</span></span><span class="pln"><br></span><span class="p"><span class="pun">{</span></span><span class="pln"><br>&nbsp; &nbsp; </span><span class="n"><span class="pln">font</span></span><span class="o"><span class="pun">-</span></span><span class="n"><span class="pln">style</span><span class="pun">:</span></span><span class="pln"> </span><span class="n"><span class="pln">italic</span></span><span class="p"><span class="pun">;</span></span><span class="pln"><br></span><span class="p"><span class="pun">}</span></span></pre></div>
+
+
+<p>So, we want to make h1 as italic across entire project.</p>
+<p>Django is still not aware about this file and will not serve it. For 
+making Django aware about this file we need to add the directory 
+containing this file to STATICFILES_DIRS. So edit 
+test_project/settings.py and add the required directory to 
+STATICFILES_DIRS.</p>
+<div class="highlight"><pre class="prettyprint"><span class="n"><span class="pln">STATICFILES_DIRS</span></span><span class="pln"> </span><span class="o"><span class="pun">=</span></span><span class="pln"> </span><span class="p"><span class="pun">(</span></span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="n"><span class="pln">os</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">path</span></span><span class="o"><span class="pun">.</span></span><span class="nb"><span class="pln">join</span></span><span class="p"><span class="pun">(</span></span><span class="n"><span class="pln">PROJECT_DIR</span></span><span class="p"><span class="pun">,</span></span><span class="pln"> </span><span class="s"><span class="str">'../project_static'</span></span><span class="p"><span class="pun">),</span></span><span class="pln"><br></span><span class="p"><span class="pun">)</span></span></pre></div>
+
+
+<p>Try to access url <code>127.0.0.1:8000/static/base.css</code>. You 
+should see the contents of the stylesheet you just wrote. Make sure that
+ you have 'django.contrib.staticfiles.finders.FileSystemFinder' in 
+STATICFILES_FINDERS, otherwise this url will give you a 404 page.</p>
+<h4>What happened here:</h4>
+<ul>
+<li>Django server sees that a request comes for a static resource, since it is for a url that starts with '/static/'.</li>
+<li>It tries to find the static file i.e base.css in any of the directory defined in STATICFILES_DIRS.</li>
+<li>Since we have only one directory defined in STATICFILES_DIRS, which 
+is project_static, Django server tries to find this file inside this 
+directory. It finds the file it is searching for in this directory and 
+serves it.</li>
+<li>Had it not found this file in any of the directory defined in 
+STATICFILES_DIRS, it would have tried to find the file in static/ 
+subdirectory of each of the apps defined in INSTALLED_APPS.</li>
+<li>Notice that we still didn't need to add staticfiles_urlpatterns().</li>
+</ul>
+<p>For using this file in templates, we need to reference this 
+stylesheet. Add the following line to both of the templates we defined.</p>
+<div class="highlight"><pre class="prettyprint"><span class="o"><span class="pun">&lt;</span></span><span class="nb"><span class="tag">link</span></span><span class="pln"> </span><span class="n"><span class="atn">href</span></span><span class="o"><span class="pun">=</span></span><span class="s"><span class="atv">"{{STATIC_URL}}base.css"</span></span><span class="pln"> </span><span class="n"><span class="atn">rel</span></span><span class="o"><span class="pun">=</span></span><span class="s"><span class="atv">"stylesheet"</span></span><span class="pln"> </span><span class="n"><span class="atn">type</span></span><span class="o"><span class="pun">=</span></span><span class="s"><span class="atv">"text/css"</span></span><span class="o"><span class="pun">&gt;</span></span></pre></div>
+
+
+<p>Refresh the urls for both the pages. You will see that h1 appears in italic on these pages.</p>
+<p>Let's check the final directory structure which will help in case you have some issues.</p>
+<div class="highlight"><pre class="prettyprint"><span class="p"><span class="pun">(</span></span><span class="n"><span class="pln">staticvirt</span></span><span class="p"><span class="pun">)</span></span><span class="o"><span class="pun">~</span></span><span class="sr"><span class="str">/staticvirt/</span></span><span class="n"><span class="pln">test_project</span></span><span class="nv"><span class="pln">$</span></span><span class="pln"> </span><span class="nv"><span class="pln">tree</span></span><span class="pln"> </span><span class="o"><span class="pun">-</span></span><span class="n"><span class="pln">I</span></span><span class="pln"> </span><span class="o"><span class="pun">*.</span></span><span class="n"><span class="pln">pyc</span></span><span class="pln"><br></span><span class="o"><span class="pun">.</span></span><span class="pln"><br></span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">manage</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"><br></span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">other_app</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">__init__</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">models</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="kwd">static</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="sb"><span class="str">`-- other_app</span></span><span class="str"><br></span><span class="sb"><span class="str">| &nbsp; | &nbsp; &nbsp; &nbsp; `</span></span><span class="o"><span class="pun">--</span></span><span class="pln"> </span><span class="n"><span class="pln">styles</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">css</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">tests</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">urls</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="sb"><span class="str">`-- views.py</span></span><span class="str"><br></span><span class="sb"><span class="str">|-- project_static</span></span><span class="str"><br></span><span class="sb"><span class="str">| &nbsp; `</span></span><span class="o"><span class="pun">--</span></span><span class="pln"> </span><span class="n"><span class="kwd">base</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">css</span></span><span class="pln"><br></span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">some_app</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">__init__</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">models</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="kwd">static</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="sb"><span class="str">`-- some_app</span></span><span class="str"><br></span><span class="sb"><span class="str">| &nbsp; | &nbsp; &nbsp; &nbsp; `</span></span><span class="o"><span class="pun">--</span></span><span class="pln"> </span><span class="n"><span class="pln">styles</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">css</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">tests</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="o"><span class="pun">|--</span></span><span class="pln"> </span><span class="n"><span class="pln">urls</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="sb"><span class="str">`-- views.py</span></span><span class="str"><br></span><span class="sb"><span class="str">|-- templates</span></span><span class="str"><br></span><span class="sb"><span class="str">| &nbsp; |-- other_app</span></span><span class="str"><br></span><span class="sb"><span class="str">| &nbsp; | &nbsp; `</span></span><span class="o"><span class="pun">--</span></span><span class="pln"> </span><span class="n"><span class="pln">home</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">html</span></span><span class="pln"><br></span><span class="o"><span class="pun">|</span></span><span class="pln"> &nbsp; </span><span class="sb"><span class="str">`-- some_app</span></span><span class="str"><br></span><span class="sb"><span class="str">| &nbsp; &nbsp; &nbsp; `</span></span><span class="o"><span class="pun">--</span></span><span class="pln"> </span><span class="n"><span class="pln">home</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">html</span></span><span class="pln"><br></span><span class="sb"><span class="str">`-- test_project</span></span><span class="str"><br></span><span class="sb"><span class="str"> &nbsp; &nbsp;|-- __init__.py</span></span><span class="str"><br></span><span class="sb"><span class="str"> &nbsp; &nbsp;|-- settings.py</span></span><span class="str"><br></span><span class="sb"><span class="str"> &nbsp; &nbsp;|-- urls.py</span></span><span class="str"><br></span><span class="sb"><span class="str"> &nbsp; &nbsp;`</span></span><span class="o"><span class="pun">--</span></span><span class="pln"> </span><span class="n"><span class="pln">wsgi</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"><br><br></span><span class="mi"><span class="lit">11</span></span><span class="pln"> </span><span class="n"><span class="pln">directories</span></span><span class="p"><span class="pun">,</span></span><span class="pln"> </span><span class="mi"><span class="lit">20</span></span><span class="pln"> </span><span class="n"><span class="pln">files</span></span></pre></div>
+
+
+<h3>About STATIC_ROOT</h3>
+<ul>
+<li>You should never require STATIC_ROOT in development if you are using Django's runserver.</li>
+<li>Once you go to production, you can use it on the server. Django provides a management command called <strong>collectstatic</strong>,
+ which will collect all the static resources, i.e the resources found in
+ STATICFILES_DIRS and the resources found in static/ subdirectory of 
+apps, into a single location defined by STATIC_ROOT.</li>
+<li>STATIC_ROOT only comes into picture if you want to use <strong>collectstatic</strong> management command provided by Django.</li>
+</ul>
+<p>Let's try it out.
+Create a directory named static_resources.</p>
+<div class="highlight"><pre class="prettyprint"><span class="nb"><span class="pln">mkdir</span></span><span class="pln"> </span><span class="n"><span class="pln">static_resources</span></span></pre></div>
+
+
+<p>Edit test_project/settings.py and add the following line:</p>
+<div class="highlight"><pre class="prettyprint"><span class="n"><span class="pln">STATIC_ROOT</span></span><span class="pln"> </span><span class="o"><span class="pun">=</span></span><span class="pln"> </span><span class="n"><span class="pln">os</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">path</span></span><span class="o"><span class="pun">.</span></span><span class="nb"><span class="pln">join</span></span><span class="p"><span class="pun">(</span></span><span class="n"><span class="pln">PROJECT_DIR</span></span><span class="p"><span class="pun">,</span></span><span class="pln"> </span><span class="s"><span class="str">'../static_resources'</span></span><span class="p"><span class="pun">)</span></span></pre></div>
+
+
+<p>Now run the following command:</p>
+<div class="highlight"><pre class="prettyprint"><span class="n"><span class="pln">python</span></span><span class="pln"> </span><span class="n"><span class="pln">manage</span></span><span class="o"><span class="pun">.</span></span><span class="n"><span class="pln">py</span></span><span class="pln"> </span><span class="n"><span class="pln">collectstatic</span></span></pre></div>
+
+
+<p>You will be asked for confirmation. Type 'yes', and you will see all 
+your static resources are collected into the directory defined by 
+STATIC_ROOT.</p>
+<p>And on your production server you can configure your server to serve 
+all the request for static files from the directory defined by 
+STATIC_ROOT.</p>
+<p>Again, this STATIC_ROOT part was only for illustration purpose. You should not need it during development.</p><p></p>
+
+    
+    
+      <h4>Related Posts</h4>
+      <ul>
+
+      
+          <li>
+              <a href="http://agiliq.com/blog/2013/02/easy-client-side-form-validations-for-django-djang/">Easy client side form validations for Django: Django Parsley</a>
+          </li>
+      
+          <li>
+              <a href="http://agiliq.com/blog/2013/02/two-scoops-of-django-review/">Two Scoops of Django: Review</a>
+          </li>
+      
+          <li>
+              <a href="http://agiliq.com/blog/2013/03/logging-in-django/">Logging in Django</a>
+          </li>
+      
+          <li>
+              <a href="http://agiliq.com/blog/2013/04/common-testing-scenarios-for-django-app/">Common testing scenarios for Django app.</a>
+          </li>
+      
+          <li>
+              <a href="http://agiliq.com/blog/2013/06/deploying-django-using-docker/">Deploying django using docker</a>
+          </li>
+      
+      </ul>
+    
+
+      <hr>
+      <p>Can we help you build amazing apps? <a href="http://agiliq.com/contactus">Contact us today.</a>
+    
+    
+    </p><div class="topics">
+    
+      Topics : 
+      <a href="http://agiliq.com/blog/tag/django/">django</a>
+    
+      
+      <a href="http://agiliq.com/blog/tag/static/">static</a>
+    
+    </div>
+  </div>
+</div>
+</article>
+
+
+
+
+
+<!--COMMENT BLOCK STARTS-->
+<h2 style="clear:both;">Comments</h2>
+
+    <a name="comment-156740">
+    </a><div id="comments" class="commentor_block"><a name="comment-156740">
+	    </a><div class="leftnpanel"><a name="comment-156740">
+	        <span class="commentor">
+	           
+	               stanleyg
+	           
+	        </span>
+            <span class="postdate">
+                </span></a><a href="#comment-156740">10th May, 2013</a>
+            <br>
+	        <div class="comment_post">
+	            <p></p><p>Akshar,</p>
+
+<p>This is a very nice and clear explanation. I couldn't locate anything
+ relevant regarding this topic in djangobook and djangoproject website's
+ documentation on this is very confusing as it makes too many 
+assumptions that you already somehow magically understand most of these 
+concepts. You clarification really sheds a lot of light into the 
+workings and logic on how the static files are managed in django. Your 
+help is highly appreciated.</p><p></p>
+	        </div>
+	    </div>
+	    <div class="rightnpanel">
+	        <img src="Serving%20static%20files%20in%20Django%20-%20Agiliq%20Blog%20_%20Django%20web%20app%20development_files/e8b01e153ad4c82abb999389669b2b33.jpg" alt="commmenttor" class="picborder" height="50" width="50">
+	    </div>
+	    <div class="clear"></div>
+    </div>
+
+    <a name="comment-182792">
+    </a><div id="comments" class="commentor_block"><a name="comment-182792">
+	    </a><div class="leftnpanel"><a name="comment-182792">
+	        <span class="commentor">
+	           
+	               AES
+	           
+	        </span>
+            <span class="postdate">
+                </span></a><a href="#comment-182792">8th July, 2013</a>
+            <br>
+	        <div class="comment_post">
+	            <p></p><p>You are amazing, great job!</p><p></p>
+	        </div>
+	    </div>
+	    <div class="rightnpanel">
+	        <img src="Serving%20static%20files%20in%20Django%20-%20Agiliq%20Blog%20_%20Django%20web%20app%20development_files/2bafafb9c2296576200e49b5171ee0c5.jpg" alt="commmenttor" class="picborder" height="50" width="50">
+	    </div>
+	    <div class="clear"></div>
+    </div>
+
+<!--COMMENT BLOCK ENDS-->
+
+<div class="clear"></div>
+
+
+<!--  Ping Backs starts -->
+
+
+
+    
+        <div class="comment_block">
+            <span class="commentor">
+                <!-- <a name='pingback-113' href='/blog/2013/03/serving-static-files-in-django/#pingback-113'>permalink</a>  -->
+            </span>
+            <span class="postdate">11th July, 2013, pingback from <a href="http://whygtu.biz/user36/2013/07/11/django-static-files-in-base-template/" rel="nofollow">http://whygtu.biz/user36/2013/07/11/d...</a></span>
+            <div class="comment_post"></div>
+        </div>
+    
+
+<!--  Ping Backs ends -->
+
+<!--COMMENT FORM BLOCK STARTS-->
+<div class="general_block">
+    
+        <form action="." method="post">
+            <input name="csrfmiddlewaretoken" value="CVcHhJlB6yQrbdop3XLgmcbavkZCCgg4" type="hidden">
+            <fieldset>
+                <legend>Post a comment</legend>
+                Name : <br> <input class="textfield" id="id_name" maxlength="100" name="name" type="text"> <br>
+	            Email :  <br> <input class="textfield" id="id_email" name="email" type="text"> <br>
+	            Your site url:  <br> <input class="textfield" id="id_url" name="url" type="text"> <br>
+                Comment :  <br> <textarea class="textarea" cols="40" id="id_text" name="text" rows="10"></textarea> <br>
+                <input name="button" id="button" value="Comment" class="but_right" type="submit">
+	        </fieldset>
+	    </form>
+    
+</div>
+<!--COMMENT FORM BLOCK ENDS-->
+
+
+      </div>
+      <div class="rightpanel">
+        
+        <div id="blogposts_block">
+          <div class="block_title">Recent Articles</div>
+          <ul class="list">
+            
+                <li><a href="http://agiliq.com/blog/2013/07/basics-wsgi/" title="Basics of WSGI">Basics of WSGI</a></li>
+            
+                <li><a href="http://agiliq.com/blog/2013/06/self-testing-fabfile-using-docker/" title="Self-testing fabfile using docker">Self-testing fabfile using docker</a></li>
+            
+                <li><a href="http://agiliq.com/blog/2013/06/deploying-django-using-docker/" title="Deploying django using docker">Deploying django using docker</a></li>
+            
+                <li><a href="http://agiliq.com/blog/2013/04/common-testing-scenarios-for-django-app/" title="Common testing scenarios for Django app.">Common testing scenarios for Django app.</a></li>
+            
+                <li><a href="http://agiliq.com/blog/2013/03/logging-in-django/" title="Logging in Django">Logging in Django</a></li>
+            
+                <li><a href="http://agiliq.com/blog/2013/03/serving-static-files-in-django/" title="Serving static files in Django">Serving static files in Django</a></li>
+            
+                <li><a href="http://agiliq.com/blog/2013/02/two-scoops-of-django-review/" title="Two Scoops of Django: Review">Two Scoops of Django: Review</a></li>
+            
+                <li><a href="http://agiliq.com/blog/2013/02/introduction-to-python-workshop-on-february-15th-2/" title="Introduction to Python Workshop on February 15th, 2013">Introduction to Python Workshop on February 15th, 2013</a></li>
+            
+                <li><a href="http://agiliq.com/blog/2013/02/easy-client-side-form-validations-for-django-djang/" title="Easy client side form validations for Django: Django Parsley">Easy client side form validations for Django: Django Parsley</a></li>
+            
+                <li><a href="http://agiliq.com/blog/2013/01/moreapps-android-library-project-open-sourced/" title="MoreApps - Android Library Project: Open Sourced">MoreApps - Android Library Project: Open Sourced</a></li>
+            
+          </ul>
+        </div>
+        
+        
+        <!--BLOGROLL STARTS HERE-->
+        <div id="archives_block">
+          <div class="block_title">About Agiliq</div>
+          <ul class="list_left">
+            
+                <li><a href="http://agiliq.com/" rel="nofollow">Agiliq - Building Amazing Apps</a></li>
+            
+                <li><a href="https://github.com/agiliq" rel="nofollow">Our Open Source Code</a></li>
+            
+                <li><a href="http://agiliq.com/contactus" rel="nofollow">Contact Us</a></li>
+            
+          </ul>
+          <div class="clear"></div>
+        </div>
+        <!--BLOGROLL ENDS HERE-->
+        
+
+
+        
+        <div id="categories_block">
+          <div class="block_title">Topics</div>
+          <ul class="list_left">
+              
+                  <li><a href="http://agiliq.com/blog/tag/rails/" class="left" rel="nofollow">rails</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/django/" class="right" rel="nofollow">django</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/linkroundup/" class="left" rel="nofollow">linkroundup</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/api/" class="right" rel="nofollow">API</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/appengine/" class="left" rel="nofollow">appengine</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/python/" class="right" rel="nofollow">python</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/startup/" class="left" rel="nofollow">startup</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/uncategorized/" class="right" rel="nofollow">Uncategorized</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/google/" class="left" rel="nofollow">google</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/marketing/" class="right" rel="nofollow">marketing</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/rambling/" class="left" rel="nofollow">rambling</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/search/" class="right" rel="nofollow">search</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/interviews/" class="left" rel="nofollow">interviews</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/5startupideas/" class="right" rel="nofollow">5startupideas</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/ideas/" class="left" rel="nofollow">ideas</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/seo/" class="right" rel="nofollow">seo</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/tips/" class="left" rel="nofollow">tips</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/forms/" class="right" rel="nofollow">forms</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/utilities/" class="left" rel="nofollow">utilities</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/web20/" class="right" rel="nofollow">web2.0</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/algorithms/" class="left" rel="nofollow">algorithms</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/presentations/" class="right" rel="nofollow">presentations</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/book/" class="left" rel="nofollow">book</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/tutorial/" class="right" rel="nofollow">tutorial</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/meta/" class="left" rel="nofollow">meta</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/apps/" class="right" rel="nofollow">apps</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/reviews/" class="left" rel="nofollow">reviews</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/iphone/" class="right" rel="nofollow">iphone</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/android/" class="left" rel="nofollow">android</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/mobile/" class="right" rel="nofollow">mobile</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/deploy/" class="left" rel="nofollow">deploy</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/mysql/" class="right" rel="nofollow">mysql</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/java/" class="left" rel="nofollow">java</a></li>
+              
+                  <li><a href="http://agiliq.com/blog/tag/open-source/" class="right" rel="nofollow">open-source</a></li>
+              
+          </ul>
+          <div class="clear"></div>
+        </div>
+        
+        
+        <!--ARCHIEVES STARTS HERE-->
+        <div id="archives_block">
+          <div class="block_title">Archives</div>
+          <ul class="list_left">
+            
+                <li><a href="http://agiliq.com/blog/archive/2013/jul/" class="left" rel="nofollow">July 2013</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2013/jun/" class="right" rel="nofollow">June 2013</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2013/apr/" class="left" rel="nofollow">April 2013</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2013/mar/" class="right" rel="nofollow">March 2013</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2013/feb/" class="left" rel="nofollow">February 2013</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2013/jan/" class="right" rel="nofollow">January 2013</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2012/nov/" class="left" rel="nofollow">November 2012</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2012/oct/" class="right" rel="nofollow">October 2012</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2012/sep/" class="left" rel="nofollow">September 2012</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2012/jul/" class="right" rel="nofollow">July 2012</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2012/jun/" class="left" rel="nofollow">June 2012</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2012/may/" class="right" rel="nofollow">May 2012</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2012/apr/" class="left" rel="nofollow">April 2012</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2012/mar/" class="right" rel="nofollow">March 2012</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2012/feb/" class="left" rel="nofollow">February 2012</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2012/jan/" class="right" rel="nofollow">January 2012</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2011/dec/" class="left" rel="nofollow">December 2011</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2011/oct/" class="right" rel="nofollow">October 2011</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2011/sep/" class="left" rel="nofollow">September 2011</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2011/jul/" class="right" rel="nofollow">July 2011</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2011/jun/" class="left" rel="nofollow">June 2011</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2011/apr/" class="right" rel="nofollow">April 2011</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2011/feb/" class="left" rel="nofollow">February 2011</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2011/jan/" class="right" rel="nofollow">January 2011</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2010/dec/" class="left" rel="nofollow">December 2010</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2010/nov/" class="right" rel="nofollow">November 2010</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2010/oct/" class="left" rel="nofollow">October 2010</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2010/sep/" class="right" rel="nofollow">September 2010</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2010/jun/" class="left" rel="nofollow">June 2010</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2010/apr/" class="right" rel="nofollow">April 2010</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2010/mar/" class="left" rel="nofollow">March 2010</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2010/jan/" class="right" rel="nofollow">January 2010</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2009/dec/" class="left" rel="nofollow">December 2009</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2009/nov/" class="right" rel="nofollow">November 2009</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2009/oct/" class="left" rel="nofollow">October 2009</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2009/sep/" class="right" rel="nofollow">September 2009</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2009/aug/" class="left" rel="nofollow">August 2009</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2009/jul/" class="right" rel="nofollow">July 2009</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2009/jun/" class="left" rel="nofollow">June 2009</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2009/apr/" class="right" rel="nofollow">April 2009</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2009/mar/" class="left" rel="nofollow">March 2009</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2009/feb/" class="right" rel="nofollow">February 2009</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2008/nov/" class="left" rel="nofollow">November 2008</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2008/oct/" class="right" rel="nofollow">October 2008</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2008/jun/" class="left" rel="nofollow">June 2008</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2008/may/" class="right" rel="nofollow">May 2008</a></li>
+            
+                <li><a href="http://agiliq.com/blog/archive/2008/apr/" class="left" rel="nofollow">April 2008</a></li>
+            
+          </ul>
+          <div class="clear"></div>
+        </div>
+        <!--ARCHIEVES ENDS HERE-->
+        
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <!--  CONTENT BLOCK STARTS HERE -->
+  </div>
+  <!--PAGE CONTAINER ENDS-->
+  <!--FOOTER CONTAINER STARTS-->
+  <div id="footerbg">
+    <span class="footertext">© Agiliq, 2009-2012</span>
+  </div>
+  <!--FOOTER CONTAINER ENDS-->
+</div>
+<script type="text/javascript" src="Serving%20static%20files%20in%20Django%20-%20Agiliq%20Blog%20_%20Django%20web%20app%20development_files/3a7ac86d2b0d.js"></script>
+<script type="text/javascript">
+    function pretty_print(){
+        $(document).ready(function() {
+
+    // add prettyprint class to all <pre></pre> blocks
+    var prettify = false;
+    $("pre").each(function() {
+        $(this).addClass('prettyprint');
+        prettify = true;
+    });
+
+    // if code blocks were found, bring in the prettifier ...
+    if ( prettify ) {
+        $.getScript("/static/blogango/js/prettify.js", function() { prettyPrint() });
+    }
+});
+}
+</script>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-367368-15']);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_setCustomVar',1, 'Section', 'blog', 3 ]);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+</body></html>

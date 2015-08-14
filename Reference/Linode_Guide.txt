@@ -1,0 +1,40 @@
+Resources
+    https://manager.linode.com/
+    http://library.linode.com/getting-started/
+    http://www.linode.com/forums/
+    http://www.linode.com/irc/
+
+Log in
+    SSH root@106.186.24.75   //old one 106.187.53.157  JP data center//97.107.128.97  
+    ssh lucas@106.186.24.75 -p 899
+    133436fang
+    
+    Lish
+        ssh yinanfang@lish-tokyo.linode.com
+        133436fang
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    Q
+    
+    python-sqlite3  and  sqlite3
+    
+    location
+    
+    virtual host?
+    
+    new user? access right? chown
+    
+    several host?  virtual host?
+        First project would be accessible at http://your.url.here/mysite1
+        Second project would be accessible at http://your.url.here/mysite2
+        need to have different profiles for different server? same IP? same ssh log in?
+        
+    tail command

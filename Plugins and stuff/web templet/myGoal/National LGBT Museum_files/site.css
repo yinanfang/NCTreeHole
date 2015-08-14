@@ -1,0 +1,1241 @@
+/* CSS Document */
+
+html, body, div, dl, dt, dd, ul, li, h1, h2, h3, h4, pre, form, fieldset, p, blockquote, th, td, img, a, table, tr {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+#r_contact_us address{text-align: left !important;}
+body{
+	font-family: 'Lato', sans-serif;
+	font-size:13px;
+	color:#fff;
+	line-height:17px;
+}
+
+#donatesection1 input,#donatesection2 input,#donatesection3 input, #donatesection1 select,#donatesection2 select,#donatesection3 select{
+	background: #fff;
+	border: #d5d2d1 solid 1px;
+	padding: 4px;
+}
+
+.white{
+	color:#fff;
+}
+
+/* end colors */
+
+/* Main copy */
+h1{
+	font-family:"Garage Gothic", sans-serif;
+	line-height:42px;
+	font-weight:bold;
+	font-size:38pt;
+}
+
+h2{
+	font-family:"Garage Gothic", sans-serif;
+	line-height:36px;
+	font-weight:bold;
+	font-size:32pt;
+}
+
+h3{
+	font-family:"Garage Gothic", sans-serif;;
+	line-height:22px;
+	font-weight:bold;
+	font-size:18pt;
+}
+
+.loader h3, contenth3{
+	font-family:"Garage Gothic", sans-serif;;
+	line-height:22px;
+	font-weight:bold;
+	font-size:18pt;
+}
+#errorsdiv{}
+#errorsdiv label.error{color: red; display: block;}
+a{
+	color:#fff;
+	text-decoration:none;
+}
+
+a:visited{
+	color:#fff;
+}
+
+a:hover{
+	
+}
+
+/* end copy */
+
+/* SITE COLORS */
+
+.red{color:#e04242;}
+.orange{color:#f47d31;}
+.maroon{color:#d31245;}
+.blue{color:#14b6ea;}
+.green{color:#6fb118;}
+.darkGray{color:#403b39;}
+.lightGray{color:#aca6a4;}
+
+.red_theme a{color:#e04242;}
+.red_theme a:hover{color:#ad2121;}
+.red_theme a.selected{color:#ad2121;}
+
+.orange_theme a{color:#f47d31;}
+.orange_theme a:hover{color:#c25613;}
+.orange_theme a.selected{color:#c25613;}
+
+.maroon_theme a{color:#d31245;}
+.maroon_theme a:hover{color:#a1002b;}
+.maroon_theme a.selected{color:#a1002b;}
+
+.blue_theme a{color:#14b6ea;}
+.blue_theme a:hover{color:#008ab8;}
+.blue_theme a.selected{color:#008ab8;}
+
+.green_theme a{color:#6fb118;}
+.green_theme a:hover{color:#497d05;}
+.green_theme a.selected{color:#497d05;}
+
+/* General Layout */
+
+.uppercase{
+	text-transform:uppercase;
+}
+
+.h1_smaller{
+	line-height:28px;
+	font-size:34px;
+}
+
+.bigger{
+	font-size:15px;
+}
+
+.smaller{
+	font-size:12px;
+}
+
+.spaceTop{
+	margin-top:10px !important;
+}
+
+.spaceBottom{
+	margin-bottom:10px !important;
+}
+
+.spaceRight{
+	margin-right:10px !important;
+}
+
+.spaceLeft{
+	margin-left:10px !important;
+}
+
+
+.moreSpaceTop{
+	margin-top:20px !important;
+}
+
+.moreSpaceBottom{
+	margin-bottom:20px !important;
+}
+
+.moreSpaceRight{
+	margin-right:20px !important;
+}
+
+.moreSpaceLeft{
+	margin-left:20px !important;
+}
+
+.last{
+	margin-left:0 !important;
+	margin-bottom:0 !important;
+}
+
+.divider{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	height:0px;
+	border-bottom:1px #cdcac8 solid;
+	width:auto;
+}
+
+img.floatLeft{
+	display:inline;
+	float:left;
+}
+
+img.floatRight{
+	display:inline;
+	float:right;
+}
+
+/* dynamic sizing */
+.one_third_height{
+	height:34%;
+}
+
+.two_thirds_height{
+	height:66%;
+}
+
+.half_height{
+	height:50%;
+}
+
+.full_height{
+	height:100%;
+}
+
+.full_width{
+	clear:both;
+	width:100%;
+	float:left;
+}
+
+.half_width{
+	width:50%;
+	float:left;
+}
+
+/* end general layout */
+
+
+/** NAV **/
+#mainNavContainer{
+	z-index:1010;
+	position:fixed;
+	width:100%;
+	
+}
+
+#navButtons{
+	position:absolute;
+	width:100%;
+	height:20px;
+	padding:10px 0;
+	background:#e04242;
+}
+
+#slogan{
+	float:left;
+	margin-left:10px;
+}
+
+#nav{
+	position:absolute;
+	float:left;
+	width:100%;
+}
+
+#navButtonGuts{
+	margin:auto;
+	width:675px;
+	font-size:14px;
+}
+
+#navButtonGuts a{
+	color:#fff;
+}
+
+#navButtonGuts a:hover{
+	color:#fbf8ec;
+}
+
+#shareBtns{
+	position:relative;
+	float:right;
+	margin-right:10px;
+}
+
+.navArrow{
+	position:absolute;
+	display:none;
+}
+
+#navRevealArrows{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+}
+
+#navRevealArrowGuts{
+	position:relative;
+	width:80px;
+	margin:0 auto;
+}
+.manNavBtn{
+	display:inline-block;
+	cursor:pointer;
+	margin-right:10px;
+}
+
+/* END MENU */
+
+/* FOOTER */
+
+#footer{
+	height:20px;
+	width:100%;
+	padding:10px 0;
+	position:fixed;
+	bottom:-40px;
+	background:#625a57;
+}
+
+#footerMenu{
+	margin-left:126px;
+	margin-top:auto;
+	margin-bottom:auto;
+	float:left;
+	width:500px;
+}
+
+#footerSocial{
+	float:left;
+}
+
+#footerMenuTextButtons{
+	float:left;
+	margin-top:4px;
+}
+
+#footerSearch {
+	position: absolute;
+	right: 126px;
+	top: 11px;
+}
+#footerSearch form {
+	line-height: 22px;
+	padding: 0 47px 0 0;
+	position: relative;
+}
+
+#footerSearch .gform_body,
+#footerSearch .gfield {
+	margin: 0;
+}
+
+#footerSearch .gfield {
+	padding-left: 161px;
+	position: relative;
+}
+#footerSearch .gfield_label {
+	color: #fff;
+	font-style: italic;
+	font-weight: normal;
+	left: 0;
+	position: absolute;
+	top: 0;
+}
+#footerSearch .ginput_container {
+	margin-left: 3px;
+}
+#footerSearch .gform_footer {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+#footer input[type="text"]{
+	background-color:#fff;
+	border-style:none;
+	color:#aca6a4;
+	display: block;
+	height:16px;
+	width:177px;
+	padding:3px;
+}
+.ie7 #footer input[type="text"]{ 
+	margin-top: -17px;
+}
+#footer input[type="submit"]{
+	background:url(../images/footerSend.jpg);
+	border:none;
+	display:block; 
+	height:22px;
+	line-height: 0;
+	overflow: hidden;
+	text-indent: -999em;
+	width:44px;
+}
+
+/* END FOOTER */
+
+
+#container{
+	display:none;
+	position:relative;
+	width:100%;
+}
+
+#leftColumn{
+	width:50%;
+	position:absolute;
+}
+
+#leftColumnContent{
+	color:#000;
+	margin:100px auto;
+	width:400px;
+}
+
+#rightColumn{
+	right:1px;
+	width:50%;
+	position:fixed;
+}
+
+.content_panel{
+	clear:both;
+	float:left;
+	width:100%;
+	
+	overflow:hidden;
+	display:table;
+	position:relative;
+}
+
+
+/* PAGES */
+/* left side */
+#l_home{
+	background-image:url(../images/homeSide.jpg);
+	background-size:cover;
+	background-position:center;
+	background-repeat:no-repeat;
+}
+
+	#l_who_we_are{
+	}
+	
+	#homeBubble{
+		cursor:pointer;
+	}
+	
+	#homeRolloverContent{
+		position:absolute;
+		display:none;
+		top:0;
+		left:0;
+		width:100%;
+	}
+	
+	#homeRolloverScreen{
+		position:absolute;
+		top:0;
+		left:0;
+		height:100%;
+		width:100%;
+		background-color:#635a58;
+		opacity:0.9;
+		filter:alpha(opacity=90); /* For IE8 and earlier */
+	}
+	
+	.innerContentHomeRollover{
+		width:350px;
+	}
+	
+	#homeRolloverClose{
+		width:18px;
+		height:20px;
+		display:block;
+		margin-bottom:60px;
+		margin-left:-20px;
+		float:right;
+		cursor:pointer;
+	}
+	
+	#homeRolloverTextHolder{
+		height:100%;
+		width:100%;
+		display:table;
+		z-index:1000;
+		position:relative;
+		line-height:24px;
+		font-weight:200;
+	}
+	
+	#homeRolloverTextHolder h1{
+		font-size:95px;
+		line-height:100px;
+	}
+	
+	#homeRolloverText{
+		text-align:center;
+		color:#fff;
+		font-size:16px;
+	}
+
+/* museum plan stuff */
+#l_museum_plan{
+	background-color:#403b39;
+	background-image:url(../images/darkGrayHatch.jpg);
+	background-repeat:repeat;
+	background-position:right;
+	overflow:hidden;
+}
+
+	#l_museum_plan_holder{
+		background-image:url(../images/museumTour/streetsLeft.png);
+		background-position:right bottom;
+		position:relative;
+	}
+
+	.l_museum_plan_layer{
+		position:absolute;
+		height:719px;
+		width:599px;
+		right:0;
+		bottom:0;
+	}
+	
+	.museum_bubbles_holder{
+		position:relative;		
+	}
+	
+	.museumBubble{
+		position:absolute;
+	}
+	
+	.museumBubbleClicker{
+		background-color:#fff;
+		opacity:0;
+		filter:alpha(opacity=0); /* For IE8 and earlier */
+		position:absolute;
+		cursor:pointer;
+		z-index:500;
+	}
+	
+	#l_streets{
+		
+	}
+	
+	#l_museum_bubbles{
+		
+	}
+	
+	#l_museum_arrows{
+		
+	}
+	
+	#l_museum_bubbles_top{
+	}
+	
+	#museum_plan_content_sections_holder{
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+	}
+	
+	#museum_plan_content_sections{
+		position:relative;
+		margin:96px auto 0 auto;
+		width:420px;
+	}
+	
+	.museumContentSections{
+		color:#fff;
+		position:relative;
+		height:250px;
+	}
+
+	
+	#hereIAmBubble, #hereIAmBubbleClicker{
+		top:460px;
+		left:312px;
+		height:186px; 
+		width:186px;
+	}
+	
+	#changingExhibitionsBubble, #changingExhibitionsBubbleClicker{
+		top:427px;
+		left:485px;
+		height:93px; 
+		width:93px;
+	}
+	
+	#matiniBarBubble, #matiniBarBubbleClicker{
+		top:560px;
+		left:474px;
+		height:71px; 
+		width:97px;
+	} 
+/* END museum plan stuff */
+
+
+/* Blog stuff */
+
+#l_blog{
+	display:block;
+	background-color:#14b6ea;
+}
+
+	.blog_pod{
+		display:table;
+		
+		#position: relative; 
+	}
+
+	.blog_pod_content_positioner{
+		display: table-cell; 
+		vertical-align: middle;
+		overflow:visible;
+		width:100%;
+		/* height:100%; */
+		
+		/* IE HACK */
+		#position: absolute; 
+		#top: 50%;
+	}
+	
+	.blog_pod_content{
+		margin:0 30px;
+		
+		/* IE HACK */
+		#position: relative; 
+		#top: -50%;
+	}
+	
+	.blog_image{
+		background-size:cover;
+		background-position:center;	
+	}
+	
+	#blog_image_1{
+		background-image:url(../images/blogImg1.jpg);
+	}
+	
+	#blog_image_2{
+		background-image:url(../images/blogImg2.jpg);
+	}
+	
+	#blog_image_3{
+		background-image:url(../images/blogImg3.jpg);
+	}
+	
+	#l_exhibits_holder{
+		display:none;
+	}
+/* END Blog Stuff */
+
+/* news stuff */
+#l_news{
+	background-color:#fff;
+}
+
+	#l_news dl dt{
+		color:#403b39;
+		font-weight:bold;
+		float:left;
+		width:70px;
+	}
+	
+	#l_news dl dd{
+		margin-left:85px;
+		color:#f47d31;
+		padding-bottom:10px;
+	}
+/* END news stuff */
+
+#l_donation{
+	background-image:url(../images/greenTrianglePattern.jpg);
+	background-repeat:repeat;
+	background-color:#fff;
+}
+
+#l_get_involved{
+	background-color:#fff;
+}
+
+#l_contact_us{
+	background-image:url(../images/blueBoxPattern.jpg);
+	background-repeat:repeat;
+}
+
+/* right side */
+/* home page stuff */
+#r_home{
+	display:block;
+}
+
+	#who_we_are_btn{
+		background-image:url(../images/lightGrayHatch.jpg);
+		background-repeat:repeat;
+		text-align:right;
+		position:relative;
+	}
+	
+	#who_we_are_btn_guts{
+		bottom: 40px;
+		right: 32px;
+		position: absolute;
+	}
+	
+	#who_we_are_btn_arrow{
+		display:inline-block;
+		float:right;
+		margin-top: 56px;
+		margin-left: 3px;	
+	}
+	
+	#who_we_are_btn h1{
+		color:#403b39;
+		font-size:44px;
+		float:left;
+		line-height:38px;
+	}
+	
+	#make_a_donation_btn{
+		background-image:url(../images/homeMakeADonationBG.jpg);
+		background-repeat:repeat;
+		position:relative;
+	}
+	
+	#make_a_donation_btn_guts{
+		bottom: 40px;
+		left: 40px;
+		position: absolute;
+	}
+	
+	#make_a_donation_btn h1{
+		font-size:44px;
+		line-height:38px;
+	}
+	
+	#make_a_donation_btn img{
+		margin-bottom:7px;
+	}
+	
+	#here_i_am_btn{
+		background-image:url(../images/darkGrayHatch.jpg);
+		background-repeat:repeat;
+		display:table;
+		
+		#position:relative;
+	}
+	
+	#here_i_am_btn_content_positioner{
+		display: table-cell; 
+		vertical-align: middle;
+		/* height:100%; */
+		
+		/* IE HACK */
+		#position:absolute;
+		#top: 50%;
+	}
+	
+	#here_i_am_btn_content{
+		margin-left:40px;
+		overflow:visible;
+		width:145px;
+		
+		/* IE HACK */
+		#position:relative;
+		#top: -50%;
+	}
+	
+	#here_i_am_btn_content h1{
+		font-size:44px;
+		line-height:38px;
+	}
+	
+	#here_i_am_btn_content img{
+		margin-bottom:7px;
+	}
+	
+	#here_i_am_btn_content p{
+		margin-top:5px;
+		color:#FFF;
+		text-transform:uppercase;
+	}
+	
+	#homeBottom{
+		background-color:#FFFDF8;
+		display:table;
+		#position:relative;
+	}
+	
+	#homeBottom_positioner{
+		display: table-cell; 
+		vertical-align: middle;
+		/* height:100%; */
+		
+		/* IE HACK */
+		#position:absolute;
+		#top: 50%;
+	}
+	
+	#homeBottom_content{
+		margin:0 40px;
+		
+		/* IE HACK */
+		#position:relative;
+		#top: -50%;
+	}
+	#who_we_are_btn a {
+		color: #403B39;
+	}
+	#make_a_donation_btn a{
+		color: #fff;
+	}
+	#here_i_am_btn_content a {
+		color: #ACA6A4;
+	}
+	#here_i_am_btn_content a .smaller_red {
+		color: #E04242;
+	}
+
+/* end home page stuff */
+
+/* who we are stuff */
+#r_who_we_are{
+}
+
+	.whoWeAre{
+		background-image:url(../images/whoWeAreSide.jpg);
+		background-size:cover;
+		background-position:center;
+		background-repeat:no-repeat;
+	}
+	
+	.whyWereDoingThis{
+		background-image:url(../images/whyWereDoingThisBG.jpg);
+		background-repeat:repeat;
+	}
+	
+	.ourPartners{
+		background-image:url(../images/leadershipSide.jpg);
+		background-size:cover;
+		background-position:center;
+		background-repeat:no-repeat;
+	}
+
+/* END who we are stuff */
+
+
+#r_museum_plan{
+	background-color:#403b39;
+	background-image:url(../images/darkGrayHatch.jpg);
+	background-repeat:repeat;
+	background-position:left;
+	overflow:hidden;
+}
+	#r_museum_plan_holder{
+		background-image:url(../images/museumTour/streetsRight.png);
+		background-position:left bottom;
+		position:relative;
+	}
+	.r_museum_plan_layer{
+		position:absolute;
+		height:719px;
+		width:599px;
+		left:0;
+		bottom:0;
+	}
+	
+	#r_streets{
+		
+	}
+	
+	#r_museum_bubbles{
+		
+	}
+	
+	#r_museum_arrows{
+		
+	}
+	
+	#r_museum_bubbles_top{
+	}
+
+	#officesAndBehindHouse, #officesAndBehindHouseClicker{
+		top:77px;
+		left:118px;
+		height:135px; 
+		width:135px;
+	}
+	
+	#collectionsStorage, #collectionsStorageClicker{
+		top:120px;
+		left:269px;
+		height:95px; 
+		width:96px;
+	}
+	
+	#multipurposeMeetingSpace, #multipurposeMeetingSpaceClicker{
+		top:222px;
+		left:30px;
+		height:94px;
+		width:94px;
+	}
+	
+	#lecturesAndFilms, #lecturesAndFilmsClicker{
+		top:225px;
+		left:140px;
+		height:94px;
+		width:94px;
+	}
+	
+	#archivesAndResearchCenter, #archivesAndResearchCenterClicker{
+		top:327px;
+		left:56px;
+		height:94px;
+		width:94px;
+	}
+	
+	#performingArtsTheatre, #performingArtsTheatreClicker{
+		top:237px;
+		left:238px;
+		height:187px; 
+		width:188px;
+	}
+	
+	#lobby, #lobbyClicker{
+		top:427px;
+		left:35px;
+		height:173px;
+		width:414px;
+	}
+	
+	#shop, #shopClicker{
+		top:540px;
+		left:83px;
+		height:65px;
+		width:67px;
+	}
+	
+	#restaurant, #restaurantClicker{
+		top:528px;
+		left:152px;
+		height:70px; 
+		width:95px;
+	}
+	
+	#r_exhibits_holder{
+		display:none;
+	}
+	
+
+/* the core exhibit stuff */
+
+#r_the_core_exhibit{
+	background-image:url(../images/extraLightGrayHatch.jpg);
+	background-repeat:repeat;
+}	
+	.coreExhibitClicker{
+		position:absolute;
+		cursor:pointer;
+		background-color:#fff;
+		opacity:0;
+		filter:alpha(opacity=0); /* For IE8 and earlier */
+		
+	}
+
+	#core_exhibit_clicker_holder{
+		position:absolute;
+		top:0;
+		left:0;
+	}
+	
+	#beingUsclicker{
+		height:220px;
+		width:220px;
+	}
+	
+	#beingFamilyClicker{
+		left:220px;
+		height:220px;
+		width:220px;
+	}
+	
+	#beingMeInAmericaClicker{
+		height:220px;
+		width:220px;
+		top:220px;
+	}
+	
+	#beingMeClicker{
+		top:220px;
+		left:220px;
+		height:220px;
+		width:220px;
+	}
+	
+	#contemplationZoneClicker{
+		top:150px;
+		left:150px;
+		height:130px;
+		width:130px;
+	}
+	
+/* END the core exhibit stuff */
+
+
+/* blog stuff */
+
+#r_blog{
+	background-color:#fff;
+}
+
+	#catmenu{
+		margin-left: 105px; 
+		padding: 15px 15px 0 15px; 
+		display: none; 
+		width: 150px; 
+		background: #14b6ea; 
+		color: #FFFFFF; 
+		z-index: 999; 
+		position: absolute;
+	}
+	
+	#catmenu li{
+		list-style:none;
+		color: #FFFFFF;
+		margin-bottom:15px;
+	}
+	
+	#catmenu a{
+		color: #FFFFFF;
+	}
+	
+	#r_blog h1{
+		float:left;
+	}
+	
+	#r_blog #blogSearch{
+		float:right;
+		margin:5px 0;
+	}
+	
+	#r_blog form{
+		float:left;
+		height:24px;
+		width:166px;
+		background-image:url(../images/blogSearch.jpg);
+		background-repeat:no-repeat;
+	}
+	
+	#r_blog input{
+		color:#999;
+		background:none;
+		border:none;
+	}
+	
+	#r_blog input[type="text"]{
+		width:130px;
+		padding:2px 0;
+		color:#999;
+		font-style:italic;
+		margin-left:8px;
+		margin-top:4px;
+	}
+	
+	#r_blog input[type="submit"]{
+		margin: 5px 0;
+		float:right;
+		width:20px;
+		height:24px;
+	}
+	
+	#r_blog dl dt{
+		color:#403b39;
+		font-weight:bold;
+		float:left;
+		width:70px;
+	}
+	
+	#r_blog dl dd{
+		margin-left:85px;
+		color:#14b6ea;
+		padding-bottom:10px;
+	}
+
+/* END blog stuff */
+
+
+/* news stuff */
+#r_news{
+	background-image:url(../images/newsAndEventsSide.jpg);
+	background-size:cover;
+	background-position:center top;
+	background-color:#fff;
+	background-repeat:no-repeat;
+}
+/* END news stuff */
+
+#r_donation{
+	background-color:#fff;
+}
+
+/* get involved stuff */
+
+#r_get_involved{
+}
+
+	.getInvolved{
+		background-image:url(../images/getInvolvedSide.jpg);
+		background-size:cover;
+		background-position:center top;
+		background-repeat:no-repeat;
+	}
+	
+	.volunteer{
+		background-image:url(../images/volunteerSide.jpg);
+		background-size:cover;
+		background-position:center;
+		background-repeat:no-repeat;
+	}
+	
+	.becomeAPartner{
+		background-image:url(../images/becomeAPartnerSide.jpg);
+		background-size:cover;
+		background-position:center top;
+		background-repeat:no-repeat;
+	}
+
+
+/* END get involved stuff */
+
+#r_contact_us{
+	background-color:#fff;
+}
+#required_label {
+	display: none;
+}
+
+
+/* END MAIN PAGES */
+
+.subnav{
+	position:relative;
+}
+
+.subnav a{
+	cursor:pointer;
+}
+
+.innerContentPositioner{
+	margin:auto;
+	display: table-cell; 
+	vertical-align: middle;
+	overflow:visible;
+	width:100%;
+	/* height:100%; */
+	
+	/* IE HACK */
+	#position:absolute;
+	#top: 50%;
+}
+
+.innerContent{
+	margin:auto;
+	
+	/* IE HACK */
+	#position:relative; 
+	#top: -50%
+}
+
+.innerContentExhibit{
+	position:relative;
+	height:454px;
+	width:450px;
+}
+
+.innerContentBlog{
+	width:420px;
+	height:460px;
+}
+
+.innerContentText{
+	width:420px;
+	height:460px;
+}
+
+.innerContentText p{
+	color:#635a58;
+	margin-bottom:10px;
+}
+
+.sectionTitle{
+	position:relative;
+}
+
+.sectionTitleLogo{
+	position:absolute;
+	top:0px;
+	left:321px;
+}
+
+.innerContentBubble{
+	height:300px;
+	width:300px;
+}
+
+.innerContentPanel{
+	height:390px;
+	width:310px;
+}
+
+.contentSections{
+	color:#635a58;
+	position:relative;
+	background-color:#fff;
+	height:320px;
+}
+
+.contentSection{
+	overflow:auto;
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+.contentSection h1
+{
+	font-family: 'Lato', sans-serif;
+	font-size:18px;
+	color:#403b39;
+}
+
+.contentSection h2
+{
+	font-family: 'Lato', sans-serif;
+	font-size:16px;
+	color:#403b39;
+}
+
+.contentSection h3
+{
+	font-family: 'Lato', sans-serif;
+	font-size:14px;
+	color:#403b39;
+}
+
+.contentSection ul
+{
+	list-style-type:disc;
+	list-style: square;
+}
+
+
+.contentSection li
+{
+	list-style-type:disc;
+	list-style: square;
+	margin-left: 20px;
+	margin-bottom: 4px;
+}
+
+.contentSection p
+{
+	margin-bottom:10px;
+}
+
+/******************/

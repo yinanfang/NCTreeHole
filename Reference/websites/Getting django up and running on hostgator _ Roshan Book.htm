@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<title>Getting django up and running on hostgator | Roshan Book</title>
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="http://roshanbook.wordpress.com/xmlrpc.php">
+<link rel="alternate" type="application/rss+xml" title="Roshan Book » Feed" href="http://roshanbook.wordpress.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Roshan Book » Comments Feed" href="http://roshanbook.wordpress.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Roshan Book » Getting django up and running on&nbsp;hostgator Comments Feed" href="http://roshanbook.wordpress.com/2011/11/08/getting-django-up-and-running-on-hostgator/feed/">
+<script type="text/javascript" async="" src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/quant.js"></script><script type="text/javascript">
+/* <![CDATA[ */
+function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
+/* ]]> */
+</script>
+<link rel="stylesheet" id="all-css-0" href="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/a.css" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var LoggedOutFollow = {"invalid_email":"Your subscription did not succeed, please try again with a valid email address."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/a.js"></script>
+<link rel="stylesheet" id="all-css-0" href="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/style.css" type="text/css" media="all">
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='http://s2.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563g&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://roshanbook.wordpress.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://roshanbook.wordpress.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="2010  Get TextMate Features And Styles In Gedit With&nbsp;GMate" href="http://roshanbook.wordpress.com/2011/11/04/2010-get-textmate-features-and-styles-in-gedit-with-gmate/">
+<link rel="next" title="Installing Django on an Ubuntu Linux&nbsp;Server" href="http://roshanbook.wordpress.com/2011/11/08/installing-django-on-an-ubuntu-linux-server/">
+<meta name="generator" content="WordPress.com">
+<link rel="canonical" href="http://roshanbook.wordpress.com/2011/11/08/getting-django-up-and-running-on-hostgator/">
+<link rel="shortlink" href="http://wp.me/p1cj9z-9M">
+<link rel="alternate" type="application/json+oembed" href="http://public-api.wordpress.com/oembed/1.0/?format=json&amp;url=http%3A%2F%2Froshanbook.wordpress.com%2F2011%2F11%2F08%2Fgetting-django-up-and-running-on-hostgator%2F&amp;for=wpcom-auto-discovery"><link rel="alternate" type="application/xml+oembed" href="http://public-api.wordpress.com/oembed/1.0/?format=xml&amp;url=http%3A%2F%2Froshanbook.wordpress.com%2F2011%2F11%2F08%2Fgetting-django-up-and-running-on-hostgator%2F&amp;for=wpcom-auto-discovery">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Getting django up and running on hostgator">
+<meta property="og:url" content="http://roshanbook.wordpress.com/2011/11/08/getting-django-up-and-running-on-hostgator/">
+<meta property="og:description" content="This post was originally published at http://redconservatory.com/blog/getting-django-up-and-running-with-hostgator-part-1/ I thought it would be fun this year to start learning Django, so here’s a ...">
+<meta property="og:site_name" content="Roshan Book">
+<meta property="og:image" content="http://i0.wp.com/redconservatory.com/blog/wp-content/uploads/2011/01/billing.png?fit=1000%2C1000">
+<meta property="og:image" content="http://i0.wp.com/redconservatory.com/blog/wp-content/uploads/2011/01/hosting.png?fit=1000%2C1000">
+<meta property="og:image" content="http://i1.wp.com/redconservatory.com/blog/wp-content/uploads/2011/01/IP.png?fit=1000%2C1000">
+<meta property="og:image" content="http://i2.wp.com/redconservatory.com/blog/wp-content/uploads/2011/01/folder_view.png?fit=1000%2C1000">
+<meta property="og:image" content="http://i1.wp.com/redconservatory.com/blog/wp-content/uploads/2011/01/newproject.png?fit=1000%2C1000">
+<meta property="og:image" content="http://i0.wp.com/redconservatory.com/blog/wp-content/uploads/2011/01/newapp.png?fit=1000%2C1000">
+<meta property="og:image" content="http://i0.wp.com/redconservatory.com/blog/wp-content/uploads/2011/01/index-fcgi.png?fit=1000%2C1000">
+<meta property="og:image" content="http://i2.wp.com/redconservatory.com/blog/wp-content/uploads/2011/01/change-permissions.png?fit=1000%2C1000">
+<meta property="og:image" content="http://i2.wp.com/redconservatory.com/blog/wp-content/uploads/2011/01/itworked-520x163.png?fit=1000%2C1000">
+<meta name="twitter:site" content="@wordpressdotcom">
+<meta name="twitter:image0" content="http://i0.wp.com/redconservatory.com/blog/wp-content/uploads/2011/01/billing.png?fit=1000%2C1000">
+<meta name="twitter:image1" content="http://i0.wp.com/redconservatory.com/blog/wp-content/uploads/2011/01/hosting.png?fit=1000%2C1000">
+<meta name="twitter:image2" content="http://i1.wp.com/redconservatory.com/blog/wp-content/uploads/2011/01/IP.png?fit=1000%2C1000">
+<meta name="twitter:image3" content="http://i2.wp.com/redconservatory.com/blog/wp-content/uploads/2011/01/folder_view.png?fit=1000%2C1000">
+<meta name="twitter:card" content="gallery">
+<meta name="twitter:creator" content="@wordpressdotcom">
+<meta property="fb:app_id" content="249643311490">
+<link rel="shortcut icon" type="image/x-icon" href="http://s2.wp.com/i/favicon.ico?m=1311976025g" sizes="16x16 24x24 32x32 48x48">
+<link rel="icon" type="image/x-icon" href="http://s2.wp.com/i/favicon.ico?m=1311976025g" sizes="16x16 24x24 32x32 48x48">
+<link rel="apple-touch-icon-precomposed" href="http://s0.wp.com/i/webclip.png?m=1355642671g">
+<link rel="openid.server" href="http://roshanbook.wordpress.com/?openidserver=1">
+<link rel="openid.delegate" href="http://roshanbook.wordpress.com/">
+<link rel="search" type="application/opensearchdescription+xml" href="http://roshanbook.wordpress.com/osd.xml" title="Roshan Book">
+<link rel="search" type="application/opensearchdescription+xml" href="http://wordpress.com/opensearch.xml" title="WordPress.com">
+		<style>
+		/* <![CDATA[ */
+		/* Block: reblog */
+		
+		.reblog-from img                   { margin: 0 10px 0 0; vertical-align: middle; padding: 0; border: 0; }
+		.reblogger-note img.avatar         { float: left; padding: 0; border: 0; }
+		.reblogger-note-content            { margin: 0 0 20px; }
+		.reblog-post .wpcom-enhanced-excerpt-content { border-left: 3px solid #eee; padding-left: 15px; }
+		.reblog-post ul.thumb-list         { display: block; list-style: none; margin: 2px 0; padding: 0; clear: both; }
+		.reblog-post ul.thumb-list li      { display: inline; margin: 0; padding: 0 1px; border: 0; }
+		.reblog-post ul.thumb-list li a    { margin: 0; padding: 0; border: 0; }
+		.reblog-post ul.thumb-list li img  { margin: 0; padding: 0; border: 0; }
+		
+		.reblog-post .wpcom-enhanced-excerpt { clear: both; }
+		
+		.reblog-post .wpcom-enhanced-excerpt address,
+		.reblog-post .wpcom-enhanced-excerpt li,
+		.reblog-post .wpcom-enhanced-excerpt h1,
+		.reblog-post .wpcom-enhanced-excerpt h2,
+		.reblog-post .wpcom-enhanced-excerpt h3,
+		.reblog-post .wpcom-enhanced-excerpt h4,
+		.reblog-post .wpcom-enhanced-excerpt h5,
+		.reblog-post .wpcom-enhanced-excerpt h6,
+		.reblog-post .wpcom-enhanced-excerpt p { font-size: 100% !important; }
+		
+		.reblog-post .wpcom-enhanced-excerpt blockquote,
+		.reblog-post .wpcom-enhanced-excerpt pre,
+		.reblog-post .wpcom-enhanced-excerpt code,
+		.reblog-post .wpcom-enhanced-excerpt q { font-size: 98% !important; }
+		
+
+		/* ]]> */
+		</style>
+		<style type="text/css">
+.widget_twitter li {
+	word-wrap: break-word;
+}
+</style>
+<meta name="application-name" content="Roshan Book"><meta name="msapplication-window" content="width=device-width;height=device-height"><meta name="msapplication-tooltip" content="My Tech Notebook"><meta name="msapplication-task" content="name=Subscribe;action-uri=http://roshanbook.wordpress.com/feed/;icon-uri=http://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=http://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=http://s2.wp.com/i/favicon.ico"><meta name="title" content="Getting django up and running on&nbsp;hostgator | Roshan Book on WordPress.com">
+<meta name="description" content="My Tech Notebook (by CodeRoad)">
+	<style type="text/css">
+		#title h1,
+	#title h1 a,
+	#title p {
+		color: #222 !important;
+	}
+	</style>
+<script type="text/javascript" src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/google_service.js">
+</script>
+<script type="text/javascript">
+if ( typeof GS_googleAddAdSenseService == 'function' ) { GS_googleAddAdSenseService("ca-pub-3443918307802676"); }
+if ( typeof GS_googleEnableAllServices == 'function' ) { GS_googleEnableAllServices() };
+</script><script src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/google_ads.js"></script>
+<script type="text/javascript">
+if ( typeof GA_googleAddSlot == 'function' ) { GA_googleAddSlot("ca-pub-3443918307802676", "wpcom_below_post"); }
+</script>
+<script type="text/javascript">
+if ( typeof GA_googleFetchAds == 'function' ) { GA_googleFetchAds(); }
+</script>
+
+<script type="text/javascript">
+var wpcom_ads = { bid: 17709901, pt: 'permalink', wa: 0, as: 0, domain: 'roshanbook.wordpress.com', url: 'http://roshanbook.wordpress.com/2011/11/08/getting-django-up-and-running-on-hostgator/', gid: '', };
+</script>
+<style id="syntaxhighlighteranchor"></style>
+<script type="text/javascript"> 
+	window.google_analytics_uacct = "UA-52447-2"; 
+</script>
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-52447-2']);
+	_gaq.push(['_setDomainName', 'wordpress.com']);
+	_gaq.push(['_initData']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})();
+</script><script src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/ga.js" async="" type="text/javascript"></script>
+<script src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/osd.js" type="text/javascript"></script><script src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/rate.php" charset="utf-8"></script><style id="pd_popup_holder_style_4910994_post_606" type="text/css">#pd_popup_holder_4910994_post_606 { position:absolute; display:none; width:350px; height:auto; top:0px; left:0px; z-index:10000; border:solid 1px #CCC; background-color:white; padding:0px 15px;font-family:Arial,Sans;box-shadow: -10px 10px 20px rgba(0, 0, 0, .5);-webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, .25);-moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, .25); }</style><link rel="stylesheet" type="text/css" id="gravatar-card-css" href="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/services.css"></head>
+<body class="single single-post postid-606 single-format-standard two-column content-sidebar mp6 highlander-enabled highlander-light">
+
+<div id="wrapper">
+
+<div id="header">
+	<div id="header_inner">
+		<ul class="nav sf-menu"><li><a href="http://roshanbook.wordpress.com/">Home</a></li><li class="page_item page-item-793"><a href="http://roshanbook.wordpress.com/python-tutorial-index-2/">Python&nbsp;index</a><ul class="children"><li class="page_item page-item-832"><a href="http://roshanbook.wordpress.com/python-tutorial-index-2/django-index/">Django&nbsp;Index</a></li><li class="page_item page-item-1213"><a href="http://roshanbook.wordpress.com/python-tutorial-index-2/python-video-tutorials/">Python Video&nbsp;Tutorials</a></li></ul></li><li class="page_item page-item-1347"><a href="http://roshanbook.wordpress.com/ruby/">Ruby</a></li><li class="page_item page-item-1226"><a href="http://roshanbook.wordpress.com/tutorial-index/">Tutorial&nbsp;Index</a><ul class="children"><li class="page_item page-item-1191"><a href="http://roshanbook.wordpress.com/tutorial-index/jquery/">Jquery</a></li><li class="page_item page-item-1096"><a href="http://roshanbook.wordpress.com/tutorial-index/useful-tutorials-index/">Useful tutorials&nbsp;index</a></li><li class="page_item page-item-1231"><a href="http://roshanbook.wordpress.com/tutorial-index/php/">PHP</a></li></ul></li><li class="page_item page-item-1335"><a href="http://roshanbook.wordpress.com/yii-tutorial/">YII&nbsp;Tutorial</a></li></ul>
+		<form id="search-form" role="search" method="get" action="http://roshanbook.wordpress.com/">
+			<input value="Search: type, hit enter" onfocus="if (this.value == 'Search: type, hit enter' ) {this.value = '';}" onblur="if (this.value == '' ) {this.value = 'Search: type, hit enter';}" name="s" id="s" type="text">
+			<input id="search-submit" value="Search" type="submit">
+		</form>
+	</div>
+</div>
+
+<div id="content">
+
+		<div id="title">
+		<h1><a href="http://roshanbook.wordpress.com/">Roshan Book</a></h1>
+		<p>My Tech Notebook</p>
+	</div>
+
+	
+	<div id="maincontent">
+		<div id="maincontent_inner">
+
+	
+		<div id="post-606" class="post-606 post type-post status-publish format-standard hentry category-django-python-2 category-python-2 category-rest category-tutorial-2 tag-django tag-hostgator">
+
+			<h2 class="title">Getting django up and running on&nbsp;hostgator</h2>
+
+			<div class="post-info">
+				<div>
+					<span class="comments-meta"><a href="http://roshanbook.wordpress.com/2011/11/08/getting-django-up-and-running-on-hostgator/#respond">3 Comments</a></span>
+					Posted by <span class="author"><a href="http://roshanbook.wordpress.com/author/manishroshan/" title="Posts by CodeRoad" rel="author">CodeRoad</a></span> on <span class="time">November 8, 2011</span>
+									</div>
+			</div>
+
+			<div class="content">
+				<div style="display: inline-block;" class="pd-rating" id="pd_rating_holder_4910994_post_606"><div class="rating-icons" id="pd_rate_4910994_post_606" style="float:left;"><div class="rating-star-icon" onmouseout="PDRTJS_4910994_post_606.rebuild();" onclick="PDRTJS_4910994_post_606.rate(1);" onmouseover="PDRTJS_4910994_post_606.hover(1);" id="PDRTJS_4910994_post_606_stars_1" style="background-size: 32px 48px!important; cursor: pointer; width: 16px; height: 16px; line-height: 16px; background: url(http://i0.poll.fm/images/ratings/star-yellow-sml.png) bottom left; float: left; padding: 0px; marging: 0px; margin-right: 1px;">&nbsp;</div><div class="rating-star-icon" onmouseout="PDRTJS_4910994_post_606.rebuild();" onclick="PDRTJS_4910994_post_606.rate(2);" onmouseover="PDRTJS_4910994_post_606.hover(2);" id="PDRTJS_4910994_post_606_stars_2" style="background-size: 32px 48px!important; cursor: pointer; width: 16px; height: 16px; line-height: 16px; background: url(http://i0.poll.fm/images/ratings/star-yellow-sml.png) bottom left; float: left; padding: 0px; marging: 0px; margin-right: 1px;">&nbsp;</div><div class="rating-star-icon" onmouseout="PDRTJS_4910994_post_606.rebuild();" onclick="PDRTJS_4910994_post_606.rate(3);" onmouseover="PDRTJS_4910994_post_606.hover(3);" id="PDRTJS_4910994_post_606_stars_3" style="background-size: 32px 48px!important; cursor: pointer; width: 16px; height: 16px; line-height: 16px; background: url(http://i0.poll.fm/images/ratings/star-yellow-sml.png) bottom left; float: left; padding: 0px; marging: 0px; margin-right: 1px;">&nbsp;</div><div class="rating-star-icon" onmouseout="PDRTJS_4910994_post_606.rebuild();" onclick="PDRTJS_4910994_post_606.rate(4);" onmouseover="PDRTJS_4910994_post_606.hover(4);" id="PDRTJS_4910994_post_606_stars_4" style="background-size: 32px 48px!important; cursor: pointer; width: 16px; height: 16px; line-height: 16px; background: url(http://i0.poll.fm/images/ratings/star-yellow-sml.png) bottom left; float: left; padding: 0px; marging: 0px; margin-right: 1px;">&nbsp;</div><div class="rating-star-icon" onmouseout="PDRTJS_4910994_post_606.rebuild();" onclick="PDRTJS_4910994_post_606.rate(5);" onmouseover="PDRTJS_4910994_post_606.hover(5);" id="PDRTJS_4910994_post_606_stars_5" style="background-size: 32px 48px!important; cursor: pointer; width: 16px; height: 16px; line-height: 16px; background: url(http://i0.poll.fm/images/ratings/star-yellow-sml.png) bottom left; float: left; padding: 0px; marging: 0px; margin-right: 1px;">&nbsp;</div></div><span style="float:left;">&nbsp;</span><div id="rating_info_4910994_post_606" style="display:block;float:left;background:url(http://i0.poll.fm/images/ratings/info.png) no-repeat 3px 2px;width:16px;height:16px;cursor:pointer; null " onclick="javascript:PDRTJS_4910994_post_606.togglePopup();return false;"><span style="display:none;">i</span></div><div class="pd_popup_holder" id="pd_popup_holder_4910994_post_606">&nbsp;</div><div class="rating-msg" id="PDRTJS_4910994_post_606_msg" style="float:left; padding-left: 5px; text-align: left; font:normal normal /16px ; color: #;">Rate This</div><p style="padding: 0px; margin: 0px; clear: both;"></p><img src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/p-ab3gTb8xb3dLg.gif" style="display: none;" alt="Quantcast" height="1" border="0" width="1"></div><br><p>This post was originally published at <a href="http://redconservatory.com/blog/getting-django-up-and-running-with-hostgator-part-1/">http://redconservatory.com/blog/getting-django-up-and-running-with-hostgator-part-1/</a></p>
+<p>I thought it would be fun this year to start learning Django, so 
+here’s a bit about how to get it set up using Hostgator (I have a shared
+ hosting account).</p>
+<p>I am using Terminal on the MAC and the File Manager on the cPanel.</p>
+<p>The first thing you have to do is enable SSH (shell access). To do this, log into your cPanel and go to “Billing”:</p>
+<p><a href="http://redconservatory.com/blog/wp-content/uploads/2011/01/billing.png"><img title="billing" src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/billing.png" alt="" height="118" width="514"></a></p>
+<p>Then choose, “View Hosting Packages”:</p>
+<p><a href="http://redconservatory.com/blog/wp-content/uploads/2011/01/hosting.png"><img title="hosting" src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/hosting.png" alt="" height="86" width="200"></a></p>
+<p>Then, click the link that says, “<strong>Enable Shell Access</strong>“.</p>
+<p>Next, write down your IP as shown in the cPanel (I blurred mine out 
+for security purposes, but you can see what the section looks like 
+here):</p>
+<p><a href="http://redconservatory.com/blog/wp-content/uploads/2011/01/IP.png"><img title="IP" src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/IP.png" alt="" height="67" width="235"></a></p>
+<p>Also, write down your cPanel username and password, you will need this.</p>
+<p>Open Terminal and the File Manager in cPanel. I keep both open at the same time to see what I am doing.</p>
+<p>In your File Manager, you should see /home/your-username/. Then look 
+for a folder called django. You should have this. If not, in Terminal, 
+type the following to SSH to your account:</p>
+<pre>ssh -p 2222 your-username-goes-here@your-ip-goes-here</pre>
+<p>If this works (you might have to wait a moment while it connects to your site), you will be prompted for your password.</p>
+<p>Type in your password (you won’t see it at all) then hit enter and wait.</p>
+<p>If this is your first time, you will be asked about a key. Just say “yes”.</p>
+<p>You might then get some message like, “The authenticity of this host 
+can’t be established” and “RSA key fingerprint is blah blah blah”.</p>
+<p>Don’t worry about this, if you like, write down the key in case you 
+need it later. That’s it. You are now connected to your logged in to 
+your account via SSH. Now type the following.</p>
+<pre>mkdir ~/django
+cd ~/django
+svn co http://code.djangoproject.com/svn/django/trunk/django</pre>
+<p>mkdir creates a folder called “django”.</p>
+<p>cd changes where you are to <strong>inside</strong> of the “django” folder.</p>
+<p>The last line gets the latest stable version of django and installs 
+it into the “django” folder. You need to have subversion installed for 
+this to work.</p>
+<p>I can’t really remember if I had to install subversion on my version 
+of OS X, I think it was already installed, but if not, you’ll have to 
+install it. It’s free.</p>
+<p>Then, create a directory for your projects <strong>inside</strong> of the django folder by typing:</p>
+<pre>mkdir ~/django/projects</pre>
+<p>You should now have a folder called “django” with two folders inside:</p>
+<pre><a href="http://redconservatory.com/blog/wp-content/uploads/2011/01/folder_view.png"><img title="folder_view" src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/folder_view.png" alt="" height="88" width="243"></a></pre>
+<p>Now, to test if django is running, you make a test project.</p>
+<p>In Terminal, type:</p>
+<pre>cd projects</pre>
+<p>This will switch you into the <strong>projects</strong> folder.</p>
+<p>Then type:</p>
+<pre>django-admin.py startproject newproject</pre>
+<p>This tells django to create a new project called, “newproject”.</p>
+<p>Then type:</p>
+<pre>cd newproject
+chmod +x manage.py
+./manage.py startapp newapp</pre>
+<p><a href="http://redconservatory.com/blog/wp-content/uploads/2011/01/newproject.png"><img title="newproject" src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/newproject.png" alt="" height="88" width="243"></a></p>
+<p>If you go inside of your “newproject” folder you should now see the following:</p>
+<p><a href="http://redconservatory.com/blog/wp-content/uploads/2011/01/newapp.png"><img title="newapp" src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/newapp.png" alt="" height="240" width="243"></a></p>
+<p>This is your “newapp”. Yay, django is working…sort of</p>
+<p>Next, you have to enable<strong> fastcgi</strong> (or, I suppose, django will run really slowly).</p>
+<p>Create a new file called index.fcgi in your public folder:</p>
+<p><a href="http://redconservatory.com/blog/wp-content/uploads/2011/01/index-fcgi.png"><img title="index-fcgi" src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/index-fcgi.png" alt="" height="222" width="502"></a></p>
+<p>Then change the permissions of the file to 755:</p>
+<p><a href="http://redconservatory.com/blog/wp-content/uploads/2011/01/change-permissions.png"><img title="change-permissions" src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/change-permissions.png" alt="" height="259" width="498"></a></p>
+<p>Next, edit the file and add the following (be sure to change “<strong>username</strong>” with <strong>your username for your account</strong>):</p>
+<pre>#!/usr/local/bin/python
+import sys, os, user
+
+# sys.path.insert(0, "/usr/lib/python2.4")
+sys.path.insert(0, "/home/<em><em>your-username-goes-here</em></em>/django")
+sys.path.insert(0, "/home/<em><em>your-username-goes-here</em></em>/django/projects")
+sys.path.insert(0, "/home<em>/your-username-goes-here</em>/django/projects/newproject")
+
+# Switch to the directory of your project.
+os.chdir("/home/<em>your-username-goes-here</em>/django/projects/newproject")
+
+# Set the DJANGO_SETTINGS_MODULE environment variable.
+os.environ['DJANGO_SETTINGS_MODULE'] = "newproject.settings"
+
+from django.core.servers.fastcgi import runfastcgi
+runfastcgi(method="threaded", daemonize="false")</pre>
+<p>Next, open the .htaccess that <strong>is in the same folder as index.fcgi</strong>.</p>
+<pre>AddHandler fcgid-script .fcgi
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteRule (media/.*)$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(admin/.*)$ <strong>index.fcgi</strong>/$1 [L]</pre>
+<p>Next (and this is important) <strong>check your website</strong>. If you are getting a 500 error, open Terminal and log in to your account:</p>
+<pre>ssh -p 2222 your-username-goes-here@your-ip-goes-here</pre>
+<p>Then type:</p>
+<pre>which python</pre>
+<p>This should give you a message like:</p>
+<pre>/usr/bin/python</pre>
+<p>If you are getting something different (for example, user/local/bin/python/), update your script to reflect this:</p>
+<pre>#!/usr/local/bin/python</pre>
+<p>If all goes well, you should see this:</p>
+<p><a href="http://redconservatory.com/blog/wp-content/uploads/2011/01/itworked.png"><img title="itworked" src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/itworked-520x163.png" alt="" height="163" width="520"></a></p>
+<p>Below is my working code for hostgator</p>
+<p><strong>Below are my working code based on Robert code.</strong></p>
+<p>1. For curlgen.fcgi – change permission to 755</p>
+<p>code is :<br>
+#!/usr/bin/python<br>
+import sys, os, user</p>
+<p># sys.path.insert(0, “/usr/lib/python2.7″)<br>
+sys.path.insert(0, “/home/r5tpl/django/projects”)</p>
+<p># Switch to the directory of your project.<br>
+os.chdir(“/home/r5tpl/django/projects/newproject”)</p>
+<p># Set the DJANGO_SETTINGS_MODULE environment variable.<br>
+os.environ['DJANGO_SETTINGS_MODULE'] = “newproject.settings”</p>
+<p>from django.core.servers.fastcgi import runfastcgi<br>
+runfastcgi(method=”threaded”, daemonize=”false”)</p>
+<p>For .htaccess code is<br>
+AddHandler fcgid-script .fcgi<br>
+RewriteEngine On<br>
+RewriteCond %{REQUEST_FILENAME} !-f<br>
+RewriteRule ^(.*)$ curlgen.fcgi/$1 [QSA,L]</p>
+
+<div class="wpa" style="position: relative; width:300px; text-align: center; padding: 0; margin: 10px auto; overflow: hidden; clear: both;">
+<a style="position: absolute; text-align: left; display: block; font: 9px/1 sans-serif; text-decoration: underline;" href="http://en.wordpress.com/about-these-ads/" rel="nofollow">About these ads</a>
+<script type="text/javascript">
+		var wpcom_adclk_hovering = false;
+		var wpcom_adclk_recorded = false;
+		var wpcom_adclk_theme = "zBench";
+		var wpcom_adclk_slot = "wpcom_below_post";
+		var wpcom_adclk_network = ( typeof wpcom_adclk_network === "undefined" ) ? "" : wpcom_adclk_network ;
+
+		jQuery(document).ready( function() {
+			function wpcom_adclk_hover_yes() { wpcom_adclk_hovering = true; }
+			function wpcom_adclk_hover_no() { wpcom_adclk_hovering = false; }
+			jQuery(".wpa").click(wpcom_adclk_click);
+			jQuery(".wpa iframe").hover( wpcom_adclk_hover_yes, wpcom_adclk_hover_no );
+			jQuery(".wpa object").hover( wpcom_adclk_hover_yes, wpcom_adclk_hover_no );
+
+			jQuery(window).blur( function() {
+				if ( wpcom_adclk_hovering ) { wpcom_adclk_click(); }
+			});
+		});
+
+		function wpcom_adclk_impression() {
+			var stat_gif = document.location.protocol + "//stats.wordpress.com/g.gif?v=wpcom-no-pv";
+			stat_gif += "&x_ads_imp_theme=" + wpcom_adclk_theme;
+			stat_gif += "&x_ads_imp_placement="+wpcom_adclk_slot;
+			stat_gif += "&x_ads_imp_network=" + wpcom_adclk_network;
+			stat_gif += "&x_ads_imp_theme_network="+wpcom_adclk_theme+"_"+wpcom_adclk_network;
+			new Image().src = stat_gif + "&baba=" + Math.random();
+			return true;
+		}
+
+		function wpcom_adclk_click() {
+			if (wpcom_adclk_recorded) { return true; } // no double counting
+			var stat_gif = document.location.protocol + "//stats.wordpress.com/g.gif?v=wpcom-no-pv";
+			stat_gif += "&x_ads_click_theme=" + wpcom_adclk_theme;
+			stat_gif += "&x_ads_click_placement="+wpcom_adclk_slot;
+			stat_gif += "&x_ads_click_network=" + wpcom_adclk_network;
+			stat_gif += "&x_ads_click_theme_network="+wpcom_adclk_theme+"_"+wpcom_adclk_network;
+
+			new Image().src = stat_gif + "&baba=" + Math.random();
+			wpcom_adclk_recorded = true;
+			var now=new Date(); var end=now.getTime()+250;
+			while(true){now=new Date();if(now.getTime()>end){break;}}
+			return true;
+		}
+	
+if ( typeof GA_googleAddAttr == 'function' ) {
+GA_googleAddAttr("AdOpt", "1");
+GA_googleAddAttr("Origin", "other");
+GA_googleAddAttr("LangId", "1");
+GA_googleAddAttr("Domain", "roshanbook.wordpress.com");
+GA_googleAddAttr("BlogId", "17709901");
+GA_googleAddAttr("Autotag", "technology");
+GA_googleAddAttr("Tag", "django-python-2");
+GA_googleAddAttr("Tag", "python-2");
+GA_googleAddAttr("Tag", "rest");
+GA_googleAddAttr("Tag", "tutorial-2");
+GA_googleAddAttr("Tag", "django");
+GA_googleAddAttr("Tag", "hostgator");
+GA_googleAddAttr("theme_bg", "f7f7f7");
+GA_googleAddAttr("theme_border", "f2f2f2");
+GA_googleAddAttr("theme_text", "242424");
+GA_googleAddAttr("theme_link", "333333");
+GA_googleAddAttr("theme_url", "4a630f");
+GA_googleAddAdSensePageAttr("google_page_url", "http://roshanbook.wordpress.com/2011/11/08/getting-django-up-and-running-on-hostgator/");
+GA_googleFillSlot("wpcom_below_post");
+}
+</script><script src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/ads"></script><div id="google_ads_div_wpcom_below_post_ad_wrapper">
+<div id="google_ads_div_wpcom_below_post_ad_container" style="display:inline-block;"><!-- BEGIN IFRAME TAG - WordAd - 300x250 < - DO NOT MODIFY -->
+<iframe src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/tt.gif" marginheight="0" marginwidth="0" topmargin="0" leftmargin="0" allowtransparency="true" frameborder="0" height="250" scrolling="no" width="300"></iframe>
+<!-- END TAG -->
+
+</div>
+</div>
+
+</div>
+<style type="text/css">
+div.wpa>div { margin-top: 1em; }
+</style>
+<script type="text/javascript">
+jQuery( window ).load( function() {
+    if ( jQuery(".wpa script[src*='shareth.ru']").length > 0 || jQuery(".wpa iframe[src*='boomvideo.tv']").length > 0 || jQuery(".wpa iframe[src*='viewablemedia.net']").length > 0 || jQuery(".wpa .sharethrough-placement").length > 0 ) {
+        jQuery( '.wpa' ).css( 'width', '400px' );
+    }
+setTimeout(function(){if(typeof GS_googleAddAdSenseService !== 'function'){new Image().src=document.location.protocol+"//stats.wordpress.com/g.gif?v=wpcom-no-pv&x_noads=adblock&baba="+Math.random()}},100);
+} );
+</script>
+<div id="jp-post-flair" class="sharedaddy sd-rating-enabled sd-like-enabled sd-sharing-enabled"><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-google-plus-1"><a rel="nofollow" class="share-google-plus-1 sd-button share-icon no-text" href="http://roshanbook.wordpress.com/2011/11/08/getting-django-up-and-running-on-hostgator/?share=google-plus-1&amp;nb=1" title="Click to share on Google+" id="sharing-google-606"><span></span></a></li><li class="share-facebook"><a rel="nofollow" class="share-facebook sd-button share-icon no-text" href="http://roshanbook.wordpress.com/2011/11/08/getting-django-up-and-running-on-hostgator/?share=facebook&amp;nb=1" title="Share on Facebook" id="sharing-facebook-606"><span></span></a></li><li class="share-twitter"><a rel="nofollow" class="share-twitter sd-button share-icon no-text" href="http://roshanbook.wordpress.com/2011/11/08/getting-django-up-and-running-on-hostgator/?share=twitter&amp;nb=1" title="Click to share on Twitter" id="sharing-twitter-606"><span></span></a></li><li class="share-linkedin"><a rel="nofollow" class="share-linkedin sd-button share-icon no-text" href="http://roshanbook.wordpress.com/2011/11/08/getting-django-up-and-running-on-hostgator/?share=linkedin&amp;nb=1" title="Click to share on LinkedIn" id="sharing-linkedin-606"><span></span></a></li><li><a href="#" class="sharing-anchor sd-button share-more"><span>More</span></a></li><li class="share-end"></li></ul><div class="sharing-hidden"><div class="inner" style="display: none;"><ul><li class="share-reddit"><a rel="nofollow" class="share-reddit sd-button share-icon no-text" href="http://roshanbook.wordpress.com/2011/11/08/getting-django-up-and-running-on-hostgator/?share=reddit&amp;nb=1" title="Click to share on Reddit"><span></span></a></li><li class="share-email share-service-visible"><a rel="nofollow" class="share-email sd-button share-icon no-text" href="http://roshanbook.wordpress.com/2011/11/08/getting-django-up-and-running-on-hostgator/?share=email&amp;nb=1" title="Click to email this to a friend"><span></span></a></li><li class="share-end"></li><li class="share-pinterest"><a rel="nofollow" class="share-pinterest sd-button share-icon no-text" href="http://roshanbook.wordpress.com/2011/11/08/getting-django-up-and-running-on-hostgator/?share=pinterest&amp;nb=1" title="Click to share on Pinterest"><span></span></a></li><li class="share-digg"><a rel="nofollow" class="share-digg sd-button share-icon no-text" href="http://roshanbook.wordpress.com/2011/11/08/getting-django-up-and-running-on-hostgator/?share=digg&amp;nb=1" title="Click to Digg this post"><span></span></a></li><li class="share-end"></li><li class="share-stumbleupon"><a rel="nofollow" class="share-stumbleupon sd-button share-icon no-text" href="http://roshanbook.wordpress.com/2011/11/08/getting-django-up-and-running-on-hostgator/?share=stumbleupon&amp;nb=1" title="Click to share on StumbleUpon"><span></span></a></li><li class="share-end"></li></ul></div></div></div></div></div><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-loaded" id="like-post-wrapper-17709901-606-51d0f43dd49cf" data-src="http://widgets.wp.com/likes/#blog_id=17709901&amp;post_id=606&amp;origin=http://roshanbook.wordpress.com&amp;obj_id=17709901-606-51d0f43dd49cf" data-name="like-post-frame-17709901-606-51d0f43dd49cf"><h3 class="sd-title">Like this:</h3><div class="post-likes-widget-placeholder" style="height: 55px; display: none;"><span class="button"><span>Like</span></span> <span class="loading">Loading...</span></div><iframe style="display: inline;" class="post-likes-widget jetpack-likes-widget" name="like-post-frame-17709901-606-51d0f43dd49cf" src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/a.htm" frameborder="0" height="55px" width="100%"></iframe><span class="sd-text-color"></span><a class="sd-link-color"></a></div></div>			</div>
+
+			<div class="post-meta">
+								<span class="categories"><a href="http://roshanbook.wordpress.com/category/tutorial-2/python-2/django-python-2/" title="View all posts in django" rel="category tag">django</a>, <a href="http://roshanbook.wordpress.com/category/tutorial-2/python-2/" title="View all posts in python" rel="category tag">python</a>, <a href="http://roshanbook.wordpress.com/category/rest/" title="View all posts in Rest" rel="category tag">Rest</a>, <a href="http://roshanbook.wordpress.com/category/tutorial-2/" title="View all posts in Tutorial" rel="category tag">Tutorial</a></span>
+				<span class="tags"><a href="http://roshanbook.wordpress.com/tag/django/" rel="tag">Django</a>, <a href="http://roshanbook.wordpress.com/tag/hostgator/" rel="tag">hostgator</a></span>			</div>
+			<div class="sep"></div>
+
+			<div class="next-prev-links">
+				<a href="http://roshanbook.wordpress.com/2011/11/04/2010-get-textmate-features-and-styles-in-gedit-with-gmate/" rel="prev"><span class="nav-previous">← 2010  Get TextMate Features And Styles In Gedit With&nbsp;GMate</span></a>				<a href="http://roshanbook.wordpress.com/2011/11/08/installing-django-on-an-ubuntu-linux-server/" rel="next"><span class="nav-next">Installing Django on an Ubuntu Linux&nbsp;Server →</span></a>			</div>
+			<div class="sep"></div>
+
+		</div>
+
+		<div id="comments">
+
+		<h3 id="comments-title">3 Responses to <em>Getting django up and running on&nbsp;hostgator</em>	</h3>
+
+
+		<ol class="commentlist">
+				<li class="comment even thread-even depth-1 highlander-comment" id="li-comment-179">
+		<div id="comment-179">
+			<img id="grav-8baaaa69bd7f8bac0985badb847568af-0" alt="" src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/8baaaa69bd7f8bac0985badb847568af.png" class="avatar avatar-40 grav-hashed grav-hijack" height="40" width="40"><cite class="fn">Oliver Bajusz</cite>			<a href="http://roshanbook.wordpress.com/2011/11/08/getting-django-up-and-running-on-hostgator/#comment-179">November 10, 2011 at 1:25 pm</a>
+						<div class="comment-body"><p>Hey, </p>
+<p>finally a proper description! </p>
+<p>Just signed up with HG, their support is completely useless, there is
+ noone there who can actually help you, they send you error logs, and 
+every single time u email them back another person replies, and they 
+just can’t be bothered to read all previous conversations, which makes 
+it a never-ending cycle. so if u dont KNOW how u have to set it up u r 
+on your own…</p>
+<p>My problem is that my main website is plain html+php and if I edit 
+the .htaccess and create  the fcgi file under public_html, it stops 
+working obviously as it expects a Django project….. (Django definitely 
+works btw, and my permissions are also all correct)</p>
+<p>Basically my project is be under /home/uname/projectname</p>
+<p>I created a directory called projectname under /home/uname/public_html, and put my .htaccess there with the content:</p>
+<p>AddHandler fcgid-script .fcgi<br>
+Options +FollowSymLinks<br>
+RewriteEngine On<br>
+RewriteRule ^(.*)$ index.fcgi/$1 [L]</p>
+<p>and in the same folder my index.fcgi :</p>
+<p>#!/usr/local/bin/python<br>
+import sys, os, user</p>
+<p># sys.path.insert(0, “/usr/lib/python2.4″)<br>
+sys.path.insert(0, “/home/uname/projectname”)</p>
+<p># Switch to the directory of your project.<br>
+os.chdir(“/home/uname/projectname”)</p>
+<p># Set the DJANGO_SETTINGS_MODULE environment variable.<br>
+os.environ['DJANGO_SETTINGS_MODULE'] = “projectname.settings”</p>
+<p>from django.core.servers.fastcgi import runfastcgi<br>
+runfastcgi(method=”threaded”, daemonize=”false”)</p>
+<p>Still getting 500 internals, but my main website is still up running, so i keep trying..<br>
+If you have any suggestions I’m looking forward to trying them as I’m running out of ideas and patience</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://roshanbook.wordpress.com/2011/11/08/getting-django-up-and-running-on-hostgator/?replytocom=179#respond" onclick='return addComment.moveForm("comment-179", "179", "respond", "606")'>Reply</a>			</div>
+		</div>
+	</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 highlander-comment" id="li-comment-201">
+		<div id="comment-201">
+			<img id="grav-0ec1b7e6b2362a7201573ca0cb1855c4-0" alt="" src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/0ec1b7e6b2362a7201573ca0cb1855c4.png" class="avatar avatar-40 grav-hashed grav-hijack" height="40" width="40"><cite class="fn"><a href="http://coupon-hub.org/" rel="external nofollow" class="url">dev</a></cite>			<a href="http://roshanbook.wordpress.com/2011/11/08/getting-django-up-and-running-on-hostgator/#comment-201">November 14, 2011 at 8:43 am</a>
+						<div class="comment-body"><p>Hi, Excellent post, I like the way of your writing,<br>
+Thanks manishroshan for the share</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://roshanbook.wordpress.com/2011/11/08/getting-django-up-and-running-on-hostgator/?replytocom=201#respond" onclick='return addComment.moveForm("comment-201", "201", "respond", "606")'>Reply</a>			</div>
+		</div>
+	</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-experimenta even thread-even depth-1 highlander-comment" id="li-comment-277">
+		<div id="comment-277">
+			<img id="grav-23f3dcadda0fc14011acbc076145e2da-0" alt="" src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/23f3dcadda0fc14011acbc076145e2da.jpg" class="avatar avatar-40 grav-hashed grav-hijack" height="40" width="40"><cite class="fn"><a href="http://emekaeme.wordpress.com/" rel="external nofollow" class="url">Miguel</a></cite>			<a href="http://roshanbook.wordpress.com/2011/11/08/getting-django-up-and-running-on-hostgator/#comment-277">November 20, 2011 at 10:31 pm</a>
+						<div class="comment-body"><p>Thanks for the guide; I followed the 
+previous (hopefully identical) version, but as a complete newbie with 
+Django, I don’t know how to continue. I don’t even know how to check if 
+the newproject is there. I understood the .htaccess was supposed to 
+redirect… but I just added your code to the one I’m using (like the 
+reader before, my site already hosts php applications). On the other 
+hand, I’ve read you saying that there should be a new folder within 
+public_html, is that right?</p>
+<p>Any help appreciated.</p>
+<p>I’m trying to set up an instance of <a href="https://github.com/sunlightlabs/publicmarkup" rel="nofollow">https://github.com/sunlightlabs/publicmarkup</a> . But I don’t know how to go about installing a new Django app and making it visible.</p>
+</div>
+
+			<div class="reply">
+				<a class="comment-reply-link" href="http://roshanbook.wordpress.com/2011/11/08/getting-django-up-and-running-on-hostgator/?replytocom=277#respond" onclick='return addComment.moveForm("comment-277", "277", "respond", "606")'>Reply</a>			</div>
+		</div>
+	</li><!-- #comment-## -->
+	</ol>
+
+	
+
+								<div class="js" id="respond">
+				<h3 id="reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://roshanbook.wordpress.com/2011/11/08/getting-django-up-and-running-on-hostgator/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="http://roshanbook.wordpress.com/wp-comments-post.php" method="post" id="commentform">
+																										
+
+
+												<input id="highlander_comment_nonce" name="highlander_comment_nonce" value="4e1c346404" type="hidden"><input name="_wp_http_referer" value="/2011/11/08/getting-django-up-and-running-on-hostgator/" type="hidden">
+<input name="hc_post_as" id="hc_post_as" value="guest" type="hidden">
+
+<div class="comment-form-field comment-textarea">
+	
+	<div id="comment-form-comment"><textarea aria-hidden="true" tabindex="-1" style="height: 42px; resize: none; overflow-y: hidden; position: absolute; top: 0px; left: -9999px; width: 621px; line-height: 22px; text-decoration: none; letter-spacing: 0px;" placeholder="Enter your comment here..." title="Enter your comment here..."></textarea><textarea style="height: 42px; resize: none; overflow-y: hidden;" placeholder="Enter your comment here..." id="comment" name="comment" title="Enter your comment here..."></textarea></div>
+</div>
+
+<div style="display: none;" id="comment-form-identity">
+
+	<div id="comment-form-nascar">
+		<p>Fill in your details below or click an icon to log in:</p>
+		<ul>
+			<li class="selected" style="display:none;">
+				<a href="#comment-form-guest" id="postas-guest" title="Guest">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:WordPress.com" id="postas-wordpress" title="WordPress.com">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Twitter" id="postas-twitter" title="Twitter">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Facebook" id="postas-facebook" title="Facebook">
+					<span></span>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+<a href="https://gravatar.com/site/signup/" target="_blank">				<img src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/ad516503a11cd5ca435acc9bb6523536.png" alt="Gravatar" class="no-grav" width="25">
+</a>			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Email <span class="required">(required)</span> <span class="nopublish">(Address never made public)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="email"></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Name <span class="required">(required)</span></label>
+					<div class="comment-form-input"><input id="author" name="author" type="text"></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Website</label>
+					<div class="comment-form-input"><input id="url" name="url" type="text"></div>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/wplogo.png" alt="WordPress.com Logo" class="no-grav" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input name="wp_avatar" id="wordpress-avatar" class="comment-meta-wordpress" value="" type="hidden">
+				<input name="wp_user_id" id="wordpress-user_id" class="comment-meta-wordpress" value="" type="hidden">
+				<input name="wp_access_token" id="wordpress-access_token" class="comment-meta-wordpress" value="" type="hidden">
+				<p class="comment-form-posting-as pa-wordpress"><strong></strong> You are commenting using your WordPress.com account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout(%20'wordpress'%20);">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/ad516503a11cd5ca435acc9bb6523536.png" alt="Twitter picture" class="no-grav" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="" type="hidden">
+				<input name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="" type="hidden">
+				<input name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="" type="hidden">
+				<p class="comment-form-posting-as pa-twitter"><strong></strong> You are commenting using your Twitter account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout(%20'twitter'%20);">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/ad516503a11cd5ca435acc9bb6523536.png" alt="Facebook photo" class="no-grav" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="" type="hidden">
+				<input name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="" type="hidden">
+				<input name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="" type="hidden">
+				<p class="comment-form-posting-as pa-facebook"><strong></strong> You are commenting using your Facebook account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout(%20'facebook'%20);">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service">
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();">Cancel</a></div>
+		<p>Connecting to %s</p>
+	</div>
+
+	
+</div>
+
+<script type="text/javascript">
+jQuery(document).ready(function(){
+	var input = document.createElement( 'input' ),
+	    comment = jQuery( '#comment' );
+
+	if ( 'placeholder' in input ) {
+		comment.attr( 'placeholder', jQuery( '.comment-textarea label' ).remove().text() );
+	}
+
+	// Expando Mode: start small, then auto-resize on first click + text length
+	jQuery( '#comment-form-identity' ).hide();
+	jQuery( '#comment-form-subscribe' ).hide();
+	jQuery( '#commentform .form-submit' ).hide();
+
+	comment.css( { 'height':'10px' } ).one( 'focus', function() {
+		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
+		jQuery( this ).animate( { 'height': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
+		jQuery( '#comment-form-identity' ).slideDown();
+		jQuery( '#comment-form-subscribe' ).slideDown();
+		jQuery( '#commentform .form-submit' ).slideDown();
+	});
+});
+</script>
+
+<div style="display: none;" id="comment-form-subscribe">
+	<p class="comment-subscription-form"><input name="subscribe" id="subscribe" value="subscribe" style="width: auto;" tabindex="6" type="checkbox"> <label class="subscribe-label" id="subscribe-label" for="subscribe" style="display: inline;">Notify me of follow-up comments via email.</label></p></div>
+
+												<p style="display: none;" class="form-submit">
+							<input name="submit" id="comment-submit" value="Post Comment" type="submit">
+							<input name="comment_post_ID" value="606" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+						</p>
+						
+<input name="genseq" value="1372648509" type="hidden">
+<p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="de7fe8e1d7" type="hidden"></p><script type="text/javascript" src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/form.js"></script>
+<p style="display: none;"><input id="ak_js" name="ak_js" value="1372648531207" type="hidden"></p>					</form>
+							</div><!-- #respond -->
+			<div style="clear: both"></div>			
+</div><!-- #comments -->
+
+	</div>
+
+
+</div><div id="sidebar" class="sidebar">
+			<div id="rssfeed"><a href="http://roshanbook.wordpress.com/feed/"><span>RSS feed</span></a></div>
+
+		<div class="sidebar-border active" id="primary-widget-area">
+		<div class="sidebar-inner">
+		<div id="text-3" class="widget widget_text"><h3 class="widget-title">Advertisement</h3>			<div class="textwidget"><a href="http://en.support.wordpress.com/affiliate-links/"><img src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/hg255x200.gif"></a></div>
+		</div><div id="search-2" class="widget widget_search"><form role="search" method="get" id="searchform" class="searchform" action="http://roshanbook.wordpress.com/">
+				<div>
+					<label class="screen-reader-text" for="s">Search for:</label>
+					<input name="s" id="s" type="text">
+					<input id="searchsubmit" value="Search" type="submit">
+				</div>
+			</form></div><div id="blog-stats-2" class="widget widget_blog-stats"><h3 class="widget-title">Blog Stats</h3>		<ul>
+			<li>41,805 hits</li>
+		</ul>
+		</div><div id="categories-2" class="widget widget_categories"><h3 class="widget-title">Categories</h3><select name="cat" id="cat" class="postform">
+	<option selected="selected" value="-1">Select Category</option>
+	<option class="level-0" value="1273462">Blog&nbsp;&nbsp;(14)</option>
+	<option class="level-1" value="124">&nbsp;&nbsp;&nbsp;Life&nbsp;&nbsp;(1)</option>
+	<option class="level-1" value="6">&nbsp;&nbsp;&nbsp;Technology&nbsp;&nbsp;(4)</option>
+	<option class="level-2" value="54">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;General&nbsp;&nbsp;(1)</option>
+	<option class="level-2" value="2370091">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ubuntu&nbsp;&nbsp;(1)</option>
+	<option class="level-2" value="33">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Wordpress&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="786">Essays&nbsp;&nbsp;(4)</option>
+	<option class="level-0" value="131577">from me&nbsp;&nbsp;(2)</option>
+	<option class="level-0" value="6828">hacker&nbsp;&nbsp;(9)</option>
+	<option class="level-0" value="196">Programming&nbsp;&nbsp;(49)</option>
+	<option class="level-1" value="11457">&nbsp;&nbsp;&nbsp;Lisp&nbsp;&nbsp;(1)</option>
+	<option class="level-1" value="43649881">&nbsp;&nbsp;&nbsp;resources&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="17437">Promo&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="832">Python&nbsp;&nbsp;(23)</option>
+	<option class="level-1" value="3085462">&nbsp;&nbsp;&nbsp;Python web development&nbsp;&nbsp;(13)</option>
+	<option class="level-2" value="15988">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Django&nbsp;&nbsp;(12)</option>
+	<option class="level-0" value="15314">Rest&nbsp;&nbsp;(82)</option>
+	<option class="level-0" value="7001662">Ruby&nbsp;&nbsp;(15)</option>
+	<option class="level-1" value="6652">&nbsp;&nbsp;&nbsp;rails&nbsp;&nbsp;(5)</option>
+	<option class="level-1" value="5060860">&nbsp;&nbsp;&nbsp;ruby tutorial&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="26658">Solutions&nbsp;&nbsp;(66)</option>
+	<option class="level-1" value="260636">&nbsp;&nbsp;&nbsp;activecollab&nbsp;&nbsp;(1)</option>
+	<option class="level-1" value="611">&nbsp;&nbsp;&nbsp;Fedora&nbsp;&nbsp;(1)</option>
+	<option class="level-1" value="351300">&nbsp;&nbsp;&nbsp;hostgator&nbsp;&nbsp;(4)</option>
+	<option class="level-1" value="70168398">&nbsp;&nbsp;&nbsp;Ubuntu&nbsp;&nbsp;(49)</option>
+	<option class="level-1" value="5313">&nbsp;&nbsp;&nbsp;Web Tech&nbsp;&nbsp;(9)</option>
+	<option class="level-1" value="12701037">&nbsp;&nbsp;&nbsp;Windows&nbsp;&nbsp;(7)</option>
+	<option class="level-1" value="4336452">&nbsp;&nbsp;&nbsp;wordrpess&nbsp;&nbsp;(1)</option>
+	<option class="level-0" value="12069">TechTalk&nbsp;&nbsp;(24)</option>
+	<option class="level-1" value="77406814">&nbsp;&nbsp;&nbsp;cakephp&nbsp;&nbsp;(1)</option>
+	<option class="level-1" value="1017">&nbsp;&nbsp;&nbsp;Java&nbsp;&nbsp;(1)</option>
+	<option class="level-1" value="255">&nbsp;&nbsp;&nbsp;ubuntu&nbsp;&nbsp;(17)</option>
+	<option class="level-1" value="151">&nbsp;&nbsp;&nbsp;web&nbsp;&nbsp;(1)</option>
+	<option class="level-1" value="83414">&nbsp;&nbsp;&nbsp;zend&nbsp;&nbsp;(3)</option>
+	<option class="level-0" value="1018067">Tutorial&nbsp;&nbsp;(67)</option>
+	<option class="level-1" value="203308">&nbsp;&nbsp;&nbsp;jquery&nbsp;&nbsp;(1)</option>
+	<option class="level-1" value="458">&nbsp;&nbsp;&nbsp;PHP&nbsp;&nbsp;(6)</option>
+	<option class="level-2" value="636214">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yii&nbsp;&nbsp;(1)</option>
+	<option class="level-1" value="27143169">&nbsp;&nbsp;&nbsp;python&nbsp;&nbsp;(45)</option>
+	<option class="level-2" value="70168401">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;django&nbsp;&nbsp;(22)</option>
+	<option class="level-1" value="70168399">&nbsp;&nbsp;&nbsp;Ruby&nbsp;&nbsp;(7)</option>
+</select>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+	var dropdown = document.getElementById("cat");
+	function onCatChange() {
+		if ( dropdown.options[dropdown.selectedIndex].value > 0 ) {
+			location.href = "http://roshanbook.wordpress.com/?cat="+dropdown.options[dropdown.selectedIndex].value;
+		}
+	}
+	dropdown.onchange = onCatChange;
+/* ]]> */
+</script>
+
+</div>		<div id="recent-posts-2" class="widget widget_recent_entries">		<h3 class="widget-title">Recent Posts</h3>		<ul>
+					<li>
+				<a href="http://roshanbook.wordpress.com/2013/04/30/creating-a-tinyurl-with-tinyurls-api/" title="Creating a TinyURL with TinyURL’s&nbsp;API">Creating a TinyURL with TinyURL’s&nbsp;API</a>
+						</li>
+					<li>
+				<a href="http://roshanbook.wordpress.com/2013/04/29/how-to-create-your-own-tinyurl-style-url-shortener/" title="How To Create Your Own Tinyurl Style URL&nbsp;Shortener">How To Create Your Own Tinyurl Style URL&nbsp;Shortener</a>
+						</li>
+					<li>
+				<a href="http://roshanbook.wordpress.com/2013/04/24/redirecting-non-www-to-www-with-htaccess/" title="Redirecting non-www to www with&nbsp;.htaccess">Redirecting non-www to www with&nbsp;.htaccess</a>
+						</li>
+					<li>
+				<a href="http://roshanbook.wordpress.com/2013/03/15/transform-gedit-into-a-web-developer-ide/" title="Transform Gedit Into A Web Developer&nbsp;IDE">Transform Gedit Into A Web Developer&nbsp;IDE</a>
+						</li>
+					<li>
+				<a href="http://roshanbook.wordpress.com/2013/03/02/title-bar-gone-linux-mint-13-xfce/" title="Title bar gone – Linux Mint 13&nbsp;xfce">Title bar gone – Linux Mint 13&nbsp;xfce</a>
+						</li>
+				</ul>
+		</div><div id="top-posts-2" class="widget widget_top-posts"><h3 class="widget-title">Top Posts &amp; Pages</h3><ul><li><a href="http://roshanbook.wordpress.com/2012/01/06/make-sh-file-executable-in-linux/" class="bump-view" data-bump-view="tp">Make .sh file executable in linux</a></li>
+<li><a href="http://roshanbook.wordpress.com/2012/02/08/my-favorite-web-server-setup-ubuntu-server-lamp-webmin-and-virtualmin/" class="bump-view" data-bump-view="tp">My favorite web server setup, Ubuntu Server, LAMP, Webmin, and Virtualmin.</a></li>
+<li><a href="http://roshanbook.wordpress.com/2011/10/31/three-ways-to-access-linux-partitions-ext2ext3-from-windows-on-dual-boot-systems/" class="bump-view" data-bump-view="tp">Read and Write EXT4, EXT3 or EXT2 Partitions in Windows with Ext2Fsd</a></li>
+<li><a href="http://roshanbook.wordpress.com/2011/11/21/deploying-cakephp-on-hostgator-method-2/" class="bump-view" data-bump-view="tp">Deploying cakephp on hostgator method 2</a></li>
+<li><a href="http://roshanbook.wordpress.com/2012/03/07/how-to-install-the-gtk3-mac-os-x-lion-theme-on-ubuntu-11-10/" class="bump-view" data-bump-view="tp"> How To Install The GTK3 Mac OS X Lion Theme On Ubuntu 11.10 </a></li>
+<li><a href="http://roshanbook.wordpress.com/2012/02/01/easy-cakephp-in-ubuntu/" class="bump-view" data-bump-view="tp">Easy CakePHP in Ubuntu</a></li>
+<li><a href="http://roshanbook.wordpress.com/2012/11/08/solving-net-usershare-add-cannot-convert-name-everyone-to-a-sid-unexpected-information-received/" class="bump-view" data-bump-view="tp">Solving : net usershare add: cannot convert name "Everyone" to a SID + unexpected information received</a></li>
+<li><a href="http://roshanbook.wordpress.com/2012/06/10/set-up-wireless-in-hp-compaq-nx6310-in-ubuntu/" class="bump-view" data-bump-view="tp">Set up wireless in HP Compaq nx6310 in ubuntu</a></li>
+<li><a href="http://roshanbook.wordpress.com/2011/11/10/hide-php-extension-with-url-rewriting-using-htaccess/" class="bump-view" data-bump-view="tp">Hide .php extension with url rewriting using .htaccess</a></li>
+<li><a href="http://roshanbook.wordpress.com/2011/07/25/bootmgr-missing-while-booting-ubuntu-from-liveusb/" class="bump-view" data-bump-view="tp">BOOTMGR missing while booting ubuntu from liveusb</a></li>
+</ul></div><div id="linkcat-1356" class="widget widget_links"><h3 class="widget-title">Blogroll</h3>
+	<ul class="xoxo blogroll">
+<li><a href="http://en.forums.wordpress.com/">Discuss</a></li>
+<li><a href="http://www.plinky.com/">Get Inspired</a></li>
+<li><a href="http://polldaddy.com/">Get Polling</a></li>
+<li><a href="http://en.support.wordpress.com/">Get Support</a></li>
+<li><a href="http://learn.wordpress.com/">Learn WordPress.com</a></li>
+<li><a href="http://planet.wordpress.org/">WordPress Planet</a></li>
+<li><a href="http://en.blog.wordpress.com/">WordPress.com News</a></li>
+
+	</ul>
+</div>
+<div id="archives-2" class="widget widget_archive"><h3 class="widget-title">Archives</h3>		<ul>
+			<li><a href="http://roshanbook.wordpress.com/2013/04/" title="April 2013">April 2013</a></li>
+	<li><a href="http://roshanbook.wordpress.com/2013/03/" title="March 2013">March 2013</a></li>
+	<li><a href="http://roshanbook.wordpress.com/2013/01/" title="January 2013">January 2013</a></li>
+	<li><a href="http://roshanbook.wordpress.com/2012/12/" title="December 2012">December 2012</a></li>
+	<li><a href="http://roshanbook.wordpress.com/2012/11/" title="November 2012">November 2012</a></li>
+	<li><a href="http://roshanbook.wordpress.com/2012/10/" title="October 2012">October 2012</a></li>
+	<li><a href="http://roshanbook.wordpress.com/2012/09/" title="September 2012">September 2012</a></li>
+	<li><a href="http://roshanbook.wordpress.com/2012/08/" title="August 2012">August 2012</a></li>
+	<li><a href="http://roshanbook.wordpress.com/2012/07/" title="July 2012">July 2012</a></li>
+	<li><a href="http://roshanbook.wordpress.com/2012/06/" title="June 2012">June 2012</a></li>
+	<li><a href="http://roshanbook.wordpress.com/2012/05/" title="May 2012">May 2012</a></li>
+	<li><a href="http://roshanbook.wordpress.com/2012/03/" title="March 2012">March 2012</a></li>
+	<li><a href="http://roshanbook.wordpress.com/2012/02/" title="February 2012">February 2012</a></li>
+	<li><a href="http://roshanbook.wordpress.com/2012/01/" title="January 2012">January 2012</a></li>
+	<li><a href="http://roshanbook.wordpress.com/2011/12/" title="December 2011">December 2011</a></li>
+	<li><a href="http://roshanbook.wordpress.com/2011/11/" title="November 2011">November 2011</a></li>
+	<li><a href="http://roshanbook.wordpress.com/2011/10/" title="October 2011">October 2011</a></li>
+	<li><a href="http://roshanbook.wordpress.com/2011/09/" title="September 2011">September 2011</a></li>
+	<li><a href="http://roshanbook.wordpress.com/2011/08/" title="August 2011">August 2011</a></li>
+	<li><a href="http://roshanbook.wordpress.com/2011/07/" title="July 2011">July 2011</a></li>
+		</ul>
+</div><div id="tag_cloud-2" class="widget widget_tag_cloud"><h3 class="widget-title">Category Cloud</h3><div style="overflow: hidden;"><a href="http://roshanbook.wordpress.com/category/blog-2/" style="font-size: 128.08641975309%; padding: 1px; margin: 1px;" title="Blog (14)">Blog</a> <a href="http://roshanbook.wordpress.com/category/python/python-web-development/django/" style="font-size: 123.76543209877%; padding: 1px; margin: 1px;" title="Django (12)">Django</a> <a href="http://roshanbook.wordpress.com/category/tutorial-2/python-2/django-python-2/" style="font-size: 145.37037037037%; padding: 1px; margin: 1px;" title="django (22)">django</a> <a href="http://roshanbook.wordpress.com/category/essays/" style="font-size: 106.48148148148%; padding: 1px; margin: 1px;" title="Essays (4)">Essays</a> <a href="http://roshanbook.wordpress.com/category/solutions/fedora/" style="font-size: 100%; padding: 1px; margin: 1px;" title="Fedora (1)">Fedora</a> <a href="http://roshanbook.wordpress.com/category/from-me/" style="font-size: 102.16049382716%; padding: 1px; margin: 1px;" title="from me (2)">from me</a> <a href="http://roshanbook.wordpress.com/category/hacker/" style="font-size: 117.28395061728%; padding: 1px; margin: 1px;" title="hacker (9)">hacker</a> <a href="http://roshanbook.wordpress.com/category/solutions/hostgator/" style="font-size: 106.48148148148%; padding: 1px; margin: 1px;" title="hostgator (4)">hostgator</a> <a href="http://roshanbook.wordpress.com/category/tutorial-2/jquery/" style="font-size: 100%; padding: 1px; margin: 1px;" title="jquery (1)">jquery</a> <a href="http://roshanbook.wordpress.com/category/tutorial-2/php/" style="font-size: 108.64197530864%; padding: 1px; margin: 1px;" title="PHP (5)">PHP</a> <a href="http://roshanbook.wordpress.com/category/programming/" style="font-size: 203.7037037037%; padding: 1px; margin: 1px;" title="Programming (49)">Programming</a> <a href="http://roshanbook.wordpress.com/category/python/" style="font-size: 147.53086419753%; padding: 1px; margin: 1px;" title="Python (23)">Python</a> <a href="http://roshanbook.wordpress.com/category/tutorial-2/python-2/" style="font-size: 195.06172839506%; padding: 1px; margin: 1px;" title="python (45)">python</a> <a href="http://roshanbook.wordpress.com/category/python/python-web-development/" style="font-size: 125.92592592593%; padding: 1px; margin: 1px;" title="Python web development (13)">Python web development</a> <a href="http://roshanbook.wordpress.com/category/ruby-2/rails/" style="font-size: 108.64197530864%; padding: 1px; margin: 1px;" title="rails (5)">rails</a> <a href="http://roshanbook.wordpress.com/category/programming/resources-programming/" style="font-size: 104.32098765432%; padding: 1px; margin: 1px;" title="resources (3)">resources</a> <a href="http://roshanbook.wordpress.com/category/rest/" style="font-size: 275%; padding: 1px; margin: 1px;" title="Rest (82)">Rest</a> <a href="http://roshanbook.wordpress.com/category/tutorial-2/ruby-tutorial-2/" style="font-size: 112.96296296296%; padding: 1px; margin: 1px;" title="Ruby (7)">Ruby</a> <a href="http://roshanbook.wordpress.com/category/ruby-2/ruby-tutorial/" style="font-size: 100%; padding: 1px; margin: 1px;" title="ruby tutorial (1)">ruby tutorial</a> <a href="http://roshanbook.wordpress.com/category/solutions/" style="font-size: 238.27160493827%; padding: 1px; margin: 1px;" title="Solutions (65)">Solutions</a> <a href="http://roshanbook.wordpress.com/category/blog-2/technology/" style="font-size: 106.48148148148%; padding: 1px; margin: 1px;" title="Technology (4)">Technology</a> <a href="http://roshanbook.wordpress.com/category/techtalk/" style="font-size: 145.37037037037%; padding: 1px; margin: 1px;" title="TechTalk (22)">TechTalk</a> <a href="http://roshanbook.wordpress.com/category/tutorial-2/" style="font-size: 240.43209876543%; padding: 1px; margin: 1px;" title="Tutorial (66)">Tutorial</a> <a href="http://roshanbook.wordpress.com/category/solutions/ubuntu-solutions/" style="font-size: 203.7037037037%; padding: 1px; margin: 1px;" title="Ubuntu (49)">Ubuntu</a> <a href="http://roshanbook.wordpress.com/category/techtalk/ubuntu/" style="font-size: 134.56790123457%; padding: 1px; margin: 1px;" title="ubuntu (17)">ubuntu</a> <a href="http://roshanbook.wordpress.com/category/techtalk/web/" style="font-size: 100%; padding: 1px; margin: 1px;" title="web (1)">web</a> <a href="http://roshanbook.wordpress.com/category/solutions/web-tech/" style="font-size: 117.28395061728%; padding: 1px; margin: 1px;" title="Web Tech (9)">Web Tech</a> <a href="http://roshanbook.wordpress.com/category/solutions/windows-solutions/" style="font-size: 112.96296296296%; padding: 1px; margin: 1px;" title="Windows (7)">Windows</a> <a href="http://roshanbook.wordpress.com/category/techtalk/zend/" style="font-size: 104.32098765432%; padding: 1px; margin: 1px;" title="zend (3)">zend</a> </div></div><div id="wp_tag_cloud-2" class="widget wp_widget_tag_cloud"><h3 class="widget-title">Tag Cloud</h3><div style="overflow:hidden"><a href="http://roshanbook.wordpress.com/tag/htaccess/" class="tag-link-202719" title="2 topics" style="font-size: 10.230088495575pt;">.htaccess</a>
+<a href="http://roshanbook.wordpress.com/tag/application/" class="tag-link-3370" title="2 topics" style="font-size: 10.230088495575pt;">application</a>
+<a href="http://roshanbook.wordpress.com/tag/bootable/" class="tag-link-187730" title="1 topic" style="font-size: 8pt;">bootable</a>
+<a href="http://roshanbook.wordpress.com/tag/bootloader/" class="tag-link-2080388" title="1 topic" style="font-size: 8pt;">bootloader</a>
+<a href="http://roshanbook.wordpress.com/tag/bootmgr-missing/" class="tag-link-36427153" title="2 topics" style="font-size: 10.230088495575pt;">bootmgr missing</a>
+<a href="http://roshanbook.wordpress.com/tag/cakephp/" class="tag-link-38161" title="3 topics" style="font-size: 11.716814159292pt;">cakephp</a>
+<a href="http://roshanbook.wordpress.com/tag/command/" class="tag-link-14292" title="1 topic" style="font-size: 8pt;">command</a>
+<a href="http://roshanbook.wordpress.com/tag/desktop/" class="tag-link-4635" title="2 topics" style="font-size: 10.230088495575pt;">desktop</a>
+<a href="http://roshanbook.wordpress.com/tag/diskcheck/" class="tag-link-63094723" title="1 topic" style="font-size: 8pt;">diskcheck</a>
+<a href="http://roshanbook.wordpress.com/tag/django/" class="tag-link-15988" title="7 topics" style="font-size: 15.433628318584pt;">Django</a>
+<a href="http://roshanbook.wordpress.com/tag/embed-a-mp3-audio-on-website/" class="tag-link-63094603" title="1 topic" style="font-size: 8pt;">embed a mp3 audio on website</a>
+<a href="http://roshanbook.wordpress.com/tag/essential-applications/" class="tag-link-3091454" title="1 topic" style="font-size: 8pt;">essential applications</a>
+<a href="http://roshanbook.wordpress.com/tag/ffmpeg/" class="tag-link-43966" title="2 topics" style="font-size: 10.230088495575pt;">FFmpeg</a>
+<a href="http://roshanbook.wordpress.com/tag/gedit/" class="tag-link-669398" title="2 topics" style="font-size: 10.230088495575pt;">Gedit</a>
+<a href="http://roshanbook.wordpress.com/tag/hostgator/" class="tag-link-351300" title="4 topics" style="font-size: 12.955752212389pt;">hostgator</a>
+<a href="http://roshanbook.wordpress.com/tag/ide/" class="tag-link-7746" title="2 topics" style="font-size: 10.230088495575pt;">ide</a>
+<a href="http://roshanbook.wordpress.com/tag/lamp/" class="tag-link-36169" title="3 topics" style="font-size: 11.716814159292pt;">lamp</a>
+<a href="http://roshanbook.wordpress.com/tag/learn-python/" class="tag-link-9110829" title="10 topics" style="font-size: 17.16814159292pt;">learn python</a>
+<a href="http://roshanbook.wordpress.com/tag/linux/" class="tag-link-610" title="3 topics" style="font-size: 11.716814159292pt;">linux</a>
+<a href="http://roshanbook.wordpress.com/tag/linux-mint/" class="tag-link-613345" title="2 topics" style="font-size: 10.230088495575pt;">linux mint</a>
+<a href="http://roshanbook.wordpress.com/tag/php-2/" class="tag-link-25985434" title="3 topics" style="font-size: 11.716814159292pt;">php</a>
+<a href="http://roshanbook.wordpress.com/tag/phpmyadmin/" class="tag-link-149164" title="1 topic" style="font-size: 8pt;">phpmyadmin</a>
+<a href="http://roshanbook.wordpress.com/tag/python-2/" class="tag-link-27143169" title="24 topics" style="font-size: 21.628318584071pt;">python</a>
+<a href="http://roshanbook.wordpress.com/tag/python-numbers/" class="tag-link-65771080" title="2 topics" style="font-size: 10.230088495575pt;">python numbers</a>
+<a href="http://roshanbook.wordpress.com/tag/python-string/" class="tag-link-17274066" title="2 topics" style="font-size: 10.230088495575pt;">python string</a>
+<a href="http://roshanbook.wordpress.com/tag/python-strings/" class="tag-link-61501564" title="3 topics" style="font-size: 11.716814159292pt;">python strings</a>
+<a href="http://roshanbook.wordpress.com/tag/python-tutorial/" class="tag-link-1178972" title="18 topics" style="font-size: 20.141592920354pt;">python tutorial</a>
+<a href="http://roshanbook.wordpress.com/tag/regular-expression-in-python/" class="tag-link-66387535" title="2 topics" style="font-size: 10.230088495575pt;">regular expression in python</a>
+<a href="http://roshanbook.wordpress.com/tag/ruby/" class="tag-link-4872" title="6 topics" style="font-size: 14.814159292035pt;">ruby</a>
+<a href="http://roshanbook.wordpress.com/tag/ruby-tutorial/" class="tag-link-5060860" title="2 topics" style="font-size: 10.230088495575pt;">ruby tutorial</a>
+<a href="http://roshanbook.wordpress.com/tag/samba/" class="tag-link-13728" title="2 topics" style="font-size: 10.230088495575pt;">samba</a>
+<a href="http://roshanbook.wordpress.com/tag/titanium/" class="tag-link-178048" title="3 topics" style="font-size: 11.716814159292pt;">titanium</a>
+<a href="http://roshanbook.wordpress.com/tag/tuple/" class="tag-link-3030390" title="2 topics" style="font-size: 10.230088495575pt;">tuple</a>
+<a href="http://roshanbook.wordpress.com/tag/tutorial/" class="tag-link-2932" title="11 topics" style="font-size: 17.663716814159pt;">tutorial</a>
+<a href="http://roshanbook.wordpress.com/tag/ububntu/" class="tag-link-8599010" title="3 topics" style="font-size: 11.716814159292pt;">ububntu</a>
+<a href="http://roshanbook.wordpress.com/tag/ubuntu/" class="tag-link-255" title="26 topics" style="font-size: 22pt;">ubuntu</a>
+<a href="http://roshanbook.wordpress.com/tag/ubuntu-hacks/" class="tag-link-19382304" title="1 topic" style="font-size: 8pt;">ubuntu hacks</a>
+<a href="http://roshanbook.wordpress.com/tag/usb/" class="tag-link-57231" title="1 topic" style="font-size: 8pt;">usb</a>
+<a href="http://roshanbook.wordpress.com/tag/webmin/" class="tag-link-1008233" title="2 topics" style="font-size: 10.230088495575pt;">webmin</a>
+<a href="http://roshanbook.wordpress.com/tag/while-loop/" class="tag-link-2987489" title="2 topics" style="font-size: 10.230088495575pt;">while loop</a>
+<a href="http://roshanbook.wordpress.com/tag/windows/" class="tag-link-800" title="4 topics" style="font-size: 12.955752212389pt;">windows</a>
+<a href="http://roshanbook.wordpress.com/tag/windows-7/" class="tag-link-729864" title="1 topic" style="font-size: 8pt;">windows 7</a>
+<a href="http://roshanbook.wordpress.com/tag/yii/" class="tag-link-636214" title="3 topics" style="font-size: 11.716814159292pt;">yii</a>
+<a href="http://roshanbook.wordpress.com/tag/zend-framework/" class="tag-link-325465" title="2 topics" style="font-size: 10.230088495575pt;">zend framework</a>
+<a href="http://roshanbook.wordpress.com/tag/zend-tool/" class="tag-link-32059366" title="1 topic" style="font-size: 8pt;">zend tool</a></div></div><div id="twitter-2" class="widget widget_twitter"><h3 class="widget-title"><a href="http://twitter.com/manishroshan">On Twitter</a></h3><p>Error: Twitter did not respond. Please wait a few minutes and refresh this page.</p></div>
+		</div>
+	</div>
+
+	
+
+</div>
+
+
+</div>
+<div id="footer">
+	<div>
+		<a href="#wrapper" id="top-link">↑ Top</a>
+		<a href="http://wordpress.com/?ref=footer" rel="generator">Blog at WordPress.com</a>.
+		<a href="http://theme.wordpress.com/themes/zbench/" title="Learn more about this theme">The zBench Theme</a>. 	</div>
+</div>
+
+</div>
+
+<script type="text/javascript">
+var _qevents = _qevents || [], wpcomQuantcastData = {"qacct":"p-18-mFEk4J448M","labels":",language.en,type.wpcom,posttag.django,posttag.hostgator,as"};
+function wpcomQuantcastPixel( labels, options ) {
+	var i, defaults = wpcomQuantcastData, data = { event: 'ajax' };
+
+	labels  = labels  || '';
+	options = options || {};
+
+	if ( typeof labels != 'string' )
+		options = labels;
+
+	for ( i in defaults ) {
+		data[i] = defaults[i];
+	}
+
+	for ( i in options ) {
+		data[i] = options[i];
+	}
+
+	if ( data.labels ) {
+		data.labels += ',' + labels;
+	} else {
+		data.labels = labels;
+	}
+
+	_qevents.push( data );
+};
+(function() {var elem = document.createElement('script');elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";elem.async = true;elem.type = "text/javascript";var scpt = document.getElementsByTagName('script')[0];scpt.parentNode.insertBefore(elem, scpt);  })();
+_qevents.push( wpcomQuantcastData );
+</script>
+<noscript><div style="display: none;"><img src="//pixel.quantserve.com/pixel/p-18-mFEk4J448M.gif?labels=%2Clanguage.en%2Ctype.wpcom%2Cposttag.django%2Cposttag.hostgator%2Cas" height="1" width="1" alt="" /></div></noscript>
+
+<script type="text/javascript" src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/wpgroho.js"></script>
+<script>jQuery(document).ready(function($){ Gravatar.profile_cb = function( h, d ) { WPGroHo.syncProfileData( h, d );	}; Gravatar.my_hash = WPGroHo.my_hash; Gravatar.init( 'body', '#wp-admin-bar-my-account' ); });</script>	<div style="display:none">
+	<div class="grofile-hash-map-8baaaa69bd7f8bac0985badb847568af">
+	</div>
+	<div class="grofile-hash-map-0ec1b7e6b2362a7201573ca0cb1855c4">
+	</div>
+	<div class="grofile-hash-map-23f3dcadda0fc14011acbc076145e2da">
+	</div>
+	</div>
+<script type="text/javascript">
+/* <![CDATA[ */
+var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Posting Comment\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"http:\/\/roshanbook.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"http:\/\/roshanbook.wordpress.com\/wp-login.php?action=logout&_wpnonce=88a9c653a8","homeURL":"http:\/\/roshanbook.wordpress.com\/","postID":"606","gravDefault":"identicon","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"0","userIsLoggedIn":"","isJetpack":"0"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/a_003.js"></script>
+
+	<div style="bottom: -238px;" id="bit" class="loggedout-follow-normal">
+		<a class="bsub" href="javascript:void(0)"><span id="bsub-text">Follow</span></a>
+		<div id="bitsubscribe">
+
+					<h3><label for="loggedout-follow-field">Follow “Roshan Book”</label></h3>
+
+			<form action="https://subscribe.wordpress.com" method="post" accept-charset="utf-8" id="loggedout-follow">
+			<p>Get every new post delivered to your Inbox.</p>
+
+			<p id="loggedout-follow-error" style="display: none;"></p>
+
+						<p class="bit-follow-count">Join 122 other followers</p>
+			<p><input name="email" style="width: 95%; padding: 1px 2px" value="Enter your email address" onfocus='this.value=(this.value=="Enter your email address") ? "" : this.value;' onblur='this.value=(this.value=="") ? "Enter email address" : this.value;' id="loggedout-follow-field" type="email"></p>
+
+			<input name="action" value="subscribe" type="hidden">
+			<input name="blog_id" value="17709901" type="hidden">
+			<input name="source" value="http://roshanbook.wordpress.com/2011/11/08/getting-django-up-and-running-on-hostgator/" type="hidden">
+			<input name="sub-type" value="loggedout-follow" type="hidden">
+
+			<input id="_wpnonce" name="_wpnonce" value="f2f7857953" type="hidden"><input name="_wp_http_referer" value="/2011/11/08/getting-django-up-and-running-on-hostgator/" type="hidden">
+			<p id="bsub-subscribe-button"><input value="Sign me up" type="submit"></p>
+			</form>
+					<div id="bsub-credit"><a href="http://wordpress.com/signup/?ref=lof">Powered by WordPress.com</a></div>
+		</div><!-- #bitsubscribe -->
+	</div><!-- #bit -->
+<script type="text/javascript" charset="UTF-8" id="polldaddyRatings"><!--//--><![CDATA[//><!--
+PDRTJS_settings_4910994_post_606={"id":4910994,"unique_id":"wp-post-606","title":"Getting%20django%20up%20and%20running%20on%26nbsp%3Bhostgator","permalink":"http:\/\/roshanbook.wordpress.com\/2011\/11\/08\/getting-django-up-and-running-on-hostgator\/","item_id":"_post_606"}; if ( typeof PDRTJS_RATING !== 'undefined' ){if ( typeof PDRTJS_4910994_post_606 == 'undefined' ){PDRTJS_4910994_post_606 = new PDRTJS_RATING( PDRTJS_settings_4910994_post_606 );}}
+//--><!]]></script><script type="text/javascript" charset="UTF-8" src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/rating.js"></script>		<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-google-plus-1' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=600,height=600' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-facebook' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-twitter' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-linkedin' ).on( 'click', function() {
+				window.open( jQuery(this).attr( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+				return false;
+			});
+		});
+		</script>
+			<div id="sharing_email" style="display: none;">
+		<form action="/2011/11/08/getting-django-up-and-running-on-hostgator/" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input name="target_email" id="target_email" type="text">
+
+			
+				<label for="source_name">Your Name</label>
+				<input name="source_name" id="source_name" type="text">
+
+				<label for="source_email">Your Email Address</label>
+				<input name="source_email" id="source_email" type="text">
+
+			
+			<div class="recaptcha" id="sharing_recaptcha"></div><input name="recaptcha_public_key" id="recaptcha_public_key" value="6LcYW8MSAAAAADBAuEH9yaPcF7lWh11Iq62ZKtoo" type="hidden">
+			<img style="float: right; display: none" class="loading" src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/loading.gif" alt="loading" height="16" width="16">
+			<input value="Send Email" class="sharing_send" type="submit">
+			<a href="#cancel" class="sharing_cancel">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div>
+					<script type="text/javascript">
+			jQuery(document).on('ready', function(){
+				jQuery('body').on('click', 'a.share-pinterest', function(e){
+					e.preventDefault();
+
+					// Load Pinterest Bookmarklet code
+					var s = document.createElement("script");
+					s.type = "text/javascript";
+					s.src = window.location.protocol + "//assets.pinterest.com/js/pinmarklet.js?r=" + ( Math.random() * 99999999 );
+					var x = document.getElementsByTagName("script")[0];
+					x.parentNode.insertBefore(s, x);
+
+					// Trigger Stats
+					var s = document.createElement("script");
+					s.type = "text/javascript";
+					s.src = this + ( this.toString().indexOf( '?' ) ? '&' : '?' ) + 'js_only=1';
+					var x = document.getElementsByTagName("script")[0];
+					x.parentNode.insertBefore(s, x);
+				});
+			});
+			</script>
+				<iframe src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/master.htm" id="likes-master" name="likes-master" style="display:none;" scrolling="no"></iframe>
+		<div id="likes-other-gravatars"><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+		<script type="text/javascript">
+		//<![CDATA[
+			var jetpackLikesWidgetQueue = [];
+			var jetpackLikesMasterReady = false;
+
+			function JetpackLikespostMessage( message, target ) {
+				if ( "string" === typeof message ){
+					try{
+						message = JSON.parse( message );
+					}
+					catch(e) {
+						return;
+					}
+				}
+
+				pm( {
+					target: target,
+					type: 'likesMessage',
+					data: message,
+					origin: '*'
+				} );
+			}
+
+			function JetpackLikesMessageListener( event ) {
+				if ( "undefined" == typeof event.event )
+					return;
+
+				if ( 'masterReady' == event.event ) {
+					jQuery( document ).ready( function() {
+						jetpackLikesMasterReady = true;
+
+						var stylesData = {
+								event: 'injectStyles'
+						};
+
+						if ( jQuery( 'iframe.admin-bar-likes-widget' ).length > 0 ) {
+							JetpackLikespostMessage( { event: 'adminBarEnabled' }, window.frames[ 'likes-master' ] );
+
+							stylesData.adminBarStyles = {
+								background: jQuery( '#wpadminbar .quicklinks li#wp-admin-bar-wpl-like > a' ).css( 'background' )
+							};
+						}
+
+						if ( !window.addEventListener )
+							jQuery( '#wp-admin-bar-admin-bar-likes-widget' ).hide();
+
+						stylesData.textStyles = {
+							color: jQuery( '.sd-text-color').css( 'color' ),
+							fontFamily: jQuery( '.sd-text-color' ).css( 'font-family' ),
+							fontSize: jQuery( '.sd-text-color' ).css( 'font-size' ),
+							direction: jQuery( '.sd-text-color' ).css( 'direction' ),
+							fontWeight: jQuery( '.sd-text-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-text-color' ).css( 'font-style' ),
+							textDecoration: jQuery( '.sd-text-color' ).css('text-decoration')
+						};
+
+						stylesData.linkStyles = {
+							color: jQuery( '.sd-link-color' ).css('color'),
+							fontFamily: jQuery( '.sd-link-color' ).css('font-family'),
+							fontSize: jQuery( '.sd-link-color' ).css('font-size'),
+							textDecoration: jQuery( '.sd-link-color' ).css('text-decoration'),
+							fontWeight: jQuery( '.sd-link-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-link-color' ).css( 'font-style' )
+						};
+
+						JetpackLikespostMessage( stylesData, window.frames[ 'likes-master' ] );
+
+						var requests = [];
+						jQuery( '.jetpack-likes-widget-wrapper' ).each( function( i ) {
+							var regex = /like-(post|comment)-wrapper-(\d+)-(\d+)-(\w+)/;
+							var match = regex.exec( this.id );
+							if ( ! match || match.length != 5 )
+								return;
+
+							var info = {
+								blog_id: match[2],
+								width:   this.width
+							};
+
+							if ( 'post' == match[1] ) {
+								info.post_id = match[3];
+							} else if ( 'comment' == match[1] ) {
+								info.comment_id = match[3];
+							}
+
+							info.obj_id = match[4];
+
+							requests.push( info );
+						});
+
+						JetpackLikespostMessage( { event: 'initialBatch', requests: requests }, window.frames['likes-master'] );
+
+						jQuery( document ).on( 'inview', 'div.jetpack-likes-widget-unloaded', function() {
+							jetpackLikesWidgetQueue.push( this.id );
+						});
+					});
+				}
+
+				if ( 'showLikeWidget' == event.event ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 10 );
+					jQuery( '#' + event.id + ' .post-likes-widget-placeholder'  ).fadeOut( 'fast', function() {
+						jQuery( '#' + event.id + ' .post-likes-widget' ).fadeIn( 'fast', function() {
+							JetpackLikespostMessage( { event: 'likeWidgetDisplayed', blog_id: event.blog_id, post_id: event.post_id, obj_id: event.obj_id }, window.frames['likes-master'] );
+						});
+					});
+				}
+
+				if ( 'showOtherGravatars' == event.event ) {
+					var $container = jQuery( '#likes-other-gravatars' );
+					var $list = $container.find( 'ul' );
+
+					$container.hide();
+					$list.html( '' );
+
+					$container.find( '.likes-text span' ).text( event.total );
+
+					jQuery.each( event.likers, function( i, liker ) {
+						$list.append( '<li class="' + liker.css_class + '"><a href="' + liker.profile_URL + '" class="wpl-liker" rel="nofollow" target="_parent"><img src="' + liker.avatar_URL + '" alt="' + liker.name + '" width="30" height="30" style="padding-right: 3px;" /></a></li>');
+					} );
+
+					var offset = jQuery( "[name='" + event.parent + "']" ).offset();
+
+					$container.css( 'left', offset.left + event.position.left - 10 + 'px' );
+					$container.css( 'top', offset.top + event.position.top - 33 + 'px' );
+
+					var rowLength = Math.floor( event.width / 37 );
+					var height = ( Math.ceil( event.likers.length / rowLength ) * 37 ) + 13;
+					if ( height > 204 ) {
+						height = 204;
+					}
+
+					$container.css( 'height', height + 'px' );
+					$container.css( 'width', rowLength * 37 - 7 + 'px' );
+
+					$list.css( 'width', rowLength * 37 + 'px' );
+
+					$container.fadeIn( 'slow' );
+
+					var scrollbarWidth = $list[0].offsetWidth - $list[0].clientWidth;
+					if ( scrollbarWidth > 0 ) {
+						$container.width( $container.width() + scrollbarWidth );
+						$list.width( $list.width() + scrollbarWidth );
+					}
+				}
+			}
+
+			pm.bind( 'likesMessage', function(e) { JetpackLikesMessageListener(e); } );
+
+			jQuery( document ).click( function( e ) {
+				var $container = jQuery( '#likes-other-gravatars' );
+
+				if ( $container.has( e.target ).length === 0 ) {
+					$container.fadeOut( 'slow' );
+				}
+			});
+
+			function JetpackLikesWidgetQueueHandler() {
+				var wrapperID;
+				if ( ! jetpackLikesMasterReady ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				if ( jetpackLikesWidgetQueue.length > 0 ) {
+					// We may have a widget that needs creating now
+					var found = false;
+					while( jetpackLikesWidgetQueue.length > 0 ) {
+						// Grab the first member of the queue that isn't already loading.
+						wrapperID = jetpackLikesWidgetQueue.splice( 0, 1 )[0];
+						if ( jQuery( '#' + wrapperID ).hasClass( 'jetpack-likes-widget-unloaded' ) ) {
+							found = true;
+							break;
+						}
+					}
+					if ( ! found ) {
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				} else if ( jQuery( 'div.jetpack-likes-widget-unloaded' ).length > 0 ) {
+					// Get the next unloaded widget
+					wrapperID = jQuery( 'div.jetpack-likes-widget-unloaded' ).first()[0].id;
+					if ( ! wrapperID ) {
+						// Everything is currently loaded
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				}
+
+				var $wrapper = jQuery( '#' + wrapperID );
+				$wrapper.find( 'iframe' ).remove();
+
+				if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='22px' width='68px' frameBorder='0' scrolling='no' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				} else {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='55px' width='100%' frameBorder='0' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				}
+
+				$wrapper.removeClass( 'jetpack-likes-widget-unloaded' ).addClass( 'jetpack-likes-widget-loading' );
+
+				$wrapper.find( 'iframe' ).load( function( e ) {
+					var $iframe = jQuery( e.target );
+					$wrapper.removeClass( 'jetpack-likes-widget-loading' ).addClass( 'jetpack-likes-widget-loaded' );
+
+					JetpackLikespostMessage( { event: 'loadLikeWidget', name: $iframe.attr( 'name' ), width: $iframe.width() }, window.frames[ 'likes-master' ] );
+
+					if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+						$wrapper.find( 'iframe' ).Jetpack( 'resizeable' );
+					}
+				});
+				setTimeout( JetpackLikesWidgetQueueHandler, 250 );
+			}
+			JetpackLikesWidgetQueueHandler();
+		//]]>
+		</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var recaptcha_options = {"lang":"en"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/a_002.js"></script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script><script src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/w.js" type="text/javascript"></script>
+<script type="text/javascript">
+st_go({'blog':'17709901','v':'wpcom','tz':'0','user_id':'0','post':'606','subd':'roshanbook'});
+ex_go({'crypt':'UE5XaGUuOTlwaD85flAmcm1mcmZsaDhkV11YdWpYP2xZaVBVeHZiOUhkaixZNmFbZU9LX1JpbmhKSEc2cFh0fmxycFJtQzhKUXUxLXZhZFNWNGxdbC1ibmVqczZdcT91Vi9Lb0p2a1RWaTNWajNQd2RjYnVtMEd3eDlCeFljZ3xaeGI9c1M4cndTUk4yd0Y9KzdmM1FKXVl3eDAuRXc1bl96WWQsS05HNmVPcDhuVF0sWVVhYitXSWs/fm8xUVAxN0syJVM4JXx6cisvMXJxTjJ6SFNPZH5JLlE9N05WZS5yfCwlc0Nzcz9rNjc9ZUFnVD05Wk5IW045cFE9K3RKbUNGeHg9TnwseWJNazFvQ3dHbG5CLFlnNnh8T0ZdRnA1alI2RjVvVEtjP2FmME5oa1ZPYzdaS1YlaU8meWZqZm9dMHgmJlNk'});
+addLoadEvent(function(){linktracker_init('17709901',606);});
+	</script><img id="wpstats" src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/g.gif" alt=""><img id="wpstats2" src="Getting%20django%20up%20and%20running%20on%20hostgator%20_%20Roshan%20Book_files/g_002.gif" alt="" style="display:none">
+<noscript><img src="http://stats.wordpress.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /></noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//stats.wordpress.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>
+</body></html>

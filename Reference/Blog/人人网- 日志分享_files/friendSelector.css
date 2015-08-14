@@ -1,0 +1,287 @@
+/* CSS Document */
+.friendAutoSelector{vertical-align:top;width:280px}
+.friendAutoSelector .inputRst{padding-left:10px;}
+.frsAutoUp,
+.frsAutoDown{background-image:url(http://a.xnimg.cn/imgpro/arrow/scroll_down_yellow.gif);background-repeat:no-repeat;background-position:right center;width:9px;height:9px;display:inline-block;cursor:pointer;margin:1px 20px 0 5px;*display:inline;*zoom:1}
+.frsAutoUp{background-image:url(http://a.xnimg.cn/imgpro/arrow/scroll_up_yellow.gif);}
+.autoRst{border:solid 1px #BEC7D8;width:248px;position:absolute;z-index:2;background-color:#fff;overflow:hidden;left:0;*top:22px;top:21px}
+.autoRst ul{margin-bottom:-1px}
+.autoRst ul .selected{background-color:#F0F5F8;color:#888888;}
+.autoRst ul .selectedname{background-color:#F0F5F8;}
+.autoRst ul li{border-bottom:solid 1px #eee;line-height:1.8;overflow:hidden;padding-left:5px;}
+.autoRst ul li a{display:block;}
+.autoRst ul li a:hover{display:block;text-decoration:none;}
+
+.radio-choose{padding:2px;width:310px;position:absolute;left:-65px;top:23px;*top:24px}
+.radio-choose .tips{background-color:#F0F5F8;padding:2px 5px 2px 5px;*padding:2px 5px 0px 5px;line-height:22px;overflow:hidden;zoom:1}
+.radio-choose .tips .float-left{line-height:22px}
+.radio-choose .tips #tipsBtn{padding-top:2px}
+.radio-choose .holder{overflow-x:hidden;overflow-y:scroll;border:solid 1px #EFF1EE;height:98px}
+.radio-choose .holder ul{margin-right:-10px}
+.radio-choose .holder label{font-weight:normal;color:#666}
+.radio-choose .holder li{padding-left:5px;line-height:24px;height:24px}
+.radio-choose .holder li .userCell{width:95px;overflow:hidden;text-overflow:ellipsis;display:inline-block;float:left;height:21px;}
+.radio-choose .actionBtns{padding:5px}
+/*-- friendl elector --*/	
+#write_name {background:#FFFFFF url(http://a.xnimg.cn/imgpro/bg/magglass.gif) no-repeat scroll 3px 50%;padding-left:17px;}
+.friendlist_elector{vertical-align:top;position:relative;width:359px}
+.friendlist_elector .friend_list,.friendlist_elector .friend_add {line-height:22px;overflow-x:hidden;overflow-y:scroll;float:left;width:178px;height:154px;border-bottom:solid 1px #BEC7D8;border-right:solid 1px #BEC7D8;}
+.friendlist_elector .friend_list{border-left:solid 1px #BEC7D8;background:#F0F5F8;}
+.friendlist_elector .friend_list ul {}
+.friendlist_elector .friend_list li {display:block;}
+.friendlist_elector .friend_list .choose {background:url(http://a.xnimg.cn/imgpro/bg/choose.gif) no-repeat 145px center;padding-left:6px;}
+.friendlist_elector .friend_list li a,.friendlist_elector .friend_list li a:hover { height:22px;display:block;padding:0 6px 0;text-decoration:none;color:#000;}
+.friendlist_elector .friend_list li a:hover {background:#F8E6AC url(http://a.xnimg.cn/imgpro/bg/friend_list_bg.gif) no-repeat 145px center;}
+.friendlist_elector .friend_add {border-left:none;}
+.friendlist_elector .friend_add ul {}
+.friendlist_elector .friend_add li {display:block;padding-left:6px;clear:both;}
+.friendlist_elector .friend_add li span {float:left;}
+.friendlist_elector .friend_add li em {float:right;}
+.friendlist_elector .friend_add li em img {margin:6px 6px 0;}
+.friendlist_elector .friend_add p {color:#888888;padding-left:6px;}
+.friendlist_elector .functionbutton {clear:both;padding:8px 0 0;}
+.destext { color:#000000;padding-top:10px;padding-bottom:10px;border-bottom:1px #CEE1EE solid;margin-bottom:10px;zoom:1;}
+
+/*friendSelect for Edit
+----------------------------*/
+.friendSelectorBox .selector{ border:1px solid #ccc;background-color:#fff;height:340px;overflow:scroll;overflow-x:hidden;margin-bottom:5px;}
+.friendSelectorBox .selector ul{padding:0.5em;}
+.friendSelectorBox .selector ul li{ width:134px;height:64px;overflow:hidden;float:left; border:0 ;padding:0;margin:3px;margin-right:3px;}
+
+.friendSelectorBox .selector ul li a{ display:block;height:64px;padding:4px; }
+.friendSelectorBox .selector ul li a:hover{  }
+
+.friendSelectorBox .selector ul li a:hover h4{ color:#333;}
+.friendSelectorBox .selector ul li a:hover span.atnet{ color:#666;}
+
+.friendSelectorBox .selector ul li a:hover span.picbox{ background-color:#fff;}
+
+.friendSelectorBox .selector ul li a h4{ color:#333;}
+.friendSelectorBox .selector ul li a span.atnet{ color:#ccc;}
+
+.friendSelectorBox .selector ul li a span.picbox{ width:50px;height:50px;padding:2px;margin-right:3px;border:1px #ccc solid;float:left;border-color:#b1c1e1;}
+
+.friendSelectorBox .selector ul li a span.picbox span.pic{ background-color:#fff;background-position:center;background-repeat:no-repeat;width:50px;height:50px;display:block;}
+
+.friendSelectorBox .selector ul li a span.picbox img.added{ display:none;}
+
+.friendSelectorBox .selector ul li.select,
+.friendSelectorBox .selector ul li.select a:hover{ background:url(http://a.xnimg.cn/img/friend_selector_bg.gif) top left no-repeat;}
+.friendSelectorBox .selector ul li.select a h4,
+.friendSelectorBox .selector ul li.select a:hover h4{ color:#fff;}
+.friendSelectorBox .selector ul li.select a:hover span.atnet{ color:#ccc;}
+.friendSelectorBox .selector ul li.select a span.picbox,
+.friendSelectorBox .selector ul li.select a:hover span.picbox{ background:#8497C0;}
+.friendSelectorBox .selector ul li.select a span.picbox span.pic{ background-position:center;background-repeat:no-repeat;width:50px;height:50px;}
+.friendSelectorBox .selector ul li.select a span.picbox span.pic img.added{ display:block;padding-top:37px;}
+
+/*--2009.1.9new friends selector  --*/
+.allfriendslist{ border-top: 1px #CEE1EE solid;background-color:#E3EEF8;}
+.friendsgroup-sidebar{background-color:#E3EEF8;}
+.friendSelectorBox .selectfilter {line-height:22px;margin-bottom:10px;}
+
+.n-f-s{}
+.n-f-s strong{font-size:14px;font-weight:lighter;display:block;float:left}
+.n-f-s .function {float:left;width:50%;color:#808080;}
+.n-f-s .function span {display:block;float:left;margin-right:20px;line-height:25px;}
+.n-f-s .function .function_nav_up a,.school-list .function_nav_down a {width:66px;height:25px;line-height:25px;padding:0 0 0 6px;}
+.n-f-s .function .function_nav_up a {display:block;background:url(http://a.xnimg.cn/imgpro/bg/function_nav_up.gif) no-repeat 60px 10px;}
+.school-list .function_nav_down {background:url(http://a.xnimg.cn/imgpro/bg/function_nav_bg.gif) no-repeat right bottom;}
+.school-list .function_nav_down a {line-height:25px;display:block;background:url(http://a.xnimg.cn/imgpro/bg/function_nav_down.png) no-repeat left top;}
+.school-list {width:138px;position:absolute;}
+.school-list .school-list_title {border-bottom:1px #CCCCCC solid;color:#888888;margin-bottom:5px;padding:5px 0 8px;}
+.school-list ul {overflow-x:hidden;overflow-y:scroll;border:1px #3777BC solid;border-top:none;padding:0 4px 0 6px;background-color:#ffffff;height:207px;}
+.school-list li {height:19px;line-height:19px;overflow:hidden;}
+.school-list li a:link {color:#000000;text-decoration:none;}
+.school-list li a:visited {color:#000000;text-decoration:none;}
+.school-list li a:hover {text-decoration:underline;}
+
+.state {float:right;width:49%;margin-bottom:5px;}
+.state ul {list-style:none;}
+.state li {display:inline;padding:0;margin: 0;}
+.state a {float:right;text-decoration:none;padding:0 0 0 3px;margin: 0 5px 0 0;}
+.state a span {float:left;display:block;padding: 0px 7px 0px 5px;line-height:19px;}
+.state a span {float:none;}
+*+html .state a span {line-height:21px;}
+.state a:hover span {text-decoration: none;color:#FFFFFF;background:url(http://a.xnimg.cn/imgpro/bg/friends_selecot_state_R.gif) no-repeat right top;}
+.state a:hover {background:url(http://a.xnimg.cn/imgpro/bg/friends_selecot_state_L.gif) no-repeat left top;}
+.state a:hover span {}
+.state .onstate a {color:#FFFFFF;background:url(http://a.xnimg.cn/imgpro/bg/friends_selecot_state_L.gif) no-repeat left top;line-height:14px;}
+.state .onstate a:hover{text-decoration:none}
+.state .onstate span{background:url(http://a.xnimg.cn/imgpro/bg/friends_selecot_state_R.gif) no-repeat right top;color:#fff}
+.state em{font-style:inherit;font-weight:inherit}
+
+.closebnt a {background:url(http://a.xnimg.cn/imgpro/bg/close_window.gif) no-repeat left top;width:17px;height:17px;display:block;}
+.closebnt a:hover {background:url(http://a.xnimg.cn/imgpro/bg/close_window.gif) no-repeat left bottom;}
+.selectorclose {background-color:#F6F6F6;padding:3px;}
+#sub-nav {padding-left:10px;}
+
+/** new share popup style and the s=share*/
+
+.s-message {
+    padding: 10px 10px 0 0;
+}
+.s-message .share-footer{display:block;height:23px;line-height:23px;float:left;_margin-top:3px;margin-bottom:-10px;*margin-bottom:0px;_margin-bottom:-3px;padding-left:0px;}
+.s-message .share-footer span{color:#888;_margin-top:4px;display:block;float:left}
+.s-message a.m-editor-emo{display:block;width: 30px;height:23px;line-height:23px;padding-left:25px;background-image:url(http://a.xnimg.cn/imgpro/minieditor/action_btn.png);background-position:0 -23px;background-repeat:no-repeat; outline:none;margin-bottom:-10px;*margin-bottom:0px;_margin-bottom:-3px;float:right}
+.s-message-mod {
+    margin-bottom: 10px;
+}
+
+.message-fields dt {
+    float: left;
+    margin: 0 10px;
+	_display: inline;
+    overflow: hidden;
+    text-align: right;
+    width: 50px;
+}
+
+.message-fields dd {
+    float: left;
+    margin:0 0 10px;
+    width: 350px;
+}
+
+.message-fields dd textarea, .message-fields dd .s-text {
+    border: 1px solid #A0BEDC;
+    padding: 3px;
+    width: 340px;
+}
+.message-fields dd#dd_privacy_field {
+    margin: 0;
+}
+.message-fields textarea {
+    height: 50px;
+    margin: 0;
+    overflow: auto;
+}
+.message-fields label {
+    display: block;
+    padding-top: 4px;
+}
+.message-fields dd .tokenizer {
+    border: 1px solid #A0BEDC;
+    padding: 0 3px;
+    width: 340px;
+}
+.s-info-box {
+    background: none repeat scroll 0 0 #F7F7F7;
+    border: 1px solid #E8E8E8;
+    padding: 10px;
+}
+.s-thumb {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #9BAFBE;
+    float: left;
+    margin-right: 10px;
+    padding: 2px;
+}
+.s-thumb img {
+    background: none repeat scroll 0 0 #333333;
+}
+.s-description {
+    line-height: 18px;
+}
+.s-description .s-title {
+    color: #555555;
+    font-weight: 700;
+}
+.s-font-gray {
+    color: #888888;
+}
+.s-mini-group {
+    margin: 0 0 15px 8px;
+}
+.s-mini-group ul {
+    margin-bottom: 5px;
+}
+.s-mini-group li {
+    float: left;
+    width: 138px;
+}
+.s-mini-group li a {
+    background: url("http://a.xnimg.cn/imgpro/share/mini-gicon.png") no-repeat scroll 0 0 transparent;
+    color: #333333 !important;
+    display: block;
+    height: 26px;
+    line-height: 26px;
+    margin: 1px;
+    padding: 0 3px;
+}
+.s-mini-group li a:hover {
+    background-position: 0 -26px;
+    text-decoration: none;
+}
+.s-mini-group li a.selected, .s-mini-group li a.selected:hover {
+    background-position: 0 -52px;
+    color: #FFFFFF !important;
+}
+.s-mini-group li a img {
+    margin-right: 5px;
+}
+.s-mini-group p {
+    margin-bottom: 5px;
+}
+
+/*
+.s-success-box{padding: 10px 0;font-size: 14px;}
+.s-icon{display: inline-block;font-size: 14px;text-align: center;vertical-align: middle;width: 100px;*display: inline;*zoom:1;}
+.s-success-more{width:300px; text-align:center; font-size:12px; border-left:1px solid #CEE1EE; display: inline-block;*display: inline;*zoom:1; vertical-align: middle;}
+.s-success-more p{margin-top:10px;}
+.s-message{padding:10px 10px 0 0;*padding:10px 10px 10px 0;}
+.s-message-mod{margin-bottom:10px;}
+.message-fields dt{float:left;margin:0 10px;_margin-left:5px;text-align:right;width:50px;overflow:hidden;}
+.message-fields dd { float: left;margin:0 0 10px; width: 350px;}
+.s-message .share-footer{display:block;height:23px;line-height:23px;float:left;_margin-top:7px;margin-bottom:-10px;*margin-bottom:0px;_margin-bottom:-11px;}
+.s-message .share-footer span{color:#888;}
+.s-message a.m-editor-emo{display:block;height:23px;line-height:23px;padding-left:25px;background-image:url(http://a.xnimg.cn/imgpro/minieditor/action_btn.png);background-position:0 -23px;background-repeat:no-repeat; outline:none;float:right;margin-bottom:-10px;*margin-bottom:0px;_margin-bottom:-11px;}
+.message-fields dd textarea,
+.message-fields dd .s-text{width:340px;border:1px solid #A0BEDC;padding:3px;}
+.message-fields dd#dd_privacy_field{margin:0}
+.message-fields textarea{height:50px;margin:0pt;overflow:auto}
+.message-fields label{padding-top:4px;display:block}
+.message-fields dd .tokenizer{width:340px;border:1px solid #A0BEDC;padding:0 3px;}
+
+.s-info-box{padding:10px;background:#F7F7F7;border:1px solid #E8E8E8;}
+.s-thumb{border:1px solid #9BAFBE;background:#FFF;float:left;padding:2px;margin-right:10px}
+.s-thumb img{*zoom:1;*display:inline;background:#333}
+.s-description{line-height:18px;}
+.s-description .s-title{font-weight:700;color:#555;}
+.s-font-gray{color:#888}
+.s-mini-group{margin:0 0 15px 8px;}
+.s-mini-group ul{margin-bottom:5px;}
+.s-mini-group li{float:left;width:138px;}
+.s-mini-group li a{background:url(http://a.xnimg.cn/imgpro/share/mini-gicon.png) no-repeat;display:block;color:#333!important;margin:1px;padding:0 3px;height:26px;line-height:26px;}
+.s-mini-group li a:hover{background-position:0 -26px;text-decoration:none;}
+.s-mini-group li a.selected,
+.s-mini-group li a:hover.selected{background-position:0 -52px;color:#FFF!important;}
+.s-mini-group li a img{margin-right:5px;}
+.s-mini-group p{margin-bottom:5px;}**/
+/* share sort list*/
+.s-sort{
+	display:none;
+	border:1px solid #83ACC6;
+	background-color:#FFF;
+	position:absolute;
+	right:100;
+	top:160px;
+	padding:3px 0;
+	z-index:2;
+	line-height:21px;
+	width: 78px;
+	zoom:1;
+	}
+.s-sort li{
+	float:none;
+	_border:1px solid #FFF;
+}
+.s-sort li a{
+	display:block;
+	padding:2px 15px;
+	}
+.s-sort li a:hover{
+	background-color:#548BC6;
+	color:#FFF!important;
+	text-decoration:none;
+	}

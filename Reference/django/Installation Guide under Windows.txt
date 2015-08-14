@@ -1,0 +1,55 @@
+Recommended 
+install pythonxy, which will setup environment variables for python and so on
+
+Download the zip file from
+http://www.djangoproject.com/download/
+
+unzip it
+
+set up the environment variables 
+e.g.
+C:\Python27\Lib\site-packages  or  /usr/lib/python2.7/site-packages
+Google specific keywords if something wrong
+
+enter the 'command line'
+
+cd to the unziped folder
+e.g.    cd C:\Users\yinanf\Desktop\Django-1.5.1
+!!!MUST run with administrator's right or the access will be denied. In windows8, can be done by right clicked the searched result on the search page
+
+install the django, type in
+python setup.py install
+wait for about 1.5 minutes and it will be ok
+
+add the django path to the environment variables
+e.g.      C:/Python27/Lib/site-packages/django
+
+
+check to see if successfully installed in python mode in the command line.
+enter "import django"
+then  "django.get_version()"
+it will print, for example, "1.5.1"
+
+then it's a success
+
+
+Reference page
+
+with picture, a simple demonstration for a trial project
+http://www.cnblogs.com/zhoujie/archive/2013/05/11/django1.html
+
+it's ok
+http://dmyz.org/archives/110
+
+
+Enter administrator account:
+http://www.ghacks.net/2012/06/11/windows-8-enable-the-hidden-administrator-account/
+It's not necessary if can just run the command line with the admin right
+
+
+setting the preference in Pydev:
+must reset the pydev preference after installing python
+http://jdonee.iteye.com/blog/741572
+
+
+
