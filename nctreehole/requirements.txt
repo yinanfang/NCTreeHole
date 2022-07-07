@@ -2,4 +2,4 @@ BeautifulSoup==3.2.1
 Django==1.5.1
 distribute==0.6.34
 httplib2==0.8
-requests==1.2.3
+requests==2.20.0
